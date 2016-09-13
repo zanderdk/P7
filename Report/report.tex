@@ -18,9 +18,14 @@
 \let\oldthepage\thepage{}
 \renewcommand\thepage{Cover}
 \bookmark[page=1,level=0]{Cover}
-\tikzexternaldisable{}
-\includepdf[pages=-]{frontmatter/frontpage.pdf}
-\tikzexternalenable{}
+% Comment below and uncomment tikz to include pdf frontpage
+\newpage
+\thispagestyle{empty}
+Frontpage
+\clearpage{}
+%\tikzexternaldisable{}
+%\includepdf[pages=-]{frontmatter/frontpage.pdf}
+%\tikzexternalenable{}
 \renewcommand\thepage{\oldthepage}
 
 \input{frontmatter/colophon.tex}
@@ -86,5 +91,7 @@
 \input{chapter_appendix/appendix}
 \end{appendices}
 %
+
+\listoffixmes
 
 \end{document}
