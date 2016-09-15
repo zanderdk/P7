@@ -3,7 +3,7 @@
 % Silence certain warnings.
   \usepackage{silence} % http://33.media.tumblr.com/tumblr_ly63ddiYtu1r7uivno1_400.gif
   %\WarningFilter{latex}{Marginpar on page} % Marginpar on page xx moved.
-  \WarningFilter{tocstyle}{THIS IS AN ALPHA VERSION!}
+  %\WarningFilter{tocstyle}{THIS IS AN ALPHA VERSION!}
   \WarningFilter{scrreprt}{\float@listhead detected!}
 
 % Set up some variables.
@@ -277,8 +277,8 @@
   \hypersetup{
     bookmarksnumbered,
     bookmarksdepth=1,
-    pdfauthor={sw609f15}, % PDF tag.
-    pdftitle={Adapting and Implementing Continuous Integration Principles and Scrum: On Automated Build and Deployment of a Complex Android Software System}, % PDF tag.
+    pdfauthor={sw705e16}, % PDF tag.
+    pdftitle={Project Title}, % PDF tag.
     pdfsubject={Student Report, Aalborg University},
     pdfpagelayout=TwoPageRight,
     pdfdisplaydoctitle,
@@ -329,16 +329,17 @@
   \usepackage[super]{nth}
 
 % TOC.
-  \usepackage{tocstyle} % MUST be loaded after pdfpages!
-  \usetocstyle{KOMAlike}
-  \setcounter{tocdepth}{0}
-  \settocstylefeature{pagenumberhook}{\sffamily}
-  \settocstylefeature{entryhook}{\sffamily}
-  \settocstylefeature[-1]{entryhook}{\Large\sffamily\bfseries}
-  \settocstylefeature[0]{entryhook}{\sffamily}
-  \settocstylefeature[1]{entryhook}{\small\sffamily}
+  %\usepackage{tocstyle} % MUST be loaded after pdfpages!
+  %\usetocstyle{KOMAlike}
+  %\setcounter{tocdepth}{0}
+  %\settocstylefeature{pagenumberhook}{\sffamily}
+  %\settocstylefeature{entryhook}{\sffamily}
+  %\settocstylefeature[-1]{entryhook}{\Large\sffamily\bfseries}
+  %\settocstylefeature[0]{entryhook}{\sffamily}
+  %\settocstylefeature[1]{entryhook}{\small\sffamily}
   % If page numbers in TOC are more than 3 digits.
-  \makeatletter
-  \renewcommand{\@pnumwidth}{3em} 
-  \renewcommand{\@tocrmarg}{4em}
-  \makeatother
+  %\makeatletter
+  %\renewcommand{\@pnumwidth}{3em} 
+  %\renewcommand{\@tocrmarg}{4em}
+  %\makeatother
+  %\addtokomafont{chapterentry}{\sffamily}
