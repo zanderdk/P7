@@ -1,0 +1,35 @@
+{{Infobox river
+  | name              = Spanish River
+  | image             = 
+  | image_size        = 
+  | image_caption     = 
+  | source1_location  = 
+  | mouth_location    = 
+  | basin_countries   = [[Jamaica]]
+  | length            = {{convert|12.5|km|mi|abbr=on}}
+  | source1_elevation = 
+  | mouth_elevation   = 
+  | discharge1_avg    = 
+  | basin_size        = 
+}}
+The '''Spanish River''' is a river of [[Jamaica]]. It flows from south to north, the height of its delta is 0-40m. The Spring Garden, near the Spanish River, was one of the earliest sugar plantations in Jamaica.<ref>[http://www.discoverjamaica.com/gleaner/discover/tour_ja/tour19.htm Discover Jamaica]</ref>
+
+==See also==
+*[[List of rivers of Jamaica]]
+
+==References==
+{{Reflist}}
+==Sources==
+*[http://earth-info.nga.mil/gns/html/index.html  GEOnet Names Server]
+*[[:Image:JamaicaOMC.png|OMC Map]]
+*[http://www.lib.utexas.edu/maps/americas/jamaica_pol_2002.jpg CIA Map]
+*Ford, Jos C. and Finlay, A.A.C. (1908).''The Handbook of Jamaica.'' Jamaica Government Printing Office
+
+{{Rivers of Jamaica}}
+
+{{coord|18|14|N|76|37|W|display=title|region:JM_type:river_source:GNS-enwiki}}
+
+[[Category:Rivers of Jamaica]]
+
+
+{{Jamaica-river-stub}}

@@ -1,0 +1,48 @@
+{{Infobox radio station
+| name                 = KITA
+| image                = <!-- Commented out: [[Image:Air 1 Radio.png|150px]] -->
+| city                 = [[Iota, Louisiana|Iota]], [[Louisiana]]
+| area                 = 
+| slogan               = The Positive Alternative
+| branding             = Air 1
+| frequency            = 89.5 [[MHz]]
+| repeater             = 
+| airdate              = 
+| format               = [[Religious radio]]
+| erp                  = 19,000 [[watt]]s
+| haat                 = {{convert|132.0|m|ft|sp=us}}
+| class                = C2
+| facility_id          = 90732
+| coordinates          = {{coord|30|11|17|N|92|37|55|W|region:US-LA_type:landmark|display=inline,title}}
+| callsign_meaning     = 
+| former_callsigns     = KAHJ (1998-1998)<br>KAHJ (1998-1998)<br>KPKL (2006-2007)
+| owner                = Educational Media Foundation
+| licensee             = 
+| sister_stations      = 
+| webcast              = 
+| website              = 
+| affiliations         = 
+}}
+
+'''KITA''' (89.5 [[FM broadcasting|FM]]) is a [[radio station]] licensed to [[Iota, Louisiana]], USA.  The station is currently owned by Educational Media Foundation.<ref> {{cite web |url=http://www.fcc.gov/fcc-bin/fmq?call=KITA |title=KITA Facility Record |work=United States [[Federal Communications Commission]], audio division |accessdate=2009-09-24}}</ref>
+
+==History==
+The station was assigned the call letters KAHJ on May 12, 1998. On February 24, 2005, the station changed its call sign to KAHJ, on November 21, 2006 to KPKL, on June 22, 2007 to the current KITA,<ref> {{cite web |url=http://fjallfoss.fcc.gov/cgi-bin/ws.exe/prod/cdbs/pubacc/prod/call_hist.pl?Facility_id=90732&Callsign=KITA |title=KITA Call Sign History |work=United States [[Federal Communications Commission]], audio division |accessdate=2009-09-24}}</ref> On November 6, 2006 the station was sold to Educational Media Foundation.<ref name="">{{cite web|url= |title=FCC Application  |publisher=[[Federal Communications Commission]] |accessdate=2009-09-24}}</ref>
+
+==References==
+{{reflist}}
+
+==External links==
+* {{FM station data|KITA}}
+
+{{Air 1}}
+
+[[Category:Radio stations in Louisiana]]
+[[Category:Christian radio stations in the United States]]
+[[Category:Air 1 radio stations]]
+[[Category:Radio stations established in 2008]]
+[[Category:2008 establishments in Louisiana]]
+[[Category:Educational Media Foundation radio stations]]
+
+
+{{Louisiana-radio-station-stub}}

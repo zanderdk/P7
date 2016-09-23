@@ -1,0 +1,159 @@
+{{Use British English|date=January 2014}}
+{{Use dmy dates|date=January 2014}}
+
+{{Infobox album <!-- See Wikipedia:WikiProject_Albums -->
+| Name        = The Best of Syd Barrett: Wouldn't You Miss Me?
+| Type        = greatest
+| Artist      = [[Syd Barrett]]
+| Cover       = Syd Barrett - WYMM.jpg
+| Released    = 16 April 2001 (UK)<br>11 September 2001 (US)
+| Recorded    = [[Abbey Road Studios|Abbey Road]]<br />May 1968 – July 1970
+| Genre       = [[Rock music|Rock]]
+| Length      = 73:21
+| Label       = [[Harvest Records|Harvest]] (UK)<br>[[Capitol Records|Capitol]] (US)
+| Producer    = [[Syd Barrett]], [[Peter Jenner]], [[Malcolm Jones (musician)|Malcolm Jones]], [[Roger Waters]] and [[David Gilmour]]
+| Last album  = ''[[Crazy Diamond]]''<br />(1993)
+| This album  = '''''The Best of Syd Barrett: Wouldn't You Miss Me?'''''<br />(2001)
+| Next album  = ''[[The Radio One Sessions (Syd Barrett album)|Syd Barrett: The Radio One Sessions]]'' <br />(2004)
+}}
+{{Album ratings
+| rev1      = [[AllMusic]]
+| rev1Score = {{rating|4|5}}<ref name=AM>{{cite web|last=Kellman |first=Andy |url=http://www.allmusic.com/album/wouldnt-you-miss-me-the-best-of-syd-barrett-mw0000377648 |title=Wouldn't You Miss Me?: The Best of Syd Barrett – Syd Barrett : Songs, Reviews, Credits, Awards |publisher=AllMusic |accessdate=2 August 2012}}</ref>
+| rev2      = [[Pitchfork Media]]
+| rev2Score = (8.5/10)<ref>{{cite web|url=http://pitchfork.com/reviews/albums/568-wouldnt-you-miss-me-the-best-of/ |title=Syd Barrett: Wouldn't You Miss Me: The Best of... &#124; Album Reviews |publisher=Pitchfork |date=12 November 2002 }}</ref>
+| rev3      = ''[[NME]]''
+| rev3Score = {{Rating|8|10}}<ref>{{cite web|last=Oldham |first=James |url=http://www.nme.com/reviews/syd-barrett/4818 |title=NME Album Reviews – Syd Barrett : Wouldn't You Miss Me? (The Best Of...) |work=NME |date=10 April 2001 |accessdate=3 October 2012}}</ref>
+}}
+'''''The Best of Syd Barrett: Wouldn't You Miss Me?''''' is a [[compilation album]] by [[Syd Barrett]] released in 2001 that spans Barrett's entire solo career.
+
+==Content==
+Comprising highlights from [[Syd Barrett]]'s two 1970 albums ''[[The Madcap Laughs]]'' (seven songs),<ref name=AM/> ''[[Barrett (album)|Barrett]]'' (nine songs),<ref name=AM/> and the 1988 out-takes collection ''[[Opel (album)|Opel]]'' (four songs),<ref name=AM/> the album was issued to service casual Barrett fans who presumably would only require one disc of his music.
+
+As a bonus to dedicated Barrett followers, ''The Best of Syd Barrett: Wouldn't You Miss Me?'' includes "Two of a Kind", from Barrett's [[John Peel]] radio show performance in February 1970,<ref name=AM/> and, courtesy of [[David Gilmour]]'s personal collection,<ref name=MCLM13-14>{{cite web|last=Jones|first=Malcolm|title=The Making of The Madcap Laughs|year=2003|publisher=Brain Damage|edition=21st Anniversary|pages=13–14}}</ref> Barrett's previously-unreleased "[[Bob Dylan Blues]]",<ref name=AM/> an original recorded a few days after "Two of a Kind",<ref name=MCLM13-14/><ref name=B2010_2>{{cite AV media notes|title=Barrett|titlelink=Barrett (album)|others=Syd Barrett|year=[[Harvest]]|page=2|type=booklet|publisher=[[EMI]]}}</ref> that before this release was a very rare and sought-after song.
+
+==Track listing==
+All songs by [[Syd Barrett]], except where noted.
+
+{{Track listing
+| headline        =
+| total_length    = 73:21
+| writing_credits = yes
+| extra_column = Original album
+| title1          = [[Octopus (Syd Barrett song)|Octopus]]
+| extra1          = ''[[The Madcap Laughs]]''
+| writer1         =
+| length1         = 3:48
+| title2          = Late Night
+| extra2          = ''The Madcap Laughs''
+| writer2         =
+| length2         = 3:14
+| title3          = [[Terrapin (song)|Terrapin]]
+| extra3          = ''The Madcap Laughs''
+| writer3         =
+| length3         = 5:03
+| title4          = Swan Lee (Silas Lang)
+| extra4          = ''[[Opel (album)|Opel]]''
+| writer4         =
+| length4         = 3:14
+| title5          = Wolfpack
+| extra5          = ''[[Barrett (album)|Barrett]]''
+| writer5         =
+| length5         = 3:45
+| title6          = Golden Hair
+| extra6          = ''The Madcap Laughs''
+| writer6         = Barrett, [[James Joyce]]
+| length6         = 1:59
+| title7          = [[Here I Go (Syd Barrett song)|Here I Go]]
+| extra7          = ''The Madcap Laughs''
+| writer7         =
+| length7         = 3:11
+| title8          = Long Gone
+| extra8          = ''The Madcap Laughs''
+| writer8         =
+| length8         = 2:49
+| title9          = No Good Trying
+| extra9          = ''The Madcap Laughs''
+| writer9         =
+| length9         = 3:25
+| title10         = Opel
+| extra10         = ''Opel''
+| writer10        =
+| length10        = 6:26
+| title11         = [[Baby Lemonade]]
+| extra11         = ''Barrett''
+| writer11        =
+| length11        = 4:10
+| title12         = Gigolo Aunt
+| extra12         = ''Barrett''
+| writer12        =
+| length12        = 5:45
+| title13         = Dominoes
+| extra13         = ''Barrett''
+| writer13        =
+| length13        = 4:06
+| title14         = [[Dark Globe|Wouldn't You Miss Me (Dark Globe)]]
+| extra14         = ''Opel''
+| writer14        =
+| length14        = 3:00
+| title15         = Wined and Dined
+| extra15         = ''Barrett''
+| writer15        =
+| length15        = 2:56
+| title16         = Effervescing Elephant
+| extra16         = ''Barrett''
+| writer16        =
+| length16        = 1:53
+| title17         = Waving My Arms in the Air
+| extra17         = ''Barrett''
+| writer17        =
+| length17        = 2:07
+| title18         = I Never Lied to You
+| extra18         = ''Barrett''
+| writer18        =
+| length18        = 1:49
+| title19         = Love Song
+| extra19         = ''Barrett''
+| writer19        =
+| length19        = 3:02
+| title20         = Two of a Kind
+| extra20         = ''[[The Peel Session (Syd Barrett album)|The Peel Session]]''
+| writer20        = {{Ref|1|†}}
+| length20        = 2:35
+| title21         = [[Bob Dylan Blues]]
+| extra21         = Previously unreleased
+| writer21        =
+| length21        = 3:14
+| title22         = Golden Hair
+| note22          = Instrumental
+| extra22         = ''Opel''
+| writer22        =
+| length22        = 1:50
+}}
+
+:{{Note|1|†}} — Possibly written by [[Richard Wright (musician)|Richard Wright]] (according to [[David Gilmour]]), though Barrett insisted it was his own composition.<ref>{{cite book |title=Crazy Diamond: Syd Barrett & the Dawn of Pink Floyd |first=Mike |last=Watkinson |author2=Pete Anderson  |page=92}}</ref>
+
+==Production==
+*Syd Barrett&nbsp;– Producer
+*Tim Chacksfield&nbsp;– Project Coordinator
+*David Gilmour&nbsp;– Producer
+*Peter Jenner&nbsp;– Producer
+*Malcolm Jones&nbsp;– Producer, Overdub Producer
+*[[Peter Mew]]&nbsp;– Transfers, Remastering
+*Mark Paytress&nbsp;– Liner Notes
+*Nigel Reeve&nbsp;– Project Coordinator
+*Phil Smee&nbsp;– Package Design
+
+==References==
+{{Reflist}}
+
+{{Syd Barrett}}
+
+{{DEFAULTSORT:Best of Syd Barrett: Wouldn't You Miss Me?, The}}
+[[Category:2001 greatest hits albums]]
+[[Category:Albums produced by David Gilmour]]
+[[Category:Albums produced by Richard Wright (musician)]]
+[[Category:Syd Barrett albums]]
+[[Category:Albums produced by Roger Waters]]
+[[Category:Albums recorded at Abbey Road Studios]]
+[[Category:EMI Records compilation albums]]
+[[Category:Harvest Records compilation albums]]

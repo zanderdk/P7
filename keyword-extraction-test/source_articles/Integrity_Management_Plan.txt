@@ -1,0 +1,53 @@
+'''Integrity Management Plan''' (part of an [[asset integrity management systems|asset integrity management system]]) is a documented and systematic approach to ensure the long-term integrity of an asset or assets.<ref>{{cite book| title=AS2885 Pipelines - Gas and liquid petroleum Part 3| publisher=Standards Australia| date=2012| isbn=978 1 74342 214 4}}</ref>  Integrity management planning is a process for assessing and mitigating risks in an effort to reduce both the likelihood and consequences of incidents.  The Integrity Management Plan (IMP) forms a part of the overall asset integrity management system and is audited as per the [[Integrity Engineering Audit]] (IEA).
+
+Particularly post the [[Deepwater Horizon oil spill]], the role of asset integrity has never been more critical to the global oil and gas business. Not only can a well-managed asset integrity plan help operators identify and reduce safety risks before they escalate but focusing on asset integrity can also play a major role in both achieving operational excellence and extending the life of ageing assets.
+
+Asset integrity plans are maintained and reviewed regularly so that they: 
+*Optimizes operational and capital expenditures
+*Ensures adoption of best-in-class practices
+*Assists management of risk
+*Increases shareholder, senior management, regulator and public confidence
+*Identifying risks, conducting assessments, taking preventive actions and implementing mitigate measures 
+
+An effective IMP should contain:
+*A process outline – Details the process envelope (temperature pressure and velocity) in which the system operates and any critical parameters that must be followed.  Also states process chemistry and contaminants that are encountered.
+*A threat identification list- Information about the asset segments are evaluated to identify the threats of concerns to the asset and to assess risk.
+*A Risk Analysis – A systematic process, in which potential hazards from facility operation are identified, and the likelihood and consequences of potential adverse events are estimated.  
+*Detailed Regulatory Requirements –details the applicable regulatory standards to be met and the methods used to comply with those standards.
+*A [[Responsibility assignment matrix]] – Details the persons responsible, accountable for any tasks to comply with the requirements of the plan.  It also states those who should be communicated to and Informed.
+*Corrosion circuits – showing the system broken down into corrosion circuits shows damage mechanisms, materials of construction and process chemistry.
+*Damage frequency (statistics) rates of decay
+*Critical operating parameters for process safety
+*Mitigation techniques, frequency, condition monitoring, inspections and process monitoring requirements.
+*Historic review of asset condition to-date.
+*Knowledge gap analysis, missing information, manufacturer's data report (MDR), review drawings etc.
+*Previous failure analysis review.
+*Design drawing review, materials of construction (initial).
+*Management of change review, alterations and repairs carried out. 
+*Remediation – Repairs techniques considered.
+
+Also
+*Record keeping.
+*Performance plan.
+*Communication plan.
+*Regular Interaction.
+*Management of change.
+*Prevention and Mitigation measures.
+*How to conduct assessments / frequency / audit of system.
+
+==See also==
+* [[Asset integrity management systems]]
+
+==References==
+{{reflist}}
+
+2 {{cite web| title=Integrity Management Plan| publisher=Sunoco Logistics| url=http://www.sunocologistics.com/Public-Awareness/Pipeline-Integrity/Integrity-Management-Plan/111/}}
+
+3 {{cite web| title=Pipeline Integrity Management Plan| publisher=Atlanta Gas and Light| url=http://www.atlantagaslight.com/Universal/NaturalGasSafety/PipelineIntegrityManagementPlan.aspx}}
+
+4 DEPARTMENT OF TRANSPORTATION Pipeline and Hazardous Materials Safety Administration 49 CFR Parts 192 and 195 [Docket No. RSPA–04–16855; Amdt. 192–101 and 195–85]Federal Register /Vol. 70, No. 205 /Tuesday, October 25, 2005 /Rules and Regulations http://www.wutc.wa.gov/webdocs.nsf/b8da29aede8fdd67882571430005a9c1/b9bc43effc07ff6388256fe10062a0a2/$FILE/70%20FR%2061571.pdf
+
+== External links ==
+* Oil and Gas Fundamentals ''[http://www.oilandgasfundamentals.com/courses/asset-integrity The Fundamentals of Asset Integrity]''
+
+[[Category:Maintenance]]

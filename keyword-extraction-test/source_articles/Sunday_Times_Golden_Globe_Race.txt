@@ -1,0 +1,263 @@
+{{Use dmy dates|date=February 2015}}
+{{Use British English|date=February 2015}}
+{{DISPLAYTITLE:''Sunday Times'' Golden Globe Race}}
+[[File:Knox Johnston Golden Globe.jpg|thumb|250px|right|[[Robin Knox-Johnston]] finishing his circumnavigation of the world in ''[[Suhaili]]'' as the winner of the Golden Globe Race]]<!-- FAIR USE of Knox Johnston Golden Globe.jpg: see image description page at Image:Knox Johnston Golden Globe.jpg for rationale -->
+The '''''Sunday Times'' Golden Globe Race''' was a non-stop, [[single-handed sailing|single-handed]], [[circumnavigation|round-the-world]] [[yacht racing|yacht race]], held in 1968&ndash;1969, and was the first round-the-world yacht race. The race was controversial due to the failure by most competitors to finish the race and because of the [[suicide]] of one entrant; however, it ultimately led to the founding of the [[VELUX 5 Oceans Race|''BOC Challenge'']] and ''[[Vendée Globe]]'' round-the-world races, both of which continue to be successful and popular.
+
+The race was sponsored by the [[United Kingdom|British]] [[The Sunday Times (UK)|''Sunday Times'']] newspaper and was designed to capitalise on a number of individual round-the-world voyages which were already being planned by various sailors; for this reason, there were no qualification requirements, and competitors were offered the opportunity to join and permitted to start at any time between 1 June and 31 October 1968. The '''Golden Globe''' [[trophy]] was offered to the first person to complete an unassisted, non-stop single-handed circumnavigation of the world via the [[great capes]], and a separate [[pound sterling|£]]5,000 prize was offered for the fastest single-handed circumnavigation.
+
+Nine sailors started the race; four retired before leaving the [[Atlantic Ocean]]. Of the five remaining, [[Chay Blyth]], who had set off with absolutely no sailing experience, sailed past the [[Cape of Good Hope]] before retiring; [[Nigel Tetley]] sank with {{convert|1100|nmi|km}} to go while leading; [[Donald Crowhurst]], who, in desperation, attempted to fake a round-the-world voyage to avoid financial ruin, began to show signs of mental illness, and then committed suicide; and [[Bernard Moitessier]], who rejected the philosophy behind a commercialised competition, abandoned the race while in a strong position to win and kept sailing non-stop until he reached [[Tahiti]] after circling the globe one and a half times.  [[Robin Knox-Johnston]] was the only entrant to complete the race, becoming the first person to sail single-handed and non-stop around the world.  He was awarded both prizes, and later donated the £5,000 to a fund supporting Crowhurst's family.
+
+==Genesis of the race==
+
+Long-distance [[single-handed sailing]] has its beginnings in the nineteenth century, when a number of sailors made notable single-handed crossings of the Atlantic. The first single-handed [[circumnavigation]] of the world was made by [[Joshua Slocum]], between 1895 and 1898,<ref>''Sailing Alone Around the World'', Captain Joshua Slocum; Sheridan House, 1954. ISBN 0-911378-20-0</ref> and many sailors have since followed in his wake, completing leisurely circumnavigations with numerous stopovers. However, the first person to tackle a single-handed circumnavigation as a speed challenge was Sir [[Francis Chichester]], who, in 1960, had co-founded the ''[[Observer Single-handed Trans-Atlantic Race]]'' (''OSTAR'').{{cn|date = April 2014}}
+
+In 1966, Chichester set out to sail around the world by the [[clipper route]], starting and finishing in England with a stop in [[Sydney]], in an attempt to beat the speed records of the [[clipper ships]] in a small boat. His voyage was a great success, as he set an impressive round-the-world time of nine months and one day — with 226 days of sailing time — and, soon after his return to England on 28 May 1967, was [[knight]]ed by [[Elizabeth II of the United Kingdom|Queen Elizabeth II]].<ref>''Gipsy Moth Circles the World'', Sir Francis Chichester; International Marine, 2001. ISBN 0-07-136449-8</ref>  Even before his return, however, a number of other sailors had turned their attention to the next logical challenge — a ''non-stop'' single-handed circumnavigation of the world.
+
+===Plans laid===
+
+In March 1967, a 28-year-old British [[merchant marine]] officer, [[Robin Knox-Johnston]], realised that a non-stop solo circumnavigation was "about all there's left to do now".  Knox-Johnston had a {{convert|32|foot}} wooden [[ketch]], ''[[Suhaili]]'', which he and some friends had built in India to the William Atkin ''Eric'' design; two of the friends had then sailed the boat to South Africa, and in 1966 Knox-Johnston had single-handedly sailed her the remaining {{convert|10000|nmi|mi km|sigfig=3}} to [[London]].<ref name=aworld>''A World of My Own'', Robin Knox-Johnston; pages 1—12. W.H. Norton, 1969. ISBN 0-393-02900-X</ref>
+
+Knox-Johnston was determined that the first person to make a single-handed non-stop circumnavigation should be British, and he decided that he would attempt to achieve this feat. To fund his preparations he went looking for sponsorship from Chichester's [[Sponsor (commercial)|sponsor]], the British [[The Sunday Times (UK)|''Sunday Times'']]. The ''Sunday Times'' was by this time interested in being associated with a successful non-stop voyage but decided that, of all the people rumoured to be preparing for a voyage, Knox-Johnston and his old wooden ketch were the least likely to succeed. Knox-Johnston finally arranged sponsorship from the [[The Daily Mirror|''Sunday Mirror'']].<ref>''A World of My Own'', page 17.</ref><ref>''A Voyage for Madmen'', by Peter Nichols; pages 32–33. Harper Collins, 2001. ISBN 0-06-095703-4</ref>
+
+Several other sailors were interested. [[William King (Royal Navy officer)|Bill King]], a former [[Royal Navy]] submarine commander, built a {{convert|42|foot|1}} [[junk (ship)|junk]]-rigged [[schooner]], ''Galway Blazer II'', designed for heavy conditions. He was able to secure sponsorship from the [[Daily Express|''Express'']] newspapers. [[John Ridgway (sailor)|John Ridgway]] and [[Chay Blyth]], a [[British Army]] captain and sergeant, had [[ocean rowing|rowed]] a {{convert|20|foot}} boat across the [[Atlantic Ocean]] in 1966. They independently decided to attempt the non-stop sail, but despite their rowing achievement were hampered by a lack of sailing experience. They both made arrangements to get boats, but ended up with entirely unsuitable vessels, {{convert|30|foot}} boats designed for cruising protected waters and too lightly built for [[Southern Ocean]] conditions. Ridgway managed to secure sponsorship from ''The People'' newspaper.<ref>''A Voyage for Madmen'', pages 12–28.</ref>
+
+One of the most serious sailors considering a non-stop circumnavigation in late 1967 was the French sailor and author [[Bernard Moitessier]]. Moitessier had a custom-built {{convert|39|foot|1}} steel ketch, ''Joshua'', named after Slocum, in which he and his wife Françoise had sailed from France to Tahiti. They had then sailed her home again by way of [[Cape Horn]], simply because they wanted to go home quickly to see their children. He had already achieved some recognition based on two successful books which he had written on his sailing experiences. However, he was disenchanted with the material aspect of his fame — he believed that by writing his books for quick commercial success he had sold out what was for him an almost spiritual experience. He hit upon the idea of a non-stop circumnavigation as a new challenge, which would be the basis for a new and better book.<ref name=strange>''The Strange Last Voyage of Donald Crowhurst'', by Nicholas Tomalin and Ron Hall; pages 24—25. Hodder & Stoughton Ltd., 2003. ISBN 0-07-141429-0</ref><ref>''A Voyage for Madmen'', pages 19–26.</ref>
+
+===The birth of the race===
+By January 1968, word of all these competing plans was spreading. The ''Sunday Times'', which had profited to an unexpected extent from its [[sponsor (commercial)|sponsor]]ship of Chichester, wanted to get involved with the first non-stop circumnavigation, but had the problem of selecting the sailor most likely to succeed. King and Ridgway, two likely candidates, already had sponsorship, and there were several other strong candidates preparing. "Tahiti" Bill Howell, an Australian cruising sailor, had made a good performance in the 1964 ''OSTAR'', Moitessier was also considered{{bywhom|date=April 2014}} a strong contender, and there may have been other potential circumnavigators already making preparations.{{cn|date = April 2014}}
+
+[[File:GoldenGlobeRaceRoute.png|thumb|250px|left|The route of the '''Golden Globe Race'''.]]
+The ''Sunday Times'' did not want to sponsor someone for the first non-stop solo circumnavigation only to have them beaten by another sailor, so the paper hit upon the idea of a sponsored race, which would cover all the sailors setting off that year. To circumvent the possibility of a non-entrant completing his voyage first and scooping the story, they made entry automatic: anyone sailing single-handed around the world that year would be considered in the race.{{cn|date = April 2014}}
+
+This still left them with a dilemma in terms of the prize. A race for the fastest time around the world was a logical subject for a prize, but there would obviously be considerable interest in the ''first'' person to complete a non-stop circumnavigation, and there was no possibility of persuading the possible candidates to wait for a combined start. The ''Sunday Times'' therefore decided to award two prizes: the ''Golden Globe'' trophy for the first person to sail single-handed, non-stop around the world; and a £5,000 prize (a considerable sum then, equivalent to £58,100 in 2005<ref>[http://www.parliament.uk/commons/lib/research/rp2006/rp06-009.pdf ''Inflation: the value of the pound 1750–2005''], by Dominic Webb. RP 06/09, House of Commons Library, 2006.</ref>) for the fastest time.<ref name="strange1">''Strange Last Voyage'', pages 29—30.</ref>
+
+This automatic entry provision had the drawback that the race organisers could not vet entrants for their ability to take on this challenge safely. This was in contrast to the ''OSTAR'', for example, which in the same year required entrants to complete a solo 500-nautical mile (930&nbsp;km) qualifying passage.<ref>''A Voyage for Madmen'', page 17.</ref> The one concession to safety was the requirement that all competitors must start between 1 June and 31 October, in order to pass through the [[Southern Ocean]] in summer.<ref>''Strange Last Voyage'', page 30.</ref>
+
+To make the speed record meaningful, competitors had to start from England. However Moitessier, the most likely person to make a successful circumnavigation, was preparing to leave from [[Toulon]], in France. When the ''Sunday Times'' went to invite him to join the race, he was horrified, seeing the commercialisation of his voyage as a violation of the spiritual ideal which had inspired it. A few days later, Moitessier relented, thinking that he would join the race and that if he won, he would take the prizes and leave again without a word of thanks.  In typical style, he refused the offer of a free radio to make progress reports, saying that this intrusion of the outside world would taint his voyage; he did, however, take a camera, agreeing to drop off packages of film if he got the chance.<ref name=tlw>''The Long Way'', by Bernard Moitessier; page 5. Sheridan House, 1995. ISBN 0-924486-84-8</ref>
+
+===The race declared===
+
+The race was announced on 17 March 1968, by which time King, Ridgway, Howell (who later dropped out), Knox-Johnston, and Moitessier were declared{{bywhom|date=April 2014}} competitors. Chichester, despite expressing strong misgivings about the preparedness of some of the interested parties, was to chair the panel of judges.<ref name="strange1"/>
+
+Four days later, British [[electronics]] engineer [[Donald Crowhurst]] announced his intention to take part. Crowhurst was the manufacturer of a modestly successful [[radio navigation]] aid for sailors, who impressed many people with his apparent knowledge of sailing.  With his electronics business failing, he saw a successful adventure, and the attendant publicity, as the solution to his financial troubles — essentially the mirror opposite of Moitessier, who saw publicity and financial rewards as inimical to his adventure.<ref>''Strange Last Voyage'', pages 19—26.</ref>
+
+Crowhurst planned to sail in a [[trimaran]]. These boats were starting to gain a reputation, still very much unproven, for speed, along with a darker reputation for unseaworthiness; they were known to be very stable under normal conditions, but extremely difficult to right if knocked over, for example by a [[freak wave|rogue wave]]. Crowhurst planned to tackle the deficiencies of the trimaran with a revolutionary self-righting system, based on an automatically inflated air bag at the masthead. He would prove the system on his voyage, then go into business manufacturing it, thus making trimarans into safe boats for [[cruising (maritime)|cruisers]].<ref>''Strange Last Voyage'', pages 33—35, 39—40.</ref>
+
+By June, Crowhurst had secured some financial backing, essentially by [[Chattel mortgage|mortgaging]] the boat, and later his family home. Crowhurst's boat, however, had not yet been built; despite the lateness of his entry, he pressed ahead with the idea of a custom boat, which started construction in late June. Crowhurst's belief was that a trimaran would give him a good chance of the prize for the fastest circumnavigation, and with the help of a wildly optimistic table of probable performances, he even predicted that he would be first to finish — despite a planned departure on 1 October.<ref>''Strange Last Voyage'', pages 35—38.</ref>
+
+==The race==
+
+===The start (1 June to 28 July)===
+Given the design of the race, there was no organised start; the competitors set off whenever they were ready, over a period of several months. On 1 June 1968, the first allowable day, John Ridgway sailed from [[Inishmore]], Ireland<!--didn't the racers have to start from England?-->, in his weekend cruiser ''English Rose IV''. Just a week later, on 8 June, Chay Blyth followed suit — despite having absolutely no sailing experience. On the day he set sail, he had friends rig the boat ''Dytiscus'' for him and then sail in front of him in another boat to show him the correct manoeuvres.<ref>''A Voyage for Madmen'', pages 45–50.</ref>
+
+Knox-Johnston got underway from [[Falmouth, Cornwall|Falmouth]] soon after, on 14 June. He was undisturbed by the fact that it was a Friday, contrary to the common sailors' superstition that it is bad luck to begin a voyage on a <!-- DO NOT UNLINK -->[[Friday#Folklore|Friday]].<!-- PLEASE NOTE: this Friday is linked because the link explains the relevance of sailing on a Friday, with regard to superstition. In other words, this link adds specific contextual information to this sentence. PLEASE DON'T UNLINK IT without discussing on the talk page. JohanTheGhost, April 24 2006. --> ''Suhaili'', crammed with tinned food, was low in the water and sluggish, but the much more seaworthy boat soon started gaining on Ridgway and Blyth.<ref>''A Voyage for Madmen'', pages 55–56.</ref>
+
+It soon became clear to Ridgway that his boat was not up to a serious voyage, and he was also becoming affected by loneliness. On 17 June, at [[Madeira]], he made an arranged rendezvous with a friend to drop off his photos and logs, and received some mail in exchange. While reading a recent issue of the ''Sunday Times'' that he had just received, he discovered that the rules against assistance prohibited receiving mail — including the newspaper in which he was reading this — and so he was technically disqualified. While he dismissed this as overly petty, he continued the voyage in bad spirits. The boat continued to deteriorate, and he finally decided that it would not be able to handle the heavy conditions of the Southern Ocean. On 21 July he put into [[Recife]], [[Brazil]], and retired from the race.<ref>''A Voyage for Madmen'', pages 66, 85–87.</ref>
+
+Even with the race underway, other competitors continued to declare their intention to join. On 30 June, Royal Navy officer Nigel Tetley announced that he would race in the [[trimaran]] he and his wife lived aboard.  He obtained sponsorship from [[Music for Pleasure (record label)|Music for Pleasure]], a British budget record label, and started preparing his boat, ''Victress'', in [[Plymouth]], where Moitessier, King, and Frenchman Loïck Fougeron were also getting ready.  Fougeron was a friend of Moitessier, who managed a motorcycle company in [[Casablanca]], and planned to race on ''Captain Browne'', a {{convert|30|foot}} steel [[Gaff rig|gaff]] [[Cutter (ship)|cutter]]. Crowhurst, meanwhile, was far from ready — assembly of the three hulls of his trimaran only began on 28 July at a boatyard in [[Norfolk]].<ref name=solo>''Trimaran Solo'', by Nigel Tetley; pages 15—17. Nautical Publishing Co., 1970. ISBN 0-245-59950-9</ref><ref>''A Voyage for Madmen'', pages 56, 63—64.</ref><ref>''Strange Last Voyage'', page 39.</ref>
+
+===Attrition begins (29 July to 31 October)===
+[[File:Satellite image of Cape peninsula.jpg|thumb|right|[[Cape Town]] and the [[Cape Peninsula]], with the [[Cape of Good Hope]] on the bottom right]]
+Blyth and Knox-Johnston were well down the Atlantic by this time. Knox-Johnston, the experienced seaman, was enjoying himself, but ''Suhaili'' had problems with leaking seams near the [[keel]]. However, Knox-Johnston had managed a good repair by [[underwater diving|diving]] and [[caulking]] the seams underwater.<ref>''A World of My Own'', pages 42–44.</ref>
+
+Blyth was not far ahead, and although leading the race, he was having far greater problems with his boat, which was suffering in the hard conditions. He had also discovered that the fuel for his [[electrical generator|generator]] had been contaminated, which effectively put his radio out of action. On 15 August, Blyth went in to [[Tristan da Cunha]] to pass a message to his wife, and spoke to crew from an anchored cargo ship, ''Gillian Gaggins''. On being invited aboard by her captain, a fellow [[Scottish people|Scot]], Blyth found the offer impossible to refuse and went aboard, while the ship's engineers fixed his generator and replenished his fuel supply.{{cn|date = April 2014}}
+
+By this time he had already shifted his focus from the race to a more personal quest to discover his own limits; and so, despite his technical disqualification for receiving assistance, he continued sailing towards [[Cape Town]]. His boat continued to deteriorate, however, and on 13 September he put into [[East London, South Africa|East London]]. Having successfully sailed the length of the Atlantic and rounded [[Cape Agulhas]] in an unsuitable boat, he decided that he would take on the challenge of the sea again, but in a better boat and on his own terms.<ref>''A Voyage for Madmen'', pages 92–101.</ref>
+
+Despite the retirements, other racers were still getting started. On Thursday, 22 August, Moitessier and Fougeron set off, with King following on Saturday (none of them wanted to leave on a Friday).<ref>''The Long Way'', page 3.</ref> With ''Joshua'' lightened for a race, Moitessier set a fast pace — more than twice as fast as Knox-Johnston over the same part of the course. Tetley sailed on 16 September,<ref>''Trimaran Solo'', pages 23—24.</ref> and on 23 September, Crowhurst's boat, ''Teignmouth Electron'', was finally launched in Norfolk. Under severe time pressure, Crowhurst planned to sail to [[Teignmouth]], his planned departure point, in three days; but although the boat performed well downwind, the struggle against headwinds in the [[English Channel]] showed severe deficiencies in the boat's upwind performance, and the trip to Teignmouth took 13 days.<ref>''Strange Last Voyage'', pages 50—56.</ref>
+
+Meanwhile, Moitessier was making excellent progress. On 29 September he passed [[Trindade and Martim Vaz|Trindade]] in the south Atlantic, and on 20 October he reached Cape Town, where he managed to leave word of his progress. He sailed on east into the [[Southern Ocean]], where he continued to make good speed, covering {{convert|188|nmi|mi km}} on 28 October.<ref>''The Long Way'', pages 19–29, 36–45, 56.</ref>
+
+Others were not so comfortable with the ocean conditions. On 30 October, Fougeron passed Tristan da Cunha, with King a few hundred nautical miles ahead.  The next day — [[Halloween]] — they both found themselves in a severe storm. Fougeron [[heaving to|hove-to]], but still suffered a severe knockdown.  King, who allowed his boat to tend to herself (a recognised procedure known as ''[[lying ahull]]''), had a much worse experience; his boat was rolled and lost its foremast. Both men decided to retire from the race.<ref>''A Voyage for Madmen'', page 142, 149—151.</ref>
+
+===The last starters (31 October to 23 December)===
+Four of the starters had decided to retire at this point, at which time Moitessier was {{convert|1100|nmi|mi km}} east of Cape Town, Knox-Johnston was {{convert|4000|nmi|mi km}} ahead in the middle of the [[Great Australian Bight]], and Tetley was just nearing Trindade.<ref>''The Long Way'', page 56.</ref><ref>''A World of My Own'', pages 93—94.</ref><ref>''Trimaran Solo'', pages 60—61.</ref> However, 31 October was also the last allowable day for racers to start, and was the day that the last two competitors, Donald Crowhurst and Alex Carozzo, got under way. Carozzo, a highly regarded Italian sailor, had competed in (but not finished) that year's ''OSTAR''. Considering himself unready for sea, he "sailed" on 31 October, to comply with the race's mandatory start date, but went straight to a [[Mooring (watercraft)|mooring]] to continue preparing his boat without outside assistance. Crowhurst was also far from ready — his boat, barely finished, was a chaos of unstowed supplies, and his self-righting system was unbuilt. He left anyway, and started slowly making his way against the prevailing winds of the English Channel.<ref>''Strange Last Voyage'', pages 75—81.</ref>
+
+[[File:GoldenGlobeRaceOct31.png|thumb|250px|left|The approximate positions of the racers on 31 October 1968, the last day on which racers could start]]
+By mid-November Crowhurst was already having problems with his boat. Hastily built, the boat was already showing signs of being unprepared, and in the rush to depart, Crowhurst had left behind crucial repair materials. On 15 November, he made a careful appraisal of his outstanding problems and of the risks he would face in the [[Southern Ocean]]; he was also acutely aware of the financial problems awaiting him at home. Despite his analysis that ''Teignmouth Electron'' was not up to the severe conditions which she would face in the [[Roaring Forties]], he pressed on.<ref>''Strange Last Voyage'', pages 79—97.</ref>
+
+Carozzo retired on 14 November, as he had started vomiting blood due to a [[peptic ulcer]], and put into [[Porto]], [[Portugal]], for medical attention.<ref>''A Voyage for Madmen'', page 181.</ref><ref>{{cite news|url=http://www.nytimes.com/books/01/06/03/reviews/010603.03hightot.html|title=Sailors Take Warning!|last=Hightower|first=Elizabeth|date=2001-06-03|publisher=''[[The New York Times]]''|accessdate=2010-02-03}}</ref> Two more retirements were reported in rapid succession, as King made Cape Town on 22 November, and Fougeron stopped in [[Saint Helena]] on 27 November.<ref>''A Voyage for Madmen'', pages 155–156.</ref> This left four boats in the race at the beginning of December: Knox-Johnston's ''Suhaili'', battling frustrating and unexpected headwinds in the south [[Pacific Ocean]],<ref>''A World of My Own'', pages 125–128.</ref> Moitessier's ''Joshua'', closing on [[Tasmania]],<ref>''The Long Way'', pages 83–87.</ref> Tetley's ''Victress'', just passing the [[Cape of Good Hope]],<ref>''Trimaran Solo'', page 79.</ref> and Crowhurst's ''Teignmouth Electron'', still in the north Atlantic.
+
+Tetley was just entering the Roaring Forties, and encountering strong winds.  He experimented with self-steering systems based on various combinations of headsails, but had to deal with some frustrating headwinds.  On 21 December he encountered a calm and took the opportunity to clean the hull somewhat; while doing so, he saw a {{convert|7|foot}} shark prowling around the boat.  He later caught it, using a shark hook baited with a tin of [[Corned beef|bully beef (corned beef)]], and hoisted it on board for a photo.  His log is full of sail changes and other such sailing technicalities and gives little impression of how he was coping with the voyage emotionally; still, describing a heavy low<!--low barometric pressure, or a psychological low?--> on 15 December he hints at his feelings, wondering "why the hell I was on this voyage anyway".<ref>''Trimaran Solo'', pages 79—91.</ref>
+
+Knox-Johnston was having problems, as ''Suhaili'' was showing the strains of the long and hard voyage. On 3 November, his self-steering gear had failed for the last time, as he had used up all his spares. He was also still having leak problems, and his rudder was loose. Still, he felt that the boat was fundamentally sound, so he braced the rudder as well as he could, and started learning to balance the boat in order to sail a constant course on her own. On 7 November, he dropped mail off in [[Melbourne]], and on 19 November he made an arranged meeting off the Southern Coast of New Zealand with a ''Sunday Mirror'' journalist from [[Otago, New Zealand]].<ref>''A World of My Own'', pages 97, 101–102, 117–123.</ref><!--how did this not disqualify him? explain!-->
+
+===Crowhurst's false voyage (6 December to 23 December)===
+On 10 December, Crowhurst reported that he had had some fast sailing at last, including a day's run on 8 December of {{convert|243|nmi|mi km}}, a new 24-hour record. [[Francis Chichester]] was sceptical of Crowhurst's sudden change in performance, and with good reason — on 6 December, Crowhurst had started creating a faked record of his voyage, showing his position advancing much faster than it actually was.  The creation of this fake log was an incredibly intricate process, involving working celestial navigation in reverse.<ref>''Strange Last Voyage'', pages 98—116.</ref>
+
+The motivation for this initial deception was most likely to allow him to claim an attention-getting record prior to entering the [[doldrums]].  However, from that point on, he started to keep two logs — his actual navigation log, and a second log in which he could enter a faked description of a round-the-world voyage.  This would have been an immensely difficult task, involving the need to make up convincing descriptions of weather and sailing conditions in a different part of the world, as well as complex reverse navigation.  He tried to keep his options open as long as possible, mainly by giving only extremely vague position reports; but on 17 December he sent a deliberately false message indicating that he was over the [[Equator]], which he was not.  From this point his radio reports — while remaining ambiguous — indicated steadily more impressive progress around the world; but he never left the Atlantic, and it seems that after December the mounting problems with his boat had caused him to give up on ever doing so.<ref>''Strange Last Voyage'', pages 117—126.</ref>
+
+===Christmas at sea (24 December to 25 December)===
+
+Christmas Day 1968 was a strange day for the four racers, who were very far from friends and family. Crowhurst made a radio call to his wife on Christmas Eve, during which he was pressed for a precise position, but refused to give one. Instead, he told her he was "off Cape Town", a position far in advance of his plotted fake position, and even farther from his actual position, {{convert|20|nmi|km}} off the easternmost point in [[Brazil]], just 7 degrees ({{convert|480|nmi|mi km}}) south of the equator.<ref>''Strange Last Voyage'', pages 126, 133.</ref>
+
+Like Crowhurst, Tetley was depressed. He had a lavish Christmas dinner of roast pheasant, but was suffering badly from loneliness.<ref>''Trimaran Solo'', page 93.</ref> Knox-Johnston, thoroughly at home on the sea, treated himself to a generous dose of whisky and held a rousing solo carol service, then drank a [[The Loyal Toast|toast to the Queen]] at 3pm. He managed to pick up some radio stations from the USA, and heard for the first time about the [[Apollo 8]] astronauts, who had just made the first orbit of the Moon.<ref>''A World of My Own'', pages 140–142.</ref> Moitessier, meanwhile, was sunbathing in a flat calm, deep in the roaring forties south-west of New Zealand.<ref>''The Long Way'', page 93.</ref>
+
+===Rounding the Horn (26 December to 18 March)===
+[[File:GoldenGlobeRaceJan19.png|thumb|250px|left|The approximate positions of the racers on 19 January 1969]]
+By January, concern was growing for Knox-Johnston. He was having problems with his radio transmitter and nothing had been heard since he had passed south of New Zealand.<ref>''A Voyage for Madmen'', page 213.</ref> He was actually making good progress, rounding [[Cape Horn]] on 17 January 1969. Elated by this successful climax to his voyage, he briefly considered continuing east, to sail around the Southern Ocean a second time, but soon gave up the idea and turned north for home.<ref>''A World of My Own'', pages 160–161, 175.</ref>
+
+Crowhurst's deliberately vague position reporting was also causing consternation for the press, who were desperate for hard facts. On 19 January, he finally yielded to the pressure and stated himself to be {{convert|100|nmi|mi km}} south-east of [[Gough Island]] in the south Atlantic. He also reported that due to generator problems he was shutting off his radio for some time. His position was misunderstood on the receiving end to be {{convert|100|nmi|km}} south-east of the Cape of Good Hope; the high speed this erroneous position implied fuelled newspaper speculation in the following radio silence, and his position was optimistically reported as rapidly advancing around the globe. Crowhurst's actual position, meanwhile, was off Brazil, where he was making slow progress south, and carefully monitoring weather reports from around the world to include in his fake log. He was also becoming increasingly concerned about ''Teignmouth Electron'', which was starting to come apart, mainly due to slapdash construction.<ref>''Strange Last Voyage'', pages 143—147.</ref>
+
+Moitessier also had not been heard from since New Zealand, but he was still making good progress and coping easily with the conditions of the "furious fifties". He was carrying letters from old Cape Horn sailors describing conditions in the Southern Ocean, and he frequently consulted these to get a feel for chances of encountering ice. He reached the Horn on 6 February, but when he started to contemplate the voyage back to Plymouth he realised that he was becoming increasingly disenchanted with the race concept.<ref>''The Long Way'', pages 109–111, 140–142.</ref>
+
+[[File:CapeHorn.jpg|thumb|right|Cape Horn from the South.]]
+As he sailed past the [[Falkland Islands]]<ref>''The Long Way'', page 146.</ref> he was sighted, and this first news of him since [[Tasmania]] caused considerable excitement. It was predicted that he would arrive home on 24 April as the winner (in fact, Knox-Johnston finished on 22 April). A huge reception was planned in Britain, from where he would be escorted to France by a fleet of French warships for an even more grand reception. There was even said to be a [[Légion d'honneur]] waiting for him there.<ref name="Madmen pages 241">''A Voyage for Madmen'', pages 241–242.</ref>
+
+Moitessier had a very good idea of this, but throughout his voyage he had been developing an increasing disgust with the excesses of the modern world; the planned celebrations seemed to him to be yet another example of brash materialism. After much debate with himself, and many thoughts of those waiting for him in England, he decided to continue sailing — past the Cape of Good Hope, and across the Indian Ocean for a second time, into the Pacific.<ref>''The Long Way'', pages 148, 158–165.</ref> Unaware of this, the newspapers continued to publish "assumed" positions progressing steadily up the Atlantic, until, on 18 March, Moitessier fired a slingshot message in a can onto a ship near the shore of Cape Town, announcing his new plans to a stunned world: {{cquote|My intention is to continue the voyage, still nonstop, toward the Pacific Islands, where there is plenty of sun and more peace than in Europe. Please do not think I am trying to break a record. 'Record' is a very stupid word at sea. I am continuing nonstop because I am happy at sea, and perhaps because I want to save my soul.<ref>''A Voyage for Madmen'', pages 242–244.</ref>}}
+
+On the same day, Tetley rounded Cape Horn, becoming the first to accomplish the feat in a [[multihull]] sailboat.  Badly battered by his Southern Ocean voyage, he turned north with considerable relief.<ref name="Madmen pages 241"/><ref>''Trimran Solo'', pages 124—131.</ref>
+
+===Re-establishing contact (19 March to 22 April)===
+''Teignmouth Electron'' was also battered and Crowhurst badly wanted to make repairs, but without the spares that had been left behind he needed new supplies. After some planning, on 8 March he put in to the tiny settlement of Río Salado, in [[Argentina]], just south of the [[Río de la Plata]]. Although the village turned out to be the home of a small [[coastguard]] station, and his presence was logged, he got away with his supplies and without publicity. He started heading south again, intending to get some film and experience of Southern Ocean conditions to bolster his false log.<ref>''Strange Last Voyage'', pages 151—162.</ref>
+
+The concern for Knox-Johnston turned to alarm in March, with no news of him since New Zealand; aircraft taking part in a [[NATO]] exercise in the North Atlantic mounted a search operation in the region of the [[Azores]]. However, on 6 April he finally managed to make contact with a British [[tanker (ship)|tanker]] using his [[signal lamp]], which reported the news of his position, {{convert|1200|nmi|mi km}} from home. This created a sensation in Britain, with Knox-Johnston now clearly set to win the Golden Globe trophy, and Tetley predicted to win the £5,000 prize for the fastest time.<ref>''A World of My Own'', pages 205—206.</ref><ref>''A Voyage for Madmen'', pages 248, 251.</ref>
+
+[[File:GoldenGlobeRaceApr10.png|thumb|250px|left|The approximate positions of the racers on 10 April 1969]]
+Crowhurst re-opened radio contact on 10 April, reporting himself to be "heading" towards the [[Diego Ramirez Islands]], near Cape Horn. This news caused another sensation, as with his projected arrival in the UK at the start of July he now seemed to be a contender for the fastest time, and (very optimistically) even for a close finish with Tetley. Once his projected false position approached his actual position, he started heading north at speed.<ref>''Strange Last Voyage'', pages 170—172, 185—186.</ref>
+
+Tetley, informed that he might be robbed of the fastest-time prize, started pushing harder, despite that his boat was having significant problems — he made major repairs at sea in an attempt to stop the port hull of his trimaran falling off, and kept racing. On 22 April, he crossed his outbound track, one definition of a [[circumnavigation]].<ref>''Trimaran Solo'', pages 136—141.</ref>
+
+===The finish (22 April to 1 July)===
+On the same day, 22 April, Knox-Johnston completed his voyage where it had started, in [[Falmouth, Cornwall|Falmouth]]. This made him the winner of the Golden Globe trophy, and the first person to sail single-handed and non-stop around the world, which he had done in 312 days.<ref>''A Voyage for Madmen'', page 267.</ref> This left Tetley and Crowhurst apparently fighting for the £5,000 prize for fastest time.
+
+However, Tetley knew that he was pushing his boat too hard. On 20 May he ran into a storm near the Azores and began to worry about the boat's severely weakened state. Hoping that the storm would soon blow over, he lowered all sail and went to sleep with the boat lying ahull. In the early hours of the next day he was awoken by the sounds of tearing wood. Fearing that the bow of the port hull might have broken off, he went on deck to cut it loose, only to discover that in breaking away it had made a large hole in the main hull, from which ''Victress'' was now taking on water too rapidly to stop. He sent a [[Mayday (distress signal)|Mayday]], and luckily got an almost immediate reply. He abandoned ship just before ''Victress'' finally sank and was rescued from his [[Lifeboat (shipboard)|liferaft]] that evening, having come to within {{convert|1100|nmi|mi km}} of finishing what would have been the most significant voyage ever made in a multi-hulled boat.<ref>''Trimaran Solo'', pages 149—160.</ref>
+
+Crowhurst was left as the only person in the race, and — given his high reported speeds — virtually guaranteed the £5,000 prize. This would, however, also guarantee intense scrutiny of himself, his stories, and his logs by genuine Cape Horn veterans such as the sceptical Chichester. Although he had put great effort into his fabricated log, such a deception would in practice be extremely difficult to carry off, particularly for someone who did not have actual experience of the Southern Ocean; something of which he must have been aware at heart. Although he had been sailing fast — at one point making over {{convert|200|nmi|mi km}} in a day — as soon as he learned of Tetley's sinking, he slowed down to a wandering crawl.<ref>''Strange Last Voyage'', pages 186, 190—191.</ref>
+
+Crowhurst's main radio failed at the beginning of June, shortly after he had learned that he was the sole remaining competitor. Plunged into unwilling solitude, he spent the following weeks attempting to repair the radio, and on 22 June was finally able to transmit and receive in [[morse code]]. The following days were spent exchanging [[telegraphy|cables]] with his agent and the press, during which he was bombarded with news of syndication rights, a welcoming fleet of boats and helicopters, and a rapturous welcome by the British people. It became clear that he could not now avoid the spotlight.
+
+Unable to see a way out of his predicament, he plunged into abstract philosophy, attempting to find an escape in [[metaphysics]], and on 24 June he started writing a long essay to express his ideas. Inspired (in a misguided way) by the work of [[Albert Einstein|Einstein]], whose book ''[[wikisource:Relativity: The Special and General Theory|Relativity: The Special and General Theory]]'' he had aboard, the theme of Crowhurst's writing was that a sufficiently intelligent mind can overcome the constraints of the real world. Over the following eight days, he wrote 25,000 words of increasingly tortured prose, drifting farther and farther from reality, as ''Teignmouth Electron'' continued sailing slowly north, largely untended. Finally, on 1 July, he concluded his writing with a garbled suicide note and, it is assumed, jumped overboard.<ref>''A Voyage for Madmen'', pages 195—251.</ref>
+
+Moitessier, meanwhile, had concluded his own personal voyage more happily. He had circumnavigated the world and sailed almost two-thirds of the way round a second time, all non-stop and mostly in the roaring forties. Despite heavy weather and a couple of severe knockdowns, he contemplated rounding the Horn again. However, he decided that he and ''Joshua'' had had enough and sailed to Tahiti, where he and his wife had set out for Alicante. He thus completed his second personal circumnavigation of the world (including the previous voyage with his wife) on 21 June 1969. He started work on his book.<ref>''The Long Way'', pages 172–175.</ref>
+
+==Aftermath of the race==
+Knox-Johnston, as the only finisher, was awarded both the Golden Globe trophy and the £5,000 prize for fastest time. He continued to sail and circumnavigated three more times. He was awarded a [[Order of the British Empire|CBE]] in 1969 and was knighted in 1995.<ref>{{cite news|url=http://www.independent.co.uk/news/sir-cliff-stars-in-nostalgia-birthday-honours-1586748.html|title=Sir Cliff stars in nostalgia Birthday Honours|last=Goodwin|first=Stephen|date=1995-06-17|publisher=''[[The Independent]]''|accessdate=2010-02-03}}</ref> His book, ''A World of My Own'',<ref name=aworld/> tells the story of his trip in typically down-to-earth, blunt style.{{cn|date = April 2014}}
+
+[[File:Joshua001.jpg|thumb|right|''Joshua'', restored, at the Maritime Museum at [[La Rochelle]]]]
+It is impossible to say that Moitessier would have won if he had completed the race, as he would have been sailing in different weather conditions than Knox-Johnston did, but based on his time from the start to Cape Horn being about 77% of that of Knox-Johnston, it would have been extremely close. His book, ''The Long Way'',<ref name=tlw/> tells the story of his voyage as a spiritual journey as much as a sailing adventure and is still regarded as a classic of sailing literature.<ref>{{cite web |url=http://www.sailnet.com/collections/articles/index.cfm?articleid=jkrets0054|archiveurl=https://web.archive.org/web/20050828235230/http://www.sailnet.com/collections/articles/index.cfm?articleid=jkrets0054|archivedate=2005-08-28|title=Overlooked Books|first=John|last=Kretschmer|publisher=SailNet|accessdate=2010-02-03}} Originally retrieved 2006-03-06.</ref> ''Joshua'' was beached, along with many other yachts, by a storm at [[Cabo San Lucas]] in December 1982; with a new boat, ''Tamata'', Moitessier sailed back to Tahiti from the [[San Francisco Bay]]. He died in 1994.<ref>''A Voyage for Madmen'', pages 293–294.</ref>
+
+When ''Teignmouth Electron'' was discovered drifting and abandoned in the Atlantic on 10 July, a fund was started for Crowhurst's wife and children; Knox-Johnston donated his £5,000 prize to the fund, and more money was added by press and sponsors.<ref>''A Voyage for Madmen'', pages 283–285.</ref>  The news of his deception, mental breakdown, and suicide, as chronicled in his surviving logbooks, was made public a few weeks later, causing a sensation. Nicholas Tomalin and Ron Hall, two of the journalists connected with the race, wrote a 1970 book on Crowhurst's voyage, ''The Strange Last Voyage of Donald Crowhurst'',<ref name=strange/> described by [[Hammond Innes]] in its ''[[The Sunday Times (UK)|Sunday Times]]'' review as "fascinating, uncomfortable reading" and a "meticulous investigation" of Crowhurst's downfall.<ref>[http://www.amazon.com/gp/product/product-description/0070650845/ ''Editorial Reviews''], from the back cover; at [[amazon.com]]. Retrieved 1 July 2006.</ref>
+
+Tetley found it impossible to adapt to his old way of life after his adventure. He was awarded a consolation prize of £1,000, with which he decided to build a new trimaran for a round-the-world speed record attempt. His {{convert|60|foot}} boat ''Miss Vicky'' was built in 1971, but his search for sponsorship to pay for fitting-out met with consistent rejection. His book, ''Trimaran Solo'',<ref name=solo/> sold poorly. Although he outwardly seemed to be coping, the repeated failures must have taken their toll.<ref>''A Voyage for Madmen'', pages 275–282.</ref> In February 1972, he went missing from his home in [[Dover, England|Dover]]. His body was found in nearby woods hanging from a tree three days later. His death was originally believed to be a suicide. At the [[inquest]], it was revealed that the body had been discovered wearing lingerie and the hands were bound. The attending pathologist suggested the likelihood of masochistic sexual activity. Finding no evidence to suggest that Tetley had killed himself, the coroner recorded an [[open verdict]]. Tetley was cremated; Knox-Johnson and Blyth were among the mourners in attendance.<ref name="Chris eakin">Chris Eakin, ''A Race Too Far'' London:Ebury Press, 2009</ref>
+
+Blyth devoted his life to the sea and to introducing others to its challenge. In 1970–1971 he sailed a sponsored boat, ''British Steel'', single-handedly around the world "the wrong way", against the prevailing winds. He subsequently took part in the [[Volvo Ocean Race|Whitbread Round the World Yacht Race]] and founded the [[Global Challenge]] race, which allows amateurs to race around the world. His old rowing partner, John Ridgway, followed a similar course; he started an adventure school in Scotland, and circumnavigated the world twice under sail: once in the Whitbread Round the World Yacht Race, and once with his wife. King finally completed a circumnavigation in ''Galway Blazer II'' in 1973.<ref>''A Voyage for Madmen'', pages 294–295.</ref>
+
+''Suhaili'' was sailed for some years more, including a trip to [[Greenland]], and spent some years on display at the [[National Maritime Museum]] at [[Greenwich]]. However, her planking began to shrink because of the dry conditions and, unwilling to see her deteriorate, Knox-Johnston removed her from the museum and had her refitted in 2002. She was returned to the water and is now based at the [[National Maritime Museum Cornwall]].{{cn|date = April 2014}}
+
+''Teignmouth Electron'' was sold to a tour operator in [[Jamaica]] and eventually ended up damaged and abandoned on [[Cayman Brac]], where she lies to this day.<ref>''A Voyage for Madmen'', pages 295–296.</ref>
+
+After being driven ashore during a storm at [[Cabo San Lucas]], the restored ''Joshua'' was acquired by the maritime museum in [[La Rochelle]], France, where it serves as part of a cruising school.<ref>''A Voyage for Madmen'', pages 295-286.</ref>
+
+Given the failure of most starters and the tragic outcome of Crowhurst's voyage, considerable controversy was raised over the race and its organisation.  No follow-up race was held for some time. However, in 1982 the [[VELUX 5 Oceans Race|''BOC Challenge'']] race was organised; this single-handed round-the-world race with stops was inspired by the Golden Globe and has been held every four years since. In 1989, [[Philippe Jeantot]] founded the ''[[Vendée Globe]]'' race, a non-stop, single-handed, round-the-world race. Essentially the successor to the Golden Globe, this race is also held every four years and has attracted public following for the sport.{{cn|date = April 2014}}
+
+===2018 Golden Globe Race===
+In 2015 it was announced that there would be a Golden Globe Race held in 2018, the 50th anniversary of the first race. This race would also start from Falmouth, on 14 June, the same day Knox-Johnston set out. The prize purse has been confirmed as £75,000, with all sailors that finish before 15:25 on 22 April 2019 winning their entry fee back.<ref> http://www.sailingscuttlebutt.com/2015/04/22/2018-golden-globe-solo-non-stop-around-the-world-yacht-race-announcement/</ref> The organizers announced in August 2015 that 50 skippers have expressed their interest, and 18 of them have paid the provisional entry fee.<ref>{{cite web|url=http://mcintyreadventure.com/goldengloberace/face-to-the-race-2/|title=Face to the Race|publisher=mcintyreadventure.com|date=2015-08-06}}</ref>
+
+==Competitors==
+Nine competitors participated in the race. Most of these had at least some prior sailing experience, although only Carozzo had competed in a major ocean race prior to the Golden Globe Race. The following table lists the entrants in order of starting, together with their prior sailing experience, and achievements in the race:
+
+{| class="wikitable" 
+|-
+! Name / Nationality
+! Boat
+! Previous sailing
+! Start
+! Result
+! Finish
+|-
+| {{flagicon|UK}} [[John Ridgway (sailor)|John Ridgway]]
+| ''English Rose IV''<br />{{convert|30|foot}} [[sloop]]
+| [[Fastnet Rock]] single-handed (and rowed the Atlantic)
+| [[Inishmore]]<br />1 June 1968
+| retired
+| [[Recife]], [[Brazil]]<br />21 July 1968
+|-
+| {{flagicon|UK}} [[Chay Blyth]]
+| ''Dytiscus III''<br />{{convert|30|foot}} sloop
+| no sailing at all (but rowed the Atlantic)
+| [[River Hamble|Hamble]]<br />8 June 1968
+| retired
+| [[East London, South Africa|East London]]<br />17 September 1968
+|-
+| {{flagicon|UK}} [[Robin Knox-Johnston]]
+| ''Suhaili''<br />{{convert|32|foot}}  [[ketch]]
+| India to UK in ''Suhaili''
+| [[Falmouth, Cornwall|Falmouth]]<br />14 June 1968
+| '''finished'''
+| Falmouth<br />22 April 1969
+|-
+| {{flagicon|France}} [[:fr:Loïck Fougeron|Loïck Fougeron]]
+| ''Captain Browne''<br />{{convert|30|foot}} [[Gaff rig|gaff]] cutter
+| [[Morocco]] to [[Plymouth]]
+| Plymouth<br />22 August 1968
+| retired
+| [[Saint Helena]]<br />27 November 1968
+|-
+| {{flagicon|France}} [[Bernard Moitessier]]
+| ''Joshua''<br />{{convert|39|foot}}  ketch
+| [[Tahiti]]–France,<br />via [[Cape Horn]]
+| Plymouth<br />22 August 1968
+| retired
+| [[Tahiti]]<br />21 June 1969
+|-
+| {{flagicon|UK}} [[William King (Royal Navy)|Bill King]]
+| ''Galway Blazer II''<br />{{convert|42|foot}}  [[junk (ship)|junk]] [[schooner]]
+| Transatlantic,<br />[[West Indies]]
+| Plymouth<br />24 August 1968
+| retired
+| [[Cape Town]]<br />22 November 1968
+|-
+| {{flagicon|UK}} [[Nigel Tetley]]
+| ''Victress''<br />{{convert|40|foot}} [[trimaran]]
+| 1966 Round Britain Race
+| Plymouth<br />16 September 1968
+| sank,<br />rescued
+| north Atlantic<br />21 May 1969
+|-
+| {{flagicon|Italy}} Alex Carozzo
+| ''Gancia Americano''<br />{{convert|66|foot}}  ketch
+| Trans-Pacific,<br />1968 ''[[OSTAR]]''
+| [[Cowes]]<br />31 October 1968
+| retired
+| [[Porto]]<br />14 November 1968
+|-
+| {{flagicon|UK}} [[Donald Crowhurst]]
+| ''Teignmouth&nbsp;Electron''<br />{{convert|40|foot}}  [[trimaran]]
+| day / weekend
+| [[Teignmouth]]<br />31 October 1968
+| committed<br />suicide
+| north Atlantic<br />1 July 1969
+|}
+
+==References==
+<!--This article uses the Cite.php citation mechanism. If you would like more information on how to add references to this article, please see http://meta.wikimedia.org/wiki/Cite/Cite.php --> 
+{{Reflist|2}}
+
+==Further reading==
+
+* ''The Circumnavigators: Small Boat Voyagers of Modern Times'', Donald Holm.  Prentice-Hall, 1974.  ISBN 0-13-134452-8
+* ''Along the Clipper Way'', Francis Chichester.  Hodder & Stoughton, 1966.  ISBN 0-340-00191-7
+* ''A Voyage for Madmen'', by Peter Nichols. Harper Collins, 2001. ISBN 0-06-095703-4
+* ''A World of My Own'', Robin Knox-Johnston. W.H. Norton, 1969. ISBN 0-393-02900-X
+* ''The Long Way'', by Bernard Moitessier. Sheridan House, 1995. ISBN 0-924486-84-8
+* ''Trimaran Solo'', by Nigel Tetley. Nautical Publishing Co., 1970. ISBN 0-245-59950-9
+* ''The Strange Last Voyage of Donald Crowhurst'', by Nicholas Tomalin and Ron Hall. Hodder & Stoughton Ltd., 2003. ISBN 0-07-141429-0
+* ''Capsize'', by Bill King. Nautical Publishing, 1969. ISBN 0-245-59638-0
+* ''The Longest Race'', by Hal Roth. W W Norton & Co Inc, 1983.  ISBN 0-393-03278-7
+* ''A Race Too Far'', by Chris Eakin. Ebury Press, 2009.  ISBN 978-0-09-193259-6
+
+==Documentaries==
+* [[Deep Water (film)|Deep Water]], directed by Louise Osmond and Jerry Rothwell (2005).
+
+
+==Other Media==
+* [https://layitontheline.bandcamp.com/album/the-first-two-eps Lay It On The Line - 'Crowhurst'], a 9 song biopic of Crowhurst's voyage in the Golden Globe (2013) [http://www19.zippyshare.com/v/28639511/file.html Download]
+
+
+
+[[Category:Round-the-world sailing competitions]]
+[[Category:Single-handed sailing competitions]]
+[[Category:The Sunday Times (UK)]]
+[[Category:Yachting races]]

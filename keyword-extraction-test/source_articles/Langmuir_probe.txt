@@ -1,0 +1,398 @@
+{{one source|date=November 2009}}
+[[Image:Rosetta Langmuir Probe.jpg|right|100px|thumb|One of two Langmuir probes from the [[Swedish Institute of Space Physics]] in Uppsala on board [[ESA]]'s space vehicle [[Rosetta (spacecraft)|Rosetta]], due for a  [[67P/Churyumov-Gerasimenko|comet]]. The probe is the spherical part,  50 mm in [[diameter]] and made from [[titanium]] with a surface coating of [[titanium nitride]].]]
+A '''Langmuir probe''' is a device used to determine the electron temperature, electron density, and electric potential of a [[Plasma (physics)|plasma]]. It works by inserting one or more electrodes into a plasma, with a constant or time-varying electric potential between the various electrodes or between them and the surrounding vessel. The measured currents and potentials in this system allow the determination of the physical properties of the plasma.
+
+==''I-V'' characteristic of the Debye sheath==
+
+The beginning of Langmuir probe theory is the [[current-voltage characteristic|''I-V'' characteristic]] of the [[Debye sheath]], that is, the current density flowing to a surface in a plasma as a function of the voltage drop across the sheath. The analysis presented here indicates how the electron temperature, electron density, and plasma potential can be derived from the ''I-V'' characteristic. In some situations a more detailed analysis can yield information on the ion density (<math>n_i</math>), the ion temperature <math>T_i</math>, or the electron energy [[distribution function]] (EEDF) or <math>f_e(v)</math>.
+
+===Ion saturation current density===
+
+Consider first a surface biased to a large negative voltage. If the voltage is large enough, essentially all electrons (and any negative ions) will be repelled. The ion velocity will satisfy the [[Bohm sheath criterion]], which is, strictly speaking, an inequality, but which is usually marginally fulfilled. The Bohm criterion in its marginal form says that the ion velocity at the sheath edge is simply the sound speed given by
+
+<math> c_s = \sqrt{k_B(ZT_e+\gamma_iT_i)/m_i}</math>.
+
+The ion temperature term is often neglected, which is justified if the ions are cold. Even if the ions are known to be warm, the ion temperature is usually not known, so it is usually assumed to be simply equal to the electron temperature. In that case, consideration of finite ion temperature only results in a small numerical factor. ''Z'' is the (average) charge state of the ions, and <math>\gamma_i</math> is the adiabatic coefficient for the ions. The proper choice of <math>\gamma_i</math> is a matter of some contention. Most analyses use <math>\gamma_i=1</math>, corresponding to isothermal ions, but some kinetic theory suggests that <math>\gamma_i=3</math>, corresponding to one degree of freedom is more appropriate. For <math>Z=1</math> and <math>T_i=T_e</math>, using the larger value results in the conclusion that the density is <math>\sqrt{2}</math> times smaller. Uncertainties of this magnitude arise several places in the analysis of Langmuir probe data and are very difficult to resolve.
+
+The charge density of the ions depends on the charge state ''Z'', but [[Plasma (physics)#Potentials|quasineutrality]] allows one to write it simply in terms of the electron density as <math>en_e</math>.
+
+Using these results we have the current density to the surface due to the ions. The current density at large negative voltages is due solely to the ions and, except for possible sheath expansion effects, does not depend on the bias voltage, so it is
+referred to as the '''ion saturation current density''' and is given by
+
+<math>j_i^{max} = q_{e}n_ec_s</math> where <math>q_e</math> is the charge of an electron, <math>n_e</math> is the number density of electrons, and <math>c_s</math> is as defined above.
+
+The plasma parameters, in particular, the density, are those at the sheath edge.
+
+===Exponential electron current===
+
+As the voltage of the Debye sheath is reduced, the more energetic electrons are able to overcome the potential barrier of the electrostatic sheath. We can model the electrons at the sheath edge with a [[Maxwell–Boltzmann distribution]], i.e.,
+
+<math>f(v_x)\,dv_x \propto e^{-\frac{1}{2}m_ev_x^2/k_BT_e}</math>,
+
+except that the high energy tail moving away from the surface is missing, because only the lower energy electrons moving toward the surface are reflected. The higher energy electrons overcome the sheath potential and are absorbed. The mean velocity of the electrons which are able to overcome the voltage of the sheath is
+
+<math>
+\langle v_e \rangle = \frac
+{\int_{v_{e0}}^\infty f(v_x)\,v_x\,dv_x}
+{\int_{-\infty}^\infty f(v_x)\,dv_x}
+</math>,
+
+where the cut-off velocity for the upper integral is
+
+<math>v_{e0} = \sqrt{2q_{e}\Delta V/m_e}</math>.
+
+<math>\Delta V</math> is the [[voltage]] across the Debye sheath, that is, the potential at the sheath edge minus the potential of the surface. For a large voltage compared to the electron temperature, the result is
+
+<math>
+\langle v_e \rangle = 
+\sqrt{\frac{k_BT_e}{2\pi m_e}}\,
+e^{-q_{e}\Delta V/k_BT_e}
+</math>.
+
+With this expression, we can write the electron contribution to the current to the probe in terms of the ion saturation current as
+
+<math>
+j_e = 
+j_i^{max}\sqrt{m_i/2\pi m_e}\,
+e^{-q_{e}\Delta V/k_BT_e}
+</math>,
+
+valid as long as the electron current is not more than two or three times the ions current.
+
+===Floating potential===
+
+The total current, of course, is the sum of the ion and electron currents:
+
+<math>
+j = j_i^{max} 
+\left( -1 + \sqrt{m_i/2\pi m_e}\,e^{-q_{e}\Delta V/k_BT_e} \right)
+</math>.
+
+We are using the convention that current ''from'' the surface into the plasma is positive. An interesting and practical question is the potential of a surface to which no net current flows. It is easily seen from the above equation that
+
+<math>\Delta V = (k_BT_e/e)\,(1/2)\ln(m_i/2\pi m_e)</math>.
+
+If we introduce the ion [[reduced mass]] <math>\mu_i=m_i/m_e</math>, we can write
+
+<math>
+\Delta V = (k_BT_e/e)\, ( 2.8 + 0.5\ln \mu_i )
+</math>
+
+Since the floating potential is the experimentally accessible quantity, the current (below electron saturation) is usually written as	
+
+<math>	 
+j = j_i^{max} 	 
+\left( -1 + \,e^{q_{e}(V_{0}-\Delta V)/k_BT_e} \right)	 
+</math>.
+
+=== Electron saturation current ===
+
+When the electrode potential is equal to or greater than the plasma potential, then there is no longer a sheath to reflect electrons, and the electron current saturates. Using the Boltzmann expression for the mean electron velocity given above with <math>v_{e0} = 0</math> and setting the ion current to zero, the '''electron saturation current density''' would be
+
+<math>
+j_e^{max} 
+= j_i^{max}\sqrt{m_i/\pi m_e} 
+= j_i^{max} \left( 24.2 \, \sqrt{\mu_i} \right)
+</math>
+
+Although this is the expression usually given in theoretical discussions of Langmuir probes, the derivation is not rigorous and the experimental basis is weak. The theory of [[Double layer (plasma)|double layers]]<ref>{{cite journal |author=Block, L. P. |date=May 1978 |title=A Double Layer Review |journal=Astrophysics and Space Science |volume=55 |issue=1 |pages=59–83 |publisher=NASA/STI |bibcode=  1978Ap&SS..55...59B|url=http://articles.adsabs.harvard.edu//full/seri/Ap+SS/0055//0000065.000.html |accessdate=April 16, 2013 |doi=10.1007/bf00642580}} (Harvard.edu)</ref> typically employs an expression analogous to the [[Debye sheath#The Bohm sheath criterion|Bohm criterion]], but with the roles of electrons and ions reversed, namely
+
+<math>
+j_e^{max} 
+= q_en_e \sqrt{k_B(\gamma_eT_e+T_i)/m_e}
+= j_i^{max}\sqrt{m_i/m_e} 
+= j_i^{max} \left( 42.8 \,  \sqrt{\mu_i} \right)
+</math>
+
+where the numerical value was found by taking ''T''<sub>''i''</sub>=''T''<sub>''e''</sub> and ?<sub>''i''</sub>=?<sub>''e''</sub>.
+
+In practice, it is often difficult and usually considered uninformative to measure the electron saturation current experimentally. When it is measured, it is found to be highly variable and generally much lower (a factor of three or more) than the value given above. Often a clear saturation is not seen at all. Understanding electron saturation is one of the most important outstanding problems of Langmuir probe theory.
+
+==Effects of the bulk plasma==
+
+The Debye sheath theory explains the basic behavior of Langmuir probes, but is not complete. Merely inserting an object like a probe into a plasma changes the density, temperature, and potential at the sheath edge and perhaps everywhere. Changing the voltage on the probe will also, in general, change various plasma parameters. Such effects are less well understood than sheath physics, but they can at least in some cases be roughly accounted.
+
+===Pre-sheath===
+
+The Bohm criterion requires the ions to enter the Debye sheath at the sound speed. The potential drop that accelerates them to this speed is called the '''pre-sheath'''. It has a spatial scale that depends on the physics of the ion source but which is large compared to the Debye length and often of the order of the plasma dimensions. The magnitude of the potential drop is equal to (at least)
+
+<math>
+\Phi_{pre} = \frac{\frac{1}{2}m_ic_s^2}{Ze} = k_B(T_e+Z\gamma_iT_i)/(2Ze)
+</math>
+
+The acceleration of the ions also entails a decrease in the density, usually by a factor of about 2 depending on the details.
+
+===Resistivity===
+
+Collisions between ions and electrons will also affect the ''I-V'' characteristic of a Langmuir probe. When an electrode is biased to any voltage other than the floating potential, the current it draws must pass through the plasma, which has a finite resistivity. The resistivity and current path can be calculated with relative ease in an unmagnetized plasma. In a magnetized plasma, the problem is much more difficult. In either case, the effect is to add a voltage drop proportional to the current drawn, which [[shear mapping|shears]] the characteristic. The deviation from an exponential function is usually not possible to observe directly, so that the flattening of the characteristic is usually misinterpreted as a larger plasma temperature. Looking at it from the other side, any measured ''I-V'' characteristic can be interpreted as a hot plasma, where most of the voltage is dropped in the Debye sheath, or as a cold plasma, where most of the voltage is dropped in the bulk plasma. Without quantitative modeling of the bulk resistivity, Langmuir probes can only give an upper limit on the electron temperature.
+
+===Sheath expansion===
+
+It is not enough to know the current ''density'' as a function of bias voltage since it is the ''absolute'' current which is measured. In an unmagnetized plasma, the current-collecting area is usually taken to be the exposed surface area of the electrode. In a magnetized plasma, the '''projected''' area is taken, that is, the area of the electrode as viewed along the magnetic field. If the electrode is not shadowed by a wall or other nearby object, then the area must be doubled to account for current coming along the field from both sides. If the electrode dimensions are not small in comparison to the Debye length, then the size of the electrode is effectively increased in all directions by the sheath thickness. In a magnetized plasma, the electrode is sometimes assumed to be increased in a similar way by the ion [[Larmor radius]].
+
+The finite Larmor radius allows some ions to reach the electrode that would have otherwise gone past it. The details of the effect have not been calculated in a fully self-consistent way.
+
+If we refer to the probe area including these effects as <math>A_{eff}</math> (which may be a function of the bias voltage) and make the assumptions
+*<math>T_i=T_e</math>,
+*<math>Z=1</math>
+*<math>\gamma_i=3</math>, and
+*<math>n_{e,sh}=0.5\,n_e</math>,
+and ignore the effects of
+*bulk resistivity, and
+*electron saturation,
+then the ''I-V'' characteristic becomes
+
+<math> I = I_i^{max}(-1+e^{q_e(V_{pr}-V_{fl})/(k_BT_e)} )</math>,
+
+where
+
+<math> I_i^{max} = q_en_e\sqrt{k_BT_e/m_i}\,A_{eff} </math>.
+
+===Magnetized plasmas===
+
+The theory of Langmuir probes is much more complex when the plasma is magnetized. The simplest extension of the unmagnetized case is simply to use the projected area rather than the surface area of the electrode. For a long cylinder far from other surfaces, this reduces the effective area by a factor of p/2 = 1.57. As mentioned before, it might be necessary to increase the radius by about the thermal ion Larmor radius, but not above the effective area for the unmagnetized case.
+
+The use of the projected area seems to be closely tied with the existence of a '''magnetic sheath'''. Its scale is the ion Larmor radius at the sound speed, which is normally between the scales of the Debye sheath and the pre-sheath. The Bohm criterion for ions entering the magnetic sheath applies to the motion along the field, while at the entrance to the Debye sheath it applies to the motion normal to the surface. This results in a reduction of the density by the sine of the angle between the field and the surface. The associated increase in the Debye length must be taken into account when considering ion non-saturation due to sheath effects.
+
+Especially interesting and difficult to understand is the role of cross-field currents. Naively, one would expect the current to be parallel to the magnetic field along a [[flux tube]]. In many geometries, this flux tube will end at a surface in a distant part of the device, and this spot should itself exhibit an ''I-V'' characteristic. The net result would be the measurement of a double-probe characteristic; in other words, electron saturation current equal to the ion saturation current.
+
+When this picture is considered in detail, it is seen that the flux tube must charge up and the surrounding plasma must spin around it. The current into or out of the flux tube must be associated with a force that slows down this spinning. Candidate forces are viscosity, friction with neutrals, and inertial forces associated with plasma flows, either steady or fluctuating. It is not known which force is strongest in practice, and in fact it is generally difficult to find any force that is powerful enough to explain the characteristics actually measured.
+
+It is also likely that the magnetic field plays a decisive role in determining the level of electron saturation, but no quantitative theory is as yet available.
+
+==Electrode configurations==
+
+Once one has a theory of the ''I-V'' characteristic of an electrode, one can proceed to measure it and then fit the data with the theoretical curve to extract the plasma parameters. The straightforward way to do this is to sweep the voltage on a single electrode, but, for a number of reasons, configurations using multiple electrodes or exploring only a part of the characteristic are used in practice.
+
+===Single probe===
+
+The most straightforward way to measure the ''I-V'' characteristic of a plasma is with a '''single probe''', consisting of one electrode biased with a voltage ramp relative to the vessel. The advantages are simplicity of the electrode and redundancy of information, i.e. one can check whether the ''I-V'' characteristic has the expected form. Potentially additional information can be extracted from details of the characteristic. The disadvantages are more complex biasing and measurement electronics and a poor time resolution. If fluctuations are present (as they always are) and the sweep is slower than the fluctuation frequency (as it usually is), then the ''I-V'' is the ''average'' current as a function of voltage, which may result in systematic errors if it is analyzed as though it were an instantaneous ''I-V''. The ideal situation is to sweep the voltage at a frequency above the fluctuation frequency but still below the ion cyclotron frequency. This, however, requires sophisticated electronics and a great deal of care.
+
+===Double probe===
+
+An electrode can be biased relative to a second electrode, rather than to the ground. The theory is similar to that of a single probe, except that the current is limited to the ion saturation current for both positive and negative voltages. In particular, if <math>V_{bias}</math> is the voltage applied between two identical electrodes, the current is given by;
+
+<math>
+I 
+= I_i^{max} \left( -1 + \,e^{q_e(V_2-V_{fl})/k_BT_e} \right)
+= -I_i^{max} \left( -1 + \,e^{q_e(V_1-V_{fl})/k_BT_e} \right)
+</math>,
+
+which can be rewritten using <math>V_{bias}=V_2-V_1</math> as a [[Hyperbolic function|hyperbolic tangent]]:
+
+<math>
+I = I_i^{max} \tanh\left( \frac{1}{2}\,\frac{q_eV_{bias}}{k_BT_e} \right)
+</math>.
+
+One advantage of the double probe is that neither electrode is ever very far above floating, so the theoretical uncertainties at large electron currents are avoided. If it is desired to sample more of the exponential electron portion of the characteristic, an '''asymmetric double probe''' may be used, with one electrode larger than the other. If the ratio of the collection areas is larger than the square root of the ion to electron mass ratio, then this arrangement is equivalent to the single tip probe. If the ratio of collection areas is not that big, then the characteristic will be in-between the symmetric double tip configuration and the single-tip configuration. If <math>A_1</math> is the area of the larger tip then:
+
+<math>
+I = A_1 J_i^{max} \left[ \coth\left(\frac{q_eV_{bias}}{2k_BT_e}\right) + \frac{\left(\frac{A_1}{A_2}-1\right)\,e^{-q_eV_{bias}/2k_BT_e}}{2\sinh\left(\frac{q_eV_{bias}}{2k_BT_e}\right)} \right]^{-1}
+</math>
+
+Another advantage is that there is no reference to the vessel, so it is to some extent immune to the disturbances in a [[radio frequency]] plasma. On the other hand, it shares the limitations of a single probe concerning complicated electronics and poor time resolution. In addition, the second electrode not only complicates the system, but it makes it susceptible to disturbance by gradients in the plasma.
+
+===Triple probe===
+
+An elegant electrode configuration is the triple probe,<ref name="Chen">{{cite journal |author1=Sin-Li Chen |author2=T. Sekiguchi |date=1965 |title= Instantaneous Direct-Display System of Plasma Parameters by Means of Triple Probe|journal=J. Applied Phys. |publisher= |volume=36 |issue= 8|pages=2363 |url= |doi=10.1063/1.1714492 |bibcode = 1965JAP....36.2363C }}</ref> consisting of two electrodes biased with a fixed voltage and a third which is floating. The bias voltage is chosen to be a few times the electron temperature so that the negative electrode draws the ion saturation current, which, like the floating potential, is directly measured. A common rule of thumb for this voltage bias is 3/e times the expected electron temperature. Because the biased tip configuration is floating, the positive probe can draw at most an electron current only equal in magnitude and opposite in polarity to the ion saturation current drawn by the negative probe, given by :
+
+<math>
+-I_{+}=I_{-}=I_i^{max}
+</math>
+
+and as before the floating tip draws effectively no current:
+
+<math>
+I_{fl}=0
+</math>.
+
+Assuming that: 
+1.) The electron energy distribution in the plasma is Maxwellian,
+2.) The mean free path of the electrons is greater than the ion sheath about the tips and larger than the probe radius, and
+3.) the probe sheath sizes are much smaller than the probe separation,
+then the current to any probe can be considered composed of two parts{{spaced ndash}}the high energy tail of the Maxwellian electron distribution, and the ion saturation current:
+
+<math>
+I_{probe} = -I_{e} e^{-q_e V_{probe}/(k T_{e} )} + I_i^{max}
+</math>
+
+where the current ''I<sub>e</sub>'' is thermal current. Specifically,
+
+<math>
+I_{e} = S J_{e} = S n_{e} q_e \sqrt{kT_{e}/2 \pi m_{e}}
+</math>,
+
+where ''S'' is surface area, ''J<sub>e</sub>'' is electron current density, and ''n<sub>e</sub>'' is electron density.<ref>{{cite journal |last1= Stanojevic|date=1999 |first1= M. |last2= Cercek |first2= M. |last3= Gyergyek |first3= T. |title= Experimental Study of Planar Langmuir Probe Characteristics in Electron Current-Carrying Magnetized Plasma|journal=Contrib. Plasma Phys. |publisher= |volume=39 |issue=3 |pages=197–222 |url= |doi=10.1002/ctpp.2150390303 |bibcode = 1999CoPP...39..197S }}</ref>
+
+Assuming that the ion and electron saturation current is the same for each probe, then the formulas for current to each of the probe tips take the form
+
+<math>
+I_{+} = -I_{e} e^{-q_e V_{+}/(k T_{e} )} + I_i^{max}
+</math>
+
+<math>
+I_{-} = -I_{e} e^{-q_e V_{-}/(k T_{e} )} + I_i^{max}
+</math>
+
+<math>
+I_{fl} = -I_{e} e^{-q_e V_{fl}/(k T_{e} )} + I_i^{max}
+</math>.
+
+It is then simple to show
+
+<math>
+
+\left(I_{+} - I_{fl})/(I_{+} - I_{-}\right) = \left(1-e^{-q_e(V_{fl}-V_{+})/(k T_{e})}\right)/ \left(1-e^{-q_e(V_{-}-V_{+})/(k T_{e})}\right)
+
+</math>
+
+but the relations from above specifying that ''I<sub>+</sub>=-I<sub>-</sub>'' and ''I<sub>fl</sub>''=0 give
+
+<math>
+
+1/2 = \left(1-e^{-q_e(V_{fl}-V_{+})/(k T_{e})}\right)/ \left(1-e^{-q_e(V_{-}-V_{+})/(k T_{e})}\right)
+</math>,
+
+a transcendental equation in terms of applied and measured voltages and the unknown ''T<sub>e</sub>'' that in the limit ''q<sub>e</sub>V<sub>Bias</sub> = q<sub>e</sub>(V<sub>+</sub>-V<sub>-</sub>) >> k T<sub>e</sub>'', becomes
+
+<math>	 
+(V_{+}-V_{fl}) = (k_BT_e/q_e)\ln 2 
+</math>.
+
+That is, the voltage difference between the positive and floating electrodes is proportional to the electron temperature. (This was especially important in the sixties and seventies before sophisticated data processing became widely available.)
+
+More sophisticated analysis of triple probe data can take into account such factors as incomplete saturation, non-saturation, unequal areas.
+
+Triple probes have the advantage of simple biasing electronics (no sweeping required), simple data analysis, excellent time resolution, and insensitivity to potential fluctuations (whether imposed by an rf source or inherent fluctuations). Like double probes, they are sensitive to gradients in plasma parameters.
+
+===Special arrangements===
+
+Arrangements with four ('''tetra probe''') or five ('''penta probe''') have sometimes been used, but the advantage over triple probes has never been entirely convincing. The spacing between probes must be larger than the [[Debye length]] of the plasma to prevent an overlapping [[Debye sheath]].
+
+A '''pin-plate probe''' consists of a small electrode directly in front of a large electrode, the idea being that the voltage sweep of the large probe can perturb the plasma potential at the sheath edge and thereby aggravate the difficulty of interpreting the ''I-V'' characteristic. The floating potential of the small electrode can be used to correct for changes in potential at the sheath edge of the large probe. Experimental results from this arrangement look promising, but experimental complexity and residual difficulties in the interpretation have prevented this configuration from becoming standard.
+
+Various geometries have been proposed for use as '''ion temperature probes''', for example, two cylindrical tips that rotate past each other in a magnetized plasma. Since shadowing effects depend on the ion Larmor radius, the results can be interpreted in terms of ion temperature. The ion temperature is an important quantity that is very difficult to measure. Unfortunately, it is also very difficult to analyze such probes in a fully self-consistent way.
+
+'''Emissive probes''' use an electrode heated either electrically or by the exposure to the plasma. When the electrode is biased more positive than the plasma potential, the emitted electrons are pulled back to the surface so the ''I''-''V'' characteristic is hardly changed. As soon as the electrode is biased negative with respect to the plasma potential, the emitted electrons are repelled and contribute a large negative current. The onset of this current or, more sensitively, the onset of a discrepancy between the characteristics of an unheated and a heated electrode, is a sensitive indicator of the plasma potential.
+
+To measure fluctuations in plasma parameters, '''arrays''' of electrodes are used, usually one{{spaced ndash}}but occasionally two-dimensional. A typical array has a spacing of 1&nbsp;mm and a total of 16 or 32 electrodes. A simpler arrangement to measure fluctuations is a negatively biased electrode flanked by two floating electrodes. The ion-saturation current is taken as a surrogate for the density and the floating potential as a surrogate for the plasma potential. This allows a rough measurement of the turbulent particle flux
+
+<math>
+\Phi_{turb} 
+= \langle \tilde{n}_e \tilde{v}_{E\times B} \rangle
+\propto \langle 
+\tilde{I}_i^{max} ( \tilde{V}_{fl,2} - \tilde{V}_{fl,1} ) 
+\rangle
+</math>
+
+==Cylindrical Langmuir probe in electron flow==
+
+Most often, the Langmuir probe is a small size electrode inserted in plasma and connected through an external (with respect to plasma) electric circuit with the electrode of a large surface area contacting with the same plasma (very often it is metallic wall of a chamber containing plasma) to obtain the probe [[I-V characteristic]] <math>i(V)</math>. The characteristic <math>i(V)</math> is measured by sweeping the voltage <math>V</math> of scanning generator (inserted in the probe circuit) with simultaneous measuring of the probe current.
+
+[[File:ShunkoLPFig01W.tif|thumb|Fig. 1. Illustration to Langmuir Probe I-V Characteristic Derivation]]
+
+Relations between the probe [[I-V characteristic]] and parameters of isotropic plasma were found by the [[Irving Langmuir]] <ref>{{cite journal |author1=Mott-Smith, H. M.  |author2=Langmuir, Irving |date=1926 |title=The Theory of Collectors in Gaseous Discharges |journal=Phys. Rev. |publisher= |volume=28 |issue=4 |pages=727–763 |url=http://link.aps.org/doi/10.1103/PhysRev.28.727 |doi=10.1103/PhysRev.28.727 |bibcode = 1926PhRv...28..727M }}</ref> and they can be derived most elementary for the planar probe of a large surface area <math>S_z</math>  (ignoring the edge effects problem). Let us chose the point <math>O</math>  in plasma at the distance <math>h</math>  from the probe surface where electric field of the probe is negligible while each electron of plasma passing this point could reach the probe surface without collisions with plasma components: <math>\lambda_D \ll\lambda_{Te}</math>, <math>\lambda_D</math> is the [[Debye length]] and <math>\lambda_{Te}</math>  is the electron free path calculated for its total [[cross section (physics)|cross section]] with plasma components. In the vicinity of the point <math>O</math> we can imagine a small element of the surface area <math>\Delta S</math> parallel to the probe surface. The elementary current <math>di</math> of plasma electrons passing throughout <math>\Delta S</math> in a direction of the probe surface can be written in the form
+
+<math>di = q_e\Delta Sdn(v, \vartheta)v\cos \vartheta</math>,   (1)
+
+where <math>v</math>   is a scalar of the electron thermal velocity vector <math>\vec{v}</math>,
+
+<math>dn(v,\vartheta)=nf(v)\frac{2\pi\sin \vartheta}{4\pi} dv d\vartheta</math>,   (2)
+
+<math>2\pi\sin \vartheta d\vartheta</math> is the element of the solid angle with its relative value <math>2\pi\sin \vartheta d\vartheta / 4\pi</math>, <math>\vartheta</math> is the angle between perpendicular to the probe surface recalled from the point <math>O</math> and the radius-vector of the electron thermal velocity <math>\vec{v}</math> forming a spherical layer of thickness <math>dv</math> in velocity space, and <math>f(v)</math> is the electron distribution function normalized to unity
+
+<math>\int\limits_0^\infty f(v)dv = 1</math>.   (3)
+
+Taking into account uniform conditions along the probe surface (boundaries are excluded), <math>\Delta S \rightarrow S_z</math>, we can take double integral with respect to the angle <math> \vartheta </math>, and with respect to the velocity <math> v </math>, from the expression (1), after substitution Eq. (2) in it, to calculate a total electron current on the probe
+
+<math> i(v) = q_enS_z \frac{1}{4\pi} \int\limits_{\sqrt{2q_eV/m}}^\infty f(v)dv \int\limits_0^\zeta v\cos \vartheta 2\pi \sin \vartheta d\vartheta</math>.  (4)
+
+where<math>V</math>   is the probe potential with respect to the potential of plasma <math>V = 0</math>,  <math>\sqrt{2q_eV/m}</math>  is the lowest electron velocity value at which the electron still could reach the probe surface charged to the potential <math>V</math>, <math>\zeta</math>   is the upper limit of the angle <math>\vartheta</math>  at which the electron having initial velocity <math>v</math>  can still reach the probe surface with a zero-value of its velocity at this surface. That means the value <math>\zeta</math>  is defined by the condition
+
+<math>v\cos\zeta = \sqrt{2q_eV/m}</math>.    (5)
+
+Deriving the value <math>\zeta</math>  from Eq. (5) and substituting it in Eq. (4), we can obtain the probe [[I-V characteristic]] (neglecting the ion current) in the range of the probe potential <math>-\infty <V\leq 0 </math> in the form
+
+<math>i(V)=\frac{q_enS_z}{4}\int\limits_\sqrt{2q_eV/m}^\infty f(v)\left ( 1 - \frac{2q_eV}{mv^2}\right ) vdv</math>.    (6)
+
+Differentiating Eq. (6) twice with respect to the potential <math>V</math>, one can find the expression describing the second derivative of the probe [[I-V characteristic]] (obtained firstly by M. J.  Druyvestein <ref>{{cite journal |author=M. J. Druyvestein |date=1930 |title= |journal=Z. Phys. |publisher= |volume=64 |issue= |pages=781 |url=|doi= 10.1007/BF01773007|bibcode =  1930ZPhy...64..781D}}</ref>)
+
+<math>i^{\prime \prime} (V) = \frac{q_e^2 nS_z}{4m}\frac {1}{V}f\left ( \sqrt{2q_eV/m}\right ) </math>   (7)
+
+defining the electron distribution function over velocity  <math>f\left ( \sqrt{2q_eV/m}\right ) </math> in the evident form. M. J. Druyvestein has shown in particular that Eqs. (6) and (7) are valid for description of operation of the probe of any arbitrary convex geometrical shape. 
+	Substituting  the [[Maxwellian distribution]] function:
+
+<math>f^{(0)} (v) = \frac{4}{\sqrt{\pi}}\frac{v^2}{v_p^3}\exp \left (-v^2/v_p^2\right )</math>,    (8)
+
+where <math>v_p = \langle v\rangle \sqrt{\pi}/2</math>   is the most probable velocity, in Eq. (6) we obtain the expression
+
+<math>i^{(0)} (V) = \frac{q_en\langle v \rangle}{4}S_z\exp \left (-q_eV/\mathcal{E}_p \right )</math>.   (9)
+
+[[File:IV Ar 0.058 370 z12.tif|thumb|Fig. 2. I-V Characteristic of Langmuir Probe in Isotropic Plasma]]
+
+From which the very useful in practice relation follows
+
+<math>\ln \left ( i^{(0)} (V)/i^{(0)} (0)\right ) = -q_eV/\mathcal{E}_p </math>. (10)
+
+allowing one to derive the electron energy <math>\mathcal{E}_p  = k_B T</math>   (for [[Maxwellian distribution]] function only!) by a slop of the probe [[I-V characteristic]] in a semilogarithmic scale. 
+Thus in plasmas with isotropic electron distributions, the electron current <math>i_{th} (0)</math>   on a surface <math>S_z = 2\pi r_z l_z </math>   of the cylindrical Langmuir probe at plasma potential <math>V = 0</math>   is defined by the average electron thermal velocity <math>\langle v \rangle </math>   and can be written down as equation (see Eqs. (6), (9) at  <math>V = 0</math>)
+
+<math>i_{th}(0) = q_en\langle v\rangle\frac {1}{4}\times 2\pi r_z l_z</math>,  (11)
+
+where <math>n</math> is the electron concentration, <math>r_z</math> is the probe radius, and <math>l_z</math> is its length. 
+It is obvious that if plasma electrons form an electron '''''wind''''' ('''''flow''''') '''''across''''' the '''''cylindrical''''' probe axis with a velocity <math>v_d\gg \langle v\rangle</math>,  the expression 
+ 
+<math>i_d = env_d \times 2r_z l_z</math> (12)
+
+holds true. 
+In plasmas produced by gas-discharge arc sources as well as inductively coupled sources, the electron wind can develop the Mach number <math>M^{(0)} = v_d /\langle v\rangle = (\sqrt{\pi}/2)\alpha \gtrsim 1 </math>  . Here the parameter <math>\alpha</math>   is introduced along with the Mach number for simplification of mathematical expressions. Note that <math>(\sqrt{\pi}/2)\langle v\rangle = v_p</math>, where<math>v_p</math>    is the most probable velocity for the [[Maxwellian distribution]] function, so that <math>\alpha = v_d/v_p</math>  . Thus the general case where <math>\alpha  \gtrsim 1</math>   is of the theoretical and practical interest. 
+Corresponding physical and mathematical considerations presented in Refs. [9,10] has shown that at the [[Maxwellian distribution]] function of the electrons in a reference system moving with the velocity <math>v_d</math>   '''''across axis of the cylindrical''''' probe set at plasma potential <math>V = 0</math>, the electron current on the probe can be written down in the form
+
+[[File:CylinderProbeInElectrWind.tif|thumb|Fig.3. I-V Characteristic of the cylindrical probe in crossing electron wind]]
+
+<math>\frac{i(0)}{enS_z} = \frac{\langle v\rangle}{4} \exp(-\alpha ^{2} /2)I_0 (\alpha ^{2} /2) \left (1+\alpha ^{2} \left (1+I_1(\alpha ^{2} /2)/I_0(\alpha ^{2}/ 2)\right )\right )</math>,    (13)
+
+where <math>I_0</math>   and <math>I_1</math>  are Bessel functions of imaginary arguments and Eq. (13) is reduced to Eq. (11) at<math>\alpha \rightarrow 0</math>   being  reduced to Eq. (12) at <math>\alpha \rightarrow \infty</math>  . 
+The second derivative of the probe I-V characteristic <math>i^{\prime \prime}(V)</math>  with respect to the probe potential <math>V</math>   can be presented in this case in the form (see Fig. 3)
+
+<math>i^{\prime \prime}(x) = enS_z \frac{v_p}{2\pi ^{3/2} (\mathcal {E}_p/e)^2} \frac {1}{\sqrt{x}}\int \limits_0^\pi (\sqrt{x}- \cos \varphi) \exp\left ( -\alpha ^2 (\sqrt{x} - \cos \varphi)\right ) d\varphi</math>,   (14)
+
+where
+
+<math>x = \frac{1}{\alpha^2}\frac{V}{\mathcal {E}_p/e}</math>  (15)
+
+and the electron energy <math>\mathcal {E}_p/e</math>  is expressed in eV.
+
+All parameters of the electron population: <math>n</math>, <math>\alpha </math>, <math>\langle v\rangle </math>  and <math>v_p</math>  in plasma can be derived from the experimental probe I-V characteristic second derivative <math>i^{\prime \prime}(V)</math>   by its least square best fitting with the theoretical curve expressed by Eq. (14). For detail and for problem of the general case of none-Maxwellian electron distribution functions see.<ref>{{cite journal |author=E. V Shun'ko |date=1990 |title=V-A characteristic of a cylindrical probe in plasma with electron flow |journal=Physics Letters A |publisher= |volume=147 |issue=1 |pages=37–42 |url= |doi=  10.1016/0375-9601(90)90010-L|bibcode =  1990PhLA..147...37S}}</ref><sup>,</sup> <ref>{{cite journal |author=E. V. Shun'ko. |booktitle=“Langmuir Probe in Theory and Practice”, |publisher= Universal Publishers, Boca Raton, Fl. 2008|volume= |issue= |pages=243 |ISBN=978-1-59942-935-9}}</ref>
+
+==Practical considerations==
+
+For laboratory and technical plasmas, the electrodes are most commonly [[tungsten]] or [[tantalum]] wires several thousandths of an inch thick, because they have a high melting point but can be made small enough not to perturb the plasma. Although the melting point is somewhat lower, [[molybdenum]] is sometimes used because it is easier to machine and solder than tungsten. For fusion plasmas, [[graphite]] electrodes with dimensions from 1 to 10&nbsp;mm are usually used because they can withstand the highest power loads (also sublimating at high temperatures rather than melting), and result in reduced [[bremsstrahlung]] radiation (with respect to metals) due to the low atomic number of carbon. The electrode surface exposed to the plasma must be defined, e.g. by insulating all but the tip of a wire electrode. If there can be significant deposition of conducting materials (metals or graphite), then the insulator should be separated from the electrode by a meander to prevent short-circuiting.
+
+In a magnetized plasma, it appears to be best to choose a probe size a few times larger than the ion Larmor radius. A point of contention is whether it is better to use '''proud probes''', where the angle between the magnetic field and the surface is at least 15°, or '''flush-mounted probes''', which are embedded in the plasma-facing components and generally have an angle of 1 to 5 °. Many plasma physicists feel more comfortable with proud probes, which have a longer tradition and possibly are less perturbed by electron saturation effects, although this is disputed. Flush-mounted probes, on the other hand, being part of the wall, are less perturbative. Knowledge of the field angle is necessary with proud probes to determine the fluxes to the wall, whereas it is necessary with flush-mounted probes to determine the density.
+
+In very hot and dense plasmas, as found in fusion research, it is often necessary to limit the thermal load to the probe by limiting the exposure time. A '''reciprocating probe''' is mounted on an arm that is moved into and back out of the plasma, usually in about one second by means of either a pneumatic drive or an electromagnetic drive using the ambient magnetic field. '''Pop-up probes''' are similar, but the electrodes rest behind a shield and are only moved the few millimeters necessary to bring them into the plasma near the wall.
+
+A Langmuir probe can be purchased off the shelf for on the order of 15,000 U.S. dollars, or they can be built by an experienced researcher or technician. When working at frequencies under 100&nbsp;MHz, it is advisable to use blocking filters, and take necessary grounding precautions.
+
+In low temperature plasmas, in which the probe does not get hot, surface contamination may become an issue.  This effect can cause [[hysteresis]] in the I-V curve and may limit the current collected by the probe.<ref name="Amataucci">{{cite journal |author=W. Amatucci |display-authors=etal |date=2001 |title= Contamination-free sounding rocket Langmuir probe|journal=Review of Scientific Instruments |publisher= |volume=72 |issue= 4|pages=2052 |url= |doi=10.1063/1.1357234 |bibcode = 2001RScI...72.2052A }}</ref>  A heating mechanism or a glow discharge plasma may be used to clean the probe and prevent misleading results.
+
+== See also ==
+* [[Dual segmented Langmuir probe]]
+* [[List of plasma (physics) articles]]
+* [[Plasma parameters]]
+
+==Further reading==
+* {{cite journal |last1= Hopwood|date=1993 |first1= J. |title=Langmuir probe measurements of a radio frequency induction plasma |journal=Journal of Vacuum Science and Technology A |publisher= |volume=11 |issue=1 |pages=152–156 |doi=10.1116/1.578282 }}
+* {{cite journal |author1=A. Schwabedissen |author2=E. C. Benck |author3=J. R. Roberts |date=1997 |title=Langmuir probe measurements in an inductively coupled plasma source |journal=Phys. Rev. E |publisher= |volume= 55 |issue= 3|pages=3450–3459 |url=http://link.aps.org/doi/10.1103/PhysRevE.55.3450 |doi=10.1103/PhysRevE.55.3450|bibcode = 1997PhRvE..55.3450S }}
+
+== References ==
+{{reflist}}
+
+== External links ==
+* [http://www.ee.ucla.edu/~ffchen/Publs/Chen210R.pdf Notes on Langmuir Probe Theory and Design by F.F. Chen]
+
+{{DEFAULTSORT:Langmuir Probe}}
+[[Category:Plasma physics]]
+[[Category:Plasma diagnostics]]
+[[Category:Measuring instruments]]

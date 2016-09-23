@@ -1,0 +1,45 @@
+{{Infobox_gene}}
+'''Olfactory receptor 2K2''' is a [[protein]] that in humans is encoded by the ''OR2K2'' [[gene]].<ref name="pmid1370859">{{cite journal | vauthors = Parmentier M, Libert F, Schurmans S, Schiffmann S, Lefort A, Eggerickx D, Ledent C, Mollereau C, Gerard C, Perret J| title = Expression of members of the putative olfactory receptor gene family in mammalian germ cells | journal = Nature | volume = 355 | issue = 6359 | pages = 453–5 |date=Mar 1992 | pmid = 1370859 | pmc =  | doi = 10.1038/355453a0 |display-authors=etal}}</ref><ref name="pmid17010214">{{cite journal | vauthors = Aloni R, Olender T, Lancet D | title = Ancient genomic architecture for mammalian olfactory receptor clusters | journal = Genome Biol | volume = 7 | issue = 10 | pages = R88 |date=Jan 2007 | pmid = 17010214 | pmc = 1794568 | doi = 10.1186/gb-2006-7-10-r88 }}</ref><ref name="entrez">{{cite web | title = Entrez Gene: OR2K2 olfactory receptor, family 2, subfamily K, member 2| url = http://www.ncbi.nlm.nih.gov/sites/entrez?Db=gene&Cmd=ShowDetailView&TermToSearch=26248| accessdate = }}</ref>
+
+<!-- The PBB_Summary template is automatically maintained by Protein Box Bot.  See Template:PBB_Controls to Stop updates. -->
+{{PBB_Summary
+| section_title = 
+| summary_text = Olfactory receptors interact with odorant molecules in the [[human nose|nose]], to initiate a neuronal response that triggers the perception of a [[Odor|smell]]. The olfactory receptor proteins are members of a large family of G-protein-coupled receptors (GPCR) arising from single coding-exon genes. Olfactory receptors share a 7-transmembrane domain structure with many neurotransmitter and hormone receptors and are responsible for the recognition and G protein-mediated transduction of odorant signals. The olfactory receptor gene family is the largest in the genome. The nomenclature assigned to the olfactory receptor genes and proteins for this organism is independent of other organisms.<ref name="entrez">{{cite web | title = Entrez Gene: OR2K2 olfactory receptor, family 2, subfamily K, member 2| url = http://www.ncbi.nlm.nih.gov/sites/entrez?Db=gene&Cmd=ShowDetailView&TermToSearch=26248| accessdate = }}</ref>
+}}
+
+==See also==
+* [[Olfactory receptor]]
+
+==References==
+{{reflist}}
+
+==Further reading==
+{{refbegin | 2}}
+{{PBB_Further_reading 
+| citations = 
+*{{cite journal   |vauthors=Strausberg RL, Feingold EA, Grouse LH, etal |title=Generation and initial analysis of more than 15,000 full-length human and mouse cDNA sequences. |journal=Proc. Natl. Acad. Sci. U.S.A. |volume=99 |issue= 26 |pages= 16899–903 |year= 2003 |pmid= 12477932 |doi= 10.1073/pnas.242603899  | pmc=139241 }}
+*{{cite journal  | vauthors=Malnic B, Godfrey PA, Buck LB |title=The human olfactory receptor gene family. |journal=Proc. Natl. Acad. Sci. U.S.A. |volume=101 |issue= 8 |pages= 2584–9 |year= 2004 |pmid= 14983052 |doi=10.1073/pnas.0307882100  | pmc=356993  }}
+*{{cite journal   |vauthors=Humphray SJ, Oliver K, Hunt AR, etal |title=DNA sequence and analysis of human chromosome 9. |journal=Nature |volume=429 |issue= 6990 |pages= 369–74 |year= 2004 |pmid= 15164053 |doi= 10.1038/nature02465  | pmc=2734081 }}
+*{{cite journal   |vauthors=Gerhard DS, Wagner L, Feingold EA, etal |title=The status, quality, and expansion of the NIH full-length cDNA project: the Mammalian Gene Collection (MGC). |journal=Genome Res. |volume=14 |issue= 10B |pages= 2121–7 |year= 2004 |pmid= 15489334 |doi= 10.1101/gr.2596504  | pmc=528928 }}
+}}
+{{refend}}
+
+== External links ==
+* {{MeshName|OR2K2+protein,+human}}
+
+{{NLM content}}
+
+{{Olfactory receptors}}
+<!-- The PBB_Controls template provides controls for Protein Box Bot, please see Template:PBB_Controls for details. -->
+{{PBB_Controls
+| update_page = yes 
+| require_manual_inspection = no 
+| update_protein_box = yes
+| update_summary = yes
+| update_citations = yes
+}}
+
+[[Category:G protein coupled receptors]]
+
+
+{{transmembranereceptor-stub}}

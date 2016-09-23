@@ -1,0 +1,56 @@
+{{Infobox Officeholder
+|name         =Howard Burton Lee
+|image        = 
+|imagesize    =
+|office       =[[List of Attorneys General of West Virginia|Attorney General of West Virginia]] 
+|term_start   = 1925
+|term_end     = 1933
+|predecessor  = [[Edward T. England]]
+|successor    =[[Homer A. Holt]]
+|office2      = 
+|term_start2  = 
+|term_end2    = 
+|predecessor2 = 
+|successor2   = 
+|birth_name=
+|birth_date   = {{birth date|1879|10|27}}
+|birth_place  = [[Wirt County, West Virginia]], U.S.
+|death_date   ={{death date and age|1985|5|24|1879|10|27}}
+|death_place  =[[Stuart, Florida]], U.S.
+|party        =Republican
+|spouse       =
+|children     = 
+|residence    =  [[Charleston, West Virginia]]
+|alma_mater   = 
+|profession   = Author, attorney
+}}
+'''Howard Burton Lee''' (October 27, 1879 – May 24, 1985), of [[Mercer County, West Virginia|Mercer County]], served as the [[United States Republican Party|Republican]] [[List of Attorneys General of West Virginia|Attorney General of West Virginia]] from 1925 to 1933.<ref name="encyc" />  His efforts to eliminate government corruption during that time helped to end the [[West Virginia Mine Wars]].  Lee was born in [[Wirt County, West Virginia]] and graduated from [[Marshall University|Marshall College]].<ref name="encyc">[http://www.wvencyclopedia.org/print/Article/1336]</ref>  He wrote a number of books including ''Bloodletting in Appalachia'', ''The Story of the Constitution'', ''The Criminal Trial in the Virginias'', and ''The Burning Springs and Other Tales of the Little Kanawha''.<ref name="encyc" />
+
+He died at the age of 105 in a Florida nursing home in 1985.<ref name="Obituary">{{cite news|title = HOWARD B. LEE, 105 YEARS OLD|newspaper = [[The Miami Herald]]|publisher = [[The McClatchy Company]]|date = 1985-05-26|url = http://nl.newsbank.com/nl-search/we/Archives?p_product=MH&s_site=miami&p_multi=MH&p_theme=realcities&p_action=search&p_maxdocs=200&p_topdoc=1&p_text_direct-0=0EB362A66B451496&p_field_direct-0=document_id&p_perpage=10&p_sort=YMD_date:D&s_trackval=GooglePM|accessdate = 2013-05-25}}</ref>
+
+==See also==
+*[[List of Attorneys General of West Virginia]]
+
+==References==
+{{Reflist}}
+{{S-start}}
+{{S-legal}}
+{{Succession box | before = [[Edward T. England]] | title = [[List of Attorneys General of West Virginia|Attorney General of West Virginia]] | years = 1925&ndash;1933 | after = [[Homer A. Holt]]}}
+{{S-end}}
+{{Attorneys General of West Virginia}}
+{{Authority control}}
+
+{{DEFAULTSORT:Lee, Howard}}
+[[Category:1879 births]]
+[[Category:1985 deaths]]
+[[Category:American centenarians]]
+[[Category:West Virginia Attorneys General]]
+[[Category:People from Mercer County, West Virginia]]
+[[Category:West Virginia Republicans]]
+[[Category:People from Wirt County, West Virginia]]
+[[Category:Marshall University alumni]]
+[[Category:Writers from West Virginia]]
+
+
+{{WestVirginia-politician-stub}}
+{{US-law-bio-stub}}

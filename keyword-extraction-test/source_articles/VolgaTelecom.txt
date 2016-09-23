@@ -1,0 +1,48 @@
+{{Infobox company
+|name   = VolgaTelecom OJSC
+|logo   = [[File:VolgaTelecom.gif|150px]] 
+|type   = [[Joint stock]] ({{FWB|NZH}}) 
+|slogan = 
+|foundation     = (2002)
+|location       = [[Nizhny Novgorod]], Russia
+|key_people     = Vladimir Bybakin, ([[CEO]] and [[Chairman]])
+|num_employees  = 50,000 
+|revenue        = {{profit}} [[US$]] 1.0 billion (2008)
+|industry       = [[Telecommunications]]
+|products       = Telecommunications services <br /> [[Internet service provider|Internet services]] <br /> [[Cable television]] 
+|homepage       = {{URL|http://www.vt.ru/}}
+}}
+
+'''VolgaTelecom''' is one of the Russian telecommunications companies that were formed after the [[Svyaz'invest Company]] in Moscow decided to reorganise 72 different regional service providers into seven large interregional companies.
+
+The company serves approximately 32 million people in the [[Volga Federal District]], or 22% of the country's population.
+
+==Operations==
+
+===Regional branches===
+*[[Chuvash Republic]] Branch
+*[[Kirov, Kirov Oblast|Kirov]] Branch
+*[[Mari El Republic]] Branch
+*[[Mordovian Republic]] Branch
+*[[Nizhniy Novgorod]] Branch
+*[[Orenburg]] Branch
+*[[Penza]] Branch
+*[[Samara, Russia|Samara]] Branch
+*[[Saratov]] Branch
+*[[Udmurt Republic]] Branch
+*[[Ulyanovsk Oblast]] Branch
+
+==External links==
+*[http://www.vt.ru/ VolgaTelecom - Russian language, English language]
+*[http://eng.svyazinvest.ru/ Svyazinvest - Russian language, English language]
+
+{{Portal|Companies}}
+
+{{DEFAULTSORT:Volgatelecom}}
+[[Category:Cable television companies of Russia]]
+[[Category:Svyazinvest]]
+[[Category:Companies based in Nizhniy Novgorod]]
+[[Category:Companies established in 2002]]
+[[Category:Russian brands]]
+
+{{Russia-company-stub}}

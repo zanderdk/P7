@@ -1,0 +1,62 @@
+{{Infobox film
+| name = He's My Man!
+| image =
+| image_size =
+| caption =
+| director = [[Rafael Gil]]
+| producer =  
+| writer =  [[Carlos Arniches ]] (play) <br> [[José López Rubio]] <br> Rafael Gil
+| narrator =
+| starring = [[José Luis López Vázquez]] <br> [[Soledad Miranda]] <br> [[Mercedes Vecino]]
+| music = [[Gregorio García Segura]]
+| cinematography = [[José F. Aguayo]]
+| editing =  [[Antonio Ramírez de Loaysa]]
+| studio = Coral Producciones Cinematográficas 
+| distributor = [[Paramount Films de España]]
+| released = 26 March 1966  
+| runtime = 93 minutes
+| country =  Spain
+| language = [[Spanish language|Spanish]] 
+| budget =
+| gross =
+| preceded_by =
+| followed_by =
+| website =
+}}
+'''''He's My Man!''''' (Spanish:'''''¡Es mi hombre!''''') is a 1966 Spanish [[comedy film]] directed by [[Rafael Gil]] and starring [[José Luis López Vázquez]], [[Soledad Miranda]] and [[Mercedes Vecino]].<ref>Bentley p.69</ref>
+
+==Cast==
+* [[    José Luis López Vázquez ]] as Antonio Jiménez  
+* [[Soledad Miranda ]] as Leonor Jiménez  
+* [[Mercedes Vecino]] as Sole  
+* [[Rafael Alonso]] as Mariano  
+* [[Sancho Gracia]] as Jefe banda Sing-Sing  
+* [[José Marco Davó ]] as D. Felipe  
+* [[Rafaela Aparicio]] as Señora Calixta  
+* [[Ángel de Andrés]] as Portero Club Pinky  
+* [[Alfonso del Real]] as Don Paco Maluenda  
+* [[Julia Caba Alba]] as Sra. de D. Felipe  
+* [[Roberto Camardiel]] as Don Tarsio 
+* [[Fred Galiana]] as Bestia  
+* [[Los Shakers]] as Conjunto musical  
+
+== References ==
+<references/>
+
+== Bibliography ==
+* Bentley, Bernard. ''A Companion to Spanish Cinema''. Boydell & Brewer 2008.
+
+== External links ==
+* {{IMDb title|0060377}}
+
+{{Rafael Gil}}
+
+[[Category:1960s comedy films]]
+[[Category:Spanish comedy films]]
+[[Category:1966 films]]
+[[Category:Spanish films]]
+[[Category:Spanish-language films]]
+[[Category:Films based on works by Carlos Arniches]]
+[[Category:Films directed by Rafael Gil]]
+
+{{1960s-Spain-film-stub}}

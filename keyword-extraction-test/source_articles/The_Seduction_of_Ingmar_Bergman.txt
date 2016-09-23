@@ -1,0 +1,228 @@
+{{Infobox album
+| Name        = The Seduction of Ingmar Bergman
+| Type        = studio
+| Artist      = [[Sparks (band)|Sparks]]
+| Cover       = Seduction of Ingmar Bergman.jpg
+| Alt         = The Seduction of Ingmar Bergman
+| Released    = 14 August 2009
+| Recorded    = Hollywood American Studios<br><small>([[Hollywood]], [[California]])</small><br>Radio Drama Studio<br><small>([[Stockholm]], Sweden)<ref name="allsparks" />
+| Genre       = [[rock opera|Pop opera]]
+| Length      = 64:32
+| Label       = {{flatlist|
+* Lil' Beethoven <small>(English)</small>
+* SR Records <small>(Swedish)</small>
+}}
+| Last album  = ''[[Exotic Creatures of the Deep]]''<br/>(2008)
+| This album  = '''''The Seduction of Ingmar Bergman'''''<br/>(2009)
+| Next album  = ''[[Two Hands, One Mouth: Live In Europe]]''<br/>(2013)
+| Misc        = {{Extra chronology
+| Artist      = [[Sparks (band)|Sparks]] studio albums
+| Type        = studio
+| Last album  = ''[[Exotic Creatures of the Deep]]''<br />(2008)
+| This album  = '''''The Seduction of Ingmar Bergman'''''<br />(2009)
+| Next album  = ''[[FFS (album)|FFS]]''<br>(2015)
+}}
+}}
+'''''The Seduction of Ingmar Bergman''''' is the 22nd album by American [[rock music|rock]] group [[Sparks (band)|Sparks]], released in August 2009. The duo's first work in the radio musical or [[rock opera|pop opera]]<ref>{{cite web|url=http://www.theguardian.com/music/2014/dec/21/sparks-review-barbican-london|title=Sparks review – return of the kooks in kimonos|work=The Guardian|accessdate=22 December 2014}}</ref> genre, the album is built around an imaginary visit to [[Hollywood]] by Swedish film director [[Ingmar Bergman]] in the mid-1950s. Its storyline focuses on the divides between European and American culture, between art and commerce. Unlike other Sparks albums, the work is conceived as a single piece, to be listened to as a whole, rather than a collection of stand-alone songs. 
+
+The work was commissioned by [[Sveriges Radio]] Radioteatern, the [[radio drama]] department of Sweden's national radio broadcaster. First released in the Swedish broadcast version in August 2009, with an English-language version following in November 2009, it features a cast of Swedish and American actors and a variety of musical styles ranging from [[opera]] to [[vaudeville]] and [[Pop music|pop]]. The album's recording was a collaborative effort – while the music and English vocals were recorded by Sparks in the United States, the album's Swedish vocals were recorded by Sveriges Radio in Stockholm, and then sent to the Maels via an [[FTP server]]. The album and its ambitious dramatic concept received favourable reviews, and the Mael brothers have said that they are planning both a live show and a film version of the musical.
+
+==Background==
+Sparks produced the album, their first in this genre, after it was commissioned as a radio musical by Sweden's national broadcasting service, [[Sveriges Radio]].<ref name="PattisonBBC" /><ref name="SloanSMS">{{Cite news|url=http://www.thefreelibrary.com/Sparks+fly+in+new+musical.-a0207725620|title=Sparks fly in new musical|last=Sloan|first=Billy|date=2009-09-13|work=Sunday Mail (Scotland)|accessdate=2009-12-29}}</ref> The project was proposed to Sparks by Marie Wennersten of SR Radioteatern, the station's radio drama department. Wennersten had become a Sparks fan after watching the duo perform in Sweden in 2004: "I had never seen such energy and love from the audience. I thought the Södra Theatre was going to take off and fly away. I wrote to the Sparks fansite and thanked them for the experience."<ref name=SD090814 /> Wennersten subsequently travelled to Los Angeles as a journalist, to attend and report on another Sparks concert.<ref name=SD090814 /> By that time, the idea of a collaboration had formed in her mind: "I always dreamed of dragging them into the radio world."<ref name=SD090814 /><ref name="Fokus">{{Cite news|url=http://www.fokus.se/2009/05/bergman-gor-musikaldebut/|title=Bergman gör musikaldebut|last=Ekman|first=Klas|date=2009-05-08|work=Fokus|accessdate=2010-04-17|language=sv}}</ref>
+
+Wennersten contacted Sparks when Jasenko Selimovic, the head of SR Radioteatern, decided that the station would produce a number of new musicals.<ref name="Fokus" /> She thought Sparks would be suitable for the format: "They are a bit extravagant; they have a larger-than-life quality, and above all, they make music that is colourful enough for it not to feel like you miss a visual component."<ref name="Fokus" /> Sparks were initially somewhat surprised by the invitation to write a musical for Swedish radio, and were hesitant to take on the project.<ref name="Fokus" /> However, after several months of persuasive effort from Wennersten, via e-mail and telephone, they decided to accept the challenge.<ref name="SR-2009-05-08">{{cite web|url=http://sverigesradio.se/sida/gruppsida.aspx?programid=2938&grupp=21081&artikel=2821761|title=Radioteatern, Sveriges Radio, presenterar: "The Seduction of Ingmar Bergman" en radiomusikal av Sparks|last=Staff|date=2009-05-08|publisher=Sveriges Radio|accessdate=2010-04-17|language=sv}}</ref> "We originally thought of it as a side project between albums, but once we started working on it, it took on a bigger life," Sparks have said.<ref name="DaviesBBC" /> "As Americans we have almost abandoned radio drama and it was truly exhilarating for us to work in a medium where the imagination of the listener is so integral a part of the work. Aside from our love of Bergman, we have a love of Orson Welles and his use of the medium of radio was something that inspired us in this work."<ref>{{Cite news|url=http://www.uncut.co.uk/news/sparks-to-write-radio-musical-55818|title=Sparks to Write Radio Musical|last=Staff|date=2009-05-19|work=Uncut|accessdate=2016-08-13}}</ref>
+
+Sveriges Radio stipulated that the work had to include a Swedish element.<ref name=National/> Singer [[Russell Mael]] told ''[[The National (Abu Dhabi)|The National]]'', "At first, we obviously thought of cars and Ikea. I'm joking. But the more profound, more lasting idea – being the film fans we are – was Ingmar Bergman. So we hit upon a fantasy situation of him going to Hollywood, which is obviously a lot more universal, too."<ref name=National>{{Cite news|url=http://www.thenational.ae/arts-culture/music/flashes-of-inspiration|title=Flashes of inspiration|last=East|first=Ben|date=2009-11-07|work=The National|accessdate=2010-03-28}}</ref> Before starting work on the musical, the Mael brothers decided to refresh their memories by looking at Bergman's films again.<ref name="ntse" /> "We were both really big film fans in university. At that time unless you only liked foreign film, and hated American ones, you weren't cool", [[Ron Mael]] told ''The Times''.<ref name="Galliano" /> "There was a real kind of seriousness to [Bergman]. He actually addressed big things and was able to frame those in really pure, cinematic ways. Now those things are seen as being kind of pretentious. Everyone wants to be seen as though they don't care about the big issues."<ref name="Galliano">{{Cite news|url=http://entertainment.timesonline.co.uk/tol/arts_and_entertainment/music/classical/article6895801.ece|title=Striking Sparks with Bergman – The Mael brothers' new album takes a poke at Hollywood|last=Galliano|first=Joseph|date=2009-10-30|work=The Times|accessdate=2010-04-24}}</ref> Commenting on the suitability of Bergman as the topic of a musical, Russell Mael told a Swedish newspaper, "In a way, he is the least appropriate person for a musical. We like the absurdity of it all. He was such a deep, intense person and the vast majority of his films are about really deep topics. But we did not want to ridicule him, we wanted to do something respectful that Bergman would have been able to appreciate."<ref name="ntse">{{Cite news|url=http://www.nt.se/noje/artikel.aspx?articleid=5445698|title=Sparks vill göra film om Bergman|last=Staff|date=2009-08-10|work=Norrköpings Tidningar|accessdate=2010-04-17|language=sv}}</ref>
+
+In writing a musical about film making in Hollywood, Sparks were also informed by their own past film projects.<ref name="Galliano" /> In the late 1980s and early 1990s, they had spent six years trying to get their film ''[[Mai, the Psychic Girl]]'' produced.<ref name="Galliano" /> Based on a Japanese [[manga]] comic, the film was at one time supposed to be directed by [[Tim Burton]]. Although the music had been completed, the film failed to materialise, an experience that coloured their portrayal of the studio head in ''The Seduction of Ingmar Bergman''.<ref name="Galliano" /> Earlier, Sparks had worked with French director [[Jacques Tati]] on ''Confusion'', another film project that remained uncompleted.<ref name="Galliano" /> Having had numerous meetings with Tati over the course of a year, they were aware that, like other great European directors, Tati had been wooed by Hollywood: "He showed me a letter from Paramount", Ron Mael recalled. "He said: 'Oooh! They take me to Hollywood and they have a limousine for me.' But it was kind of mocking of the whole similar situation to our fantasy Bergman thing. He could see Hollywood for what it was."<ref name="Galliano" />
+
+Sveriges Radio gave Sparks free rein to develop the project: "Once we got the basic concept approved, we were able to work according to our own ideas. SR asked us to be as faithful to our own vision as possible."<ref name=Syd /> In the end, Sparks felt it had been "a perfect project. It forced us out of our comfort zone. And it has proved to be a safer way to achieve creative success than any other in the history of Sparks."<ref name=ntse />
+
+==Storyline==
+The musical's storyline explores the divisions between art and commerce and between European and American culture, dichotomies that have also shaped much of Sparks' own career.<ref name="GillIndependent" /><ref name="Dalton" /><ref name="PM" /> Described as a "dark fairy tale" by Stephen Dalton in ''[[The Times]]'' – "''The Wizard of Oz'' meets ''The Truman Show'', with a light sprinkling of ''Life On Mars''" – it is based on imaginary events in the career of Swedish film director Ingmar Bergman.<ref name="Dalton" />
+
+The story is set in the mid-1950s, shortly after Bergman's award win at the [[1956 Cannes Film Festival]] for ''[[Smiles of a Summer Night]]''.<ref name="Dalton" /> After his return to [[Stockholm]], Bergman feels compelled to go to a cinema and watch a Hollywood blockbuster movie.<ref name="GillIndependent" /><ref name="PM" /> As he exits the cinema, he inexplicably finds himself transported to Hollywood, where a limo driver is waiting to take him to a film studio.<ref name="GillIndependent" /><ref name="PM" /> The studio's executives, who give Bergman a lavish welcome, are desperate to entice him to stay in Hollywood and make movies for them, the American way: "We're not hicks, but we must deliver kicks."<ref name="GillIndependent" /><ref name="Dalton" />
+
+The studio bosses have booked a hotel room for Bergman, complete with a "Hollywood Welcoming Committee" – a [[Prostitution|hooker]] they hope will persuade him to accept their offer – and a limo shuttles Bergman from meeting to meeting.<ref name="SimpsonGuardian" /> Visiting "The Studio Commissary", he is brought face to face with the many European directors who went to make films in Hollywood: [[Billy Wilder]], [[Fritz Lang]], [[F. W. Murnau]], [[Jacques Tourneur]], [[Josef von Sternberg]], and [[Alfred Hitchcock]], all apparently happy to work in Hollywood: "Alfred Hitchcock, bless his soul, there chomping on a dinner roll, ''The Man Who Knew Too Much'' done twice, in Hollywood, done twice as nice".<ref name="GillIndependent" /> Bergman is tempted by the prospect of secure funding for his film projects and feels he "must not be hasty" in rejecting the proposal.<ref name=Syd /><ref name="Dalton" />
+
+The story develops into a [[Kafkaesque]] nightmare as Bergman, besieged by autograph hunters, finally decides that Hollywood is not for him.<ref name="GillIndependent" /><ref name="Dalton" /> Unable to get an international line to call Sweden, he tries to escape on foot, pursued by hotel staff, police cars and helicopters "like an actor in a bad, big-budget Hollywood action film".<ref name="GillIndependent" /><ref name="Dalton" /> He evades his captors and reaches the seashore, where he prays for deliverance and at last meets the angelic figure of [[Greta Garbo]], who guides him "home to somewhere monochrome, but somewhere you will be a certain kind of free".<ref name="GillIndependent" /> A circular plot device concludes and resolves the fantasy.<ref name="GillIndependent" />
+
+==Production==
+{{Listen
+ |filename     = Limo driver.ogg
+ |title        = "Limo Driver"
+ |description  = Ron Mael making his vocal debut as the limo driver; his bewildered passenger is played by Swedish actor Jonas Malmsjö.
+ |filename2    = The Studio Commissary.ogg
+ |title2       = "The Studio Commissary"
+ |description2 = The studio boss, played by Russell Mael, gives Bergman a tour of the studio's cafeteria, pointing out the numerous European directors assembled there.
+ |filename3    = Escape.ogg
+ |title3       = "Escape (part 1)"
+ |description3 = Bergman tries to escape, pursued by police.
+}}
+
+===Recording===
+A cast of Swedish and American actors contributed to the recording.<ref name="PattisonBBC" /> While Sparks recorded the music in the United States, Wennersten oversaw the recording of the Swedish voice artists in [[Stockholm]].<ref name="ntse" /><ref name="radioteatern">{{cite web|url=http://sverigesradio.se/sida/gruppsida.aspx?programid=965&grupp=8411|title=The Seduction of Ingmar Bergman av Sparks|last=Wennersten|first=Marie|work=Radioteatern|publisher=Sveriges Radio|accessdate=2010-04-18|language=sv}}</ref> Translation of the lyrics was also handled in Sweden: "Since I do not speak Swedish, I will never know how they managed," Russell Mael said, expressing his appreciation for the efforts of everyone involved to translate the tone and spirit of the Maels' original text into Swedish lyrics.<ref name=Syd>{{Cite news|url=http://www.sydsvenskan.se/kultur--nojen/sparks-later-bergman-sjunga-ut/|archiveurl=https://web.archive.org/web/20120930120519/http://www.sydsvenskan.se/kultur--nojen/sparks-later-bergman-sjunga-ut/|archivedate=2012-09-30|title=Sparks låter Bergman sjunga ut|last=Staff|date=2009-08-13|work=Sydsvenskan|accessdate=2010-04-18|language=sv}}</ref> Sparks and Wennersten communicated mainly via an [[FTP server]], with Sparks sending Wennersten their musical material, and Wennersten sending the edited Swedish voice recordings back to Sparks.<ref name="radioteatern" /> Sparks were very pleased with the results of the collaboration, and the fact that Swedish actor [[Jonas Malmsjö]], playing Bergman, had starred in several Bergman productions, enabling him to bring this personal experience to his portrayal of Bergman.<ref name=ntse /><ref>{{Cite news|url=http://theater.nytimes.com/mem/theater/treview.html?res=9c0ce5d71630f931a15755c0a9679c8b63|title=THEATER REVIEW; Strindberg's Eerie World Of Lost Souls|last=Brantley|first=Ben|date=2001-06-22|work=The New York Times|accessdate=2009-12-30}}</ref><ref>{{Cite news|url=http://www.nytimes.com/2003/06/12/theater/theater-review-bergman-reimagines-ibsen-s-haunted-widow.html?pagewanted=all|title=THEATER REVIEW; Bergman Reimagines Ibsen's Haunted Widow|last=Brantley|first=Ben|date=2003-06-12|work=The New York Times|accessdate=2009-12-30}}</ref>
+
+===Style===
+The album mixes a variety of musical styles, from classical piano and opera, with full orchestral backing, to [[polka]], [[vaudeville]], [[jazz]], [[Pop music|pop]] and [[rock music|rock]], and features both song and spoken-word elements.<ref name="PattisonBBC" /><ref name="GillIndependent" /><ref name="Times" /> Singer Russell Mael's [[falsetto]] vocals remain a prominent feature, while Ron Mael makes his vocal debut in the roles of the limo driver and Hollywood tour guide.<ref name="PM" /><ref name="Times" /><ref name=RC /> Besides Jonas Malmsjö providing Bergman's voice, [[Elin Klinga]], one of Bergman's favourite actresses in the latter stages of his career, appears in the role of Greta Garbo.<ref name=ntse /><ref name="radioteatern" /><ref name="IBF">{{cite web|url=http://www.ingmarbergman.se/universe.asp?guid=259F26BE-1DE6-4100-8926-A6F7E31F4651 |title=Elin Klinga |work=Ingmar Bergman Face To Face |publisher=Ingmar Bergman Foundation |accessdate=2009-12-30 |deadurl=yes |archiveurl=https://web.archive.org/web/20091007100300/http://www.ingmarbergman.se/universe.asp?guid=259F26BE-1DE6-4100-8926-A6F7E31F4651 |archivedate=7 October 2009 }}</ref> Sparks drummer [[Tammy Glover]] appears as The Hollywood Welcoming Committee, while opera singer [[Rebecca Sjöwall]] plays a Hollywood actress.<ref name="Times" /><ref name="rs">{{cite web|url=http://www.rebeccasjowall.com/|title=Rebecca Sjöwall Official Website – Biography|accessdate=2010-01-01}}</ref>
+
+Structurally, the album is not a collection of stand-alone songs, but a 64-minute piece of music composed of 24 plot-driven subsections.<ref name="PattisonBBC" /><ref name="RC" /> The music references the band's own discography at various points, evoking echoes of their earlier records – "sly winks to fans, each with their favourite era of Sparks in mind".<ref name="PM" /> The [[BBC]] review stated that the album was "steeped in the same arch humour and orchestral sweep that guided the likes of 2006's ''Hello Young Lovers'' and last year's ''Exotic Creatures of The Deep''", blending "jaunty songs and rib-tickling tangents with a coherent narrative".<ref name="PattisonBBC">{{Cite news|url=http://www.bbc.co.uk/music/reviews/pgfd|title=The story of a maverick creative force – remind you of anyone?|last=Pattison|first=Louis|date=2009-11-02|work=BBC Review|publisher=BBC|accessdate=2009-12-28}}</ref>
+
+==Release==
+The Swedish broadcast version of the musical, containing both Swedish and English lyrics, had its world première on 14 August 2009, when it was performed at a special event in Stockholm's [[Södra Teatern|Södra Theatre]] and broadcast on Sveriges Radio's [[P1 (Swedish radio station)|P1]] channel.<ref name=SD090814>{{Cite news|url=http://www.svd.se/kulturnoje/nyheter/bergman-dyker-upp-i-musikal_3351137.svd|title=Bergman dyker upp i musikal|last=Cullberg|first=Jonas|date=2009-08-14|work=Svenska Dagbladet|accessdate=2010-04-23|language=sv}}</ref> An exclusive edition of 1,000 CDs was released by SR Records, the Sveriges Radio record label, at the same time.<ref name="SRPI" /> The band later released an English version of the work on their own Lil' Beethoven label, initially only available as a double [[gramophone record|vinyl]] and digital download.<ref name="PM" /> [[BBC 6 Music]] and presenter [[Stuart Maconie]] hosted the English version's première in London on 28 October 2009, followed by a Q&A session with the Mael brothers.<ref name="DaviesBBC" />
+
+==Reception==
+{{Album ratings
+| title =
+| subtitle =
+| state =
+<!-- Reviewers -->
+| rev1 = [[BBC]]
+| rev1Score = (favourable)<ref name="PattisonBBC" />
+| rev2 =''[[PopMatters]]''
+| rev2Score = {{Rating|7|10}}<ref name="PM">{{cite web|last=Carson|first=Craig|url=http://www.popmatters.com/pm/review/111283-sparks-the-seduction-of-ingmar-bergman|work=PopMatters|date=2009-10-23|accessdate=2009-11-25|title=The Seduction of Ingmar Bergman Review}}</ref>
+| rev3 =''[[Record Collector]]''
+| rev3Score = {{Rating|5|5}}<ref name=RC>{{cite web|url=http://www.recordcollectormag.com/reviews/review-detail/4825|work=Record Collector|author=Easlea, Daryl|title=Works of art can also work|accessdate=2009-11-25}}</ref>
+| rev4 =''[[Svenska Dagbladet]]''
+| rev4Score ={{Rating|5|6}}<ref>{{Cite news|url=http://www.svd.se/kulturnoje/musik/the-seduction-of-ingmar-bergman-sparks_3414955.svd|title=The seduction of Ingmar Bergman – Sparks|last=Backman|first=Dan|date=2009-08-26|work=Svenska Dagbladet|accessdate=2010-04-23|language=sv}}</ref>
+| rev5 =''[[The Guardian]]''
+| rev5Score ={{Rating|4|5}}<ref name="SimpsonGuardian">{{Cite news|url=http://www.guardian.co.uk/music/2009/nov/27/sparks-the-seduction-of-ingmar-bergman|title=Sparks: The Seduction of Ingmar Bergman|last=Simpson|first=Dave|date=2009-11-27|work=The Guardian|accessdate=2009-12-28}}</ref>
+| rev6 = ''[[The Independent]]''
+| rev6Score = {{Rating|5|5}}<ref name=GillIndependent>{{cite news|url=http://www.independent.co.uk/arts-entertainment/music/reviews/album-sparks-the-seduction-of-ingmar-bergman-lil-beethoven-1811482.html|work=The Independent|date=2009-10-30|author=Gill, Andy|title=Album: Sparks, The Seduction of Ingmar Bergman (Lil' Beethoven)|accessdate=2009-12-28}}</ref>
+| rev7 = ''[[The Times]]''
+| rev7Score = {{Rating|3|5}}<ref name="Times">{{Cite news|url=http://entertainment.timesonline.co.uk/tol/arts_and_entertainment/music/cd_reviews/article6930038.ece|title=Sparks: The Seduction of Ingmar Bergman|last=Staff|date=2009-11-28|work=The Times|accessdate=2009-12-28}}</ref>
+| rev8 = ''[[The Times]]''
+| rev8Score = {{Rating|3|5}}<ref name="Dalton" />
+| rev9 = ''[[The Word (magazine)|The Word]]''
+| rev9Score = (favourable)<ref name="Quantick">{{Cite news|url=http://cde.cerosmedia.com/1P4af022747da4c012.cde/page/94|title=This One Will Ron and Ron|last=Quantick|first=David|date=December 2009|work=The Word|page=94|accessdate=2010-04-27}}</ref>
+| rev10 = ''[[Mojo magazine|Mojo]]''
+| rev10Score = {{Rating|4|5}}<ref>{{cite web|url=http://allsparks.com/release/the-seduction-of-ingmar-bergman/|title=Sparks - The Seduction Of Ingmar Bergman|work=Sparks Official Website|accessdate=30 December 2014}}</ref>
+| rev11 = ''Zero Music Magazine''
+| rev11Score = {{Rating|7|10}}<ref>{{Cite news|url=http://www.zeromagazine.nu/rec.asp?id=2718|archiveurl=https://web.archive.org/web/20110720111238/http://www.zeromagazine.nu/rec.asp?id=2718|archivedate=2011-07-20|title=Sparks – The Seduction of Ingmar Bergman|last=Svensson|first=Hans-Olof|work=Zero Music Magazine|accessdate=2010-04-23|language=sv}}</ref>
+}}
+The album has been well received by critics.<ref name="IBF-SBMAS">{{cite web|url=http://www.ingmarbergman.se/page.asp?guid=7C5A9203-D0B2-47DB-B0C7-FB310EACB019|archiveurl=https://web.archive.org/web/20091007023347/http://www.ingmarbergman.se/page.asp?guid=7C5A9203-D0B2-47DB-B0C7-FB310EACB019|archivedate=2009-10-07|title=Sparks' Bergman Musical a Success|last=Staff|date=2009-12-01|work=Ingmar Bergman Face to Face|publisher=Ingmar Bergman Foundation|accessdate=2010-04-23}}</ref> [[Simon Price]] in ''[[The Independent]]'' called it "an engrossing and enriching piece" when listened to as a whole.<ref name="PriceIndependent">{{Cite news|url=http://www.independent.co.uk/arts-entertainment/tv/reviews/album-sparks-the-seduction-of-ingmar-bergman-lil-beethoven-records-1820763.html|title=Album: Sparks, The Seduction of Ingmar Bergman, (Lil Beethoven Records)|last=Price|first=Simon|date=2009-11-15|work=The Independent|accessdate=2009-12-29}}</ref> Craig Carson in ''[[PopMatters]]'' commented that the Sparks' "wry humor and willingness to experiment with different formats continue to stretch the limits of pop music in ways many other acts simply do not attempt. The band continually seem able and willing to explore just about anything – they remain musicians blessedly apart from the herd."<ref name="PM" /> Daryl Easlea, writing for ''[[Record Collector]]'', commented in a similar vein: "Only Sparks could do this. A 64-minute 24-song cycle commissioned for Swedish radio about Ingmar Bergman. [...] Obscure, of course – delightfully warm, naturally; it underlines Sparks' greatness and importance."<ref name=RC /> Commenting on the portrayal of Bergman, Easlea stated, "Swedish actor Malmsjö plays Bergman with all the appropriate detached paranoia"; he concluded his review by awarding the album a full five stars.<ref name=RC />
+
+''[[The Times]]'' said it was "a very Sparksian undertaking – painstaking and slightly ludicrous – to make a musical about an art-house film director, with a very complicated plot, for the radio (even Rick Wakeman's ''King Arthur on Ice'' had something to look at)." It said the orchestral arrangements by Ron Mael were "great, actually, recalling the skyscraper bustle of Bernstein and the triumphant fanfares of Michael Nyman", and stated that "the central concept – pursue your own idea of art, regardless of whether anyone will buy it – seems to be their rule of thumb, too. And you can't knock that."<ref name="Times" /> The review by Stephen Dalton, also in ''The Times'', found the "modernist musical backdrop" dominated by "electro-orchestral fragments" "less seductive" and, "despite plenty of arch and witty lyrics", regretted the scarcity of "memorable melodies or fully realised songs".<ref name="Dalton">{{Cite news|url=http://entertainment.timesonline.co.uk/tol/arts_and_entertainment/music/cd_reviews/article6933207.ece|title=Sparks: The Seduction of Ingmar Bergman. The 22nd studio album by Ron and Russell Mael is their most ambitious so far – an alluringly barmy and glamorous affair|last=Dalton|first=Stephen|date=2009-11-27|work=The Times|accessdate=2010-04-19}}</ref> Dalton concluded that the work was "not wholly successful, perhaps, but still an alluringly barmy and glamorous affair", and a "fascinating folly from two enduringly inventive oddballs".<ref name="Dalton" />
+
+The BBC review stated fans hoping for "a fresh suite of crisp new Sparks songs" might be disappointed because "there are no tunes without the tale attached", but added that "luckily, the tale is a good one": the story of Hollywood corruption "is told masterfully, and builds to a dramatic conclusion that both condemns Hollywood and satirises its conventions with rapier-sharp wit."<ref name="PattisonBBC" /> Dave Simpson in ''[[The Guardian]]'' said the piece, "best experienced as a whole", was "not an idle fantasy, and emerges as a fascinating and powerful discourse on the struggle between art and commerce, and the destructive power of celebrity", calling the musical "a bold, major work – as compelling and original as anything in their sporadically brilliant career."<ref name="SimpsonGuardian" />
+
+[[David Quantick]] in ''[[The Word (magazine)|The Word]]'' commented that "musically, ''Seduction'' is awe-inspiring in the way the Maels perfectly meld their current style – intense, repetitive beats and melodies (there's even a bit of squelching techno here) and caustic, snappy lyrics – with the demands of an actual musical."<ref name="Quantick" /> He called the album an "amazing record", a "commissioned piece that not only does what it's been asked to do, but transcends the brief and creates a genuinely exciting piece of music in its own right."<ref name="Quantick" /> Andy Gill in ''[[The Independent]]'' gave ''The Seduction of Ingmar Bergman'' a maximum rating of five stars and included the record among his 20 albums of the year: "Sharply scripted, with that sly, knowing touch so typical of Sparks, it's also scored with scrupulous intelligence, the arrangements drawing on a range of apt influences, from Kurt Weill to jazz, pop and rock, and the orchestrations ingeniously duplicitous, wistful and sinister, as the action dictates. It may well turn out to be the pinnacle of Sparks' career, and certainly has an ambition well beyond the usual remit of popular culture."<ref name="GillIndependent" /><ref name="GillYear">{{Cite news|url=http://www.independent.co.uk/arts-entertainment/music/features/andy-gill--the-music-to-my-year-1837821.html|title=Andy Gill – The music to my year|last=Gill|first=Andy|date=2009-12-11|work=The Independent|accessdate=2010-01-01}}</ref>
+
+==Musical and film versions==
+Sparks said in October 2009 that they were planning to turn the album into a live show and were in talks with Canadian film director [[Guy Maddin]] about a film version of the musical.<ref name="DaviesBBC">{{Cite news|url=http://www.bbc.co.uk/6music/news/20091029_sparks.shtml|archiveurl=https://web.archive.org/web/20091226062355/http://www.bbc.co.uk/6music/news/20091029_sparks.shtml|archivedate=2009-12-26|title=Sparks' radio musical – The Mael brothers plan to turn latest album into a live show and film|last=Davies|first=Rodrigo|date=2009-10-29|publisher=BBC|accessdate=2009-12-30}}</ref> They confirmed in a September 2010 interview on [[Michael Silverblatt]]'s ''Bookworm'' show that Maddin and actor [[Jason Schwartzman]] were on board, and that they were in the process of seeking funding for the project.<ref>{{Cite news|url=http://www.kcrw.com/media-player/mediaPlayer2.html?type=audio&id=bw100902paul_muldoon_and_spe|archiveurl=https://web.archive.org/web/20110927074241/http://www.kcrw.com/media-player/mediaPlayer2.html?type=audio&id=bw100902paul_muldoon_and_spe|archivedate=2011-09-27|title=Bookworm: Paul Muldoon and special guests, Sparks|last=Silverblatt|first=Michael|date=2010-09-02|publisher=KCRW|accessdate=2010-09-16}}</ref><ref>{{Cite news|url=http://www.music-news.com/shownews.asp?H=Sparks-reveal-plans-for-film-based-on-their-musical-The-Seduction-Of-Ingmar-Bergman&nItemID=36217|title=Sparks reveal plans for film based on their musical The Seduction Of Ingmar Bergman|last=Staff|date=2010-09-06|work=music-News.com|accessdate=2010-09-16}}</ref>
+
+The world premiere of the live musical took place on June 25 at the 2011 [[Los Angeles Film Festival]], starring Ron and Russell Mael from Sparks, Maddin, Finnish actor [[Peter Franzén (actor)|Peter Franzén]] as Bergman, [[Ann Magnuson]] as [[Greta Garbo]], with [[Rebecca Sjöwall]], [[Katie Puckrik]], and [[Tammy Glover]] reprising their roles from the album. Other actors included Nina Sallinen, Jacob Sidney, [[Dean Menta]], and Sal Viscuso.<ref name="FilmThreat">{{Cite news|url=http://www.filmthreat.com/festivals/35045/|archiveurl=https://web.archive.org/web/20110506100011/http://www.filmthreat.com/festivals/35045/|archivedate=2011-05-06|title=2011 Los Angeles Film Festival Announced First Round of Film Selections|last=Staff|date=2011-05-03|work=Film Threat|accessdate=2011-05-07}}</ref><ref name="Star-Ledger">{{Cite news|url=http://www.nj.com/entertainment/music/index.ssf/2011/04/groundbreaking_rock_band_spark.html|title=Groundbreaking rock band Sparks remains influential, 40 years after debut album|last=Rose|first=Lisa|date=2011-04-29|work=[[New Jersey On-Line]] / [[The Star-Ledger]]|accessdate=2011-05-11}}</ref><ref>{{cite web|url=http://www.rebeccasjowall.com/schedule.html|title=Rebecca Sjöwall Official Website – Schedule|accessdate=2011-05-11}}</ref><ref>{{cite web|title=LA Film Festival Sizzle Reel – Cast of LA Film Festival performance|work=theseductionofingmarbergman.com|url=http://www.theseductionofingmarbergman.com/video.php|year=2012|accessdate=2013-08-17}}</ref> Showcased at the festival to attract investor interest in the film project, the performance at the [[John Anson Ford Amphitheatre]] featured Maddin reading stage directions from the film's screenplay.<ref name="FilmThreat" /><ref name="Star-Ledger" /><ref name=HuffP>{{Cite news|url=http://www.huffingtonpost.com/gregory-weinkauf/musical-ingmar-bergman_b_885530.html|title=The Seduction of Ingmar Bergman: Sparks and Guy Maddin Get Saucy With the Swede|last=Weinkauf|first=Gregory|date=2011-07-01|work=[[The Huffington Post]]|accessdate=2011-07-23}}</ref>
+
+==Track listing==
+{{Track listing
+| all_writing     = Ron Mael and Russell Mael
+| title1          = 1956 Cannes Film Festival
+| length1         = 1:56
+| title2          = 'I Am Ingmar Bergman'
+| length2         = 3:09
+| title3          = Limo Driver (Welcome to Hollywood)
+| length3         = 3:08
+| title4          = 'Here He Is Now'
+| length4         = 1:19
+| title5          = 'Mr Bergman, How Are You?'
+| length5         = 4:28
+| title6          = 'He'll Come 'Round'
+| length6         = 1:44
+| title7          = En Route to the Beverly Hills Hotel
+| length7         = 1:56
+| title8          = Hollywood Welcoming Committee
+| length8         = 2:36
+| title9          = 'I've Got to Contact Sweden'
+| length9         = 2:41
+| title10          = The Studio Commissary
+| length10         = 3:08
+| title11          = 'I Must Not Be Hasty'
+| length11         = 1:47
+| title12          = 'Quiet on the Set'
+| length12         = 1:06
+| title13          = 'Why Do You Take That Tone with Me?'
+| length13         = 2:52
+| title14          = Pleasant Hotel Staff
+| length14         = 0:55
+| title15          = Hollywood Tour Bus
+| length15         = 1:34
+| title16          = Autograph Hounds
+| length16         = 2:20
+| title17          = Bergman Ponders Escape
+| length17         = 2:25
+| title18          = 'We've Got to Turn Him 'Round'
+| length18         = 2:37
+| title19          = Escape (Part 1)
+| length19         = 4:14
+| title20          = Escape (Part 2)
+| length20         = 5:59
+| title21          = 'Oh, My God'
+| length21         = 2:59
+| title22          = Garbo Sings
+| length22         = 3:48
+| title23          = Almost a Hollywood Ending
+| length23         = 2:13
+| title24          = 'He's Home'
+| length24         = 3:38
+}}
+Note: The digital downloads were released as single tracks with a duration of 64:32 (Swedish broadcast version) and 64:33 (English version).
+
+==Personnel==
+{{col-begin}}
+Composed, written, and produced by Ron Mael and Russell Mael.
+{{col-break}}
+;Cast<ref name="allsparks">{{cite web|url=http://www.allsparks.com|title=Sparks Official Website|year=2009|work=Discography section, Credits for The Seduction of Ingmar Bergman|accessdate=2010-01-01}}</ref>
+* [[Russell Mael]] – Studio chief; policeman 1 and 2
+* [[Ron Mael]] – Limo driver; Hollywood tour guide
+* Marcus Blake – Autograph hound; Woody
+* Tammy Glover – Hollywood Welcoming Committee; Gerry
+* Saskia Husberg – Interpreter
+* [[Elin Klinga]] – Greta Garbo
+* Marie-Chantal Long – Cannes Festival announcer
+* [[Jonas Malmsjö]] – Ingmar Bergman
+* Steve McDonald – Hotel concierge
+* [[Steven Nistor]] – Hotel doorman
+* [[Katie Puckrik]] – Hotel operator
+* [[Rebecca Sjöwall]] – Hollywood starlet
+* Jim Wilson – First A.D.; autograph hound
+{{col-break}}
+;Musicians<ref name="allsparks" />
+* Ron Mael – Keyboard
+* Russell Mael – Vocals
+* Jim Wilson – Guitar
+* [[Dean Menta]] – Guitar
+* Marcus Blake – Bass
+* [[Tammy Glover]] – Drums
+* [[Steven Nistor]] – Drums
+
+;[[Sveriges Radio|SR]] production staff<ref name="SR-2009-05-08" /><ref name="SRPI">{{cite web|url=http://sverigesradio.se/sida/gruppsida.aspx?programid=2938&grupp=21081&artikel=3026397|title=Pressinformation|last=Staff|date=2009-08-12|publisher=Sveriges Radio|accessdate=2010-04-18|language=sv}}</ref>
+* Marie Wennersten – Producer and director for Swedish recording
+* Magnus Lindman – Translations
+* Sabina von Greyerz – SR Records project manager
+{{col-end}}
+
+==References==
+{{Reflist|30em}}
+
+==External links==
+* {{Official website|http://www.theseductionofingmarbergman.com/}}
+* [http://archive.is/2012.12.29-064900/http://www.myspace.com/allsparks/blog/508684172 ''The Seduction of Ingmar Bergman''] on Sparks's ''[[MySpace]]'' blog
+* {{YouTube|_skxCVu1aEY|Speech by Russell Mael after the Stockholm première on 14 August 2009}} (2 parts)
+* [http://extratv.warnerbros.com/2011/06/extra_music_sparks_to_debut_the_seduction_of_ingmar_bergman.php Interview] with Sparks on the movie project and upcoming musical performance at the LA Film Festival, [[Warner Brothers]]
+
+{{Sparks}}
+{{Ingmar Bergman}}
+
+{{Use dmy dates|date=September 2010}}
+
+{{Featured article}}
+
+{{DEFAULTSORT:Seduction Of Ingmar Bergman, The}}
+[[Category:2009 albums]]
+[[Category:Sparks (band) albums]]
+[[Category:Concept albums]]
+[[Category:2009 radio dramas]]
+[[Category:Swedish radio dramas]]
+[[Category:2009 musicals]]
+[[Category:Ingmar Bergman]]
+[[Category:Rock operas]]

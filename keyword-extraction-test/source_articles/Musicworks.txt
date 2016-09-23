@@ -1,0 +1,55 @@
+{{Infobox magazine
+| title = Musicworks
+| cover = 
+| editor = Jennie Punter
+| category = [[music magazine]]
+| formernames = 
+| abbreviation = 
+| publisher = Musicworks Society of Ontario
+| country = Canada
+| based = [[Toronto]]<ref name=disc/>
+| frequency = Tri-annual<ref name=disc/>
+| founder = [[Andrew Timar]] and [[John Oswald (composer)|John Oswald]]
+| firstdate = January 1978
+| website = {{URL|http://www.musicworks.ca}}
+| issn = 0225-686X
+}}
+'''''Musicworks''''' is a Canadian [[avant-garde music]] [[magazine]], launched in January 1978 by [[Andrew Timar]] ([[editor-in-chief]]) and [[John Oswald (composer)|John Oswald]] (design and production).<ref name=disc>{{cite web|title=Musicworks|url=http://www.discogs.com/label/31186-Musicworks|publisher=Discogs|accessdate=13 November 2015}}</ref>
+
+==History==
+The first 4 issues came as a supplement to ''Only Paper Today'', a [[Toronto]] art magazine published by Victor Coleman.<ref>See Victor Coleman biography at the [http://www.ccca.ca/writers/author_info.html?languagePref=en&link_id=1940&context=003&author=Victor%20Coleman Canadian Art Database]</ref> It was then published quarterly by Toronto's [[The Music Gallery|Music Gallery]],<ref>See The Canadian Encyclopedia [http://www.thecanadianencyclopedia.com/index.cfm?PgNm=TCE&Params=U1ARTU0002513 article] on the Music Gallery</ref> with funding from the [[Canada Council]], the [[Ontario Arts Council]], private donations and paid advertisement. The journal's offices were located inside [[The Music Gallery]] on Saint Patrick Street, Toronto. In 1980, John Oswald summed up the birth of the magazine in an editorial titled ''The Story of Musicworks'':<ref>John Oswald, editorial, Musicworks issue #16, 1980</ref>
+
+"Four years ago, interested parties at the Music Gallery, an experimental music performance facility in Toronto, and ''Only Paper Today'', an art publication, initiated a magazine of new musics as a supplement to OPT. This was accomplished with volunteered contributions of materials, editorial time, and print space in an existing magazine with existing distribution. The first four ''Musicworks'' issues were published in this way."
+
+In 1982, composer [[Tina Pearson]], then instructor at the [[Ontario College of Art and Design]], became editor and launched the first companion cassette with issue #23, 1983. Pearson and Timar were both members of contemporary music collective [[New Music Co-op]], along with [[Miguel Frasconi]], [[Paul Hodge]] and [[Robert Stevenson (musician)|Robert Stevenson]].
+
+==Contents==
+''Musicworks'' claimed to be "the first attempt at a national periodical of new music [providing] information about experimental music in Canada".<ref>Andrew Timar, editorial, Musicworks issue #8, 1979</ref> Until 1990, Musicworks emphasized post-Cage-an music practices, [[performance art]] and [[graphic notation|graphic score]]s. Genres covered included avantgarde composition, ethnic music, [[Acoustic ecology]], special tunings and [[microtonality]], [[improvisation]], women's music, genre hybridation, etc. Typical composers interviewed or analysed in the 1978-1987 period were [[Raymond Murray Schafer]], [[Udo Kasemets]], [[Lou Harrison]], [[Pauline Oliveros]], [[Annea Lockwood]], [[Philip Glass]] or [[John Cage]], with a lengthy interview published issue #17, in 1981.
+
+The cassettes issued with the magazine in the 1980s and 1990s make up about 48 hours of material, and have been the focus of renewed interest in recent years, culminating in an exhibit with listening stations.<ref>{{Cite web|url=https://nowtoronto.com/music/features/cassette-comeback-tapes-and-weirdo-music-go-hand-in-hand/|title=Cassette Comeback: tapes and weirdo music go hand in hand|website=NOW Toronto Magazine - Think Free|access-date=2016-03-14}}</ref>
+
+With issue #48, published in 1990, the journal moved to a 68-page magazine format with a colour cover, and began to focus more on Canadian [[electroacoustic music]] and new technologies. The first companion CD appeared in 1992 with issue #52. Today, the magazine is published three times a year by Musicworks Society of Ontario, the official publisher since 2003. Public funding has been maintained throughout the years.
+
+== Editors-in-chief ==
+The following persons have been editors-in-chief of the magazine:
+* 1978-1982: Andrew Timar
+* 1982-1987: Tina Pearson
+* 1987-2007: [[Gayle Young]]
+* 2007-2009: David McCallum
+* 2009-2013: Micheline Roi
+* 2013-present: Jennie Punter
+
+== References ==
+{{reflist}}
+
+== External links ==
+* {{Official|http://www.musicworks.ca/}}
+* [http://www.thecanadianencyclopedia.com/en/article/musicworks-emc/ Musicworks article] at [[The Canadian Encyclopedia]]
+
+[[Category:Experimental music]]
+[[Category:Canadian music magazines]]
+[[Category:Magazines established in 1978]]
+[[Category:Triannual magazines]]
+[[Category:English-language magazines]]
+[[Category:Magazines published in Toronto]]
+[[Category:1978 establishments in Ontario]]

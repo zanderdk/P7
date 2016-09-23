@@ -1,0 +1,89 @@
+In sociology, '''post-materialism''' is the transformation of individual values from materialist, physical and economic to new individual values of autonomy and self-expression.
+
+Post-materialism is a tool in developing an understanding of modern culture. It can be considered in reference of three distinct concepts of [[Economic materialism|materialism]]. The first kind of materialism, and the one in reference to which the word ''post-materialism'' is used most often, refers to materialism as a value-system relating to the desire for fulfillment of material needs (such as security, sustenance and shelter) and an emphasis on material luxuries in a [[Consumerism|consumerist]] society. A second referent is the [[Historical materialism|materialist conception of history]] held by many [[socialists]], most notably [[Marx]] and [[Engels]], as well as their philosophic concept of [[dialectical materialism]]. The third definition of materialism concerns the philosophical argument that matter is the only existing reality. The first concept is sociological, the second is both philosophical and sociological, and the third is philosophical.
+
+Depending on which of the three above notions of materialism are being discussed, ''post-materialism'' can be an ''ontological postmaterialism'', an ''existentialistic postmaterialism'', an ''ethical postmaterialism'' or a ''political-sociological postmaterialism'', which is also the best known.
+
+==History==
+The sociological theory of ''post-materialism'' was developed in the 1970s by [[Ronald Inglehart]]. After extensive survey research, Inglehart postulated that the Western societies under the scope of his survey were undergoing transformation of individual values, switching from materialist values, emphasizing economic and physical security, to a new set of post-materialist values, which instead emphasized [[autonomy]] and [[Self-expression Values|self-expression]].<ref>[[Ronald Inglehart|Inglehart, Ronald]] (2008) ''Changing Values among Western Publics from 1970 to 2006''. West European Politics 31:1-2 130-46</ref> Inglehart argued that rising prosperity was gradually liberating the publics of advanced industrial societies from the stress of basic acquisitive or materialistic needs.
+
+Observing that the younger people were much more likely to embrace post-materialist values, Inglehart speculated that this [[silent revolution]] was not merely a case of a life-cycle change, with people becoming more materialist as they aged, but a genuine example of [[Generational Replacement]] causing intergenerational value change.<ref>Inglehart, R. (1971).''The Silent Revolution in Europe: Intergenerational Change in Post-Industrial Societies’, American Political Science Review,65:4,991–1017.</ref>
+
+The theory of intergenerational change is based on two key hypotheses:
+* The Scarcity Hypothesis
+* The Socialisation Hypothesis
+
+===The Scarcity Hypothesis===
+
+Inglehart assumed that individuals pursue various goals in something akin to a hierarchical order. While people may universally aspire to freedom and autonomy, the most pressing material needs like hunger, thirst and physical security have to be satisfied first, since they are immediately linked with survival. According to Inglehart's interpretation of [[Abraham Maslow|Maslow's]] [[Maslow's hierarchy of needs|hierarchy of human goals]], while [[scarcity]] prevails, these ''materialistic'' goals will have priority over post-materialist goals like belonging, [[esteem]], and aesthetic and intellectual satisfaction. However, once the satisfaction of the survival needs can be taken for granted, the focus will gradually shift to these 'non-material' goods.<ref>Inglehart, R. (1977). ''The Silent Revolution: Changing Values and Political Styles among Western Publics''. Princeton, NJ: Princeton University Press.</ref>
+
+===The Socialization Hypothesis===
+
+The relationship between material conditions and value priorities is not one of immediate adjustment. A large body of evidence indicates that people's basic values are largely fixed when they reach adulthood, and change relatively little thereafter.<ref>Rokeach, Milton (1968). ''Beliefs, Attitudes and Values''. San Francisco: Jossey-Bass.</ref> Therefore, [[cohort (statistics)|cohorts]] which often experienced economic scarcity would ''[[ceteris paribus]]'' (all things being equal) place a high value on meeting economic needs (such as valuing economic growth above protecting the environment) and on safety needs (will support more authoritarian styles of leadership, will exhibit strong feelings of national pride, will be strongly in favor of maintaining a large, strong army and will be more willing to sacrifice civil liberties for the sake of [[law and order (politics)|law and order]]). On the other hand, cohorts who have experienced sustained high material affluence start to give high priority to values such as [[individual]] improvement, personal [[freedom (political)|freedom]], [[citizen]] input in government decisions, the ideal of a society based on [[humanism]], and maintaining a clean and healthy [[environmentalism|environment]].
+
+Together, these two hypotheses carry the implication that, given long periods of material affluence, a growing part of society will embrace post-materialist value systems, an implication which has been indeed borne out internationally in the past 30 years of survey data. The post-material orientations acquired by each cohort during [[socialisation]] have been observed to remain remarkably steady over the time-frame of multiple decades, being a more stable [[value (personal and cultural)|value]]-system in contrast to the more volatile political and [[social attitude]]s.
+
+===Measuring post-materialism===
+There are several ways of empirically measuring the spread of post-materialism in a society. A common and relatively simple way is by creating an index from survey respondents' patterns of responses to a series of items which were designed to measure personal political priorities.
+
+{{quote|If you had to choose among the following things, which are the ''two'' that seem the most desirable to you?
+* Maintaining order in the nation.
+* Giving people more say in important political decisions.
+* Fighting rising prices.
+* Protecting [[freedom of speech]].
+
+... On the basis of the choices made among these four items, it is possible to classify our respondents into value priority groups, ranging from a 'pure' acquisitive type to a 'pure' post-[[bourgeois]] type, with several intermediate categories.<ref>Inglehart 1971: 994 f.)</ref>}}
+
+The theoretical assumptions and the empirical research connected with the concept of post-materialism have received considerable attention and critical discussion in the human sciences. Amongst others, the [[validity (statistics)|validity]], the stability, and the causation of post-materialism has been doubted.
+
+The so-called "Inglehart-index" has been included in several [[statistical survey|surveys]] (''e.g.'', [[General Social Survey]], [[World Values Survey]], [[Eurobarometer]], [[ALLBUS]], [[Turning Points of the Life-Course]]). The [[time series]] in ALLBUS ([[German General Social Survey]]) is particularly comprehensive. From 1980 to 1990 the share of "pure post-materialists" increased from 13 to 31 percent in West Germany. After the economic and social stress caused by [[German reunification]] in 1990 it dropped to 23 percent in 1992 and stayed on that level afterwards (Terwey 2000: 155; ZA and ZUMA 2005). The ALLBUS [[Sample (statistics)|sample]] from the less affluent population in East Germany show much lower portions of post-materialists (1991: 15%, 1992: 10%, 1998: 12%). International [[data]] from the 2000 [[World Values Survey]] show the highest percentage of post-materialists in [[Australia]] (35%) followed by [[Austria]] (30%), [[Canada]] (29%), [[Italy]] (28%), [[Argentina]] (25%), [[United States]] (25%), [[Sweden]] (22%), [[Netherlands]] (22%), [[Puerto Rico]] (22%) etc. (Inglehart et al. 2004: 384). In spite of some questions raised by these and other data, measurements of post-materialism have ''prima facie'' proven to be statistically important variables in many analyses.
+
+As increasing post-materialism is based on the abundance of material possessions or resources, it should not be mixed indiscriminately with [[asceticism]] or general denial of consumption. In some way post-materialism may be described as super-materialism. German data show that there is a tendency towards this orientation among young people, in the economically rather secure public service, and in the managerial middle class (Pappi and Terwey 1982).
+
+Recently, the issue of a "second generation of postmateralism" appearing on the scene of worldwide civil society, to a large extent conceived as their "positive ideological embodiment", has been brought up by cultural scientist Roland Benedikter in his seven-volume book series ''Postmaterialismus'' (2001–2005).
+
+==See also==
+* [[Antonio Gramsci]]
+* [[Postmodernity]]
+* [[Reflexive modernization]]
+* [[Self-expression Values]]
+* [[Consumerism]]
+* [[Affluenza]]
+* ''[[To Have or to Be?]]''
+* [[Gross National Happiness]]
+* [[Abraham Harold Maslow]]
+* [[John Kenneth Galbraith]]
+* [[Anthony Giddens]]
+* [[World Values Survey]]
+* [[Material feminism]]
+* [[Neo-Marxism]]
+* [[Historical revisionism]]
+* [[Integral Theory]]
+* [[Generational Replacement]]
+
+==Notes==
+{{Reflist}}
+
+==References==
+{{refbegin}}
+* Roland Benedikter, ''Postmaterialismus - Die zweite Generation''. Volume 1: ''Einfuehrung in das postmaterialistische Denken'' (2001), Volume 2: ''Der Mensch'' (2001), Volume 3: ''Die Arbeit'' (2001), Volume 4: ''Die Natur'' (2002), Volume 5: ''Das Kapital'' (2003), Volume 6: ''Die Globalisierung'' (2004), Volume 7: ''Perspektiven postmaterialistischen Denkens'' (2005). Vienna, Passagen Verlag 2001-2005.
+* Ronald Inglehart 1971: ''The Silent Revolution in Post-Industrial Societies''. In: ''American Political Science Review 65'': 991-1017. {{ISSN|1537-5943}}
+* Ronald Inglehart 1977: ''The Silent Revolution: Changing Values and Political Styles Among Western Publics''. Princeton: Princeton University Press. ISBN 0-691-10038-1
+* Ronald Inglehart, Miguel Basánez, Jaime Díez-Medrano, Loek Halmann and Ruud Luijkx (eds.) 2004: ''Human Beliefs and Values. A cross-cultural sourcebook based on the 1999-2002 values surveys''. Coyoacan: siglo veintiuno editores. ISBN 968-23-2502-1
+* Abraham H. Maslow 1987 (1954): ''Motivation and Personality''. 3rd edition. New York: Harper and Row. ISBN 0-06-041987-3
+* Franz Urban Pappi and Michael Terwey 1982: ''The German Electorate: Old Cleavages and New Political Conflicts''. In: Herbert Döring und Gordon Smith (eds.), ''Party Government and Political Culture in Western Germany'', London: Macmillan: 174-196. ISBN 0-333-29082-8
+* Michael Terwey: ''ALLBUS: A German General Social Survey''. In: ''Schmollers Jahrbuch. Zeitschrift für Wirtschafts- un Sozalwissenschaften. Journal of Applied Social Science Studies''. Nr. 120, 2000: 151-158. {{ISSN|0342-1783}}
+* ZA ([http://www.gesis.org/Datenservice/ALLBUS/ Zentralarchiv für Empirische Sozialforschung]) and ZUMA ([http://www.gesis.org/en/social_monitoring/allbus/e_service_guide.htm Zentrum für Umfragen, Methoden und Analysen]): ''German General Social Survey. [[ALLBUS]] / GGSS Cumulation 1980 - 2004 (ZA-Study-No 4243)'', Electronic Codebook, integrated Data File, and [http://www.gesis.org/en/data_service/allbus/data/index.htm Survey Description], Cologne: [[GESIS]].
+{{Refend}}
+
+==External links==
+*[http://www.earthhealing.info/fifty.htm Fifty Possible Ways to Challenge Over-Commercialism] by Albert J. Fritsch, SJ, PhD
+*[http://post-materialism.exactpages.com An ontological-existential postmaterialism]
+*http://www.postconsumerism.com/
+
+[[Category:Sociological theories]]
+[[Category:Political science theories]]
+[[Category:Cultural studies]]
+[[Category:Economic ideologies]]
+[[Category:Materialism]]
+[[Category:Sustainability]]

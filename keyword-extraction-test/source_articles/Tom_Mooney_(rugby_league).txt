@@ -1,0 +1,66 @@
+{{Use dmy dates|date=July 2013}}
+{{Use Australian English|date=July 2013}}
+{{other people|Tom Mooney}}
+{{Infobox rugby league biography
+|name             = Tom Mooney
+|fullname         = 
+|nickname         = 
+|image            = 
+|imagesize        = 
+|caption          = 
+|birth_date       = {{birth date and age|1952|3|16|df=y}}
+|birth_place      = [[Coffs Harbour]], [[New South Wales]]
+|height           = 
+|weight           = 
+|retired          = yes
+|position         = {{Rlp|WG}}
+|club1            = [[South Sydney Rabbitohs|South Sydney]]
+|year1start       = 1972
+|year1end         = 74
+|appearances1     = 62
+|tries1           = 29
+|goals1           = 0
+|fieldgoals1      = 0
+|points1          = 87
+|club2            = [[Manly-Warringah Sea Eagles|Manly-Warringah]]
+|year2start       = 1975
+|year2end         = 81
+|appearances2     = 163
+|tries2           = 83
+|goals2           = 0
+|fieldgoals2      = 0
+|points2          = 249
+|updated          = 5 July 2009
+|source           = [http://www.yesterdayshero.com.au/PlayerProfile_Tom-Mooney_5851.aspx Yesterday's Hero], [http://www.rugbyleagueproject.org/players/tom-mooney/summary.html RLP]
+}}
+
+'''Tom Mooney''' (born 16 March 1952) is an Australian former professional [[rugby league]] footballer of the 1970s. He played in [[Sydney]]'s [[New South Wales Rugby Football League premiership]] as a [[Rugby league positions#Wing|winger]] for the [[Manly-Warringah Sea Eagles|Manly-Warringah]] and [[South Sydney Rabbitohs|South Sydney]] clubs. Mooney won the 1976 and 1978 premierships with Manly.
+
+==Career==
+Born in  in [[Coffs Harbour]], [[New South Wales]], Mooney was a junior winger for [[Wauchope, New South Wales|Wauchope]]. He joined South Sydney in [[1972 NSWRFL season|1972]]. He played three seasons with the Rabbitohs before joining Manly-Warringah in [[1975 NSWRFL season|1975]]. At the end of the [[1976 NSWRFL season]] Mooney played in Manly's [[Grand Final]]-winning side which defeated [[Parramatta Eels|Parramatta]] 13-10. He was also the 1976 season's top try-scorer, equal with team mate and Manly's captain [[Bob Fulton]] with both scoring 18 tries in the regular season, though Fulton would score another 3 tries in the finals series.
+
+Mooney scored a try in the [[1978 NSWRFL season]]'s Grand Final against [[Cronulla Sharks|Cronulla-Sutherland]], which was drawn 11-all and had to be re-played just three days later. Manly would go on to win the replay 16-0 though Mooney did not cross for a try.<ref>[http://rugbyleagueproject.com/players/Tom_Mooney.html Tom Mooney] rugbyleagueproject.com</ref> After playing in Manly's premiership team, Mooney was considered unlucky not to gain a place on the [[1978 Kangaroo tour|1978]] [[Kangaroo Tour]]. Seven of his team mates did tour, as did Manly coach [[Frank Stanton (rugby league)|Frank Stanton]] who was the head coach of the Kangaroos.
+
+Tom Mooney would also go on to be the [[1979 NSWRFL season]]'s top try scorer.<ref>Alan Whiticker. Encyclopedia of Rugby League Players. 2005</ref>
+
+In 1990 Mooney was named on the wing in a Manly team made up of the best players in the [[History of the Manly-Warringah Sea Eagles|club's history]]. He was one of the few exceptional players that failed to represent either his state or country.
+
+Former Manly team mate [[Paul Vautin|Paul "Fatty" Vautin]] told in his biography ''"The Strife and Times of Paul Vautin'' that during the [[1981 NSWRFL season]], Mooney was considered to be in a form slump after not having scored a try in the first six games of the season (of which Manly had only won two). Before Manly's Round 7 match against South Sydney at Manly's home ground [[Brookvale Oval]], a fired up Mooney all but ordered team mates to get him the ball during the game. Mooney went on to score two tries as the Sea Eagles won 21-13. Ironically it would be another 10 games before he crossed for another try. He scored a total of 9 tries for the season and retired from playing at the end of the year.
+
+==References==
+{{Reflist|2}}
+
+==External links==
+*[http://www.nrlstats.com/archive/players.cfm?PlayerID=5941 Tom Mooney] nrlstats.com
+
+{{Manly-Warringah Sea Eagles squad 1976 NSWRFL premiership}}
+{{Manly-Warringah Sea Eagles squad 1978 NSWRFL premiership}}
+{{National Rugby League top try scorers}}
+
+{{DEFAULTSORT:Mooney, Tom}}
+[[Category:Year of birth missing (living people)]]
+[[Category:Living people]]
+[[Category:Australian rugby league players]]
+[[Category:Manly-Warringah Sea Eagles players]]
+[[Category:Manly-Warringah Sea Eagles captains]]
+[[Category:South Sydney Rabbitohs players]]

@@ -1,0 +1,418 @@
+{{Other uses}}
+{{distinguish|Lama}}
+{{pp-semi-indef}}
+{{pp-move-indef}}
+{{Use dmy dates|date=November 2010}}
+{{Speciesbox
+| name = Llama
+| status = DOM
+| image = Llama lying down.jpg
+| image_caption = Llama lying down
+| taxon = Lama glama
+| authority = ([[Carl Linnaeus|Linnaeus]], [[10th edition of Systema Naturae|1758]])
+| range_map = Lama glama Vicugna pacos range.png
+| range_map_caption = Domestic llama and alpaca range<br />(according to Daniel W. Gade)
+}}
+The '''llama''' ({{IPAc-en|'|l|??|m|?}}; {{IPA-es|'?ama|lang}} {{IPA-es|'?ama|local}} <small>or</small> {{IPA-es|'?ama|}}) (''Lama glama'') is a domesticated [[South America]]n [[camelid]], widely used as a [[List of meat animals|meat]] and [[pack animal]] by [[Inca empire|Andean cultures]] since the [[Pre-Columbian era]].
+
+The height of a full-grown, full-size llama is {{convert|1.7|to|1.8|m|ft|abbr=on}} tall at the top of the head, and can weigh between {{convert|130|and|200|kg|lb|abbr=on}}. At birth, a baby llama (called a ''[[cria]]'') can weigh between {{convert|9|and|14|kg|lb|abbr=on}}. Llamas typically live for 15 to 25 years, with some individuals surviving 30 years or more.<ref name="Characteristics">
+{{cite web
+ |url=http://www.nose-n-toes.com/characts.htm
+ |title=Llama Characteristics
+ |publisher=Nose-n-Toes
+ |date=25 June 2007}}</ref><ref name="Facts">
+{{cite web
+ |url=http://www.llamasofatlanta.com/llama_facts.htm
+ |title=Llama Facts 1
+ |publisher=Llamas of Atlanta
+ |date=25 June 2007}}</ref><ref name="FAQ">
+{{cite web
+ |url=http://www.twincreeksllamas.com/faq/FAQs.htm
+ |publisher=Twin Creeks Llamas
+ |title=Llama FAQ
+ |date=25 June 2007}}</ref>
+
+They are very social animals and live with other llamas as a [[herd]]. The wool produced by a llama is very soft and [[lanolin]]-free. Llamas are intelligent and can learn simple tasks after a few repetitions. When using a pack, they can carry about 25 to 30% of their body weight for 8 to 13 [[kilometre|km]] (5–8 [[mile]]s).<ref name="OK State">
+{{cite web
+ |url=http://www.ansi.okstate.edu/breeds/other/llama/
+ |publisher=[[Oklahoma State University]]
+ |title=Llama
+ |date=25 June 2007}}</ref>
+
+The name ''llama'' (in the past also spelled 'lama' or 'glama') was adopted by [[European colonization of the Americas|European settlers]] from [[Indigenous people in Peru|native Peruvians]].<ref>Oxford English Dictionary, 2nd edition, "''llama''"</ref>
+
+Llamas appear to have originated from the central plains of [[North America]] about 40 million [[year]]s ago. They migrated to South America about three million years ago. By the end of the last [[Quaternary glaciation|ice age]] (10,000–12,000 years ago), camelids were extinct in North America.<ref name="OK State"/> As of 2007, there were over seven million llamas and [[alpaca]]s in South America, and due to importation from South America in the late 20th century, there are now over 158,000 llamas and 100,000 alpacas in the [[United States]] and [[Canada]].<ref name="Numbers">
+{{cite web
+ |url=http://www.scla.us/llamafacts.html
+ |author=South Central Llama Association
+ |title=Llama Facts 2
+ |date=22 January 2009}}</ref>
+
+== Classification ==
+[[File:A Quechua girl and her Llama.jpg|thumb|A traditionally dressed [[Quechuas|Quechua]] girl with a llama in [[Cusco]], [[Peru]]]]
+
+Lamoids, or llamas (as they are more generally known as a group), consist of the [[vicuña]] (''Vicugna vicugna'', prev. ''Lama vicugna''), [[guanaco]] (''Lama guanicoe''), Suri [[alpaca]], and Huacaya alpaca (''Vicugna pacos'', prev. ''Lama guanicoe pacos''), and the domestic llama (''Lama guanicoe glama''). Guanacos and vicuñas live in the wild, while alpacas – as well as llamas – exist only as domesticated animals.<ref>{{Cite book|title=Wonders of Llamas|isbn=0-396-07460-X |first=Roger |last=Perry |year=1977 |publisher=Dodd, Mead & Company |page=7}}</ref> Although early writers compared llamas to sheep, their similarity to the camel was soon recognized. They were included in the genus ''Camelus'' along with [[alpaca]] in the ''Systema Naturae'' ([[10th edition of Systema Naturae|1758]]) of [[Carl Linnaeus|Linnaeus]].<ref>{{Cite book|url=https://books.google.com/books?id=zb9zbY-JfBUC&printsec=frontcover|isbn=0-8138-0397-7|title=Medicine and Surgery of South American Camelids|author=Murray E. Fowler|year=1998|publisher=Wiley-Blackwell|page=1}}</ref> They were, however, separated by [[Georges Cuvier|Cuvier]] in 1800 under the name of ''lama'' along with the [[guanaco]].<ref name=ITIS>{{cite web|title=Lama|url=http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=624943#|publisher=Integrated Taxonomic Information System|accessdate=5 January 2013}}</ref> [[Alpaca]]s and [[vicuña]]s are in genus ''Vicugna''. The genera ''Lama'' and ''Vicugna'' are, with the two species of true camels, the sole existing representatives of a very distinct section of the [[Artiodactyla]] or even-toed ungulates, called [[Tylopoda]], or "bump-footed", from the peculiar bumps on the soles of their feet. The Tylopoda consist of a single family, the Camelidae, and shares the  [[taxon|order]] Artiodactyla with the [[Suinae|Suina]] ([[pig]]s), the Tragulina ([[chevrotain]]s), the [[Pecora]] ([[ruminant]]s), and the [[Whippomorpha]] ([[Hippopotamidae|hippos]] and [[cetacea]]ns, which belong to Artiodactyla from a [[Cladistics|cladistic]], if not traditional, standpoint). The Tylopoda have more or less affinity to each of the sister [[taxon|taxa]], standing in some respects in a middle position between them, sharing some characteristics from each, but in others showing special modifications not found in any of the other taxa.{{Citation needed|date=January 2009}}
+[[File:Domestic llama (2009-05-19).jpg|thumb|left|A domestic llama]]
+The 19th-century discoveries of a vast and previously unexpected extinct [[Paleogene]] fauna of North America, as interpreted by paleontologists [[Joseph Leidy|Leidy]], [[Edward Drinker Cope|Cope]], and [[Othniel Charles Marsh|Marsh]], aided understanding of the early history of this family.{{Citation needed|date=January 2009}} Llamas were not always confined to [[South America]]; abundant llama-like remains were found in [[Pleistocene]] deposits in the [[Rocky Mountains]] and in [[Central America]]. Some of the [[fossil]] llamas were much larger than current forms. Some species remained in North America during the last ice ages. North American llamas are categorized as a single extinct genus, ''[[Hemiauchenia]]''. Llama-like animals would have been a common sight 25,000 years ago, in modern-day [[California]], [[Texas]], [[New Mexico]], [[Utah]], [[Missouri]], and [[Florida]].<ref name=kurten>{{cite book|last=Kurtén|first=Björn|title=Pleistocene Mammals of North America|year=1980|publisher=Columbia University Press|location=New York|isbn=0231037333|author2=Anderson, Elaine |page=307}}</ref>
+
+The camelid lineage has a good fossil record. Camel-like animals have been traced from the thoroughly differentiated, modern species back through early [[Miocene]] forms. Their characteristics became more general, and they lost those that distinguished them as camelids; hence, they were classified as ancestral artiodactyls.{{Citation needed|date=January 2009}} No fossils of these earlier forms have been found in the [[Old World]], indicating that North America was the original home of camelids, and that Old World [[camel]]s crossed over via the [[Beringia|Bering Land Bridge]]. The formation of the [[Isthmus of Panama]] three million years ago allowed camelids to spread to South America as part of the [[Great American Interchange]], where they evolved further. Meanwhile, North American camelids [[Quaternary extinction event|died out at the end of the Pleistocene]].<ref>{{cite journal |last1=Grayson |first1=Donald K. |year=1991 |title=Late Pleistocene mammalian extinctions in North America: Taxonomy, chronology, and explanations |journal=Journal of World Prehistory |volume= 5|issue=3 |pages=193–231 |publisher=Springer Netherlands |doi=10.1007/BF00974990}}</ref>
+
+== Characteristics ==
+The following characteristics apply especially to llamas. [[Dentition]] of adults:-incisors 1/3 canines 1/1, premolars 2/2, molars 3/2; total 32. In the upper jaw, a compressed, sharp, pointed laniariform [[incisor]] near the hinder edge of the [[premaxilla]] is followed in the male at least by a moderate-sized, pointed, curved true [[canine tooth|canine]] in the anterior part of the maxilla.<ref>[http://www.vivo.colostate.edu/hbooks/pathphys/digestion/pregastric/llamapage.html Colorado State University, Hypertexts for Biomedical Science: Dental Anatomy of Ruminants]</ref> The isolated canine-like [[premolar]] that follows in the camels is not present. The teeth of the molar series, which are in contact with each other, consist of two very small premolars (the first almost rudimentary) and three broad [[molars]], constructed generally like those of ''Camelus''. In the lower jaw, the three incisors are long, spatulate, and procumbent; the outer ones are the smallest. Next to these is a curved, suberect canine, followed after an interval by an isolated minute and often deciduous simple conical premolar; then a contiguous series of one premolar and three molars, which differ from those of ''Camelus'' in having a small accessory column at the anterior outer edge.
+[[File:Llama with numbers.svg|thumb|right|300px|Names of llama body parts: '''1''' ears – '''2''' poll – '''3''' withers – '''4''' back – '''5''' hip – '''6''' croup – '''7''' base of tail – '''8''' tail – '''9''' buttock – '''10''' hock – '''11''' metatarsal gland – '''12''' heel – '''13''' cannon bone – '''14''' gaskin – '''15''' stifle joint – '''16''' flank – '''17''' barrel – '''18''' elbow – '''19''' pastern – '''20''' fetlock – '''21''' Knee – '''22''' Chest – '''23''' point of shoulder – '''24''' shoulder – '''25''' throat – '''26''' cheek or jowl – '''27''' muzzle]]
+The skull generally resembles that of ''Camelus'', the larger brain-cavity and orbits and less-developed [[cranial ridges]] being due to its smaller size. The nasal bones are shorter and broader, and are joined by the premaxilla.
+
+[[Vertebrae]]:
+* cervical 7,
+* dorsal 12,
+* lumbar 7,
+* sacral 4,
+* caudal 15 to 20.
+
+The ears are rather long and slightly curved inward, characteristically known as "banana" shaped. There is no dorsal hump. The feet are narrow, the toes being more separated than in the camels, each having a distinct plantar pad. The tail is short, and fibre is long, woolly and soft.
+
+In essential structural characteristics, as well as in general appearance and habits, all the animals of this genus very closely resemble each other, so whether they should be considered as belonging to one, two, or more species is a matter of controversy among [[natural history|naturalists]].
+
+The question is complicated by the circumstance of the great majority of individuals that have come under observation being either in a completely or partially domesticated state. Many are also descended from ancestors that have previously been domesticated, a state that tends to produce a certain amount of variation from the original type. The four forms commonly distinguished by the inhabitants of South America are recognized as distinct species, though with difficulties in defining their distinctive characteristics.
+
+These are:
+* the llama, ''Lama glama'' ([[Carl Linnaeus|Linnaeus]]);
+* the [[alpaca]], ''Vicugna pacos'' (Linnaeus);
+* the [[guanaco]] (from the [[Quechua languages|Quechua]] ''huanaco''), ''Lama guanicoe'' ([[Philipp Ludwig Statius Müller|Müller]]); and
+* the [[vicuña]], ''Vicugna vicugna'' ([[Juan Ignacio Molina|Molina]])
+
+The llama and alpaca are only known in the domestic state, and are variable in size and of many colors, being often white, brown, or piebald. Some are grey or black. The guanaco and vicuña are wild, the former being endangered, and of a nearly uniform light-brown color, passing into white below. They certainly differ from each other, the vicuña being smaller, more slender in its proportions, and having a shorter head than the guanaco. The vicuña lives in [[herd]]s on the bleak and elevated parts of the mountain range bordering the region of perpetual snow, amidst rocks and precipices, occurring in various suitable localities throughout [[Peru]], in the southern part of [[Ecuador]], and as far south as the middle of [[Bolivia]]. Its manners very much resemble those of the [[chamois]] of the European [[Alps]]; it is as vigilant, wild, and timid. The fiber is extremely delicate and soft, and highly valued for the purposes of weaving, but the quantity that each animal produces is minimal.
+Alpacas are descended from wild vicuna ancestors, while domesticated llamas are descended from wild guanaco ancestors, though a considerable amount of [[Hybrid (biology)|hybridization]] between the two species has occurred.
+
+Differential characteristics between llamas and alpacas include the llama's larger size, longer head, and curved ears. Alpaca fiber is generally more expensive, but not always more valuable. Alpacas tend to have a more consistent color throughout the body. The most apparent visual difference between llamas and [[camel]]s is that camels have a hump or humps and llamas do not.
+
+== Reproduction ==
+[[File:Emmett and evie.JPG|thumb|A dam and her [[cria]]]]
+Llamas have an unusual reproductive cycle for a large animal. Female llamas are [[Induced ovulation (animals)|induced ovulators]].<ref name="Chen">{{cite journal |journal=J. Reprod. Fert. |year=1985 |volume=74 |issue=2 |pages=335–339 |title=Semen-induced ovulation in the bactrian camel (Camelus bactrianus). |author=Chen, B.X., Yuen, Z.X. and Pan, G.W.}}</ref>  Through the act of mating, the female releases an egg and is often fertilized on the first attempt. Female llamas do not go into estrus ("heat").<ref>{{cite web|url=http://www.llamapaedia.com/reproduction/ovulate.html |work=Llamapaedia |title=Induced Ovulation |date=12 April 2007 |author1=Greta Stamberg  |author2=Derek Wilson  |lastauthoramp=yes |deadurl=yes |archiveurl=https://web.archive.org/web/20070412025723/http://www.llamapaedia.com/reproduction/ovulate.html |archivedate=12 April 2007 }}</ref>
+
+Like humans, llama males and females mature sexually at different rates. Females reach puberty at about 12 months old; males do not become sexually mature until around three years of age.<ref>
+{{cite web
+ |url=http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=2647232&dopt=Citation
+ |work=College of Veterinary Medicine and Biomedical Sciences, [[Colorado State University]], [[Fort Collins]].
+ |publisher=National Library of Medicine and the National Institutes of Health
+ |title=Llama reproduction
+ |date=17 April 2007
+ |author=L. W. Johnson}}</ref>
+
+=== Mating ===
+Llamas mate with the female in a kush (lying down) position, which is fairly unusual in a large animal. They mate for an extended period of time (20–45 minutes), also unusual in a large animal.<ref name="CebraAnderson2014">{{cite book |author1=Chris Cebra |author2=David E. Anderson |author3=Ahmed Tibary |author4=Robert J. Van Saun |author5=LaRue Willard Johnson |title=Llama and Alpaca Care: Medicine, Surgery, Reproduction, Nutrition, and Herd Health |url=https://books.google.com/books?id=8sU0AwAAQBAJ&printsec=frontcover#v=onepage&q=copulation&f=false |date=15 February 2014 |publisher=Elsevier Health Sciences |isbn=978-0-323-24291-2}}</ref>
+
+=== Gestation ===
+The gestation period of a llama is 11.5 months (350 days). Dams (female llamas) do not lick off their babies, as they have an attached tongue that does not reach outside of the mouth more than half an inch ({{convert|0.5|in|cm|disp=out}}). Rather, they will nuzzle and hum to their newborns.<ref>
+{{cite web
+ |url=http://www.llamaweb.com/about/reproduction.html
+ |work=LlamaWeb
+ |title=The llama reproductive cycle
+ |date=17 April 2007}}</ref>
+
+=== Crias ===
+A [[cria]] (from Spanish for "baby") is the name for a baby llama, [[alpaca]], [[vicuña]], or [[guanaco]]. Crias are typically born with all the females of the herd gathering around, in an attempt to protect against the male llamas and potential predators. Llamas give birth standing. Birth is usually quick and problem-free, over in less than 30 minutes. Most births take place between 8&nbsp;am and noon, during the warmer daylight hours. This may increase cria survival by reducing fatalities due to hypothermia during cold Andean nights. This birthing pattern is speculated to be a continuation of the birthing patterns observed in the wild. Crias are up and standing, walking and attempting to suckle within the first hour after birth.<ref>{{cite book |author= The Department of Veterninary Clinical Sciences at Ohio State University|title= Camelid Medicine, Surgery, and Reproduction for Veterinarians|series= Part II|year= 2002}}</ref><ref>{{cite book |last= Long |first= Patrick O. |title= Llama & Alpaca Neonatal Care|page= 112|isbn=0-9646618-3-7|year= 1996}}</ref><ref>{{cite book |last= Birutta|first= Gale|title= A Guide to Raising Llamas| page= 327|isbn=0-88266-954-0|year= 1997}}</ref>  Crias are partially fed with llama milk that is lower in fat and salt and higher in phosphorus and calcium than cow or goat milk. A female llama will only produce about {{convert|60|ml|impoz|abbr=on}} of milk at a time when she gives milk, so the cria must suckle frequently to receive the nutrients it requires.<ref name="VETMED">
+{{cite web
+|url=http://vetmed.illinois.edu/petcolumns/showarticle.cfm?id=222
+|author=Linda March
+|title=Llamas: A Different Kind of Pet
+|publisher=[[University of Illinois]], College of Veterinary Medicine
+|accessdate=15 May 2009}} {{Dead link|date=September 2010|bot=H3llBot}}</ref>
+
+=== Breeding situations ===
+In '''harem breeding''', the male is left with females most of the year.
+
+For '''field breeding''', a female is turned out into a field with a male llama and left there for some period of time. This is the easiest method in terms of labor, but the least useful in terms of prediction of a likely birth date. An ultrasound test can be performed, and together with the exposure dates, a better idea of when the cria is expected can be determined.
+
+'''Hand breeding''' is the most efficient method, but requires the most work on the part of the human involved. A male and female llama are put into the same pen and breeding is monitored. They are then separated and rebred every other day until one or the other refuses the breeding. Usually, one can get in two breedings using this method, though some studs have routinely refused to breed a female more than once. The separation presumably helps to keep the sperm count high for each breeding and also helps to keep the condition of the female llama's reproductive tract more sound. If the breeding is not successful within two to three weeks, the female is bred once again.
+
+=== Pregnancy ===
+[[File:Lamas in the sunset San Pedro de Atacama Chile Luca Galuzzi 2006.jpg|thumb|Llamas at [[San Pedro de Atacama]], [[Chile]]]]
+Llamas should be tested for pregnancy after breeding at two to three, six and at least 12 weeks.
+# For "spit" testing, bring the potentially pregnant dam to an intact male. If the stud attempts to mate with her and she lies down for him within a fairly short period of time, she is not pregnant. If she remains on her feet, spits, attacks him, or otherwise prevents his being able to mate, it is assumed she is probably pregnant. This test gets its name due to the dam spitting at the male if she is pregnant.
+# For [[progesterone]] testing, a veterinarian can test a blood sample for progesterone. A high level can indicate a pregnancy.
+# With palpation, the veterinarian or breeder manually feels inside the llama to detect a pregnancy. Some risks to the llama exist, but it can be an accurate method for pregnancy detection.
+# Ultrasound is the most accurate method for an experienced veterinarian, who can do an exterior examination and detect a fetus as early as 45 days.
+
+Spit testing with an intact male is generally free and is usually accurate. However, some hormonal conditions in females can make them reject a male when they are in fact not pregnant, and, more rarely, accept a male when they are pregnant. Progesterone tests can give a high reading in some females with a hormonal problem that are in fact not pregnant. Neither of the previous methods, nor palpation, can give a reasonably accurate idea of the age of the fetus, while an ultrasound procedure can. In addition, an ultrasound procedure can distinguish between pregnancy and misleading physical conditions, or between a live and dead fetus. The disadvantages of an ultrasound procedure are cost, some training in the use of ultrasound equipment is required, and not all veterinarians have the equipment needed to perform the examination.
+
+== Nutrition ==
+Options for feeding llamas are quite wide; a wide variety of commercial and farm-based feeds are available. The major determining factors include feed cost, availability, nutrient balance and energy density required. Young, actively growing llamas require a greater concentration of nutrients than mature animals because of their smaller digestive tract capacities.<ref>
+{{cite web
+ |url=http://www.ag.ndsu.edu/pubs/alt-ag/llama.htm
+ |work=Department of Agricultural Economics, [[North Dakota State University]]
+ |title=Llama
+ |date=17 April 2007
+ |author=Randy Sell}}</ref>
+
+{| class="wikitable" style="text-align:right;"
+|+ Estimated daily requirements{{Clarify|post-text=(what units?)|date=November 2010}} of bromgrass hay, alfalfa hay and corn silage on an as-fed and 100% dry matter basis for llamas from 22 to 550&nbsp;pounds.<ref>
+{{cite journal
+ | author = Murray E. Fowler, DVM
+ | title = Medicine and Surgery of South American Camelids; Llama, Alpaca, Vicuña, Guanaco
+ | publisher = [[Iowa State University]] Press
+ | year = 1989}}</ref>
+|-
+! rowspan="2" | Body weight<br /> (lb)
+! colspan="2" | Bromgrass
+! colspan="2" | Alfalfa
+! colspan="2" | Corn silage
+|-
+! (as fed)
+! (dry matter)
+! (as fed)
+! (dry matter)
+! (as fed)
+! (dry matter)
+|-
+| 22
+| 0.8
+| 0.7
+| 0.5
+| 0.5
+| 1.5
+| 0.4
+|-
+| 44
+| 1.3
+| 1.1
+| 0.9
+| 0.8
+| 2.6
+| 0.7
+|-
+| 88
+| 2.1
+| 1.9
+| 1.5
+| 1.3
+| 4.3
+| 1.2
+|-
+| 110
+| 2.6
+| 2.3
+| 1.7
+| 1.6
+| 5.2
+| 1.4
+|-
+| 165
+| 3.4
+| 3.1
+| 2.3
+| 2.1
+| 6.9
+| 1.9
+|-
+| 275
+| 5.0
+| 4.5
+| 3.4
+| 3.1
+| 10.1
+| 2.8
+|-
+| 385
+| 6.4
+| 5.7
+| 4.3
+| 3.9
+| 12.9
+| 3.6
+|-
+| 495
+| 7.8
+| 7.0
+| 5.3
+| 4.8
+| 15.8
+| 4.4
+|-
+| 550
+| 8.5
+| 7.6
+| 5.7
+| 5.2
+| 17.0
+| 4.8
+|}
+
+== Behavior ==
+[[File:Lloyd the Llama.jpg|thumb|A pack llama in the [[Rocky Mountain National Park]]]]
+Llamas, which are well-socialized and trained to halter and lead after [[weaning]], are very friendly and pleasant to be around. They are extremely curious and most will approach people easily. However, [[Berserk llama syndrome|llamas that are bottle-fed]] or over-socialized and over-handled as youth will become extremely difficult to handle when mature, when they will begin to treat humans as they treat each other, which is characterized by bouts of spitting, kicking and neck wrestling.{{citation needed|date=August 2015}}
+
+When correctly reared, llamas spitting at a human is a rare thing. Llamas are very social herd animals, however, and do sometimes spit at each other as a way of disciplining lower-ranked llamas in the herd. A llama's social rank in a herd is never static. They can always move up or down in the social ladder by picking small fights. This is usually done between males to see which will become dominant. Their fights are visually dramatic, with spitting, ramming each other with their chests, neck wrestling and kicking, mainly to knock the other off balance. The females are usually only seen spitting as a means of controlling other herd members.
+
+While the social structure might always be changing, they live as a family and they do take care of each other. If one notices a strange noise or feels threatened, a warning bray is sent out and all others become alert. They will often hum to each other as a form of communication.
+
+The sound of the llama making groaning noises or going "mwa" is often a sign of fear or anger. If a llama is agitated, it will lay its ears back. One may determine how agitated the llama is by the materials in the spit. The more irritated the llama is, the further back into each of the three stomach compartments it will try to draw materials from for its spit.
+
+An "orgle" is the mating sound of a llama or alpaca, made by the sexually aroused male. The sound is reminiscent of gargling, but with a more forceful, buzzing edge. Males begin the sound when they become aroused and continue throughout the act of procreation – from 15 minutes to more than an hour.<ref>
+{{cite web
+ |url=http://www.llamapaedia.com/behavior/sounds.html 
+ |work=Llamapedia 
+ |title=Behavior: Sounds 
+ |date=2 September 1997 
+ |author1=Greta Stamberg 
+ |author2=Derek Wilson 
+ |lastauthoramp=yes 
+ |deadurl=yes 
+ |archiveurl=https://web.archive.org/web/20061015040744/https://www.llamapaedia.com/behavior/sounds.html 
+ |archivedate=15 October 2006 
+ |df=dmy 
+}}</ref><ref>
+{{cite web
+ |url=http://personal.smartt.com/~brianp/allsounds.html
+ |work=Humm Page
+ |title=Llama Sounds
+ |date=17 May 2008
+ |author=Brian and Jane Pinkerton}}</ref>
+
+=== Guard behavior ===
+{{Main|Guard llama}}
+[[File:Llama guarding sheep.jpg|thumb|225px|Llama guarding sheep on the South Downs in [[West Sussex]]]]
+<!--  Commented out: [[File:Lever-park-1910.png|thumb|Llama at [[Rivington]], Lancashire, ''circa'' 1912]] -->
+Using llamas as livestock guards in North America began in the early 1980s, and some sheep producers have used llamas successfully since then.<ref>International Llama Association. (1995). "Guard Llamas." ILA Educational Brochure #2.</ref><ref name = "Geo">Walker, Cameron. "[http://news.nationalgeographic.com/news/2003/06/0610_030610_llamashepherds.html Guard Llamas Keep Sheep Safe From Coyotes.]" ''[[National Geographic Society|National Geographic]]'', 10 June 2003.</ref> They are used most commonly in the western regions of the [[United States]], where larger predators, such as coyotes and feral dogs, are prevalent. Typically, a single gelding (castrated male) is used.
+
+Research suggests the use of multiple guard llamas is not as effective as one. Multiple males tend to bond with one another, rather than with the livestock, and may ignore the flock. A gelded male of two years of age bonds closely with its new charges and is instinctively very effective in preventing predation. Some llamas appear to bond more quickly to sheep or goats if they are introduced just prior to [[lambing]]. Many sheep and goat producers indicate a special bond quickly develops between lambs and their guard llama and the llama is particularly protective of the lambs.
+
+Using llamas as guards has reduced the losses to predators for many producers. The value of the livestock saved each year more than exceeds the purchase cost and annual maintenance of a llama. Although not every llama is suited to the job, most are a viable, nonlethal alternative for reducing predation, requiring no training and little care.<ref>{{cite web |url=http://www.whyllama.com/GuardLlamas.htm#Guarding%20behavior/ |title=Guard Llamas: An Alternative for Effective Predator Management}}</ref>
+
+== History ==
+[[File:Lombards Museum 005 bis.jpg|right|thumb|Moche 100–300 AD at ''Lombards Museum'']]
+[[Image:Chancay - Llama Effigy - Walters 20092049.jpg|left|thumb|150px| This sculpture, originating from the Chancay Valley and adjacent Chillón Drainage region (Late Intermediate Period), captures the llama's natural inquisitiveness.<ref>{{cite web |publisher= [[The Walters Art Museum]]
+ |url= http://art.thewalters.org/detail/80204
+ |title= Llama Effigy}}</ref> The Walters Art Museum.]]
+
+===Pre-Incan cultures===
+The [[Moche (culture)|Moche]] people frequently placed llamas and llama parts in the burials of important people, as offerings or provisions for the afterlife.<ref>Berrin, Katherine & [[Larco Museum]]. ''The Spirit of Ancient Peru:Treasures from the Museo Arqueológico Rafael Larco Herrera.'' New York: [[Thames & Hudson]], 1997 ISBN 0-500-01802-2.</ref> The [[Moche (culture)|Moche]] culture of [[pre-Columbian]] [[Peru]] depicted llamas quite realistically in their ceramics.
+
+=== Inca empire ===
+In the Inca empire, llamas were the only beasts of burden, and many of the people dominated by the Inca had long traditions of llama herding. For the Inca nobility, the llama was of symbolic significance, and llama figures were often buried with the dead.<ref name="Inca Culture">
+{{cite web
+ |url=http://www.nationalgeographic.com/inca/inca_culture_4.html
+ |work=Inca culture
+ |title=Little Llamas
+ |date=10 October 2006}}</ref> 
+In South America, llamas are still used as beasts of burden, as well as for the production of [[Fibre|fiber]] and [[meat]].<ref name="Other Culture">
+{{cite web
+ |url=http://www.nal.usda.gov/awic/pubs/llama.htm
+ |authors=Jean Larson, Judith Ho
+ |title=Information Resources on the South American Camelids: Llamas, Alpacas, Guanacos, and Vicunas 1943–2006
+ |date=25 June 2007}}</ref>
+
+The [[Inca]] deity [[Urcuchillay]] was depicted in the form of a multicolored llama.<ref>{{cite book |last= D'Altroy|first= Terence N.|title= The Incas|series= The People of America|publisher= [[Blackwell Publishing]]|location= [[Oxford]]|isbn= 978-0-631-17677-0|page= 149|chapter= The Inca Pantheon|year= 2002}}</ref>
+
+Scholar Alex Chepstow-Lusty has argued that the switch from a [[hunter-gatherer]] lifestyle to widespread [[agriculture]] was only possible because of the use of llama [[feces|dung]] as [[fertilizer]].<ref>Anning, Caroline. (2011-05-22) [http://www.bbc.co.uk/news/world-latin-america-13439093 BBC News – Inca success in Peruvian Andes 'thanks to llama dung']. BBC.co.uk. Retrieved on 2011-08-21.</ref>
+
+===Spanish empire===
+[[File:Guanacos-llamas-el-primero-imagen-en-europa-1553.jpg|thumb|150px|left|The first image of llamas in Europa, 1553]]
+One of the main uses for llamas at the time of the [[Spanish conquest of the Inca Empire|Spanish conquest]] was to bring down ore from the mines in the mountains.<ref>{{cite web|url=http://www.pbs.org/gunsgermssteel/show/episode2.html|work=PBS|title=Guns, Germs & Steel. The Show: Episode Two|date=12 April 2007|author=Jared Diamond}}</ref> Gregory de Bolivar estimated that in his day, as many as 300 thousand were employed in the [[transport]] of produce from the [[Potosí]] mines alone, but since the introduction of [[horse]]s, [[mule]]s, and [[donkey]]s, the importance of the llama as a beast of burden has greatly diminished.<ref>
+{{cite web
+ |url=http://www.pbs.org/gunsgermssteel/variables/llamas.html
+ |work=PBS
+ |title=Guns, Germs & Steel. The story of&nbsp;... Llamas
+ |date=12 April 2007
+ |author=Jared Diamond}}</ref>
+
+According to [[Juan Ignacio Molina]], the Dutch captain [[Joris van Spilbergen]] observed the use of [[chilihueques]] (possibly a llama type) by native [[Mapuche]]s of [[Mocha Island]] as [[plough|plow animals]] in 1614.<ref>{{cite book|author=Juan Bautista Ignacio Molina|title=The geographical, natural and civil history of Chili, tr. by an American gentleman |url=https://books.google.com/books?id=F4oIAAAAQAAJ&pg=PA15|accessdate=22 August 2011|year=1808|pages=15–16|volume =II}}</ref>
+
+== Fiber ==
+Llamas have a fine undercoat, which can be used for handicrafts and garments. The coarser outer guard hair is used for rugs, wall-hangings and lead ropes. The fiber comes in many different colors ranging from white or grey to reddish-brown, brown, dark brown and black.
+
+[[File:Handspun llama yarn.jpg|thumb|Handspun llama yarn from [[Patagonia]]]]
+{| class="wikitable"
+|+ Average diameter of some of the finest, natural fibers<ref>
+{{cite web
+ |url=http://www.llama.org/llama_fiber.htm
+ |work=International Llama Association
+ |title=Llama Fiber
+ |date=17 April 2007
+ |author=Beula Williams}}</ref>
+|-
+! Animal
+! Fiber diameter<br /> ([[micrometre]]s)
+|-
+| [[Vicuña]]
+| style="text-align:right;" | 6–10
+|-
+| [[Alpaca]] ([[Alpaca fiber|Suri]])
+| style="text-align:right;" | 10–15
+|-
+| [[Muskox]] ([[Qiviut]])
+| style="text-align:right;" | 11–13
+|-
+| [[Merino]]
+| style="text-align:right;" | 12–20
+|-
+| [[Angora wool|Angora Rabbit]]
+| style="text-align:right;" | 13
+|-
+| [[Cashmere wool|Cashmere]]
+| style="text-align:right;" | 15–19
+|-
+| [[Yak]] Down
+| style="text-align:right;" | 15–19
+|-
+| [[Camel]] Down
+| style="text-align:right;" | 16–25
+|-
+| [[Guanaco]]
+| style="text-align:right;" | 16–18
+|-
+| Llama (Tapada)
+| style="text-align:right;" | 20–30
+|-
+| [[Chinchilla]]
+| style="text-align:right;" | 21
+|-
+| [[Mohair]]
+| style="text-align:right;" | 25–45
+|-
+| [[Alpaca fiber|Alpaca]] (Huacaya)
+| style="text-align:right;" | 27.7
+|-
+| Llama (Ccara)
+| style="text-align:right;" | 30–40
+|}
+
+== See also ==
+{{div col|colwidth=30em}}
+* [[Alpaca]]
+* [[Cama (animal)|Cama]], a crossbreed between a llama and a [[camel]]
+* [[Grass Mud Horse]], a parody originating from Mainland China of 2009 that features the alpaca and llama
+* [[Guard llama]], llamas used as livestock guardians
+* [[Lamoid]]
+* [[Llama hiking]]
+{{div col end}}
+
+== Notes ==
+{{reflist|30em}}
+
+== References ==
+* {{EB1911 |title=Llama |volume=16}}
+
+== External links ==
+{{wikispecies|Lama glama}}
+{{Commons|Lama glama|Llama}}
+
+* {{cite web|url=http://www.llamapaedia.com/gifs/orgle.aiff |title=Llamapaedia Orgle Sound |format=AIFF |deadurl=yes |archiveurl=https://web.archive.org/web/20071030063729/https://www.llamapaedia.com:80/gifs/orgle.aiff |archivedate=30 October 2007 |df=dmy }}
+* [http://www.life.com/image/first/in-gallery/22395/llamas-and-alpacas-close-up Llamas Close Up] – slideshow by ''[[Life (magazine)|Life magazine]]''
+* {{Cite Americana|wstitle=Llama |short=x}}
+
+{{Wiktionary-inline|llama}}
+
+{{Camelids}}
+{{Fibers}}
+{{Meat|state=expanded}}
+
+{{Authority control}}
+
+[[Category:Camelids]]
+[[Category:Animal hair products]]
+[[Category:Livestock]]
+[[Category:Mammals of South America]]
+[[Category:Megafauna]]
+[[Category:Animals described in 1758]]
+[[Category:Pack animals]]

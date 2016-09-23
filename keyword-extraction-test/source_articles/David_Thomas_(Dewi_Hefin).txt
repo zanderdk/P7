@@ -1,0 +1,21 @@
+{{Use dmy dates|date=November 2012}}
+'''David Thomas''' ([[bardic name]] '''Dewi Hefin''') (4 June 1828 – 9 March 1909) was a [[Welsh people|Welsh]] [[poet]] and [[teacher]].
+
+==Life==
+Thomas was born in [[Llanwenog]], [[Cardiganshire]], south [[Wales]].  He went to school in [[Cribyn]] and later ran schools in various places in Cardiganshire (Cribyn, [[Bwlch-y-fafda]], [[Mydroilyn]], [[Llanarth, Ceredigion|Llanarth]], [[Cwrtnewydd]] and [[Llanwnnen]]) until his retirement in 1883.<ref name=Thomas/>  His pupils in Cribyn included [[John Islan Jones]], who went on to become a distinguished [[Unitarianism|Unitarian]] minister and writer.<ref>{{cite web|url=http://wbo.llgc.org.uk/en/s2-JONE-ISL-1874.html|title=Jones, John Islan (1874&ndash;1968), minister (U) and author|work=Welsh Biography Online|publisher=[[National Library of Wales]]|last=James|first=Mary Auronwy|accessdate=12 February 2009}}</ref> His poems were published in four volumes: ''{{lang|cy|Y Blodau}}'' in 1854, ''{{lang|cy|Blodau Hefin}}'' in 1859, ''{{lang|cy|Blodau'r Awen}}'' in 1866, and ''{{lang|cy|Blodau Hefin}}'' in 1883.<ref name=Thomas>{{cite web|url=http://wbo.llgc.org.uk/en/s-THOM-DAV-1828.html|title=Thomas, David (Dewi Hefin; 1828&ndash;1909), poet|last=Griffiths|first=Griffith Milwyn|work=Welsh Biography Online|publisher=[[National Library of Wales]]|accessdate=13 February 2009}}</ref>
+
+==References==
+{{Reflist}}
+
+{{Authority control}}
+
+{{DEFAULTSORT:Thomas, David}}
+[[Category:1828 births]]
+[[Category:1909 deaths]]
+[[Category:Welsh poets]]
+[[Category:Welsh schoolteachers]]
+[[Category:19th-century Welsh poets]]
+
+
+{{UK-poet-stub}}
+{{Wales-writer-stub}}

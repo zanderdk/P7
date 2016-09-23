@@ -1,0 +1,495 @@
+{{Infobox song contest
+|name                = Melodifestivalen
+|year                = 2008
+|logo                = 
+|final               = 15 March 2008
+|semi                = 9 February 2008<br>16 February 2008<br>23 February 2008<br>1 March 2008
+|second              = 8 March 2008
+|presenters          = 
+|director            = 
+|broadcaster         = [[Sveriges Television|SVT]]
+|venue               = [[Stockholm Globe Arena|Globe Arena]], [[Stockholm]], Sweden
+|winner              = "[[Hero (Charlotte Perrelli song)|Hero]]" by [[Charlotte Perrelli]]
+|vote                = 50% Jury, 50% SMS and telephone voting<br>11 juries give 1, 2, 4, 6, 8, 10 and 12 points to their seven favourite songs.<br>People can vote by televote or SMS. Televoting gives 11, 22, 44, 66, 88, 110 and 132 points to the seven most popular songs.
+|entries             = 32: 8 in each semi-final; 10 in the final (2 from each semi-final, 2 from the Second Chance round.)
+|opening             = 
+|interval            = Melodifestivalen [[musical theatre|musical]]
+}}
+
+[[Image:Bjorn gustavsson globen 2008.jpg|thumb|Björn Gustavsson performed interval performances at all the semifinals, and the final.]]
+'''Melodifestivalen 2008''' was the 47th [[Melodifestivalen]], and the selection process for the 48th song to represent Sweden at the [[Eurovision Song Contest]].
+A new rule—''Lex Agnes''—went into effect in 2008 calling for each submitted entry to include a document containing all information relevant to the song. It was named after [[Agnes Carlsson]], who was disqualified from the 2007 competition for publicly revealing details of her song before the deadline.<ref>[http://deliverya.aftonbladet.se/vss/telegram/0,1082,69532407_640__,00.html Lex Agnes i Melodifestivalen 2008] {{sv icon}}. ''Aftonbladet'' (13 May 2007). Retrieved on 15 October 2007.</ref>
+
+==Format==
+
+Melodifestivalen 2008 included 32 songs split up into four semi-finals with eight participants in each. The semi-finals were held between 9 February and 1 March 2008 and at each, the two top placing songs went to the final, while the third and fourth place songs went to the Andra Chansen (Second Chance Round). At the Andra Chansen, held on 8 March 2008, the eight songs paired off in two rounds with the two winners at the end of the night qualifying for the final. The final was held on 15 March 2008 and included the eight songs from the semi-finals along with the two from the Andra Chansen to make ten songs in all. The winner and selected entrant for the Eurovision Song Contest was then chosen by (insert voting process here).
+
+It was hosted by [[Kristian Luuk]], who also hosted the 2007 event.<ref>''ESCToday'' (18 April 2007) [http://www.esctoday.com/news/read/8260 Kristian: I'm happy and honoured]. Retrieved on 21 May 2007.</ref> Luuk was assisted by [[Björn Gustafsson]] and Nour El-Refai.
+
+==Preselection==
+
+The deadline for the submission of songs was 25 September 2007, and 3,434 songs were submitted, a new record.<ref>''[[Sveriges Television]]'' (May 2007) [http://svt.se/svt/jsp/Crosslink.jsp?d=62771&a=826852&lid=puff_826846&lpos=lasMer Melodifestivalen 2008 Tävlingsregler] {{sv icon}}. Retrieved on 21 May 2007.</ref><ref>''ESCToday'' [http://www.esctoday.com/news/read/9324 3434 songs submitted for Melodifestivalen]. Retrieved on 29 December 2007.</ref> The titles and composers of the 28 semifinalists (excluding the wildcards) were announced on 10 December and 11 December 2007.<ref>''ESCToday'' [http://www.esctoday.com/news/read/9855 Melodifestivalen line-up complete]. Retrieved on 29 December 2007.</ref> The wildcards were announced in January 2008.<ref>''ESCToday'' [http://www.esctoday.com/news/read/10131 The full MF running order]. Retrieved on 15 January 2008.</ref>
+
+==Schedule==
+
+{| class="wikitable"
+|-
+! Date !! City !! Venue !! Notes
+|-
+| 9 February|| [[Gothenburg]] || [[Scandinavium]] || Semifinal 1
+|-
+| 16 February|| [[Västerås]] || [[ABB Arena Nord]] || Semifinal 2
+|-
+| 23 February|| [[Linköping]] || [[Cloetta Center]] || Semifinal 3
+|-
+| 1 March|| [[Karlskrona]] || [[Telenor Arena Karlskrona|Telenor Arena]] || Semifinal 4
+|-
+| 8 March|| [[Kiruna]] || [[Arena Arctica]] || Second Chance
+|-
+| 15 March|| [[Stockholm]] || [[Globen]] || Final
+|}
+
+==Semi-finals==
+
+The semifinals for Melodifestivalen 2008 began on 9 February 2008. There were five semifinals in [[Gothenburg]], [[Västerås]], [[Linköping]], [[Karlskrona]] and [[Kiruna]] (Andra Chansen) leading up to the final at the [[Globen]] on 15 March 2008. Nearly four million votes were cast in total, raising over 5.7 million [[Swedish krona|kronor]] ([[Euro|€]]605,000) for charity.
+
+In the four semi-finals, the top two songs of the eight competing went directly through to the final. The third and fourth-placed songs went to the ''Andra Chansen'' round. Two rounds of televoting selected the qualifiers, the first round selectiong the top five songs with the second round choosing the two finalists and two songs to go to the ''Andra Chansen'' round.
+
+=== Semi-final 1 ===
+
+The first semi-final of Melodifestivalen was held at the [[Scandinavium]] in [[Gothenburg]] on 9 February 2008. Eight songs in total competed, seven songs which had been submitted to SVT, along with one of the four wildcards.
+
+The two songs that progressed automatically to the final were "Thank You" by [[Amy Diamond]], the wildcard, and "[[I Love Europe]]" by [[Christer Sjögren]]. The two songs that passed to the ''Andra Chansen'' round were "Line of Fire" by [[E-Type (musician)|E-Type]] & [[The Poodles]] and "Visst finns mirakel" by [[Suzzie Tapper]].
+
+{| class=wikitable
+|----
+!rowspan="2"|#
+!rowspan="2"|Artist
+!rowspan="2"|Song
+!rowspan="2"|Lyrics (l) / Music (m)
+!colspan="2"|Votes
+!rowspan="2"|Total
+!rowspan="2"|Position
+!rowspan="2"|Results
+|-
+!Round&nbsp;1
+!Round&nbsp;2
+|-bgcolor="silver"
+| 1 || [[E-Type (musician)|E-Type]] & [[The Poodles]] || "[[Line of Fire (song)|Line of Fire]]" || [[E-Type (musician)|Martin Eriksson]] (m & l), Jakob Samuelsson (m & l) || 46 333 || 56 105 || 102 438 || 3 || '''''Andra Chansen'''''
+|-
+| 2 || [[Face-84]] || "Alla gamla x"<br />''(All the old x's)'' || [[Lars Diedricson]] (m), Martin Hedström (m), Wille Crafoord (l) || 13 626 || - || 13 626 || 8 || Out
+|-
+| 3 || [[Velvet (singer)|Velvet]] || "Déjà vu" || [[Niclas Molinder]] (m & l), [[Joacim Persson]] (m & l), Pelle Ankarberg (m & l),<br>Niko Valsamidis (m & l), [[Fredrik Larsson]] (m & l), David Jassy (m & l) || 25 451 || 31 047 || 56 498 || 5 || Out
+|-
+| 4 || [[Brandur Enni|Brandur]] || "Lullaby" || Henrik Wikström (m), Kristian Lagerström (l) || 18 727 || - || 18 727 || 7 || Out
+|-
+| 5 || [[Michael Michailoff]] || "That's Love" || Michael Michailoff (m & l), Joakim Övrenius (m & l), Patric Jonsson (m & l) || 23 198 || - || 23 198 || 6 || Out
+|-bgcolor="gold"
+| '''6''' || '''[[Amy Diamond]]''' || "'''[[Thank You (Amy Diamond song)|Thank You]]'''" || '''Sandra Nordström (m & l), Mathias Venge (m & l), Peter Wennerberg (m & l)''' || '''79 075''' || '''96 508''' || '''175 583''' || '''1''' || '''Wildcard'''<br> '''''Final'''''
+|-bgcolor="silver"
+| 7 || [[Suzzie Tapper]] || "Visst finns mirakel"<br />''(Certainly there are miracles)'' || Amir Aly (m), Maciel Numhauser (m), Robin Abrahamsson (m),<br>[[Bobby Ljunggren]] (m), Suzzie Tapper (l) || 24 469 || 32 130 || 56 599 || 4 || '''''Andra Chansen'''''
+|-bgcolor="gold"
+| '''8''' || '''[[Christer Sjögren]]''' || "'''[[I Love Europe]]'''" || '''[[Torgny Söderberg]] (m), Magnus Johansson (m), [[Ingela Forsman|Ingela "Pling" Forsman]] (l)''' || '''71 396''' || '''81 471''' || '''152 867''' || '''2''' || '''''Final'''''
+|}
+
+=== Semi-final 2 ===
+
+The second semi-final was held on 16 February 2008, at the [[ABB Arena Nord]] in [[Västerås]]. Again eight songs competed in total, seven songs which had been submitted to SVT and one of the four wildcards.
+
+The two songs that progressed automatically to the final were "Empty Room"  by [[Sanna Nielsen]] and "Just a Minute" by [[Rongedal]]. The two songs that passed to the ''Andra Chansen'' round were "[[One Love (Johnson & Häggkvist song)|One Love]]" by [[Andreas Johnson]] & [[Carola Häggkvist]], the wildcard, and "Love in Stereo" by [[Ola Svensson]].
+
+{| class=wikitable
+|----
+!rowspan="2"|#
+!rowspan="2"|Artist
+!rowspan="2"|Song<br />''(English translation)''
+!rowspan="2"|Lyrics (l) / Music (m)
+!colspan="2"|Votes
+!rowspan="2"|Total
+!rowspan="2"|Position
+!rowspan="2"|Results
+|-
+!Round&nbsp;1
+!Round&nbsp;2
+|-bgcolor="silver"
+| 1 || [[Ola Svensson|Ola]] || "[[Love in Stereo (song)|Love in Stereo]]" || [[Tony Nilsson]] (m & l), [[Mirja Breitholtz]] (m & l) || 39 972 || 52 615 || 92 587 || 4 || '''''Andra Chansen'''''
+|-
+| 2 || [[Lasse Lindh]] || "Du behöver aldrig mer vara rädd"<br />''(You never need to be afraid)'' || [[Lasse Lindh]] (m & l) || 15 396 || - || 15 396 || 6 || Out
+|-
+| 3 || [[The Nicole]] || "Razborka"<br />''(Disassembly)'' || Nicole Fuentes (m & l), Tord Bäckström (m & l), Stefan Åberg (m & l) || 6 121 || - || 6 121 || 8 || Out
+|-
+| 4 || [[Alexander Schöld]] || "Den första svalan"<br />''(The first swallow)'' || [[Fredrik Thomander]] (m), Anders Wikström (m),<br>[[Ingela Forsman|Ingela "Pling" Forsman]] (l) || 13 352 || - || 13 352 || 7 || Out
+|-bgcolor="gold"
+| '''5''' || '''[[Rongedal]]''' || "'''Just a Minute'''" || '''Amir Aly (m), Henrik Wikström (m),<br>Magnus Rongedal (m & l), Henrik Rongedal (m & l)''' || '''68 121''' || '''94 101''' || '''162 222''' || '''2''' || '''''Final'''''
+|-bgcolor="gold"
+| '''6''' || '''[[Sanna Nielsen]]''' || "'''Empty Room'''" || '''[[Bobby Ljunggren]] (m & l), [[Aleena Gibson]] (m & l)''' || '''102 390''' || '''126 356''' || '''228 746''' || '''1''' || '''''Final'''''
+|-
+| 7 || [[Andra generationen]] || "Kebabpizza Slivovitza"<br />''(Kebab pizza Slivovitz)'' || Vlatko Ancevski (m & l), Vlatko Gicarevski (m & l),<br>Mats Nilsson (m & t), Stevan Tomulevski (m & l),<br>Teddy Paunkoski (m & l), Otis Sandsjö (m & l) || 33 011 || 43 509 || 76 520 || 5 || Out
+|-bgcolor="silver"
+| 8 || [[Andreas Johnson|Johnson]] & [[Carola Häggkvist|Häggkvist]] || "[[One Love (Johnson & Häggkvist song)|One Love]]" || [[Carola Häggkvist]] (m & l), [[Andreas Johnson]] (m & l),<br>Peter Kvint (m & l) || 77 778 || 79 106 || 156 884 || 3 || '''Wildcard'''<br>'''''Andra Chansen'''''
+|}
+
+=== Semi-final 3 ===
+
+The third semi-final of Melodifestivalen 2008 was held at the [[Cloetta Center]] in [[Linköping]] on 23 February 2008.
+
+The two songs that progressed directly to the final were "Lay Your Love on Me"  by [[Bodies Without Organs|BWO]] and "Upp o hoppa" by Frida feat. Headline. The two songs that passed to the ''Andra Chansen'' round were "Smiling in Love" by [[Caracola (band)|Caracola]] and "When You Need Me" by Thérèse Andersson. The wildcard entry, "Hallelujah New World" by [[Eskobar]], came last in the televoting and failed to qualify.
+
+{| class=wikitable
+|----
+!rowspan="2"|#
+!rowspan="2"|Artist
+!rowspan="2"|Song
+!rowspan="2"|Lyrics (l) / Music (m)
+!colspan="2"|Votes
+!rowspan="2"|Total
+!rowspan="2"|Position
+!rowspan="2"|Results
+|-
+!Round&nbsp;1
+!Round&nbsp;2
+|-bgcolor="gold"
+| '''1''' || '''[[Bodies Without Organs|BWO]]''' || "'''Lay Your Love on Me'''" || '''[[Alexander Bard]] (m & l), [[Anders Hansson (songwriter)|Anders Hansson]] (m & l),<br>[[Bobby Ljunggren]] (m & l), Henrik Wikström (m & l)''' || '''58 136''' || '''82 381''' || '''140 517''' || '''1''' || '''''Final'''''
+|-
+| 2 || [[Mickey Huskic]] || "Izdajice"<br />''(Traitors)'' || Mickey Huskic (t & m) || 11 721 || - || 11 721 || 7 || Out
+|-bgcolor="gold"
+| '''3''' || '''[[Frida Appelgren|Frida]] feat. [[Headline (singer)|Headline]]''' || "'''Upp o hoppa'''"<br />''(Up 'n' Jump)'' || '''Anderz Wrethov (m & l), Frida Muranius (m & l), Sam Persson (l)''' || '''27 675''' || '''40 852''' || '''68 527''' || '''2''' || '''''Final'''''
+|-bgcolor="silver"
+| 4 || [[Thérèse Andersson]] || "When You Need Me" || Pontus Hagberg (m & l), Malin Eriksson (l), Jonas Sjöström (l) || 25 034 || 33 849 || 58 883 || 4 || '''''Andra Chansen'''''
+|-
+| 5 || [[Patrik Isaksson (singer)|Patrik Isaksson]] & Bandet || "[[Under mitt tunna skinn]]"<br />''(Under my thin skin)'' || [[Patrik Isaksson (singer)|Patrik Isaksson]] (m & l) || 26 056 || 33 808 || 59 864 || 5 || Out
+|-bgcolor="silver"
+| 6 || [[Caracola (band)|Caracola]] || "Smiling in Love" || Henrik Bie (m), [[Mattias Olsson]] (l), Angelica Thelin (l), Magnus Lanner (l) || 31 652 || 35 491 || 67 143 || 3 || '''''Andra Chansen'''''
+|-
+| 7 || [[Ainbusk]] || "[[Jag saknar dig ibland]]"<br />''(I miss you sometimes)'' || [[Ingela Forsman|Ingela "Pling" Forsman]] (l), Henrik Wikström (m & l), [[Bobby Ljunggren]] (m) || 18 249 || - || 18 249 || 6 || Out
+|-
+| 8 || [[Eskobar]] || "[[Hallelujah New World]]" || Daniel Bellqvist (m & l), Frederik Zäll (m & l), Robert Birming (l & m) || 11 672 || - || 11 672 || 8 || '''Wildcard''' <br> Out
+|}
+
+=== Semi-final 4 ===
+
+The final semi-final of Melodifestivalen 2008 before the ''Andra chansen'' round was held on 1 March 2008, at the [[Telenor Arena]] in [[Karlskrona]].
+
+The final two artists to automatically secure their place in the final were [[Charlotte Perrelli]] with "[[hero (Charlotte Perrelli song)|Hero]]" and [[Linda Bengtzing]] with the song "[[Hur svårt kan det va?]]". The two artists to proceed to the ''Andra Chansen'' round were [[Sibel Redzep]] with the song "[[That Is Where I'll Go]]" and [[Nordman]] with the song "[[I lågornas sken]]". The wildcard entry for this semi-final was [[Niklas Strömstedt]] with the song "För många ord om kärlek", which came last in the televoting.
+
+{| class=wikitable
+|----
+!rowspan="2"|#
+!rowspan="2"|Artist
+!rowspan="2"|Song<br />''(English translation)''
+!rowspan="2"|Lyrics (l) / Music (m)
+!colspan="2"|Votes
+!rowspan="2"|Total
+!rowspan="2"|Position
+!rowspan="2"|Results
+|-
+!Round&nbsp;1
+!Round&nbsp;2
+|-
+| 1 || [[Niklas Strömstedt]] || "[[För många ord om kärlek]]"<br />''(Too many words about love)'' || [[Niklas Strömstedt]] (m & l) || 13 067 || - || 13 067 || 8 || '''Wildcard'''<br>Out
+|-
+| 2 || [[Calaisa]] || "[[If I Could (Calaisa song)|If I Could]]" || Pontus Assarsson (m & l), Jörgen Ringqvist (m & l),<br>Lisa Troedsson-Lundin (m & l), Caisa Troedsson-Lundin (m & l),<br>Anna Törnqvist (m & l), Malin Törnqvist (m & l) || 30 124 || 47 846 || 77 970 || 5 || Out
+|-
+| 3 || [[Daniel Mitsogiannis]] || "Pame" || [[Fredrik Kempe]] (m & l), Henrik Wikström (m) || 20 432 || - || 20 432 || 7 || Out
+|-bgcolor="gold"
+| '''4''' || '''[[Linda Bengtzing]]''' || "'''[[Hur svårt kan det va?]]'''"<br />''(How hard can it be?)'' || '''[[Johan Fransson]] (m & l), Tobias Lundgren (m & l), Tim Larsson (m & l)''' || '''53 813''' || '''70 571''' || '''124 384''' || '''2''' || '''''Final'''''
+|-bgcolor="silver"
+| 5 || [[Nordman]] || "[[I lågornas sken]]"<br />''(In the light of the flame)'' || Lina Eriksson (m & l), Mårten Eriksson (m & l) || 39 019 || 58 673 || 97 782 || 4 || '''''Andra Chansen'''''
+|-bgcolor="silver"
+| 6 || [[Sibel Redzep|Sibel]] || "[[That Is Where I'll Go]]" || Christian Antblad (m & l) || 46 289 || 59 030 || 105 319 || 3 || '''''Andra Chansen'''''
+|-
+| 7 || [[Fronda]] || "Ingen mår så bra som jag"<br />''(No one feels as good as me)'' || [[Fronda|Sebastian Fronda]] (m & l), Thomas Thörnholm (m & l), Michael Clauss (m & l) || 25 234 || - || 25 234 || 6 || Out
+|-bgcolor="gold"
+| '''8''' || '''[[Charlotte Perrelli]]''' || "'''[[Hero (Charlotte Perrelli song)|Hero]]'''" || '''[[Fredrik Kempe]] (m & l), [[Bobby Ljunggren]] (m)''' || '''98 666''' || '''137 738''' || '''236 404''' || '''1''' || '''''Final'''''
+|}
+
+=== ''Andra Chansen'' round===
+
+The third and fourth placed songs in each semifinal perform in ''Andra Chansen'' (Second Chance) round. Eight songs performed, paired off against each other. The winners of the first two pairings compete against each other in the first final, while the winners of the other two compete in the second. The winners of the two final pairings go through to the final.
+
+The two winners of ''Andra Chansen'' that went on to the final were [[Sibel Redzep]] with the song "[[That Is Where I'll Go]]" and [[Nordman]] with the song "I lågornas sken".
+
+{| border=0 cellpadding=0 cellspacing=0 style="font-size: 90%; margin:1em 2em 1em 1em;"
+| height=6|
+| align="center" colspan="2" style="border:1px solid #aaa;" bgcolor="#f2f2f2"|Round 1
+| colspan="2"|
+| align="center" colspan="2" style="border:1px solid #aaa;" bgcolor="#f2f2f2"|Round 2
+| colspan="2"|
+| align="center" colspan="1" style="border:1px solid #aaa;" bgcolor="#f2f2f2"|Qualified
+|-
+| height=6|
+| width=240|&nbsp;
+| width=50|&nbsp;
+| width=20|&nbsp;
+| width=25|&nbsp;
+| width=240|&nbsp;
+| width=50|&nbsp;
+| width=20|&nbsp;
+| width=25|&nbsp;
+| width=240|&nbsp;
+| width=50|&nbsp;
+|-
+| height=6|
+| colspan="2" rowspan="2"|&nbsp;
+| rowspan="4" style="border-width:0 0 1px 0; border-style: solid;border-color:black;"|&nbsp;
+| rowspan="7" style="border-width:0 0 1px 0; border-style: solid;border-color:black;"|&nbsp;
+| colspan="2" rowspan="3"|
+| rowspan="7" style="border-width:0 0 1px 0; border-style: solid;border-color:black;"|&nbsp;
+| rowspan="13" style="border-width:0 0 1px 0; border-style: solid;border-color:black;"|&nbsp;
+| colspan="2" rowspan="9"|
+|-
+| height=6| 
+|-
+| height=6|
+| rowspan="2" style="border:1px solid #aaa;" |&nbsp;[[E-Type (musician)|E-Type]] & [[The Poodles]] - "Line of Fire"
+| rowspan="2" style="border:1px solid #aaa;" align="center"|&nbsp;87 002
+|-
+| height=6|
+| colspan="2" rowspan="2"|&nbsp;
+|-
+| height=6|
+| rowspan="2" style="border:1px solid #aaa;" bgcolor="gold"|&nbsp;'''[[Sibel Redzep|Sibel]] - "[[That Is Where I'll Go]]"'''&nbsp;
+| rowspan="2" style="border:1px solid #aaa;" align="center" bgcolor="gold"|&nbsp;'''103 077'''
+| rowspan="6" style="border-width:2px 3px 1px 0; border-style: solid;border-color:black;"|&nbsp;
+|-
+| height=6|
+| rowspan="2" style="border:1px solid #aaa;" bgcolor="gold"|&nbsp;'''[[Sibel Redzep|Sibel]] - "[[That Is Where I'll Go]]"'''
+| rowspan="2" style="border:1px solid #aaa;" align="center" bgcolor="gold"|&nbsp;'''137 065'''
+|-
+| height=6|
+| colspan="2" rowspan="2"|&nbsp;
+|-
+| height=6|
+| rowspan="12" style="border-width:2px 0 1px 0; border-style: solid;border-color:black;"|&nbsp;
+| rowspan="2" style="border:1px solid #aaa;" |&nbsp;&nbsp;[[Ola Svensson|Ola]] - "[[Love in Stereo (song)|Love in Stereo]]"
+| rowspan="2" style="border:1px solid #aaa;" align="center"|&nbsp;103 624
+| rowspan="12" style="border-width:2px 3px 1px 0; border-style: solid;border-color:black;"|&nbsp;
+|-
+| height=6|
+| rowspan="2" style="border:1px solid #aaa;" bgcolor="gold"|&nbsp;'''[[Ola Svensson|Ola]] - "[[Love in Stereo (song)|Love in Stereo]]"'''&nbsp;
+| rowspan="2" style="border:1px solid #aaa;" align="center" bgcolor="gold"|&nbsp;'''78 477'''
+|-
+| height=6|
+| colspan="2" rowspan="8"|
+| colspan="2" rowspan="2"|&nbsp;
+|-
+| height=6|
+| rowspan="2" style="border:1px solid #aaa;" |&nbsp;[[Caracola (band)|Caracola]] - "Smiling in Love"&nbsp;
+| rowspan="2" style="border:1px solid #aaa;" align="center"|&nbsp;51 038
+| rowspan="6" style="border-width:2px 0 1px 0; border-style: solid;border-color:black;"|&nbsp;
+|-
+| height=6|
+| rowspan="2" style="border:1px solid #aaa;" bgcolor="gold"|&nbsp;&nbsp;'''[[Sibel Redzep|Sibel]] - "[[That Is Where I'll Go]]"'''
+|-
+| height=6|
+| colspan="2" rowspan="2"|&nbsp;
+|-
+| height=6|
+| rowspan="11" style="border-width:2px 0 0 0; border-style: solid;border-color:black;"|&nbsp;
+| rowspan="2" style="border:1px solid #aaa;" bgcolor="gold"|&nbsp;'''[[Nordman]] - "I lågornas sken"'''
+|-
+| height=6|
+| rowspan="2" style="border:1px solid #aaa;" |&nbsp;[[Andreas Johnson|Johnson]] & [[Carola Häggkvist|Häggkvist]] - "[[One Love (Johnson & Häggkvist song)|One Love]]"&nbsp;
+| rowspan="2" style="border:1px solid #aaa;" align="center"|&nbsp;202 353
+|-
+| height=6|
+| colspan="2" rowspan="2"|&nbsp;
+| colspan="2" rowspan="9"|
+|-
+| height=6|
+| rowspan="2" style="border:1px solid #aaa;" bgcolor="gold"|&nbsp;'''[[Nordman]] - "I lågornas sken"'''&nbsp;
+| rowspan="2" style="border:1px solid #aaa;" align="center" bgcolor="gold"|&nbsp;'''316 118'''
+| rowspan="6" style="border-width:2px 3px 1px 0; border-style: solid;border-color:black;"|&nbsp;
+|-
+| height=6|
+| rowspan="2" style="border:1px solid #aaa;" bgcolor="gold"|&nbsp;'''[[Nordman]] - "I lågornas sken"'''&nbsp;
+| rowspan="2" style="border:1px solid #aaa;" align="center" bgcolor="gold"|&nbsp;'''166 735'''
+|-
+| height=6|
+| colspan="2" rowspan="2"|&nbsp;
+|-
+| height=6|
+| rowspan="5" style="border-width:2px 0 0 0; border-style: solid;border-color:black;"|&nbsp;
+| rowspan="2" style="border:1px solid #aaa;" |&nbsp;[[Suzzie Tapper]] - "Visst finns mirakel"&nbsp;
+| rowspan="2" style="border:1px solid #aaa;" align="center"|&nbsp;88 075
+| rowspan="5" style="border-width:2px 0 0 0; border-style: solid;border-color:black;"|&nbsp;
+|-
+| height=6|
+| rowspan="2" style="border:1px solid #aaa;" |&nbsp;[[Thérèse Andersson]] - "When You Need Me"&nbsp;
+| rowspan="2" style="border:1px solid #aaa;" align="center"|&nbsp;57 335
+|-
+| height=6|
+| colspan="2" rowspan="3"|
+|-
+| height=6|
+| rowspan="2" style="border:1px solid #aaa;" bgcolor="gold"|&nbsp;'''[[Suzzie Tapper]] - "Visst finns mirakel"'''
+| rowspan="2" style="border:1px solid #aaa;" align="center" bgcolor="gold"|&nbsp;'''73 120'''
+| rowspan="2" style="border-width:2px 0 0 0; border-style: solid;border-color:black;"|&nbsp;
+|-
+| height=6|
+|}
+
+===Final===
+The final of Melodifestivalen 2008 was held on 15 March 2008 at the [[Stockholm Globe Arena|Globe Arena]] in [[Stockholm]]. The eight direct qualifiers and the two ''Andra Chansen'' winner competed in the final, where the 11 regional juries of Sweden, along with televoting, selected the winner that would represent Sweden in the Eurovision Song Contest 2008.
+
+The winner of Melodifestivalen 2008 was [[Charlotte Perrelli]] with the song "[[Hero (Charlotte Perrelli song)|Hero]]", receiving a total of 114 points from the juries and 110 points from the televote. The winner of the televote, however, was [[Sanna Nielsen]] with "Empty Room".
+
+{| class=wikitable
+|-
+!rowspan="2"|#<ref>Poplight.se (9 March 2008). [http://poplight.zitiz.se/artikel/sa-haer-blev-det-naer-bjoerkman-bestaemde-finalordningen Så här blev det när Björkman bestämde finalordningen]. Retrieved on 9 March 2008.</ref>
+!rowspan="2"|Artist
+!rowspan="2"|Song
+!rowspan="2"|Lyrics (l) / Music (m)
+!colspan="3"|Votes
+!rowspan="2"|Place
+|-
+!Jury
+!Viewers
+!Total
+|-bgcolor="gold"
+| '''1''' || '''[[Charlotte Perrelli]]''' || "'''[[Hero (Charlotte Perrelli song)|Hero]]'''" || '''[[Fredrik Kempe]] (m & l), [[Bobby Ljunggren]] (m)''' || '''114''' || '''110''' || '''224''' || '''1st'''
+|-
+| 2 || [[Sibel Redzep|Sibel]] || "[[That Is Where I'll Go]]" || Christian Antblad (m & l) || 39 || - || 39 || 7th
+|-
+| 3 || [[Rongedal]] || "Just a Minute" || Amir Aly (m), Henrik Wikström (m), Magnus Rongedal (m & l),<br>Henrik Rongedal (m & l) || 76 || 66 || 142 || 4th
+|-
+| 4 || [[Linda Bengtzing]] || "Hur svårt kan det va?" || [[Johan Fransson]] (m & l), Tobias Lundgren (m & l), Tim Larsson (m & l) || 64 || - || 64 || 5th
+|-
+| 5 || [[Christer Sjögren]] || "I Love Europe" || [[Torgny Söderberg]] (m), Magnus Johansson (m), [[Ingela Forsman|Ingela "Pling" Forsman]] (l) || 1 || 22 || 23 || 9th
+|-
+| 6 || [[Amy Diamond]] || "Thank You" || Sandra Nordström (m & l), Mathias Venge (m & l), Peter Wennerberg (m & l) || 25 || 11 || 36 || 8th
+|-
+| 7 || [[Sanna Nielsen]] || "Empty Room" || [[Bobby Ljunggren]] (m & l), Aleena Gibson (m & l) || 74 || 132 || 206 || 2nd
+|-
+| 8 || [[Nordman]] || "I lågornas sken" || Lina Eriksson (m & l), Mårten Eriksson (m & l) || 4 || 44 || 48 || 6th
+|-
+| 9 || [[Frida Appelgren|Frida]] feat. [[Headline (singer)|Headline]] || "Upp o hoppa" || Anderz Wrethov (m & l), Frida Muranius (m & l), Sam Persson (m) || 6 || - || 6 || 10th
+|-
+| 10 || [[Bodies Without Organs|BWO]] || "Lay Your Love On Me" || [[Alexander Bard]] (m & l), [[Anders Hansson (songwriter)|Anders Hansson]] (m & l),<br>[[Bobby Ljunggren]] (m & l), Henrik Wikström (m & l) || 70 || 88 || 158 || 3rd
+|}
+
+====Juries====
+
+{| class=wikitable
+|----
+!Song
+![[Örebro]]
+![[Luleå]]
+![[Falun]]
+![[Karlstad]]
+![[Umeå]]
+![[Norrköping]]
+![[Göteborg]]
+![[Sundsvall]]
+![[Växjö]]
+![[Malmö]]
+![[Stockholm]]
+!Total
+|----
+| Hero || '''12''' || '''12''' || '''12''' || '''12''' || '''12''' || 4 || 6 || '''12''' || 10 || 10 || '''12''' || 114
+|----
+| That Is Where I'll Go || 1 || 2 || 4 || 2 || 2 || 2 || 4 || 8 || 1 || '''12''' || 1 || 39
+|----
+| Just A Minute || 8 || 4 || 6 || 8 || 6 || 10 || '''12''' || 10 || 2 || - || 10 || 76
+|----
+| Hur svårt kan det va? || 6 || 8 || 10 || 6 || 4 || 8 || - || 4 || 4 || 8 || 6 || 64
+|----
+| I Love Europe || - || - || - || - || - || - || 1 || - || - || - || - || 1
+|----
+| Thank You || 2 || 1 || 1 || - || 1 || 1 || 10 || 1 || 6 || - || 2 || 25
+|----
+| Empty Room || 10 || 6 || 8 || 4 || 10 || 6 || - || 6 || '''12''' || 4 || 8 || 74
+|----
+| I lågornas sken || - || - || - || 1 || - || - || 2 || - || - || 1 || - || 4
+|----
+| Upp o hoppa || - || - || - || - || - || - || - || - || - || 6 || - || 6
+|----
+| Lay Your Love On Me || 4 || 10 || 2 || 10 || 8 || '''12''' || 8 || 2 || 8 || 2 || 4 || 70
+|}
+
+====Televotes====
+{|class="wikitable sortable"
+|----
+!Song
+!Jury
+!No. of televotes (%)<ref>Poplight.se (16 March 2008). [http://poplight.zitiz.se/artikel/svt-satte-nytt-roestningsrekord SVT satte nytt röstningsrekord]. Retrieved on 16 March 2008.</ref>
+!Points
+!Total
+|----
+| Hero || 114 || {{lsc11amp|397.907}} (16.5%) || {{lsc11amp|110}} || 224
+|----
+| That Is Where I'll Go || 39 || {{lsc11amp|120.587}} (5%) || - || 39
+|----
+| Just A Minute || 76 || {{lsc11amp|273.521}} (11.5%) || {{lsc11amp|66}} || 142
+|----
+| Hur svårt kan det va? || 64 || {{lsc11amp|115.321}} (4.8%) || - || 64
+|----
+| I Love Europe || 1 || {{lsc11amp|228.674}} (9.5%) || {{lsc11amp|22}} || 23
+|----
+| Thank You || 25 || {{lsc11amp|188.872}} (7.8%) || {{lsc11amp|11}} || 36
+|----
+| Empty Room || 74 || {{lsc11amp|449.419}} (18.7%) || {{lsc11amp|132}} || 206
+|----
+| I lågornas sken || 4 || {{lsc11amp|233.467}} (9.7%) || {{lsc11amp|44}} || 48
+|----
+| Upp o hoppa || 6 || {{lsc11amp|81.691}} (3.3%) || - || 6
+|----
+| Lay Your Love On Me ||70 || {{lsc11amp|320.741}} (13.3%) || {{lsc11amp|88}} || 158
+|}
+
+==Ratings==
+{| class="wikitable plainrowheaders sortable" style="text-align:center"
+|-
+! scope="col" | Show
+! scope="col" | Date
+! scope="col" | Viewers<ref name="viewers">{{cite web|publisher=ESC.info.se |url=http://hemsida.biggweb.net/christofer/esc/mftittare.html |title=Viewing figures |accessdate=21 March 2008 |deadurl=yes |archiveurl=https://web.archive.org/web/20071208163409/http://hemsida.biggweb.net/christofer/esc/mftittare.html |archivedate=December 8, 2007 }}</ref>
+! scope="col" | Votes<br><small>(Telephone/SMS)
+|-
+!scope="row"|Semifinal 1
+|style="text-align:left"|9 February 2008
+|3,240,000
+|600,084
+|-
+!scope="row"|Semifinal 2
+|style="text-align:left"|16 February 2008
+|3,340,000
+|752,537
+|-
+!scope="row"|Semifinal 3
+|style="text-align:left"|23 February 2008
+|3,410,000
+|701,978
+|-
+!scope="row"|Semifinal 4
+|style="text-align:left"|1 March 2008
+|3,410,000
+|701,978
+|-
+!scope="row"|Second Chance
+|style="text-align:left"|8 March 2008
+|3,090,000
+|1,464,000
+|-
+!scope="row"|Final
+|style="text-align:left"|15 March 2008
+|4,045,000<ref>{{cite web|last1=Birgersson |first1=Emelie|first2=Gustav|last2=Dahlander|url=http://www.svt.se/melodifestivalen/basta-tittarsiffran-for-finalen-av-melodifestivalen-pa-sju-ar|title=Melodifestivalen 2013 slog tittarrekord – och så många såg Robin Stjernberg vinna|date=11 March 2013|publisher=[[Sveriges Television|SVT]]|language=Swedish}}</ref>
+|2,410,200
+|}
+
+==References==
+{{reflist}}
+
+==External links==
+{{Commons category|Melodifestivalen 2008}}
+*{{sv icon}} [http://www.svt.se/melodifestivalen Official website]
+*{{sv icon}} [http://poplight.zitiz.se/melodifestivalen/2008 Poplight.se: Melodifestivalen 2008 (official website of the Melodifestivalen Tour 2008)]
+*[http://svt.se/svt/jsp/Crosslink.jsp?d=62813&from=program_ao Official site for the preselection]
+*[http://svt.se/2.84385/brandur_kol?lid=puff_1027340 SVT Television of Sweden in English]
+
+{{Melodifestivalen}}
+
+[[Category:Melodifestivalen by year|2008]]
+[[Category:2008 in Swedish television]]
+[[Category:Eurovision Song Contest 2008 national selections]]
+[[Category:2008 in Swedish music]]
+[[Category:2008 song contests]]

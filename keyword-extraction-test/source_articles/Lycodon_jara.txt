@@ -1,0 +1,58 @@
+{{italictitle}}
+{{Taxobox | name = ''Lycodon jara''
+| status = LC
+| status_system = iucn3.1
+| status_ref = <ref name=IUCN>{{IUCN2014.3| id = 176843| title = Lycodon jara| assessors = Captain, A.| year = 2010| downloaded = 2 January 2015}}</ref>
+| regnum = [[Animal]]ia
+| image = AB117_Lycodon_jara.JPG
+| image_width = 250px
+| image_caption = a twin-spotted wolf snake from North Bengal
+| phylum = [[Chordata]]
+| subphylum = [[Vertebrata]]
+| classis = [[Reptilia]]
+| ordo = [[Squamata]]
+| subordo = [[Serpentes]]
+| familia = [[Colubridae]]
+| subfamilia = [[Colubrinae]]
+| genus = ''[[Lycodon]]''
+| species = '''''L. jara'''''
+| binomial = ''Lycodon jara''
+| binomial_authority = ([[George Shaw|Shaw]], 1802)<ref>Shaw, G. 1802 General Zoology, or Systematic Natural History. Vol.3, part 1 + 2. G. Kearsley, Thomas Davison, London: 313-615</ref>
+| synonyms = ''Coluber jara'' [[George Shaw|Shaw]], 1802<br>''Lycodon jara'' - [[Hermann Schlegel|Schlegel]], 1837<br>''Coluber bipunctatus'' [[Theodore Edward Cantor|Cantor]], 1839<br>''Leptorhytaon jara'' - [[Albert Günther|Günther]], 1858<br>''Lycophidion bipunctatum'' - [[Wilhelm Peters|Peters]], 1863<br>''Lycodon jara'' - [[Ferdinand Stoliczka|Stoliczka]], 1871<ref>[[George Albert Boulenger|Boulenger, G.A.]] 1893. ''Catalogue of the Snakes in the British Museum (Natural History), Volume I''. London.</ref>
+}}
+
+'''''Lycodon jara''''', commonly known as the '''twin-spotted wolf snake''', is a [[species]] of [[colubrid]] [[snake]]. It is [[Endemism|endemic]] to [[Asia]].
+
+==Distribution==
+[[Image:AB119 Lycodon jara - scales.jpg|thumb|left|250px|dorsal scales of ''Lycodon jara'' showing the yellow "twin spots" to which the common name refers]] 
+Found in [[Bangladesh]], [[India]] ([[Assam]], northern Orissa [[Ganjam]], [[Arunachal Pradesh]], Nadia District, West Bengal and parts of [[Uttar Pradesh]]) and [[Nepal]].
+
+==Description==
+Snout much depressed; eye rather small. Rostral much broader than long, just visible from above; internasals much shorter than the prefrontals; frontal as long as or a little shorter than its distance from the end of the snout, a little shorter than the parietals; loreal elongate, not entering the eye; one pre-ocular; two post-oculars; temporals small, 1 + 2; 9 or 10 upper labials, third, fourth, and fifth entering the eye; 4 or 5 lower labials in contact with the anterior chin-shields, which are longer than the posterior. 
+
+Dorsal scales smooth, in 17 rows. Ventrals 167-175, not angulate laterally; anal divided; subcaudals 56-63, in two rows. 
+
+[Coloration in alcohol:] brown above, each scale with two white dots or short longitudinal lines; labials white; usually a white collar; lower surface uniform white.<ref>Boulenger, G. A. 1890. The Fauna of British India, Including Ceylon and Burma. Reptilia and Batrachia. Taylor & Francis, London, xviii, 541 pp.</ref> 
+
+Total length 35 cm (13¾ inches); tail 6 cm (2? inches).<ref>[[George Albert Boulenger|Boulenger, G.A.]] 1893. ''Catalogue of the Snakes in the British Museum (Natural History), Volume I''. London.</ref>
+
+[[Image:AB118 Lycodon jara - annotated scale diagram.JPG|thumb|right|300px]]
+
+==Gallery==
+<gallery>
+Image:AB120_Lycodon_jara_-_underside_of_head.JPG
+Image:AB121_Lycodon_jara_-_ventrals%2C_anals_%26_caudals.JPG
+</gallery>
+==References==
+{{reflist}}
+
+==Other references==
+* Lanza,B. 1999 A new species of ''Lycodon'' from the Philippines, with a key to the genus (Reptilia: Serpentes: Colubridae). Tropical Zoology 12: 89-104
+
+[[Category:Lycodon]]
+[[Category:Reptiles of Bangladesh]]
+[[Category:Reptiles of India]]
+[[Category:Reptiles of Nepal]]
+
+
+{{Colubrids-stub}}

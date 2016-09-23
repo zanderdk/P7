@@ -1,0 +1,637 @@
+{{Use mdy dates|date=June 2012}}
+{{Infobox hurricane season
+| Track=2006 Pacific hurricane season summary map.png
+| Basin=EPac
+| Year=2006
+| First storm formed=May 27, 2006
+| Last storm dissipated=November 20, 2006
+| Strongest storm name=[[Hurricane Ioke|Ioke]] <small>(Most intense hurricane in the Central Pacific)</small>
+| Strongest storm pressure=915
+| Strongest storm winds=140
+| Average wind speed=1
+| Total depressions=25
+| Total storms=19
+| Total hurricanes=11
+| Total intense=6
+| Fatalities=14 total
+| Damages=355.1
+| Inflated=-1
+| five seasons=[[2004 Pacific hurricane season|2004]], [[2005 Pacific hurricane season|2005]], '''2006''', [[2007 Pacific hurricane season|2007]], [[2008 Pacific hurricane season|2008]]
+| Season timeline=Timeline of the 2006 Pacific hurricane season
+}}
+The '''2006 Pacific hurricane season''' was the most active since [[2000 Pacific hurricane season|2000]], which also produced 19&nbsp;[[tropical cyclone|tropical storms]] or hurricanes.<ref name="epachurdat"/> Eighteen developed within the [[National Hurricane Center]] (NHC) area of warning responsibility, which is east of [[140th meridian west|140°W]], and one storm formed between [[140th meridian west|140°W]] and the [[International Date Line]], which is under the jurisdiction of the [[Central Pacific Hurricane Center]] (CPHC). Of the 19&nbsp;total storms, eleven became hurricanes, of which six attained [[tropical cyclone scales|major hurricane status]]. Within the NHC portion of the basin, the season officially began on May 15, and in the CPHC portion, it started on June 1; the season officially ended on November 30. These dates conventionally delimit the period of each year when most tropical cyclones form in the eastern [[Pacific hurricane|Pacific basin]].
+
+The strongest storm of the season was [[Hurricane Ioke]], which reached [[List of Category 5 Pacific hurricanes|Category 5]] status on the [[Saffir-Simpson Hurricane Scale|Saffir-Simpson scale]] in the central Pacific Ocean; Ioke passed near [[Johnston Atoll]] and later [[Wake Island]], where it caused heavy damage but no deaths. The deadliest storm of the season was [[Hurricane John (2006)|Hurricane John]], which killed six people after striking the [[Baja California Peninsula]], and the costliest storm was [[Hurricane Lane (2006)|Hurricane Lane]], which caused $203&nbsp;million in damage in southwestern Mexico (2006&nbsp;[[United States dollar|USD]], ${{Formatprice|{{Inflation|US|203000000|2006}}}} {{#time:Y}}&nbsp;USD).
+
+Seasonal activity began on May 27 when [[Tropical Storm Aletta (2006)|Tropical Storm Aletta]] formed off the southwest coast of Mexico. No storms formed in June, though the season became active in July when five named storms developed, including [[Hurricane Daniel (2006)|Hurricane Daniel]] which was the second strongest storm of the season, as well as [[Tropical Storm Emilia (2006)|Tropical Storm Emilia]]. During August, Hurricanes Ioke and John formed, as well as four other storms. September was a relatively quiet month with two storms, of which one was Hurricane Lane. Three storms developed in October including [[Hurricane Paul (2006)|Hurricane Paul]] and two formed in November; this marked the second time on record, after [[1961 Pacific hurricane season|1961]], when more than one tropical storm developed in the basin during the month of November.
+
+__TOC__
+{{Clear}}
+
+== Seasonal forecast ==
+{{Clear}}
+{| class="toccolours" cellspacing=0 cellpadding=3 style="float:right; margin-left:1em; text-align:right;"
+|+'''Predictions of tropical activity in the 2006 season <br />for the Eastern North Pacific'''
+|- style="background:#ccf;"
+| style="text-align:center;"|'''Source'''
+| style="text-align:center;"|'''Date'''
+| style="text-align:center;"|'''<span style="font-size: 80%;">Named<br />storms</span>'''
+| style="text-align:center;"|'''<span style="font-size: 80%;">Hurricanes</span>'''
+| style="text-align:center;"|'''<span style="font-size: 80%;">Major<br />hurricanes</span>'''
+|-
+|align="left"|[[Climate Prediction Center|CPC]]
+|align="left"|''Average''<ref name="noaa-EPac avg">{{cite web|author=Climate Prediction Center, [[National Oceanic and Atmospheric Administration|NOAA]] |date=May 22, 2006 |title=Background Information: East Pacific Hurricane Season |publisher=National Oceanic and Atmospheric Administration |accessdate=May 24, 2006 |url=http://www.cpc.ncep.noaa.gov/products/Epac_hurr/background_information.html |archiveurl=http://www.webcitation.org/5gsJts3lk?url=http%3A%2F%2Fwww.cpc.ncep.noaa.gov%2Fproducts%2FEpac_hurr%2Fbackground_information.html |archivedate=May 18, 2009 |deadurl=no |df=mdy }}</ref>
+|15.3
+|8.8
+|4.2
+|-
+|align="left"|NOAA
+|align="left"|May 22, 2006
+|12–16
+|6–8
+|1–3
+|-
+|align="left"|
+|align="left"|'''Actual activity'''
+|18
+|10
+|5
+|}
+On May 22, 2006, the [[National Oceanic and Atmospheric Administration]]'s (NOAA) [[Climate Prediction Center|CPC]] (CPC) released their forecasts for the 2006 [[2006 Atlantic hurricane season|Atlantic]] and Pacific hurricane seasons. The Pacific season was expected to be hindered by the decades-long cycle that began in [[1995 Pacific hurricane season|1995]], which generally increased [[wind shear]] across the basin. NOAA predicted a below-normal level of activity in the Eastern Pacific, with 12–16&nbsp;named storms, of which 6–8 were expected to become hurricanes, and 1–3 expected to become major hurricanes.<ref name="NOAA May">{{cite web|author=Climate Prediction Center, [[National Oceanic and Atmospheric Administration|NOAA]] |date=May 22, 2006 |title=NOAA Expects Below Average 2006 East Pacific Hurricane Season |publisher=National Oceanic and Atmospheric Administration |accessdate=May 22, 2006 |url=http://www.publicaffairs.noaa.gov/releases2006/may06/noaa06-054.html |archiveurl=http://www.webcitation.org/5wfdD8eyi?url=http%3A%2F%2Fwww.publicaffairs.noaa.gov%2Freleases2006%2Fmay06%2Fnoaa06-054.html |archivedate=February 21, 2011 |deadurl=no |df=mdy }}</ref> The [[Central Pacific Hurricane Center]]'s [[area of responsibility]] was also expected to be below average, with only two to three tropical cyclones expected to form or cross into the area.<ref name="NOAA May CP">{{cite web|author=Central Pacific Hurricane Center, [[National Oceanic and Atmospheric Administration|NOAA]] |date=May 22, 2006 |title=NOAA Announces Central Pacific Hurricane Season Outlook |publisher=National Oceanic and Atmospheric Administration |accessdate=June 10, 2006 |url=http://www.publicaffairs.noaa.gov/releases2006/may06/noaa06-r254.html |archiveurl=http://www.webcitation.org/5wfdDKYow?url=http%3A%2F%2Fwww.publicaffairs.noaa.gov%2Freleases2006%2Fmay06%2Fnoaa06-r254.html |archivedate=February 21, 2011 |deadurl=no |df=mdy }}</ref> They expected that neither [[El Niño Southern Oscillation|El Niño]] nor La Niña would affect conditions significantly.<ref name="NOAA May"/>
+
+On May 15, the hurricane season began in the Eastern Pacific basin, which is the area of the northern [[Pacific Ocean]] east of 140°[[Longitude|W]].<ref>{{cite web|author=Jack Beven|date=May 15, 2006|title=Tropical Weather Outlook|publisher=National Hurricane Center|accessdate=September 4, 2008|url=ftp://ftp.met.fsu.edu/pub/weather/tropical/Outlook-P/2006051511.ABPZ20}}</ref> On June 1, the season began in the Central Pacific warning zone (between 140°[[Longitude|W]] and the [[International Dateline]]); however, no storms occurred in the region until July.<ref>{{cite web|author=Central Pacific Hurricane Center |date=July 2, 2008 |title=Mission Statement |accessdate=September 4, 2008 |url=http://www.prh.noaa.gov/cphc/pages/mission.php |archiveurl=http://www.webcitation.org/5wfdDY1e3?url=http%3A%2F%2Fwww.prh.noaa.gov%2Fcphc%2Fpages%2Fmission.php |archivedate=February 21, 2011 |deadurl=no |df=mdy }}</ref>
+
+== Seasonal summary ==
+{{Main article|Timeline of the 2006 Pacific hurricane season}}
+
+<center>
+<timeline>
+ImageSize = width:800 height:200
+PlotArea  = top:10 bottom:80 right:20 left:20
+Legend    = columns:3 left:30 top:58 columnwidth:270
+AlignBars = early
+
+DateFormat = dd/mm/yyyy
+Period     = from:01/05/2006 till:01/12/2006
+TimeAxis   = orientation:horizontal
+ScaleMinor = grid:black unit:month increment:1 start:01/05/2006
+
+Colors     =
+  id:canvas value:gray(0.88)
+  id:GP     value:red
+  id:TD     value:rgb(0.38,0.73,1)  legend:Tropical_Depression_=_&lt;39_mph_(0-62_km/h)
+  id:TS     value:rgb(0,0.98,0.96)  legend:Tropical_Storm_=_39-73_mph_(63-117 km/h)
+  id:C1     value:rgb(1,1,0.80)     legend:Category_1_=_74-95_mph_(118-153_km/h)
+  id:C2     value:rgb(1,0.91,0.46)  legend:Category_2_=_96-110_mph_(154-177_km/h)
+  id:C3     value:rgb(1,0.76,0.25)  legend:Category_3_=_111-130_mph_(178-209-km/h)
+  id:C4     value:rgb(1,0.56,0.13)  legend:Category_4_=_131-155_mph_(210-249_km/h)
+  id:C5     value:rgb(1,0.38,0.38)  legend:Category_5_=_&gt;=156_mph_(&gt;=250_km/h)
+
+Backgroundcolors = canvas:canvas
+
+BarData =
+  barset:Hurricane
+  bar:Month
+
+PlotData=
+
+  barset:Hurricane width:10 align:left fontsize:S shift:(4,-4) anchor:till
+  from:27/05/2006 till:31/05/2006 color:TS text:"Aletta"
+  from:03/06/2006 till:05/06/2006 color:TD text:"Two-E"
+  from:11/07/2006 till:15/07/2006 color:C3 text:"Bud"
+  from:12/07/2006 till:20/07/2006 color:C1 text:"Carlotta"
+  from:15/07/2006 till:26/07/2006 color:C4 text:"Daniel"
+  from:21/07/2006 till:28/07/2006 color:TS text:"Emilia"
+  from:31/07/2006 till:03/08/2006 color:TS text:"Fabio"
+  from:31/07/2006 till:05/08/2006 color:TS text:"Gilma"
+   barset:break
+  from:15/08/2006 till:22/08/2006 color:C2 text:"Hector"
+  from:19/08/2006 till:26/08/2006 color:C5 text:"[[Hurricane Ioke|Ioke]]"
+  from:21/08/2006 till:27/08/2006 color:C3 text:"Ileana"
+  from:28/08/2006 till:03/09/2006 color:C4 text:"[[Hurricane John (2006)|John]]"
+  from:29/08/2006 till:07/09/2006 color:C1 text:"Kristy"
+  from:13/09/2006 till:17/09/2006 color:C3 text:"[[Hurricane Lane (2006)|Lane]]"
+  from:16/09/2006 till:18/09/2006 color:TS text:"Miriam"
+  from:18/09/2006 till:20/09/2006 color:TD text:"Two-C"
+    barset:break
+  from:26/09/2006 till:26/09/2006 color:TD text:"Three-C"
+  from:08/10/2006 till:10/10/2006 color:TS text:
+  from:09/10/2006 till:12/10/2006 color:TS text:"Olivia"
+  from:13/10/2006 till:14/10/2006 color:TD text:"Four-C"
+    barset:break
+    barset:skip
+  from:15/10/2006 till:15/10/2006 color:TD text:"Norman"
+    barset:skip
+    barset:skip
+  from:21/10/2006 till:26/10/2006 color:C2 text:"[[Hurricane Paul (2006)|Paul]]"
+  from:26/10/2006 till:27/10/2006 color:TD text:"Eighteen-E"
+  from:08/11/2006 till:10/11/2006 color:TS text:"[[Tropical Storm Rosa (2006)|Rosa]]"
+  from:11/11/2006 till:11/11/2006 color:TD text:"Twenty-E"
+    barset:break
+  from:13/11/2006 till:20/11/2006 color:C2 text:"Sergio"
+    barset:skip
+
+  bar:Month width:5 align:center fontsize:S shift:(0,-20) anchor:middle color:canvas
+  from:01/05/2006 till:01/06/2006 text:May
+  from:01/06/2006 till:01/07/2006 text:June
+  from:01/07/2006 till:01/08/2006 text:July
+  from:01/08/2006 till:01/09/2006 text:August
+  from:01/09/2006 till:01/10/2006 text:September
+  from:01/10/2006 till:01/11/2006 text:October
+  from:01/11/2006 till:01/12/2006 text:November
+
+TextData =
+   pos:(570,30)
+   text:"(From the"
+   pos:(617,30)
+   text:"[[Saffir-Simpson Hurricane Scale]])"
+
+</timeline>
+</center>
+
+No tropical storms developed in June in the basin, which was unusual compared to the average of two storms forming during the month. Since 1966, there have been only three other seasons in which a tropical storm did not form in June, these being [[1969 Pacific hurricane season|1969]], [[2004 Pacific hurricane season|2004]], and [[2007 Pacific hurricane season|2007]].<ref>{{cite web|author=Beven|date=July 1, 2007|title=June Monthly Weather Tropical Summary|publisher=National Hurricane Center|accessdate=September 5, 2008|url=http://www.nhc.noaa.gov/archive/2007/tws/MIATWSEP_jun.shtml?| archiveurl= https://web.archive.org/web/20080922220858/http://www.nhc.noaa.gov/archive/2007/tws/MIATWSEP_jun.shtml| archivedate= September 22, 2008 <!--DASHBot-->| deadurl= no|display-authors=etal}}</ref> After such an inactive month, the tropics became active in July when five named storms developed, including [[Hurricane Daniel (2006)|Hurricane Daniel]] which was the second strongest storm of the season. During August, Hurricanes Ioke and John formed, as well as four other storms. September was a relatively quiet month with two storms, of which one was Hurricane Lane.{{EPAC hurricane best track}}  By that time, however, [[El Niño-Southern Oscillation|El Niño]] conditions became established across the Pacific,<ref name=cphc /> which is known to enhance [[Pacific hurricane]] activity.<ref name="NOAA May" />
+
+Three storms developed in October, including Hurricane Paul. {{EPAC hurricane best track}} Tropical activity within the basin in November&nbsp;2006 was the most active on record, based on the [[Accumulated Cyclone Energy]] (ACE) Index. Three tropical cyclones formed, of which two became tropical storms; only two other seasons on record, [[1961 Pacific hurricane season|1961]] and [[2015 Pacific hurricane season|2015]], produced two tropical storms in the month of November.<ref name="nov06">{{cite web|author=Pasch|date=December 1, 2006|title=Summary of the 2006 Pacific Hurricane Season|publisher=National Hurricane Center|accessdate=October 3, 2008|url=http://www.nhc.noaa.gov/archive/2006/tws/MIATWSEP_nov.shtml?| archiveurl= https://web.archive.org/web/20080923102804/http://www.nhc.noaa.gov/archive/2006/tws/MIATWSEP_nov.shtml| archivedate= September 23, 2008 <!--DASHBot-->| deadurl= no|display-authors=etal}}</ref> In addition, Mexico was struck by four tropical cyclones in 2006, none on the Atlantic coast and all along the Pacific coast.<ref name="wmo">{{cite web|author=RAIV Hurricane Committee|year=2007|title=Final Report of the Twenty-Ninth Session|publisher=World Meteorological Organization|accessdate=2008-11-17|url=http://www.wmo.int/pages/prog/www/tcp/documents/HC29_final_report-english.pdf|format=PDF| archiveurl= https://web.archive.org/web/20081217100921/http://www.wmo.int/pages/prog/www/tcp/documents/HC29_final_report-english.pdf| archivedate=December 17, 2008 <!--DASHBot-->| deadurl= no}}</ref> One hit [[Baja California Peninsula]] while the others made landfall on the mainland.<ref name="EPAC Book">{{cite book|author1=Blake, Eric S|author2=Gibney, Ethan J|author3=Brown, Daniel P|author4=Mainelli, Michelle|author5=Franklin, James L|author6=Kimberlain, Todd B|format=pdf|year=2009|author7=Hammer, Gregory R|url=http://www.nhc.noaa.gov/pdf/TC_Book_Epac_1949-2006_hires.pdf|accessdate=2012-05-27|title=Tropical Cyclones of the Eastern North Pacific Basin, 1949-2006|publisher=United States National Oceanic and Atmospheric Administration}}</ref>
+
+An [[extratropical cyclone|extratropical]] storm persisted in the extreme northern central Pacific Ocean in late October. It drifted over unusually [[sea surface temperature|warm waters]] up to 3.6&nbsp;°F (2&nbsp;°C) above normal, and gradually developed convection near the center. By November 2, [[QuikSCAT]] satellite suggested the system attained winds of up to 60&nbsp;mph (95&nbsp;km/h) about 900&nbsp;mi (1450&nbsp;km) west of [[Oregon]]. The system also developed an [[eye (cyclone)|eye]] and an eyewall. The cyclone tracked northeastward as it gradually weakened, and dissipated on November 4. [[NASA]] considered the cyclone to be a [[subtropical cyclone|subtropical storm]]. However, as it formed outside of the territory of any monitoring organization, it was not named. Operationally, the [[United States Navy]] treated the system as a tropical disturbance, numbered 91C.<ref name="NASA-91C">{{cite web|author=David Herring |publisher=NASA |title=Subtropical Storm off the Coast of Oregon |date=November 2, 2006 |accessdate=December 11, 2007 |url=http://earthobservatory.nasa.gov/NaturalHazards/natural_hazards_v2.php3?img_id=13951 |archiveurl=http://www.webcitation.org/5wfdFHGPB?url=http%3A%2F%2Fearthobservatory.nasa.gov%2FNaturalHazards%2Fnatural_hazards_v2.php3%3Fimg_id%3D13951 |archivedate=February 21, 2011 |deadurl=no |df=mdy }}</ref>
+
+== Storms ==
+
+===Tropical Storm Aletta===
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=Tropical Storm Aletta (2006).jpg
+|Track=Aletta 2006 track.png
+|Formed=May 27
+|Dissipated=May 30
+|1-min winds=40
+|Pressure=1002
+}}
+{{Main article|Tropical Storm Aletta (2006)}}
+On May&nbsp;27, 12&nbsp;days into the season, Tropical Depression One formed about 190&nbsp;miles (305&nbsp;km) south of Acapulco.<ref name="atcr">{{Cite web|author=Richard J. Pasch|title=Tropical Storm Aletta Tropical Cyclone Report|year=2006|publisher=National Hurricane Center|accessdate=2008-09-02|url={{NHC TCR url|id=EP012006_Aletta}}|format=PDF}}</ref> It slowly organized and became a tropical storm with 45&nbsp;mph (75&nbsp;km/h) sustained winds.<ref name="atcr"/> While named tropical cyclones in May are infrequent events, Aletta marked the seventh consecutive year to have a named cyclone form in May.<ref name="NHC May">{{cite web| author=Richard Pasch|publisher=National Hurricane Center| date=2006-06-01| title= May Tropical Weather Summary | accessdate=2006-06-01|url=http://www.nhc.noaa.gov/archive/2006/tws/MIATWSEP_may.shtml}}</ref> The storm moved toward the [[Guerrero]] coast in southwestern Mexico, prompting the Mexican government to issue [[tropical storm watch]]es between [[Punta Maldonado]] and [[Zihuatanejo]].<ref name="SMN Aletta">{{cite web|author=Alberto Hernández Unzón|author2=M. G. Cirilo Bravo Lujano|year=2007|publisher = Servicio Meteorologico Nacional, Comisión Nacional del Agua | title = Resúmen de la Tormenta Tropical Aletta del Océano Pacífico | url = http://smn.cna.gob.mx/ciclones/tempo2006/pacifico/aletta.pdf| accessdate = 2006-09-09 | format = PDF |language=Spanish}}</ref> Aletta then became stationary over the [[Guerrero]] and [[Oaxaca]] coastlines, but it later turned to the west and dissipated on May&nbsp;30.<ref name="atcr"/>
+
+Aletta produced moderate rainfall across Mexico, including a 24-hour rainfall total of 3.94&nbsp;inches (100&nbsp;mm)<ref group="nb">Rainfall totals are rounded to the nearest 1/100th of an [[inch]] and to the nearest [[millimetre]].</ref> in Jacatepec, Oaxaca on May&nbsp;30, and 3.78&nbsp;inches (96&nbsp;mm) in La Calera, Guerrero, the next day.<ref name="SMN Aletta"/> There were no reports of damage, flooding, or casualties.<ref name="atcr"/><ref name="NHC May"/>
+{{Clear}}
+
+===Tropical Depression Two-E===
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=Tropical Depression Two-E (2006).PNG
+|Track=Two-E 2006 track.png
+|Formed=June 3
+|Dissipated=June 5
+|1-min winds=30
+|Pressure=1005
+}}
+{{Main article|Tropical Depression Two-E (2006)}}
+On the day after Aletta dissipated, a new area of disturbed weather developed off the southwest Mexican coast. High shear slowed the development of the system, although it gained enough convection and organization to be classified as a tropical depression on June&nbsp;3. The depression strengthened to near tropical storm status as it approached the coast of southwestern Mexico; however, shear persisted over the system and it weakened before dissipating on June&nbsp;4.<ref name="2tcr">{{cite web|author=Lixion Avila|date=2006-07-05|title=Tropical Depression Two-E Tropical Cyclone Report|publisher=National Hurricane Center|accessdate=2008-11-29|url={{NHC TCR url|id=EP022006_Two-E}}|format=PDF}}</ref>
+
+Despite never becoming a named storm, heavy rain occurred, including a total of 19.13&nbsp;inches (486&nbsp;mm) measured in a 48&#8209;hour period in Acapulco.<ref>{{cite web|author1=Alberto Hernández Unzón  |author2=Cirilo Bravo Lujano|year=2006|title=Resumen de la Depresión Tropical 2E del Océano Pacifico|publisher=Servicio Meteorológico Nacional|language=Spanish|accessdate=2008-11-29|url=http://smn.cna.gob.mx/ciclones/tempo2006/pacifico/dt2e.pdf|format=PDF}}</ref> Mudslides and flash flooding were reported,<ref name="2tcr"/> forcing 72&nbsp;people from their homes.<ref>{{cite web|author=Juan Cervantes y Laura Reyes|work=El Universal|date=2006-06-05|title=Amenaza depresión tropical pasar a ciclón|language=Spanish|accessdate=2008-11-29|url=http://www.eluniversal.com.mx/estados/61457.html}}</ref> No deaths or serious damage was reported.<ref name="2tcr"/>
+{{Clear}}
+
+===Hurricane Bud===
+{{Main article|Hurricane Bud (2006)}}
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=hurricane bud 2006.jpg
+|Track=Bud 2006 track.png
+|Formed=July 11
+|Dissipated=July 16
+|1-min winds=110
+|Pressure=953
+}}
+On July&nbsp;11, after over a month of inactivity, a disturbance off the [[Baja California Peninsula|Peninsula of Baja California]] developed into a tropical depression. It moved west-northwestward for its entire duration, quickly intensifying into a tropical storm and hurricane. A clear, well-defined [[eye (cyclone)|eye]] developed, and Bud became the first [[tropical cyclone scales|major hurricane]] of the season. On July&nbsp;13, the hurricane attained peak winds of 125&nbsp;mph (205&nbsp;km/h), although cooler waters and stable air caused a marked weakening trend. By July&nbsp;15, Bud weakened to tropical depression status, and the next day it degenerated into a remnant low pressure area.<ref>{{cite web|author=Richard D. Knabb|title=Tropical Cyclone Report: Hurricane Bud|year=2006|publisher=National Hurricane Center|accessdate=2008-10-10|url={{NHC TCR url|id=EP032006_Bud}}|format=PDF}}</ref> The remnants of Bud produced light rainfall across [[Hawaii]].<ref name="jul06">{{cite web|author=Kevin R. Kodama|year=2006|title=July 2006 Hawaii Precipitation Summary|publisher=Honolulu National Weather Service|accessdate=2008-11-17|url=http://www.prh.noaa.gov/hnl/hydro/pages/jul06sum.php |archiveurl = https://web.archive.org/web/20060929013413/http://www.prh.noaa.gov/hnl/hydro/pages/jul06sum.php |archivedate = 2006-09-29}}</ref>
+{{Clear}}
+
+===Hurricane Carlotta===
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=hurricane carlotta 2006.jpg
+|Track=Carlotta 2006 track.png
+|Formed=July 12
+|Dissipated=July 16
+|1-min winds=75
+|Pressure=981
+}}
+A tropical wave exited Africa on June&nbsp;30 and moved across the Atlantic Ocean without development. On July&nbsp;9, while crossing Central America into the eastern North Pacific Ocean, thunderstorm activity increased, and the system organized into Tropical Depression Four-E early on July&nbsp;12 about 290&nbsp;mi (465&nbsp;km) south of [[Zihuatanejo]], [[Guerrero]].<ref name="tcr">{{cite web|author=James Franklin|date=2006-09-04|title=Hurricane Carlotta Tropical Cyclone Report|publisher=National Hurricane Center|accessdate=2008-11-30|url={{NHC TCR url|id=EP042006_Carlotta}}|format=PDF}}</ref> The large depression moved quickly to the west-northwest to the south of a [[ridge (meteorology)|ridge]] over northwestern Mexico, and its outer rainbands moved across the coast. Rainfall totals were less than 1&nbsp;inch (25&nbsp;mm).<ref name="tcr"/> The depression intensified into Tropical Storm Carlotta just six hours after forming.<ref name="tcr"/> By late on July&nbsp;12, the storm developed [[tropical cyclone#Physical structure|banding features]],<ref>{{cite web|author=Richard Pasch|date=2006-07-12|title=Tropical Storm Carlotta Discussion Four|publisher=National Hurricane Center|accessdate=2008-11-30|url=http://www.nhc.noaa.gov/archive/2006/ep04/ep042006.discus.004.shtml?}}</ref> and early on July&nbsp;13 Carlotta attained hurricane status about 430&nbsp;mi (700&nbsp;km) south of the southern tip of the [[Baja California peninsula]].<ref name="tcr"/>
+
+As Carlotta intensified, the system became more compact, and it reached peak winds of 85&nbsp;mph (140&nbsp;km/h) on July&nbsp;13.<ref name="tcr"/> An [[eye (cyclone)|eye]] formed in the center, and the hurricane was briefly forecast to attain [[tropical cyclone scales|major hurricane]] status, or a Category&nbsp;3 on the [[Saffir-Simpson Hurricane Scale|Saffir-Simpson scale]].<ref>{{cite web|author=Blake/Knabb|date=2006-07-13|title=Hurricane Carlotta Discussion Six|publisher=National Hurricane Center|accessdate=2008-11-30|url=http://www.nhc.noaa.gov/archive/2006/ep04/ep042006.discus.006.shtml?}}</ref> However, Carlotta weakened due to increased wind shear from [[Hurricane Bud (2006)|Hurricane Bud]] to its west,<ref name="tcr"/> and the eye and convection deteriorated.<ref>{{cite web|author=Jack Beven|date=2006-07-14|title=Hurricane Carlotta Discussion Nine|publisher=National Hurricane Center|accessdate=2008-11-30|url=http://www.nhc.noaa.gov/archive/2006/ep04/ep042006.discus.009.shtml?}}</ref> Carlotta briefly weakened to tropical storm status late on July&nbsp;14, although a decrease in shear allowed it to reintensify into a hurricane. This was short-lived as the center moved into the area of cooler waters, and Carlotta again weakened to tropical storm status.<ref name="tcr"/> Late on July&nbsp;15, the circulation became separated from the convection,<ref>{{cite web|author=Rhome/Avila|date=2006-07-15|title=Tropical Storm Carlotta Discussion Sixteen|publisher=National Hurricane Center|accessdate=2008-11-30|url=http://www.nhc.noaa.gov/archive/2006/ep04/ep042006.discus.016.shtml?}}</ref> and Carlotta weakened to tropical depression status on July&nbsp;16, and the next day generated into a remnant low. The circulation continued generally westward, dissipating on July&nbsp;20 about 1500&nbsp;mi (2400&nbsp;km) east of the Hawaiian islands.<ref name="tcr"/>
+{{Clear}}
+
+===Hurricane Daniel===
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=Hurricane daniel 2006.jpg
+|Track=Daniel 2006 track.png
+|Formed=July 16
+|Dissipated=July 26
+|1-min winds=130
+|Pressure=933
+}}
+{{Main article|Hurricane Daniel (2006)}}
+On July&nbsp;16, a tropical disturbance formed far to the south of the [[Baja California Peninsula]] and quickly increased in convective activity and organization, becoming a tropical depression. The system continued to organize and was designated as a tropical storm the next day. On July&nbsp;18, Daniel attained hurricane status, and two days later underwent rapid intensification; it reached [[tropical cyclone scales|major hurricane status]] and was later upgraded further to Category&nbsp;4 status on the [[Saffir-Simpson Hurricane Scale]]. Its peak intensity was 150&nbsp;mph (240&nbsp;km/h).<ref name="danieltcr"/> The hurricane underwent [[eye (cyclone)|eyewall replacement cycles]], which are internal mechanisms that occur in most intense hurricanes. Daniel later became an [[annular hurricane]], which allowed it to maintain Category&nbsp;4 status for longer than it otherwise would have.<ref name="danialdisc16">{{cite web|author=Daniel Brown|year=2006|title=Hurricane Daniel Discussion Sixteen|publisher=National Hurricane Center|accessdate=2007-12-28|url=http://www.nhc.noaa.gov/archive/2006/ep05/ep052006.discus.016.shtml?}}</ref>
+
+It crossed over into the Central Pacific early on July&nbsp;24 and was predicted to affect Hawaii as a tropical storm; however, Daniel encountered weak steering currents in the open ocean, causing it to slow down considerably.<ref name="danieltcr">{{cite web|author=Jack Beven|year=2006|title=Hurricane Daniel Tropical Cyclone Report|publisher=National Hurricane Center|accessdate=2007-07-18|url={{NHC TCR url|id=EP052006_Daniel}}|format=PDF}}</ref> It rapidly degenerated to a tropical depression on July&nbsp;25, and the CPHC issued its last advisory on July&nbsp;26 while the storm was still well to the east of Hawaii. Its remnants later moved across the Hawaiian islands,<ref name="danieltcr"/> dropping heavy rainfall and causing flooding.<ref name="cphc">{{cite web|publisher=Central Pacific Hurricane Center|year=2006|title=Overview of the 2006 Central North Pacific Tropical Cyclone Season|accessdate=2007-12-28|url=http://www.prh.noaa.gov/cphc/summaries/2006.php#daniel}}</ref> West Wailuaiki on Maui recorded 3.87&nbsp;inches (98&nbsp;mm) in one day, which was the highest daily rainfall total from the hurricane.<ref name="jul06"/>
+{{Clear}}
+
+===Tropical Storm Emilia===
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=TS Emilia 2006.jpg
+|Track=Emilia 2006 track.png
+|Formed=July 21
+|Dissipated=July 28
+|1-min winds=55
+|Pressure=990
+}}
+{{Main article|Tropical Storm Emilia (2006)}}
+The origins of Emilia were from a [[tropical wave]] that developed into a tropical depression on July&nbsp;21, a short distance off the coast of [[Acapulco]]. It moved generally north-northwestward, reaching tropical storm status on July&nbsp;22 and passing about 175&nbsp;mi (280&nbsp;km) southwest of [[Manzanillo, Colima]].<ref name="etcr"/> An [[eye (cyclone)|eyewall]] began to form that day,<ref>{{cite web|author=Stacy Stewart|date=2006-07-22|title=Tropical Storm Emilia Discussion Nine|publisher=National Hurricane Center|accessdate=2008-09-14|url=http://www.nhc.noaa.gov/archive/2006/ep06/ep062006.discus.009.shtml?}}</ref> and Emilia reached peak winds of 65&nbsp;mph (105&nbsp;km/h).<ref name="etcr">{{cite web|author=Stacy R. Stewart|date=2006-12-11|title=Tropical Storm Emilia Tropical Cyclone Report|publisher=National Hurricane Center|accessdate=2008-09-13|url={{NHC TCR url|id=EP062006_Emilia}}|format=PDF}}</ref> It briefly weakened due to [[wind shear]], although restrengthening occurred as the storm turned toward the [[Baja California peninsula]]. On July&nbsp;26, Emilia again reached peak winds of 65&nbsp;mph (105&nbsp;km/h), and shortly thereafter it passed about 60&nbsp;mi (95&nbsp;km) southwest of the southern tip of Baja California. It weakened as it turned into cooler waters, first to tropical depression status on July&nbsp;27 and then to a convective-less remnant low on July&nbsp;28. The remnants dissipated on July&nbsp;31 about 495&nbsp;mi (800&nbsp;km) west-southwest of [[San Diego, California]].<ref name="etcr"/>
+
+In southwestern Mexico, Emilia produced tropical storm force winds along the coastline. Rainfall in the southern portion of the Baja California peninsula caused minor flooding, and gusty winds caused damage to buildings and power lines.<ref name="etcr"/> Moisture from Emilia reached the southwestern United States. Thunderstorms and rainfall occurred across Arizona, causing flooding.<ref>{{cite web|author=Tucson, Arizona National Weather Service|year=2006|title=Review of July 25, 2006 Severe thunderstorm and Flash flood event|accessdate=2008-09-19|url=http://www.wrh.noaa.gov/twc/stormreviews/2006July25.php}}</ref> In southern California, the storm dropped light rainfall, which assisted firefighters in containing a wildfire.<ref>{{cite web|author=Staff Writer|publisher=San Diego Union Tribune|date=2006-07-30|title=Horse fire declared fully contained|accessdate=2008-09-19|url=http://www.signonsandiego.com/news/metro/20060730-1100-horsefire.html}}</ref>
+{{Clear}}
+
+===Tropical Storm Fabio===
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=Tropical Storm Fabio 2006.jpg
+|Track=Fabio 2006 track.png
+|Formed=July 31
+|Dissipated=August 3
+|1-min winds=45
+|Pressure=1000
+}}
+A tropical wave crossed the west coast of Africa on July&nbsp;15 and entered the Pacific on July&nbsp;25. Convection increased on July&nbsp;28, and at 1800&nbsp;UTC on July&nbsp;31 the system became Tropical Depression Seven-E about 980&nbsp;miles (1,580&nbsp;km) southwest of the southern tip of the [[Baja California peninsula]]. Six hours later, the depression was upgraded to Tropical Storm Fabio. It moved westward due to a ridge to its north, and on August&nbsp;1 Fabio reached peak winds of 50&nbsp;mph (85&nbsp;km/h). Later, the storm began weakening due to increased [[wind shear]] and dry air. On August&nbsp;3, Fabio deteriorated to tropical depression status, and later that day it degenerated into a remnant [[low pressure area]]. The remnants continued westward, moving across [[Hawaii]] on August&nbsp;7.<ref name="ftcr">{{cite web|url={{NHC TCR url|id=EP072006_Fabio}}|format=PDF|title=Tropical Storm Fabio Tropical Cyclone Report|author=Jamie R. Rhome|publisher=National Hurricane Center|date=2006-09-13|accessdate=2009-09-24}}</ref>
+
+Although Fabio did not impact land, its remnants produced heavy rainfall in Hawaii. In a 24&nbsp;hour period, 2.89&nbsp;inches (73&nbsp;mm) of rainfall was recorded at [[Glenwood, Hawaii|Glenwood]] on the island of [[Hawaii (island)|Hawaii]]; this was the highest daily rainfall total for the month on the island. However, the heaviest precipitation fell on [[Mount Wai?ale?ale]] on [[Kauai]], where 15.08&nbsp;inches (383&nbsp;mm) fell in 24&nbsp;hours; this total alone was greater than all other monthly rainfall totals in the state.<ref name="hawrain">{{cite web|author=Kevin R. Kodama|date=2006-09-06|publisher=Honolulu National Weather Service|title=August 2006 Precipitation Summary in the State of Hawaii|accessdate=2008-09-24|url=http://www.prh.noaa.gov/hnl/hydro/pages/aug06sum.php |archiveurl = https://web.archive.org/web/20080801173953/http://www.prh.noaa.gov/hnl/hydro/pages/aug06sum.php |archivedate = August 1, 2008}}</ref> The heavy rainfall flooded the [[Hanalei River]], which forced the closure of the Kuhio Highway when a bridge was inundated.<ref name="ftcr"/> On [[Oahu]], the rainfall caused ponding on roadways and flooding along streams. One flooded stream stranded 24&nbsp;hikers along a trail, all of whom required rescue by helicopter.<ref>{{cite web|author=Stuart Hinson|accessdate=2008-09-25|publisher=National Climatic Data Center|title=Event Report for Hawaii|year=2006|url=http://www4.ncdc.noaa.gov/cgi-win/wwcgi.dll?wwevent~ShowEvent~608932}}</ref>
+{{clear}}
+
+===Tropical Storm Gilma===
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=TS Gilma 2006BW.jpg
+|Track=Gilma 2006 track.png
+|Formed=August 1
+|Dissipated=August 3
+|1-min winds=35
+|Pressure=1004
+}}On July&nbsp;17, a [[tropical wave]] exited Africa and crossed the Atlantic without developing. On July&nbsp;25 it entered the Eastern Pacific, gradually developing an area of organized convection. Despite marginally favorable upper-level winds, the system organized enough to be declared a tropical depression on August&nbsp;1, several hundred miles southwest of [[Acapulco, Mexico]].<ref name="gTCR">{{cite web|author=Michelle Mainelli|title=Tropical Storm Gilma Tropical Cyclone Report|year=2006|publisher=National Hurricane Center|accessdate=2008-09-21|url={{NHC TCR url|id=EP082006_Gilma}}|format=PDF}}</ref> Initially, the depression tracked west-northwestward.{{EPAC hurricane best track}} Despite wind shear in the area,<ref>{{cite web|author=Brennan/Stewart|title=Tropical Depression Eight-E Discussion Number 2|year=2006|publisher=National Hurricane Center|accessdate=2008-09-21|url=http://www.nhc.noaa.gov/archive/2006/ep08/ep082006.discus.002.shtml?}}</ref> the depression was upgraded to Tropical Storm Gilma later on August&nbsp;1. The wind shear prevented further strengthening or organization, and Gilma weakened to a tropical depression early on August&nbsp;2.<ref name="gTCR"/> The depression turned westward,{{EPAC hurricane best track}} and Gilma degenerated into a remnant low by August&nbsp;4.<ref name="gTCR"/>
+{{Clear}}
+
+===Hurricane Hector===
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=Hurricane hector 2006.jpg
+|Track=Hector 2006 track.png
+|Formed=August 15
+|Dissipated=August 23
+|1-min winds=95
+|Pressure=966
+}}
+A tropical wave exited Africa on July&nbsp;31, and after no development in the Atlantic, it crossed Central America into the northeastern Pacific Ocean on August&nbsp;10. Convection gradually increased, and a broad [[low pressure area]] developed about 375&nbsp;miles (605&nbsp;km) south of [[Acapulco|Acapulco, Mexico]] on August&nbsp;13. The system continued to become organized, and it developed into a [[Tropical Cyclone#Tropical Depression|tropical depression]] around 1800&nbsp;[[Coordinated Universal Time|UTC]] on August&nbsp;15 about 650&nbsp;mi (1,045&nbsp;km) south-southwest of the southern tip of [[Baja California]]. It moved west-northwestward, located south of a [[Ridge (meteorology)|ridge]] that extended westward from northern Mexico westward into the Pacific. The depression quickly intensified into Tropical Storm Hector early on August&nbsp;16.<ref name="Hectortcr">{{cite web | author = Daniel P. Brown| publisher = [[National Hurricane Center]] | title = Tropical Cyclone Report: Hurricane Hector| date = September 28, 2006 | accessdate=2007-12-01| url = {{NHC TCR url|id=EP092006_Hector}}}}</ref> Hector was able to steadily strengthen, reaching hurricane status at 0600&nbsp;UTC on August&nbsp;17. It is estimated that Hector reached its peak intensity of 110&nbsp;mph (175&nbsp;km/h) at 0600&nbsp;UTC on August&nbsp;18, while centered about 1,035&nbsp;mi (1,665&nbsp;km) southwest of the southern tip of Baja California.{{EPAC hurricane best track}}
+
+Hector remained a [[Saffir-Simpson Hurricane Scale#Category 2|Category 2 hurricane]] for about 24&nbsp;hours.{{EPAC hurricane best track}} Shortly thereafter, it encountered cooler waters and westerly shear,<ref>{{cite web|author=Brown/Stewart|title=Tropical Depression 09-E Discussion Number 22|year=2006|publisher=National Hurricane Center|accessdate=2009-01-07|url=http://www.nhc.noaa.gov/archive/2006/ep09/ep092006.discus.022.shtml?}}</ref> and Hector steadily weakened until becoming a tropical storm by August&nbsp;20. Shortly thereafter, the storm reached a weakness in the [[subtropical ridge]], which caused it to move slowly to the northwest. By August&nbsp;21, deep convection was confined to the northeast portion of the circulation.<ref>{{cite web|author=Pasch/Fiorino|title=Tropical Depression 09-E Discussion Number 23|year=2006|publisher=National Hurricane Center|accessdate=2009-01-07|url=http://www.nhc.noaa.gov/archive/2006/ep09/ep092006.discus.023.shtml?}}</ref> The shear was not strong enough to completely weaken the tropical cyclone and Hector remained a tropical storm with 50&nbsp;mph (85&nbsp;km/h) winds for about 24&nbsp;hours.<ref name="Hectortcr"/> After the remaining shower and thunderstorm activity dissipated on August&nbsp;22, the cyclone turned westward in response to the low-level easterly wind flow.<ref>{{cite web|author=Pasch/Fiorino|title=Tropical Depression 09-E Discussion Number 27|year=2006|publisher=National Hurricane Center|accessdate=2009-01-07|url=http://www.nhc.noaa.gov/archive/2006/ep09/ep092006.discus.027.shtml?}}</ref> Hector weakened to a tropical depression at 0000&nbsp;UTC on August&nbsp;23, and to a [[Low pressure area|remnant low]] six&nbsp;hours later. The remnant circulation of Hector dissipated on August&nbsp;24 about 750&nbsp;mi (1,210&nbsp;km) east of the [[Hawaiian Islands]].<ref>{{cite web|author=Roberts/Stewart|title=Tropical Depression 09-E Discussion Number 30|year=2006|publisher=National Hurricane Center|accessdate=2009-01-07|url=http://www.nhc.noaa.gov/archive/2006/ep09/ep092006.discus.030.shtml?}}</ref>
+{{Clear}}
+
+===Hurricane Ioke===
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=Hurricane Ioke, MODIS image on August 24, 2006, 2155 UTC.jpg
+|Track=Ioke 2006 track.png
+|Formed=August 20
+|Dissipated=August 27 <small>([[2006 Pacific typhoon season#Typhoon Ioke|Exited basin]])</small>
+|1-min winds=140
+|Pressure=915
+}}
+{{Main article|Hurricane Ioke}}
+The cyclone developed from the [[Intertropical Convergence Zone]] on August&nbsp;20 far to the south of [[Hawaii]]. Encountering warm waters, little [[wind shear]], and well-defined [[outflow (meteorology)|outflow]], Ioke intensified from a tropical depression to [[Saffir-Simpson Hurricane Scale|Category 4]] status within 48&nbsp;hours. Late on August&nbsp;22 it rapidly weakened to Category&nbsp;2 status before crossing over [[Johnston Atoll]]. Two days later favorable conditions again allowed for [[rapid deepening|rapid strengthening]], and Ioke attained Category&nbsp;5 status on August 25&nbsp;before crossing the International Date Line. At the time, its [[barometric pressure]] was estimated at 915&nbsp;[[bar (unit)|mbar]], thus becoming the strongest hurricane on record in the Central Pacific.<ref name="cphc"/> As it continued westward its intensity fluctuated, and on August&nbsp;31 it passed near [[Wake Island]] with winds of {{convert|155|mph|km/h|abbr=on}}. Ioke gradually weakened as it turned northwestward and northward, and by September&nbsp;6 it had transitioned into an [[extratropical cyclone]].<ref name="iokeatcr">{{cite web|author=Joint Typhoon Warning Center |year=2007 |title=Super Typhoon 01C |accessdate=2007-10-10 |url=http://www.usno.navy.mil/NOOC/nmfc-ph/RSS/jtwc/atcr/2006atcr/NWP_IO/StormNWP_IO/cp01.html |deadurl=yes |archiveurl=https://web.archive.org/web/20110607051245/http://www.usno.navy.mil/NOOC/nmfc-ph/RSS/jtwc/atcr/2006atcr/NWP_IO/StormNWP_IO/cp01.html |archivedate=June 7, 2011 |df=mdy }}</ref> By then, the cyclone had lasted 19&nbsp;days, reaching the equivalent of [[List of Category 5 Pacific hurricanes|Category 5]] status on the [[Saffir-Simpson Hurricane Scale]] three times.<ref name="cphc"/> The remnants of Ioke accelerated northeastward and ultimately crossed into [[Alaska]].<ref name="cattlenet">{{cite web|author=Cattle Network|year=2006|title=National Weather early for September 2006|accessdate=2006-09-14|url=http://www.cattlenetwork.com/content.asp?contentid=67684 |archiveurl = https://web.archive.org/web/20070927015657/http://www.cattlenetwork.com/content.asp?contentid=67684 |archivedate = 2007-09-27}}</ref>
+
+Ioke did not affect any permanently populated areas in the Central Pacific or Western Pacific basins as a hurricane or a typhoon. A crew of 12&nbsp;people stayed in a hurricane-proof bunker on [[Johnston Atoll]] during the hurricane's passage; the crew estimated winds reached over {{convert|100|mph|km/h|abbr=on}}, which damaged trees on the island but did not impact the island's bird population.<ref name="cphc"/><ref>{{cite news |author = Leone, Diana |title = Hawaiian-named storm hits Johnston Isle |url = http://starbulletin.com/2006/08/23/news/story01.html |publisher = Star Bulletin  |date = 2006-08-23 |accessdate = 2006-08-25}}</ref> The hurricane left moderate damage on [[Wake Island]] totaling $88&nbsp;million (2006&nbsp;USD), which resulted from blown off roofs and damaged buildings, although the infrastructure of the island was left intact. All military personnel were evacuated from the island, the first full-scale evacuation of the island since Typhoon Sarah in [[1967 Pacific typhoon season|1967]].<ref name="829afpn">{{cite news|author=Andrew Leonhard |date=2006-08-29 |title=Wake evacuated -- Airmen airlift 188 from Pacific Island |publisher=Air Force Print News |accessdate=2007-10-14 |url=http://www.af.mil/news/story.asp?id=123026137 |deadurl=yes |archiveurl=http://www.webcitation.org/5wfdN9pFw?url=http%3A%2F%2Fwww.af.mil%2Fnews%2Fstory.asp%3Fid%3D123026137 |archivedate=February 21, 2011 |df=mdy }}</ref><ref>{{cite web|author=Associated Press|title=Wake Island evacuated as Super Typhoon Ioke closes in|year=2006|publisher=Anchorage Daily News|accessdate=2008-10-31|url=http://dwb.adn.com/news/alaska/ap_alaska/story/8132157p-8024611c.html |archiveurl = https://web.archive.org/web/20080526113217/http://dwb.adn.com/news/alaska/ap_alaska/story/8132157p-8024611c.html |archivedate = 2008-05-26}}</ref><ref>{{cite web|author=Advisory Council for Historic Preservation |year=2007 |title=Spring 2007 Case Digest&nbsp;— Protecting Historic Properties |accessdate=2010-04-15 |url=http://www.achp.gov/docs/case_spring_07small.pdf |format=PDF |page=17 |deadurl=yes |archiveurl=http://www.webcitation.org/5p0p6v4Ze?url=http%3A%2F%2Fwww.achp.gov%2Fdocs%2Fcase_spring_07small.pdf |archivedate=April 15, 2010 |df=mdy }}</ref> Later, the extratropical remnants of Ioke produced a severe storm surge along the [[Alaska]]n coastline, causing beach erosion.<ref name="ncdc">{{cite web|author=National Climatic Data Center |year=2006 |title=Event Report for Alaska |accessdate=2010-04-15 |url=http://www4.ncdc.noaa.gov/cgi-win/wwcgi.dll?wwevent~ShowEvent~604223 |deadurl=yes |archiveurl=http://www.webcitation.org/5p0osUtZX?url=http%3A%2F%2Fwww4.ncdc.noaa.gov%2Fcgi-win%2Fwwcgi.dll%3Fwwevent%7EShowEvent%7E604223 |archivedate=April 15, 2010 |df=mdy }}</ref><div style="clear:both">{{refend}}
+
+===Hurricane Ileana===
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=Hurricane Ileana 23 aug 2006 1750Z.jpg
+|Track=Ileana 2006 track.png
+|Formed=August 21
+|Dissipated=August 27
+|1-min winds=105
+|Pressure=955
+}}
+{{Main article|Hurricane Ileana (2006)}}
+The origins of Hurricane Ileana were from a tropical wave that moved off the coast of Africa on August&nbsp;8. It entered the Eastern North Pacific on August&nbsp;16 and developed into a tropical depression on August&nbsp;21 near [[Acapulco]]. The depression strengthened into Tropical Storm Ileana six hours after forming. Ileana continued to strengthen, becoming a hurricane in 24&nbsp;hours and a major hurricane a day after that. Ileana reached its peak intensity of 120&nbsp;mph (195&nbsp;km/h) before beginning a slow weakening phase on August&nbsp;24 when it encountered cooler waters. Ileana weakened a tropical depression on the morning of August&nbsp;27 and quickly degenerated into a remnant low, dissipating on August&nbsp;29.<ref name="Illeanatcr">{{cite web | author = Eric S. Blake | publisher =National Hurricane Center| title = Tropical Cyclone Report: Hurricane Ileana| date = October 4, 2006 | accessdate=2007-12-01 | url = {{NHC TCR url|id=EP102006_Ileana}}|format=PDF}}</ref> As Ileana was heading north along the Mexican coastline, slight rainfall was recorded along the coast.<ref name="Ileana Rain">{{cite web | author = Tropical Rainfall Measuring Mission data | publisher = National Aeronautics and Space Administration | title = Rainfall from Ileana | year = 2007 | accessdate=2007-12-01 | url = http://trmm.gsfc.nasa.gov/trmm_rain/Events/tc_rain/epac/2006/precip_ILEANA.jpg}}</ref> There were also reports of hurricane-force winds on [[Socorro Island]].<ref name="Illeanatcr"/> One fatality was reported when a man drowned in heavy surf near [[Cabo San Lucas]].<ref name="IlleanaDeath">{{cite web | author = Staff Writer|publisher=San Diego Union-Tribune| title = The week in Mexico| date = August 23, 2006 | accessdate=2010-04-15 | url = http://www.signonsandiego.com/uniontrib/20060827/news_1n27mexweek.html}}</ref>
+{{Clear}}
+
+===Hurricane John===
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=Hurricane John Aug 31 2006.jpg
+|Track=John 2006 track.png
+|Formed=August 28
+|Dissipated=September 4
+|1-min winds=115
+|Pressure=948
+}}
+{{Main article|Hurricane John (2006)}}
+On August&nbsp;28, a persistent area of low pressure southwest of [[Acapulco]], Mexico developed into a tropical depression. Later that day it strengthened into a tropical storm, and it reached hurricane strength 24&nbsp;hours later on August&nbsp;29. John underwent rapid intensification and reached Category&nbsp;3 intensity later that day and Category&nbsp;4 on August&nbsp;30.<ref name="jtcr"/> Hours later, the hurricane underwent another eyewall replacement cycle,<ref name="johndisc10">{{Cite web|author=Mainelli/Pasch|publisher=National Hurricane Center|year=2006|title=Hurricane John Discussion Ten|accessdate=2006-08-30|url=http://www.nhc.noaa.gov/archive/2006/ep11/ep112006.discus.010.shtml?}}</ref> and subsequently weakened to Category&nbsp;3 status as it paralleled the Mexican coastline a short distance offshore.<ref name="johndisc11">{{cite web|author=Rhome/Beven|year=2006|title=Hurricane John Discussion Eleven|publisher=National Hurricane Center|accessdate=2006-08-30|url=http://www.nhc.noaa.gov/archive/2006/ep11/ep112006.discus.011.shtml?}}</ref> Potentially due to its eyewall replacement cycle or its interaction with land, Hurricane John weakened to a 105&nbsp;mph hurricane by late on August&nbsp;31,<ref name="john14">{{cite web|author=Mainelli/Pasch|year=2006|title=Hurricane John Discussion Fourteen|publisher=National Hurricane Center|accessdate=2006-08-31|url=http://www.nhc.noaa.gov/archive/2006/ep11/ep112006.discus.014.shtml?}}</ref> but restrengthened to a major hurricane shortly after. It made landfall near the southern tip of the [[Baja California peninsula]] as a Category&nbsp;2 hurricane on September&nbsp;1.<ref name="john19">{{cite web|author=Jack Beven|year=2006|title=Hurricane John Discussion Nineteen|publisher=National Hurricane Center|accessdate=2006-09-02|url=http://www.nhc.noaa.gov/archive/2006/ep11/ep112006.discus.019.shtml?}}</ref> John continued northwestward along the eastern Baja California peninsula, weakening to tropical depression status by September&nbsp;3 and dissipating on September&nbsp;4 in the [[Gulf of California]].<ref name="jtcr">{{cite web|author=Richard J. Pasch|year=2006|title=Hurricane John Tropical Cyclone Report|publisher=National Hurricane Center|accessdate=2006-11-15|url={{NHC TCR url|id=EP112006_John}}|format=PDF}}</ref>
+
+Along the southwestern coast of Mexico, Hurricane John produced heavy surf, strong winds, and heavy rainfall, which flooded roads, caused mudslides, and downed trees.<ref name="jtcr"/><ref>{{cite web | url=http://www.reliefweb.int/rw/RWB.NSF/db900SID/KKEE-6T6QZZ?OpenDocument | title=Mexico: Hurricane John Information Bulletin No. 1 | date=2006-08-30 | accessdate=2007-01-20 | author=International Federation of Red Cross And Red Crescent Societies | publisher=ReliefWeb}}</ref> Along the Baja California Peninsula, the hurricane dropped heavy rainfall, with a 24-hour peak of 10.8&nbsp;inches (276&nbsp;mm) in Los Planes.<ref>{{cite web|author=Servicio Meteorológico Nacional|year=2006|title=Resumen del Huracan "John" del Océano Pacífic|accessdate=2010-04-29|format=PDF|url=http://smn.cna.gob.mx/ciclones/tempo2006/pacifico/john.pdf|language=Spanish}}</ref> The heavy rainfall caused flooding, closed roads,<ref name="lapaz">{{cite web|author=Antonio Alcantar|year=2006|title=Hurricane John whips Mexico's Baja, power cut|publisher=Reuters|accessdate=2006-09-02|url=https://www.talktalk.co.uk/news/topnews/reuters/2006/09/02/hurricane-john-whips-mexico39s-baja-power-cut.html}}</ref> and caused a dam to overflow.<ref name="fourdeaths">{{cite web|author=Staff Writer|work=Agence France-Presse|year=2006|title=Hurricane John leaves four dead, two missing in Mexico|accessdate=2006-09-05|url=http://www.reliefweb.int/rw/RWB.NSF/db900SID/AMMF-6TCC3D?OpenDocument}}</ref> The winds and rainfall destroyed thousands of flimsy houses across the region.<ref name="bajadamage">{{cite web|author=Staff Writer|work=United Press International|year=2006|title=Remnants of John could soak U.S. southwest|accessdate=2006-09-05|url=http://story.malaysiasun.com/index.php/ct/9/cid/b8de8e630faf3631/id/197182/cs/1/}}</ref> Across Mexico, five people were killed,<ref name="jtcr"/> and damage amounted to $663&nbsp;million (2006&nbsp;[[Mexican peso|MXN]], $60.8&nbsp;million 2006&nbsp;[[United States dollar|USD]]).<ref name="mexicodamagetotal">{{cite web|author=Fabiola Martinez|publisher=LaJornada|date=2006-09-21|title= Seis muertos y 2 desaparecidos por las lluvias en Durango y Tamaulipas|accessdate=2006-09-23|language=Spanish|url=http://www.jornada.unam.mx/2006/09/21/index.php?section=estados&article=038n1est}}</ref> Moisture from the remnants of John produced flooding across Texas, which closed a ½&nbsp;mile (800&nbsp;m) portion of [[Interstate 10]] in El Paso.<ref name="foxnews">{{cite news|author=Staff Writer|publisher=Associated Press|title=After-Effects of Hurricane John Soak Texas, New Mexico|accessdate=2006-09-06|url=http://www.foxnews.com/story/0,2933,212071,00.html | date=2006-09-04}}</ref> In southern New Mexico, the rainfall caused widespread street flooding and some minor damage.<ref>{{cite web|author=National Climatic Data Center|year=2006|title=Event Report for New Mexico|publisher=National Oceanic and Atmospheric Administration|accessdate=2010-04-24|url=http://www.webcitation.org/5pF47sOYy}}</ref> Tropical moisture from the storm also produced rainfall in [[Arizona]] and southern [[California]], where eight separate mudslides occurred, trapping 19&nbsp;vehicles but causing no injuries.<ref name="califor">{{cite news|author=Staff Writer|agency=Associated Press|newspaper=Moscow-Pullman Daily News|date=2006-09-01|title=Remnants of Hurricane John caused flooding, mudslides in Calif. and elsewhere in Southwest|accessdate=2010-04-24|url=https://news.google.com/newspapers?nid=2026&dat=20060901&id=G9syAAAAIBAJ&sjid=MPAFAAAAIBAJ&pg=5916,470295}}</ref>
+{{Clear}}
+
+===Hurricane Kristy===
+{{Main article|Hurricane Kristy (2006)}}
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=12E Hurricane Kristy 2006.jpg
+|Track=Kristy 2006 track.png
+|Formed=August 30
+|Dissipated=September 8
+|1-min winds=70
+|Pressure=985
+}}
+On August&nbsp;30, a tropical wave located about 525&nbsp;miles (850&nbsp;km) south-southwest of [[Baja California]] became more organized and was designated as the twelfth tropical depression of the 2006&nbsp;season. It strengthened into Tropical Storm Kristy and became Hurricane Kristy the next day. It did not retain this status for long, partly due to its proximity to Hurricane John.<ref name="ktcr"/> There was a possibility of a [[Fujiwhara interaction]] between both systems, causing Kristy to weaken or perhaps be absorbed into the circulation of John.<ref>{{cite web|author=Knabb/Mundell|date=2006-08-31|title=Hurricane Kristy Discussion Six|publisher=National Hurricane Center|accessdate=2010-04-15|url=http://www.nhc.noaa.gov/archive/2006/ep12/ep122006.discus.006.shtml?}}</ref> This did not occur, however. Kristy weakened steadily after its peak intensity and looked to be close to dissipating, but on September&nbsp;3 and again on September&nbsp;5, convection flared up and it returned to tropical storm strength.<ref name="ktcr">{{cite web|author=Lixion Avila|date=2006-10-12|title=Hurricane Kristy Tropical Cyclone Report|publisher=National Hurricane Center|accessdate=2008-11-17|url={{NHC TCR url|id=EP122006_Kristy}}|format=PDF}}</ref> After oscillating between storm and depression strength, the system degenerated into a remnant low on September&nbsp;7, which dissipated on September&nbsp;8 without affecting land.<ref name="ktcr"/>
+{{Clear}}
+
+===Hurricane Lane===
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=Hurricane Lane 16 sept 2006 aqua.jpg
+|Track=Lane 2006 track.png
+|Formed=September 13
+|Dissipated=September 17
+|1-min winds=110
+|Pressure=952
+}}
+{{Main article|Hurricane Lane (2006)}}
+On September&nbsp;13, a tropical disturbance located about 125&nbsp;miles (200&nbsp;km) west-southwest of [[Acapulco]], Mexico, gradually became better organized and was designated the thirteenth tropical depression of the 2006&nbsp;season. The depression intensified in a favorable environment, and was upgraded to Tropical Storm Lane later that night. As it moved parallel to the Mexican coast it continued to strengthen and became a hurricane on September&nbsp;15, and a major hurricane early the next day. Hurricane Lane reached peak winds of 125&nbsp;mph (205&nbsp;km/h) before it made landfall on the coast of [[Sinaloa]] on September&nbsp;16. It quickly weakened over land and dissipated on September&nbsp;17.<ref name="ltcr">{{cite web|author=Richard Knabb|year=2006|title=Hurricane Lane Tropical Cyclone Report|publisher=National Hurricane Center|accessdate=2006-11-30|url={{NHC TCR url|id=EP132006_Lane}}|format=PDF}}</ref>
+
+Tropical Storm Lane produced heavy rainfall and high seas along the west coast of Mexico, including [[Acapulco]] where flood waters reached 16&nbsp;inches (40&nbsp;cm) in depth. The Acapulco airport also experienced flooding, though service was not interrupted.<ref name="aplane">{{cite news|author=Staff Writer|agency=Associated Press|date=2006-09-15|newspaper=McCook Daily Gazette|title=Tropical Storm Lane lashes Mexico's Pacific coast, heads toward Baja|accessdate=2010-04-24|url=https://news.google.com/newspapers?nid=1933&dat=20060915&id=ic80AAAAIBAJ&sjid=A2oFAAAAIBAJ&pg=1525,1963923}}</ref> Throughout Mexico, the hurricane caused four deaths and $2.2&nbsp;billion (2006&nbsp;MXN, $203&nbsp;million 2006&nbsp;USD) in damage,<ref name="sinal">{{cite web|author=Coordinación General de Asesoria y Políticas Públicas Gobierno del Estato|year=2006|title=Sociedad y gobierno unidos ante los daños del Huracán Lane|accessdate=2007-09-05|url=http://laip.sinaloa.gob.mx/Revistas/CGA/CausaComun/Octubre2006/SOCIEDADYGOBIERNO_UNIDO_HURACAN_LANE.htm|language=es}}</ref> half of which in [[Sinaloa]] where heavy crop damage was reported.<ref name="sinaloadamagetotal">{{cite news|author1=Valdez Cardenas, Javier  |author2=Leon, Raymundo|date=2006-09-24|title= En Sinaloa, los daños por Lane suman 1,200 millones de pesos|language=Spanish|publisher=La Jornada|accessdate=2006-10-03|url=http://www.jornada.unam.mx/2006/09/24/index.php?section=estados&article=031n3est}}</ref> An estimated 4,320&nbsp;homes were affected by the hurricane, and 19,200&nbsp;miles (30,000&nbsp;km) of roads and highways were damaged to some degree, including some destroyed bridges.<ref name="sinal"/>
+{{Clear}}
+
+===Tropical Storm Miriam===
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=Miriam06.jpg
+|Track=Miriam 2006 track.png
+|Formed=September 16
+|Dissipated=September 18
+|1-min winds=40
+|Pressure=999
+}}
+A disturbance associated with a northerly extension of the [[Intertropical Convergence Zone]] and a tropical wave developed a closed circulation on September&nbsp;15. It moved northeastward due to the influence from nearby Hurricane Lane, and organized enough to be declared Tropical Depression Fourteen-E on September&nbsp;16 while located about 500&nbsp;miles southwest of [[Cabo San Lucas]], Mexico. It quickly strengthened, and organized into Tropical Storm Miriam later that day. After reaching a peak intensity of 45&nbsp;mph (70&nbsp;km/h), vertical wind shear and cooler waters rapidly weakened the storm, and the circulation decoupled from the convection on September&nbsp;17. After turning more towards the north, Miriam weakened to tropical depression status, and on September&nbsp;18 it degenerated to a remnant low. The remnant circulation turned to the northwest, then to the east, and dissipated on September&nbsp;21 a short distance west of [[Baja California]]. No deaths are damage are associated with Miriam, and only one ship recorded winds of over tropical storm force near the center.<ref name="miriamtcr">{{cite web|author=James Franklin|year=2006|title=Tropical Storm Miriam Tropical Cyclone Report|publisher=National Hurricane Center|accessdate=2006-10-03|url={{NHC TCR url|id=EP142006_Miriam}}|format=PDF}}</ref>
+{{Clear}}
+
+===Tropical Depression Two-C===
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=02C TERRA MODIS 30 kt 2006.jpg
+|Track=2-C 2006 track.png
+|Formed=September 19
+|Dissipated=September 20
+|1-min winds=30
+|Pressure=1007
+}}
+On September&nbsp;19, an area of disturbed weather associated with the [[Intertropical Convergence Zone]] became sufficiently organized to be designated Tropical Depression Two-C. Initially, it was thought that the depression formed from the remnants of [[Hurricane Kristy (2006)|Hurricane Kristy]], although subsequent analysis confirmed they were two separate systems. Initially, the depression was in an area of favorable conditions, with little wind shear and warm waters.<ref name="cphc"/> As a result, the CPHC predicted significant strengthening to at least hurricane status.<ref>{{cite web|author=Tanabe/Houston|date=2006-09-19|title=Tropical Depression Two-C Discussion Three|publisher=Central Pacific Hurricane Center|accessdate=2010-04-15|url=http://www.prh.noaa.gov/cphc/tcpages/archive/2006/TCDCP3.CP022006.3.0609191500}}</ref> Instead, a high pressure system to its north increased wind shear over the depression, causing the convection to become removed from the center. The depression weakened into a remnant low on September&nbsp;20, never reaching tropical storm status.<ref name="cphc"/>
+{{Clear}}
+
+===Tropical Depression Three-C===
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=TD 03C 2006 NRL.jpg
+|Track=3-C 2006 track.png
+|Formed=September 26
+|Dissipated=September 27
+|1-min winds=30
+|Pressure=985
+}}
+During September, [[El Niño-Southern Oscillation|El Niño]] conditions became established across the Pacific, which produced an area of warmer waters along the International Date Line. A few days after Tropical Depression Two-C dissipated, another area of disturbed weather formed, and although it was disorganized, it was also persistent. The CPHC initiated advisories on Tropical Depression Three-C on September&nbsp;26 after a circulation was evident in the system. Strong wind shear prevented any development, and the system dissipated on September&nbsp;27.<ref name="cphc"/>
+{{Clear}}
+
+===Tropical Storm Norman===
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=TS Norman 09 oct 2006 1849Z.jpg
+|Track=Norman 2006 track.png
+|Formed=October 9
+|Dissipated=October 15
+|1-min winds=45
+|Pressure=1000
+}}
+{{Main article|Tropical Storm Norman (2006)}}
+Early in October, a low pressure system began to organize to the west of the Mexican coast, and on October&nbsp;9 it developed into Tropical Depression Fifteen-E. It strengthened into a tropical storm the next day, but strong wind shear and low sea-surface temperatures hindered development. Norman slowly began to weaken, and on October&nbsp;11 it degenerated into a remnant low pressure area. Turning eastward, the system combined with a new tropical disturbance off the southwest Mexican coast, and slowly began to reorganize. The system was re-designated a tropical depression on October&nbsp;15 just south-southeast of [[Manzanillo, Colima]], although within a few hours it again dissipated.<ref name="Norman TCR">{{cite web |author=Jack Beven|publisher=National Hurricane Center |title=Tropical Cyclone Report: Tropical Storm Norman|date=2006-11-30 |accessdate=2006-12-04 |url={{NHC TCR url|id=EP152006_Norman}}|format=PDF}}</ref>
+
+The storm brought heavy rainfall to southwestern Mexico, peaking at 6.35&nbsp;inches (161&nbsp;mm) in [[La Villita, Michoacán]].<ref>{{cite web|author=Servicio Meteorológico Nacional|year=2006|title=Resumen de la Tormenta Tropical "Norman" Del Océano Pacífico|accessdate=2008-08-31|format=PDF|url=http://smn.cna.gob.mx/ciclones/tempo2006/pacifico/norman.pdf|language=Spanish}}</ref> The rainfall caused flooding and mudslides around Acapulco, affecting 170&nbsp;homes, of which 20 were destroyed.<ref name="elun">{{cite news|author=Juan Cervantes Gómez|publisher=El Universal|date=2006-10-16|title=Suspenden clases en Acapulco por tormenta tropical "Norman"|language=Spanish|accessdate=2008-08-31|url=http://www.eluniversal.com.mx/notas/381709.html}}</ref><ref name="lajo">{{cite news|author=Staff Writer|agency=La Journada|date=2006-10-17|title=Desbordan lluvias ríos en Guerrero|language=Spanish|accessdate=2008-08-31|url=http://www.elporvenir.com.mx/notas.asp?nota_id=91242}}</ref> About 300&nbsp;hectares (740&nbsp;acres) of crop fields sustained damage.<ref name="lajo"/> Initially there were two people missing;<ref name="lajo"/> however, a subsequent report indicated there were no casualties associated with the storm.<ref name="Norman TCR"/>
+{{Clear}}
+
+===Tropical Storm Olivia===
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=TS Olivia 09 oct 2006 2155Z.jpg
+|Track=Olivia 2006 track.png
+|Formed=October 9
+|Dissipated=October 12
+|1-min winds=40
+|Pressure=1000
+}}
+On September&nbsp;18, a [[tropical wave]] exited [[Africa]] and later crossed into the eastern [[Pacific Ocean|Pacific]] on September&nbsp;29 without development. Convection increased in the Pacific along the wave axis, spawning a broad [[low pressure area]] on October&nbsp;5. Despite the presence of [[wind shear]], it organized enough for the NHC to initiate advisories on Tropical Depression Sixteen-E on October&nbsp;9 about {{convert|1360|mi|km}} to the west-southwest of the southern tip of [[Baja California]].<ref name="otcr">{{cite web|author=Stacy R. Stewart|title=Tropical Storm Olivia Tropical Cyclone Report|year=2006|publisher=National Hurricane Center|accessdate=2008-11-26|url={{NHC TCR url|id=EP162006_Olivia}}|format=PDF}}</ref> Influenced by a [[high pressure system]], the depression drifted northward.<ref>{{cite web|author=James Franklin|title=Tropical Depression 16-E Discussion Number 1|year=2006|publisher=National Hurricane Center|accessdate=2008-11-26|url=http://www.nhc.noaa.gov/archive/2006/ep16/ep162006.discus.001.shtml?}}</ref> Six hours after being upgraded to a tropical storm, Olivia attained peak winds of 45&nbsp;mph (75&nbsp;km/h),<ref name="otcr"/> although the convection was limited to its northern side due to wind shear.<ref>{{cite web|author=Richard Pasch|title=Tropical Storm Olivia Discussion Number 6|year=2006|publisher=National Hurricane Center|accessdate=2008-11-26|url=http://www.nhc.noaa.gov/archive/2006/ep16/ep162006.discus.006.shtml?}}</ref> On October 11, the convective activity diminished and Olivia weakened to tropical depression status.<ref>{{cite web|author=Knabb/Willis|title=Tropical Depression Olivia Discussion Number 7|year=2006|publisher=National Hurricane Center|accessdate=2008-11-26|url=http://www.nhc.noaa.gov/archive/2006/ep16/ep162006.discus.007.shtml?}}</ref> Olivia deteriorated into a remnant low on October&nbsp;13. It moved towards the east-southeast, and on October&nbsp;15 was absorbed into the remnants of [[Tropical Storm Norman (2006)|Tropical Storm Norman]]. Olivia never affected land.<ref name="otcr"/>
+{{Clear}}
+
+===Tropical Depression Four-C===
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=TD 4C 13 oct 2006 2143Z.jpg
+|Track=4-C 2006 track.png
+|Formed=October&nbsp;13
+|Dissipated=October&nbsp;14
+|1-min winds=30
+|Pressure=1007
+}}
+In the middle of October, the Intertropical Convergence Zone extended across the central Pacific Ocean, resembling an extension of the [[monsoon trough]]. An area of disturbed weather formed well to the southwest of Hawaii, organizing slowly for several days. Late on October&nbsp;13, after the development of a low-level circulation and persistent convection, the CPHC classified the system as Tropical Depression Four-C about 750&nbsp;mi (1,200&nbsp;km) southwest of [[Honolulu, Hawaii]]. Upon being classified, the depression was located in an unusual [[tropical cyclone#Steering winds|steering flow]] that caused it to track eastward. Due to the approach of an upper-level [[trough (meteorology)|trough]], it was expected to dissipate quickly from [[wind shear]], although forecasters noted the possibility for the trough to provide an [[outflow (meteorology)|outflow]] channel, which might allow strengthening.<ref>{{cite web|author=Andy Nash|date=2006-10-13|title=Tropical Depression Four-C Discussion One|publisher=Central Pacific Hurricane Center|accessdate=2009-01-05|url=http://www.prh.noaa.gov/cphc/tcpages/archive/2006/TCDCP5.CP042006.1.0610132051}}</ref> On October&nbsp;14, strong wind shear removed the convection completely from the center, and the system degenerated into a remnant low.<ref name="cphc"/>
+
+The remnant circulation continued slowly eastward, dissipating on October&nbsp;16. Concurrently, the convection tracked northeastward ahead of the upper-level trough, which contributed to heavy rainfall and flooding on the island of [[Hawaii (island)|Hawaii]] on October&nbsp;17.<ref name="cphc"/> The rainfall event coincided with an [[2006 Hawaii earthquake|earthquake]] striking the area.<ref>{{cite web|author=[[Federal Emergency Management Agency]]|date=2006-10-17|title=National Situation Update|accessdate=2009-01-05|url=http://www.fema.gov/emergency/reports/2006/nat101706.shtm}}</ref>
+{{Clear}}
+
+===Hurricane Paul===
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=Hurricane Paul 23 oct 2006 2030Z.jpg
+|Track=Paul 2006 track.png
+|Formed=October 21
+|Dissipated=October 26
+|1-min winds=90
+|Pressure=970
+}}
+{{Main article|Hurricane Paul (2006)}}
+Hurricane Paul developed from an area of disturbed weather on October&nbsp;21, and slowly intensified as it moved into an area of warm waters and progressively decreasing wind shear. Paul attained hurricane status on October&nbsp;23, and later that day it reached its peak intensity of 105&nbsp;mph (165&nbsp;km/h), a strong Category&nbsp;2 hurricane on the [[Saffir-Simpson Hurricane Scale|Saffir-Simpson scale]]. A strong trough turned the hurricane to the north and northeast into an area of strong vertical shear, and Paul weakened to a tropical storm on October&nbsp;24, later passing just south of the Baja California Peninsula. Paul weakened to a tropical depression on October&nbsp;25 a short distance off the coast of [[Mexico]], and after briefly turning away from the coast it made landfall on northwestern [[Sinaloa]] on October&nbsp;26.<ref>{{cite web|author1=Jamie R. Rhome  |author2=Robert J. Berg|date=2006-11-20|title=Hurricane Paul Tropical Cyclone Report|publisher=National Hurricane Center|accessdate=2009-03-31|url={{NHC TCR url|id=EP172006_Paul}}|format=PDF}}</ref>
+
+Paul was the third hurricane to threaten western Mexico in the season, the others being [[Hurricane John (2006)|Hurricanes John]] and [[Hurricane Lane (2006)|Lane]]. Rough surf killed two people along [[Baja California Sur]],<ref name="canoe">{{cite news|author=Mark Stevenson|date=2006-10-25|title=Tropical Storm Paul Weakens|agency=Associated Press|newspaper=The Washington Post|accessdate=2006-10-26|url=http://www.washingtonpost.com/wp-dyn/content/article/2006/10/25/AR2006102500216.html}}</ref> while two deaths from flooding were reported in [[Sinaloa]].<ref>{{cite web|author=Staff Writer|title=Hurricane Paul kills two in northwestern Mexico|url=http://banderasnews.com/0610/nr-paulkills2.htm|work=Reuters|date=2006-10-26|accessdate=2008-11-21}}</ref> Paul dropped moderate rainfall across mainland Mexico, including a 24-hour total of 2.28&nbsp;inches (58&nbsp;mm) in [[Mazatlán]], [[Sinaloa]].<ref name="bloomberg">{{cite news|author=Alex Morales|date=2006-10-26|title=Tropical Depression Paul Rains on Mexico, Weakens Over Land|publisher=Bloomberg.com|accessdate=2006-10-26|url=http://www.bloomberg.com/apps/news?pid=20601086&sid=aF0aZWTs7Qbs&refer=latin_america}}</ref> Damage totaled more than $35&nbsp;million (2006&nbsp;[[Mexican peso|MXN]], $3.2&nbsp;million 2006&nbsp;[[United States dollar|USD]]).<ref>{{cite web|author=Consejo Directivo del Instituto Sinaloense de Acuacultura|year=2006|title=Acta de la Sesión Ordinaria del Consejo Directivo del Instituto Sinaloense de Actuaculture, Celebrada el Día 10 de Noviembre de 2006, en la Ciudad de Culiacán, Sinaloa|accessdate=2008-11-17|url=http://laip.sinaloa.gob.mx/NR/rdonlyres/BCDFAFCE-FB88-476F-BEF5-9DE0F7324BEC/0/ActaConsejoDirectivoISA10NOV2006.doc|format=DOC|language=Spanish}}</ref>
+{{Clear}}
+
+===Tropical Depression Eighteen-E===
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=TD 18E 26 oct 2006 1755Z.jpg
+|Track=18-E 2006 track.png
+|Formed=October 26
+|Dissipated=October 27
+|1-min winds=30
+|Pressure=1007
+}}
+The origins of Tropical Depression Eighteen-E were from a tropical wave that exited the coast of Africa on October&nbsp;7. It briefly spawned a low-pressure area as the wave continued westward without development. On October&nbsp;20, the wave entered the Pacific Ocean, developing an area of thunderstorms about four days later. By 1200&nbsp;UTC on October&nbsp;26, a tropical depression formed about 155&nbsp;mi (260&nbsp;km) south of Manzanillo.<ref name="18Etcr">{{cite web | author = Michelle Mainelli | publisher =National Hurricane Center | title = Abbreviated Tropical Cyclone Report: Tropical Depression Eighteen-E| date = November 13, 2006 | accessdate=2007-12-01| url = {{NHC TCR url|id=EP182006_Eighteen-E}}|format=PDF}}</ref> Initially, Tropical Depression Eighteen-E was located in an area of light wind shear, and the NHC anticipated further organization and strengthening to near hurricane status.<ref name="18disc1">{{cite web|author=Jack Beven|date=2006-10-26|url=http://www.nhc.noaa.gov/archive/2006/ep18/ep182006.discus.001.shtml?|title=Tropical Depression Eighteen-E Discussion One|accessdate=2009-03-19|publisher=National Hurricane Center}}</ref> The tropical depression initially maintained a steady westward motion away from the Mexican coastline, due to a ridge north of the cyclone.<ref name="18disc1"/> By October&nbsp;17, convection had decreased, and the depression was not forecast to intensify as much.<ref>{{cite web|author=Blake/Pasch|date=2006-10-27|url=http://www.nhc.noaa.gov/archive/2006/ep18/ep182006.discus.003.shtml?|title=Tropical Depression Eighteen-E Discussion Three|accessdate=2009-03-19|publisher=National Hurricane Center}}</ref> Possibly due to intrusion of dry air, the circulation became exposed from the thunderstorms, and having weakened, it turned to a southward drift.<ref>{{cite web|author=Jack Beven|date=2006-10-27|url=http://www.nhc.noaa.gov/archive/2006/ep18/ep182006.discus.005.shtml?|title=Tropical Depression Eighteen-E Discussion Five|accessdate=2009-03-19|publisher=National Hurricane Center}}</ref> By 0000&nbsp;UTC on October&nbsp;28, the system had weakened to a non-convective remnant low, which dissipated the following day.<ref name="18Etcr"/>
+{{Clear}}
+
+===Tropical Storm Rosa===
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=TS Rosa 09 nov 2006 1800Z.jpg
+|Track=Rosa 2006 track.png
+|Formed=November 8
+|Dissipated=November 10
+|1-min winds=35
+|Pressure=1002
+}}
+A tropical wave exited western Africa on October&nbsp;22 and continued westward into the Pacific on November&nbsp;2, spawning a tropical depression on November&nbsp;8 about 440&nbsp;mi (710&nbsp;km) south of [[Manzanillo, Colima]].<ref name="rtcr">{{cite web|author=Daniel P. Brown|title=Tropical Storm Rosa Tropical Cyclone Report|year=2006|publisher=National Hurricane Center|accessdate=2009-03-30|url={{NHC TCR url|id=EP192006_Rosa}}|format=PDF}}</ref> Environmental conditions appeared favorable,<ref>{{cite web|author=Stacy Stewart|title=Tropical Depression Nineteen-E Discussion Number 1|year=2006|publisher=National Hurricane Center|accessdate=2008-10-15|url=http://www.nhc.noaa.gov/archive/2006/ep19/ep192006.discus.001.shtml?}}</ref> although wind shear removed the convection from the circulation.<ref>{{Cite web|author=Eric Blake|title=Tropical Depression Nineteen-E Discussion Number 3|year=2006|publisher=National Hurricane Center|accessdate=2008-10-15|url=http://www.nhc.noaa.gov/archive/2006/ep19/ep192006.discus.003.shtml?}}</ref> Throughout its duration, the storm maintained a northwest track through a weakness in a [[High pressure system|subtropical ridge]].<ref name="disc5"/> By November&nbsp;9, a new area of convection persisted near the center,<ref>{{cite web|author=Daniel Brown|title=Tropical Depression Nineteen-E Discussion Number 4|year=2006|publisher=National Hurricane Center|accessdate=2008-10-15|url=http://www.nhc.noaa.gov/archive/2006/ep19/ep192006.discus.004.shtml?}}</ref> and a [[Rainband|banding feature]] formed.<ref name="disc5">{{Cite web|author=Stacy Stewart|title=Tropical Depression Nineteen-E Discussion Number 5|year=2006|publisher=National Hurricane Center|accessdate=2008-10-15|url=http://www.nhc.noaa.gov/archive/2006/ep19/ep192006.discus.005.shtml?}}</ref> Despite the shear, the depression was upgraded to Tropical Storm Rosa, although the shear prevented intensification beyond its peak of 40&nbsp;mph (65&nbsp;km/h).<ref name="rtcr"/> Rosa remained a tropical storm for only 18&nbsp;hours, becoming a tropical depression early on November&nbsp;10 and dissipating later that day.<ref name="rtcr"/> Rosa was the first tropical storm in the basin to develop during November since 2000, and was also the first tropical depression to form in the month since 2002's [[2002 Pacific hurricane season#Tropical Depression Sixteen-E|Tropical Depression Sixteen-E]]. No impact was reported from the storm.<ref name="rtcr"/>
+{{Clear}}
+
+===Tropical Depression Twenty-E===
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=TD 20E 11 nov 2006 1755Z.jpg
+|Track=20-E 2006 track.png
+|Formed=November 11
+|Dissipated=November 11
+|1-min winds=30
+|Pressure=1007
+}}
+A tropical wave moved off the western coast of Africa on October&nbsp;21, briefly developing two weak low pressure areas before the wave crossed into the Pacific Ocean on November&nbsp;1. Thunderstorm activity slowly increased as the wave interacted within the Intertropical Convergence Zone. After a curved band of convection developed, it is estimated the system formed into Tropical Depression Twenty-E around 0000&nbsp;UTC on November&nbsp;11, about 550&nbsp;mi (1,050&nbsp;km) southwest of Manzanillo. Throughout its duration, the depression never completely separated from the Intertropical Convergence Zone.<ref name="20etcr">{{cite web|author=Eric S. Blake|date=2006-11-16|title=Tropical Depression Twenty-E Tropical Cyclone Report|publisher=National Hurricane Center|accessdate=2009-03-19|url={{NHC TCR url|id=EP202006_Twenty-E}}|format=PDF}}</ref> When the NHC issued its first advisory on the depression, the agency predicted slight intensification to tropical storm status and for the depression to last at least two days. This was due to a forecast of gradually increasing wind shear after the first 24&nbsp;hours.<ref>{{cite web|author=Stacy Stewart|date=2006-11-11|title=Tropical Depression Twenty-E Discussion One|publisher=National Hurricane Center|accessdate=2009-03-19|url=http://www.nhc.noaa.gov/archive/2006/ep20/ep202006.discus.001.shtml?}}</ref> Instead, the circulation became very elongated; it is estimated the cyclone degenerated into a trough by late on November&nbsp;11.<ref name="20etcr"/>{{Clear}}
+
+===Hurricane Sergio===
+{{Infobox Hurricane Small
+|Basin=EPac
+|Image=Hurricane Sergio 15 nov 2006 1725Z.jpg
+|Track=Sergio 2006 track.png
+|Formed=November 13
+|Dissipated=November 20
+|1-min winds=95
+|Pressure=965
+}}
+{{Main article|Hurricane Sergio (2006)}}
+Just days after Tropical Depression Twenty-E degenerated into an open trough, Tropical Depression Twenty One-E developed from a [[tropical wave]] on November&nbsp;13 about 460&nbsp;miles (740&nbsp;km) south of [[Manzanillo, Colima]]. It steadily intensified as it tracked southeastward, reaching peak winds of 110&nbsp;mph (175&nbsp;km/h) on November&nbsp;15. Subsequently it began to weaken due to increased [[wind shear]] as it turned to the north. Sergio later turned to the west, remaining well off the coast of [[Mexico]], and it dissipated on November&nbsp;20 about 320&nbsp;miles (515&nbsp;km) west-northwest of where it originally formed.<ref name="stcr">{{cite web|author1=Richard Pasch  |author2=David Roberts|year=2006|title=Hurricane Sergio Tropical Cyclone Report|publisher=National Hurricane Center|accessdate=2007-02-13|url={{NHC TCR url|id=EP212006_Sergio}}|format=PDF}}</ref>
+
+Sergio produced light rainfall along the coast of Mexico, though its effects were minimal.<ref name="sergiosmn">{{cite web|author=Servicio Meteorológico Nacional|year=2006|title=Resumen del Huracan "Sergio" del Océano Pacífic|accessdate=2007-02-13|language=Spanish|url=http://smn.cna.gob.mx/ciclones/tempo2006/pacifico/sergio.pdf|format=PDF}}</ref> The formation of Sergio marked the 2006 season as the most active in 12&nbsp;years and the second season in which more than one tropical storm formed in November, after [[1961 Pacific hurricane season|1961]]. Sergio set records for the month of November in the basin, becoming the third strongest hurricane, after [[2015 Pacific hurricane season#Hurricane Sandra|Sandra from 2015]], and [[2011 Pacific hurricane season#Hurricane Kenneth|Kenneth from 2011]] as well as the longest-lived November [[Pacific hurricane|Pacific tropical cyclone]] with a duration of seven days.<ref name="epachurdat">{{cite web|author=Hurricane Research Division|year=2007|title=Hurricane Data for Pacific Hurricanes 1949-2006|publisher=National Oceanic and Atmospheric Administration|accessdate=2007-02-13|url=http://www.nhc.noaa.gov/tracks1949to2009_epa.txt}}</ref><ref name="stcr"/>
+{{Clear}}
+
+== Storm names ==
+The following names were used for named storms that formed in the northeast Pacific in 2006.<ref name="name">{{cite web|author=National Hurricane Center |title=Worldwide Tropical Cyclone Names |year=2008 |publisher=National Oceanic and Atmospheric Administration |accessdate=May 14, 2008 |url=http://www.nhc.noaa.gov/aboutnames.shtml |archiveurl=http://www.webcitation.org/5sb5rygVR?url=http%3A%2F%2Fwww.nhc.noaa.gov%2Faboutnames.shtml |archivedate=September 8, 2010 |deadurl=yes |df=mdy }}</ref> This is the same list that was used in the [[2000 Pacific hurricane season|2000 season]]. There were no names retired from the northeast Pacific list. Therefore, the same list was reused in the [[2012 Pacific hurricane season|2012 season]].
+
+{| style="width:90%;"
+|
+* [[Tropical Storm Aletta (2006)|Aletta]]
+* [[Hurricane Bud (2006)|Bud]]
+* Carlotta
+* [[Hurricane Daniel (2006)|Daniel]]
+* [[Tropical Storm Emilia (2006)|Emilia]]
+* Fabio
+* Gilma
+* Hector
+|
+* [[Hurricane Ileana (2006)|Ileana]]
+* [[Hurricane John (2006)|John]]
+* [[Hurricane Kristy (2006)|Kristy]]
+* [[Hurricane Lane (2006)|Lane]]
+* Miriam
+* [[Tropical Storm Norman (2006)|Norman]]
+* Olivia
+* [[Hurricane Paul (2006)|Paul]]
+|
+* Rosa
+* [[Hurricane Sergio (2006)|Sergio]]
+* {{tcname unused|Tara}}
+* {{tcname unused|Vicente}}
+* {{tcname unused|Willa}}
+* {{tcname unused|Xavier}}
+* {{tcname unused|Yolanda}}
+* {{tcname unused|Zeke}}
+|}
+
+For storms that form in the [[Central Pacific Hurricane Center]]'s area of responsibility, encompassing the area between [[140th meridian west|140 degrees west]] and the [[International Date Line]], all names are used in a series of [[List of tropical cyclone names#Central Pacific|four rotating lists]]. The next four names that were slated for use in 2006 are shown below, however only the name [[Hurricane Ioke|Ioke]] was used.
+
+{| style="width:90%;"
+|
+* [[Hurricane Ioke|Ioke]]
+|
+* {{tcname unused|Kika}}
+|
+* {{tcname unused|Lana}}
+|
+* {{tcname unused|Maka}}
+|}
+
+=== Retirement ===
+The name ''Ioke'' was [[List of retired Pacific hurricane names|retired]] from the north-central Pacific list by the [[World Meteorological Organization]] in the spring of 2007 and replaced with ''Iopa''.<ref>{{cite web|author=Dennis H. McCarthy|year=2007|title=National Weather Service Instruction Tropical Cyclone Names and Pronunciation Guide|accessdate=December 29, 2007|url=http://www.weather.gov/directives/sym/pd01006006curr.pdf|format=PDF}}</ref> During the 61st Interdepartmental Hurricane Conference, the Hawaii State Civil Defense requested the retirement of the name ''Daniel'', citing that the storm had become memorable due to threat of damage.<ref>{{cite web|author=Interdepartmental Hurricane Conference |year=2007 |title=The Nation's Hurricane Program: An Interagency Success Story |accessdate=December 29, 2007 |url=http://www.ofcm.gov/ihc07/web-61st-IHC-Booklet.pdf |format=PDF |deadurl=yes |archiveurl=http://www.webcitation.org/5f9vkkp2f?url=http%3A%2F%2Fwww.ofcm.gov%2Fihc07%2Fweb-61st-IHC-Booklet.pdf |archivedate=March 10, 2009 |df=mdy }}</ref> However, the request was denied, as the name remains on the tropical cyclone naming list.<ref name="name"/>
+
+== Season effects ==
+This is a table of all the storms that have formed in the 2006 Pacific hurricane season. It includes their duration, names, landfall(s), denoted in parentheses, damages, and death totals. Deaths in parentheses are additional and indirect (an example of an indirect death would be a traffic accident), but were still related to that storm. Damage and deaths include totals while the storm was extratropical, a wave, or a low, and all the damage figures are in 2006 USD.
+{{Saffir-Simpson small|align=center}}<center>
+{{TC stats table start3|year=2006|basin=Pacific hurricane}}
+{{TC stats cyclone3|cat=storm|name=[[Tropical Storm Aletta (2006)|Aletta]]|dates=May 27 – 30|max-winds=45 (75)|min-press=1002|areas=None|damage=Minimal|deaths=None}}
+{{TC stats cyclone3|cat=depression|name=[[Tropical Depression Two-E (2006)|Two-E]]|dates=June 3 – 5|max-winds=35 (55)|min-press=1005|areas=[[Southwestern Mexico]], [[Western Mexico]]|damage=None|deaths=None}}
+{{TC stats cyclone3|cat=cat3|name=[[Hurricane Bud (2006)|Bud]]|dates=July 11 – 16|max-winds=125 (205)|min-press=953|areas=[[Hawaii]]|damage=None|deaths=None}}
+{{TC stats cyclone3|cat=cat1|name=Carlotta|dates=July 12 – 16|max-winds=85 (140)|min-press=981|areas=None|damage=None|deaths=None}}
+{{TC stats cyclone3|cat=cat4|name=[[Hurricane Daniel (2006)|Daniel]]|dates=July 16 – 26|max-winds=150 (240)|min-press=933|areas=[[Hawaii]]|damage=None|deaths=None}}
+{{TC stats cyclone3|cat=storm|name=[[Tropical Storm Emilia (2006)|Emilia]]|dates=July 21 – 28|max-winds=65 (100)|min-press=990|areas=[[Southwestern Mexico]], [[Western Mexico]], [[Baja California Peninsula]], [[Southwestern United States]]|damage=None|deaths=None}}
+{{TC stats cyclone3|cat=storm|name=Fabio|dates=July 31 – August 3|max-winds=50 (85)|min-press=1000|areas=None|damage=None|deaths=None}}
+{{TC stats cyclone3|cat=storm|name=Gilma|dates=August 1 – 3|max-winds=40 (65)|min-press=1004|areas=None|damage=None|deaths=None}}
+{{TC stats cyclone3|cat=cat2|name=Hector|dates=August 15 – 23|max-winds=110 (175)|min-press=966|areas=None|damage=None|deaths=None}}
+{{TC stats cyclone3|cat=cat5|name=[[Hurricane Ioke|Ioke]]|dates=August 20 – 27,<ref  group="nb">Though [[Hurricane Ioke]] did not make landfall, its strike on Wake Island is included in the table, due to the severe damage on the island.</ref> |max-winds=160 (260)|min-press=915|areas=[[Johnston Atoll]], [[Wake Island]] [[Minamitorishima]], Southern [[Alaska]]|damage=88|deaths=None}}
+{{TC stats cyclone3|cat=cat3|name=[[Hurricane Ileana (2006)|Ileana]]|dates=August 21 – 27|max-winds=125 (205)|min-press=951|areas=[[Socorro Island]]|damage=Minimal|deaths=1}}
+{{TC stats cyclone3|cat=cat4|name=[[Hurricane John (2006)|John]]|dates=August 28 – September 4|max-winds=130 (215)|min-press=948|areas=[[Guerrero]], [[Michoacán]], [[Baja California Sur]], [[Arizona]], [[California]], [[New Mexico]], [[Texas]]|damage=60.9|deaths=5}}
+{{TC stats cyclone3|cat=cat1|name=[[Hurricane Kristy (2006)|Kristy]]|dates=August 30 – September 8|max-winds=80 (130)|min-press=985|areas=None|damage=None|deaths=None}}
+{{TC stats cyclone3|cat=cat3|name=[[Hurricane Lane (2006)|Lane]]|dates=September 13 – 17|max-winds=125 (205)|min-press=952|areas=[[Southwestern Mexico]], [[Western Mexico]], [[Northwestern Mexico]], [[Southwestern United States]]|damage=203|deaths=4}}
+{{TC stats cyclone3|cat=storm|name=Miriam|dates=September 16 – 18|max-winds=45 (75)|min-press=999|areas=None|damage=None|deaths=None}}
+{{TC stats cyclone3|cat=depression|name=Two-C|dates=September 19 – 20|max-winds=35 (55)|min-press=1007|areas=None|damage=None|deaths=None}}
+{{TC stats cyclone3|cat=depression|name=Three-C|dates=September 26 – 27|max-winds=35 (55)|min-press=1008|areas=None|damage=None|deaths=None}}
+{{TC stats cyclone3|cat=storm|name=[[Tropical Storm Norman (2006)|Norman]]|dates=October 9 – 15|max-winds=50 (85)|min-press=1000|areas=[[Southwestern Mexico]],<ref  group="nb">In its report on [[Tropical Storm Norman (2006)|Tropical Storm Norman]], the National Hurricane Center did not specify whether the storm moved ashore or not. However, in its report to the [[World Meteorological Organization]], officials from Mexico included Norman in the storms that moved ashore along the country.</ref> [[Western Mexico]]|damage=None|deaths=None}}
+{{TC stats cyclone3|cat=storm|name=Olivia|dates=October 9 – 12|max-winds=45 (75)|min-press=1000|areas=None|damage=None|deaths=None}}
+{{TC stats cyclone3|cat=depression|name=Four-C|dates=October 13 – 14|max-winds=35 (55)|min-press=1007|areas=None|damage=None|deaths=None}}
+{{TC stats cyclone3|cat=cat2|name=[[Hurricane Paul (2006)|Paul]]|dates=October 21 – 26|max-winds=105 (165)|min-press=970|areas=[[Oaxaca]], [[Guerrero]], [[Baja California Sur]], [[Sinaloa]]|damage=3.2|deaths=4}}
+{{TC stats cyclone3|cat=depression|name=Eighteen-E|dates=October 26 – 27|max-winds=35 (55)|min-press=1007|areas=None|damage=None|deaths=None}}
+{{TC stats cyclone3|cat=sstorm|name=[[2006 Central Pacific cyclone|Unnamed]]|dates=October 28 – November 4|max-winds=65 (100)|min-press=988|areas=Central North Pacific Ocean, [[British Columbia]]|damage=None|deaths=None}}
+{{TC stats cyclone3|cat=depression|name=Rosa|dates=November 8 – 10|max-winds=40 (65)|min-press=1002|areas=None|damage=None|deaths=None}}
+{{TC stats cyclone3|cat=cat2|name=[[Hurricane Sergio (2006)|Sergio]]|dates=November 13 – 20|max-winds=110 (175)|min-press=965|areas=[[Guerrero]]|damage=None|deaths=None}}
+{{TC stats table end3|num-cyclones=25|dates=May&nbsp;27&nbsp;– November&nbsp;20|max-winds=160 (260)|min-press=915|tot-areas=|tot-damage=355.1<nowiki></nowiki>|tot-deaths=14}}</center>
+{{clear}}
+
+== See also ==
+{{Portal|Tropical cyclones}}
+* [[List of Pacific hurricanes]]
+* [[List of Pacific hurricane seasons]]
+* [[2006 Atlantic hurricane season]]
+* [[2006 Pacific typhoon season]]
+* [[2006 North Indian Ocean cyclone season]]
+* South-West Indian Ocean cyclone seasons: [[2005–06 South-West Indian Ocean cyclone season|2005–06]], [[2006–07 South-West Indian Ocean cyclone season|2006–07]]
+* Australian region cyclone seasons: [[2005–06 Australian region cyclone season|2005–06]], [[2006–07 Australian region cyclone season|2006–07]]
+* South Pacific cyclone seasons: [[2005–06 South Pacific cyclone season|2005–06]], [[2006–07 South Pacific cyclone season|2006–07]]
+
+== Notes ==
+{{refbegin}}
+<references group=nb/>
+{{refend}}
+
+== References ==
+{{Reflist|30em}}
+
+== External links ==
+{{Sister project links |wikt=no |commons=Category:2006 Pacific hurricane season |b=no |n=Category:Hurricane season, 2006 |q=no |s=no |v=no}}
+* [http://www.nhc.noaa.gov/text/MIATWOEP.shtml National Hurricane Center's Eastern Pacific Tropical Weather Outlook] - updated four times daily
+* [http://www.nhc.noaa.gov/ National Hurricane Center]
+* [http://www.nhc.noaa.gov/archive/2006/ National Hurricane Center's 2006 Advisory Archive]
+* [http://www.prh.noaa.gov/hnl/cphc/ Central Pacific Hurricane Center]
+
+{{2006 Pacific hurricane season buttons}}
+{{TC Decades|Year=2000|basin=Pacific|type=hurricane}}
+
+{{Featured article}}
+
+{{DEFAULTSORT:2006 Pacific Hurricane Season}}
+[[Category:Pacific hurricane seasons]]
+[[Category:2006 Pacific hurricane season| ]]

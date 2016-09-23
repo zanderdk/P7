@@ -1,0 +1,27 @@
+{{Italic title}}
+{{Taxobox
+| image              =
+| regnum             = [[Plantae]]
+| unranked_divisio   = [[Angiosperms]]
+| unranked_classis   = [[Monocots]]
+| ordo               = [[Asparagales]]
+| familia            = [[Orchidaceae]]
+| subfamilia         = [[Epidendroideae]]
+| genus              = ''[[Bulbophyllum]]''
+| species            = '''''Bulbophyllum pugilanthum'''''
+| binomial           =
+| binomial_authority =
+| synonyms           =
+}}
+
+'''''Bulbophyllum pugilanthum''''' is a species of [[orchid]] in the genus ''[[Bulbophyllum]]''.
+
+==References==
+*[http://bulbophyllum-checklist.bulbophyllum.at/ The Bulbophyllum-Checklist]
+*[http://www.orchidspecies.com/indexbulb.htm The Internet Orchid Species Photo Encyclopedia]
+
+{{DEFAULTSORT:Bulbophyllum Pugilanthum}}
+[[Category:Bulbophyllum|pugilanthum]]
+
+
+{{Bulbophyllum-stub}}

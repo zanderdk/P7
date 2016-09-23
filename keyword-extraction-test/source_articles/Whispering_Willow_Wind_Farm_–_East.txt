@@ -1,0 +1,15 @@
+{{coord|42.735|-93.338|display=title|type:city}}
+The '''Whispering Willow Wind Farm – East''' in [[Franklin County, Iowa]], USA, has a capacity of 200 [[megawatts]] (MW) and was completed in 2009. It consists of 121 [[wind turbines]] spread out over roughly {{convert|140|km2|sqmi}}. Construction of the [[wind farm]] began in 2008.<ref>[http://www.renewableenergyworld.com/rea/news/article/2009/12/alliant-energys-iowa-wind-facility-begins-operation?cmpid=WNL-Wednesday-December16-2009 Alliant Energy's 200-MW Iowa Wind Facility Begins Commercial Operation] ''Renewable Energy World'', 14 December 2009.</ref>
+
+==See also==
+*[[List of onshore wind farms]]
+
+==References==
+{{reflist}}
+
+{{Wind power in the United States}}
+
+{{DEFAULTSORT:Whispering Willow Wind Farm - East}}
+[[Category:Energy infrastructure completed in 2008]]
+[[Category:Buildings and structures in Franklin County, Iowa]]
+[[Category:Wind farms in Iowa]]

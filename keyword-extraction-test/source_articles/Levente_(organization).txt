@@ -1,0 +1,71 @@
+{{infobox military unit
+|unit_name= Levente Associations
+|image= [[File:Insignia Hungary Political History Levente.svg|150px]]
+|caption= The symbol of the Levente Associations
+|dates= 31 December 1921<ref name=OT>{{cite journal|title=1921. évi LIII. törvénycikk a testnevelésrol: kihirdettetett az Országos Törvénytárban 1921. évi december hó 31. napján.|journal=Országos Törvénytár|year=1921|volume=53|issue=|page=}}</ref> – 17 March 1945<ref name=MK>{{cite journal|title=Az Ideiglenes Nemzeti Kormány 529/1945. M.E. számu rendelete a fasiszta politikai és katonai jellegü szervezetek feloszlatásáról.|journal=Magyar Közlöny|year=1945|volume=1|issue=9|page=3}}</ref>
+|country= 
+|allegiance= {{flag|Kingdom of Hungary}}
+|branch= 
+|type= [[Paramilitary]]
+|role= 
+|size= 1,300,000 (in January 1944)<ref>{{cite journal|last=Kerepeszky|first=Róbert|title=A leventemozgalom|journal=Rubicon|year=2010|volume=20|issue=205-206|page=111}}</ref>
+|command_structure=
+|garrison= [[Budapest]], Hungary
+|garrison_label=
+|nickname=
+|patron=
+|motto=
+|colors=
+|colors_label=
+|march= Salus Hungaria<ref>[http://www.youtube.com/watch?v=VbEv2cvcElU Salus Hungaria (Magyar Levente Induló)]</ref>
+|mascot=
+|equipment=
+|equipment_label=
+|battles= [[World War II]]
+|anniversaries=
+|decorations=
+|battle_honours=
+|battle_honours_label=
+|disbanded= 17 March 1945<ref name=MK/>
+|notable_commanders= [[Alajos Béldy]]
+}}
+[[File:Pennant of the Levente Headquarters of Miklósvár District.svg|305px|right|thumb|Pennant of the Levente Headquarters of [[Miklósvár]] District ([[Háromszék County]], [[Kingdom of Hungary (1920–1946)|Kingdom of Hungary]]) from 1940 to 1944]]
+
+'''Levente Associations''' ({{lang-hu|Levente Egyesületek}}) or simply ''"levente"''<ref>''"Levente"'' is an [[Old Hungarian language|Old Hungarian]] word for "[[knight]]; see also "[[Levente]]" 
+</ref> were [[paramilitary]] [[youth organization]]s in [[Kingdom of Hungary (1920–1946)|Hungary]] in the [[Hungary between the World Wars|interwar period]] and [[Hungary during the Second World War|during the Second World War]]. It was established in 1921 with the declared purpose of physical and health training.<ref name=OT/> Since mid-1930s they have de facto become an attempt to circumvent  the ban for [[conscription]] imposed by the [[Treaty of Trianon#Miscellaneous consequences|Treaty of Trianon]] and over the time it had openly become a pre-military organization under the leadership of [[veteran]]s.<ref>Ernst Christian Helmreich (1957) "Hungary", ''[[Praeger Publishers|Praeger]]'', [http://books.google.com/books?id=GPohAAAAMAAJ&q=levente+youth&dq=levente+youth&lr=&ei=0Gi_R6HXDJ6MjAHineX0Aw&pgis=1 p. 45]</ref><ref name=horvath/> Since 1939, by the Act of Defense, all boys of ages 12–21 were required to take part in ''levente''.<ref name=horvath>Attila Horvath, "War and Peace: the Effects of the World War II on Hungarian Education" in: Roy Lowe (ed.) (1992) "Education & the Second World War: Studies in Schooling & Social Change", ISBN 0-7507-0054-8</ref>
+
+It is usually compared to [[Hitler Jugend]] of [[Nazi Germany]] and [[Opera Nazionale Balilla]] of [[Kingdom of Italy|Italy]]. While having a common trait of military training with the latter two, ''levente'' was neither openly [[fascist]] nor particularly politicized, although it was not isolated of political influences of the time.<ref name=horvath/>
+
+Levente had also a smaller female branch, initiated as a voluntary association in June 1942. [[Government of National Unity (Hungary)|Under the rule]] of [[Ferenc Szálasi]] [[Operation Panzerfaust|installed by Nazis]] in Hungary in October 1944 obligatory ''levente'' duties were imposed unto girls of ages 12–19 despite the strong opposition of the [[Catholic Church]]. However the latter was not actually implemented because of the advance of the [[Red Army]].<ref name=horvath/>
+
+By the end of [[World War II]] ''Levente'' members  had to actually serve in auxiliary forces.
+
+[[Soviet occupation of Hungary|During the Soviet occupation]] many ''levente'' activists were tried by Soviet tribunals, convicted of "[[anti-Soviet]] activities" and [[Forced labor of Hungarians in the Soviet Union|deported to the Soviet Union for penal labor]].
+
+==Gallery==
+<gallery class="center" widths="200">
+File:Levente movement.JPG|Levente members in [[Újtusnád]], [[Northern Transylvania]] after the [[Second Vienna Award]]
+File:Velodrom - 1928.10.07 (5).tif|Leventes participating in the First National Levente Sports Festival
+File:Velodrom, Baranya vármegye - 1928.10.07 (3).tif|Leventes from [[Baranya County (former)|Baranya County]] participating in the First National Levente Sports Festival
+</gallery>
+
+==References==
+{{reflist}}
+
+==See also==
+{{Commons category|Levente Movement}}
+*[[Deutsche Jugend]], a youth organization of [[ethnic German]]s in Hungary
+*[[Great Japan Youth Party]]
+*[[Hitler Jugend]]
+*[[Opera Nazionale Balilla]]
+*[[National Youth Organisation (Greece)|National Youth Organisation]]
+*[[Nationale Jeugdstorm]] (NJS), a Dutch far right youth group of World War II times [http://histclo.com/youth/youth/org/nat/neth/nn-nj.htm]
+
+{{Hungarian fascism}}
+
+[[Category:Military history of Hungary]]
+[[Category:Military youth groups]]
+
+[[Category:Youth organizations established in 1921]]
+[[Category:Organizations disestablished in 1945]]
+[[Category:Youth organisations based in Hungary]]

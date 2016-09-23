@@ -1,0 +1,34 @@
+{{refimprove|date=May 2015}}
+{{Use dmy dates|date=December 2013}}
+{{Infobox software
+  |name = JoomlaLMS
+  |logo = [[File:JoomlaLMS product logo.png]]
+  |screenshot = [[File:JoomlaLMS learning management system screenshot.png|300px|JoomlaLMS – Learning Management System screenshot]]
+  |caption = JoomlaLMS course screenshot 
+  |latest_release_version = 2.0.3
+  |latest_release_date = 18 February 2016
+  |operating_system = [[Cross-platform]]
+  |programming language   = [[PHP]]
+  |genre = [[Learning Management System]]
+  |license = [[Commerce|Commercial]]
+  |status  = Active
+  |website = [https://www.joomlalms.com www.JoomlaLMS.com]
+}}
+'''JoomlaLMS''' is a professional Learning Management System developed on the basis of [[Joomla]] [[Web content management system]]. The [[Learning Management System]] is [[PHP]] and [[MySQL]] based. 
+JoomlaLMS enables users to create native LMS courses or import [[SCORM]] 1.2  and SCORM 2004 courses either created using Rapid Elearning [[authoring tool]]s or off the shelf acquired SCORM packages.
+
+==Background==
+JoomlaLMS was introduced by Elearningforce which initially provided Joomla components, extensions and modules developed by Belitsoft outsourcing software developer.  The idea for JoomlaLMS emerged due to the absence of Learning Management System for Joomla at that time. The first release was announced on 8 March 2007. In January 2009 [[Joomla]] officials removed Elearningforce extensions from their directory because of a change to the Joomla directory license policy<ref>[http://community.joomla.org/blogs/leadership/636-jed-to-be-gpl-only-by-july-2009.html JED to be GPL Only by July 2009], by Lorenzo Garcia, 27 Dec 2008, Joomla Community Blog</ref> requiring extensions to use the [[GNU General Public License]].
+
+== References ==
+{{reflist}}
+
+
+==External links==
+* {{official website|http://www.joomlalms.com/}}
+* [http://demo.joomlalms.com/ Demo Website]
+
+
+[[Category:Distance education]]
+[[Category:Learning management systems]]
+[[Category:Joomla extensions]]

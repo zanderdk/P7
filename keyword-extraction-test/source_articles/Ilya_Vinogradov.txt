@@ -1,0 +1,30 @@
+{{Infobox football biography
+| image = 
+| name      = Ilya Vinogradov
+| fullname = Ilya Dmitriyevich Vinogradov
+| birth_date = {{birth date and age|1995|07|29|df=yes}}
+| height = {{height|m=1.75}}
+| position = [[Forward (association football)|Forward]]/[[Midfielder]]
+| currentclub =  [[FC Volga Tver]] 
+| clubnumber =  
+| years1 = 2011–2012 | clubs1 = FC Akademiya-D Togliatti | caps1 =    | goals1 = 
+| years2 = 2013–     | clubs2 = [[FC Volga Tver]]        | caps2 = 66 | goals2 = 3
+| pcupdate = 31 May 2016
+| ntupdate = 
+}}
+'''Ilya Dmitriyevich Vinogradov''' ({{lang-ru|???? ?????????? ??????????}}; born 29 July 1995) is a [[Russia]]n [[association football|football]] player. He plays for [[FC Volga Tver]].
+
+He made his debut in the [[Russian Second Division]] for [[FC Volga Tver]] on 20 April 2013 in a game against [[FC Sever Murmansk]].<ref>{{cite web|publisher=[[Russian Football Union]]|url=http://rfspro.ru/cgi-bin/player/script2.cgi?par1=119435|title=Career Summary|date=28 April 2013}}</ref>
+
+==References==
+{{Reflist}}
+
+==External links==
+* [http://news.sportbox.ru/Vidy_sporta/Futbol/stats/man_1315592466 Career summary by sportbox.ru]
+ 
+{{DEFAULTSORT:Vinogradov, Ilya}}
+[[Category:1995 births]]
+[[Category:Living people]]
+[[Category:Russian footballers]]
+
+{{Russia-footy-midfielder-1995-stub}}

@@ -1,0 +1,47 @@
+{{Infobox mountain
+| name = Boccard Point
+| other_name = Juniper Ridge
+| photo = Boccard Point with Mt Ashland Ingrid Ford (7692407542).jpg
+| photo_alt = 
+| photo_caption = 
+| elevation = {{convert|5,900|ft|0|abbr=on}}
+| elevation_ref = {{NGVD29}}<ref name="loj">{{cite loj |id=82000 |name=Boccard Point |accessdate=1 May 2016}}</ref>
+| prominence = {{convert|200|ft|0|abbr=on}}
+| prominence_ref = <ref name="loj"/>
+| range = 
+| listing = 
+| parent_peak = 
+| location = [[Jackson County, Oregon|Jackson County]], [[Oregon|Oregon, U.S.]]
+| map = USA Oregon
+| map_caption = Location in Oregon
+| map_size = 240
+| label = 
+| label_position = top
+| lat_d = 42.0556940
+| long_d = -122.4851326
+| region_code = US-OR
+| source = GNIS
+| coordinates_ref = <ref name="gnis">{{cite gnis |id=1738076 |name=Boccard Point |accessdate=1 May 2016}}</ref>
+| topo = [[United States Geological Survey|USGS]] Soda Mountain
+| easiest_route = 
+}}
+
+'''Boccard Point''' is a mountain summit in [[Jackson County, Oregon]], United States with an elevation of {{convert|5,900|ft|0}}. 
+
+==Environs==
+Boccard Point is located in the [[Soda Mountain Wilderness]], which was designated in the spring of 2009 by the [[United States Congress]], and is managed by the [[Bureau of Land Management]]
+
+The surrounding wilderness encompasses a large amount of [[Biological diversity|biological]] and [[geological]] diversity, covering the transition between [[High Desert (Oregon)|Oregon's eastern deserts]], and mountainous [[fir]] [[forest]]s . The mountain and associated wilderness is located southeast of the cities of [[Medford, Oregon|Medford]] and [[Ashland, Oregon|Ashland]].<ref>{{cite web |title=Soda Mountain Wilderness Area |url=http://www.blm.gov/or/wilderness/sodamountain/ |website=blm.gov |publisher=United States Bureau of Land Management |accessdate=31 January 2015}}</ref>
+
+==Trails==
+Since the designation of the Soda Mountain Wilderness, the road leading to Boccard Point had been decommissioned, and deterioration had made it difficult to traverse. In 2014, the trail was restored by the nonprofit [[Siskiyou Mountain Club]].<ref>{{cite web|title=Boccard Point – An Easy Hike to a Very Special Place |url=http://www.siskiyoumountainclub.org/boccard-point/ |publisher=Siskiyou Mountain Club |accessdate=31 January 2015}}</ref>
+
+==Name==
+The mountain was named after the American [[biologist]] and [[environmentalist]] [[Bruce Boccard]]. Boccard Point was his favorite spot on the mountain and was a point he called "Juniper Ridge". In 1997, the [[U.S. Board on Geographic Names]] approved naming the point in his honor.<ref>[http://archive.mailtribune.com/archive/98/may98/52498n3.htm Landform given biologist's name], Paul Fattig in ''[[Mail Tribune]]'', May 24, 1998 {{dead link|date=May 2016}}</ref>
+
+==References==
+{{reflist}}
+
+[[Category:Landforms of Jackson County, Oregon]]
+[[Category:Mountains of Oregon]]
+[[Category:Ashland, Oregon]]

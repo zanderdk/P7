@@ -1,0 +1,44 @@
+{{Infobox NRHP
+  | name = Harden Family Cemetery
+  | nrhp_type = 
+  | image = 
+  | caption = 
+  | nearest_city= [[Jennie, Arkansas]]
+  | lat_degrees = 33
+  | lat_minutes = 16
+  | lat_seconds = 24
+  | lat_direction = N
+  | long_degrees = 91
+  | long_minutes = 16
+  | long_seconds = 38
+  | long_direction = W
+  | coord_display = inline,title
+  | locmapin = Arkansas#USA
+  | architect OR builder = 
+  | architecture = 
+  | added = May 24, 2004
+  | area = {{convert|1.1|acre}}
+  | governing_body = Private 
+  | mpsub = {{NRHP url|id=64500018|title=Ethnic and Racial Minority Settlement of the Arkansas Delta MPS}}
+  | refnum = 04000508<ref name="nris">{{NRISref|version=2010a}}</ref>
+}}
+The '''Harden Family Cemetery''' is a historic cemetery in rural [[Chicot County, Arkansas]].  It is located in a horse pasture off Hardin Road, north of the hamlet of [[Jennie, Arkansas|Jennie]], which is on [[Arkansas Highway 13]] south of [[Lake Village, Arkansas|Lake Village]].  The small family cemetery, which is not visible from the road, contains fourteen marked graves, dating from 1892 to the 1960s.  All are for members of the Harden family, who were an African-American family prominent in the life of the small community, and among the earliest of their race to settle the area.  The patriarch of the family, John Harden, Sr., was a freed slave who died in 1892.  One grandson was a local pastor, another was a schoolteacher.<ref name=NRHP>{{cite web|url=http://www.arkansaspreservation.com/!userfiles/CH0178.nr.pdf|title=NRHP nomination for Harden Family Cemetery|publisher=Arkansas Preservation|accessdate=2014-04-05}}</ref>
+
+The cemetery was listed on the [[National Register of Historic Places]] in 2004.<ref name="nris"/>
+
+==See also==
+*[[National Register of Historic Places listings in Chicot County, Arkansas]]
+
+==References==
+{{reflist}}
+
+{{National Register of Historic Places}}
+
+[[Category:Cemeteries in Arkansas]]
+[[Category:Cemeteries on the National Register of Historic Places in Arkansas]]
+[[Category:Geography of Chicot County, Arkansas]]
+[[Category:Buildings and structures in Chicot County, Arkansas]]
+[[Category:National Register of Historic Places in Chicot County, Arkansas]]
+
+
+{{Arkansas-NRHP-stub}}

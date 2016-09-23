@@ -1,0 +1,497 @@
+{{Use dmy dates|date=July 2013}}
+{{Geobox|Settlement
+<!-- *** Heading *** -->
+| name                     = Funchal
+| native_name              = 
+| other_name               = 
+| category                 = [[Municipality]]
+| native_category          = [[Concelho]]
+<!-- *** Names **** --> 
+| etymology_type           = 
+| etymology                = ''funcho'', [[Portuguese language|Portuguese]] for ''fennel''
+| official_name            = Concelho do Funchal
+| motto                    = 
+| nickname                 = 
+<!-- *** Image *** -->
+| image                    = Madeira_19_2014.jpg
+| image_caption            = A January 2014 panoramic view of Funchal
+| image_size               = 250
+<!-- *** Symbols *** -->
+| flag                     = FlagofFunchal.png
+| symbol                   = FNC.png
+<!-- *** Country *** -->
+| country                  = {{flag|Portugal}}
+| state                    = {{flag|Madeira|name=Madeira}}
+| state_type               = Autonomous Region
+| region_type              = Island
+| region                   = [[Madeira Island|Madeira]]
+<!-- *** Family *** -->
+| part_type                  = Civil Parishes
+| part_count               = 10
+| part1                    = [[Imaculado Coração de Maria]]
+| part2                    = [[Monte (Funchal)|Monte]]
+| part3                    = [[Santa Luzia (Funchal)|Santa Luzia]]
+| part4                    = [[Santa Maria Maior (Funchal)|Santa Maria Maior]]
+| part5                    = [[Santo António (Funchal)|Santo António]]
+| part6                    = [[São Gonçalo (Funchal)|São Gonçalo]]
+| part7                    = [[São Martinho (Funchal)|São Martinho]]
+| part8                    = [[São Pedro (Funchal)|São Pedro]]
+| part9                    = [[São Roque (Funchal)|São Roque]]
+| part10                   = [[Sé (Funchal)|Sé]]Caveira
+| landmark                 =  
+| river                    = 
+<!-- *** Locations *** -->
+| location                 = Funchal
+| elevation                =
+| prominence               = 
+| lat_d                    = 32
+| lat_m                    = 39
+| lat_NS                   = N
+| long_d                   = 16
+| long_m                   = 55
+| long_EW                  = W
+| highest                  =
+| highest_location         =
+| highest_region           =
+| highest_state            = 
+| highest_elevation        =
+| highest_lat_d            = 
+| highest_lat_m            =
+| highest_lat_s            =
+| highest_lat_NS           =
+| highest_long_d           = 
+| highest_long_m           =
+| highest_long_s           =
+| highest_long_EW          =
+| lowest                   = Sea level 
+| lowest_location          = Atlantic Ocean
+| lowest_region            = 
+| lowest_state             =
+| lowest_elevation         = 0
+| lowest_lat_d             = 
+| lowest_lat_m             = 
+| lowest_lat_s             = 
+| lowest_lat_NS            =
+| lowest_long_d            = 
+| lowest_long_m            = 
+| lowest_long_s            = 
+| lowest_long_EW           =
+<!-- *** Dimensions *** -->
+| length                   =
+| length_orientation       = West-East
+| width                    =
+| width_orientation        = North-South
+| area                     = 76.15
+| area_land                =
+| area_water               =
+| area_urban               = 
+| area_metro               = 
+<!-- *** Population *** -->
+| population               = 111892
+| population_date          = 2011
+| population_urban         = 
+| population_metro         =
+| population_density       = 1323
+| population_density_urban =
+| population_density_metro = 670
+<!-- *** History & management *** -->
+| established_type         = Settlement
+| established              = c.1424
+| established2_type        = Town
+| established2             = c.1452-1454
+| established3_type        = Municipality
+| established3             = c.1508
+| government_type          = [[Local administrative unit|LAU]]
+| government               = [[Câmara Municipal]]
+| government_location      = Praça do Município
+| government_elevation     =34
+| government_lat_d         =32
+| government_lat_m         =39
+| government_lat_s         =0
+| government_lat_NS        =N
+| government_long_d        =16
+| government_long_m        =54
+| government_long_s        =30
+| government_long_EW       =W
+| mayor_type               = [[President of the Municipal Chamber|President]]
+| mayor                    = [[Paulo Cafôfo]]
+| mayor_party              = [[Mudança Political Coligation]]
+| leader_type              = [[Assembleia Municipal|Municipal Chair]]
+| leader                   =
+| leader_party             = 
+<!-- *** Codes ***  -->
+| timezone                 = [[Western European Time|WET]]
+| utc_offset               = 0
+| timezone_DST             = [[Western European Summer Time|WEST]]
+| utc_offset_DST           = +1
+| iso_code                 = 
+| postal_code              = 9000 
+| postal_code_type         = Postal Zone
+| area_code                = (+351) 291 XXX-XXX
+| area_code_type           = Area Code & Prefix
+| code                     =
+<!-- *** UNESCO etc. *** -->
+| whs_name                 =
+| whs_year                 =
+| whs_number               =
+| whs_region               =
+| whs_criteria             =
+| iucn_category            =
+<!-- *** Free fields *** -->
+| free_type                = [[Demonym]]
+| free                     = 
+| free1_type               = [[Patron Saint]]
+| free1                    = 
+<!-- *** Maps *** -->
+| map                      = LocalFunchal.png
+| map_size                 = 235
+| map_caption              = Location of the [[municipality]] of Funchal in the Madeiran archipelago
+| map_background           = 
+| map_locator              =
+<!-- *** Websites *** --> 
+| commons                  = Funchal
+| statistics               = 
+| website                  = http://www.cm-funchal.pt
+<!-- *** Footnotes *** -->
+| footnotes                =
+}}
+'''Funchal''' ({{IPA-pt|fu'?a?}}<ref>In [[European Portuguese]]. The [[Brazilian Portuguese]] pronunciation is {{IPA-pt|fu'?aw|IPA}}</ref>) is the largest city, the municipal seat and the capital of [[Portugal]]'s [[Madeira|Autonomous Region of Madeira]]. The city has a population of 111,892,<ref>[http://www.ine.pt/scripts/flex_v10/Main.html] Nuno Pires Soares, Instituto Geográfico Português (Geographic Institute of Portugal)</ref> making it the 6th largest city in Portugal, and has been the capital of Madeira for more than five centuries. Because of its high cultural and historical value, Funchal is one of Portugal's main tourist attractions. It is also popular as a destination for New Year's Eve, and it is the leading Portuguese port on [[cruise liner]] dockings.<ref>http://pianc-jp.org/news/images/19_e_l_o_2013MedDays_PIANC_Brogueira_long.pdf</ref>
+
+The name is from the [[Portuguese language|Portuguese]] word ''"funcho"'' (''[[fennel]]'') and the suffix ''"-al"'', to denote ''"a plantation of fennel"''.
+
+==Etymology==
+The name Funchal, was applied by the first settlers that landed on its shores due to the abundance of wild [[fennel]] where, as tradition goes, the primitive burg was built. From the [[Portuguese language|Portuguese]] word ''"funcho"'' (''[[fennel]]'') and the suffix ''"-al"'', to denote ''"a plantation of fennel"'':  
+{{quote|text="...Funchal, to whom the captain gave this name, because it was founded in a beautiful forested valley, full of fennel up to the sea..."|sign=Gaspar Frutuoso, 1873|source={{citation needed|date=November 2014}}}}
+
+==History==
+[[File:Funchal ( Portugal )11.jpg|thumb|left|215px|[[Cathedral of Funchal]] (Sé Cathedral), constructed under the orders of D. Manuel, Duke of Beja, dating back to the 15th century]]
+
+This settlement began around 1424, when the island was divided into two ''[[Captaincy|captaincies]]'', and the zones that would become the urbanized core of Funchal would be founded by [[João Gonçalves Zarco]] who settled there with members of his family. Owing to its geographic location, the site became an important maritime port, whereas its productive soils became a focus of new settlers. Its coastal position, the most productive on the island, quickly permitted Funchal to develop an urban core and surpass the populations of other settlements, which slowly gravitated around it.
+
+In the early 15th century, [[Álvaro Fernandes]] was the commander of Funchal.
+
+As part of its administrative role, the settlement received its primary lighthouse between 1452 and 1454, when it was elevated to the status of ''vila'' and municipal seat. Funchal became an important transfer point for European commercial interests; many sailors and merchants located in Funchal in order to take advantage of the transient conditions of port. [[Christopher Columbus]] was one of the early settlers, but later many of the merchant families established commercial interests on the island, including: João d'Esmenaut from the [[Picardy (region)|Picardy region]], the Lomelino from [[Genoa]], the Mondragão from [[Biscay]], the Acciauoli from [[Florence]], the Bettencourts from France, the Lemilhana Berenguer from [[Valencia, Spain|Valencia]] and many others.
+
+During the second half of the 15th&nbsp;century, the sugar industry expanded significantly along the southern coast, from Machico until Fajã da Ovelha, making Funchal the most important industrial centre of the industry. By the end of the century, fronting the [[Order of Christ (Portugal)|Order of Christ]], [[Manuel I of Portugal|D. Manuel]], [[Duke of Beja]], expanded the support of the local community; he ordered the construction of the administrative Paços do Concelho and the Paços dos Tabeliães (completed in 1491), raised the construction of a church (began in 1493 and later raised to [[cathedral]] in 1514), and finally the construction of a hospital and customs-house in the village. In 1508, it was elevated to the status of city by King [[Manuel I of Portugal]], and in 1514 (on completion of the Sé Cathedral) the bishopric was headquartered in Funchal.
+[[File:TownOfFunchal,InMadeira,1834.PNG|thumb|left|A cityscape of Funchal, 1834 as seen from the Bay]]
+[[File:Funchal, Portugal (1907).jpg|thumb|left|Funchal, 1907]]
+The island, and Funchal specifically, were vulnerable to privateer and pirate attacks.  In September 1566, French corsairs under the command of Bertrand de Montluc, a gentleman in the court of [[Charles IX of France]] and second-son of [[Field Marshal]] Blaise de Montluc departed from [[Bordeaux]] with a force of 1200 men, on a small fleet of three main ships and eight support craft. The armada sacked [[Porto Santo]]. When the news was relayed to the settlements on Madeira and the villas of [[Machico]] and [[Santa Cruz, Madeira|Santa Cruz]] the citizenry armed themselves for the inevitable. In Funchal, the governor, Francisco de Sales Gonçalves Zarco da Câmara, did not take any action that could be construed as hostile. Meanwhile, the armada anchored off the beach of Formosa, disembarked a contingent of 800 men that marched towards the city in three columns, encountering no resistance until the main bridge in São Paulo. At the bridge the privateers encountered a force from the small fort, with a few small-caliber pieces, which were quickly routed in confusion. At the road near Carreira, the attackers were confronted by a small group of Franciscan monks, who were quickly dispatched. Funchal's fortifications were finally assaulted by land, where its defense was thin; the defenders could not even reposition many of the cannons directed towards the sea. The city suffered a violent sack that lasted fifteen days, after which little remained.
+
+The following year, the military architect Mateus Fernandes III was sent to Funchal in order to completely modify the defensive system of the city. Evidence of the work produced by this architect was published in the "Mapa de Mateus Fernandes" (1573), considered to be the oldest plan of the island of Funchal.<ref>[http://www.cm-funchal.pt/cmf/Default.aspx?SID=315 Cidade do Funchal e a sua Evolução Espacial]</ref> The document identifies the major defenses of the city, which included a large fortification in the area around the [[Dike (geology)|dyke]] in Pena.
+
+During the 16th century, Funchal was an important stop-over for [[caravels]] travelling between the [[Indies]] and the [[New World]].
+[[File:Mirante da Quinta Vigia, c 1880.jpg|thumb|right|Overlook of ''Quinta Vigia'', now the Regional Government's Presidential Palace, towards the then port of Funchal]]
+[[File:Vista do Funchal, 1936.jpg|thumb|right|View of Funchal's bay in 1936]]
+The wine culture appeared during early settlement, through the incentives from [[Henry the Navigator]]. By 1455, the [[Venice|Venetian]] navigator, [[Alvise Cadamosto|Luís de Cadamosto]], on visiting Madeira, referred to the excellence of the Madeirense wines, principally the [[Malvasia]] castes from the island of [[Crete]], which were being exported in greater numbers. By the end of the 16th century, the celebrated English [[poet]] and [[playwright]], [[William Shakespeare]], cited the important export and notoriety of the Madeiran Malvasia castes: in [[Richard III (play)|Richard III]] the Duke of Clarence, the brother of King [[Edward IV]] selected a death by drowning in a barrel of Madeira. Later, in Shakespeare's ''[[Henry IV, Part 1|Henry IV]]'' he has Poins censure Falstaff for having sold his soul to the devil for a cup of Madeira wine. The growth of viticulture in Madeira expanded when the sugar industry was attacked by cheaper exports from the New World and Africa, but also from various epidemics and the after-effects of the 1566 privateer sacks. In the 17th century, commercial treaties with England brought increased investments to a business that was still insular. Many commercial wine-makers from England moved to the island, establishing a change in the commerce, the economy, the architectural morphology and the lifestyle of the community. This incremental growth expanded the city with new estates, and a new merchant class that populated the urban quarters. Generally, there were many new three-floor homes with an intermediary service floor, a floor for storage and wine-cellars, and in some cases a tower to watch the port and monitor shipping in the harbour. Various island governors and the convents participated in commercial viticulture. The Companhia de Jesus developed the vast estate of Campanário, which extended from the city to Fajã dos Padres into one of the most successful wines on the island, whereas the nuns of Santa Clara, owners of some large parcels of land, entered into the wine industry, financing the ships that would take their wines to Brazil (and exchanging them for sugar for their sweets business). But, during the 19th century there were epidemics, aggravating the economy and forcing some to return to sugar plantations. In order to maintain the level of development, many landowners tried to plant new more-resistant castes, but of an inferior quality, in order to support the industry.
+
+The city was twice bombarded by German [[U-boats]] during [[World War I]].
+
+A few of the notable visitors to the region were [[Elisabeth of Bavaria|Elisabeth]], empress of [[Austria-Hungary]], 1837-1898 (who travelled to the island for leisure and health), [[Charles I of Austria]], Emperor of Austria and king of [[Kingdom of Hungary|Hungary]], 1867–1918, Polish [[Field Marshal]] [[Józef Pilsudski]] in order to recuperate his health, [[Winston Churchill]] (who travelled there on holidays and was known to have painted a few paintings during his visits) and [[Fulgencio Batista]] (who stopped over en route to his exile in Spain). The presence of these notable visitors marked a period when Funchal became a center of tourism and therapeutic health. With the formal creation of the Port of Funchal, and later the establishment of the Santa Catarina Airport, Funchal turned into a major international tourist destination supported by a series of hotels and ocean-front residences.
+
+==Geography==
+[[File:Madeira 5 2014.jpg|thumb|300px|Promenade in southwest Funchal]]
+
+===Physical geography===
+Funchal is located inside a natural amphitheater-shaped valley, with gentle slopes beginning at the coast which rise to 1200 meters, that provided a natural shelter for early settlers.
+
+In addition to the urbanized area, the municipality includes the '''[[Ilhas Selvagens]]''' ({{lang-en|[[Savage Islands]]}}), a nature reserve located {{convert|160|km|0|abbr=on}} south of the capital.
+
+===Climate===
+Funchal has a mild [[mediterranean climate]]<ref>{{cite web|url=http://www.weatherbase.com/weather/weather-summary.php3?s=12580&cityname=Funchal%2C+Portugal&units=|title=Climate summary: Funchal, Portugal|publisher=Weatherbase|accessdate=9 December 2014}}</ref> with even temperatures all year round. The climate can be separated into two main seasons: a rainier and slightly cooler season from October through March with average daily high temperatures ranging from 20&nbsp;°C (68&nbsp;°F) to 25&nbsp;°C (77&nbsp;°F) and a drier and warmer season from April through September with average daily high temperatures ranging from 21&nbsp;°C (70&nbsp;°F) to 26&nbsp;°C (79&nbsp;°F). Humidity levels remain constantly high at about 70%.
+Sea temperatures range from a low of 18&nbsp;°C (64&nbsp;°F) in February–March to 24–26&nbsp;°C (75&nbsp;°F) in August–October.
+
+Since the city rises from the sea up to altitudes of 800 meters on its northern slopes, it is quite common to experience cloudiness, fog and rain on those northern suburbs while clear skies remain nearer to the sea. Temperatures also tend to be slightly lower at the higher altitudes.
+
+Early summer, especially June, tends to be quite infamous due to a phenomenon where persistent cloudiness covers the entire bay area of Funchal, locally nicknamed "Funchal's helmet". The length and severity of the rainy season varies greatly from year to year.
+
+{{Weather box
+|location = Funchal, capital of Madeira
+|metric first = yes
+|single line = yes
+|Jan record high C = 25.5
+|Feb record high C = 27.0
+|Mar record high C = 30.5
+|Apr record high C = 32.6
+|May record high C = 34.2
+|Jun record high C = 34.7
+|Jul record high C = 37.7
+|Aug record high C = 38.5
+|Sep record high C = 38.4
+|Oct record high C = 34.1
+|Nov record high C = 29.5
+|Dec record high C = 25.9
+|year record high C = 38.5
+|Jan high C = 19.7
+|Feb high C = 19.7
+|Mar high C = 20.4
+|Apr high C = 20.6
+|May high C = 21.6
+|Jun high C = 23.4
+|Jul high C = 25.1
+|Aug high C = 26.4
+|Sep high C = 26.4
+|Oct high C = 24.9
+|Nov high C = 22.6
+|Dec high C = 20.7
+|year high C = 22.6
+|Jan mean C = 16.7
+|Feb mean C = 16.6
+|Mar mean C = 17.2
+|Apr mean C = 17.5
+|May mean C = 18.6
+|Jun mean C = 20.6
+|Jul mean C = 22.2
+|Aug mean C = 23.2
+|Sep mean C = 23.2
+|Oct mean C = 21.8
+|Nov mean C = 19.6
+|Dec mean C = 17.9
+|year mean C = 19.6
+|Jan low C = 13.7
+|Feb low C = 13.4
+|Mar low C = 13.9
+|Apr low C = 14.4
+|May low C = 15.6
+|Jun low C = 17.7
+|Jul low C = 19.2
+|Aug low C = 20.0
+|Sep low C = 20.0
+|Oct low C = 18.6
+|Nov low C = 16.6
+|Dec low C = 15.0
+|year low C = 16.5
+|Jan record low C = 8.2
+|Feb record low C = 7.4
+|Mar record low C = 8.1
+|Apr record low C = 9.8
+|May record low C = 9.7
+|Jun record low C = 13.2
+|Jul record low C = 14.6
+|Aug record low C = 16.4
+|Sep record low C = 16.6
+|Oct record low C = 13.4
+|Nov record low C = 9.8
+|Dec record low C = 6.4
+|year record low C = 6.4
+|Jan precipitation mm =  74.1
+|Feb precipitation mm =   83.0
+|Mar precipitation mm =   60.2
+|Apr precipitation mm =   44.0
+|May precipitation mm =   28.9
+|Jun precipitation mm =   7.2
+|Jul precipitation mm =    1.6
+|Aug precipitation mm =    2.0
+|Sep precipitation mm =   32.9
+|Oct precipitation mm =   89.5
+|Nov precipitation mm =  88.8
+|Dec precipitation mm =   115.0
+|year precipitation mm = 627.2
+|Jan precipitation days = 12
+|Feb precipitation days = 10
+|Mar precipitation days = 9
+|Apr precipitation days = 8
+|May precipitation days = 6
+|Jun precipitation days = 3
+|Jul precipitation days = 1
+|Aug precipitation days = 2
+|Sep precipitation days = 6
+|Oct precipitation days = 9
+|Nov precipitation days = 10
+|Dec precipitation days = 13
+|year precipitation days = 87
+|unit precipitation days = 0.1&nbsp;mm
+|Jan sun = 167.4
+|Feb sun = 171.1
+|Mar sun = 204.6
+|Apr sun = 225.0
+|May sun = 213.9
+|Jun sun = 198.0
+|Jul sun = 244.9
+|Aug sun = 260.4
+|Sep sun = 225.0
+|Oct sun = 204.6
+|Nov sun = 168.0
+|Dec sun = 164.3
+|year sun = 2447.2
+|source 1 = [[Instituto de Meteorologia]],<ref>{{cite web
+  |url=http://www.meteo.pt/pt/oclima/normais.clima/1981-2010/009/
+  |title=Weather Information for Funchal
+  |accessdate=}}</ref> ''ClimaTemps.com''<ref>{{cite web
+  |url=http://www.madeira.climatemps.com/
+  |title=Funchal, Madeira Climate, Temperature, Average Weather History, Rainfall/Precipitation, Sunshine
+  |accessdate=}}</ref> <small>for Sunshine hours data</small>
+|date=February 2012
+}}
+
+===Human geography===
+{{wide image|Funchal at Sunset.jpg|900px|Panoramic view of [[Funchal Bay]] during sunset, taken from Ponta do Garajau.}}
+[[File:Madeira 4093.jpg|thumb|300px|A leisure park in Lido, in [[São Martinho (Funchal)|São Martinho]]]]
+[[File:Madeira 17 2014.jpg|thumb|300px|Sea Port of Funchal]]
+[[File:Madeira 6 2014.jpg|thumb|300px|Lido, Funchal's hotel zone]]
+
+The urbanized core of the city of Funchal includes several of the civil parishes that surround the municipality ([[Câmara de Lobos]], [[Santa Cruz, Madeira|Santa Cruz]], [[Machico]] and [[Ribeira Brava, Madeira Islands|Ribeira Brava]]), and includes a population of 150,000 inhabitants (representing the largest city outside mainland Portugal). The municipality itself is a grouping of several smaller administrative entities, that includes Funchal, [[Câmara de Lobos]], [[Caniço]] and Santa Cruz, located along the southern coast of [[Madeira]]. Funchal is a cosmopolitan and panoramic city, with parks, shops and hotels.
+
+The municipality ({{lang-pt|concelho}}) and city ({{lang-pt|cidade}}) are one administrative division, administered by an executive and legislative committee in the city hall. Local communities, are administered at the civil parish levels, through their own legislative bodies and executives. Funchal comprises ten civil parishes ({{lang-pt|freguesias}}) based on traditional religious districts ({{lang-pt|paróquias}}):
+* [[Imaculado Coração de Maria]] - a northern suburb, it is one of the smaller parishes in area, with the highest concentrations of residents (6951 residents in 2001);
+* [[Monte (Funchal)|Monte]] - originally a summer refuge for the wealthy, due to its mild climate, Monte is symbolized by the toboggan drivers that race tourists down to the central town; today it is one of the more populated areas of Funchal with over 7500 inhabitants;
+* [[Santa Luzia (Funchal)|Santa Luzia]] - one of the four urban suburbs of Funchal, developed from urban sprawl that expanded into the hinterland; today there are more than 6600 inhabitants in these foothills;
+* [[Santa Maria Maior (Funchal)|Santa Maria Maior]] - named from the first episcopal divisions on the island, it along with Sé were the first faith communities to develop, concentrating along the coast in the church of Nossa Senhora do Calhau;
+* [[Santo António (Funchal)|Santo António]] - the most populated civil parish in the municipality, developed from the concentration of small artisan shops, that developed until the 16th century; today the population includes approximately 22,000 residents;
+* [[São Gonçalo (Funchal)|São Gonçalo]] - named after the explorer  Gonçalo Aires Ferreira, in service to João Gonçalos Zarco, the lands of the parish were once the personal domains of this settler, who later took on the anointed name by its residents, due to his piety;
+* [[São Martinho (Funchal)|São Martinho]] - its first settler Afonso Anes was responsible for the first artisanal and commercial buildings in the area, that was primarily agricultural in scope; today the highly urbanized area pertains to 20,000 inhabitants;
+* [[São Pedro (Funchal)|São Pedro]] - central to the business and residential character of Funchal, São Pedro is a bedroom community of Sé, with 7681 residents;
+* [[São Roque (Funchal)|São Roque]] - deannexed from Sé under the authority of Cardinal Infante Henriques, the prelate of Funchal constructed this parish from sections of São Pedro and São Martinho;
+* [[Sé (Funchal)|Sé]] - the historical centre of Funchal, and most developed, including many of the older buildings; its population is less than 2148 residents (2001).
+
+==Transportation==
+[[File:Teleférico - Funchal 11.jpg|right|thumb|Famous cable car ride between Funchal and Monte, high up on Funchal's mountains]]
+The harbour of Funchal was the only major port in Madeira. Since 2007 it has been fully dedicated to passenger transport - cruise ships and ferries - and other tourist-related boats and yachts.  In that year all remaining fishing activity and cargo trade was moved to the newly developed port of [[Caniçal]], {{convert|12|mi|0|abbr=on}} to the east.<ref>{{cite web|title=Portos da Madeira
+|url=http://www.portosdamadeira.com/index2.php?t=1&l=pt|publisher=Administração dos Portos da Região Autónoma da Madeira|language=Portuguese}}</ref>  A ferry between Funchal and [[Portimao]], on the mainland, provided by [[Naviera Armas]] used to sail weekly, but was discontinued in 2013 due to a dispute over harbour fees.  A ferry runs in two hours between Funchal and [[Porto Santo]] Island, called the ''Lobo Marinho''.<ref>[http://www.madeira-web.com/pagesuk/lobo-marinho.html madeira-web.com - Things to do: "Lobo Marinho"]</ref>
+
+A highway provides access to [[Câmara de Lobos]] and [[Ribeira Brava, Madeira Islands|Ribeira Brava]] to the west, and Santa Cruz, [[Machico]] and Caniçal to the east.
+
+[[Madeira Airport]], often known as Funchal Airport/Madeira/Santa Catarina Airport (code: FNC), is located east of the city, in the municipality of Santa Cruz. The airport was one of the most dangerous airports in the world due to the limited flat space in close proximity to cliffs, but the extension of the runway on concrete pillars in the sea has improved safety.
+
+Funchal is frequently used as a stop-over by transatlantic sailors, en route from Europe to the Caribbean, as it is the northern most Atlantic island that lies in the path of the [[Westerlies]].
+
+==Tourism==
+[[File:Toboggan riders, Monte, Madeira, Portugal.jpg|right|thumb|A Toboggan ride going down Monte]]
+Today Funchal is a major tourist town, with hotels, port, and an international airport [[Funchal Airport]] (FNC), located in the nearby municipality of Santa Cruz.
+
+Besides the city of Funchal, tourist destinations include: [[Ribeira Brava, Madeira Islands|Ribeira Brava]], [[Curral das Freiras]], [[Porto Moniz]], [[Santana, Madeira|Santana]], the [[Laurisilva]] forest, a UNESCO Natural Site, in the center of [[Madeira Island]] and the beaches in [[Porto Santo]] island.  There is also a passenger [[gondola lift]] ([[Funchal Passenger Ropeway]]), that transports people from the lower section of the city to the suburb of [[Monte (Funchal)|Monte]] and another that runs between Monte and the [[Madeira Botanical Garden|Botanical Gardens]].
+
+==Religion==
+{{Main article|Roman Catholic Diocese of Funchal}}
+[[File:The Igreja do Colégio interior (Barocco ), Funchal’s City Square. Funchal, Portugal, Autonomous Region of Madeira, Southwestern Europe.jpg|thumb|The Igreja do Colégio interior featuring [[Baroque architecture]], Funchal’s City Square]]The [[Episcopal see]] ([[diocese]]) of the [[Roman Catholic]] bishop of [[Bishopric of Funchal|Funchal]] includes the entirety of the Autonomous Region of Madeira, and is a [[suffragan|suffragan see]] under the [[Archdiocese of Lisbon]]. Its focus is the [[Cathedral of Funchal|Sé Cathedral]], located in civil parish of [[Sé (Funchal)|Sé]], dedicated to ''Nossa Senhora da Assunção'' (''{{lang-en|Our Lady of the Assumption}}'') while its patron saint is [[James, son of Alphaeus|Saint James]].
+
+[[Anglican]] services have been held at Holy Trinity Church in Funchal (Rua do Quebra Costas) since 1822, although the first recorded Protestant service took place in 1774.<ref>{{cite web| last = | first = | authorlink = | coauthors = | title = The Church | work = Holy Trinity Church, Funchal | publisher = | date = 25 August 2010 | url = http://www.holytrinity-madeira.org/the_church.php | format =  | doi =  | accessdate = 10 September 2010 }}</ref> The Holy Trinity Church also takes care of the [[British Cemetery of Funchal]].
+
+Funchal Baptist Church was established in Madeira in 1976. It is located at Rua Silvestre Quintino de Freitas, 126 
+9050-097 FUNCHAL, and provides English services in the morning and Portuguese in the evening.
+
+The [[Synagogue of Funchal]] was built in 1836, but is now disused.<ref>{{cite web | last = Dysch | first = Marcus | authorlink =  | coauthors = | title = Madeira: Peace in the land of Ronaldo| work = [[The Jewish Chronicle]] Online| publisher = | date =  7 April 2009 | url = http://www.thejc.com/travel/travel-features/madeira-peace-land-ronaldo | format =  | doi = | accessdate = 10 September 2010 }}</ref> There is the [[Jewish Cemetery of Funchal]] which is also disused.
+
+==Twin towns — Sister cities==
+
+{{See also|List of twin towns and sister cities in Portugal}}
+[[File:Penha de França - Funchal.jpg|thumb|235px|right|''Penha de França'', western zone of Funchal.]]
+[[File:Funchal ( Portugal )05.jpg|thumb|235px|right|Aljube Street.]]
+Funchal is [[Twin towns and sister cities|twinned]] with the following cities:<ref>{{cite web |url=http://www.anmp.pt/anmp/pro/mun1/gem101l0.php?cod_ent=M9000 |title=Geminações de Cidades e Vilas: Funchal |publisher=Associação Nacional de Municípios Portugueses |language=Portuguese |accessdate=2015-03-12}}</ref>
+{| class="wikitable sortable"
+|-
+! City
+! State/Region
+! Country
+|-
+| [[Gibraltar]]
+| {{flag|Gibraltar}}
+| {{flag|Great Britain}}
+|-
+| [[Livingstone, Zambia|Livingstone]]
+| {{flagicon|ZAM}} [[Southern Province, Zambia|Southern Province]]
+| {{flag|Zambia}} 
+|-
+| [[Praia]]
+| [[File:Coat of Arms of Praia.png|24px]] [[Praia, Cape Verde (municipality)|Praia]]
+| {{flag|Cape Verde}}
+|-
+| [[Honolulu County|Honolulu]]
+| {{flag|Hawaii}}
+| {{flag|United States}}
+|-
+| [[Maui]]
+| {{flag|Hawaii}}
+| {{flag|United States}}
+|-
+| [[Ílhavo]]
+| [[File:Pt-avr1.png|18px]] [[Aveiro, Portugal|Aveiro]]
+| {{flag|Portugal}}
+|-
+| [[Oakland]]
+| {{flag|California}}
+| {{flag|United States}}
+|-
+| [[New Bedford]]
+| {{flag|Massachusetts}}
+| {{flag|United States}}
+|-
+| [[Herzliya]]
+| {{flagicon|ISR}} [[Tel Aviv District]]
+| {{flag|Israel}}
+|-
+| [[Saint Helier]]
+| {{flag|Jersey}}
+| {{flag|Great Britain}}
+|-
+| [[Leichlingen]]
+| {{flag|North Rhine-Westphalia}}
+| {{flag|Germany}}
+|-
+| [[Cape Town]]
+| {{flagicon|RSA}} [[Western Cape]]
+| {{flag|South Africa}}
+|-
+| [[Santos (São Paulo)|Santos]]
+| {{flag|São Paulo}}
+| {{flag|Brazil}}
+|-
+| [[São Paulo]]<ref name="São Paulo twinnings">{{cite web|url=http://www3.prefeitura.sp.gov.br/cadlem/secretarias/negocios_juridicos/cadlem/integra.asp?alt=11072007L%20144710000|title = Pesquisa de Legislação Municipal - No 14471|accessdate=2013-08-23|work=Prefeitura da Cidade de São Paulo [Municipality of the City of São Paulo]|language=Portuguese|trans_title=Research Municipal Legislation - No 14471|archiveurl=https://web.archive.org/web/20111018123138/http://www3.prefeitura.sp.gov.br/cadlem/secretarias/negocios_juridicos/cadlem/integra.asp?alt=11072007L%20144710000|archivedate = 2011-10-18}}</ref><ref>[http://pt.wikisource.org/wiki/Lei_Municipal_de_S%C3%A3o_Paulo_14471_de_2007 Lei Municipal de São Paulo 14471 de 2007]  WikiSource {{pt icon}}</ref>
+| {{flag|São Paulo}}
+| {{flag|Brazil}}
+|-
+| [[Marrickville]]
+| {{flag|New South Wales}}
+| {{flag|Australia}}
+|-
+| [[Fremantle]]<ref>{{cite web|url=http://www.fremantle.wa.gov.au/City_of_Fremantle/Sister_cities_and_international_relations |title=Sister cities and international relations |work=City of Fremantle website |accessdate=22 May 2011|archiveurl=http://www.webcitation.org/6BQGiYgOy |archivedate=15 October 2012}}</ref>
+| {{flag|Western Australia}}
+| {{flag|Australia}}
+|}
+{{clear}}
+
+==Notable citizens==
+[[File:CR7.JPG|thumb|Museum in Funchal dedicated to [[Cristiano Ronaldo]], born in the city in 1985]]
+*[[José Vicente Barbosa|José Vicente Barbosa du Bocage]] (1823–1907), Portuguese [[zoologist]] and [[politician]];
+*[[Aires de Ornelas e Vasconcelos]] (18 September 1837 – 28 November 1880), [[Roman Catholic]] archbishop of [[Archbishopric of Goa|Goa]];
+*[[Lloyd Mathews|Lloyd William Mathews]], [[Order of St Michael and St George|KCMG]], [[Order of the Bath|CB]] (7 March 1850 – 11 October 1901), British [[naval officer]], [[politician]] and [[Abolitionism in the United Kingdom|abolitionist]];
+*[[Artur de Sousa Pinga]] (30 July 1909 – 12 July 1963), professional [[football (soccer)|footballer]] and later coach for [[FC Porto]];
+*[[Herberto Hélder]] (23 November 1930 - 23 March 2015), [[Portugal|Portuguese]] [[surrealism|surrealist]] and [[Avant-garde|experimental poet]];
+*[[Alberto João Jardim]] (born 4 February 1943), Portuguese politician and President of the Regional Government of Madeira since 1978;
+*[[Fátima Lopes]], [[Order of Infante D. Henrique|ComIH]] (born 8 March 1965), [[fashion designer]];
+*[[Pedro Macedo Camacho]] (born 4 September 1979), award-winning film and video game composer;
+*[[Cristiano Ronaldo]] (born 5 February 1985), professional footballer for [[Real Madrid C.F.|Real Madrid]] and captain of the [[Portugal national football team|Portugal national team]];
+*[[Vânia Fernandes]] (born 25 September 1985), singer and 2008 [[Eurovision Song Contest 2008|Eurovision Song Contest]] competitor;
+*[[Moisés Henriques|Moisés Constantino Henriques]] (born 1 February 1987), [[Australian]] professional cricketer who currently plays for the [[Speed Blitz Blues|New South Wales Blues]]
+
+==See also==
+{{Portal|Portugal}}
+* [[History of Madeira]]
+* [[Funchal Airport]]
+* [[Madeira wine]]
+
+==References==
+;Notes
+{{Reflist|colwidth=30em}}
+;Sources
+*{{Cite book | last = Fructuoso| first = Gaspar | title = Saudades da Terra|volume=2|origyear=1873 | language=Portuguese|publisher = Instituto Cultural de Ponta Delgada|location=Ponta Delgada, Azores| year = 1966}}
+
+==Further reading==
+*{{Citation |publisher = Sampson Low, Marston & Co. |publication-place = London |author = A. Samler Brown |url = http://openlibrary.org/books/OL17169465M/Brown's_Madeira_Canary_Islands_and_Azores |title = Brown's Madeira, Canary Islands and Azores |publication-date = 1903 |edition=7th |chapterurl=https://archive.org/stream/brownsmadeiraca00browgoog#page/n219/mode/2up |chapter=Funchal }}
+*{{Citation |publisher = Encyclopaedia Britannica |publication-place = New York |title = The Encyclopaedia Britannica |publication-date = 1910 |oclc = 14782424 |edition=11th |chapterurl = https://archive.org/stream/encyclopaediabrit11chisrich#page/300/mode/2up |chapter = Funchal }}
+*{{Citation |publisher = Karl Baedeker |publication-place = Leipzig |title = The Mediterranean: Seaports and Sea Routes, including Madeira, the Canary Islands, the Coast of Morocco, Algeria, and Tunisia |url = http://openlibrary.org/books/OL6536603M/The_Mediterranean |publication-date = 1911 |oclc = 490068 |chapterurl=https://archive.org/stream/mediterraneansea00karl#page/n71/mode/2up |chapter=Funchal }}
+
+==External links==
+*{{wikivoyage-inline|Funchal}}
+
+{{Municipalities of Madeira}}
+{{List of African capitals}}
+
+{{Authority control}}
+
+[[Category:Funchal|*]]
+[[Category:Cities in Portugal]]
+[[Category:1421 establishments]]
+[[Category:Populated places established in the 1420s]]
+[[Category:Municipalities of Madeira]]
+[[Category:Madeira Island]]
+[[Category:Capitals in Africa]]

@@ -1,0 +1,37 @@
+{{refimprove|date=June 2016}}
+'''Lamb v Camden LBC''' [http://www.bailii.org/cgi-bin/format.cgi?doc=/ew/cases/EWCA/Civ/1981/7.html&query=(lamb)+AND+(v)+AND+(camden)+AND+(lbc) [1981<nowiki>]</nowiki> EWCA Civ 7, [1981<nowiki>]</nowiki> QB 625] is a leading case in English [[tort]] law. It is a Court of Appeal decision on [[negligence]] and the test of [[reasonable foreseeability]] of damage, especially where the damage has been caused by third parties not the defendant him or herself.
+
+== Facts ==
+
+The plaintiff Mrs Lamb, who owned a house off Hamstead Heath in London, had let this property to a tenant and then travelled to America.  Whilst away, the defendant Camden London Borough Council carried out building works nearby which included the digging of a trench.  This caused a water main to burst, which in turn caused subsidence.  The house became uninhabitable and the tenant moved out.  Mrs Lamb returned from America for six weeks to prepare the house for repair work and one of the things she did was to put all of the furniture into storage.  She then returned to America.  However, the house was now invaded by squatters who caused some £30,000 worth of damage.  Having finally evicted the squatters and carried out the repair work, Mrs Lamb sued the Council, who admitted liability for nuisance.  There was thus no issue with the Council paying for the subsidence damage on its own (£50,000).  The point of law which arose was whether Mrs Lamb could recover from the Council the £30,000 due to the squatters' damage.
+
+== Official Referee ==
+
+Following Lord Reid's test in [[Dorset Yacht Co. Ltd. v. Home Office]] [1970] A.C. 1004, the official referee, Judge Edgar Fay, found that the squatters' damage was too remote and was not recoverable.  Although it may have been "reasonably foreseeable", it was not, in Judge Fay's view, "likely".
+
+== Court of Appeal ==
+
+Giving the lead judgment in the Court of Appeal, Lord Denning held that Lord Reid had been wrong on the grounds, firstly, that the "very likely" test would stretch the liability of defendants too far and that it was a householder's duty to insure their property, secondly, that this test ran counter to the case of [[Stansbie v. Troman]] [1948] 2 K.B. 48, where damage was unlikely but reasonably foreseeable (and therefore recoverable), and thirdly, that this test ran counter to the [[Wagon Mound (disambiguation)|Wagon Mound]] cases [1961] A.C. 388; [1967] 1 A.C. 617 by which a tortfeasor was liable for all damage that was reasonably foreseeable however unlikely.
+
+Lord Denning went on to hold that, while [[duty of care]], [[causation (law)|causation]] and foreseeability were all useful devices for limiting liability, ultimately it was a question of policy for the judges to decide.  He cited cases on [[economic loss]] and [[nervous shock]] as illustrations of this policy-based approach.
+
+He concluded his judgment by repeating his view that it was Mrs Lamb whose duty it was to protect herself from the squatters' damage via insurance.
+
+Oliver LJ and Watkins LJ delivered concurring judgments.
+
+== Comment ==
+
+Markesinis and Deakin note that a key difference between this case (where the plaintiff did not recover) and [[Dorset Yacht Co. Ltd. v. Home Office]] [1970] A.C. 1004 (where the plaintiff did recover) was the relationship between the defendant and the third party which ?may be as important as the nature of the intervening act?.<ref>SF Deakin, A Johnston, B Markesinis, ''Markesinis and Deakin's Tort Law'' (7th edn Oxford University Press, 2013) 243</ref>  While the Home Office had been in control of the borstal boys in the ''Dorset'' case, Camden Borough Council had had no control whatsoever over the squatters.<ref>Ibid.</ref>
+
+== Ratio decidendi ==
+
+A defendant is only liable for the act of a third party where the third party intervention is a foreseeable consequence of the original negligence, but policy considerations and the relationship between the defendant and the third party may be taken into account.
+
+=== References ===
+{{Reflist}}
+
+SF Deakin, A Johnston, B Markesinis, ''Markesinis and Deakin's Tort Law'' (7th edn Oxford University Press, 2013)
+
+
+
+[[Category:English tort case law]]
