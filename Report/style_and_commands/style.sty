@@ -270,9 +270,13 @@
     abbreviate=true,
     url=true,
   ]{biblatex}
-  \addbibresource{references/references.bib}
-  \setcounter{biburlnumpenalty}{7000} % Enable breaking URLS in bibliography after numbers
 
+  % Fix for some LaTeX editors inability to parse new \addbibresource
+  \makeatletter
+  \@ifpackageloaded{biblatex}{\addbibresource{references/references.bib}}{\bibliography{references/references}}
+  \makeatother
+
+  \setcounter{biburlnumpenalty}{7000} % Enable breaking URLS in bibliography after numbers
   \DeclareNameAlias{sortname}{last-first}
   \DeclareNameAlias{default}{last-first}
 
