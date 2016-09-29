@@ -137,3 +137,15 @@
   \raisebox{.1\height}{$#1+$}\cr
   \smash{\raisebox{-.6\height}{$#1-$}}\cr}}
 \makeatother
+
+% Nice shaded box for formal text.
+
+\newmdenv[
+  nobreak=true,
+  topline=false,
+  rightline=false,
+  bottomline=false,
+  linewidth=2pt,
+  linecolor=clframe,
+  backgroundcolor=clshade]{formal}
+  
