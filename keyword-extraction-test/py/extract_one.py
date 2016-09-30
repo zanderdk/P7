@@ -43,7 +43,7 @@ keyphrases = [k[0] for k in keywords if k[1] >= 4] # more than 4 rake points
 
 ##### /rake
 
- # todo get link text
+# todo get link text
 score = getscore(keyphrases, title, links, content, first_paragraph)
 
 # print scores
