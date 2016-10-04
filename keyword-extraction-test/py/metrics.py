@@ -10,14 +10,14 @@ def getscore(keyphrases, title, links, content, first_paragraph):
   # todo: proper scoring
   def _weights(key):
     key = key.lower()
-    res = 0
+    res = 1
     
     if key in stop_words: return (key, 0)
 
     # assign weights
-    res += (content.count(key) / len(content)) * 10000
-    if any(key in link for link in links): res *= 3 # partial link
-    #if key in links: res *= 1.5 # full link
+    #res += (content.count(key) / len(content)) * 10000
+    #if any(key in link for link in links): res *= 3 # partial link
+    if key in links: res *= 3 # full link
     if key in first_paragraph: res *= 1.5
     if key in title: res += 2
     

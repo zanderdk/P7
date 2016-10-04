@@ -4,8 +4,6 @@ from os.path import isfile, join
 from functools import reduce
 from metrics import getscore 
 
-titles = ['New York', '7 World Trade Center']
-
 scores = []
 
 path = 'articles'
@@ -22,11 +20,6 @@ for title in onlyfiles:
   with open('keywords/' + title, 'r', encoding='utf8') as f:
     keyphrases = f.read().split('\n')
 
-  # remove some sections, todo: unsafe
-  content = content[:content.find('== Notes ==')]
-  content = content[:content.find('== References ==')]
-  content = content[:content.find('== External links ==')]
-
   first_paragraph = content[:content.find('==')]
 
   # todo get link text
@@ -35,15 +28,14 @@ for title in onlyfiles:
   # print scores
   #print(title, '\n')
 
-  #for x in score:
-    #print(round(x[1], 2), '\t', x[0])
-
   total = reduce((lambda acc, x: acc + x[1]), score, 0)
 
   scores.append(total)
   #print()
   print(title, round(total, 2))
   #print('average:', round(total / len(keyphrases), 2))
+  for x in score:
+    print('   ', round(x[1], 2), '\t', x[0])
 
 
 totaltotal = reduce((lambda acc, x: acc + x), scores, 0)

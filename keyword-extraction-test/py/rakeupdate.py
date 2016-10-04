@@ -23,7 +23,9 @@ for title in onlyfiles:
   #for x in keywords:
   #  print(round(x[1], 2), '\t', x[0])
 
-  keyphrases = [k[0] for k in keywords if k[1] >= 4] # more than 4 rake points
+  #keyphrases = [k[0] for k in keywords if k[1] >= 4] # more than 4 rake points
+  keyphrases = [k[0] for k in keywords] 
+  keyphrases = keyphrases[:16] # 16 best
 
   with open('keywords/' + title, 'w', encoding='utf8') as f:
     f.write("\n".join(keyphrases))
