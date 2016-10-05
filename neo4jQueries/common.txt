@@ -6,6 +6,6 @@ common parent:
 MATCH (parent:Page)-[c1:clickStream]->(p1:Page),(parent)-[c2:clickStream]->(p2:Page) USING INDEX p1:Page(title) USING INDEX p2:Page(title) WHERE p1.title = "Amazons" AND p2.title = "Actium" RETURN count(parent)
 
 shortest path:
-MATCH p=ShortestPath((a:Page {title:"Arabs"})-[:clickStream*0..5]-(b:Page {title:"French_language"}))
+MATCH p=ShortestPath((a:Page {title:"Arabs"})-[:clickStream*0..5]->(b:Page {title:"French_language"}))
 UNWIND extract (x in nodes(p) | x.title) as x
 RETURN count(x)-1
