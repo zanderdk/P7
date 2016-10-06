@@ -52,7 +52,45 @@ As can be seen, there is much data available.
 \section{Tools, Frameworks, Libraries, Stuff}\label{sec:selecting_tools}
 \todo{Selecting vital tools and stuff that is used overall in the project? Alternatively split into own chapter, or parts of this into own chapter}
 
-\subsection{Databases}
+\section{Databases}
 \todo{Database stuff: MongoDB, Neo4j...}
 
+To efficiently process data from Wikipedia a database is needed. The type of database depends on what and how the data is accessed.
+
+\subsection{Relational databases}
+Relational databases uses tables to store rows of data. They are suitable for organizing and categorizing information, but when focusing on relationships between data they are less performant and flexible requiring advanced join operations
+
+Query language: SQL (variants)
+
+\subsection{Document Oriented Databases}
+Wikipedia articles can be represented as documents which can be looked up quickly using a document-oriented database. 
+
+\subsubsection{MongoDB}
+MongoDB is a scalable (auto-balancing) document-oriented database. It is schema-less and thus suitable for working with a more flexible schema.
+It provides fast queries using generic secondary indexes making it suitable quick full-text searches. It also provides a aggregation framework to make grouping operations, as well MapReduce.
+Data size is usually higher because it stores field names for each document. No support for transactions, ACID, and less flexible queries. 
+
+Query language: JSON-like structures.
+
+\subsection{Graph Databases}
+Graph databases are suitable for storing data with focus on relationships. Querying for relationships between nodes and deep traversals can be made faster than with relational databases.
+Graph databases could be useful for storing Wikipedia link-graphs, both for interlinking between articles as well as representing the clickstream. Additionally term similarity could be represented as a graph.
+
+\subsubsection{Neo4j}
+Neo4j is a ACID-compliant transactional graph database with focus on data relationships. It is scalable and supports graph storage and processing. Everything is stored as a node, an edge or an attribute. The nodes and edges can be labelled to narrow searches.
+
+Query language: Cypher.
+
+\subsubsection{Titan}
+Query language: Gremlin.
+
+\subsection{RDF Triple Store}
+% cite: wikipedia
+% Resource Description Framework (RDF)
+A triple store or RDF store is a purpose-built database for the storage and retrieval of triples through semantic queries. RDF is used as a conceptual description or modeling of information that is implemented in web resources. RDF triple stores are similar to graph databases in that they both focus on linked data, however RDF triple stores also focuses on semantics and provide inferences on data.
+% (e.g., if humans are a subclass of mammals and man is a subclass of humans, then it can be inferred that man is a subclass of mammals)
+
+DBpedia uses an RDF store and also provides a SPARQL endpoint for querying data.
+
+Query language: SPARQL.
 
