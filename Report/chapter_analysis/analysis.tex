@@ -1,22 +1,26 @@
 \chapter{Initial Analysis}\label{chap:analysis}
-\dummy . \dummy .
+Before beginning the work we need a preliminary understanding of the problem domain. This requires information acquisition related to Wikipedia and its data, as well as analyzing the needs for storage.
 
 \begin{chapterorganization}
+  \item In \sectionref{sec:about_wikipedia} we briefly introduce Wikipedia;
   \item In \sectionref{sec:related_work} we look at existing solutions to similar problems;
-  \item In \sectionref{sec:selecting_tools} we select some tools needed in the project based on an analysis;
-  
+  \item In \sectionref{sec:data} we categorize the data available on and about Wikipedia. This gives a better understanding of the domain we are dealing with;
+  \item In \sectionref{sec:datasources} we list the available sources, where it is possible to obtain the data;
   \item In Section...
+  \item In \sectionref{sec:selecting_tools} we compare tools needed in the project based on our needs for storing data.
 \end{chapterorganization}
 
+\section{Wikipedia}\label{sec:about_wikipedia}
+Wikipedia is a multilingual, web-based, free-content encyclopedia project \cite{wiki-about}. It mainly consists of articles which are written collaboratively by volunteers. 
 
 \section{Related Work}\label{sec:related_work}
 \dummy
 
-\section{Data}
+\section{Data}\label{sec:data}
 In order to detect missing links, we need some kind of data to base the detection on. There are many possible data sources of different kinds, and we will briefly introduce them here.
 
 \subsection{Article Metadata}
-This category of data is directly related to articles and their content. They either parts of the article itself, or some metadata describing it. For a given article this could for example be:
+This category of data that can be extracted directly from the content of the articles and the metadata accompanying them. They either parts of the article itself or some metadata describing it.
 \begin{description}
   \item[Article Text] The full text of an article provides a large amount of information. Based on this, other possibly useful data can be extracted with the help of natural language processing.
   \item[Article Categories] The category of an article can provide a clustering of articles based on similar topics.
@@ -31,7 +35,7 @@ Data from the usage of Wikipedia may also contain important information.
   \item[User Trails] The trail of links a user follows provides information about popular links and which links are not used. Also, this can generate a graph of how articles are linked to each other --- this graph is sparser than generating it from ingoing and outgoing links of an article.
 \end{description}
 
-\section{Data Sources}
+\section{Data Sources}\label{sec:datasources}
 Wikipedia requests that no crawler is used to index the website \todo{insert source}. Therefore, we need to consider alternative ways of acquiring the data. We have found the following data sources:
 \begin{description}
   \item[Wikipedia Database Dump]
@@ -40,8 +44,10 @@ Wikipedia requests that no crawler is used to index the website \todo{insert sou
   \item[Wikipedia Clickstream] The \emph{Wikipedia Clickstream} is a pre-parsed dataset based on the Wikipedia Server Logs. It shows how people get to a Wikipedia article and which links they click on \cite{wiki-clickstream}.
 \end{description}
 
-\section{}
+\section{Using the Data}
 \todo{Vi har alt det her data. Der skal udvælges noget. Meget forskellig data. Kombinere det -> Maskinintelligens?}
+
+As can be seen, there is much data available. 
 
 \section{Tools, Frameworks, Libraries, Stuff}\label{sec:selecting_tools}
 \todo{Selecting vital tools and stuff that is used overall in the project? Alternatively split into own chapter, or parts of this into own chapter}
