@@ -15,6 +15,9 @@
  * limitations under the License.
  */
 
+// TODO: test with extra markup annotations
+//       entities (e.g. &nbsp;) inserts additional space
+
 package dk.aau.cs.wikitext;
 
 import java.util.LinkedList;
@@ -148,9 +151,9 @@ public class TextConverter
     public void visit(WtNode n)
     {
         // Fallback for all nodes that are not explicitly handled below
-        write("<");
-        write(n.getNodeName());
-        write(" />");
+        //write("<");
+        //write(n.getNodeName());
+        //write(" />");
     }
 
     public void visit(WtNodeList n)
@@ -191,16 +194,16 @@ public class TextConverter
 
     public void visit(WtBold b)
     {
-        write("**");
+        //write("**");
         iterate(b);
-        write("**");
+        //write("**");
     }
 
     public void visit(WtItalics i)
     {
-        write("//");
+        //write("//");
         iterate(i);
-        write("//");
+        //write("//");
     }
 
     public void visit(WtXmlCharRef cr)
@@ -235,9 +238,9 @@ public class TextConverter
 
     public void visit(WtExternalLink link)
     {
-        write('[');
-        write(extLinkNum++);
-        write(']');
+        //write('[');
+        //write(extLinkNum++);
+        //write(']');
     }
 
     public void visit(WtInternalLink link)
@@ -307,7 +310,7 @@ public class TextConverter
 
         newline(2);
         write(title);
-        newline(1);
+        //newline(1);
         //write(StringUtils.strrep('-', title.length()));
         newline(2);
 
@@ -328,8 +331,8 @@ public class TextConverter
 
     public void visit(WtHorizontalRule hr)
     {
-        newline(1);
-        write(StringUtils.strrep('-', wrapCol));
+        //newline(1);
+        //write(StringUtils.strrep('-', wrapCol));
         newline(2);
     }
 
