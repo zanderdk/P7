@@ -276,7 +276,9 @@
   \@ifpackageloaded{biblatex}{\addbibresource{references/references.bib}}{\bibliography{references/references}}
   \makeatother
 
-  \setcounter{biburlnumpenalty}{7000} % Enable breaking URLS in bibliography after numbers
+  \setcounter{biburlnumpenalty}{300} % Enable breaking URLs in bibliography after numbers
+  \setcounter{biburlucpenalty}{300} % Enable breaking URLs in bibliography after uppercase letters
+  \setcounter{biburllcpenalty}{300} % Enable breaking URLs in bibliography after lowercase letters
   \DeclareNameAlias{sortname}{last-first}
   \DeclareNameAlias{default}{last-first}
 
