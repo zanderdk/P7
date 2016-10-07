@@ -3,11 +3,30 @@ import sys
 dictionary = {}
 
 for line in sys.stdin:
-    currentLine = line.split()
-    if 'en' in currentLine[0]:
-        if currentLine[1] in dictionary:
-            dictionary[currentLine[1]] += int(currentLine[2])
-        else:
-            dictionary[currentLine[1]] = int(currentLine[2])
+    try:
+        cols = line.split()
+        if 'en' == cols[0] and len(cols) == 4:
+            if cols[1] in dictionary:
+                dictionary[cols[1]] += int(cols[2])
+            else:
+                dictionary[cols[1]] = int(cols[2])
+    except Exception:
+        continue
 
-print(json.dumps(dictionary, ensure_ascii=False))
+i = 1
+with open("2016_02_en_clickstream.tsv", "rt") as clickStream:
+    for x in clickStream:
+        if i > 1:
+            cols = x.split()
+            source = cols[0]
+            linkType = cols[2]
+            if source not in dictionary or "link" not in linkType:
+                continue
+            target = cols[1]
+            amount = cols[3]
+            Ns = dictionary[source]
+            pst = float(amount)/Ns
+            sys.stdout.write(source + "\t" + target + "\t" + str(amount) + "\t" + str(pst))
+            print()
+        i += 1
+
