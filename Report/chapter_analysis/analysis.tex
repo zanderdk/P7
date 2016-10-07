@@ -55,21 +55,19 @@ As can be seen, there is much data available.
 \todo{Selecting vital tools and stuff that is used overall in the project? Alternatively split into own chapter, or parts of this into own chapter}
 
 \section{Databases}
-\todo{Database stuff: MongoDB, Neo4j...}
-
-To efficiently process data from Wikipedia a database is needed. The type of database depends on what and how the data is accessed.
+To efficiently process data from Wikipedia a proper data structure is needed. Therefore, we investigate the different database options we have as it depends on what and how the data is accessed.
 
 \subsection{Relational databases}
-Relational databases uses tables to store rows of data. They are suitable for organizing and categorizing information, but when focusing on relationships between data they are less performant and flexible requiring advanced join operations
+Relational databases use tables to store rows of data. They are suitable for organizing and categorizing information, but when focusing on relationships between data they exhibit poorer performance and are less flexible because they require advanced join operations.
 
 Query language: SQL (variants)
 
 \subsection{Document Oriented Databases}
-Wikipedia articles can be represented as documents which can be looked up quickly using a document-oriented database. 
+Wikipedia articles can be represented as documents which can be looked up quickly using a document-oriented database. We have, through the course Data Intensive Systems, knowledge about one such database, namely MongoDB\@.
 
 \subsubsection{MongoDB}
 MongoDB is a scalable (auto-balancing) document-oriented database. It is schema-less and thus suitable for working with a more flexible schema.
-It provides fast queries using generic secondary indexes making it suitable quick full-text searches. It also provides a aggregation framework to make grouping operations, as well MapReduce.
+It provides fast queries using generic secondary indexes making it suitable for quick full-text searches. It also provides an aggregation framework to make grouping operations, as well as MapReduce.
 Data size is usually higher because it stores field names for each document. No support for transactions, ACID, and less flexible queries. 
 
 Query language: JSON-like structures.
@@ -79,7 +77,7 @@ Graph databases are suitable for storing data with focus on relationships. Query
 Graph databases could be useful for storing Wikipedia link-graphs, both for interlinking between articles as well as representing the clickstream. Additionally term similarity could be represented as a graph.
 
 \subsubsection{Neo4j}
-Neo4j is a ACID-compliant transactional graph database with focus on data relationships. It is scalable and supports graph storage and processing. Everything is stored as a node, an edge or an attribute. The nodes and edges can be labelled to narrow searches.
+Neo4j is a ACID-compliant transactional graph database with focus on data relationships. It is scalable and supports graph storage and processing. Everything is stored as a node, an edge, or an attribute. The nodes and edges can be labeled to narrow searches.
 
 Query language: Cypher.
 
