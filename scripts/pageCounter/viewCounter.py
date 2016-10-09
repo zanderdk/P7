@@ -1,5 +1,29 @@
 import sys
 
+from neo4j.v1 import GraphDatabase, basic_auth
+
+driver = GraphDatabase.driver("bolt://localhost", auth=basic_auth("neo4j", "12345"))
+
+session = driver.session()
+counter = 1
+
+def setViewCount(title, viewCount):
+    global session
+    global counter
+    query = """
+            MATCH (a:Page) 
+            WHERE a.title = {title}
+            SET a.viewCount = {count}
+            RETURN a.viewCount
+            """
+    session.run(query, {'title':title, 'count':viewCount })
+    if counter % 10000 == 0:
+        session.close()
+        session = driver.session()
+        print("flushed at " + str(counter))
+    counter += 1
+
+
 dictionary = {}
 
 for line in sys.stdin:
@@ -13,20 +37,6 @@ for line in sys.stdin:
     except Exception:
         continue
 
-i = 1
-with open("2016_02_en_clickstream.tsv", "rt") as clickStream:
-    for x in clickStream:
-        if i > 1:
-            cols = x.split()
-            source = cols[0]
-            linkType = cols[2]
-            if source not in dictionary or "link" not in linkType:
-                continue
-            target = cols[1]
-            amount = cols[3]
-            Ns = dictionary[source]
-            pst = float(amount)/Ns
-            sys.stdout.write(source + "\t" + target + "\t" + str(amount) + "\t" + str(pst))
-            print()
-        i += 1
 
+for x,y in dictionary.items():
+   setViewCount(x,y)
