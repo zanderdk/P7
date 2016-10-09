@@ -8,11 +8,33 @@ from neo4j.v1 import GraphDatabase, basic_auth
 driver = GraphDatabase.driver("bolt://localhost", auth=basic_auth("neo4j", "12345"))
 
 session = driver.session()
+counter = 1
 
-query = """
-        match (a:Page),(b:Page) where a.redirect = b.title AND a.redirect <> "None" create (a)-[r:redirect]->(b) RETURN count(r)
-        """
+def createEdge(page):
+    global session
+    global counter
+    if counter % 10000 == 0:
+        session.close()
+        session = driver.session()
+        print("flushed at " + str(counter))
+    counter += 1
 
-session.run(query)
+prefix = "{http://www.mediawiki.org/xml/export-0.10/}"
 
-session.close()
+for event, elem in etree.iterparse(sys.stdin):
+    if(event == "end"):
+        tag = elem.tag.replace(prefix, "")
+        if(tag == "page"):
+            root = elem
+            title = root.find("./" + prefix + "title").text.replace(" ", "_")
+
+            redirect = root.find("./" + prefix + "redirect") 
+            if redirect is not None:
+                redirect = redirect.get("title")
+            
+            if(redirect is not None):
+                obj = {'title': title, 'redirect': redirect}
+                createEdge(obj)
+            elem.clear()
+        elif tag == "record":
+            break
