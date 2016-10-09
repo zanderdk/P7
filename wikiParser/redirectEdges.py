@@ -10,9 +10,18 @@ driver = GraphDatabase.driver("bolt://localhost", auth=basic_auth("neo4j", "1234
 session = driver.session()
 counter = 1
 
-def createEdge(page):
+def createEdge(edge):
     global session
     global counter
+    query = """
+            MATCH (a:Page)
+            WHERE a.title = {title}
+            WITH a
+            MATCH (b:Page)
+            WHERE b.title = {redirectTo}
+            CREATE (a)-[:redirect]->(b)
+            """
+    session.run(query, {'title':edge['title'], 'redirectTo':edge['redirect'] })
     if counter % 10000 == 0:
         session.close()
         session = driver.session()
