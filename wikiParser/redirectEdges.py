@@ -42,7 +42,7 @@ for event, elem in etree.iterparse(sys.stdin):
             redirect = root.find("./" + prefix + "redirect") 
             if redirect is not None:
                 redirect = redirect.get("title")
-            elif:
+            else:
                 continue
             
             title = root.find("./" + prefix + "title").text.replace(" ", "_")
