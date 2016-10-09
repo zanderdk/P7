@@ -22,7 +22,7 @@ def createEdge(edge):
             CREATE (a)-[:redirect]->(b)
             """
     session.run(query, {'title':edge['title'], 'redirectTo':edge['redirect'] })
-    if counter % 100000 == 0:
+    if counter % 10000 == 0:
         session.close()
         session = driver.session()
         print("flushed at " + str(counter))
@@ -43,6 +43,7 @@ for event, elem in etree.iterparse(sys.stdin):
             if redirect is not None:
                 redirect = redirect.get("title")
             else:
+                elem.clear()
                 continue
             
             title = root.find("./" + prefix + "title").text.replace(" ", "_")
