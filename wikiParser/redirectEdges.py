@@ -29,11 +29,13 @@ def createEdge(edge):
     counter += 1
 
 prefix = "{http://www.mediawiki.org/xml/export-0.10/}"
-
+i = 1;
 for event, elem in etree.iterparse(sys.stdin):
     if(event == "end"):
         tag = elem.tag.replace(prefix, "")
         if(tag == "page"):
+            if i % 10000 == 0:
+                print(str(i))
             root = elem
             title = root.find("./" + prefix + "title").text.replace(" ", "_")
 
@@ -45,5 +47,6 @@ for event, elem in etree.iterparse(sys.stdin):
                 obj = {'title': title, 'redirect': redirect}
                 createEdge(obj)
             elem.clear()
+            i += 1
         elif tag == "record":
             break
