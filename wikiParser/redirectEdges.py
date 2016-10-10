@@ -29,7 +29,7 @@ def createEdge(edge):
     counter += 1
 
 prefix = "{http://www.mediawiki.org/xml/export-0.10/}"
-i = 1;
+i = 1
 for event, elem in etree.iterparse(sys.stdin):
     if(event == "end"):
         tag = elem.tag.replace(prefix, "")
@@ -41,11 +41,7 @@ for event, elem in etree.iterparse(sys.stdin):
 
             redirect = root.find("./" + prefix + "redirect") 
             if redirect is not None:
-                redirect = redirect.get("title")
-                redirect = redirect.replace(" ", "_")
-                if '_' not in redirect:
-                    elem.clear()
-                    continue
+                redirect = redirect.get("title").replace(" ", "_")
             else:
                 elem.clear()
                 continue
