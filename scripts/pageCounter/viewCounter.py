@@ -12,10 +12,7 @@ def setViewCount(title, viewCount):
     global counter
     query = """
             MATCH (a:Page {title: {title} }) 
-            WITH sum(a.viewCount) as cur 
-            MATCH (a:Page {title: {title} }) 
-            SET a.viewCount = cur + {count}
-            RETURN a.viewCount
+            SET a.viewCount = {count}
             """
     session.run(query, {'title':title, 'count':viewCount })
     if counter % 10000 == 0:
@@ -28,10 +25,9 @@ def setViewCount(title, viewCount):
 for line in sys.stdin:
     try:
         cols = line.split()
-        if 'en' == cols[0] and len(cols) == 4:
-            title = cols[1]
-            amount = int(cols[2])
-            setViewCount(title, amount)
+        title = cols[0]
+        amount = cols[1]
+        setViewCount(title, amount)
     except Exception:
         continue
 
