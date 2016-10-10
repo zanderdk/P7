@@ -18,3 +18,4 @@ def deleteEdges():
 
 for x in range(0, 5):
     deleteEdges()
+    print(x)
