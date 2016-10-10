@@ -42,6 +42,10 @@ for event, elem in etree.iterparse(sys.stdin):
             redirect = root.find("./" + prefix + "redirect") 
             if redirect is not None:
                 redirect = redirect.get("title")
+                redirect = redirect.replace(" ", "_")
+                if '_' not in redirect:
+                    elem.clear()
+                    continue
             else:
                 elem.clear()
                 continue
