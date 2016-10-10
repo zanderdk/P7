@@ -11,6 +11,7 @@ def deleteEdges():
     global session
     session = driver.session()
     query = """
+            match (n:Page)-[r:redirect]->() with r limit 100000 DELETE r
             """
     session.run(query)
     session.close()
