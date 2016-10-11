@@ -11,13 +11,13 @@ all = soup.find("div", id ="mw-content-text")
 all = all.find_all("tr")[2]
 all = all.find("td")
 all = all.find_all("a")
-all = [x["title"] for x in all[:-3]]
+all = [x["title"].replace(" ", "_") for x in all[:-3]]
 
 
 # add to db
-#driver = GraphDatabase.driver("bolt://localhost", auth=basic_auth("neo4j", "12345"))
+driver = GraphDatabase.driver("bolt://localhost", auth=basic_auth("neo4j", "12345"))
 
-#session = driver.session()
+session = driver.session()
 counter = 1
 
 def setFeatureFlag(title):
@@ -35,8 +35,7 @@ def setFeatureFlag(title):
     counter += 1
 
 for title in all:
-  print(title.replace(" ", "_"))
-  #setFeatureFlag(title)
+  setFeatureFlag(title)
 print(len(all))
 
-#session.close()
+session.close()
