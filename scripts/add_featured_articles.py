@@ -20,6 +20,17 @@ driver = GraphDatabase.driver("bolt://localhost", auth=basic_auth("neo4j", "1234
 session = driver.session()
 counter = 1
 
+def checkMissingFeatures(titlelist):
+    global session
+    global counter
+    query """
+          MATCH (a:Page {featured: true}) return a.title
+          """
+    result = session.run(query)
+
+    print(list(set(titlelist)-set(result)))
+
+
 def setFeatureFlag(title):
     global session
     global counter
@@ -35,7 +46,8 @@ def setFeatureFlag(title):
     counter += 1
 
 for title in all:
-  setFeatureFlag(title)
+  #setFeatureFlag(title)
 print(len(all))
+checkMissingFeatures(all)
 
 session.close()
