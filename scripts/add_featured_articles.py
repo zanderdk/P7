@@ -6,18 +6,18 @@ from neo4j.v1 import GraphDatabase, basic_auth
 r = requests.get('https://en.wikipedia.org/wiki/Wikipedia:Featured_articles')
 html = r.text
 
-def is_featured_article(tag):
-    return tag.name == "span" and tag.has_attr("class") and "featured_article_metadata" in tag["class"]
-
 soup = BeautifulSoup(html, "html.parser")
-all = soup.find_all(is_featured_article)
-all = [x.a["title"] for x in all]
+all = soup.find("div", id ="mw-content-text")
+all = all.find_all("tr")[2]
+all = all.find("td")
+all = all.find_all("a")
+all = [x["title"] for x in all[:-3]]
 
 
 # add to db
-driver = GraphDatabase.driver("bolt://localhost", auth=basic_auth("neo4j", "12345"))
+#driver = GraphDatabase.driver("bolt://localhost", auth=basic_auth("neo4j", "12345"))
 
-session = driver.session()
+#session = driver.session()
 counter = 1
 
 def setFeatureFlag(title):
@@ -35,7 +35,8 @@ def setFeatureFlag(title):
     counter += 1
 
 for title in all:
-  print(title)
+  print(title.replace(" ", "_"))
   #setFeatureFlag(title)
+print(len(all))
 
-session.close()
+#session.close()
