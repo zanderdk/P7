@@ -82,9 +82,8 @@ public class WeightedShortestPath
     @Context
     public Log log;
 
-    @Procedure("weightedShortestPath")
-    @PerformsWrites
-    public Stream<SearchHit> shortestPath(
+
+    public Dijkstra<Weight> getDijkstra(
             @Name("fromStr") String fromStr,
             @Name("toStr") String toStr,
             @Name("number") Long max)
@@ -98,26 +97,38 @@ public class WeightedShortestPath
         Dijkstra<Weight> d = new Dijkstra(new Weight(0.0, true), from, to, new CostEval(), new CostAccum(), com, Direction.OUTGOING, redirectType, clickStreamType);
         d.limitMaxNodesToTraverse(max);
 
-        System.out.println("så langt så godt");
-
-        try {
-            Weight cost = d.getCost();
+        return d;
+    }
 
 
+    @Procedure("weightedShortestPath")
+    @PerformsWrites
+    public Stream<Node> weightedShortestPath(
+            @Name("fromStr") String fromStr,
+            @Name("toStr") String toStr,
+            @Name("number") Long max)
+    {
+
+        Dijkstra<Weight> d = getDijkstra(fromStr, toStr, max);
+
+        return d.getPathAsNodes().stream();
+
+    }
+
+    @Procedure("weightedShortestPathCost")
+    @PerformsWrites
+    public Stream<SearchHit> weightedShortestPathCost(
+            @Name("fromStr") String fromStr,
+            @Name("toStr") String toStr,
+            @Name("number") Long max)
+    {
+        Dijkstra<Weight> d = getDijkstra(fromStr, toStr, max);
+
+        Weight cost = d.getCost();
         if (cost == null) return Stream.of(new SearchHit(null));
         SearchHit res = cost.valid? new SearchHit(Math.pow(10, -1.0 *cost.pst)) : new SearchHit(null);
 
         return Stream.of(res);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            System.out.println(e.getCause().getMessage());
-            System.out.println();
-            for (StackTraceElement x : e.getStackTrace()) {
-                System.out.println(x.getClassName() + ":   " + x.getLineNumber());
-            }
-            throw e;
-        }
-
     }
 
 
@@ -130,6 +141,5 @@ public class WeightedShortestPath
             this.Cost = cost;
         }
     }
-
 
 }
