@@ -171,8 +171,10 @@ public class WeightedShortestPath
 
         Comparator<Weight> com = new WeightComparator();
 
+        Weight maxW = new Weight(6.0, true);
+
         Dijkstra<Weight> d = new Dijkstra(new Weight(0.0, true), from, to, new CostEval(), new CostAccum(), com, Direction.OUTGOING, redirectType, clickStreamType);
-        d.limitMaxNodesToTraverse(max);
+        d.limitMaxCostToTraverse(maxW);
 
         return d;
     }
@@ -205,7 +207,7 @@ public class WeightedShortestPath
 
         Weight cost = d.getCost();
         if (cost == null) return Stream.of(new SearchHit(null));
-        SearchHit res = cost.valid? new SearchHit(Math.pow(10, -1.0 *cost.pst)) : new SearchHit(null);
+        SearchHit res = cost.valid? new SearchHit(cost.pst/max) : new SearchHit(null);
 
         return Stream.of(res);
     }
