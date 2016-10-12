@@ -11,6 +11,7 @@ import org.neo4j.procedure.PerformsWrites;
 import org.neo4j.procedure.Procedure;
 
 import java.util.Comparator;
+import java.util.List;
 import java.util.Objects;
 import java.util.stream.Stream;
 
@@ -103,7 +104,7 @@ public class WeightedShortestPath
 
     @Procedure("weightedShortestPath")
     @PerformsWrites
-    public Stream<Node> weightedShortestPath(
+    public List<Node> weightedShortestPath(
             @Name("fromStr") String fromStr,
             @Name("toStr") String toStr,
             @Name("number") Long max)
@@ -111,7 +112,7 @@ public class WeightedShortestPath
 
         Dijkstra<Weight> d = getDijkstra(fromStr, toStr, max);
 
-        return d.getPathAsNodes().stream();
+        return d.getPathAsNodes();
 
     }
 
