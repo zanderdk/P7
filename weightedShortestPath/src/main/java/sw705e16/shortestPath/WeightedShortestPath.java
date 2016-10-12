@@ -21,6 +21,14 @@ public class WeightedShortestPath
     public static RelationshipType redirectType = RelationshipType.withName("redirect");
     public static RelationshipType clickStreamType = RelationshipType.withName("clickStream");
 
+    public class Output {
+        public aPath path;
+
+        public Output(aPath p) {
+            path = p;
+        }
+    }
+
     public class aPath implements Path {
 
         private List<Node> _nodes;
@@ -172,7 +180,7 @@ public class WeightedShortestPath
 
     @Procedure("weightedShortestPath")
     @PerformsWrites
-    public aPath weightedShortestPath(
+    public Stream<Output> weightedShortestPath(
             @Name("fromStr") String fromStr,
             @Name("toStr") String toStr,
             @Name("number") Long max)
@@ -181,7 +189,8 @@ public class WeightedShortestPath
         Dijkstra<Weight> d = getDijkstra(fromStr, toStr, max);
 
 
-        return new aPath(d);
+        Output res = new Output(new aPath(d));
+        return Stream.of(res);
 
     }
 
