@@ -26,12 +26,15 @@ public class KeywordExtractorTest {
 
             StatementResult result = session.run("CALL keywords('Water')");
 
+
             List<String> expected = Arrays.asList(
                     "standard ambient temperature", "colorless chemical substance", "water strictly refers",
                     "chemical formula", "earth's streams", "living organisms", "liquid state", "hydrogen atoms",
                     "main constituent", "atmospheric humidity");
 
-            assertThat(result.single().get("keywords").asList(), is(expected));
+            // System.out.println(result.list(x -> x.get("keyword")));
+
+            assertThat(result.list(x -> x.get("keyword").asString()), is(expected));
         }
     }
 

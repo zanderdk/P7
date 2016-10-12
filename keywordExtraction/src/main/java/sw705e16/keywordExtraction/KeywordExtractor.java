@@ -49,14 +49,16 @@ public class KeywordExtractor {
 
         List<String> keywords = RakeExtractor.INSTANCE.extract(plainText);
 
-        return Stream.of(new SearchHit(keywords));
+        return keywords.stream().map(x -> new SearchHit(x));
+       // return Stream.of(new SearchHit(keywords));
     }
 
     public static class SearchHit {
-        public List<String> keywords;
-
-        public SearchHit(List<String> keywords) {
-            this.keywords = keywords;
+       // public List<String> keywords;
+        public String keyword;
+        public SearchHit(String keyword) {
+           // this.keywords = keywords;
+            this.keyword = keyword;
         }
     }
 
