@@ -171,7 +171,7 @@ public class WeightedShortestPath
 
         Comparator<Weight> com = new WeightComparator();
 
-        Weight maxW = new Weight(6.0, true);
+        Weight maxW = new Weight(max, true);
 
         Dijkstra<Weight> d = new Dijkstra(new Weight(0.0, true), from, to, new CostEval(), new CostAccum(), com, Direction.OUTGOING, redirectType, clickStreamType);
         d.limitMaxCostToTraverse(maxW);
