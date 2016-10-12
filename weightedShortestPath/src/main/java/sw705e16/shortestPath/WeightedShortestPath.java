@@ -104,7 +104,7 @@ public class WeightedShortestPath
 
     @Procedure("weightedShortestPath")
     @PerformsWrites
-    public Iterable<PropertyContainer> weightedShortestPath(
+    public List<Node> weightedShortestPath(
             @Name("fromStr") String fromStr,
             @Name("toStr") String toStr,
             @Name("number") Long max)
@@ -112,7 +112,7 @@ public class WeightedShortestPath
 
         Dijkstra<Weight> d = getDijkstra(fromStr, toStr, max);
 
-        return d.getPath();
+        return d.getPathAsNodes();
 
     }
 
