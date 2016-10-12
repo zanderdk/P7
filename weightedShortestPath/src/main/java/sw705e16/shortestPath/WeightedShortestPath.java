@@ -100,7 +100,7 @@ public class WeightedShortestPath
         d.limitMaxNodesToTraverse(max);
 
         Weight cost = d.getCost();
-        SearchHit res = cost.valid? new SearchHit(cost.pst) : new SearchHit(null);
+        SearchHit res = cost.valid? new SearchHit(Math.pow(10, -1.0 *cost.pst)) : new SearchHit(null);
 
         return Stream.of(res);
 
