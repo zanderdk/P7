@@ -1,21 +1,20 @@
 # Compare Algorithms
 import pandas
 import matplotlib.pyplot as plt
-from sklearn import cross_validation, linear_model
+from sklearn import linear_model
+from sklearn.model_selection import KFold, cross_val_score
 from sklearn.linear_model import Ridge, LinearRegression
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.wrappers.scikit_learn import KerasRegressor
 
 # load dataset
-url = "wiki-train-example.csv"
 dataframe = pandas.read_csv("wiki-train-example.csv", delim_whitespace=True, header=None)
 array = dataframe.values
 X = array[:,0:4]
 Y = array[:,4]
 # prepare configuration for cross validation test harness
 num_folds = 10
-num_instances = len(X)
 seed = 7
 # prepare models
 models = []
@@ -47,8 +46,8 @@ results = []
 names = []
 scoring = 'neg_mean_absolute_error'
 for name, model in models:
-	kfold = cross_validation.KFold(n=num_instances, n_folds=num_folds, random_state=seed)
-	cv_results = cross_validation.cross_val_score(model, X, Y, cv=kfold, scoring=scoring)
+	kfold = KFold(n_splits=num_folds, shuffle=True, random_state=seed)
+	cv_results = cross_val_score(model, X, Y, cv=kfold, scoring=scoring)
 	results.append(cv_results)
 	names.append(name)
 	msg = "%s: %f (%f)" % (name, cv_results.mean(), cv_results.std())
