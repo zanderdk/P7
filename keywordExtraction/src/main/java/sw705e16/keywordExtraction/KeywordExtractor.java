@@ -39,10 +39,8 @@ public class KeywordExtractor {
     }
 
     @Procedure("keywords")
-    public Stream<SearchHit> keywords(@Name("title") String title) throws Exception {
-        Label pageLabel = Label.label("Page");
-        Node node = db.findNode(pageLabel, "title", title);
-
+    public Stream<SearchHit> keywords(@Name("node") Node node) throws Exception {
+        String title = (String) node.getProperty("title");
         String wikitext = (String) node.getProperty("text");
 
         String plainText = wikiToText(wikitext, title);

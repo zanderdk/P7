@@ -24,7 +24,7 @@ public class KeywordExtractorTest {
 
             session.run("CREATE (p:Page {title:'Water', text:'" + waterwiki + "'}) RETURN id(p)");
 
-            StatementResult result = session.run("CALL keywords('Water')");
+            StatementResult result = session.run("MATCH (p:Page)\nCALL keywords(p) yield keyword as x return x");
 
 
             List<String> expected = Arrays.asList(
@@ -32,9 +32,9 @@ public class KeywordExtractorTest {
                     "chemical formula", "earth's streams", "living organisms", "liquid state", "hydrogen atoms",
                     "main constituent", "atmospheric humidity");
 
-            // System.out.println(result.list(x -> x.get("keyword")));
+            //System.out.println(result.list(x -> x.get("x")));
 
-            assertThat(result.list(x -> x.get("keyword").asString()), is(expected));
+            assertThat(result.list(x -> x.get("x").asString()), is(expected));
         }
     }
 
