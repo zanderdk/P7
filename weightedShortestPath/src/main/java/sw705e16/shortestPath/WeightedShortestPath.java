@@ -22,79 +22,14 @@ public class WeightedShortestPath
     public static RelationshipType clickStreamType = RelationshipType.withName("clickStream");
 
     public class Output {
-        public aPath path;
+        public List<PropertyContainer> path;
 
-        public Output(aPath p) {
+        public Output(List<PropertyContainer> p) {
             path = p;
         }
     }
 
-    public class aPath implements Path {
 
-        private List<Node> _nodes;
-        private List<Relationship> _rels;
-        Dijkstra<Weight> dik;
-
-        public aPath(Dijkstra<Weight> d) {
-            _nodes = d.getPathAsNodes();
-            _rels = d.getPathAsRelationships();
-            dik = d;
-        }
-
-        @Override
-        public Node startNode() {
-            return _nodes.get(0);
-        }
-
-        @Override
-        public Node endNode() {
-            return _nodes.get(_nodes.size() - 1);
-        }
-
-        @Override
-        public Relationship lastRelationship() {
-            return _rels.get(_rels.size() - 1);
-        }
-
-        @Override
-        public Iterable<Relationship> relationships() {
-            return _rels;
-        }
-
-        @Override
-        public Iterable<Relationship> reverseRelationships() {
-            List<Relationship> shallowCopy = _rels.subList(0, _rels.size());
-            Collections.reverse(shallowCopy);
-            return shallowCopy;
-        }
-
-        @Override
-        public Iterable<Node> nodes() {
-            return _nodes;
-        }
-
-        @Override
-        public Iterable<Node> reverseNodes() {
-            List<Node> shallowCopy = _nodes.subList(0, _nodes.size());
-            Collections.reverse(shallowCopy);
-            return shallowCopy;
-        }
-
-        @Override
-        public int length() {
-            return _nodes.size();
-        }
-
-        @Override
-        public String toString() {
-            return "test";
-        }
-
-        @Override
-        public Iterator<PropertyContainer> iterator() {
-            return dik.getPath().iterator();
-        }
-    }
 
     public class Weight {
         public double pst = 0.0;
@@ -189,7 +124,7 @@ public class WeightedShortestPath
         Dijkstra<Weight> d = getDijkstra(fromStr, toStr, max);
 
 
-        Output res = new Output(new aPath(d));
+        Output res = new Output(d.getPath());
         return Stream.of(res);
 
     }
