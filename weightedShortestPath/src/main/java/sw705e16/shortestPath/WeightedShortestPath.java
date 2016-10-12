@@ -98,11 +98,25 @@ public class WeightedShortestPath
         Dijkstra<Weight> d = new Dijkstra(new Weight(0.0, true), from, to, new CostEval(), new CostAccum(), com, Direction.OUTGOING, redirectType, clickStreamType);
         d.limitMaxNodesToTraverse(max);
 
-        Weight cost = d.getCost();
+        System.out.println("så langt så godt");
+
+        try {
+            Weight cost = d.getCost();
+
+
         if (cost == null) return Stream.of(new SearchHit(null));
         SearchHit res = cost.valid? new SearchHit(Math.pow(10, -1.0 *cost.pst)) : new SearchHit(null);
 
         return Stream.of(res);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println(e.getCause().getMessage());
+            System.out.println();
+            for (StackTraceElement x : e.getStackTrace()) {
+                System.out.println(x.getClassName() + ":   " + x.getLineNumber());
+            }
+            throw e;
+        }
 
     }
 
