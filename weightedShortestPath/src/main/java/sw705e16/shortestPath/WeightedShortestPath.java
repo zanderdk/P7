@@ -104,7 +104,7 @@ public class WeightedShortestPath
 
     @Procedure("weightedShortestPath")
     @PerformsWrites
-    public List<Node> weightedShortestPath(
+    public Stream<SearchHit> weightedShortestPath(
             @Name("fromStr") String fromStr,
             @Name("toStr") String toStr,
             @Name("number") Long max)
@@ -112,7 +112,7 @@ public class WeightedShortestPath
 
         Dijkstra<Weight> d = getDijkstra(fromStr, toStr, max);
 
-        return d.getPathAsNodes();
+        return d.getPathAsNodes().stream().map( x -> new SearchHit((double)x.getId()) );
 
     }
 
