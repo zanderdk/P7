@@ -206,8 +206,8 @@ public class WeightedShortestPath
         Dijkstra<Weight> d = getDijkstra(fromStr, toStr, max);
 
         Weight cost = d.getCost();
-        if (cost == null) return Stream.of(new SearchHit(0));
-        SearchHit res = cost.valid? new SearchHit(1.0 - (cost.pst/max)) : new SearchHit(0);
+        if (cost == null) return Stream.of(new SearchHit(0.0));
+        SearchHit res = cost.valid? new SearchHit(1.0 - (cost.pst/max)) : new SearchHit(0.0);
 
         return Stream.of(res);
     }
