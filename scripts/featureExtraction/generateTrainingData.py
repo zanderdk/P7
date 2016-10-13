@@ -15,7 +15,6 @@ def generateTrainingData(inputFile, outputFile):
             counter = 1
             noPathCounter = 0
             failedCounter = 0
-            startTime = datetime.now()
             for line in f:
                 entry = line.split()
                 features = extractor.extractFeatures(entry[0], entry[1])
@@ -28,11 +27,7 @@ def generateTrainingData(inputFile, outputFile):
                 else:
                     failedCounter += 1
                 if counter % 100 is 0:
-                    endTime = datetime.now()
-                    duration = endTime - startTime
-                    print("Time: " + str(duration.microseconds / 1000))
                     printStatus(counter, failedCounter, noPathCounter)
-                    startTime = datetime.now()
                 counter += 1
             print("Done")
             printStatus(counter - 1, failedCounter, noPathCounter)

@@ -69,32 +69,14 @@ class PairedFeatureExtractor:
             return float(record[0]) / float(record[1])
         return None
 
-    def extractFeatures(self, fromArticle, toArticle):
-        start = datetime.now()        
+    def extractFeatures(self, fromArticle, toArticle):  
         path = self._shortestPath(fromArticle, toArticle)
-        end = datetime.now()
-        duration = end - start
-        print("Shortest path: " + str(duration.microseconds/1000))
-
-        start = datetime.now()
         common = self._commonChildrenAndParents(fromArticle, toArticle)
-        end = datetime.now()
-        duration = end - start
-        print("Common: " + str(duration.microseconds/1000))
 
         children = common[0]        
         parents = common[1]
-        
-        start = datetime.now()        
         terms = self._commonTerms(fromArticle, toArticle)
-        end = datetime.now()
-        duration = end - start
-        print("Common terms: " + str(duration.microseconds/1000))
-
-        start = datetime.now()        
+  
         pageViews = self._comparePageViews(fromArticle, toArticle)
-        end = datetime.now()
-        duration = end - start
-        print("Pageviews: " + str(duration.microseconds/1000))
 
         return (path, parents, children, terms, pageViews)
