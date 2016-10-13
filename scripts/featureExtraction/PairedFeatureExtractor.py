@@ -77,7 +77,7 @@ class PairedFeatureExtractor:
         for record in res:
             if record[0] is None or record[1] is None:
                 return None
-            return record[0] / record[1]
+            return float(record[0]) / float(record[1])
         return None
 
     def extractFeatures(self, fromArticle, toArticle):
