@@ -64,11 +64,28 @@ class PairedFeatureExtractor:
             return record[0]
         return None
 
+    def _comparePageViews(self, fromLink, toLink):
+        query = '''
+            MATCH (a:Page),(b:Page) 
+            WHERE a.title = {fromLink} AND b.title = {toLink}
+            return a.viewCount, b.viewCount'''
+        nameMapping = {
+            "fromLink": fromLink, 
+            "toLink": toLink 
+        }
+        res = self.session.run(query, nameMapping)
+        for record in res:
+            if record[0] is None or record[1] is None:
+                return None
+            return record[0] / record[1]
+        return None
+
     def extractFeatures(self, fromArticle, toArticle):
         self.session = self.driver.session()
         path = self._shortestPath(fromArticle, toArticle)
         parents = self._commonParents(fromArticle, toArticle)
         children = self._commonChildren(fromArticle, toArticle)
         terms = self._commonTerms(fromArticle, toArticle)
+        pageViews = self._comparePageViews(fromArticle, toArticle)
         self.session.close()
-        return (path, parents, children, terms)
+        return (path, parents, children, terms, pageViews)
