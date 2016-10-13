@@ -40,7 +40,7 @@ public class KeywordExtractor {
         return (String) textConverter.go(cp.getPage());
     }
 
-    public List<String> keywords(@Name("node") Node node) throws Exception {
+    public List<String> keywords(Node node, int limit) throws Exception {
         String title = (String) node.getProperty("title");
         String wikitext = (String) node.getProperty("text");
 
@@ -48,13 +48,13 @@ public class KeywordExtractor {
 
         List<String> keywords = RakeExtractor.INSTANCE.extract(plainText);
 
-        return keywords;
+        return keywords.size() > 10 ? keywords.subList(0, 10) : keywords;
     }
 
     @Procedure("keywordSimilarity")
-    public Stream<SearchHit> keywordSimilarity(@Name("node1") Node node1, @Name("node2") Node node2) throws Exception {
-        Set<String> keywords1 = new HashSet<>(keywords(node1));
-        Set<String> keywords2 = new HashSet<>(keywords(node2));
+    public Stream<SearchHit> keywordSimilarity(@Name("node1") Node node1, @Name("node2") Node node2, @Name("limit") int limit) throws Exception {
+        Set<String> keywords1 = new HashSet<>(keywords(node1, limit));
+        Set<String> keywords2 = new HashSet<>(keywords(node2, limit));
 
         double intersectionLength = Sets.intersection(keywords1, keywords2).size();
 
