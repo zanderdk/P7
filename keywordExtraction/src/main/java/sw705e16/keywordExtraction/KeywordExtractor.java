@@ -40,7 +40,7 @@ public class KeywordExtractor {
         return (String) textConverter.go(cp.getPage());
     }
 
-    private static <T> List limitList(List<T> list, int limit) {
+    private static List<String> limitList(List<String> list, int limit) {
         return list.size() > limit ? list.subList(0, limit) : list;
     }
 
@@ -65,6 +65,8 @@ public class KeywordExtractor {
 
         double intersectionLength = Sets.intersection(keywords1, keywords2).size();
         double unionLength = Sets.union(keywords1, keywords2).size();
+
+        if (unionLength == 0) return Stream.of(new Similarity(0));
 
         return Stream.of(new Similarity(intersectionLength / unionLength));
     }
