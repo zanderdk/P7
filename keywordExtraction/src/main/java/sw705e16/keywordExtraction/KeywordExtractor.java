@@ -27,6 +27,10 @@ public class KeywordExtractor {
     @Context
     public GraphDatabaseService db;
 
+    private static WikiConfig wikiConfig = DefaultConfigEnWp.generate();
+    private static WtEngineImpl engine = new WtEngineImpl(wikiConfig);
+    private static TextConverter textConverter = new TextConverter(wikiConfig, 10000);
+
     public static LoadingCache<Node, List<String>> keywordsCache = CacheBuilder.newBuilder()
             .maximumSize(1000)
             .build(
@@ -42,10 +46,6 @@ public class KeywordExtractor {
                             return keywords;
                         }
                     });
-
-    private static WikiConfig wikiConfig = DefaultConfigEnWp.generate();
-    private static WtEngineImpl engine = new WtEngineImpl(wikiConfig);
-    private static TextConverter textConverter = new TextConverter(wikiConfig, 10000);
 
     private static String wikiToText(String wikitext, String title) throws Exception {
         // Retrieve a page
@@ -63,17 +63,7 @@ public class KeywordExtractor {
     }
 
     private List<String> extractKeywords(Node node) throws Exception {
-        System.out.println("keyword extraction: Cache size = " + keywordsCache.size());
         return keywordsCache.get(node);
-//        String title = (String) node.getProperty("title");
-//
-//        String wikitext = (String) node.getProperty("text");
-//
-//        String plainText = wikiToText(wikitext, title);
-//
-//        List<String> keywords = RakeExtractor.INSTANCE.extract(plainText);
-//
-//        return keywords;
     }
 
     @Procedure("keywords")
