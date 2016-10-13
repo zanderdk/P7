@@ -27,36 +27,12 @@ class PairedFeatureExtractor:
             return record[0]
         return None
 
-    def _commonChildren(self, fromLink, toLink):
-        query = '''
-            MATCH (a:Page)-[r1:clickStream]->(child:Page),(b:Page)-[r2:clickStream]->(child:Page) 
-            WHERE a.title = {fromLink} AND b.title = {toLink} AND b <> child
-            RETURN count(DISTINCT child)'''
-        nameMapping = {
-            "fromLink": fromLink, 
-            "toLink": toLink 
-        }
+    def _commonChildrenAndParents(self, fromLink, toLink):
         self.session = self.driver.session()        
-        res = self.session.run(query, nameMapping)
-        self.session.close()        
+        res = self.session.run("CALL common({fromLink},{toLink})", {"fromLink": fromLink, "toLink": toLink})
+        self.session.close() 
         for record in res:
-            return record[0]
-        return None
-
-    def _commonParents(self, fromLink, toLink):
-        query = '''
-            MATCH (parent:Page)-[r1:clickStream]->(a:Page),(parent:Page)-[r2:clickStream]->(b:Page) 
-            WHERE a.title = {fromLink} AND b.title = {toLink} AND a <> parent
-            RETURN count(DISTINCT parent)'''
-        nameMapping = {
-            "fromLink": fromLink, 
-            "toLink": toLink 
-        }
-        self.session = self.driver.session()        
-        res = self.session.run(query, nameMapping)
-        self.session.close()        
-        for record in res:
-            return record[0]
+            return (record[0], record[1])
         return None
 
     def _shortestPath(self, fromLink, toLink):
@@ -94,8 +70,9 @@ class PairedFeatureExtractor:
 
     def extractFeatures(self, fromArticle, toArticle):
         path = self._shortestPath(fromArticle, toArticle)
-        parents = self._commonParents(fromArticle, toArticle)
-        children = self._commonChildren(fromArticle, toArticle)
+        common = self._commonChildrenAndParents(fromArticle, toArticle)
+        children = common[0]        
+        parents = common[1]
         terms = self._commonTerms(fromArticle, toArticle)
         pageViews = self._comparePageViews(fromArticle, toArticle)
         return (path, parents, children, terms, pageViews)
