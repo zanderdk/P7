@@ -170,7 +170,7 @@ public class RakeExtractor {
             phraseFreq.putIfAbsent(phraseString, 0);
             phraseFreq.compute(phraseString, (k, v) -> v + 1);
 
-            if(phraseFreq.get(phraseString) > MIN_KEYWORD_FREQUENCY)
+            if(phraseFreq.get(phraseString) >= MIN_KEYWORD_FREQUENCY)
                 phraseScores.put(phraseString, phraseScore);
 
         }
