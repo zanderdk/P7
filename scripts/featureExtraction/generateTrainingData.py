@@ -17,18 +17,21 @@ def generateTrainingData(inputFile, outputFile):
             failedCounter = 0
             for line in f:
                 entry = line.split()
-                features = extractor.extractFeatures(entry[0], entry[1])
-                label = entry[2]
-                if all(feat is not None for feat in features):
-                    if features[0] is 0:
-                        noPathCounter += 1
-                    line = " ".join([str(x) for x in features]) + " " + label + "\n"
-                    outputFile.write(line)
-                else:
-                    failedCounter += 1
-                if counter % 10000 is 0:
-                    printStatus(counter, failedCounter, noPathCounter)
-                counter += 1
+                try:
+                    features = extractor.extractFeatures(entry[0], entry[1])
+                    label = entry[2]
+                    if all(feat is not None for feat in features):
+                        if features[0] == 0.0:
+                            noPathCounter += 1
+                        line = " ".join([str(x) for x in features]) + " " + label + "\n"
+                        outputFile.write(line)
+                    else:
+                        failedCounter += 1
+                    if counter % 10000 is 0:
+                        printStatus(counter, failedCounter, noPathCounter)
+                    counter += 1
+                except neo4j.v1.exceptions.CypherError:
+                    continue
             print("Done")
             printStatus(counter - 1, failedCounter, noPathCounter)
 

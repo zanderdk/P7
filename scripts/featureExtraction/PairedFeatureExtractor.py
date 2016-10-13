@@ -3,7 +3,7 @@ from datetime import datetime
 
 class PairedFeatureExtractor:
 
-    def __init__(self, pathLimit=4, keywordLimit=100):
+    def __init__(self, pathLimit=6, keywordLimit=100):
         self.driver = GraphDatabase.driver("bolt://localhost", auth=basic_auth("neo4j", "12345"))
         self.session = None
         self.pathLimit = pathLimit
