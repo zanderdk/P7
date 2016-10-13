@@ -1,5 +1,4 @@
 from neo4j.v1 import GraphDatabase, basic_auth
-from datetime import datetime
 
 class PairedFeatureExtractor:
 
@@ -94,34 +93,9 @@ class PairedFeatureExtractor:
         return None
 
     def extractFeatures(self, fromArticle, toArticle):
-        start = datetime.now()
         path = self._shortestPath(fromArticle, toArticle)
-        end = datetime.now()
-        duration = end - start
-        print("Shortest path: " + str(duration.microseconds/1000))
-
-        start = datetime.now()
         parents = self._commonParents(fromArticle, toArticle)
-        end = datetime.now()
-        duration = end - start
-        print("Common parents : " + str(duration.microseconds/1000))
-
-        start = datetime.now()
         children = self._commonChildren(fromArticle, toArticle)
-        end = datetime.now()
-        duration = end - start
-        print("Common children: " + str(duration.microseconds/1000))
-
-        start = datetime.now()
         terms = self._commonTerms(fromArticle, toArticle)
-        end = datetime.now()
-        duration = end - start
-        print("Common terms: " + str(duration.microseconds/1000))
-
-        start = datetime.now()
         pageViews = self._comparePageViews(fromArticle, toArticle)
-        end = datetime.now()
-        duration = end - start
-        print("Page views: " + str(duration.microseconds/1000) + "\n")
-
         return (path, parents, children, terms, pageViews)
