@@ -179,9 +179,54 @@ public class WeightedShortestPath
         return d;
     }
 
+    public class Common{
+        public Long commonChildren;
+        public Long commonParrents;
+
+        public Common(Long chi, Long par) {
+            commonChildren = chi;
+            commonParrents = par;
+        }
+
+    }
+
+    @Procedure("common")
+    public Stream<Common> common(@Name("title1") String title1, @Name("title2") String title2) {
+
+        Label pageLabel = Label.label("Page");
+        from = db.findNode(pageLabel, "title", title1);
+        to = db.findNode(pageLabel, "title", title2);
+
+        int chi = 0;
+        int par = 0;
+
+        Iterable<Relationship> it1 = to.getRelationships(clickStreamType, Direction.OUTGOING);
+        Iterable<Relationship> it2 = from.getRelationships(clickStreamType, Direction.OUTGOING);
+        for(Relationship r : it1) {
+            for (Relationship r2: it2) {
+                if(r.getEndNode().getId() == r2.getEndNode().getId()) {
+                    chi++;
+                }
+            }
+        }
+
+        it1 = to.getRelationships(clickStreamType, Direction.INCOMING);
+        it2 = from.getRelationships(clickStreamType, Direction.INCOMING);
+
+        for(Relationship r : it1) {
+            for (Relationship r2: it2) {
+                if(r.getStartNode().getId() == r2.getStartNode().getId()) {
+                    par++;
+                }
+            }
+        }
+
+        return Stream.of(new Common((long)chi, (long)par));
+
+    }
+
 
     @Procedure("weightedShortestPath")
-    @PerformsWrites
     public Stream<Output> weightedShortestPath(
             @Name("fromStr") String fromStr,
             @Name("toStr") String toStr,
@@ -197,7 +242,6 @@ public class WeightedShortestPath
     }
 
     @Procedure("weightedShortestPathCost")
-    @PerformsWrites
     public Stream<SearchHit> weightedShortestPathCost(
             @Name("fromStr") String fromStr,
             @Name("toStr") String toStr,
