@@ -13,10 +13,10 @@ class PairedFeatureExtractor:
             "fromLink": fromLink, 
             "toLink": toLink 
         }
-        # res = self.session.run(query, nameMapping)
-        # for record in res:
-        #     return record[0]
-        return 0
+        res = self.session.run(query, nameMapping)
+        for record in res:
+            return record[0]
+        return None
 
     def _commonChildren(self, fromLink, toLink):
         query = '''
