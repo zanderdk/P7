@@ -1,12 +1,11 @@
 package sw705e16.keywordExtraction;
 
-import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.junit.Rule;
 import org.junit.Test;
 import org.neo4j.driver.v1.*;
 import org.neo4j.harness.junit.Neo4jRule;
 
-import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
@@ -19,7 +18,7 @@ public class KeywordExtractorTest {
 
     @Test
     public void shouldExtractKeywords() throws Throwable {
-        String waterwiki = FileUtils.readFileToString(new File("src/main/resources/water.wikitext")).replace("'", "\\'");
+        String waterwiki = IOUtils.toString(getClass().getResourceAsStream("/water.wikitext")).replace("'", "\\'");
 
         // In a try-block, to make sure we close the driver and session after the test
         try (Driver driver = GraphDatabase.driver(neo4j.boltURI(),
