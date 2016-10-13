@@ -15,8 +15,6 @@ def generateTrainingData(inputFile, outputFile):
             counter = 1
             noPathCounter = 0
             failedCounter = 0
-            startTime = datetime.now()
-            
             for line in f:
                 entry = line.split()
                 features = extractor.extractFeatures(entry[0], entry[1])
@@ -30,10 +28,6 @@ def generateTrainingData(inputFile, outputFile):
                     failedCounter += 1
                 if counter % 10 is 0:
                     printStatus(counter, failedCounter, noPathCounter)
-                    endTime = datetime.now()
-                    duration = endTime - startTime
-                    print("Pair total time: " + str(duration.microseconds / 1000))
-                    startTime = datetime.now()
                 counter += 1
                 
             print("Done")
