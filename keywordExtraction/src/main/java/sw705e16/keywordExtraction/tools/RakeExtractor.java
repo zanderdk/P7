@@ -4,11 +4,10 @@ package sw705e16.keywordExtraction.tools;
 
 import org.apache.commons.collections15.Bag;
 import org.apache.commons.collections15.bag.HashBag;
-import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.NumberUtils;
 import org.apache.commons.lang.StringUtils;
 
-import java.io.File;
 import java.text.BreakIterator;
 import java.util.*;
 import java.util.regex.Pattern;
@@ -25,7 +24,7 @@ public class RakeExtractor {
     private RakeExtractor() {
         stopwords = new HashSet<>();
         try {
-            String stopText = FileUtils.readFileToString(new File("src/main/resources/stopwords.txt"));
+            String stopText = IOUtils.toString(getClass().getResourceAsStream("/stopwords.txt"));
             for (String word : stopText.split("\n"))
                 stopwords.add(word);
         } catch (Exception e) {
