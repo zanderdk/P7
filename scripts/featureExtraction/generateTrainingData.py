@@ -2,6 +2,7 @@
 import io
 import sys
 import PairedFeatureExtractor as ext
+from datetime import datetime
 
 # Input: File with training pairs on the form:
 #       fromTitle toTitle label
@@ -25,9 +26,10 @@ def generateTrainingData(inputFile, outputFile):
                     outputFile.write(line)
                 else:
                     failedCounter += 1
-                if counter % 1000 is 0:
+                if counter % 10 is 0:
                     printStatus(counter, failedCounter, noPathCounter)
                 counter += 1
+                
             print("Done")
             printStatus(counter - 1, failedCounter, noPathCounter)
             
