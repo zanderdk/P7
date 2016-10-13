@@ -207,7 +207,7 @@ public class WeightedShortestPath
 
         Weight cost = d.getCost();
         if (cost == null) return Stream.of(new SearchHit(null));
-        SearchHit res = cost.valid? new SearchHit(cost.pst/max) : new SearchHit(null);
+        SearchHit res = cost.valid? new SearchHit(1.0 - (cost.pst/max)) : new SearchHit(null);
 
         return Stream.of(res);
     }
