@@ -17,7 +17,7 @@ def generateTrainingData(inputFile, outputFile):
                 features = extractor.extractFeatures(entry[0], entry[1])
                 label = entry[2]
                 if all(feat is not None for feat in features):
-                    line = " ".join([str(x) for x in features]) + "\n"
+                    line = " ".join([str(x) for x in features]) + " " + label + "\n"
                     outputFile.write(line)
                 if counter % 1000 is 0:
                     print(counter)

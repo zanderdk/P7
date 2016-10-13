@@ -2,10 +2,10 @@ from neo4j.v1 import GraphDatabase, basic_auth
 
 class PairedFeatureExtractor:
 
-    def __init__(self, maxPathSteps=200):
+    def __init__(self, pathLimit=6):
         self.driver = GraphDatabase.driver("bolt://localhost", auth=basic_auth("neo4j", "12345"))
         self.session = None
-        self.maxPathSteps = maxPathSteps
+        self.pathLimit = pathLimit
 
     def _commonTerms(self, fromLink, toLink):
         query = "CALL commonTerms({fromLink}, {toLink})"
@@ -30,7 +30,7 @@ class PairedFeatureExtractor:
         res = self.session.run(query, nameMapping)
         for record in res:
             return record[0]
-        return 0 
+        return None
 
     def _commonParents(self, fromLink, toLink):
         query = '''
@@ -44,19 +44,19 @@ class PairedFeatureExtractor:
         res = self.session.run(query, nameMapping)
         for record in res:
             return record[0]
-        return 0  
+        return None
 
     def _shortestPath(self, fromLink, toLink):
-        query = "CALL weightedShortestPath({fromLink}, {toLink}, {maxSteps})"
+        query = "CALL weightedShortestPathCost({fromLink}, {toLink}, {pathLimit})"
         nameMapping = {
             "fromLink": fromLink, 
             "toLink": toLink,
-            "maxSteps": self.maxPathSteps
+            "pathLimit": self.pathLimit
         }
         res = self.session.run(query, nameMapping)
         for record in res:
             return record[0]
-        return 0  
+        return None
 
     def extractFeatures(self, fromArticle, toArticle):
         self.session = self.driver.session()
