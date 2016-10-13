@@ -1,5 +1,9 @@
 package sw705e16.keywordExtraction;
 
+import com.google.common.cache.Cache;
+import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
 import com.google.common.collect.Sets;
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Node;
@@ -15,15 +19,30 @@ import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
 import sw705e16.keywordExtraction.tools.RakeExtractor;
 import sw705e16.keywordExtraction.tools.TextConverter;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class KeywordExtractor {
     @Context
     public GraphDatabaseService db;
+
+    public static LoadingCache<Node, List<String>> keywordsCache = CacheBuilder.newBuilder()
+            .maximumSize(1000)
+            .build(
+                    new CacheLoader<Node, List<String>>() {
+                        public List<String> load(Node node) throws Exception {
+                            String title = (String) node.getProperty("title");
+                            String wikitext = (String) node.getProperty("text");
+
+                            String plainText = wikiToText(wikitext, title);
+
+                            List<String> keywords = RakeExtractor.INSTANCE.extract(plainText);
+
+                            return keywords;
+                        }
+                    });
 
     private static WikiConfig wikiConfig = DefaultConfigEnWp.generate();
     private static WtEngineImpl engine = new WtEngineImpl(wikiConfig);
@@ -45,12 +64,16 @@ public class KeywordExtractor {
     }
 
     private List<String> extractKeywords(Node node) throws Exception {
-        String title = (String) node.getProperty("title");
-        String wikitext = (String) node.getProperty("text");
-
-        String plainText = wikiToText(wikitext, title);
-
-        return RakeExtractor.INSTANCE.extract(plainText);
+        return keywordsCache.get(node);
+//        String title = (String) node.getProperty("title");
+//
+//        String wikitext = (String) node.getProperty("text");
+//
+//        String plainText = wikiToText(wikitext, title);
+//
+//        List<String> keywords = RakeExtractor.INSTANCE.extract(plainText);
+//
+//        return keywords;
     }
 
     @Procedure("keywords")
