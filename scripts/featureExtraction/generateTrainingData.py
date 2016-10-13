@@ -29,7 +29,6 @@ def generateTrainingData(inputFile, outputFile):
                     failedCounter += 1
                 if counter % 100 is 0:
                     printStatus(counter, failedCounter, noPathCounter)
-                    break
                 counter += 1
                 endTime = datetime.now()
                 duration = endTime - startTime
