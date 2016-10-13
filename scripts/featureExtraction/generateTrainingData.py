@@ -1,6 +1,7 @@
 # Call with path to input file and output file as parameters
 import io
 import sys
+from neo4j.v1 import exceptions
 import PairedFeatureExtractor as ext
 
 # Input: File with training pairs on the form:
@@ -29,7 +30,7 @@ def generateTrainingData(inputFile, outputFile):
                     if counter % 10 is 0:
                         printStatus(counter, failedCounter, noPathCounter)
                     counter += 1
-                except neo4j.v1.exceptions.CypherError:
+                except exceptions.CypherError:
                     failedCounter += 1
                     counter += 1
                     continue
