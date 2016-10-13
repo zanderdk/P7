@@ -40,7 +40,7 @@ public class KeywordExtractor {
         return (String) textConverter.go(cp.getPage());
     }
 
-    public List<String> keywords(Node node, int limit) throws Exception {
+    public List<String> keywords(Node node, long limit) throws Exception {
         String title = (String) node.getProperty("title");
         String wikitext = (String) node.getProperty("text");
 
@@ -52,7 +52,7 @@ public class KeywordExtractor {
     }
 
     @Procedure("keywordSimilarity")
-    public Stream<SearchHit> keywordSimilarity(@Name("node1") Node node1, @Name("node2") Node node2, @Name("limit") int limit) throws Exception {
+    public Stream<SearchHit> keywordSimilarity(@Name("node1") Node node1, @Name("node2") Node node2, @Name("limit") Long limit) throws Exception {
         Set<String> keywords1 = new HashSet<>(keywords(node1, limit));
         Set<String> keywords2 = new HashSet<>(keywords(node2, limit));
 
