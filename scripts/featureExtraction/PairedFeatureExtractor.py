@@ -1,11 +1,11 @@
-# Script for creating the dataset for training and testing
 from neo4j.v1 import GraphDatabase, basic_auth
 
 class PairedFeatureExtractor:
-    
-    def __init__(self):
+
+    def __init__(self, maxPathSteps=200):
         self.driver = GraphDatabase.driver("bolt://localhost", auth=basic_auth("neo4j", "12345"))
         self.session = None
+        self.maxPathSteps = maxPathSteps
 
     def _commonTerms(self, fromLink, toLink):
         query = "CALL commonTerms({fromLink}, {toLink})"
@@ -47,10 +47,11 @@ class PairedFeatureExtractor:
         return 0  
 
     def _shortestPath(self, fromLink, toLink):
-        query = "CALL weightedShortestPath({fromLink}, {toLink})"
+        query = "CALL weightedShortestPath({fromLink}, {toLink}, {maxSteps})"
         nameMapping = {
             "fromLink": fromLink, 
-            "toLink": toLink 
+            "toLink": toLink,
+            "maxSteps": self.maxPathSteps
         }
         res = self.session.run(query, nameMapping)
         for record in res:

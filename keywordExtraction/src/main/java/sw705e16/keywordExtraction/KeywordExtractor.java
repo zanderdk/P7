@@ -1,7 +1,6 @@
 package sw705e16.keywordExtraction;
 
 import org.neo4j.graphdb.GraphDatabaseService;
-import org.neo4j.graphdb.Label;
 import org.neo4j.graphdb.Node;
 import org.neo4j.procedure.Context;
 import org.neo4j.procedure.Name;
@@ -24,8 +23,7 @@ public class KeywordExtractor {
 
     private static WikiConfig wikiConfig = DefaultConfigEnWp.generate();
     private static WtEngineImpl engine = new WtEngineImpl(wikiConfig);
-    private static final int wrapCol = 80;
-    private static TextConverter textConverter = new TextConverter(wikiConfig, wrapCol);
+    private static TextConverter textConverter = new TextConverter(wikiConfig, 10000);
 
     private static String wikiToText(String wikitext, String title) throws Exception {
         // Retrieve a page
@@ -47,15 +45,13 @@ public class KeywordExtractor {
 
         List<String> keywords = RakeExtractor.INSTANCE.extract(plainText);
 
-        return keywords.stream().map(x -> new SearchHit(x));
-       // return Stream.of(new SearchHit(keywords));
+        return keywords.stream().map(SearchHit::new);
     }
 
     public static class SearchHit {
-       // public List<String> keywords;
         public String keyword;
+
         public SearchHit(String keyword) {
-           // this.keywords = keywords;
             this.keyword = keyword;
         }
     }
