@@ -2,7 +2,7 @@ from neo4j.v1 import GraphDatabase, basic_auth
 
 class PairedFeatureExtractor:
 
-    def __init__(self, pathLimit=6, keywordLimit=100):
+    def __init__(self, pathLimit=5, keywordLimit=100):
         self.driver = GraphDatabase.driver("bolt://localhost", auth=basic_auth("neo4j", "12345"))
         self.session = None
         self.pathLimit = pathLimit
@@ -12,6 +12,7 @@ class PairedFeatureExtractor:
         query = '''
             MATCH (a:Page),(b:Page) 
             WHERE a.title = {fromLink} AND b.title = {toLink}
+            AND exists (a.text) AND exists (b.text)
             CALL keywordSimilarity(a,b,{keywordLimit}) yield similarity as x 
             RETURN x'''
         nameMapping = {
@@ -19,7 +20,9 @@ class PairedFeatureExtractor:
             "toLink": toLink,
             "keywordLimit": self.keywordLimit
         }
+        self.session = self.driver.session()
         res = self.session.run(query, nameMapping)
+        self.session.close()
         for record in res:
             return record[0]
         return None
@@ -33,7 +36,9 @@ class PairedFeatureExtractor:
             "fromLink": fromLink, 
             "toLink": toLink 
         }
+        self.session = self.driver.session()        
         res = self.session.run(query, nameMapping)
+        self.session.close()        
         for record in res:
             return record[0]
         return None
@@ -47,7 +52,9 @@ class PairedFeatureExtractor:
             "fromLink": fromLink, 
             "toLink": toLink 
         }
+        self.session = self.driver.session()        
         res = self.session.run(query, nameMapping)
+        self.session.close()        
         for record in res:
             return record[0]
         return None
@@ -59,7 +66,9 @@ class PairedFeatureExtractor:
             "toLink": toLink,
             "pathLimit": self.pathLimit
         }
+        self.session = self.driver.session()        
         res = self.session.run(query, nameMapping)
+        self.session.close()        
         for record in res:
             return record[0]
         return None
@@ -73,19 +82,20 @@ class PairedFeatureExtractor:
             "fromLink": fromLink, 
             "toLink": toLink 
         }
+        self.session = self.driver.session()        
         res = self.session.run(query, nameMapping)
+        self.session.close()        
         for record in res:
             if record[0] is None or record[1] is None:
                 return None
+            # Cast needed as pageViews are, apparently, stored as strings in the database
             return float(record[0]) / float(record[1])
         return None
 
     def extractFeatures(self, fromArticle, toArticle):
-        self.session = self.driver.session()
         path = self._shortestPath(fromArticle, toArticle)
         parents = self._commonParents(fromArticle, toArticle)
         children = self._commonChildren(fromArticle, toArticle)
         terms = self._commonTerms(fromArticle, toArticle)
         pageViews = self._comparePageViews(fromArticle, toArticle)
-        self.session.close()
         return (path, parents, children, terms, pageViews)
