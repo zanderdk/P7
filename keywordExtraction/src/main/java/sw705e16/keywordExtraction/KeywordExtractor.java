@@ -1,5 +1,7 @@
 package sw705e16.keywordExtraction;
 
+import com.google.common.collect.Sets;
+import org.apache.commons.collections15.SetUtils;
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Node;
 import org.neo4j.procedure.Context;
@@ -14,7 +16,9 @@ import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
 import sw705e16.keywordExtraction.tools.RakeExtractor;
 import sw705e16.keywordExtraction.tools.TextConverter;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Stream;
 
 public class KeywordExtractor {
@@ -36,8 +40,7 @@ public class KeywordExtractor {
         return (String) textConverter.go(cp.getPage());
     }
 
-    @Procedure("keywords")
-    public Stream<SearchHit> keywords(@Name("node") Node node) throws Exception {
+    public List<String> keywords(Node node, int limit) throws Exception {
         String title = (String) node.getProperty("title");
         String wikitext = (String) node.getProperty("text");
 
@@ -45,14 +48,26 @@ public class KeywordExtractor {
 
         List<String> keywords = RakeExtractor.INSTANCE.extract(plainText);
 
-        return keywords.stream().map(SearchHit::new);
+        return keywords.size() > 10 ? keywords.subList(0, 10) : keywords;
+    }
+
+    @Procedure("keywordSimilarity")
+    public Stream<SearchHit> keywordSimilarity(@Name("node1") Node node1, @Name("node2") Node node2, @Name("limit") int limit) throws Exception {
+        Set<String> keywords1 = new HashSet<>(keywords(node1, limit));
+        Set<String> keywords2 = new HashSet<>(keywords(node2, limit));
+
+        double intersectionLength = Sets.intersection(keywords1, keywords2).size();
+
+        double unionLength = Sets.union(keywords1, keywords2).size();
+
+        return Stream.of(new SearchHit(intersectionLength/unionLength));
     }
 
     public static class SearchHit {
-        public String keyword;
+        public double similarity;
 
-        public SearchHit(String keyword) {
-            this.keyword = keyword;
+        public SearchHit(double similarity) {
+            this.similarity = similarity;
         }
     }
 
