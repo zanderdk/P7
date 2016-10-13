@@ -1,7 +1,6 @@
 package sw705e16.keywordExtraction;
 
 import com.google.common.collect.Sets;
-import org.apache.commons.collections15.SetUtils;
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Node;
 import org.neo4j.procedure.Context;
@@ -19,6 +18,7 @@ import sw705e16.keywordExtraction.tools.TextConverter;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class KeywordExtractor {
@@ -40,33 +40,47 @@ public class KeywordExtractor {
         return (String) textConverter.go(cp.getPage());
     }
 
-    public List<String> keywords(Node node, int limit) throws Exception {
+    private static <T> List limitList(List<T> list, int limit) {
+        return list.size() > limit ? list.subList(0, limit) : list;
+    }
+
+    private List<String> extractKeywords(Node node) throws Exception {
         String title = (String) node.getProperty("title");
         String wikitext = (String) node.getProperty("text");
 
         String plainText = wikiToText(wikitext, title);
 
-        List<String> keywords = RakeExtractor.INSTANCE.extract(plainText);
+        return RakeExtractor.INSTANCE.extract(plainText);
+    }
 
-        return keywords.size() > limit ? keywords.subList(0, limit) : keywords;
+    @Procedure("keywords")
+    public Stream<Keywords> keywords(@Name("node") Node node) throws Exception {
+        return extractKeywords(node).stream().map(Keywords::new);
     }
 
     @Procedure("keywordSimilarity")
-    public Stream<SearchHit> keywordSimilarity(@Name("node1") Node node1, @Name("node2") Node node2, @Name("limit") Long limit) throws Exception {
-        Set<String> keywords1 = new HashSet<>(keywords(node1, limit.intValue()));
-        Set<String> keywords2 = new HashSet<>(keywords(node2, limit.intValue()));
+    public Stream<Similarity> keywordSimilarity(@Name("node1") Node node1, @Name("node2") Node node2, @Name("limit") Long limit) throws Exception {
+        Set<String> keywords1 = new HashSet<>(limitList(extractKeywords(node1), limit.intValue()));
+        Set<String> keywords2 = new HashSet<>(limitList(extractKeywords(node2), limit.intValue()));
 
         double intersectionLength = Sets.intersection(keywords1, keywords2).size();
-
         double unionLength = Sets.union(keywords1, keywords2).size();
 
-        return Stream.of(new SearchHit(intersectionLength/unionLength));
+        return Stream.of(new Similarity(intersectionLength / unionLength));
     }
 
-    public static class SearchHit {
+    public static class Keywords {
+        public String keyword;
+
+        public Keywords(String keyword) {
+            this.keyword = keyword;
+        }
+    }
+
+    public static class Similarity {
         public double similarity;
 
-        public SearchHit(double similarity) {
+        public Similarity(double similarity) {
             this.similarity = similarity;
         }
     }
