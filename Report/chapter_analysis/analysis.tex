@@ -11,7 +11,7 @@ Before beginning the work we need a preliminary understanding of the problem dom
 \end{chapterorganization}
 
 \section{Wikipedia}\label{sec:about_wikipedia}
-Wikipedia is a multilingual, web-based, free encyclopedia project \cite{wiki-about}. It mainly consists of articles which are written collaboratively by volunteers. As of October 2016 the English version of Wikipedia consists of more than 5.2 million articles, and averages about 800--900 new articles per day \cite{wmcharts}.
+Wikipedia is a multilingual, web-based, free encyclopedia project~\cite{wiki-about}. It mainly consists of articles which are written collaboratively by volunteers. As of October 2016 the English version of Wikipedia consists of more than 5.2 million articles~\cite{wiki-about}, and averages about 800--900 new articles per day~\cite{wmcharts}.
 
 This constant amount of new data is a contributing factor to the complexity of linking on Wikipedia. No author can know about all new pages and their relationship with existing pages, not to forget about existing pages and their relationship to other existing pages.
 
@@ -21,13 +21,20 @@ This constant amount of new data is a contributing factor to the complexity of l
 \section{Data}\label{sec:data}
 In order to detect missing links, we need some kind of data to base the detection on. There are many possible data sources of different kinds, and we will briefly introduce them here.
 
-\subsection{Article Metadata}
-This category of data that can be extracted directly from the content of the articles and the metadata accompanying them. They either parts of the article itself or some metadata describing it.
+\todo{Maybe change these three categories to a diagram / tikz picture}
+
+\subsection{Article Text}
+This category of data that can be extracted directly from the content, i.e.\ the textual part of the articles.
 \begin{description}
   \item[Article Text] The full text of an article provides a large amount of information. Based on this, other possibly useful data can be extracted with the help of natural language processing.
+  \item[Ingoing and Outgoing Links] Information about how articles are linked provide information about how articles reference each other. This may be useful to identify the relationship between articles.
+\end{description}
+
+\subsection{Article Metadata}
+This category of data describes the article.
+\begin{description}
   \item[Article Categories] The category of an article can provide a clustering of articles based on similar topics.
   \item[Article Authors] Information about which authors are editing an article may provide a way of clustering articles, by cross-referencing with other articles by an author.
-  \item[Ingoing and Outgoing Links] Information about how articles are linked provide information about how articles reference each other. This may be useful to identify the relationship between articles.
   \item[Interlanguage links] Since Wikipedia exists in many interlinked languages, this provides another dimension of relationship between articles. It may be useful to consider these relationships as well, since foreign language articles are assumed to be very similar topic-wise, but contain different content.
 \end{description}
 
