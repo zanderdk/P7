@@ -28,13 +28,14 @@ def generateTrainingData(inputFile, outputFile):
                 if counter % 1000 is 0:
                     printStatus(counter, failedCounter, noPathCounter)
                 counter += 1
+            print("Done")
             printStatus(counter - 1, failedCounter, noPathCounter)
             
 
 def printStatus(pairCounter, failedCounter, noPathCounter):
     print("Processed pairs: " + str(pairCounter))
     print("Failed pairs: " + str(failedCounter))
-    print("Pairs without path: " + str(noPathCounter))
+    print("Pairs without path: " + str(noPathCounter) + "\n")
 
 if len(sys.argv) > 2:
     generateTrainingData(sys.argv[1], sys.argv[2])
