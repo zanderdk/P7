@@ -2,12 +2,11 @@
 import io
 import sys
 import PairedFeatureExtractor as ext
-from datetime import datetime
 
 # Input: File with training pairs on the form:
 #       fromTitle toTitle label
 # Output: File with training data on the form:
-#       shortestPath commonParents commonChildren commonTerms label
+#       ShortestPath commonOutgoing commonIncoming keywordSimilarity pageViewsRatio label
 def generateTrainingData(inputFile, outputFile):
     with io.open(inputFile, "r", encoding="utf-8") as f:
         with io.open(outputFile, "w+", encoding="utf-8") as outputFile:
@@ -16,17 +15,17 @@ def generateTrainingData(inputFile, outputFile):
             noPathCounter = 0
             failedCounter = 0
             for line in f:
-                entry = line.split()
-                features = extractor.extractFeatures(entry[0], entry[1])
-                label = entry[2]
-                if all(feat is not None for feat in features):
-                    if features[0] is 0:
+                pairEntry = line.split()
+                features = extractor.extractFeatures(pairEntry[0], pairEntry[1])
+                dataPoint = features + (pairEntry[2],)
+                if all(field is not None for field in dataPoint):
+                    if dataPoint[0] is 0:
                         noPathCounter += 1
-                    line = " ".join([str(x) for x in features]) + " " + label + "\n"
+                    line = " ".join([str(x) for x in dataPoint]) + "\n"
                     outputFile.write(line)
                 else:
                     failedCounter += 1
-                if counter % 10000 is 0:
+                if counter % 1000 is 0:
                     printStatus(counter, failedCounter, noPathCounter)
                 counter += 1
             print("Done")
