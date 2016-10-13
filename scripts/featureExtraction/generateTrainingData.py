@@ -12,16 +12,29 @@ def generateTrainingData(inputFile, outputFile):
         with io.open(outputFile, "w+", encoding="utf-8") as outputFile:
             extractor = ext.PairedFeatureExtractor()
             counter = 1
+            noPathCounter = 0
+            failedCounter = 0
             for line in f:
                 entry = line.split()
                 features = extractor.extractFeatures(entry[0], entry[1])
                 label = entry[2]
                 if all(feat is not None for feat in features):
+                    if features[0] is 0:
+                        noPathCounter += 1
                     line = " ".join([str(x) for x in features]) + " " + label + "\n"
                     outputFile.write(line)
+                else:
+                    failedCounter += 1
                 if counter % 1000 is 0:
-                    print(counter)
+                    printStatus(counter, failedCounter, noPathCounter)
                 counter += 1
+            printStatus(counter - 1, failedCounter, noPathCounter)
+            
+
+def printStatus(pairCounter, failedCounter, noPathCounter):
+    print("Processed pairs: " + str(pairCounter))
+    print("Failed pairs: " + str(failedCounter))
+    print("Pairs without path: " + str(noPathCounter))
 
 if len(sys.argv) > 2:
     generateTrainingData(sys.argv[1], sys.argv[2])

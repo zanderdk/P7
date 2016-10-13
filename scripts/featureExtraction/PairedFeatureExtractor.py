@@ -2,16 +2,22 @@ from neo4j.v1 import GraphDatabase, basic_auth
 
 class PairedFeatureExtractor:
 
-    def __init__(self, pathLimit=6):
+    def __init__(self, pathLimit=6, keywordLimit=10):
         self.driver = GraphDatabase.driver("bolt://localhost", auth=basic_auth("neo4j", "12345"))
         self.session = None
         self.pathLimit = pathLimit
+        self.keywordLimit = keywordLimit
 
     def _commonTerms(self, fromLink, toLink):
-        query = "CALL commonTerms({fromLink}, {toLink})"
+        query = '''
+            MATCH (a:Page),(b:Page) 
+            WHERE a.title = {fromLink} AND b.title = {toLink}
+            CALL keywordSimilarity(a,b,{keywordLimit}) yield similarity as x 
+            RETURN x'''
         nameMapping = {
             "fromLink": fromLink, 
-            "toLink": toLink 
+            "toLink": toLink,
+            "keywordLimit": self.keywordLimit
         }
         res = self.session.run(query, nameMapping)
         for record in res:
