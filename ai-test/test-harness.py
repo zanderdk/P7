@@ -41,7 +41,7 @@ def keras_baseline_model():
 	# create model
 	model = Sequential()
 	model.add(Dense(3, input_dim=5, init='normal', activation='sigmoid'))
-	model.add(Dense(1, init='sigmoid'))
+	model.add(Dense(1, init='normal', activation="sigmoid"))
 	# Compile model
 	model.compile(loss='mean_squared_error', optimizer='adam')
 	return model
