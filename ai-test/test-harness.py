@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 from sklearn import linear_model
 from sklearn.model_selection import KFold, cross_val_score
 from sklearn.linear_model import Ridge, LinearRegression
+from sklearn import preprocessing 
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.wrappers.scikit_learn import KerasRegressor
@@ -17,6 +18,11 @@ filename = sys.argv[1]
 # load dataset
 dataframe = pandas.read_csv(filename, delim_whitespace=True, header=None)
 array = dataframe.values
+
+min_max_scaler = preprocessing.MinMaxScaler()
+# normalize the page ratio to be within [0, 1] 
+dataframe[4] = min_max_scaler.fit_transform(dataframe[4])
+
 X = array[:,0:5]
 Y = array[:,5]
 # prepare configuration for cross validation test harness
