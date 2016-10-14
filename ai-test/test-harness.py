@@ -1,6 +1,9 @@
 # Compare Algorithms
 import pandas
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+
 from sklearn import linear_model
 from sklearn.model_selection import KFold, cross_val_score
 from sklearn.linear_model import Ridge, LinearRegression
