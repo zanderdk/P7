@@ -34,9 +34,8 @@ models.append(('LassoLars', linear_model.LassoLars()))
 def keras_baseline_model():
 	# create model
 	model = Sequential()
-	model.add(Dense(5, input_dim=5, init='normal', activation='sigmoid'))
-        model.add(Dense(3, init="normal", activation='sigmoid'))
-	model.add(Dense(1, init='normal'))
+	model.add(Dense(3, input_dim=5, init='normal', activation='sigmoid'))
+	model.add(Dense(1, init='sigmoid'))
 	# Compile model
 	model.compile(loss='mean_squared_error', optimizer='adam')
 	return model
