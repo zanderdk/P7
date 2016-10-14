@@ -1,3 +1,4 @@
+#cat pageview* | gzip -cd | python3 this file
 import sys
 
 dictionary = {}
@@ -25,7 +26,7 @@ with open("../../resources/2016_02_en_clickstream.tsv", "rt") as clickStream:
             target = cols[1]
             amount = cols[3]
             Ns = dictionary[source]
-            pst = float(amount)/Ns
+            pst = float(amount)/Ns # probabilitySourceTarget
             sys.stdout.write(source + "\t" + target + "\t" + str(amount) + "\t" + str(pst))
             print()
         i += 1

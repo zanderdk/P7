@@ -26,7 +26,7 @@ for line in sys.stdin:
     try:
         cols = line.split()
         title = cols[0]
-        amount = cols[1]
+        amount = int(cols[1])
         setViewCount(title, amount)
     except Exception:
         continue

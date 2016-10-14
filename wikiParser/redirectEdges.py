@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# wikimedia page articles.bz2 | bzcat | python3 this file
 import sys
 import xml.etree.cElementTree as etree
 import json
