@@ -11,9 +11,13 @@ import org.neo4j.procedure.Name;
 import org.neo4j.procedure.PerformsWrites;
 import org.neo4j.procedure.Procedure;
 
+import com.google.common.collect.*;
+
+
 import java.awt.*;
 import java.util.*;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class WeightedShortestPath
@@ -180,15 +184,23 @@ public class WeightedShortestPath
     }
 
     public class Common{
-        public Long commonChildren;
-        public Long commonParrents;
+        public Double commonChildren;
+        public Double commonParrents;
 
-        public Common(Long chi, Long par) {
+        public Common(Double chi, Double par) {
             commonChildren = chi;
             commonParrents = par;
         }
 
     }
+
+    public static <E> Collection<E> makeCollection(Iterable<E> iter) {
+    Collection<E> list = new ArrayList<E>();
+    for (E item : iter) {
+        list.add(item);
+    }
+    return list;
+}
 
     @Procedure("common")
     public Stream<Common> common(@Name("title1") String title1, @Name("title2") String title2) {
@@ -197,32 +209,32 @@ public class WeightedShortestPath
         from = db.findNode(pageLabel, "title", title1);
         to = db.findNode(pageLabel, "title", title2);
 
-        int chi = 0;
-        int par = 0;
+        double chi = 0;
+        double par = 0;
 
         Iterable<Relationship> it1 = to.getRelationships(clickStreamType, Direction.OUTGOING);
         Iterable<Relationship> it2 = from.getRelationships(clickStreamType, Direction.OUTGOING);
-        for(Relationship r : it1) {
-            for (Relationship r2: it2) {
-                if(r.getEndNode().getId() == r2.getEndNode().getId()) {
-                    chi++;
-                }
-            }
-        }
+
+        Set<Long> st1 = Sets.newHashSet(Lists.newArrayList(it1).stream().map(x -> x.getEndNode().getId()).collect(Collectors.toList()));
+        Set<Long> st2 = Sets.newHashSet(Lists.newArrayList(it2).stream().map(x -> x.getEndNode().getId()).collect(Collectors.toList()));
+
+        int unionLength = Sets.union(st1, st2).size();
+        int intersectionLength = Sets.intersection(st1, st2).size();
+
+        chi = unionLength == 0? 0 : (double)intersectionLength/(double)unionLength;
 
         it1 = to.getRelationships(clickStreamType, Direction.INCOMING);
         it2 = from.getRelationships(clickStreamType, Direction.INCOMING);
 
-        for(Relationship r : it1) {
-            for (Relationship r2: it2) {
-                if(r.getStartNode().getId() == r2.getStartNode().getId()) {
-                    par++;
-                }
-            }
-        }
+        st1 = Sets.newHashSet(Lists.newArrayList(it1).stream().map(x -> x.getEndNode().getId()).collect(Collectors.toList()));
+        st2 = Sets.newHashSet(Lists.newArrayList(it2).stream().map(x -> x.getEndNode().getId()).collect(Collectors.toList()));
 
-        return Stream.of(new Common((long)chi, (long)par));
+        unionLength = Sets.union(st1, st2).size();
+        intersectionLength = Sets.intersection(st1, st2).size();
 
+        par = unionLength == 0? 0 : (double)intersectionLength/(double)unionLength;
+
+        return Stream.of(new Common(chi, par));
     }
 
 
