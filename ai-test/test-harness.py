@@ -11,8 +11,8 @@ from keras.wrappers.scikit_learn import KerasRegressor
 # load dataset
 dataframe = pandas.read_csv("wiki-train-example.csv", delim_whitespace=True, header=None)
 array = dataframe.values
-X = array[:,0:4]
-Y = array[:,4]
+X = array[:,0:5]
+Y = array[:,5]
 # prepare configuration for cross validation test harness
 num_folds = 10
 seed = 7
@@ -33,7 +33,7 @@ def keras_baseline_model():
 	# Compile model
 	model.compile(loss='mean_squared_error', optimizer='adam')
 	return model
-models.append(('Keras', KerasRegressor(build_fn=keras_baseline_model, nb_epoch=100, batch_size=5, verbose=0)))
+models.append(('Keras', KerasRegressor(build_fn=keras_baseline_model, nb_epoch=1, batch_size=5, verbose=0)))
 
 # TODO ValueError: Unknown label type: (array([ 0.23]),) 
 #models.append(('Perceptron', linear_model.Perceptron()))
@@ -58,4 +58,4 @@ fig.suptitle('Algorithm Comparison')
 ax = fig.add_subplot(111)
 plt.boxplot(results)
 ax.set_xticklabels(names)
-plt.show()
+fig.savefig("algorithm-comparison.png")
