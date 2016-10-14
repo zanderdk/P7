@@ -226,8 +226,8 @@ public class WeightedShortestPath
         it1 = to.getRelationships(clickStreamType, Direction.INCOMING);
         it2 = from.getRelationships(clickStreamType, Direction.INCOMING);
 
-        st1 = Sets.newHashSet(Lists.newArrayList(it1).stream().map(x -> x.getEndNode().getId()).collect(Collectors.toList()));
-        st2 = Sets.newHashSet(Lists.newArrayList(it2).stream().map(x -> x.getEndNode().getId()).collect(Collectors.toList()));
+        st1 = Sets.newHashSet(Lists.newArrayList(it1).stream().map(x -> x.getStartNode().getId()).collect(Collectors.toList()));
+        st2 = Sets.newHashSet(Lists.newArrayList(it2).stream().map(x -> x.getStartNode().getId()).collect(Collectors.toList()));
 
         unionLength = Sets.union(st1, st2).size();
         intersectionLength = Sets.intersection(st1, st2).size();
