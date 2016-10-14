@@ -7,9 +7,12 @@ from sklearn.linear_model import Ridge, LinearRegression
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.wrappers.scikit_learn import KerasRegressor
+import sys
+
+filename = sys.argv[1]
 
 # load dataset
-dataframe = pandas.read_csv("wiki-train-example.csv", delim_whitespace=True, header=None)
+dataframe = pandas.read_csv(filename, delim_whitespace=True, header=None)
 array = dataframe.values
 X = array[:,0:5]
 Y = array[:,5]
@@ -28,7 +31,7 @@ models.append(('LassoLars', linear_model.LassoLars()))
 def keras_baseline_model():
 	# create model
 	model = Sequential()
-	model.add(Dense(4, input_dim=4, init='normal', activation='relu'))
+	model.add(Dense(5, input_dim=5, init='normal', activation='relu'))
 	model.add(Dense(1, init='normal'))
 	# Compile model
 	model.compile(loss='mean_squared_error', optimizer='adam')
