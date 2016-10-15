@@ -4,27 +4,47 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-from sklearn import linear_model
+from sklearn import linear_model, tree
 from sklearn.model_selection import KFold, cross_val_score
 from sklearn.linear_model import Ridge, LinearRegression
-from sklearn import preprocessing 
+from sklearn import preprocessing
+from sklearn.dummy import DummyRegressor
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.wrappers.scikit_learn import KerasRegressor
 import sys
 
-filename = sys.argv[1]
+#filename = sys.argv[1]
 
 # load dataset
-dataframe = pandas.read_csv(filename, delim_whitespace=True, header=None)
-array = dataframe.values
-
+dataframe = pandas.read_csv("training-snippet.csv", delim_whitespace=True)
 min_max_scaler = preprocessing.MinMaxScaler()
-# normalize the page ratio to be within [0, 1] 
-dataframe[4] = min_max_scaler.fit_transform(dataframe[4])
 
-X = array[:,0:5]
-Y = array[:,5]
+
+features = [
+	"commonChildren", 
+	"commonParents", 
+	"pathWeight",
+	"keywordSimilarity",
+	"pageViewsRatio",
+	]
+
+output_label = "clickProbability"
+
+# select the wanted features + output
+dataframe = dataframe[features + [output_label]]
+
+# normalize the page ratio to be within [0, 1] 
+#dataframe["pageViewsRatio"] = min_max_scaler.fit_transform(dataframe["pageViewsRatio"])
+
+# normalize the output label to be within [0, 1] 
+#dataframe["clickProbability"] = min_max_scaler.fit_transform(dataframe["clickProbability"])
+
+# features is the cols - 1 (the 1 is the output label)
+numFeatures = dataframe.shape[1] - 1
+print(numFeatures)
+X = dataframe[features].values
+Y = dataframe[output_label]
 # prepare configuration for cross validation test harness
 num_folds = 10
 seed = 7
@@ -36,16 +56,22 @@ models.append(('Ridge', Ridge()))
 models.append(('Lasso', linear_model.Lasso()))
 models.append(('LassoCV', linear_model.LassoCV()))
 models.append(('LassoLars', linear_model.LassoLars()))
+# Decision tree
+models.append(('Dec tree', tree.DecisionTreeRegressor()))
+
+
+# sanity check
+models.append(('Dummy', DummyRegressor("median")))
 
 def keras_baseline_model():
 	# create model
 	model = Sequential()
-	model.add(Dense(3, input_dim=5, init='normal', activation='sigmoid'))
-	model.add(Dense(1, init='normal', activation="sigmoid"))
+	model.add(Dense(128, input_dim=numFeatures, init='normal', activation='relu'))
+	model.add(Dense(1, init='normal', activation="relu"))
 	# Compile model
 	model.compile(loss='mean_squared_error', optimizer='adam')
 	return model
-models.append(('Keras', KerasRegressor(build_fn=keras_baseline_model, nb_epoch=1, batch_size=5, verbose=0)))
+models.append(('Keras', KerasRegressor(build_fn=keras_baseline_model, nb_epoch=10, batch_size=128, verbose=0)))
 
 # TODO ValueError: Unknown label type: (array([ 0.23]),) 
 #models.append(('Perceptron', linear_model.Perceptron()))
@@ -56,7 +82,7 @@ models.append(('Keras', KerasRegressor(build_fn=keras_baseline_model, nb_epoch=1
 # evaluate each model in turn
 results = []
 names = []
-scoring = 'neg_mean_absolute_error'
+scoring = 'r2'
 for name, model in models:
 	kfold = KFold(n_splits=num_folds, shuffle=True, random_state=seed)
 	cv_results = cross_val_score(model, X, Y, cv=kfold, scoring=scoring)
