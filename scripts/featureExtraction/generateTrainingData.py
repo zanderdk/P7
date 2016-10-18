@@ -10,7 +10,7 @@ outputColumns = ["path", "predecessorA", "successorA", "predecessorB", "successo
 # Input: File with training pairs on the form:
 #       fromTitle toTitle label
 # Output: File with training data on the form:
-#       shortestPath commonOutgoing commonIncoming keywordSimilarity pageViewsRatio label
+#       as defined in outputColumns
 
 def generateTrainingData(inputFilePath, outputFilePath):
     with open(inputFilePath, "r", newline="", encoding="utf-8") as inputFile:

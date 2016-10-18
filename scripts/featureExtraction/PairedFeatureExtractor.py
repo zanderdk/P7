@@ -3,7 +3,7 @@ from neo4j.v1 import GraphDatabase, basic_auth
 class PairedFeatureExtractor:
 
     def __init__(self, pathLimit=8, keywordLimit=100):
-        self.driver = GraphDatabase.driver("bolt://localhost", auth=basic_auth("neo4j", "12345"))
+        self.driver = GraphDatabase.driver("bolt://localhost:10001", auth=basic_auth("neo4j", "12345"))
         self.pathLimit = pathLimit
         self.keywordLimit = keywordLimit
 
