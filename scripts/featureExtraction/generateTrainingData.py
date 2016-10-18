@@ -46,7 +46,7 @@ def generateTrainingData(inputFilePath, outputFilePath):
                                     ",".join("\"{0}".format(s) for s in features[4]) + \
                                     features[5] + \
                                     features[6] + \
-                                    features[7] + \
+                                    #features[7] + \
                                     (row[2],)
                         if dataPoint[0] == 0.0:
                             noPathCounter += 1
