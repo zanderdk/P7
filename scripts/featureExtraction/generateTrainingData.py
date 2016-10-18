@@ -44,8 +44,8 @@ def generateTrainingData(inputFilePath, outputFilePath):
                                     ",".join("\"{0}".format(s) for s in features[2]) + \
                                     ",".join("\"{0}".format(s) for s in features[3]) + \
                                     ",".join("\"{0}".format(s) for s in features[4]) + \
-                                    features[5] + \
-                                    features[6] + \
+                                    str(features[5]) + \
+                                    str(features[6]) + \
                                     (row[2],)
                         if dataPoint[0] == 0.0:
                             noPathCounter += 1
