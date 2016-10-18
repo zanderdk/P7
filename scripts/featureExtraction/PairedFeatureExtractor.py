@@ -32,9 +32,9 @@ class PairedFeatureExtractor:
         }
         return self._runQuery(query, nameMapping)[0]
 
-    def _commonNeighbors(self, fromLink, toLink):
-        query = "CALL common({fromLink},{toLink})"
-        nameMapping = {"fromLink": fromLink, "toLink": toLink}
+    def _getRelationships(self, title):
+        query = "CALL getRelationships({title})"
+        nameMapping = {"title": title}
         res = self._runQuery(query, nameMapping)
         # Special case handling needed if exception handling is added to embedded Java
         return (res[0], res[1])
@@ -66,7 +66,8 @@ class PairedFeatureExtractor:
 
     def extractFeatures(self, fromArticle, toArticle):
         pathWeight = self._shortestPath(fromArticle, toArticle)
-        incoming, outgoing = self._commonNeighbors(fromArticle, toArticle)
+        predecessorsA, successorsA = self._getRelationships(fromArticle)
+        predecessorsB, successorsB = self._getRelationships(toArticle)
         keywordSimilarity = self._compareKeywords(fromArticle, toArticle)
         pageViewsRatio = self._comparePageViews(fromArticle, toArticle)
-        return (pathWeight, outgoing, incoming, keywordSimilarity, pageViewsRatio)
+        return (pathWeight, predecessorsA, successorsA, predecessorsB, successorsB, keywordSimilarity, pageViewsRatio)

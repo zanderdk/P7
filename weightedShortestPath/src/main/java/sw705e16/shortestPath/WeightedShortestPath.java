@@ -8,13 +8,11 @@ import org.neo4j.graphdb.Label;
 import org.neo4j.logging.Log;
 import org.neo4j.procedure.Context;
 import org.neo4j.procedure.Name;
-import org.neo4j.procedure.PerformsWrites;
 import org.neo4j.procedure.Procedure;
 
 import com.google.common.collect.*;
 
 
-import java.awt.*;
 import java.util.*;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -114,8 +112,8 @@ public class WeightedShortestPath
         }
     }
 
-    private static Node from = null;
-    private static Node to = null;
+    private static Node pageA = null;
+    private static Node pageB = null;
 
     public class CostAccum implements CostAccumulator<Weight> {
         @Override
@@ -136,8 +134,8 @@ public class WeightedShortestPath
             double pst = value.doubleValue();
             //pst above 1 means more people have used this link than people have visited the source node.
             pst = (pst > 1.0)? 1.0 : pst;
-            boolean valid = !(Objects.equals((String) r.getStartNode().getProperty("title"), (String) from.getProperty("title")) &&
-                    Objects.equals((String) r.getEndNode().getProperty("title"), (String) to.getProperty("title")));
+            boolean valid = !(Objects.equals((String) r.getStartNode().getProperty("title"), (String) pageA.getProperty("title")) &&
+                    Objects.equals((String) r.getEndNode().getProperty("title"), (String) pageB.getProperty("title")));
 
             return new Weight(-1.0 * Math.log10(pst), valid);
         }
@@ -170,71 +168,57 @@ public class WeightedShortestPath
             @Name("number") Long max)
     {
         Label pageLabel = Label.label("Page");
-        from = db.findNode(pageLabel, "title", fromStr);
-        to = db.findNode(pageLabel, "title", toStr);
+        pageA = db.findNode(pageLabel, "title", fromStr);
+        pageB = db.findNode(pageLabel, "title", toStr);
 
         Comparator<Weight> com = new WeightComparator();
 
         Weight maxW = new Weight(max, true);
 
-        Dijkstra<Weight> d = new Dijkstra(new Weight(0.0, true), from, to, new CostEval(), new CostAccum(), com, Direction.OUTGOING, redirectType, clickStreamType);
+        Dijkstra<Weight> d = new Dijkstra(new Weight(0.0, true), pageA, pageB, new CostEval(), new CostAccum(), com, Direction.OUTGOING, redirectType, clickStreamType);
         d.limitMaxCostToTraverse(maxW);
 
         return d;
     }
 
-    public class Common{
-        public Double commonChildren;
-        public Double commonParrents;
+    public class Relationships {
+        public List<String> successorsList;
+        public List<String> predecessorsList;
 
-        public Common(Double chi, Double par) {
-            commonChildren = chi;
-            commonParrents = par;
+        public Relationships(List<String> successors, List<String> predecessors) {
+            successorsList = successors;
+            predecessorsList = predecessors;
         }
-
     }
 
     public static <E> Collection<E> makeCollection(Iterable<E> iter) {
-    Collection<E> list = new ArrayList<E>();
-    for (E item : iter) {
-        list.add(item);
+        Collection<E> list = new ArrayList<E>();
+        for (E item : iter) {
+            list.add(item);
+        }
+        return list;
     }
-    return list;
-}
 
-    @Procedure("common")
-    public Stream<Common> common(@Name("title1") String title1, @Name("title2") String title2) {
-
+    /**
+     * Retrieves titles of predecessors and successors for an article
+     * @param title The title of the article to find the predecessors and successors of.
+     * @return Titles of predecessors and titles of successors.
+     */
+    @Procedure("getRelationships")
+    public Stream<Relationships> getRelationships(@Name("title") String title) {
+        // Lookup title in db to find the corresponding node.
         Label pageLabel = Label.label("Page");
-        from = db.findNode(pageLabel, "title", title1);
-        to = db.findNode(pageLabel, "title", title2);
+        Node thisNode = db.findNode(pageLabel, "title", title);
 
-        double chi = 0;
-        double par = 0;
+        // Get all successor relationships
+        Iterable<Relationship> successorIt = thisNode.getRelationships(clickStreamType, Direction.OUTGOING);
+        List<String> successorList = Lists.newArrayList(successorIt).stream().map(x -> (String)x.getEndNode().getProperty("title")).collect(Collectors.toList());
 
-        Iterable<Relationship> it1 = to.getRelationships(clickStreamType, Direction.OUTGOING);
-        Iterable<Relationship> it2 = from.getRelationships(clickStreamType, Direction.OUTGOING);
+        // Get all predecessor relationships
+        Iterable<Relationship> predecessorIt = thisNode.getRelationships(clickStreamType, Direction.INCOMING);
+        List<String> predecessorList = Lists.newArrayList(predecessorIt).stream().map(x -> (String)x.getStartNode().getProperty("title")).collect(Collectors.toList());
 
-        Set<Long> st1 = Sets.newHashSet(Lists.newArrayList(it1).stream().map(x -> x.getEndNode().getId()).collect(Collectors.toList()));
-        Set<Long> st2 = Sets.newHashSet(Lists.newArrayList(it2).stream().map(x -> x.getEndNode().getId()).collect(Collectors.toList()));
-
-        int unionLength = Sets.union(st1, st2).size();
-        int intersectionLength = Sets.intersection(st1, st2).size();
-
-        chi = unionLength == 0? 0 : (double)intersectionLength/(double)unionLength;
-
-        it1 = to.getRelationships(clickStreamType, Direction.INCOMING);
-        it2 = from.getRelationships(clickStreamType, Direction.INCOMING);
-
-        st1 = Sets.newHashSet(Lists.newArrayList(it1).stream().map(x -> x.getStartNode().getId()).collect(Collectors.toList()));
-        st2 = Sets.newHashSet(Lists.newArrayList(it2).stream().map(x -> x.getStartNode().getId()).collect(Collectors.toList()));
-
-        unionLength = Sets.union(st1, st2).size();
-        intersectionLength = Sets.intersection(st1, st2).size();
-
-        par = unionLength == 0? 0 : (double)intersectionLength/(double)unionLength;
-
-        return Stream.of(new Common(chi, par));
+        return Stream.of(new Relationships(predecessorList, successorList));
     }
 
 

@@ -5,7 +5,7 @@ from neo4j.v1 import exceptions
 import PairedFeatureExtractor as ext
 
 # Columns names, in order, used to print the header
-outputColumns = ["path", "outgoing", "incoming", "keywords", "pageviews", "click_rate"]
+outputColumns = ["path", "predecessorA", "successorA", "predecessorB", "successorB", "keywords", "pageviews", "click_rate"]
 
 # Input: File with training pairs on the form:
 #       fromTitle toTitle label
@@ -39,7 +39,15 @@ def generateTrainingData(inputFilePath, outputFilePath):
                 try:
                     features = extractor.extractFeatures(row[0], row[1])
                     if all(field is not None for field in features):
-                        dataPoint = features + (row[2],)
+                        dataPoint = features[0] + \
+                                    ",".join("\"{0}".format(s) for s in features[1]) + \
+                                    ",".join("\"{0}".format(s) for s in features[2]) + \
+                                    ",".join("\"{0}".format(s) for s in features[3]) + \
+                                    ",".join("\"{0}".format(s) for s in features[4]) + \
+                                    features[5] + \
+                                    features[6] + \
+                                    features[7] + \
+                                    (row[2],)
                         if dataPoint[0] == 0.0:
                             noPathCounter += 1
                         writer.writerow(dataPoint)
