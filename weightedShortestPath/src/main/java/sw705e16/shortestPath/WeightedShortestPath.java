@@ -181,16 +181,6 @@ public class WeightedShortestPath
         return d;
     }
 
-    public class Relationships {
-        public List<String> successorsList;
-        public List<String> predecessorsList;
-
-        public Relationships(List<String> successors, List<String> predecessors) {
-            successorsList = successors;
-            predecessorsList = predecessors;
-        }
-    }
-
     public static <E> Collection<E> makeCollection(Iterable<E> iter) {
         Collection<E> list = new ArrayList<E>();
         for (E item : iter) {
@@ -198,29 +188,6 @@ public class WeightedShortestPath
         }
         return list;
     }
-
-    /**
-     * Retrieves titles of predecessors and successors for an article
-     * @param title The title of the article to find the predecessors and successors of.
-     * @return Titles of predecessors and titles of successors.
-     */
-    @Procedure("getRelationships")
-    public Stream<Relationships> getRelationships(@Name("title") String title) {
-        // Lookup title in db to find the corresponding node.
-        Label pageLabel = Label.label("Page");
-        Node thisNode = db.findNode(pageLabel, "title", title);
-
-        // Get all successor relationships
-        Iterable<Relationship> successorIt = thisNode.getRelationships(clickStreamType, Direction.OUTGOING);
-        List<String> successorList = Lists.newArrayList(successorIt).stream().map(x -> (String)x.getEndNode().getProperty("title")).collect(Collectors.toList());
-
-        // Get all predecessor relationships
-        Iterable<Relationship> predecessorIt = thisNode.getRelationships(clickStreamType, Direction.INCOMING);
-        List<String> predecessorList = Lists.newArrayList(predecessorIt).stream().map(x -> (String)x.getStartNode().getProperty("title")).collect(Collectors.toList());
-
-        return Stream.of(new Relationships(predecessorList, successorList));
-    }
-
 
     @Procedure("weightedShortestPath")
     public Stream<Output> weightedShortestPath(

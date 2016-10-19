@@ -71,6 +71,7 @@ public class KeywordExtractor {
         return extractKeywords(node).stream().map(Keywords::new);
     }
 
+    /* Deprecated */
     @Procedure("keywordSimilarity")
     public Stream<Similarity> keywordSimilarity(@Name("node1") Node node1, @Name("node2") Node node2, @Name("limit") Long limit) throws Exception {
         Set<String> keywords1 = new HashSet<>(limitList(extractKeywords(node1), limit.intValue()));

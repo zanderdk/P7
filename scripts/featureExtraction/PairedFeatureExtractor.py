@@ -27,17 +27,15 @@ class PairedFeatureExtractor:
         # Temp fix: Wrap None in a list...
         return [None]
 
-    def _compareKeywords(self, fromLink, toLink):
+    def _getKeywords(self, article):
         query = '''
-            MATCH (a:Page),(b:Page)
-            WHERE a.title = {fromLink} AND b.title = {toLink}
-            AND exists (a.text) AND exists (b.text)
-            CALL keywordSimilarity(a,b,{keywordLimit}) yield similarity as x
+            MATCH (a:Page)
+            WHERE a.title = {article}
+            AND exists (a.text)
+            CALL keywords(a) yield keyword as x
             RETURN x'''
         nameMapping = {
-            "fromLink": fromLink,
-            "toLink": toLink,
-            "keywordLimit": self.keywordLimit
+            "article": article
         }
         return self._runQuery(query, nameMapping)[0]
 
@@ -57,21 +55,18 @@ class PairedFeatureExtractor:
         }
         return self._runQuery(query, nameMapping)[0]
 
-    def _comparePageViews(self, fromLink, toLink):
+    def _getPageViews(self, fromLink, toLink):
         query = '''
             MATCH (a:Page),(b:Page)
             WHERE a.title = {fromLink} AND b.title = {toLink}
             return a.viewCount, b.viewCount'''
-        nameMapping = {
-            "fromLink": fromLink,
-            "toLink": toLink
-        }
+        nameMapping = { "fromLink": fromLink, "toLink": toLink }
         res = self._runQuery(query, nameMapping)
         # Handle cases where either page does not have a specified viewCount
         if res[0] is None or res[1] is None:
             return None
         # Cast needed as pageViews are stored as strings in the db..
-        return float(res[0]) / float(res[1])
+        return (float(res[0]), float(res[1]))
 
     def get_field_names(self):
         """Returns a list of feature names. Only the wanted features are returned."""
