@@ -3,16 +3,14 @@ import sys
 import csv
 from neo4j.v1 import exceptions
 import PairedFeatureExtractor as ext
-
-# Columns names, in order, used to print the header
-outputColumns = ["path", "predecessorA", "successorA", "predecessorB", "successorB", "keywords", "pageviews", "click_rate"]
+import argparse
 
 # Input: File with training pairs on the form:
 #       fromTitle toTitle label
 # Output: File with training data on the form:
 #       as defined in outputColumns
 
-def generateTrainingData(inputFilePath, outputFilePath):
+def generateTrainingData(inputFilePath, outputFilePath, extractor, include_label):
     with open(inputFilePath, "r", newline="", encoding="utf-8") as inputFile:
         reader = csv.reader(inputFile, delimiter=" ")
 
@@ -24,9 +22,17 @@ def generateTrainingData(inputFilePath, outputFilePath):
             next(reader)
 
         with open(outputFilePath, "w+", newline="", encoding="utf-8") as outputFile:
-            writer = csv.writer(outputFile, delimiter=" ")
-            writer.writerow(outputColumns)   # Write header
-            extractor = ext.PairedFeatureExtractor()
+            label_field_name = "clickProbability"
+
+            # the field names are the field names from the extractor, and the clickProbablity
+            field_names = extractor.get_field_names()
+            if include_label:
+                field_names += [label_field_name]
+       
+            writer = csv.DictWriter(outputFile, fieldnames=field_names, dialect="excel")
+            
+            # Write header
+            writer.writeheader()
 
             # Counters for keeping status
             counter = 1
@@ -37,25 +43,25 @@ def generateTrainingData(inputFilePath, outputFilePath):
             # Iterate over all input lines, using the csv reader
             for row in reader:
                 try:
-                    features = extractor.extractFeatures(row[0], row[1])
-                    if all(field is not None for field in features):
-                        dataPoint = features[0] + \
-                                    ",".join("\"{0}".format(s) for s in features[1]) + \
-                                    ",".join("\"{0}".format(s) for s in features[2]) + \
-                                    ",".join("\"{0}".format(s) for s in features[3]) + \
-                                    ",".join("\"{0}".format(s) for s in features[4]) + \
-                                    str(features[5]) + \
-                                    str(features[6]) + \
-                                    (row[2],)
-                        if dataPoint[0] == 0.0:
+                    from_title = row[0]
+                    to_title = row[1]
+                    label = row[2]
+                    features = extractor.extractFeatures(from_title, to_title)
+                    if all(field is not None for field in features.values()):
+                        # add label to features data
+                        if include_label:
+                            features[label_field_name] = label
+                        pathWeight = features.get("pathWeight")
+                        if pathWeight is not None and pathWeight == 0.0:
                             noPathCounter += 1
-                        writer.writerow(dataPoint)
+                        writer.writerow(features)
                     else:
                         noneCounter += 1
                     if counter % 1000 == 0:
                         printStatus(counter, noneCounter, exceptionCounter, noPathCounter)
                     counter += 1
-                except exceptions.CypherError:
+                except exceptions.CypherError as e:
+                    print("Cypther error({0}): {1}".format(e.errno, e.strerror))
                     exceptionCounter += 1
                     counter += 1
                     continue
@@ -71,7 +77,23 @@ def printStatus(pairCount, noneCount, exceptionCount, noPathCount):
     print("Generated data points: " + str(pairCount - failedCount))
     print("Pairs without path: " + str(noPathCount))
 
-if len(sys.argv) > 2:
-    generateTrainingData(sys.argv[1], sys.argv[2])
-else:
-    print("Must specify input and output files as parameters")
+# hack instance that is only used to get the list of all field names 
+temp_extractor = ext.PairedFeatureExtractor([])
+
+# parse arguments
+parser = argparse.ArgumentParser()
+parser.add_argument("inputFile", help="training pairs data file")
+parser.add_argument("outputFile", help="location to put the output file")
+parser.add_argument("--include-label", action="store_true", help="include the training data label in the output")
+parser.add_argument("--features", default=temp_extractor.get_all_field_names(), nargs="*")
+
+args = parser.parse_args()
+extractor = ext.PairedFeatureExtractor(args.features)
+
+# check if the feature is valid
+for wantedFeature in args.features:
+  valid_features = extractor.get_all_field_names()
+  if wantedFeature not in valid_features:
+    exit("Invalid feature {0}\nValid features:\n    {1}".format(wantedFeature, "\n    ".join(valid_features)))
+
+generateTrainingData(args.inputFile, args.outputFile, extractor, args.include_label)
