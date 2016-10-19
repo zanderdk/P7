@@ -4,6 +4,7 @@ import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import com.google.common.collect.Sets;
+import org.apache.commons.io.IOUtils;
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Node;
 import org.neo4j.procedure.Context;
@@ -18,6 +19,7 @@ import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
 import sw705e16.keywordExtraction.tools.RakeExtractor;
 import sw705e16.keywordExtraction.tools.TextConverter;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -71,6 +73,26 @@ public class KeywordExtractor {
         return extractKeywords(node).stream().map(Keywords::new);
     }
 
+    @Procedure("words")
+    public Stream<Words> words(@Name("node") Node node) throws Exception {
+        String title = (String) node.getProperty("title");
+        String wikitext = (String) node.getProperty("text");
+
+        String plainText = wikiToText(wikitext, title);
+
+        // split punctuation, whitespace and digits
+        String[] words = plainText.toLowerCase().split("[\\p{Punct}\\s\\d]+");
+
+        String stopText = IOUtils.toString(getClass().getResourceAsStream("/stopwords.txt"));
+        String[] stopwords = stopText.split("\n");
+
+        Set<String> wordsSet = new HashSet<>(Arrays.asList(words));
+        Set<String> stopwordsSet = new HashSet<>(Arrays.asList(stopwords));
+
+        return Sets.difference(wordsSet, stopwordsSet).stream().map(Words::new);
+    }
+
+
     /* Deprecated */
     @Procedure("keywordSimilarity")
     public Stream<Similarity> keywordSimilarity(@Name("node1") Node node1, @Name("node2") Node node2, @Name("limit") Long limit) throws Exception {
@@ -83,6 +105,14 @@ public class KeywordExtractor {
         if (unionLength == 0) return Stream.of(new Similarity(0));
 
         return Stream.of(new Similarity(intersectionLength / unionLength));
+    }
+
+    public static class Words {
+        public String words;
+
+        public Words(String words) {
+            this.words = words;
+        }
     }
 
     public static class Keywords {
