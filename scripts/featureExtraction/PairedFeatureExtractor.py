@@ -6,14 +6,16 @@ class PairedFeatureExtractor:
         self.pathLimit = pathLimit
         self.keywordLimit = keywordLimit
         self.wantedFeatures = wantedFeatures
-        self.feature_function_dict = {
+        self.feature_function_dict = { # if None, then it is special cased
             "pathWeight": self._shortestPath,
-            "keywordSimilarity": self._compareKeywords,
-            "pageViewsRatio": self._comparePageViews,
-            "predecessorsA": None, # special cased
-            "successorsA": None, # special cased
-            "predecessorsB": None, # special cased
-            "successorsB": None, # special cased
+            "keywordsA": None,
+            "keywordsB": None,
+            "pageViewsA": None,
+            "pageViewsB": None,
+            "predecessorsA": None,
+            "successorsA": None,
+            "predecessorsB": None,
+            "successorsB": None,
         }
 
     def _runQuery(self, query, mapping):
@@ -90,6 +92,17 @@ class PairedFeatureExtractor:
             # If it is None, do not do anything, as it is special cased
             if feature_func is not None:
                 res_dict[wantedFeature] = feature_func(fromArticle, toArticle)
+        
+        if "keywordsA" in self.wantedFeature:
+            res_dict["keywordsA"] = self._getKeywords(fromArticle)
+        if "keywordsB" in self.wantedFeature:
+            res_dict["keywordsB"] = self._getKeywords(toArticle)
+        
+        if "pageViewsA" or "pageViewsB" in self.wantedFeature:
+            pagevA, pagevB = self._getPageViews(fromArticle, toArticle)
+            if "pageViewsA" in self.wantedFeatures: res_dict["pageViewsA"] = pagevA
+            if "pageViewsB" in self.wantedFeatures: res_dict["pageViewsA"] = pagevB
+            
         
         # special casing for _getRelationships as it returns a tuple
         if "predecessorsA" or "successorsA" in self.wantedFeatures:
