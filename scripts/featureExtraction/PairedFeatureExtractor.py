@@ -1,10 +1,9 @@
 from neo4j.v1 import GraphDatabase, basic_auth
 
 class PairedFeatureExtractor:
-    def __init__(self, wantedFeatures, pathLimit=8, keywordLimit=100):
+    def __init__(self, wantedFeatures, pathLimit=8):
         self.driver = GraphDatabase.driver("bolt://192.38.56.57:10001", auth=basic_auth("neo4j", "12345"))
         self.pathLimit = pathLimit
-        self.keywordLimit = keywordLimit
         self.wantedFeatures = wantedFeatures
         self.feature_function_dict = { # if None, then it is special cased
             "pathWeight": self._shortestPath,
