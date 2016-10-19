@@ -25,7 +25,9 @@ public class KeywordExtractorTest {
 
             session.run("CREATE (p:Page {title:'Water', text:'" + waterwiki + "'}) RETURN id(p)");
 
-            StatementResult result = session.run("MATCH (p:Page) WHERE p.title = 'Water' CALL keywordSimilarity(p, p) yield similarity as x return x");
+            //StatementResult result = session.run("MATCH (p:Page) WHERE p.title = 'Water' CALL keywordSimilarity(p, p) yield similarity as x return x");
+
+            StatementResult result = session.run("MATCH (p:Page) WHERE p.title = 'Water' CALL words(p) yield words as x return x");
 
 
             System.out.println(result.list(x -> x.get("x")));
