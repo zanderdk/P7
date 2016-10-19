@@ -19,6 +19,7 @@ import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
 import sw705e16.keywordExtraction.tools.RakeExtractor;
 import sw705e16.keywordExtraction.tools.TextConverter;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -32,6 +33,18 @@ public class KeywordExtractor {
     private static WikiConfig wikiConfig = DefaultConfigEnWp.generate();
     private static WtEngineImpl engine = new WtEngineImpl(wikiConfig);
     private static TextConverter textConverter = new TextConverter(wikiConfig, 10000);
+
+    private static Set<String> stopwordsSet = null;
+
+    public KeywordExtractor() {
+        try {
+            String stopText = IOUtils.toString(getClass().getResourceAsStream("/stopwords.txt"));
+            String[] stopwords = stopText.split("\n");
+            stopwordsSet = new HashSet<>(Arrays.asList(stopwords));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static LoadingCache<Node, List<String>> keywordsCache = CacheBuilder.newBuilder()
             .maximumSize(1000)
@@ -83,15 +96,10 @@ public class KeywordExtractor {
         // split punctuation, whitespace and digits
         String[] words = plainText.toLowerCase().split("[\\p{Punct}\\s\\d]+");
 
-        String stopText = IOUtils.toString(getClass().getResourceAsStream("/stopwords.txt"));
-        String[] stopwords = stopText.split("\n");
-
         Set<String> wordsSet = new HashSet<>(Arrays.asList(words));
-        Set<String> stopwordsSet = new HashSet<>(Arrays.asList(stopwords));
 
         return Sets.difference(wordsSet, stopwordsSet).stream().map(Words::new);
     }
-
 
     /* Deprecated */
     @Procedure("keywordSimilarity")

@@ -14,7 +14,7 @@ public class KeywordExtractorTest {
     @Rule
     public Neo4jRule neo4j = new Neo4jRule().withProcedure(KeywordExtractor.class);
 
-    @Ignore
+    @Ignore @Test
     public void shouldExtractKeywords() throws Throwable {
         String waterwiki = IOUtils.toString(getClass().getResourceAsStream("/water.wikitext")).replace("'", "\\'");
 
