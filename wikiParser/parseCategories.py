@@ -1,4 +1,5 @@
-# Usage: bzcat article_categories_en.ttl.bz2 | python3 parseCategories.py  
+# Usage: bzcat article_categories_en.ttl.bz2 | python3 parseCategories.py
+# -*- coding: utf-8 -*-
 
 import sys
 import re
@@ -12,7 +13,7 @@ driver = GraphDatabase.driver("bolt://localhost", auth=basic_auth("neo4j", "1234
 session = driver.session()
 counter = 1
 
-#sys.stdin = io.TextIOWrapper(sys.stdin.buffer, encoding='utf-8')
+sys.stdin = io.TextIOWrapper(sys.stdin.buffer, encoding='utf-8')
 
 def createRelation(relation):
     global session
@@ -37,8 +38,6 @@ for line in sys.stdin:
     print("Error parsing line:", line)
     continue
 
-
-  print(m.group(1), m.group(2))
 
   createRelation({ 'article': m.group(1), 'category': m.group(2) })
 
