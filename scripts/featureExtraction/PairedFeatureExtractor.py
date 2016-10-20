@@ -4,21 +4,19 @@ import word2vec
 class PairedFeatureExtractor:
     def __init__(self, wantedFeatures, pathLimit=8):
         self.driver = GraphDatabase.driver("bolt://192.38.56.57:10001", auth=basic_auth("neo4j", "12345"))
-        self.word2vec = word2vec.word2vec()
+        # self.word2vec = word2vec.word2vec()
         self.pathLimit = pathLimit
         self.wantedFeatures = wantedFeatures
         self.feature_function_dict = { # if None, then it is special cased
             "pathWeight": self._shortestPath,
             "keywordsA": None,
             "keywordsB": None,
-            "pageViewsA": None,
-            "pageViewsB": None,
             "predecessorsA": None,
             "successorsA": None,
             "predecessorsB": None,
             "successorsB": None,
-            "word2vec": self.word2vec.compareKeywordSets,
-            "PredesccorJaccard": self._getPredesccorJaccard,
+            "word2vec":  None, #self.word2vec.compareKeywordSets,
+            "PredesccorJaccard": self._getPredecessorJaccard,
             "SucessorJaccard": self._getSucessorJaccard,
         }
 
@@ -26,9 +24,11 @@ class PairedFeatureExtractor:
         self._prevTo = {"name": "", "outgoing": [], "incoming": []}
 
     def _runQuery(self, query, mapping):
+        result = []
+        print(query)
+        print(mapping)
         with self.driver.session() as session:
 
-            result = []
             for record in session.run(query, mapping):
                 result.append(record)
 
@@ -52,7 +52,7 @@ class PairedFeatureExtractor:
 
 
     def _callGetRelationships(self, title):
-        return self._runQuery("CALL getRelationships({title})", {"title": toLink})
+        return self._runQuery("CALL getRelationships({title})", {"title": title})
 
     def _relationTypeHelper(self, name, relationList):
         outgoing = []
@@ -66,12 +66,14 @@ class PairedFeatureExtractor:
 
         return {"name": name, "outgoing": outgoing, "incoming": incoming }
 
-    def _getRelationships(self, fromLink = self._prevFrom[name], toLink = self._prevTo[name]):
-        if not(self._prevFrom[name] == fromLink):
+    def _getRelationships(self, fromLink=None, toLink=None):
+        fromLink = self._prevFrom if fromLink is None else fromLink
+        toLink = self._prevTo if toLink is None else toLink
+        if not(self._prevFrom["name"] == fromLink):
             result = self._callGetRelationships(fromLink)
             self._prevFrom = self._relationTypeHelper(fromLink, result)
 
-        if not(self._prevTo[name] == toLink):
+        if not(self._prevTo["name"] == toLink):
             result = self._callGetRelationships(toLink)
             self._prevTo = self._relationTypeHelper(toLink, result)
 
@@ -94,16 +96,16 @@ class PairedFeatureExtractor:
         return len(set(fromArticle).union(set(toArticle)))
 
     def _getJaccard(self, fromLink, toLink, direction):
-        inter = _getCommonRelationCount(fromLink, toLink, direction)
-        union = _getTotalRelationCount(fromLink, toLink, direction)
+        inter = self._getCommonRelationCount(fromLink, toLink, direction)
+        union = self._getTotalRelationCount(fromLink, toLink, direction)
 
         return inter/union if union != 0 else 0
 
     def _getSucessorJaccard(self, fromLink, toLink):
-        return _getJaccard(fromLink, toLink, "outgoing")
+        return self._getJaccard(fromLink, toLink, "outgoing")
 
     def _getPredecessorJaccard(self, fromLink, toLink):
-        return _getJaccard(fromLink, toLink, "incoming")
+        return self._getJaccard(fromLink, toLink, "incoming")
 
 
 
@@ -116,20 +118,6 @@ class PairedFeatureExtractor:
             "pathLimit": self.pathLimit
         }
         return self._runQuery(query, nameMapping)[0]
-
-
-    def _getPageViews(self, fromLink, toLink):
-        query = '''
-            MATCH (a:Page),(b:Page)
-            WHERE a.title = {fromLink} AND b.title = {toLink}
-            return a.viewCount, b.viewCount'''
-        nameMapping = { "fromLink": fromLink, "toLink": toLink }
-        res = self._runQuery(query, nameMapping)
-        # Handle cases where either page does not have a specified viewCount
-        if res[0] is None or res[1] is None:
-            return None
-        # Cast needed as pageViews are stored as strings in the db..
-        return (float(res[0]), float(res[1]))
 
     def get_field_names(self):
         """Returns a list of feature names. Only the wanted features are returned."""
@@ -154,16 +142,10 @@ class PairedFeatureExtractor:
             if feature_func is not None:
                 res_dict[wantedFeature] = feature_func(fromArticle, toArticle)
         
-        if "keywordsA" in self.wantedFeature:
+        if "keywordsA" in self.wantedFeatures:
             res_dict["keywordsA"] = self._getKeywords(fromArticle)
-        if "keywordsB" in self.wantedFeature:
+        if "keywordsB" in self.wantedFeatures:
             res_dict["keywordsB"] = self._getKeywords(toArticle)
-        
-        if "pageViewsA" or "pageViewsB" in self.wantedFeature:
-            pagevA, pagevB = self._getPageViews(fromArticle, toArticle)
-            if "pageViewsA" in self.wantedFeatures: res_dict["pageViewsA"] = pagevA
-            if "pageViewsB" in self.wantedFeatures: res_dict["pageViewsA"] = pagevB
-            
         
         # special casing for _getRelationships as it returns a tuple
         if "predecessorsA" or "successorsA" in self.wantedFeatures:
