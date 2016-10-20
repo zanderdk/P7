@@ -1,8 +1,10 @@
 from neo4j.v1 import GraphDatabase, basic_auth
+import word2vec
 
 class PairedFeatureExtractor:
     def __init__(self, wantedFeatures, pathLimit=8):
-        self.driver = GraphDatabase.driver("bolt://192.38.56.57:10001", auth=basic_auth("neo4j", "12345"))
+        self.driver = GraphDatabase.driver("bolt://127.0.0.1:10001", auth=basic_auth("neo4j", "12345"))
+        self.word2vec = word2vec.word2vec()
         self.pathLimit = pathLimit
         self.wantedFeatures = wantedFeatures
         self.feature_function_dict = { # if None, then it is special cased
@@ -15,6 +17,7 @@ class PairedFeatureExtractor:
             "successorsA": None,
             "predecessorsB": None,
             "successorsB": None,
+            "word2vec": self.word2vec.compareKeywordSets
         }
 
     def _runQuery(self, query, mapping):
@@ -27,6 +30,7 @@ class PairedFeatureExtractor:
         # Need to check if this ever happens, as it requires handling when calling the func
         # Temp fix: Wrap None in a list...
         return [None]
+
 
     def _getKeywords(self, article):
         query = '''
