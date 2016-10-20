@@ -3,7 +3,7 @@ import word2vec
 
 class PairedFeatureExtractor:
     def __init__(self, wantedFeatures, pathLimit=8):
-        self.driver = GraphDatabase.driver("bolt://127.0.0.1:10001", auth=basic_auth("neo4j", "12345"))
+        self.driver = GraphDatabase.driver("bolt://192.38.56.57:10001", auth=basic_auth("neo4j", "12345"))
         self.word2vec = word2vec.word2vec()
         self.pathLimit = pathLimit
         self.wantedFeatures = wantedFeatures
@@ -54,7 +54,7 @@ class PairedFeatureExtractor:
     def _callGetRelationships(self, title):
     	return self._runQuery("CALL getRelationships({title})", {"title": toLink})
 
-   	def _relationTypeHelper(self, name, relationList):
+    def _relationTypeHelper(self, name, relationList):
    		outgoing = []
    		incoming = []
 
@@ -67,15 +67,15 @@ class PairedFeatureExtractor:
    		return {"name": name, "outgoing": outgoing, "incoming": incoming }
 
     def _getRelationships(self, fromLink = self._prevFrom[name], toLink = self._prevTo[name]):
-    	if !(self._prevFrom[name] == fromLink):
+    	if not(self._prevFrom[name] == fromLink):
     		result = self._callGetRelationships(fromLink)
     		self._prevFrom = self._relationTypeHelper(fromLink, result)
 
-    	if !(self._prevTo[name] == toLink):
+    	if not(self._prevTo[name] == toLink):
     		result = self._callGetRelationships(toLink)
     		self._prevTo = self._relationTypeHelper(toLink, result)
 
-		return (self._prevFrom, self._prevTo)
+                return (self._prevFrom, self._prevTo)
 
 	def _getCommonRelationCount(self, fromLink, toLink, direction):
 		res = self._getRelationships(fromLink, toLink)
