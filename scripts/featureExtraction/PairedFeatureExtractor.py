@@ -17,19 +17,25 @@ class PairedFeatureExtractor:
             "successorsA": None,
             "predecessorsB": None,
             "successorsB": None,
-            "word2vec": self.word2vec.compareKeywordSets
+            "word2vec": self.word2vec.compareKeywordSets,
+            "PredesccorJaccard": self._getPredesccorJaccard,
+            "SucessorJaccard": self._getSucessorJaccard,
         }
+
+        self._prevFrom = {"name": "", "outgoing": [], "incoming": []}
+        self._prevTo = {"name": "", "outgoing": [], "incoming": []}
 
     def _runQuery(self, query, mapping):
         with self.driver.session() as session:
-            # Return the first element of record stream, do nothing if stream is empty
-            for record in session.run(query, mapping):
-                return record
 
-        # Returns None if db doesnt return a result
+            result = []
+            for record in session.run(query, mapping):
+                result.append(record)
+
+        # Returns [None] if db doesnt return a result
         # Need to check if this ever happens, as it requires handling when calling the func
         # Temp fix: Wrap None in a list...
-        return [None]
+        return [None] if not result else result
 
 
     def _getKeywords(self, article):
@@ -44,12 +50,63 @@ class PairedFeatureExtractor:
         }
         return self._runQuery(query, nameMapping)[0]
 
-    def _getRelationships(self, title):
-        query = "CALL getRelationships({title})"
-        nameMapping = {"title": title}
-        res = self._runQuery(query, nameMapping)
-        # Special case handling needed if exception handling is added to embedded Java
-        return (res[0], res[1])
+
+    def _callGetRelationships(self, title):
+    	return self._runQuery("CALL getRelationships({title})", {"title": toLink})
+
+   	def _relationTypeHelper(self, name, relationList):
+   		outgoing = []
+   		incoming = []
+
+   		for fuble in relationList:
+   			if fuble[2] == "Outgoing":
+   				outgoing.append(fuble)
+   			elif fuble[2] == "Incoming":
+   				incoming.append(fuble)
+
+   		return {"name": name, "outgoing": outgoing, "incoming": incoming }
+
+    def _getRelationships(self, fromLink = self._prevFrom[name], toLink = self._prevTo[name]):
+    	if !(self._prevFrom[name] == fromLink):
+    		result = self._callGetRelationships(fromLink)
+    		self._prevFrom = self._relationTypeHelper(fromLink, result)
+
+    	if !(self._prevTo[name] == toLink):
+    		result = self._callGetRelationships(toLink)
+    		self._prevTo = self._relationTypeHelper(toLink, result)
+
+		return (self._prevFrom, self._prevTo)
+
+	def _getCommonRelationCount(self, fromLink, toLink, direction):
+		res = self._getRelationships(fromLink, toLink)
+
+		fromArticle = [link[3] for link in res[0][direction]]
+		toArticle = [link[3] for link in res[1][direction]]
+
+		return len(set(fromArticle).intersection(set(toArticle)))
+
+	def _getTotalRelationCount(self, fromLink, toLink, direction):
+		res = self._getRelationships(fromLink, toLink)
+
+		fromArticle = [link[3] for link in res[0][direction]]
+		toArticle = [link[3] for link in res[1][direction]]
+
+		return len(set(fromArticle).union(set(toArticle)))
+
+	def _getJaccard(self, fromLink, toLink, direction):
+		inter = _getCommonRelationCount(fromLink, toLink, direction)
+		union = _getTotalRelationCount(fromLink, toLink, direction)
+
+		return inter/union if union != 0 else 0
+
+	def _getSucessorJaccard(self, fromLink, toLink):
+		return _getJaccard(fromLink, toLink, "outgoing")
+
+	def _getPredecessorJaccard(self, fromLink, toLink):
+		return _getJaccard(fromLink, toLink, "incoming")
+
+
+
 
     def _shortestPath(self, fromLink, toLink):
         query = "CALL weightedShortestPathCost({fromLink}, {toLink}, {pathLimit})"
@@ -59,6 +116,7 @@ class PairedFeatureExtractor:
             "pathLimit": self.pathLimit
         }
         return self._runQuery(query, nameMapping)[0]
+
 
     def _getPageViews(self, fromLink, toLink):
         query = '''
