@@ -28,6 +28,7 @@ public class Relationships
         Label pageLabel = Label.label("Page");
         Node thisNode = db.findNode(pageLabel, "title", title);
 
+        if(thisNode == null) return null;
         // Get all successor relationships
         Iterable<Relationship> relationIterator = thisNode.getRelationships(clickStreamType, Direction.BOTH);
 
