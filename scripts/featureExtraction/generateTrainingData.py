@@ -47,7 +47,7 @@ def generateTrainingData(inputFilePath, outputFilePath, extractor, include_label
                     to_title = row[1]
                     label = row[2]
                     features = extractor.extractFeatures(from_title, to_title)
-                    if all(field is not None for field in features.values()):
+                    if all(fields is not None for fields in features.values()):
                         # add label to features data
                         if include_label:
                             features[label_field_name] = label
@@ -91,8 +91,8 @@ args = parser.parse_args()
 extractor = ext.PairedFeatureExtractor(args.features)
 
 # check if the feature is valid
+valid_features = extractor.get_all_field_names()
 for wantedFeature in args.features:
-  valid_features = extractor.get_all_field_names()
   if wantedFeature not in valid_features:
     exit("Invalid feature {0}\nValid features:\n    {1}".format(wantedFeature, "\n    ".join(valid_features)))
 

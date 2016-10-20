@@ -7,10 +7,12 @@ import org.neo4j.procedure.Name;
 import org.neo4j.procedure.Procedure;
 import org.neo4j.unsafe.impl.batchimport.cache.idmapping.string.Radix;
 
+import javax.management.relation.Relation;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 public class Relationships
 {
@@ -19,11 +21,22 @@ public class Relationships
     @Context
     public GraphDatabaseService db;
 
-    public class RelationshipsList {
-        public List<String> successorsList;
-        public List<String> predecessorsList;
+    public static class resultclass {
+        public static String title;
+        public static Double clickRate;
 
-        public RelationshipsList(List<String> successors, List<String> predecessors) {
+        resultclass(String Title, Double ClickRate){
+            title = Title;
+            clickRate = ClickRate;
+        }
+
+    }
+
+    public static class RelationshipsList {
+        public static List<Object> successorsList;
+        public static List<Object> predecessorsList;
+
+        public RelationshipsList(List<Object> successors, List<Object> predecessors) {
             successorsList = successors;
             predecessorsList = predecessors;
         }
@@ -35,31 +48,32 @@ public class Relationships
      * @return Titles of predecessors and titles of successors.
      */
     @Procedure("getRelationships")
-    public Stream<RelationshipsList> getRelationships(@Name("title") String title) {
+    public Stream<Relationship> getRelationships(@Name("title") String title) {
         // Lookup title in db to find the corresponding node.
         Label pageLabel = Label.label("Page");
         Node thisNode = db.findNode(pageLabel, "title", title);
 
         // Get all successor relationships
-        Iterable<Relationship> successorIt = thisNode.getRelationships(clickStreamType, Direction.OUTGOING);
-        List<String> successorList = new ArrayList<>();
-        for (Relationship x : successorIt) {
-            successorList.add((String)x.getEndNode().getProperty("title"));
+        Iterable<Relationship> relationIterator = thisNode.getRelationships(clickStreamType, Direction.BOTH);
+
+        List<Object> successorList = new ArrayList<>();
+        List<Object> predecessorList = new ArrayList<>();
+
+        for (Relationship r : relationIterator) {
+            Double clickRate = (Double) r.getProperty("clickRate");
+            if(r.getStartNode().getId() == thisNode.getId()){
+                successorList.add((Object)new resultclass((String)r.getEndNode().getProperty("title"), clickRate));
+            } else {
+                predecessorList.add((Object)new resultclass((String)r.getStartNode().getProperty("title"), clickRate));
+            }
         }
 
-        //List<String> successorList = Lists.newArrayList(successorIt).stream().map(
-        //        x -> (String)x.getEndNode().getProperty("title")).collect(Collectors.toList());
+        List<Relationship> res = new ArrayList<>();
 
-        // Get all predecessor relationships
-        Iterable<Relationship> predecessorIt = thisNode.getRelationships(clickStreamType, Direction.INCOMING);
-        List<String> predecessorList = new ArrayList<>();
-        for (Relationship x : successorIt) {
-            predecessorList.add((String)x.getEndNode().getProperty("title"));
+        for (Relationship r : relationIterator){
+            res.add(r);
         }
-        //List<String> predecessorList = Lists.newArrayList(predecessorIt).stream().map(
-        //        x -> (String)x.getStartNode().getProperty("title")).collect(Collectors.toList());
 
-        return Stream.of(new RelationshipsList(predecessorList, successorList));
+        return StreamSupport.stream(relationIterator.spliterator(), false);
     }
-
 }

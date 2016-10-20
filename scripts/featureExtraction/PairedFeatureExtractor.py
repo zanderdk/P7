@@ -113,7 +113,7 @@ class PairedFeatureExtractor:
             if "predecessorsA" in self.wantedFeatures: res_dict["predecessorsA"] = predecessorsA
             if "successorsA" in self.wantedFeatures: res_dict["successorsA"] = successorsA
         if "predecessorsB" or "successorsB" in self.wantedFeatures:
-            predecessorsB, successorsB = self._getRelationships(fromArticle)
+            predecessorsB, successorsB = self._getRelationships(toArticle)
             if "predecessorsB" in self.wantedFeatures: res_dict["predecessorsB"] = predecessorsB
             if "successorsB" in self.wantedFeatures: res_dict["successorsB"] = successorsB
 
