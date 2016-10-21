@@ -9,7 +9,7 @@ class PairedFeatureExtractor:
         self._qhelper = runQuery.QueryHelper(GraphDatabase.driver("bolt://192.38.56.57:10001", auth=basic_auth("neo4j", "12345")))
 
         self.relation = relationship.RelationshipGetter(self._qhelper)
-        self.word2vec = word2vec.word2vec()
+        self.word2vec = word2vec.word2vec(self._qhelper)
 
         self.pathLimit = pathLimit
         self.wantedFeatures = wantedFeatures
