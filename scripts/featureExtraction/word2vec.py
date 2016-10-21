@@ -10,8 +10,7 @@ import math
 
 class word2vec:
     def __init__(self):
-        pass
-        #self.model = Word2Vec.load("/home/sw705e16/resources/en_1000_no_stem/en.model", encoding="latin1")
+        self.model = Word2Vec.load("/home/sw705e16/resources/en_1000_no_stem/en.model", encoding="latin1")
         # self.model = Word2Vec.load_word2vec_format("/home/zander/word2vec/GoogleNews-vectors-negative300.bin", binary=True)
 
     def getKeywords(self, title):
