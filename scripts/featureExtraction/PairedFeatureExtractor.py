@@ -11,6 +11,8 @@ class PairedFeatureExtractor:
             "pathWeight": self._shortestPath,
             "keywordsA": None,
             "keywordsB": None,
+            "categoriesA": None,
+            "categoriesB": None,
             "word2vec":  None, #self.word2vec.compareKeywordSets,
             "PredesccorJaccard": self._getPredecessorJaccard,
             "SucessorJaccard": self._getSucessorJaccard,
@@ -44,6 +46,15 @@ class PairedFeatureExtractor:
         }
         return self._runQuery(query, nameMapping)[0]
 
+    def _getCategories(self, article):
+        query = '''
+            MATCH (a:Page)-[:IN_CATEGORY]->(c:Category)
+            WHERE a.title = {article}
+            RETURN c'''
+        nameMapping = {
+            "article": article
+        }
+        return self._runQuery(query, nameMapping)[0]
 
     def _callGetRelationships(self, title):
         return self._runQuery("CALL getRelationships({title})", {"title": title})
@@ -136,9 +147,15 @@ class PairedFeatureExtractor:
             if feature_func is not None:
                 res_dict[wantedFeature] = feature_func(fromArticle, toArticle)
         
+        # special cases for single parameter functions
         if "keywordsA" in self.wantedFeatures:
             res_dict["keywordsA"] = self._getKeywords(fromArticle)
         if "keywordsB" in self.wantedFeatures:
             res_dict["keywordsB"] = self._getKeywords(toArticle)
+        
+        if "categoriesA" in self.wantedFeatures:
+            res_dict["categoriesA"] = self._getCategories(fromArticle)
+        if "categoriesB" in self.wantedFeatures:
+            res_dict["categoriesB"] = self._getCategories(toArticle)
         
         return res_dict
