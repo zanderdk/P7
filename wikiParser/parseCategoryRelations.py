@@ -11,7 +11,7 @@ turtle = re.compile(r'<http:\/\/dbpedia.org\/resource\/Category:(.+?)>\s<.*?#(.+
 hashstuff = re.compile(r'.+#(.+?)>')
 category = re.compile(r'<http:\/\/dbpedia.org\/resource\/Category:(.+?)>')
 
-driver = GraphDatabase.driver("bolt://localhost", auth=basic_auth("neo4j", "12345"))
+driver = GraphDatabase.driver("bolt://localhost:10000", auth=basic_auth("neo4j", "12345"))
 
 session = driver.session()
 counter = 1
