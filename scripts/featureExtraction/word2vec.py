@@ -4,8 +4,6 @@ from gensim.models import Word2Vec
 from neo4j.v1 import GraphDatabase, basic_auth
 
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
 import math
 
 class word2vec:
@@ -36,7 +34,7 @@ class word2vec:
         # lazily load the model, so it only loads the model when it is needed
         if self.model is None:
             self.loadModel()
-            
+
         set1 = list(set([x for x in set1 if x in model.vocab]))
         set2 = list(set([x for x in set2 if x in model.vocab]))
         if not set1 or not set2:
