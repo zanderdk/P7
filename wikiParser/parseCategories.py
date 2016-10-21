@@ -6,7 +6,7 @@ from neo4j.v1 import GraphDatabase, basic_auth
 
 turtle = re.compile(r'<http:\/\/dbpedia.org\/resource\/(.+?)>\s<.*?>\s<http:\/\/dbpedia.org\/resource\/Category:(.+?)>')
 
-driver = GraphDatabase.driver("bolt://localhost:10000", auth=basic_auth("neo4j", "12345"))
+driver = GraphDatabase.driver("bolt://localhost:10001", auth=basic_auth("neo4j", "12345"))
 
 session = driver.session()
 counter = 1
