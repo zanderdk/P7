@@ -47,7 +47,7 @@ public class Relationships
         public RelationshipWrapper(Relationship r, Node startNode) {
             clickRate = (Double)r.getProperty("clickRate");
             clicks = (Long)r.getProperty("clicks");
-            direction = (r.getStartNode().getId() == startNode.getId())? "Outgoing" : "incoming";
+            direction = (r.getStartNode().getId() == startNode.getId())? "outgoing" : "incoming";
             otherNode = (String)r.getOtherNode(startNode).getProperty("title");
 
         }
