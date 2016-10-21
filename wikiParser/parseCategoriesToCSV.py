@@ -18,4 +18,4 @@ for line in sys.stdin:
     continue
 
   #createRelation({ 'article': m.group(1), 'category': m.group(2) })
-  print(m.group(1) + ',' + m.group(2))
+  print('"' + m.group(1) + '","' + m.group(2) + '"')
