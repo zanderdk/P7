@@ -11,10 +11,6 @@ class PairedFeatureExtractor:
             "pathWeight": self._shortestPath,
             "keywordsA": None,
             "keywordsB": None,
-            "predecessorsA": None,
-            "successorsA": None,
-            "predecessorsB": None,
-            "successorsB": None,
             "word2vec":  None, #self.word2vec.compareKeywordSets,
             "PredesccorJaccard": self._getPredecessorJaccard,
             "SucessorJaccard": self._getSucessorJaccard,
@@ -25,8 +21,6 @@ class PairedFeatureExtractor:
 
     def _runQuery(self, query, mapping):
         result = []
-        print(query)
-        print(mapping)
         with self.driver.session() as session:
 
             for record in session.run(query, mapping):
@@ -59,9 +53,9 @@ class PairedFeatureExtractor:
         incoming = []
 
         for fuble in relationList:
-            if fuble[2] == "Outgoing":
+            if fuble[2] == "outgoing":
                 outgoing.append(fuble)
-            elif fuble[2] == "Incoming":
+            elif fuble[2] == "incoming":
                 incoming.append(fuble)
 
         return {"name": name, "outgoing": outgoing, "incoming": incoming }
@@ -147,14 +141,4 @@ class PairedFeatureExtractor:
         if "keywordsB" in self.wantedFeatures:
             res_dict["keywordsB"] = self._getKeywords(toArticle)
         
-        # special casing for _getRelationships as it returns a tuple
-        if "predecessorsA" or "successorsA" in self.wantedFeatures:
-            predecessorsA, successorsA = self._getRelationships(fromArticle)
-            if "predecessorsA" in self.wantedFeatures: res_dict["predecessorsA"] = predecessorsA
-            if "successorsA" in self.wantedFeatures: res_dict["successorsA"] = successorsA
-        if "predecessorsB" or "successorsB" in self.wantedFeatures:
-            predecessorsB, successorsB = self._getRelationships(toArticle)
-            if "predecessorsB" in self.wantedFeatures: res_dict["predecessorsB"] = predecessorsB
-            if "successorsB" in self.wantedFeatures: res_dict["successorsB"] = successorsB
-
         return res_dict
