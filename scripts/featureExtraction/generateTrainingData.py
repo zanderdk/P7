@@ -25,7 +25,8 @@ def generateTrainingData(inputFilePath, outputFilePath, extractor, include_label
             label_field_name = "clickProbability"
 
             # the field names are the field names from the extractor, and the clickProbablity
-            field_names = extractor.get_field_names()
+            field_names_unflattened = map(extractor.featureTofieldNames, extractor.get_wanted_feature_names())
+            field_names = [item for sublist in field_names_unflattened for item in sublist]
             if include_label:
                 field_names += [label_field_name]
        
@@ -85,13 +86,13 @@ parser = argparse.ArgumentParser()
 parser.add_argument("inputFile", help="training pairs data file")
 parser.add_argument("outputFile", help="location to put the output file")
 parser.add_argument("--include-label", action="store_true", help="include the training data label in the output")
-parser.add_argument("--features", default=temp_extractor.get_all_field_names(), nargs="*")
+parser.add_argument("--features", default=temp_extractor.get_all_feature_names(), nargs="*")
 
 args = parser.parse_args()
 extractor = ext.PairedFeatureExtractor(args.features)
-
 # check if the feature is valid
-valid_features = extractor.get_all_field_names()
+valid_features = extractor.get_all_feature_names()
+
 for wantedFeature in args.features:
   if wantedFeature not in valid_features:
     exit("Invalid feature {0}\nValid features:\n    {1}".format(wantedFeature, "\n    ".join(valid_features)))

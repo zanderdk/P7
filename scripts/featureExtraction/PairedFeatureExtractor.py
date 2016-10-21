@@ -1,5 +1,5 @@
 from neo4j.v1 import GraphDatabase, basic_auth
-#import word2vec
+import word2vec
 import runQuery
 import relationship
 
@@ -9,15 +9,18 @@ class PairedFeatureExtractor:
         self._qhelper = runQuery.QueryHelper(GraphDatabase.driver("bolt://192.38.56.57:10001", auth=basic_auth("neo4j", "12345")))
 
         self.relation = relationship.RelationshipGetter(self._qhelper)
-        # self.word2vec = word2vec.word2vec()
+        self.word2vec = word2vec.word2vec()
 
         self.pathLimit = pathLimit
         self.wantedFeatures = wantedFeatures
-        self.feature_function_dict = { # if None, then it is special cased
+        self.feature_function_dict = {
             "pathWeight": lambda dict, articleA, articleB : self._shortestPath(dict, articleA, articleB),
-            "keywords": lambda dict, articleA, articleB : self._getKeywords(dict, articleA, articlesB),
+            "keywords": lambda dict, articleA, articleB : self._getKeywords(dict, articleA, articleB),
             "categories": lambda dict, articleA, articleB : self._getCategories(dict, articleA, articleB),
-            "word2vec":  lambda dict, articleA, articleB : self.word2vec.extractWord2vec(dict, articleA, articleB),
+            # TODO: we are calculating the word2Vec similarity twice, stupid
+            "word2vecSimilarity":  lambda dict, articleA, articleB : self.word2vec.extractWord2vec(dict, articleA, articleB),
+            "word2vecBuckets":  lambda dict, articleA, articleB : self.word2vec.extractWord2vec(dict, articleA, articleB),
+
             "predecessorJaccard": lambda dict, articleA, articleB : self.relation.getPredecessorJaccard(dict, articleA, articleB),
             "successorJaccard": lambda dict, articleA, articleB : self.relation.getSuccessorJaccard(dict, articleA, articleB)
         }
@@ -25,7 +28,7 @@ class PairedFeatureExtractor:
         self._prevFrom = {"name": "", "outgoing": [], "incoming": []}
         self._prevTo = {"name": "", "outgoing": [], "incoming": []}
 
-    def featureTofieldNames(feature):
+    def featureTofieldNames(self, feature):
         dict = {
             "pathWeight": ["pathWeight"],
             "keywords": ["keywordsA", "keywordsB"],
@@ -45,21 +48,29 @@ class PairedFeatureExtractor:
             AND exists (a.text)
             CALL keywords(a) yield keyword as x
             RETURN x'''
-        nameMapping = {
-            "article": article
-        }
-        keywordsA = self._runQuery(query, nameMapping)
-        dict["keywordsA"]
 
-    def _getCategories(self, article):
+        # TODO: we could probably avoid doing 2 queries by calling keywords procedure on both pages in the same query
+        def f(article):
+            nameMapping = {"article": article}
+            return self._qhelper._runQuery(query, nameMapping)[0]
+
+        
+        dict["keywordsA"] = f(articleA)
+        dict["keywordsB"] = f(articleB)
+
+    def _getCategories(self, dict, articleA, articleB):
         query = '''
             MATCH (a:Page)-[:IN_CATEGORY]->(c:Category)
             WHERE a.title = {article}
             RETURN c'''
-        nameMapping = {
-            "article": article
-        }
-        return self._runQuery(query, nameMapping)[0]
+
+        # TODO: we could probably avoid doing 2 queries by calling keywords procedure on both pages in the same query
+        def f(article):
+            nameMapping = {"article": article}
+            return self._qhelper._runQuery(query, nameMapping)[0]
+
+        dict["categoriesA"] = f(articleA)
+        dict["categoriesB"] = f(articleB)
 
     def _shortestPath(self, dict, fromLink, toLink):
         query = "CALL weightedShortestPathCost({fromLink}, {toLink}, {pathLimit})"
@@ -68,16 +79,16 @@ class PairedFeatureExtractor:
             "toLink": toLink,
             "pathLimit": self.pathLimit
         }
-        value = self._runQuery(query, nameMapping)[0]
+        value = self._qhelper._runQuery(query, nameMapping)[0]
         dict["pathWeight"] = value
 
-    def get_field_names(self):
+    def get_wanted_feature_names(self):
         """Returns a list of feature names. Only the wanted features are returned."""
-        a = set(self.get_all_field_names())
+        a = set(self.get_all_feature_names())
         b = a.intersection(self.wantedFeatures)
         return list(b)
 
-    def get_all_field_names(self):
+    def get_all_feature_names(self):
         """Returns a list of all feature names."""
         return self.feature_function_dict.keys()
 

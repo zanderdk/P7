@@ -2,16 +2,13 @@ import runQuery
 
 class RelationshipGetter:
     def __init__(self, QueryHelper):
-
-        print("so far so good")
-
         self._qhelper = QueryHelper
 
         self._prevFrom = {"name": "", "outgoing": [], "incoming": []}
         self._prevTo = {"name": "", "outgoing": [], "incoming": []}
 
     def _callGetRelationships(self, title):
-        return self._qhelper.runQuery("CALL getRelationships({title})", {"title": title})
+        return self._qhelper._runQuery("CALL getRelationships({title})", {"title": title})
 
     def _relationTypeHelper(self, name, relationList):
         outgoing = []

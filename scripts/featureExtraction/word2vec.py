@@ -10,6 +10,9 @@ import math
 
 class word2vec:
     def __init__(self):
+        self.model = None
+
+    def loadModel(self):
         self.model = Word2Vec.load("/home/sw705e16/resources/en_1000_no_stem/en.model", encoding="latin1")
         # self.model = Word2Vec.load_word2vec_format("/home/zander/word2vec/GoogleNews-vectors-negative300.bin", binary=True)
 
@@ -36,15 +39,27 @@ class word2vec:
             return None
         return self.model.n_similarity(set1, set2)
 
-    def extractWord2vec(self, articleA, articleB):
+    def extractWord2vec(self, dict, articleA, articleB):
         """
         Extracts the Word2Vec similarity and puts it into 10 buckets.
-        Returns a tuple where the first element is similarity and then 10 buckets.
         """
+        # lazily load the model, so it only loads the model when it is needed
+        if self.model is None:
+            self.loadModel()
         similarity = self.compareKeywordSets(articleA, articleB)
 
         buckets = self.splitIntoBuckets(10, 0, 1, similarity)
-        return tuple([similarity] + buckets)        
+        dict["word2vecSimilarity"] = similarity
+        dict["word2vec_b0"] = buckets[0]
+        dict["word2vec_b1"] = buckets[1]
+        dict["word2vec_b2"] = buckets[2]
+        dict["word2vec_b3"] = buckets[3]
+        dict["word2vec_b4"] = buckets[4]
+        dict["word2vec_b5"] = buckets[5]
+        dict["word2vec_b6"] = buckets[6]
+        dict["word2vec_b7"] = buckets[7]
+        dict["word2vec_b8"] = buckets[8]
+        dict["word2vec_b9"] = buckets[9]
    
     def splitIntoBuckets(self, number_buckets, min, max, similarity):
         """
@@ -63,6 +78,5 @@ class word2vec:
                 x = similarity * number_buckets / max
             else:
                 x = similarity * number_buckets
-            print(x)
             buckets[math.floor(x)] = 1
         return buckets
