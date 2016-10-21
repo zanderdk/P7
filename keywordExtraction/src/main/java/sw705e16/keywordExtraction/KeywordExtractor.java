@@ -86,6 +86,16 @@ public class KeywordExtractor {
         return extractKeywords(node).stream().map(Keywords::new);
     }
 
+    @Procedure("text")
+    public Stream<PlainText> plaintext(@Name("node") Node node) throws Exception {
+        String title = (String) node.getProperty("title");
+        String wikitext = (String) node.getProperty("text");
+
+        String plainText = wikiToText(wikitext, title);
+
+        return Stream.of(new PlainText(plainText));
+    }
+
     @Procedure("words")
     public Stream<Words> words(@Name("node") Node node) throws Exception {
         String title = (String) node.getProperty("title");
@@ -113,6 +123,14 @@ public class KeywordExtractor {
         if (unionLength == 0) return Stream.of(new Similarity(0));
 
         return Stream.of(new Similarity(intersectionLength / unionLength));
+    }
+
+    public static class PlainText {
+        public String text;
+
+        public PlainText(String text) {
+            this.text = text;
+        }
     }
 
     public static class Words {
