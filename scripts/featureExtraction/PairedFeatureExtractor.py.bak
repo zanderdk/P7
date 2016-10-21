@@ -1,0 +1,165 @@
+from neo4j.v1 import GraphDatabase, basic_auth
+import word2vec
+
+class PairedFeatureExtractor:
+    def __init__(self, wantedFeatures, pathLimit=8):
+        self.driver = GraphDatabase.driver("bolt://192.38.56.57:10001", auth=basic_auth("neo4j", "12345"))
+        # self.word2vec = word2vec.word2vec()
+        self.pathLimit = pathLimit
+        self.wantedFeatures = wantedFeatures
+        self.feature_function_dict = { # if None, then it is special cased
+            "pathWeight": self._shortestPath,
+            "keywordsA": None,
+            "keywordsB": None,
+<<<<<<< Updated upstream
+            "categoriesA": None,
+            "categoriesB": None,
+            "word2vec":  None, #self.word2vec.compareKeywordSets,
+=======
+            "word2vec":  extractWord2vec,
+>>>>>>> Stashed changes
+            "PredesccorJaccard": self._getPredecessorJaccard,
+            "SucessorJaccard": self._getSucessorJaccard,
+        }
+
+        self._prevFrom = {"name": "", "outgoing": [], "incoming": []}
+        self._prevTo = {"name": "", "outgoing": [], "incoming": []}
+
+    def _runQuery(self, query, mapping):
+        result = []
+        with self.driver.session() as session:
+
+            for record in session.run(query, mapping):
+                result.append(record)
+
+        # Returns [None] if db doesnt return a result
+        # Need to check if this ever happens, as it requires handling when calling the func
+        # Temp fix: Wrap None in a list...
+        return [None] if not result else result
+
+
+    def _getKeywords(self, article):
+        query = '''
+            MATCH (a:Page)
+            WHERE a.title = {article}
+            AND exists (a.text)
+            CALL keywords(a) yield keyword as x
+            RETURN x'''
+        nameMapping = {
+            "article": article
+        }
+        return self._runQuery(query, nameMapping)[0]
+
+    def _getCategories(self, article):
+        query = '''
+            MATCH (a:Page)-[:IN_CATEGORY]->(c:Category)
+            WHERE a.title = {article}
+            RETURN c'''
+        nameMapping = {
+            "article": article
+        }
+        return self._runQuery(query, nameMapping)[0]
+
+    def _callGetRelationships(self, title):
+        return self._runQuery("CALL getRelationships({title})", {"title": title})
+
+    def _relationTypeHelper(self, name, relationList):
+        outgoing = []
+        incoming = []
+
+        for fuble in relationList:
+            if fuble[2] == "outgoing":
+                outgoing.append(fuble)
+            elif fuble[2] == "incoming":
+                incoming.append(fuble)
+
+        return {"name": name, "outgoing": outgoing, "incoming": incoming }
+
+    def _getRelationships(self, fromLink=None, toLink=None):
+        fromLink = self._prevFrom if fromLink is None else fromLink
+        toLink = self._prevTo if toLink is None else toLink
+        if not(self._prevFrom["name"] == fromLink):
+            result = self._callGetRelationships(fromLink)
+            self._prevFrom = self._relationTypeHelper(fromLink, result)
+
+        if not(self._prevTo["name"] == toLink):
+            result = self._callGetRelationships(toLink)
+            self._prevTo = self._relationTypeHelper(toLink, result)
+
+        return (self._prevFrom, self._prevTo)
+
+    def _getCommonRelationCount(self, fromLink, toLink, direction):
+        res = self._getRelationships(fromLink, toLink)
+
+        fromArticle = [link[3] for link in res[0][direction]]
+        toArticle = [link[3] for link in res[1][direction]]
+
+        return len(set(fromArticle).intersection(set(toArticle)))
+
+    def _getTotalRelationCount(self, fromLink, toLink, direction):
+        res = self._getRelationships(fromLink, toLink)
+
+        fromArticle = [link[3] for link in res[0][direction]]
+        toArticle = [link[3] for link in res[1][direction]]
+
+        return len(set(fromArticle).union(set(toArticle)))
+
+    def _getJaccard(self, fromLink, toLink, direction):
+        inter = self._getCommonRelationCount(fromLink, toLink, direction)
+        union = self._getTotalRelationCount(fromLink, toLink, direction)
+
+        return inter/union if union != 0 else 0
+
+    def _getSucessorJaccard(self, fromLink, toLink):
+        return self._getJaccard(fromLink, toLink, "outgoing")
+
+    def _getPredecessorJaccard(self, fromLink, toLink):
+        return self._getJaccard(fromLink, toLink, "incoming")
+
+
+
+
+    def _shortestPath(self, fromLink, toLink):
+        query = "CALL weightedShortestPathCost({fromLink}, {toLink}, {pathLimit})"
+        nameMapping = {
+            "fromLink": fromLink,
+            "toLink": toLink,
+            "pathLimit": self.pathLimit
+        }
+        return self._runQuery(query, nameMapping)[0]
+
+    def get_field_names(self):
+        """Returns a list of feature names. Only the wanted features are returned."""
+        a = set(self.get_all_field_names())
+        b = a.intersection(self.wantedFeatures)
+        return list(b)
+
+    def get_all_field_names(self):
+        """Returns a list of all feature names."""
+        return self.feature_function_dict.keys()
+
+    def extractFeatures(self, fromArticle, toArticle):
+        """Returns all extracted features as a dictionary
+        """
+        res_dict = {}
+        # go through each of the features and add them to the resulting dict
+        for wantedFeature in self.wantedFeatures:
+            # feature_function_dict finds the function that returns the feature. Call it.
+            feature_func = self.feature_function_dict[wantedFeature]
+
+            # If it is None, do not do anything, as it is special cased
+            if feature_func is not None:
+                res_dict[wantedFeature] = feature_func(fromArticle, toArticle)
+        
+        # special cases for single parameter functions
+        if "keywordsA" in self.wantedFeatures:
+            res_dict["keywordsA"] = self._getKeywords(fromArticle)
+        if "keywordsB" in self.wantedFeatures:
+            res_dict["keywordsB"] = self._getKeywords(toArticle)
+        
+        if "categoriesA" in self.wantedFeatures:
+            res_dict["categoriesA"] = self._getCategories(fromArticle)
+        if "categoriesB" in self.wantedFeatures:
+            res_dict["categoriesB"] = self._getCategories(toArticle)
+        
+        return res_dict
