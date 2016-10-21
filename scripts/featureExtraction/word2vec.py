@@ -10,7 +10,7 @@ import math
 
 class word2vec:
     def __init__(self):
-        self.model = Word2Vec.load("/home/sw705e16/resources/en_1000_no_stem/en.model", encoding="latin1")
+        self.model = None
         # self.model = Word2Vec.load_word2vec_format("/home/zander/word2vec/GoogleNews-vectors-negative300.bin", binary=True)
 
     def getKeywords(self, title):
@@ -28,6 +28,8 @@ class word2vec:
         return sum([x.split() for x in arr], [])
 
     def compareKeywordSets(self, w1, w2):
+        if self.model is None:
+            self.model = Word2Vec.load("/home/sw705e16/resources/en_1000_no_stem/en.model", encoding="latin1")
         set1 = self.getKeywords(w1)
         set2 = self.getKeywords(w2)
         set1 = list(set([x for x in set1 if x in model.vocab]))
