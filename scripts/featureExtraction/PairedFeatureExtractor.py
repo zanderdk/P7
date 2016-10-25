@@ -6,7 +6,7 @@ import relationship
 class PairedFeatureExtractor:
     def __init__(self, wantedFeatures, pathLimit=8):
 
-        self._qhelper = runQuery.QueryHelper(GraphDatabase.driver("bolt://192.38.56.57:10001", auth=basic_auth("neo4j", "12345")))
+        self._qhelper = runQuery.QueryHelper(GraphDatabase.driver("bolt://sw705e16.cs.aau.dk:10001", auth=basic_auth("neo4j", "12345")))
 
         self.relation = relationship.RelationshipGetter(self._qhelper)
         self.word2vec = word2vec.word2vec(self._qhelper)
@@ -57,31 +57,32 @@ class PairedFeatureExtractor:
         # TODO: we could probably avoid doing 2 queries by calling keywords procedure on both pages in the same query
         def f(article):
             nameMapping = {"article": article}
-            return self._qhelper._runQuery(query, nameMapping)[0]
+            return self._qhelper._runQuery(query, nameMapping)
 
-        
         keywordsA_res = f(articleA)
         keywordsB_res = f(articleB)
 
-        # the page might not have any text, meaning no keywords
-        keywordsA = "" if keywordsA_res is None else keywordsA_res[0]
-        keywordsB = "" if keywordsB_res is None else keywordsB_res[0]
-        dict["keywordsA"] = keywordsA
-        dict["keywordsB"] = keywordsB
+        # map record result to list of keywords
+        dict["keywordsA"] = [rec['x'] for rec in keywordsA_res] if keywordsA_res[0] is not None else []
+        dict["keywordsB"] = [rec['x'] for rec in keywordsB_res] if keywordsB_res[0] is not None else []
 
     def _getCategories(self, dict, articleA, articleB):
         query = '''
             MATCH (a:Page)-[:IN_CATEGORY]->(c:Category)
             WHERE a.title = {article}
-            RETURN c'''
+            RETURN c.name AS name'''
 
         # TODO: we could probably avoid doing 2 queries by calling keywords procedure on both pages in the same query
         def f(article):
             nameMapping = {"article": article}
-            return self._qhelper._runQuery(query, nameMapping)[0][0]["name"]
+            return self._qhelper._runQuery(query, nameMapping)
 
-        dict["categoriesA"] = f(articleA)
-        dict["categoriesB"] = f(articleB)
+        categoriesA_res = f(articleA)
+        categoriesB_res = f(articleB)
+
+        # map record result to list of categories
+        dict["categoriesA"] = [rec['name'] for rec in categoriesA_res] if categoriesA_res[0] is not None else []
+        dict["categoriesB"] = [rec['name'] for rec in categoriesB_res] if categoriesB_res[0] is not None else []
 
     def _shortestPath(self, dict, fromLink, toLink):
         query = "CALL weightedShortestPathCost({fromLink}, {toLink}, {pathLimit})"
