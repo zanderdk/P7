@@ -21,8 +21,13 @@ class PairedFeatureExtractor:
             "word2vecSimilarity":  lambda dict, articleA, articleB : self.word2vec.extractWord2vec(dict, articleA, articleB),
             "word2vecBuckets":  lambda dict, articleA, articleB : self.word2vec.extractWord2vec(dict, articleA, articleB),
 
+            # relation features:
             "predecessorJaccard": lambda dict, articleA, articleB : self.relation.getPredecessorJaccard(dict, articleA, articleB),
-            "successorJaccard": lambda dict, articleA, articleB : self.relation.getSuccessorJaccard(dict, articleA, articleB)
+            "successorJaccard": lambda dict, articleA, articleB : self.relation.getSuccessorJaccard(dict, articleA, articleB),
+            "predecessorCount": lambda dict, articleA, articleB : self.relation.getPredecessorCount(dict, articleA, articleB),
+            "successorCount": lambda dict, articleA, articleB : self.relation.getSuccessorCount(dict, articleA, articleB),
+            "bestPredecessor": lambda dict, articleA, articleB : self.relation.getBestPredecessor(dict, articleA, articleB),
+            "bestSuccessor": lambda dict, articleA, articleB : self.relation.getBestSuccessor(dict, articleA, articleB)
         }
 
         self._prevFrom = {"name": "", "outgoing": [], "incoming": []}

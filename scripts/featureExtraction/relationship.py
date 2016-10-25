@@ -59,8 +59,31 @@ class RelationshipGetter:
         inter = self._getCommonRelationCount(fromLink, toLink, direction)
         union = self._getTotalRelationCount(fromLink, toLink, direction)
 
+        print("inter " + str(inter))
+        print("union " + str(union))
+
         # division by zero check
         return inter/union if union != 0 else 0
+
+    def _getBestCommon(self, fromLink, toLink, direction):
+        res = self._getRelationships(fromLink, toLink)
+
+        fromArticle = [link for link in res[0][direction]]
+        toArticle = [link for link in res[1][direction]]
+
+        ans = []
+
+        for predec in fromArticle:
+            for pred in toArticle:
+                if pred['otherNode'] == predec['otherNode']:
+                    if pred['clickRate'] > predec['clickRate']:
+                        ans.append(pred)
+                    else:
+                        ans.append(predec)
+        
+        output = sorted(ans, key=lambda pred: pred['clickRate'])
+        output.pop()['clickRate']
+
 
     def getSuccessorJaccard(self, dict, fromLink, toLink):
         value = self._getJaccard(fromLink, toLink, "outgoing")
@@ -69,3 +92,20 @@ class RelationshipGetter:
     def getPredecessorJaccard(self, dict, fromLink, toLink):
         value = self._getJaccard(fromLink, toLink, "incoming")
         dict["predecessorJaccard"] = value
+
+    def getPredecessorCount(self, dict, fromLink, toLink):
+        value = self._getCommonRelationCount(fromlink, toLink, "incoming")
+        dict["CommonPredecessorCount"] = value
+
+    def getSuccessorCount(self, dict, fromLink, toLink):
+        value = self._getCommonRelationCount(fromLink, toLink, "outgoing")
+        dict["commonSuccessorCount"] = value
+
+    def getBestPredecessor(self, dict, fromLink, toLink):
+        value = self._getBestCommon(fromLink, toLink, "incoming")
+        dict["bestCommonPredecessor"] = value
+
+    def getBestSuccessor(self, dict, fromLink, toLink):
+        value = self._getBestCommon(fromLink, toLink, "outgoing")
+        dict["bestCommonSuccessor"] = value
+
