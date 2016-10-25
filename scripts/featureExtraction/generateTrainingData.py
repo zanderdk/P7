@@ -58,7 +58,7 @@ def generateTrainingData(inputFilePath, outputFilePath, extractor, include_label
                         writer.writerow(features)
                     else:
                         noneCounter += 1
-                    if counter % 1000 == 0:
+                    if counter % 10 == 0:
                         printStatus(counter, noneCounter, exceptionCounter, noPathCounter)
                     counter += 1
                 except exceptions.CypherError as e:

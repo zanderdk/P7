@@ -6,7 +6,7 @@ import relationship
 class PairedFeatureExtractor:
     def __init__(self, wantedFeatures, pathLimit=8):
 
-        self._qhelper = runQuery.QueryHelper(GraphDatabase.driver("bolt://192.38.56.57:10001", auth=basic_auth("neo4j", "12345")))
+        self._qhelper = runQuery.QueryHelper(GraphDatabase.driver("bolt://localhost:10001", auth=basic_auth("neo4j", "12345")))
 
         self.relation = relationship.RelationshipGetter(self._qhelper)
         self.word2vec = word2vec.word2vec(self._qhelper)
@@ -55,8 +55,14 @@ class PairedFeatureExtractor:
             return self._qhelper._runQuery(query, nameMapping)[0]
 
         
-        dict["keywordsA"] = f(articleA)
-        dict["keywordsB"] = f(articleB)
+        keywordsA_res = f(articleA)
+        keywordsB_res = f(articleB)
+
+        # the page might not have any text, meaning no keywords
+        keywordsA = "" if keywordsA_res is None else keywordsA_res[0]
+        keywordsB = "" if keywordsB_res is None else keywordsB_res[0]
+        dict["keywordsA"] = keywordsA
+        dict["keywordsB"] = keywordsB
 
     def _getCategories(self, dict, articleA, articleB):
         query = '''
@@ -67,7 +73,7 @@ class PairedFeatureExtractor:
         # TODO: we could probably avoid doing 2 queries by calling keywords procedure on both pages in the same query
         def f(article):
             nameMapping = {"article": article}
-            return self._qhelper._runQuery(query, nameMapping)[0]
+            return self._qhelper._runQuery(query, nameMapping)[0][0]["name"]
 
         dict["categoriesA"] = f(articleA)
         dict["categoriesB"] = f(articleB)
@@ -79,7 +85,7 @@ class PairedFeatureExtractor:
             "toLink": toLink,
             "pathLimit": self.pathLimit
         }
-        value = self._qhelper._runQuery(query, nameMapping)[0]
+        value = self._qhelper._runQuery(query, nameMapping)[0][0]
         dict["pathWeight"] = value
 
     def get_wanted_feature_names(self):
