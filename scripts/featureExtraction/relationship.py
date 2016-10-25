@@ -81,8 +81,10 @@ class RelationshipGetter:
                     else:
                         ans.append(predec)
         
+        
         output = sorted(ans, key=lambda pred: pred['clickRate'])
-        output.pop()['clickRate']
+
+        return output.pop()['clickRate']
 
 
     def getSuccessorJaccard(self, dict, fromLink, toLink):
@@ -94,7 +96,7 @@ class RelationshipGetter:
         dict["predecessorJaccard"] = value
 
     def getPredecessorCount(self, dict, fromLink, toLink):
-        value = self._getCommonRelationCount(fromlink, toLink, "incoming")
+        value = self._getCommonRelationCount(fromLink, toLink, "incoming")
         dict["CommonPredecessorCount"] = value
 
     def getSuccessorCount(self, dict, fromLink, toLink):
