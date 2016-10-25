@@ -6,7 +6,7 @@ import relationship
 class PairedFeatureExtractor:
     def __init__(self, wantedFeatures, pathLimit=8):
 
-        self._qhelper = runQuery.QueryHelper(GraphDatabase.driver("bolt://192.38.56.57:10001", auth=basic_auth("neo4j", "12345")))
+        self._qhelper = runQuery.QueryHelper(GraphDatabase.driver("bolt://sw705e16.cs.aau.dk:10001", auth=basic_auth("neo4j", "12345")))
 
         self.relation = relationship.RelationshipGetter(self._qhelper)
         self.word2vec = word2vec.word2vec(self._qhelper)
@@ -21,8 +21,13 @@ class PairedFeatureExtractor:
             "word2vecSimilarity":  lambda dict, articleA, articleB : self.word2vec.extractWord2vec(dict, articleA, articleB),
             "word2vecBuckets":  lambda dict, articleA, articleB : self.word2vec.extractWord2vec(dict, articleA, articleB),
 
+            # relation features:
             "predecessorJaccard": lambda dict, articleA, articleB : self.relation.getPredecessorJaccard(dict, articleA, articleB),
-            "successorJaccard": lambda dict, articleA, articleB : self.relation.getSuccessorJaccard(dict, articleA, articleB)
+            "successorJaccard": lambda dict, articleA, articleB : self.relation.getSuccessorJaccard(dict, articleA, articleB),
+            "predecessorCount": lambda dict, articleA, articleB : self.relation.getPredecessorCount(dict, articleA, articleB),
+            "successorCount": lambda dict, articleA, articleB : self.relation.getSuccessorCount(dict, articleA, articleB),
+            "bestPredecessor": lambda dict, articleA, articleB : self.relation.getBestPredecessor(dict, articleA, articleB),
+            "bestSuccessor": lambda dict, articleA, articleB : self.relation.getBestSuccessor(dict, articleA, articleB)
         }
 
         self._prevFrom = {"name": "", "outgoing": [], "incoming": []}
@@ -52,25 +57,32 @@ class PairedFeatureExtractor:
         # TODO: we could probably avoid doing 2 queries by calling keywords procedure on both pages in the same query
         def f(article):
             nameMapping = {"article": article}
-            return self._qhelper._runQuery(query, nameMapping)[0]
+            return self._qhelper._runQuery(query, nameMapping)
 
-        
-        dict["keywordsA"] = f(articleA)
-        dict["keywordsB"] = f(articleB)
+        keywordsA_res = f(articleA)
+        keywordsB_res = f(articleB)
+
+        # map record result to list of keywords
+        dict["keywordsA"] = [rec['x'] for rec in keywordsA_res] if keywordsA_res[0] is not None else []
+        dict["keywordsB"] = [rec['x'] for rec in keywordsB_res] if keywordsB_res[0] is not None else []
 
     def _getCategories(self, dict, articleA, articleB):
         query = '''
             MATCH (a:Page)-[:IN_CATEGORY]->(c:Category)
             WHERE a.title = {article}
-            RETURN c'''
+            RETURN c.name AS name'''
 
         # TODO: we could probably avoid doing 2 queries by calling keywords procedure on both pages in the same query
         def f(article):
             nameMapping = {"article": article}
-            return self._qhelper._runQuery(query, nameMapping)[0]
+            return self._qhelper._runQuery(query, nameMapping)
 
-        dict["categoriesA"] = f(articleA)
-        dict["categoriesB"] = f(articleB)
+        categoriesA_res = f(articleA)
+        categoriesB_res = f(articleB)
+
+        # map record result to list of categories
+        dict["categoriesA"] = [rec['name'] for rec in categoriesA_res] if categoriesA_res[0] is not None else []
+        dict["categoriesB"] = [rec['name'] for rec in categoriesB_res] if categoriesB_res[0] is not None else []
 
     def _shortestPath(self, dict, fromLink, toLink):
         query = "CALL weightedShortestPathCost({fromLink}, {toLink}, {pathLimit})"
@@ -79,7 +91,7 @@ class PairedFeatureExtractor:
             "toLink": toLink,
             "pathLimit": self.pathLimit
         }
-        value = self._qhelper._runQuery(query, nameMapping)[0]
+        value = self._qhelper._runQuery(query, nameMapping)[0][0]
         dict["pathWeight"] = value
 
     def get_wanted_feature_names(self):
