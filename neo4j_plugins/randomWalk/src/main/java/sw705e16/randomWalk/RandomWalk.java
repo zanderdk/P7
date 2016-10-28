@@ -1,15 +1,15 @@
 package sw705e16.randomWalk;
 
+import com.google.common.collect.Collections2;
+import com.google.common.collect.Lists;
 import org.javatuples.Pair;
 import org.neo4j.graphdb.*;
+import org.neo4j.kernel.configuration.SystemPropertiesConfiguration;
 import org.neo4j.procedure.Context;
 import org.neo4j.procedure.Name;
 import org.neo4j.procedure.Procedure;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -19,29 +19,12 @@ public class RandomWalk
     @Context
     public GraphDatabaseService db;
 
-    public static Stream<Long> lastNodes = null;
-
-    public static Label pageLabel = Label.label("Page");
+    public static List<Long> lastNodes = new ArrayList<>();
 
     public class Record{
         public String walk = "";
         public Record(String w) {
             walk = w;
-        }
-    }
-
-    public class PairComp implements Comparator<Pair<Node, Double>> {
-
-        @Override
-        public int compare(Pair<Node, Double> o1, Pair<Node, Double> o2) {
-            if (o1.getValue1() < o2.getValue1()) return -1;
-            if (o1.getValue1() > o2.getValue1()) return 1;
-            return 0;
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            return false;
         }
     }
 
@@ -55,58 +38,76 @@ public class RandomWalk
                                      @Name("p") Double p,
                                      @Name("q") Double q,
                                      @Name("l") Long l,
-                                     @Name("r") Long r,
                                      @Name("z") Double z,
+                                     @Name("nodeLabel") String nodeLabel,
+                                     @Name("field") String field,
                                      @Name("label") String label,
-                                     @Name("weight") String weight) {
-
+                                     @Name("weight") String weight,
+                                     @Name("directed") Boolean directed) {
+        Label pageLabel = Label.label(nodeLabel);
         RelationshipType clickStreamType = RelationshipType.withName(label);
-        Node thisNode = db.findNode(pageLabel, "title", title);
+        Node thisNode;
+        if (field.equals("id"))
+            thisNode = db.getNodeById(Long.parseLong(title));
+        else
+            thisNode = db.findNode(pageLabel, field, title);
         ArrayList<Node> walk = new ArrayList<Node>();
         walk.add(thisNode);
         boolean unWeighted = (weight.equals("None"));
-
-        Comparator<Pair<Node, Double>> comp = new PairComp();
-
         int walkLength = 1;
 
         while(walkLength < l) {
             Node cur = walk.get(walkLength-1);
-            Iterable<Relationship> rels = cur.getRelationships(Direction.OUTGOING, clickStreamType);
-            Stream<Relationship> cur_nbrs = StreamSupport.stream(rels.spliterator(), false);
+            Direction d = (directed)? Direction.OUTGOING : Direction.BOTH;
+            Iterable<Relationship> rels = cur.getRelationships(d, clickStreamType);
+            ArrayList<Relationship> cur_nbrs =  Lists.newArrayList(rels);
+
+            ArrayList<Node> aliasList = new ArrayList<>();
+            ArrayList<Double> propList = new ArrayList<>();
             if (walkLength == 1) {
-                Stream<Pair<Node, Double>> ww = cur_nbrs.map((rel) -> new Pair<>(rel.getEndNode(), unWeighted? 1.0 : ((Double)rel.getProperty(weight)/z)/q ));
-                lastNodes = ww.map((par) -> par.getValue0().getId());
-                Optional<Pair<Node, Double>> max = ww.max(comp);
-                if (!max.isPresent()) break;
-                walk.add(max.get().getValue0());
+
+                for(Relationship rel: cur_nbrs) {
+                    Node end = rel.getOtherNode(cur);
+                    if(end.getId() == cur.getId())
+                        continue;
+                    Double w = (unWeighted)? 1.0 : (Double)rel.getProperty(weight);
+                    w = (w/z)/q;
+                    aliasList.add(end);
+                    propList.add(w);
+
+                    lastNodes.add(end.getId());
+                }
+
             }
             else {
                 Node prev = walk.get(walkLength-2);
                 Long prevId = prev.getId();
+                ArrayList<Long> newLast = new ArrayList<>();
+                for(Relationship rel: cur_nbrs) {
+                    Node end = rel.getOtherNode(cur);
+                    Long endId = end.getId();
+                    if(endId == cur.getId())
+                        continue;
+                    Double w = (endId == prevId)? 1.0/p : lastNodes.contains(endId)? 1.0 : 1.0/q;
+                    w = w* ((unWeighted)? 1.0 : (Double)rel.getProperty(weight));
+                    aliasList.add(end);
+                    propList.add(w);
 
-                Stream<Pair<Node, Double>> ww = cur_nbrs.map((rel) -> new Pair<>(rel.getEndNode(), unWeighted? 1.0 : ((Double)rel.getProperty(weight)/z) ));
-                Optional<Pair<Node, Double>> max = ww.map((par) ->
-                {
-                    Long thisId = par.getValue0().getId();
-                    Predicate<Long> pred = (Long last) -> last.equals(thisId);
-                    Double value = (Objects.equals(prevId, thisId))? (1.0/p) : (lastNodes.filter(pred).count() == 1)? 1.0 : (1.0/q);
-                    value *= par.getValue1();
-                    return new Pair<Node, Double>(par.getValue0(), value);
-                } ).max(comp);
-
-                lastNodes = ww.map(n -> n.getValue0().getId());
-
-                if (!max.isPresent()) break;
-                walk.add(max.get().getValue0());
+                    newLast.add(endId);
+                }
+                lastNodes = newLast;
             }
-
+            if(aliasList.isEmpty())
+                break;
+            AliasMethod m = new AliasMethod(propList);
+            walk.add(aliasList.get(m.next()));
+            walkLength++;
         }
 
         String retString = "";
 
         for(Node n : walk) {
-            retString += (" " + (String)n.getProperty("title"));
+            retString += (" " + n.getProperty(field));
         }
 
         return Stream.of(retString).map(Record::new);

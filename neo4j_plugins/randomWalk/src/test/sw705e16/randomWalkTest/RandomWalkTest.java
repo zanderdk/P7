@@ -26,15 +26,16 @@ public class RandomWalkTest {
 
             session.run("CREATE (p:Page {title:'Jesus', text:'" + waterwiki + "'}) RETURN id(p)");
             session.run("CREATE (p:Page {title:'Gabriel', text:'" + waterwiki + "'}) RETURN id(p)");
+            session.run("CREATE (p:Page {title:'test', text:'" + waterwiki + "'}) RETURN id(p)");
             session.run("MATCH (a:Page), (b:Page) where a.title = 'Jesus' and b.title = 'Gabriel' CREATE (a)-[:clickStream {click: 200, clickRate: 0.5}]->(b)");
-
+            session.run("MATCH (a:Page), (b:Page) where a.title = 'Gabriel' and b.title = 'test' CREATE (a)-[:clickStream {click: 200, clickRate: 0.5}]->(b)");
 
             //StatementResult result = session.run("MATCH (p:Page) WHERE p.title = 'Water' CALL keywordSimilarity(p, p) yield similarity as x return x");
 
-            StatementResult result = session.run("CALL randomWalk(\"Jesus\", 1, 2, 2, 1, 1, \"clickStream\", \"None\")");
+            StatementResult result = session.run("CALL randomWalk(\"0\", 1000, 0.1, 5, 1, \"Page\", \"id\", \"clickStream\", \"None\", False)");
 
 
-            System.out.println("test");
+            System.out.println(result.next().get("walk"));
 
 
 //            List<String> expected = Arrays.asList("safe drinking water", "new york", "water management", "pure water",
