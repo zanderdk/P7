@@ -68,7 +68,7 @@ def simulateWalks(r, nodes):
 def makeNodeModel(epoc, r, d, window, workers, nodes):
     walks = simulateWalks(r, nodes)
     model = Word2Vec(walks, size=d, window=window, min_count=5, sg=1, workers=workers, iter=epoc)
-    model.save_word2vec_format("./modelUndirectedClickRate.bin")
+    model.save_word2vec_format("./modelDirectedClickRateHack.bin")
     return model
 
 def findCommunities(model, G):
