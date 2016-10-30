@@ -39,7 +39,7 @@ def getAllEdges():
 
 def randomWalk(name):
     session = driver.session()
-    query = 'CALL randomWalk({name}, 1, 2, 80, 1, "Page", "title", "clickStream", "clickRate", True, False)'
+    query = 'CALL randomWalk({name}, 1, 2, 80, 1, "Page", "title", "clickStream", "clickRate", False, False)'
     res = session.run(query, {"name": name})
     val = ""
     for x in res:
@@ -68,7 +68,7 @@ def simulateWalks(r, nodes):
 def makeNodeModel(epoc, r, d, window, workers, nodes):
     walks = simulateWalks(r, nodes)
     model = Word2Vec(walks, size=d, window=window, min_count=5, sg=1, workers=workers, iter=epoc)
-    model.save_word2vec_format("./model8.bin")
+    model.save_word2vec_format("./modelUndirectedClickRate.bin")
     return model
 
 def findCommunities(model, G):
