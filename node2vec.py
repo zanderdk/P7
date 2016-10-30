@@ -21,7 +21,7 @@ driver = GraphDatabase.driver("bolt://localhost", auth=basic_auth("neo4j", "1234
 
 def getAllNodes():
     session = driver.session()
-    res = session.run("match (a:Page) WHERE NOT exists(a.redirect) return a.title")
+    res = session.run("match (a:Page) WHERE NOT exists(a.redirect) AND (exists(a.good) or exists(a.eatured)) return a.title")
     arr = []
     for x in res:
         arr.append(x['a.title'])
@@ -39,7 +39,7 @@ def getAllEdges():
 
 def randomWalk(name):
     session = driver.session()
-    query = 'CALL randomWalk({name}, 1, 2, 80, 1, "Page", "title", "clickStream", "None", True)'
+    query = 'CALL randomWalk({name}, 1, 2, 80, 1, "Page", "title", "clickStream", "clickRate", True, False)'
     res = session.run(query, {"name": name})
     val = ""
     for x in res:
@@ -68,7 +68,7 @@ def simulateWalks(r, nodes):
 def makeNodeModel(epoc, r, d, window, workers, nodes):
     walks = simulateWalks(r, nodes)
     model = Word2Vec(walks, size=d, window=window, min_count=5, sg=1, workers=workers, iter=epoc)
-    model.save_word2vec_format("./model5.bin")
+    model.save_word2vec_format("./model8.bin")
     return model
 
 def findCommunities(model, G):
@@ -85,8 +85,9 @@ def findCommunities(model, G):
     return G
 
 allNodes = getAllNodes()
-model = makeNodeModel(1, 10, 128, 10, 3, allNodes)
-model = Word2Vec.load_word2vec_format("./model.bin", binary=True)
+print("got nodes")
+model = makeNodeModel(1, 10, 64, 10, 4, allNodes)
+#model = Word2Vec.load_word2vec_format("./model.bin", binary=True)
 #model.save_word2vec_format("test.bin")
 
 
