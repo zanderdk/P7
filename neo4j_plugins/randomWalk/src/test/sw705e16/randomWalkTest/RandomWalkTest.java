@@ -32,7 +32,7 @@ public class RandomWalkTest {
 
             //StatementResult result = session.run("MATCH (p:Page) WHERE p.title = 'Water' CALL keywordSimilarity(p, p) yield similarity as x return x");
 
-            StatementResult result = session.run("CALL randomWalk(\"0\", 1000, 0.1, 5, 1, \"Page\", \"id\", \"clickStream\", \"None\", False)");
+            StatementResult result = session.run("CALL randomWalk(\"Jesus\", 1000, 0.1, 5, 1, \"Page\", \"title\", \"clickStream\", \"None\", True, False)");
 
 
             System.out.println(result.next().get("walk"));

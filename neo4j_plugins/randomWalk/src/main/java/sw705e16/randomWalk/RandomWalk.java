@@ -16,6 +16,96 @@ import java.util.stream.StreamSupport;
 
 public class RandomWalk
 {
+
+    public Relationship backRelasion(Node prev, Node cur, String weight) {
+        return new Relationship() {
+            @Override
+            public long getId() {
+                return 0;
+            }
+
+            @Override
+            public void delete() {
+
+            }
+
+            @Override
+            public Node getStartNode() {
+                return cur;
+            }
+
+            @Override
+            public Node getEndNode() {
+                return prev;
+            }
+
+            @Override
+            public Node getOtherNode(Node node) {
+                return (node.getId() == cur.getId())? prev : (node.getId() == prev.getId())? cur : null;
+            }
+
+            @Override
+            public Node[] getNodes() {
+                return new Node[0];
+            }
+
+            @Override
+            public RelationshipType getType() {
+                return null;
+            }
+
+            @Override
+            public boolean isType(RelationshipType relationshipType) {
+                return false;
+            }
+
+            @Override
+            public GraphDatabaseService getGraphDatabase() {
+                return null;
+            }
+
+            @Override
+            public boolean hasProperty(String s) {
+                return false;
+            }
+
+            @Override
+            public Object getProperty(String s) {
+                return (Objects.equals(s, weight))? 0.0 : null;
+            }
+
+            @Override
+            public Object getProperty(String s, Object o) {
+                return null;
+            }
+
+            @Override
+            public void setProperty(String s, Object o) {
+
+            }
+
+            @Override
+            public Object removeProperty(String s) {
+                return null;
+            }
+
+            @Override
+            public Iterable<String> getPropertyKeys() {
+                return null;
+            }
+
+            @Override
+            public Map<String, Object> getProperties(String... strings) {
+                return null;
+            }
+
+            @Override
+            public Map<String, Object> getAllProperties() {
+                return null;
+            }
+        };
+    }
+
     @Context
     public GraphDatabaseService db;
 
@@ -43,7 +133,8 @@ public class RandomWalk
                                      @Name("field") String field,
                                      @Name("label") String label,
                                      @Name("weight") String weight,
-                                     @Name("directed") Boolean directed) {
+                                     @Name("directed") Boolean directed,
+                                     @Name("hack") Boolean hack) {
         Label pageLabel = Label.label(nodeLabel);
         RelationshipType clickStreamType = RelationshipType.withName(label);
         Node thisNode;
@@ -82,6 +173,8 @@ public class RandomWalk
             else {
                 Node prev = walk.get(walkLength-2);
                 Long prevId = prev.getId();
+                if(directed && hack)
+                    cur_nbrs.add(backRelasion(prev, cur, weight));
                 ArrayList<Long> newLast = new ArrayList<>();
                 for(Relationship rel: cur_nbrs) {
                     Node end = rel.getOtherNode(cur);
