@@ -6,7 +6,7 @@ import relationship
 class PairedFeatureExtractor:
     def __init__(self, wantedFeatures, pathLimit=8):
 
-        self._qhelper = runQuery.QueryHelper(GraphDatabase.driver("bolt://sw705e16.cs.aau.dk:10001", auth=basic_auth("neo4j", "12345")))
+        self._qhelper = runQuery.QueryHelper(GraphDatabase.driver("bolt://127.0.0.1:10001", auth=basic_auth("neo4j", "12345")))
 
         self.relation = relationship.RelationshipGetter(self._qhelper)
         self.word2vec = word2vec.word2vec(self._qhelper)
