@@ -68,7 +68,7 @@ class PairedFeatureExtractor:
         set2 = set(y)
         unionLen = len(set1.union(set2))
         intersectionLen = len(set1.intersection(set2))
-        value = (intersection/unionLen) if unionLen > 0 else 0
+        value = (intersectionLen/unionLen) if unionLen > 0 else 0
         dict['keywordSim'] = value
 
 
