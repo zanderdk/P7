@@ -21,7 +21,7 @@ driver = GraphDatabase.driver("bolt://localhost:10001", auth=basic_auth("neo4j",
 
 def getAllNodes():
     session = driver.session()
-    res = session.run("match (a:Page) WHERE NOT exists(a.redirect) AND (exists(a.good) or exists(a.eatured)) return a.title")
+    res = session.run("match (a:Page) WHERE NOT exists(a.redirect) return a.title")
     arr = []
     for x in res:
         arr.append(x['a.title'])
@@ -68,7 +68,7 @@ def simulateWalks(r, nodes):
 def makeNodeModel(epoc, r, d, window, workers, nodes):
     walks = simulateWalks(r, nodes)
     model = Word2Vec(walks, size=d, window=window, min_count=5, sg=1, workers=workers, iter=epoc)
-    model.save_word2vec_format("./big.bin")
+    model.save_word2vec_format("./big2.bin")
     return model
 
 def findCommunities(model, G):
