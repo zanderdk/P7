@@ -12,7 +12,7 @@ import argparse
 
 def generateTrainingData(inputFilePath, outputFilePath, extractor, include_label):
     with open(inputFilePath, "r", newline="", encoding="utf-8") as inputFile:
-        reader = csv.reader(inputFile, delimiter=" ")
+        reader = csv.reader(inputFile, delimiter="\t")
 
         # Check for header, rewind input file, skip header if present
         hasHeader = csv.Sniffer().has_header(inputFile.read(1024))

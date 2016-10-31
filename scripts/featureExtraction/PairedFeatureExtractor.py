@@ -36,7 +36,7 @@ class PairedFeatureExtractor:
     def featureTofieldNames(self, feature):
         dict = {
             "pathWeight": ["pathWeight"],
-            "keywords": ["keywordsA", "keywordsB"],
+            "keywords": ["keywordSim"],
             "categories": ["categoriesA", "categoriesB"],
             "word2vecSimilarity": ["word2vecSimilarity"],
             "word2vecBuckets": ["word2vec_b0", "word2vec_b1", "word2vec_b2", "word2vec_b3", "word2vec_b4", "word2vec_b5", "word2vec_b6", "word2vec_b7", "word2vec_b8", "word2vec_b9"],
@@ -44,7 +44,6 @@ class PairedFeatureExtractor:
             "successorJaccard": ["successorJaccard"]
         }
         return dict[feature]
-        
 
     def _getKeywords(self, dict, articleA, articleB):
         query = '''
@@ -63,8 +62,15 @@ class PairedFeatureExtractor:
         keywordsB_res = f(articleB)
 
         # map record result to list of keywords
-        dict["keywordsA"] = [rec['x'] for rec in keywordsA_res] if keywordsA_res[0] is not None else []
-        dict["keywordsB"] = [rec['x'] for rec in keywordsB_res] if keywordsB_res[0] is not None else []
+        x = [rec['x'] for rec in keywordsA_res] if keywordsA_res[0] is not None else []
+        y = [rec['x'] for rec in keywordsB_res] if keywordsB_res[0] is not None else []
+        set1 = set(x)
+        set2 = set(y)
+        unionLen = len(set1.union(set2))
+        intersectionLen = len(set1.intersection(set2))
+        value = (intersection/unionLen) if unionLen > 0 else 0
+        dict['keywordSim'] = value
+
 
     def _getCategories(self, dict, articleA, articleB):
         query = '''
@@ -113,5 +119,5 @@ class PairedFeatureExtractor:
             # feature_function_dict finds the function that returns the feature. Call it.
             feature_func = self.feature_function_dict[wantedFeature]
             feature_func(res_dict, articleA, articleB)
-            
+
         return res_dict

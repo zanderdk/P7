@@ -14,7 +14,7 @@ from keras.layers import Dense
 import numpy as np
 
 # load the model containing features
-model = Word2Vec.load_word2vec_format("modelUndirectedClickRate.bin" , binary=False)
+model = Word2Vec.load_word2vec_format("../big.bin" , binary=False)
 
 X = []
 Y = []
@@ -23,7 +23,7 @@ Y = []
 i = 0
 for line in sys.stdin:
     source, target, label = tuple(line.split("\t"))
-    
+
     if source in model and target in model:
         features_source = model[source]
         features_target = model[target]
@@ -53,17 +53,17 @@ models.append(('Dummy', DummyClassifier("uniform")))
 def keras_baseline_model():
     # create model
     model = Sequential()
-    model.add(Dense(32, input_dim=64, init='normal', activation='relu'))
+    model.add(Dense(32, input_dim=128, init='normal', activation='relu'))
     model.add(Dense(1, init='normal', activation="relu"))
     # Compile model
     model.compile(loss='mean_squared_error', optimizer='adam')
     return model
-models.append(('Keras', KerasClassifier(build_fn=keras_baseline_model, nb_epoch=10, batch_size=128, verbose=0)))
+models.append(('Keras', KerasClassifier(build_fn=keras_baseline_model, nb_epoch=10, batch_size=128, verbose=1)))
 
 # evaluate each model in turn
 results = []
 names = []
-scoring = 'f1'
+scoring = 'accuracy'
 for name, model in models:
     kfold = KFold(n_splits=num_folds, shuffle=True, random_state=seed)
     cv_results = cross_val_score(model, X, y=Y, cv=kfold, scoring=scoring)
