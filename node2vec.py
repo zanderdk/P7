@@ -6,6 +6,7 @@ import networkx as nx
 from numpy.linalg import eig
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
+from neo4j.v1 import exceptions
 
 color_map = {
         0:'r',
@@ -38,14 +39,17 @@ def getAllEdges():
         return arr
 
 def randomWalk(name):
-    session = driver.session()
-    query = 'CALL randomWalk({name}, 0.25, 400000, 80, 1, "Page", "title", "clickStream", "None", True, True)'
-    res = session.run(query, {"name": name})
-    val = ""
-    for x in res:
-        val = x['walk']
-    session.close()
-    return val
+    try:
+        session = driver.session()
+        query = 'CALL randomWalk({name}, 0.25, 400000, 80, 1, "Page", "title", "clickStream", "None", True, True)'
+        res = session.run(query, {"name": name})
+        val = ""
+        for x in res:
+            val = x['walk']
+        session.close()
+        return val
+    except exceptions.ProtocolError:
+        return randomWalk(name)
 
 i = 1
 
@@ -86,7 +90,7 @@ def findCommunities(model, G):
 
 allNodes = getAllNodes()
 print("got nodes")
-model = makeNodeModel(1, 20, 128, 10, 8, allNodes)
+model = makeNodeModel(1, 6, 128, 10, 8, allNodes)
 #model = Word2Vec.load_word2vec_format("./model.bin", binary=True)
 #model.save_word2vec_format("test.bin")
 
