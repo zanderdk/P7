@@ -5,7 +5,6 @@ from gensim.models import Word2Vec
 import networkx as nx
 from numpy.linalg import eig
 from sklearn.cluster import KMeans
-import matplotlib.pyplot as plt
 from neo4j.v1 import exceptions
 
 color_map = {
