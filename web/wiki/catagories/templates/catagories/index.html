@@ -5,13 +5,9 @@
 {% load static %}
 <link rel="stylesheet" href="{% static "catagories/test.css" %}">
 
-<div class="input-group">
-      <input type="text" class="form-control" placeholder="Search for...">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
-      </span>
-</div><!-- /input-group -->
+<form action="{% url 'catagories:search' %}" method="GET">
+    <input type="text" class="form-control" name="term" placeholder="Search for...">
+</form>
 
 
 {% endblock %}
-
