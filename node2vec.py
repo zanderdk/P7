@@ -91,7 +91,7 @@ def findCommunities(model, G):
 
 allNodes = getAllNodes()
 print("got nodes")
-model = makeNodeModel(6, 128, 10, 8, allNodes)
+model = makeNodeModel(1, 1, 10, 1, 128, 10, 8, allNodes)
 #model = Word2Vec.load_word2vec_format("./model.bin", binary=True)
 #model.save_word2vec_format("test.bin")
 
