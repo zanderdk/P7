@@ -15,3 +15,10 @@ def catagory(request, catagory_name):
 	fromtitles = {"Horse","cats","dogs","humans"}
 	context = {'catagory_name':catagory_name, 'titles':fromtitles}
 	return render(request, 'catagories/catagory.html', context)
+
+def search(request):
+	searchstring = request.GET['term']
+
+	#check whether the search actually brings up a result
+
+	return catagory(request,searchstring)
