@@ -18,7 +18,7 @@ color_map = {
         6:'brown',
         }
 
-driver = GraphDatabase.driver("bolt://localhost:10001", auth=basic_auth("neo4j", "12345"))
+driver = GraphDatabase.driver("bolt://192.38.56.57:10001", auth=basic_auth("neo4j", "12345"))
 
 def getAllNodes():
     session = driver.session()
@@ -71,7 +71,7 @@ def simulateWalks(r, nodes, p, q, l, directed, weighted):
 
 def makeNodeModel(p, q, l, r, d, window, directed, weighted, workers, nodes):
     walks = simulateWalks(r, nodes, p, q, l, directed, weighted)
-    random.shuffle(walks)
+    shuffle(walks)
     model = Word2Vec(walks, size=d, window=window, min_count=5, sg=1, workers=workers, iter=1)
     return model
 
@@ -88,9 +88,11 @@ def findCommunities(model, G):
 
     return G
 
-allNodes = getAllNodes()
-print("got nodes")
-model = makeNodeModel(1, 1, 10, 1, 128, 10, True, True, 8, allNodes)
+# only run when not imported
+if __name__ == "__main__":
+    allNodes = getAllNodes()
+    print("got nodes")
+    model = makeNodeModel(1, 1, 10, 1, 128, 10, True, True, 8, allNodes)
 #model = Word2Vec.load_word2vec_format("./model.bin", binary=True)
 #model.save_word2vec_format("test.bin")
 

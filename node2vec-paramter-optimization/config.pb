@@ -57,3 +57,19 @@ variable {
  options: "40"
  options: "80"
 }
+
+variable {
+ name: "directed"
+ type: ENUM
+ size: 1
+ options: "True"
+ options: "False"
+}
+
+variable {
+ name: "weighted"
+ type: ENUM
+ size: 1
+ options: "True"
+ options: "False"
+}
