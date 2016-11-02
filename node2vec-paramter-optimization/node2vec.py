@@ -17,7 +17,7 @@ color_map = {
         6:'brown',
         }
 
-driver = GraphDatabase.driver("bolt://192.38.56.57:10001", auth=basic_auth("neo4j", "12345"))
+driver = GraphDatabase.driver("bolt://localhost:10001", auth=basic_auth("neo4j", "12345"))
 
 def getAllNodes():
     session = driver.session()
