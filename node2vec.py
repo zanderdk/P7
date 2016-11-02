@@ -58,10 +58,9 @@ def simulateWalks(r, nodes):
     walks = []
     session = driver.session()
     for x in range(0, r):
-        allNodes = getAllNodes()
-        shuffle(allNodes)
-        while allNodes:
-            walk = randomWalk(allNodes.pop()).split()
+        allNodes = nodes
+        for node in allNodes:
+            walk = randomWalk(node).split()
             walks.append(walk)
             i += 1
             if(i % 1000 == 0):
@@ -71,6 +70,7 @@ def simulateWalks(r, nodes):
 
 def makeNodeModel(epoc, r, d, window, workers, nodes):
     walks = simulateWalks(r, nodes)
+    random.shuffle(walks)
     model = Word2Vec(walks, size=d, window=window, min_count=5, sg=1, workers=workers, iter=epoc)
     model.save_word2vec_format("./big2.bin")
     return model
