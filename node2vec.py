@@ -22,7 +22,7 @@ driver = GraphDatabase.driver("bolt://localhost:10001", auth=basic_auth("neo4j",
 
 def getAllNodes():
     session = driver.session()
-    res = session.run("match (a:Page) WHERE NOT exists(a.redirect) return a.title")
+    res = session.run("match (a:Page) WHERE NOT exists(a.redirect) AND (exists(a.good) OR exists(a.featured)) return a.title")
     arr = []
     for x in res:
         arr.append(x['a.title'])
@@ -38,11 +38,12 @@ def getAllEdges():
         session.close()
         return arr
 
-def randomWalk(name):
+def randomWalk(name, p, q, l, directed, weighted):
     try:
+        weighted = "clickRate" of weighted else "None"
         session = driver.session()
-        query = 'CALL randomWalk({name}, 0.25, 400000, 80, 1, "Page", "title", "clickStream", "None", True, True)'
-        res = session.run(query, {"name": name})
+        query = 'CALL randomWalk({name}, {p}, {q}, {l}, 1, "Page", "title", "clickStream", {weighted}, {directed}, False)'
+        res = session.run(query, {"name": name, "p": p, "q": q, "l": l, "directed": directed, "weighted": weighted})
         val = ""
         for x in res:
             val = x['walk']
@@ -53,14 +54,14 @@ def randomWalk(name):
 
 i = 1
 
-def simulateWalks(r, nodes):
+def simulateWalks(r, nodes, p, q, l, directed, weighted):
     global i
     walks = []
     session = driver.session()
     for x in range(0, r):
         allNodes = nodes
         for node in allNodes:
-            walk = randomWalk(node).split()
+            walk = randomWalk(node, p, q, l, directed, weighted).split()
             walks.append(walk)
             i += 1
             if(i % 1000 == 0):
@@ -68,10 +69,10 @@ def simulateWalks(r, nodes):
     session.close()
     return walks
 
-def makeNodeModel(epoc, r, d, window, workers, nodes):
-    walks = simulateWalks(r, nodes)
+def makeNodeModel(p, q, l, r, d, window, workers, nodes):
+    walks = simulateWalks(p, q, l, r, d, nodes)
     random.shuffle(walks)
-    model = Word2Vec(walks, size=d, window=window, min_count=5, sg=1, workers=workers, iter=epoc)
+    model = Word2Vec(walks, size=d, window=window, min_count=5, sg=1, workers=workers, iter=1)
     model.save_word2vec_format("./big2.bin")
     return model
 
@@ -90,7 +91,7 @@ def findCommunities(model, G):
 
 allNodes = getAllNodes()
 print("got nodes")
-model = makeNodeModel(1, 6, 128, 10, 8, allNodes)
+model = makeNodeModel(6, 128, 10, 8, allNodes)
 #model = Word2Vec.load_word2vec_format("./model.bin", binary=True)
 #model.save_word2vec_format("test.bin")
 
