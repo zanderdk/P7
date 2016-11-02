@@ -69,11 +69,10 @@ def simulateWalks(r, nodes, p, q, l, directed, weighted):
     session.close()
     return walks
 
-def makeNodeModel(p, q, l, r, d, window, workers, directed, weighted, nodes):
+def makeNodeModel(p, q, l, r, d, window, directed, weighted, workers, nodes):
     walks = simulateWalks(r, nodes, p, q, l, directed, weighted)
     random.shuffle(walks)
     model = Word2Vec(walks, size=d, window=window, min_count=5, sg=1, workers=workers, iter=1)
-    model.save_word2vec_format("./big2.bin")
     return model
 
 def findCommunities(model, G):
@@ -91,7 +90,7 @@ def findCommunities(model, G):
 
 allNodes = getAllNodes()
 print("got nodes")
-model = makeNodeModel(1, 1, 10, 1, 128, 10, 8, True, True, allNodes)
+model = makeNodeModel(1, 1, 10, 1, 128, 10, True, True, 8, allNodes)
 #model = Word2Vec.load_word2vec_format("./model.bin", binary=True)
 #model.save_word2vec_format("test.bin")
 
