@@ -40,7 +40,7 @@ def getAllEdges():
 
 def randomWalk(name, p, q, l, directed, weighted):
     try:
-        weighted = "clickRate" of weighted else "None"
+        weighted = "clickRate" if weighted else "None"
         session = driver.session()
         query = 'CALL randomWalk({name}, {p}, {q}, {l}, 1, "Page", "title", "clickStream", {weighted}, {directed}, False)'
         res = session.run(query, {"name": name, "p": p, "q": q, "l": l, "directed": directed, "weighted": weighted})
