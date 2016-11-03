@@ -5,7 +5,6 @@ from gensim.models import Word2Vec
 import networkx as nx
 from numpy.linalg import eig
 from sklearn.cluster import KMeans
-import matplotlib.pyplot as plt
 from neo4j.v1 import exceptions
 
 color_map = {
@@ -71,7 +70,7 @@ def simulateWalks(r, nodes, p, q, l, directed, weighted):
 
 def makeNodeModel(p, q, l, r, d, window, directed, weighted, workers, nodes):
     walks = simulateWalks(r, nodes, p, q, l, directed, weighted)
-    random.shuffle(walks)
+    shuffle(walks)
     model = Word2Vec(walks, size=d, window=window, min_count=5, sg=1, workers=workers, iter=1)
     return model
 
@@ -88,9 +87,11 @@ def findCommunities(model, G):
 
     return G
 
-allNodes = getAllNodes()
-print("got nodes")
-model = makeNodeModel(1, 1, 10, 1, 128, 10, True, True, 8, allNodes)
+# only run when not imported
+if __name__ == "__main__":
+    allNodes = getAllNodes()
+    print("got nodes")
+    model = makeNodeModel(1, 1, 10, 1, 128, 10, True, True, 8, allNodes)
 #model = Word2Vec.load_word2vec_format("./model.bin", binary=True)
 #model.save_word2vec_format("test.bin")
 
