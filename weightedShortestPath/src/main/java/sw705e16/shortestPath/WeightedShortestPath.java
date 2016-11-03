@@ -21,7 +21,7 @@ import java.util.stream.Stream;
 public class WeightedShortestPath
 {
     public static RelationshipType redirectType = RelationshipType.withName("redirect");
-    public static RelationshipType clickStreamType = RelationshipType.withName("clickStream");
+    public static RelationshipType clickStreamType = RelationshipType.withName("LinksTo");
 
     public class Output {
         public Path path;
@@ -130,7 +130,7 @@ public class WeightedShortestPath
                 return new Weight(0.0, true);
             }
 
-            Double value = (Double)r.getProperty("clickRate");
+            Double value = 1.0;
             double pst = value.doubleValue();
             //pst above 1 means more people have used this link than people have visited the source node.
             pst = (pst > 1.0)? 1.0 : pst;
