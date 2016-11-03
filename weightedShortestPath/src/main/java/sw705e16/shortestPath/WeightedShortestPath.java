@@ -137,7 +137,7 @@ public class WeightedShortestPath
             boolean valid = !(Objects.equals((String) r.getStartNode().getProperty("title"), (String) pageA.getProperty("title")) &&
                     Objects.equals((String) r.getEndNode().getProperty("title"), (String) pageB.getProperty("title")));
 
-            return new Weight(-1.0 * Math.log10(pst), valid);
+            return new Weight(pst, valid);
         }
     }
 
