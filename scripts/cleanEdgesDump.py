@@ -25,7 +25,7 @@ counter = 1
 edge_counter = 0
 
 if len(sys.argv) > 2:
-    titleDict = findTitles(sys.argv[1])
+    #titleDict = findTitles(sys.argv[1])
     with open(sys.argv[2], "w+", newline="", encoding="utf-8") as f:
         writer = csv.writer(f, delimiter=" ")
         for line in sys.stdin:
@@ -38,9 +38,9 @@ if len(sys.argv) > 2:
             from_title = re_res.group(1).replace(prefix, "")
             to_title = re_res.group(2).replace(prefix, "")
             titles = (from_title, to_title)
-            if from_title in titleDict and to_title in titleDict:
-                writer.writerow(titles)
-                edge_counter += 1
+            #if from_title in titleDict and to_title in titleDict:
+            writer.writerow(titles)
+            edge_counter += 1
             if counter % 1000000 == 0:
                 print("Lines parsed: " + str(counter))
                 print("Edges found: " + str(edge_counter))
