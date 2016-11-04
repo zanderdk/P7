@@ -3,7 +3,7 @@ class QueryHelper:
     def __init__(self, driver):
         self._driver = driver
 
-    def _runQuery(self, query, mapping):
+    def runQuery(self, query, mapping):
         result = []
         with self._driver.session() as session:
 
