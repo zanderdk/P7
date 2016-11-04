@@ -1,0 +1,83 @@
+
+\section{Data}\label{sec:data}
+In order to detect missing links, we need some kind of data to base the detection on. There are many possible data sources of different kinds, and we will briefly introduce them here.
+
+\todo{Maybe change these three categories to a diagram / tikz picture}
+
+\subsection{Article Text}
+This category of data that can be extracted directly from the content, i.e.\ the textual part of the articles.
+\begin{description}
+  \item[Article Text] The full text of an article provides a large amount of information. Based on this, other possibly useful data can be extracted with the help of natural language processing.
+  \item[Ingoing and Outgoing Links] Information about how articles are linked provide information about how articles reference each other. This may be useful to identify the relationship between articles.
+\end{description}
+
+\subsection{Article Metadata}
+This category of data describes the article.
+\begin{description}
+  \item[Article Categories] The category of an article can provide a clustering of articles based on similar topics.
+  \item[Article Authors] Information about which authors are editing an article may provide a way of clustering articles, by cross-referencing with other articles by an author.
+  \item[Interlanguage links] Since Wikipedia exists in many interlinked languages, this provides another dimension of relationship between articles. It may be useful to consider these relationships as well, since foreign language articles are assumed to be very similar topic-wise, but contain different content.
+\end{description}
+
+\subsection{Usage Data}
+Data from the usage of Wikipedia may also contain important information.
+\begin{description}
+  \item[User Trails] The trail of links a user follows provides information about popular links and which links are not used. Also, this can generate a graph of how articles are linked to each other --- this graph is sparser than generating it from ingoing and outgoing links of an article.
+\end{description}
+
+\section{Data Sources}\label{sec:datasources}
+Wikipedia requests that no crawler is used to index the website \todo{insert source}. Therefore, we need to consider alternative ways of acquiring the data. We have found the following data sources:
+\begin{description}
+  \item[Wikipedia Database Dump]
+  \item[DBpedia]
+  \item[Wikipedia Server Logs] \todo{Clickstream is used instead}
+  \item[Wikipedia Clickstream] The \emph{Wikipedia Clickstream} is a pre-parsed dataset based on the Wikipedia Server Logs. It shows how people get to a Wikipedia article and which links they click on \cite{wiki-clickstream}.
+\end{description}
+
+\section{Using the Data}
+\todo{Vi har alt det her data. Der skal udvælges noget. Meget forskellig data. Kombinere det -> Maskinintelligens?}
+
+As can be seen, there is much data available. 
+
+\section{Tools, Frameworks, Libraries, Stuff}\label{sec:selecting_tools}
+\todo{Selecting vital tools and stuff that is used overall in the project? Alternatively split into own chapter, or parts of this into own chapter}
+
+\section{Databases}
+To efficiently process data from Wikipedia a proper data structure is needed. Therefore, we investigate the different database options we have as it depends on what and how the data is accessed.
+
+\subsection{Relational databases}
+Relational databases use tables to store rows of data. They are suitable for organizing and categorizing information, but when focusing on relationships between data they exhibit poorer performance and are less flexible because they require advanced join operations.
+
+Query language: SQL (variants)
+
+\subsection{Document Oriented Databases}
+Wikipedia articles can be represented as documents which can be looked up quickly using a document-oriented database. We have, through the course Data Intensive Systems, knowledge about one such database, namely MongoDB\@.
+
+\subsubsection{MongoDB}
+MongoDB is a scalable (auto-balancing) document-oriented database. It is schema-less and thus suitable for working with a more flexible schema.
+It provides fast queries using generic secondary indexes making it suitable for quick full-text searches. It also provides an aggregation framework to make grouping operations, as well as MapReduce.
+Data size is usually higher because it stores field names for each document. No support for transactions, ACID, and less flexible queries. 
+
+Query language: JSON-like structures.
+
+\subsection{Graph Databases}
+Graph databases are suitable for storing data with focus on relationships. Querying for relationships between nodes and deep traversals can be made faster than with relational databases.
+Graph databases could be useful for storing Wikipedia link-graphs, both for interlinking between articles as well as representing the clickstream. Additionally term similarity could be represented as a graph.
+
+\subsubsection{Neo4j}
+Neo4j is a ACID-compliant transactional graph database with focus on data relationships. It is scalable and supports graph storage and processing. Everything is stored as a node, an edge, or an attribute. The nodes and edges can be labeled to narrow searches.
+
+Query language: Cypher.
+
+\subsubsection{Titan}
+Query language: Gremlin.
+
+\subsection{RDF Triple Store}
+% cite: wikipedia
+% Resource Description Framework (RDF)
+A triple store or RDF store is a purpose-built database for the storage and retrieval of triples through semantic queries. RDF is used as a conceptual description or modeling of information that is implemented in web resources. RDF triple stores are similar to graph databases in that they both focus on linked data, however RDF triple stores also focuses on semantics and provide inferences on data.
+% (e.g., if humans are a subclass of mammals and man is a subclass of humans, then it can be inferred that man is a subclass of mammals)
+
+DBpedia uses an RDF store and also provides a SPARQL endpoint for querying data.
+
+Query language: SPARQL.
