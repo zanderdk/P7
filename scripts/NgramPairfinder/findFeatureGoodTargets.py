@@ -2,7 +2,6 @@ import runQuery
 from neo4j.v1 import GraphDatabase, basic_auth
 
 qh = runQuery.QueryHelper(GraphDatabase.driver("bolt://localhost:10001", auth=basic_auth("neo4j", "12345")))
-finder = getNgramPairs.pairFinder(qh)
 
 all_featured_res = qh.runQuery("match (a:Page) WHERE NOT exists(a.redirect) AND exists(a.featured) return a.title as title", {})
 all_featured = []
