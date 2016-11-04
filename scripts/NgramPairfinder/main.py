@@ -12,8 +12,8 @@ for record in all_featured_res:
 
 print("Got all featured articles")
 
-with open("positives", "w") as positives:
-    with open("negatives", "w") as negatives:
+with open("positives", "w", encoding="utf-8") as positives:
+    with open("negatives", "w", encoding="utf-8") as negatives:
         for title in all_featured:
             res = finder.getPairsFromArticle(title)
             for article in res[1]:
