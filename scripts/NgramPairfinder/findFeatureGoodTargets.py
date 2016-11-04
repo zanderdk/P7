@@ -24,7 +24,7 @@ with open("negatives","r",encoding="utf-8") as negatives:
 		if words[1] in all_featured_good:
 			counter += 1
 		counter2 += 1
-		if counter2 % 10000 = 0:
+		if counter2 % 10000 == 0:
 			print(counter2)
 
 
