@@ -89,11 +89,13 @@ def findCommunities(model, G):
 
 # only run when not imported
 if __name__ == "__main__":
-    allNodes = getAllNodes()
+    lst = []
+    for line in sys.stdin:
+	lst.append(line.split()[0])
     print("got nodes")
-    model = makeNodeModel(1, 1, 10, 1, 128, 10, True, True, 8, allNodes)
+    model = makeNodeModel(1, 0.0625, 80, 1, 128, 10, True, False, 8, lst)
 #model = Word2Vec.load_word2vec_format("./model.bin", binary=True)
-#model.save_word2vec_format("test.bin")
+    model.save_word2vec_format("test.bin")
 
 
 #G=nx.Graph()
