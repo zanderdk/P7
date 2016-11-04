@@ -8,12 +8,13 @@ all_featured_good_res = qh.runQuery("""
 	NOT exists(a.redirect) 
 	AND (exists(a.good) 
 	OR exists(a.featured)) 
-	return a.title""", {})
+	return a.title as title""", {})
 all_featured_good = []
 for record in all_featured_good_res:
     all_featured_good.append(record["title"])
 
 counter = 0
+counter2 = 0
 all_featured_good = set(all_featured_good)
 
 print("Got all featured articles")
@@ -22,5 +23,9 @@ with open("negatives","r",encoding="utf-8") as negatives:
 		words = line.split(" ")
 		if words[1] in all_featured_good:
 			counter += 1
+		counter2 += 1
+		if counter2 % 10000 = 0:
+			print(counter2)
+
 
 print(counter)
