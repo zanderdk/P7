@@ -12,14 +12,15 @@ def getNgrams(text, N):
 	"""
 	res = []
 	# filter stopwords
-	filtered_words = [word for word in text if word not in stops]
+	tokenized = tokenizer.tokenize(text)
+	filtered_words = [word for word in tokenized if word not in stops and len(word) > 4]
 	for n in range(1, N+1):
-		grams = ngrams(tokenizer.tokenize(text), n)
+		grams = ngrams(filtered_words, n)
 		for gram in grams:
-			gram_as_str = " ".join(gram)
+			gram_as_str = "_".join(gram)
 			res.append(gram_as_str)
 
-	return res
+	return list(set(res))
 
 
 def getNgramsOfType(type):
