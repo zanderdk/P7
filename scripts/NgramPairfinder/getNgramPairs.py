@@ -49,12 +49,10 @@ class pairFinder:
         query = "MATCH (a:Page) WHERE a.title = {title} Return a.text"
 
         queryResult = self._qh.runQuery(query, mapping)
-        print("Got text")
 
         #Result is a list. result[0] is a record. result[0][0] is the actual article text. Don't ask.
         nGrams = getNgrams.getNgrams(queryResult[0][0], 5)
         nGrams = list(filter(lambda x: x in allNodes, nGrams))
-        print("Got %d grams " % len(nGrams))
         result_neg = []
         result_pos = []
 

@@ -7,7 +7,6 @@ def getAllNodes(qh):
     arr = []
     for x in res:
         arr.append(x['a.title'])
-        print("penis")
     #res.close()
     return arr
 
