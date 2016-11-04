@@ -12,8 +12,10 @@ for record in all_featured_res:
 counter = 0
 
 print("Got all featured articles")
-with open("../negatives","r",encoding="utf-8") as negatives:
+with open("negatives","r",encoding="utf-8") as negatives:
 	for line in negatives:
 		words = line.split(" ")
 		if words[1] in all_featured:
 			counter += 1
+
+print(counter)
