@@ -2,7 +2,6 @@
 Before beginning the work we need a preliminary understanding of the problem domain. This requires information acquisition related to Wikipedia and its data, as well as analyzing the needs for storage.
 
 \begin{chapterorganization}
-  \item In \sectionref{sec:about_wikipedia} we briefly introduce Wikipedia;
   \item In \sectionref{sec:related_work} we look at existing solutions to similar problems;
   \item In \sectionref{sec:data} we categorize the data available on and about Wikipedia. This gives a better understanding of the domain we are dealing with;
   \item In \sectionref{sec:datasources} we list the available sources where it is possible to obtain the data;
@@ -10,13 +9,20 @@ Before beginning the work we need a preliminary understanding of the problem dom
   \item In \sectionref{sec:selecting_tools} we compare tools needed in the project based on our needs for storing data.
 \end{chapterorganization}
 
-\section{Wikipedia}\label{sec:about_wikipedia}
-Wikipedia is a multilingual, web-based, free encyclopedia project~\cite{wiki-about}. It mainly consists of articles which are written collaboratively by volunteers. As of October 2016 the English version of Wikipedia consists of more than 5.2 million articles~\cite{wiki-about}, and averages about 800--900 new articles per day~\cite{wmcharts}.
-
-This constant amount of new data is a contributing factor to the complexity of linking on Wikipedia. No author can know about all new pages and their relationship with existing pages, not to forget about existing pages and their relationship to other existing pages.
-
 \section{Related Work}\label{sec:related_work}
 \dummy
+
+\section{Considerations}
+The main problem making this project non-trivial is the fact that Wikipedias guidelines for linking~\cite{wiki-manual-of-style-overlinking} are a matter of judgment. There is no clear definition of what a ``good'' or ``bad'' link is. However, we have plenty of examples of what a ``good'' link is.
+Wikipedia maintains a collection of articles that are deemed outstanding examples and are considered to be the best Wikipedia has to offer. These are called \emph{featured articles}~\cite{wiki-featured-articles} and there are almost 5000 of these. These articles follow the Wikipedia Policies and Guidelines~\cite{wiki-editor-guidelines}, which also means they follow the guidelines for linking. We can therefore assume that they link appropriately.
+
+\subsection{Overlinking and Underlinking}
+\todo{Overlinking and underlinking}
+
+\section{The Abstract Problem} \todo{Better title}
+
+
+
 
 \section{Data}\label{sec:data}
 In order to detect missing links, we need some kind of data to base the detection on. There are many possible data sources of different kinds, and we will briefly introduce them here.
