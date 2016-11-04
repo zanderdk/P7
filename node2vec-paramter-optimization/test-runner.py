@@ -13,9 +13,8 @@ def main(job_id, params):
   print params
 
   # generate model with params
-  pqRatio = float(params["PQRatio"][0])
-  p = 1
-  q = p*pqRatio
+  p = float(params["p"][0])
+  q = float(params["q"][0])
   
   l = int(params["l"][0])
   r = int(params["r"][0])
