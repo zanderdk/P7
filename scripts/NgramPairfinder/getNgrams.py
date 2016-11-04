@@ -1,6 +1,5 @@
 from nltk import ngrams
 from nltk.tokenize import RegexpTokenizer
-from funcy import cat
 from nltk.corpus import stopwords
 
 tokenizer = RegexpTokenizer(r'\w+')

@@ -24,7 +24,7 @@ class pairFinder:
         result_pos = []
 
         for gram in nGrams:
-            if gram not in title:
+            if gram != title:
                 mapping = {"fromTitle": title, "title": gram }
                 query = '''MATCH (b:Page) WHERE b.title = {title}
                            OPTIONAL MATCH (a:Page)-[r:clickStream]->(b) where a.title = {fromTitle}
@@ -37,6 +37,40 @@ class pairFinder:
                         result_pos.append(res_title)
                     elif res_hasLink == 0:
                         result_neg.append(res_title)
+                    else:
+                        sys.exit("Found unexpected res_haslink: %s" % res_hasLink)
+
+        return (title, result_pos, result_neg)
+        
+
+    
+    def getPairsFromArticleThatIsFeaturedOrGood(self, title, allNodes):
+        mapping = {"title": title}
+        query = "MATCH (a:Page) WHERE a.title = {title} Return a.text"
+
+        queryResult = self._qh.runQuery(query, mapping)
+        print("Got text")
+
+        #Result is a list. result[0] is a record. result[0][0] is the actual article text. Don't ask.
+        nGrams = getNgrams.getNgrams(queryResult[0][0], 5)
+        nGrams = list(filter(lambda x: x in allNodes, nGrams))
+        print("Got %d grams " % len(nGrams))
+        result_neg = []
+        result_pos = []
+
+        for gram in nGrams:
+            if gram != title:
+                mapping = {"fromTitle": title, "title": gram }
+                query = '''MATCH (b:Page) WHERE b.title = {title}
+                           OPTIONAL MATCH (a:Page)-[r:clickStream]->(b) where a.title = {fromTitle}
+                           return count(r) as hasLink'''
+                res = self._qh.runQuery(query, mapping)
+                if res[0] is not None:
+                    res_hasLink = res[0]["hasLink"]
+                    if res_hasLink == 1:
+                        result_pos.append(gram)
+                    elif res_hasLink == 0:
+                        result_neg.append(gram)
                     else:
                         sys.exit("Found unexpected res_haslink: %s" % res_hasLink)
 
