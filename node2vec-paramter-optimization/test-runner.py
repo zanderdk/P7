@@ -56,37 +56,61 @@ def main(job_id, params):
 
   print("Model generated and saved as file. I will now evaluate the model.")
 
-  X = []
-  Y = []
+  X_pos = []
+  X_neg = []
+  Y_pos = []
+  Y_neg = []
 
   # load all training pairs
   i = 0
-  with open('../scripts/trainingPairs.txt', 'r') as f:
+  with open('paropt_training_data.csv', 'r') as f:
     for line in f:
-        source, target, label = tuple(line.split("\t"))
+        source, target, label = tuple(line.split())
 
         if source in model and target in model:
             features_source = model[source]
             features_target = model[target]
             features = features_source * features_target
-            Y.append(int(label))
-            X.append(features)
+            if label == "0":
+              Y_neg.append(int(label))
+              X_neg.append(features)
+            else:
+              Y_pos.append(int(label))
+              X_pos.append(features)
+        else:
+          i += 1
 
-    print(len([x for x in Y if x == 0]))
-    print(len([x for x in Y if x == 1]))
+    len_pos = len(X_pos)
+    len_neg = len(X_neg)
+    print("before 50:50: neg len: " + str(len_neg))
+    print("before 50:50: pos len: " + str(len_pos))
     print(i)
+    # make sure that there is a 50:50 positive:negative ratio
+
+    if len_pos > len_neg:
+        # too many in positives
+        X_pos = X_pos[:len_neg]
+        Y_pos = Y_pos[:len_neg]
+    else:
+        # too many negatives
+        X_neg = X_neg[:len_pos]
+        Y_neg = Y_neg[:len_pos]
+
+
+    X = X_neg + X_pos
+    Y = Y_neg + Y_pos
     X = np.array(X)
     Y = np.array(Y)
 
   # prepare configuration for cross validation test harness
-  num_folds = 3
+  num_folds = 10
   seed = 7
   # prepare models
   classifier = SGDClassifier(loss="hinge", penalty="l2")
   name = "SGD"
 
   # evaluate each model in turn
-  scoring = 'precision'
+  scoring = 'f1'
   kfold = KFold(n_splits=num_folds, shuffle=True, random_state=seed)
   cv_results = cross_val_score(classifier, X, y=Y, cv=kfold, scoring=scoring)
   msg = "%s: %f (%f)" % (name, cv_results.mean(), cv_results.std())

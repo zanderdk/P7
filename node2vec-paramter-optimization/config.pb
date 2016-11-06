@@ -10,7 +10,7 @@ variable {
  options: "2.0"                                                                                                                  
  options: "0.25"                                                                                                                 
  options: "4.0"                                                                                                                 
- options: "1000.0"
+ options: "10000.0"
 }
 
 variable {
@@ -22,7 +22,7 @@ variable {
  options: "2.0"                                                                                                                  
  options: "0.25"                                                                                                                 
  options: "4.0"                                                                                                                 
- options: "1000.0"
+ options: "10000.0"
 }
 
 variable {
@@ -39,6 +39,7 @@ variable {
  size: 1
  options: "1"
  options: "3"
+ options: "6"
 }
 
 variable {

@@ -17,7 +17,7 @@ color_map = {
         6:'brown',
         }
 
-driver = GraphDatabase.driver("bolt://localhost:10001", auth=basic_auth("neo4j", "12345"))
+driver = GraphDatabase.driver("bolt://192.38.56.57:10001", auth=basic_auth("neo4j", "12345"))
 
 def getAllNodes():
     session = driver.session()
@@ -37,16 +37,14 @@ def getAllEdges():
         session.close()
         return arr
 
-def randomWalk(name, p, q, l, directed, weighted):
+def randomWalk(name, p, q, l, directed, weighted, session):
     try:
         weighted = "clickRate" if weighted else "None"
-        session = driver.session()
         query = 'CALL randomWalk({name}, {p}, {q}, {l}, 1, "Page", "title", "clickStream", {weighted}, {directed}, False)'
         res = session.run(query, {"name": name, "p": p, "q": q, "l": l, "directed": directed, "weighted": weighted})
         val = ""
         for x in res:
             val = x['walk']
-        session.close()
         return val
     except exceptions.ProtocolError:
         return randomWalk(name)
@@ -56,16 +54,17 @@ i = 1
 def simulateWalks(r, nodes, p, q, l, directed, weighted):
     global i
     walks = []
-    session = driver.session()
     for x in range(0, r):
+        session = driver.session()
         allNodes = nodes
         for node in allNodes:
-            walk = randomWalk(node, p, q, l, directed, weighted).split()
+            walk = randomWalk(node, p, q, l, directed, weighted, session).split()
             walks.append(walk)
             i += 1
             if(i % 1000 == 0):
                 print(i)
-    session.close()
+        session.close()
+    
     return walks
 
 def makeNodeModel(p, q, l, r, d, window, directed, weighted, workers, nodes):
