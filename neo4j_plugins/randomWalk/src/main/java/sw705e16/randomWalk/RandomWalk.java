@@ -158,6 +158,10 @@ public class RandomWalk
             if (walkLength == 1) {
 
                 for(Relationship rel: cur_nbrs) {
+                    // ignore this relationship, to simulate test data we will not walk through
+                    if (rel.getProperty("testData") != null) {
+                        continue;
+                    }
                     Node end = rel.getOtherNode(cur);
                     if(end.getId() == cur.getId())
                         continue;
@@ -177,11 +181,15 @@ public class RandomWalk
                     cur_nbrs.add(backRelasion(prev, cur, weight));
                 ArrayList<Long> newLast = new ArrayList<>();
                 for(Relationship rel: cur_nbrs) {
+                    // ignore this relationship, to simulate test data we will not walk through
+                    if (rel.getProperty("testData") != null) {
+                        continue;
+                    }
                     Node end = rel.getOtherNode(cur);
                     Long endId = end.getId();
                     if(endId == cur.getId())
                         continue;
-                    Double w = (endId == prevId)? 1.0/p : lastNodes.contains(endId)? 1.0 : 1.0/q;
+                    Double w = (Objects.equals(endId, prevId))? 1.0/p : lastNodes.contains(endId)? 1.0 : 1.0/q;
                     w = w* ((unWeighted)? 1.0 : (Double)rel.getProperty(weight));
                     aliasList.add(end);
                     propList.add(w);
