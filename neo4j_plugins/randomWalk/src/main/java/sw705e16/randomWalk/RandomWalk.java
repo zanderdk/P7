@@ -159,7 +159,7 @@ public class RandomWalk
 
                 for(Relationship rel: cur_nbrs) {
                     // ignore this relationship, to simulate test data we will not walk through
-                    if (rel.getProperty("testData") != null) {
+                    if (rel.getProperty("testData", null) != null) {
                         continue;
                     }
                     Node end = rel.getOtherNode(cur);
@@ -182,7 +182,7 @@ public class RandomWalk
                 ArrayList<Long> newLast = new ArrayList<>();
                 for(Relationship rel: cur_nbrs) {
                     // ignore this relationship, to simulate test data we will not walk through
-                    if (rel.getProperty("testData") != null) {
+                    if (rel.getProperty("testData", null) != null) {
                         continue;
                     }
                     Node end = rel.getOtherNode(cur);
