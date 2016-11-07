@@ -70,7 +70,7 @@ def simulateWalks(r, nodes, p, q, l, directed, weighted):
 def makeNodeModel(p, q, l, r, d, window, directed, weighted, workers, nodes):
     walks = simulateWalks(r, nodes, p, q, l, directed, weighted)
     shuffle(walks)
-    model = Word2Vec(walks, size=d, window=window, min_count=5, sg=1, workers=workers, iter=1)
+    model = Word2Vec(walks, size=d, window=window, min_count=0, sg=1, workers=workers, iter=1)
     return model
 
 def findCommunities(model, G):

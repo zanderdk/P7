@@ -5,24 +5,28 @@ variable {
  name: "p"
  type: ENUM
  size: 1
+ options: "0.0001"
+ options: "0.25"                                                                                                                 
  options: "0.5"                                                                                                                  
  options: "1.0"                                                                                                                  
  options: "2.0"                                                                                                                  
- options: "0.25"                                                                                                                 
  options: "4.0"                                                                                                                 
  options: "10000.0"
+ options: "100000.0"
 }
 
 variable {
  name: "q"
  type: ENUM
  size: 1
+ options: "0.0001"                                                                                                                  
+ options: "0.25"                                                                                                                 
  options: "0.5"                                                                                                                  
  options: "1.0"                                                                                                                  
  options: "2.0"                                                                                                                  
- options: "0.25"                                                                                                                 
  options: "4.0"                                                                                                                 
  options: "10000.0"
+ options: "1000000.0"
 }
 
 variable {
@@ -48,21 +52,22 @@ variable {
  size: 1
  options: "5"
  options: "10"
+ options: "20"
+ options: "30"
 }
 
 variable {
  name: "l"
  type: ENUM
  size: 1
- options: "40"
  options: "80"
+ options: "120"
 }
 
 variable {
  name: "directed"
  type: ENUM
  size: 1
- options: "True"
  options: "False"
 }
 
@@ -70,6 +75,5 @@ variable {
  name: "weighted"
  type: ENUM
  size: 1
- options: "True"
  options: "False"
 }
