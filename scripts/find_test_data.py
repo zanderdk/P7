@@ -5,7 +5,7 @@ driver = GraphDatabase.driver("bolt://192.38.56.57:10001", auth=basic_auth("neo4
 
 def getAllPositiveTestDataNodes():
     session = driver.session()
-    res = session.run("match (a:Page)-[r:clickStream]->(b:Page) where r.testData return a.title,b.title")
+    res = session.run("match (a:Page)-[r:clickStream]->(b:Page) where exists(a.featured) AND r.testData = True return a.title,b.title")
     arr = []
     for x in res:
         source = x['a.title']
