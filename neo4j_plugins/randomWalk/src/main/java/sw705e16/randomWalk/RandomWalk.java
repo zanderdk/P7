@@ -16,6 +16,7 @@ import java.util.stream.StreamSupport;
 
 public class RandomWalk
 {
+    static RelationshipType redirectType = RelationshipType.withName("redirect");
 
     public Relationship backRelasion(Node prev, Node cur, String weight) {
         return new Relationship() {
@@ -142,6 +143,14 @@ public class RandomWalk
             thisNode = db.getNodeById(Long.parseLong(title));
         else
             thisNode = db.findNode(pageLabel, field, title);
+
+        String thisNodeRedirect = (String)thisNode.getProperty("redirect", null);
+
+        // we want to make sure that we are not stuck at redirect nodes.
+        // we therefore follow a redirect node if we are stuck
+        if (thisNodeRedirect != null) {
+            thisNode = thisNode.getSingleRelationship(redirectType, Direction.OUTGOING).getOtherNode(thisNode);
+        }
         ArrayList<Node> walk = new ArrayList<Node>();
         walk.add(thisNode);
         boolean unWeighted = (weight.equals("None"));
@@ -149,6 +158,13 @@ public class RandomWalk
 
         while(walkLength < l) {
             Node cur = walk.get(walkLength-1);
+            String curNodeRedirect = (String)cur.getProperty("redirect", null);
+
+            // we want to make sure that we are not stuck at redirect nodes.
+            // we therefore follow a redirect node if we are stuck
+            if (curNodeRedirect != null) {
+                cur = cur.getSingleRelationship(redirectType, Direction.OUTGOING).getOtherNode(cur);
+            }
             Direction d = (directed)? Direction.OUTGOING : Direction.BOTH;
             Iterable<Relationship> rels = cur.getRelationships(d, clickStreamType);
             ArrayList<Relationship> cur_nbrs =  Lists.newArrayList(rels);
