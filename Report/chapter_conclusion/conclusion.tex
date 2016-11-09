@@ -1,2 +1,61 @@
 \chapter{Conclusion}\label{chap:conclusion}
 \dummy
+
+
+
+\tikzsetnextfilename{diagram}
+\begin{figure}%
+  \begin{tikzpicture}[node distance = 3cm, auto]
+    \tikzstyle{bigblock} = [rectangle, draw, fill=clnode, text width=4.5em, text centered, minimum height=4em]
+    \tikzstyle{smallblock} = [rectangle, draw, fill=clnode, text width=4.5em, text centered, minimum height=3em]
+    \tikzstyle{database} = [cylinder, draw, shape border rotate=90, aspect=0.15, fill=clnode, text width=4.5em, text centered, minimum height=4em]
+    \tikzstyle{line} = [draw, -stealth, thick]
+    %\tikzstyle{model} = [draw, ellipse,fill=red!20, minimum height=2em]
+    \tikzstyle{container} = [rectangle, draw, inner sep=0.6 cm, dashed, fill=clshade]
+    
+    % Place nodes
+    \node [database, yshift=1em] (db) {DB};
+    \node [bigblock, right of=db] (ap) {Article Picker};
+    \node [bigblock, right of=ap] (tfl) {Trained Feature Learner};
+    \node [bigblock, right of=tfl] (ai) {AI};
+    \node [database, right of=ai] (db2) {DB2};
+    \node [bigblock, below=1cm of db2] (web) {Web};
+    
+    \node [smallblock, below=1.5cm of ap, xshift=-2em] (n2v) {Node2Vec};
+    \node [smallblock, below=.5cm of n2v] (paropt) {Parameter Optimizer};
+    
+    \node [smallblock, below=4.5cm of tfl] (prepper) {Prepper};
+    \node [smallblock, right of=prepper] (aitrainer) {AI Trainer};
+    
+    \begin{scope}[on background layer]
+    \node [container, fit=(n2v)(paropt)] (container1) {};
+    \node[below right] at (container1.north west) {N2V Gym};
+    \node [container, fit=(prepper)(aitrainer)] (container2) {};
+    \node[below right] at (container2.north west) {AI Gym};
+    \end{scope}
+    
+    %\draw [->] (db) -- (n2v);
+    
+    \path [line] (db) -- (ap);
+    \path [line] (ap) -- (tfl);
+    \path [line] (tfl) -- (ai);
+    \path [line] (ai) -- (db2);
+    \path [line] (db2) -- (web);
+    
+    \path [line] (db.300) |- (n2v);
+    \path [line] (db.300) |- (paropt);
+    \path [line] (db.240) |- (prepper);
+    
+    \path [line, swap] (paropt) -- node{Parameters} (n2v);
+    \path [line] (n2v.east) -| node [near end] {Model} ([xshift=-1.2em]tfl.south);
+    
+    \path [line] (prepper) -- (aitrainer);
+    \path [line] (prepper) -- (tfl);
+    \path [line] ([xshift=1.2em]tfl.south) -- ([xshift=1.2em]prepper.north);
+    
+    \path [line] (aitrainer) -- node{Model} (ai);
+    
+  \end{tikzpicture}
+\caption{Text}%
+\label{fig:overall-flow}%
+\end{figure}
