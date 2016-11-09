@@ -12,6 +12,8 @@
   % Set to true for print version, false for screen reading version.
   % Screen reading version for example uses coloring of PDF links.
   \newtoggle{printversion}
+  % Set true for PDF version ready for print. False for screen version.
+  \settoggle{printversion}{false}
 
 % LaTeX and KOMA fixes.
   %\usepackage{fixltx2e}
@@ -122,6 +124,7 @@
 
   \usepackage{xcolor}
     % Text colors.
+    \definecolor{black}{gray}{0.0}
     \definecolor{partcolor}{gray}{0.17}
     \definecolor{chaptercolor}{gray}{0.17}
     \definecolor{sectioning}{gray}{0.28}
