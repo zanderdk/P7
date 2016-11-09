@@ -6,6 +6,27 @@
   \item In Section...
 \end{chapterorganization}
 
+\section{Introduction}
+The system is divided into three areas: The primary area consists of a pipeline that uses a trained model to make predictions/suggestions.
+and two supporting areas which are feature learning and machine learning/model-training. A diagram of the architecture can be seen on \ref{fig:overall-flow} with support areas marked with dashed lines.
+
+%Throughout this chapter the different components will be explained in detail.
+
+\subsection{Primary pipeline}
+The main part of the system architecture consists of a pipeline concerning the components: database, article picker, feature extractor, AI and Web.
+
+A user uses a web interface to query the system for suggesting articles with missing links.
+The article picker component queries the database component for a source article and a list of candidate target articles that should be tested for missing links. The articles are arranged into pairs and forwarded to the feature extraction component. Previously learned features, for the article pairs, are extracted as vectors which are fed into the AI component. The AI uses the feature vectors to predict whether or not a link should be present from the source article to the targets. Finally this classification is forwarded to the Web component which presents relevant information to the user.
+
+\subsection{Support pipelines}
+Prior to this article features must be learned, and the AI model must be trained. The is performed by two support pipelines.
+
+Meanwhile in the \textit{N2V Gym\texttrademark}. Feature learning is done by using node2vec for performing random walks between articles within the link graph gathered from the database. The walks are used to train the node2vec model which ultimately is used by the feature extractor.
+A parameter optimization component is used to find node2vec parameters that increases accuracy for the Wikipedia link data.
+
+The machine learning pipeline aka \textit{AI Gym\texttrademark} uses a list of labeled article pairs to train the AI model. The articles are gathered from the database and features are extracted using the feature extractor. The features and classification labels are passed to the AI Trainer component which trains the model that will be used by the AI component.
+
+
 \section{Overview of Architecture}\label{sec:architecture}
 \todo{Nice picture of entire architecture}
 
