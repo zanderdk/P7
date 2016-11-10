@@ -12,17 +12,12 @@ The main system consists of a pipeline utilizing two trained models in order to 
   \item a feature learning model, and
   \item a machine learning model.
 \end{enumerate*}
-Both models are trained by separate workflows. A diagram of the main pipeline and the separate workflows for training the models can be seen in \figureref{fig:overall-flow} with the workflows for training marked with dashed lines.
+Both models are trained by separate workflows. A diagram of the main pipeline and the separate workflows for training the models can be seen in \cref{fig:overall-flow} with the workflows for training marked with dashed lines.
 
 \tikzsetnextfilename{diagram}
 \begin{figure}[tbp]%
   \begin{tikzpicture}[node distance = 2.84cm, auto]
-    \tikzstyle{bigblock} = [thick, rectangle, draw, fill=clnode, text width=4.5em, text centered, minimum height=4em]
-    \tikzstyle{smallblock} = [thick, rectangle, draw, fill=clnode, text width=4.5em, text centered, minimum height=3em]
-    \tikzstyle{database} = [thick, cylinder, draw, shape border rotate=90, aspect=0.15, fill=clnode, text width=3em, text centered, minimum height=4em]
-    \tikzstyle{line} = [draw, -stealth, thick]
-    %\tikzstyle{model} = [draw, ellipse,fill=red!20, minimum height=2em]
-    \tikzstyle{container} = [rectangle, draw, inner sep=0.6 cm, dashed, fill=clshade]
+    
     
     % Place nodes
     \node [database, yshift=1em] (db) {DB};
@@ -98,6 +93,23 @@ The machine learning pipeline aka \textit{AI Gym\texttrademark} uses a list of l
 
 \section{Overview of Architecture}\label{sec:architecture}
 \todo{Nice picture of entire architecture}
+
+\section{Components}
+
+\subsection{Article Picker}
+The article picker component of the system is used to select candidate article pairs to test for linking.
+
+The article pairs are selected in accordance with a policy, because picking articles at random would yield many irrelevant pairs ($\left\vert{\text{articles}}\right\vert ^{2}$ pairs). We base the policy on teleport links from the Wikipedia clickstream and thus human navigation paths. The reasoning is that by selecting article pairs without an existing link that users have navigated between by other means, the articles might be related and inserting a link between the articles could improve navigability.
+
+\todo{write if we end up doing this}
+Another policy to consider is selecting article pairs based on text content. Specifically using n-grams of words (shingles) to find text in the article that references titles of other articles without already linking to it. 
+
+\todo{teleport/clickstream like sources}
+% https://cs.stanford.edu/people/jure/pubs/wiki-www15.pdf
+% others
+
+\subsection{Feature Extractor}
+The feature extractor receives a pair of articles and extracts features from a node2vec model that has been trained ahead of time. The feature pair are represented as two vectors which is combined using an operation such as multiplication \todo{maybe write that we always multiply them, maybe cite node2vec paper, that says that multiplication yielded best results in their experiments.} and used as input for the AI.
 
 \section{Features}
 
