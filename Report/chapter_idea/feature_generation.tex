@@ -14,7 +14,7 @@ We do not have great domain knowledge of Wikipedia, but we have some ideas for f
     \item[Clickstream] \todo{describe what this is before? link to wikipedia clickstream and maybe alexanders regression paper}.
     \item[Terms similarity] This is a metric that describes the similarity of the most important terms on two given Wikipedia articles. For example, if article A has the terms w1, w2, w3 and article B has w3, w4, a metric could be the number of similar terms, in this case 1. The idea behind the feature is that articles with similar terms are more likely to be linked together.
     \item[Shortest path] Consider Wikipedia as a graph, where the vertices are articles and edges are links between articles. The idea of this feature is that there is a correlation between the shortest path of two articles A, B, and whether there is a link between A and B. 
-    \item[Common direct predecessors/successors] See figure \todo{lav figure om children/parents, spørg michael}. The motivation of this feature is that if two articles have common direct predecessors or successors they may be related to such a degree that they should be linked.
+    \item[Common children/parents] See \cref{fig:children-rel,fig:parent-rel}. The motivation of this feature is that if two articles have common direct predecessors or successors they may be related to such a degree that they should be linked. \todo{Explain the figure.}
 \end{description}
 
 
