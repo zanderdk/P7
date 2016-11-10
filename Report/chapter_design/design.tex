@@ -99,6 +99,20 @@ The machine learning pipeline aka \textit{AI Gym\texttrademark} uses a list of l
 \section{Overview of Architecture}\label{sec:architecture}
 \todo{Nice picture of entire architecture}
 
+\section{Components}
+
+\subsection{Article Picker}
+The article picker component of the system is used to select candidate article pairs to test for linking.
+
+The article pairs are selected in accordance with a policy, because picking articles at random would yield many irrelevant pairs. We base the policy on teleport links from the Wikipedia clickstream and thus human navigation paths. The reasoning is that by selecting article pairs without an existing link that users have navigated between by other means, the articles might be related and inserting a link between the articles could improve navigability.
+
+\todo{write if we end up doing this}
+Another policy to consider is selecting article pairs based on text content. Specifically using n-grams of words (shingles) to find text in the article that references titles of other articles without already linking to it. 
+
+\todo{teleport/clickstream like sources}
+% https://cs.stanford.edu/people/jure/pubs/wiki-www15.pdf
+% others
+
 \section{Features}
 
 \section{Machine Intelligence}
