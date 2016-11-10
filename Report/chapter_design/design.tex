@@ -7,16 +7,19 @@
 \end{chapterorganization}
 
 \section{Overall View}
-The system is divided into three areas: The primary area consists of a pipeline that uses a trained model to make predictions/suggestions.
-and two supporting areas which are feature learning and machine learning/model-training. A diagram of the architecture can be seen on \ref{fig:overall-flow} with support areas marked with dashed lines.
-
+The main system consists of a pipeline utilizing two trained models in order to make predictions. These models are
+\begin{enumerate*}[label=(\roman*)]
+  \item a feature learning model, and
+  \item a machine learning model.
+\end{enumerate*}
+Both models are trained by separate workflows. A diagram of the main pipeline and the separate workflows for training the models can be seen in \figureref{fig:overall-flow} with the workflows for training marked with dashed lines.
 
 \tikzsetnextfilename{diagram}
-\begin{figure}%
+\begin{figure}[tbp]%
   \begin{tikzpicture}[node distance = 3cm, auto]
-    \tikzstyle{bigblock} = [rectangle, draw, fill=clnode, text width=4.5em, text centered, minimum height=4em]
-    \tikzstyle{smallblock} = [rectangle, draw, fill=clnode, text width=4.5em, text centered, minimum height=3em]
-    \tikzstyle{database} = [cylinder, draw, shape border rotate=90, aspect=0.15, fill=clnode, text width=4.5em, text centered, minimum height=4em]
+    \tikzstyle{bigblock} = [thick, rectangle, draw, fill=clnode, text width=4.5em, text centered, minimum height=4em]
+    \tikzstyle{smallblock} = [thick, rectangle, draw, fill=clnode, text width=4.5em, text centered, minimum height=3em]
+    \tikzstyle{database} = [thick, cylinder, draw, shape border rotate=90, aspect=0.15, fill=clnode, text width=3em, text centered, minimum height=4em]
     \tikzstyle{line} = [draw, -stealth, thick]
     %\tikzstyle{model} = [draw, ellipse,fill=red!20, minimum height=2em]
     \tikzstyle{container} = [rectangle, draw, inner sep=0.6 cm, dashed, fill=clshade]
@@ -24,7 +27,7 @@ and two supporting areas which are feature learning and machine learning/model-t
     % Place nodes
     \node [database, yshift=1em] (db) {DB};
     \node [bigblock, right of=db] (ap) {Article Picker};
-    \node [bigblock, right of=ap] (tfl) {Trained Feature Learner};
+    \node [bigblock, right of=ap] (tfl) {Feature Extraction};
     \node [bigblock, right of=tfl] (ai) {AI};
     \node [database, right of=ai] (db2) {DB2};
     \node [bigblock, below=1cm of db2] (web) {Web};
@@ -32,14 +35,16 @@ and two supporting areas which are feature learning and machine learning/model-t
     \node [smallblock, below=1.5cm of ap, xshift=-2em] (n2v) {Node2Vec};
     \node [smallblock, below=.5cm of n2v] (paropt) {Parameter Optimizer};
     
-    \node [smallblock, below=4.5cm of tfl] (prepper) {Prepper};
+    \node [smallblock, below=4.5cm of tfl] (prepper) {Training Data Generator};
     \node [smallblock, right of=prepper] (aitrainer) {AI Trainer};
     
     \begin{scope}[on background layer]
     \node [container, fit=(n2v)(paropt)] (container1) {};
-    \node[below right] at (container1.north west) {N2V Gym};
+    \node[below right] at (container1.north west) {Feature Learning};
     \node [container, fit=(prepper)(aitrainer)] (container2) {};
-    \node[below right] at (container2.north west) {AI Gym};
+    \node[above right] at (container2.south west) {MI Learning};
+    
+    \node [container, fit=(db)(db2)] (container3) {};
     \end{scope}
     
     %\draw [->] (db) -- (n2v);
@@ -51,33 +56,41 @@ and two supporting areas which are feature learning and machine learning/model-t
     \path [line] (db2) -- (web);
     
     \path [line] (db.300) |- (n2v);
-    \path [line] (db.300) |- (paropt);
+    %\path [line] (db.300) |- (paropt);
     \path [line] (db.240) |- (prepper);
     
     \path [line, swap] (paropt) -- node{Parameters} (n2v);
     \path [line] (n2v.east) -| node [near end] {Model} ([xshift=-1.2em]tfl.south);
     
     \path [line] (prepper) -- (aitrainer);
-    \path [line] (prepper) -- (tfl);
-    \path [line] ([xshift=1.2em]tfl.south) -- ([xshift=1.2em]prepper.north);
+    %\path [line] (prepper) -- (tfl);
+    %\path [line] ([xshift=1.2em]tfl.south) -- ([xshift=1.2em]prepper.north);
+    \draw [line] (prepper.north) |- ([xshift=1.2em, yshift=0.5em]tfl.south) -- ([xshift=1.2em]prepper.north);
     
     \path [line] (aitrainer) -- node{Model} (ai);
     
   \end{tikzpicture}
-\caption{Text}%
+\caption[short desc]{Text}%
 \label{fig:overall-flow}%
 \end{figure}
 
 %Throughout this chapter the different components will be explained in detail.
+In the following sections, these areas will be described.
 
-\subsection{Primary pipeline}
-The main part of the system architecture consists of a pipeline concerning the components: database, article picker, feature extractor, AI and Web.
+\subsection{Main Pipeline}
+The main part of the system architecture consists of a pipeline concerning the components: database, article picker, feature extractor, AI, and Web.
 
-A user uses a web interface to query the system for suggesting articles with missing links.
-The article picker component queries the database component for a source article and a list of candidate target articles that should be tested for missing links. The articles are arranged into pairs and forwarded to the feature extraction component. Previously learned features, for the article pairs, are extracted as vectors which are fed into the AI component. The AI uses the feature vectors to predict whether or not a link should be present from the source article to the targets. Finally this classification is forwarded to the Web component which presents relevant information to the user.
+The main pipeline is triggered when a user uses a web interface to query the system for articles with missing links.
+The article picker component is given a source article and starts querying the database component for a list of candidate target articles that should be tested for missing links. The articles are arranged into pairs and forwarded to the feature extraction component. Previously learned features \todo{what is this?} for the article pairs are extracted as vectors which are fed into the AI component. The AI uses the feature vectors to predict whether or not a link should be present from the source article to the targets. Finally, this classification is forwarded to the web component which presents relevant information to the user.
 
-\subsection{Support pipelines}
-Prior to this article features must be learned, and the AI model must be trained. The is performed by two support pipelines.
+\subsection{Training Workflows}
+The main pipeline needs two models. These are trained in separate workflows:
+
+\begin{description}
+  \item[Feature Learning]
+  
+  \item[MI]
+\end{description}
 
 Meanwhile in the \textit{N2V Gym\texttrademark}. Feature learning is done by using node2vec for performing random walks between articles within the link graph gathered from the database. The walks are used to train the node2vec model which ultimately is used by the feature extractor.
 A parameter optimization component is used to find node2vec parameters that increases accuracy for the Wikipedia link data.
