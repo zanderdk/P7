@@ -1,0 +1,9 @@
+%\section{Machine Learning}
+%In this chapter we will describe the diffrent machine learning approches that has been taken into consideration and the reasoning behind. 
+
+
+\section{Machine Learning Task}
+Before chosing which spesicfic machine learning algorithms to use, we firsts considered which machine learing task would fit this project based on the problem we are trying to solve. In the problem statement in \cref{sec:problem_statement} we describe the problem as sugesting links between Wikipedia articles, a part of this problem is to determine if two wikipedia articles should be linked. We have chosen to think of this as a binary classification problem, prediction if one article should link to another articles or not.
+
+As described in \cref{ch:introduction} there are 5000 featured Wikipedia articles, which we assume to have appropiate linking. Under this asumsion we we can define a set of positive labeld traning pairs $P$ as $\{\ (a,b)\ |\ \text{a is featured}\ \wedge\ a \to b \}$ where a $a \to b$ means that aricle a have a link to article b. Likewise we define a set of negative labled traning pairs $N$ as  $\{\ (a,b)\ |\ \text{a is featured}\ \wedge\ a \not\to b \}$.
+By constructing the traning data only from P and N the all traning pairs can be label either linked or not linked. This delimits the problem to be a supervised binary clasification problem. 
