@@ -80,17 +80,15 @@ In the following sections, these areas will be described.
 \subsection{Main Pipeline}
 The main part of the system architecture consists of a pipeline concerning the components: database, article picker, feature extractor, AI, and Web.
 
-The main pipeline is triggered when a user uses a web interface to query the system for articles with missing links.
-The article picker component is given a source article and starts querying the database component for a list of candidate target articles that should be tested for missing links. The articles are arranged into pairs and forwarded to the feature extraction component. Previously learned features \todo{what is this?} for the article pairs are extracted as vectors which are fed into the AI component. The AI uses the feature vectors to predict whether or not a link should be present from the source article to the targets. Finally, this classification is forwarded to the web component which presents relevant information to the user.
+When the system is started, the article picker component will extract pairs of articles from the database. A pair is a source article and a target candidate article that should be tested for missing links. A feature vector is then extracted from each of these pairs by the feature extractor component, based on a model that has been trained ahead of time. This vector of features is then supplied to the AI component, which will then make a prediction on whether or not the pair should be linked.
 
-\subsection{Training Workflows}
-The main pipeline needs two models. These are trained in separate workflows:
+If a pair is predicted to have a missing link, it will be added to another database. This database holds all the pairs suggested for links, until a user extracts this link with the intention of deciding whether to add a link or not.
 
-\begin{description}
-  \item[Feature Learning]
-  
-  \item[MI]
-\end{description}
+%The article picker component queries the database component for a source article and a list of candidate target articles that should be tested for missing links. The articles are arranged into pairs and forwarded to the feature extraction component. Previously learned features, for the article pairs, are extracted as vectors which are fed into the AI component. The AI uses the feature vectors to predict whether or not a link should be present from the source article to the targets. Finally this classification is forwarded to the Web component which presents relevant information to the user.
+
+\subsection{Support pipelines}
+\todo{check this after the new diagram has been made}
+Prior to this, article features must be learned, and the AI model must be trained. The is performed by two support pipelines.
 
 Meanwhile in the \textit{N2V Gym\texttrademark}. Feature learning is done by using node2vec for performing random walks between articles within the link graph gathered from the database. The walks are used to train the node2vec model which ultimately is used by the feature extractor.
 A parameter optimization component is used to find node2vec parameters that increases accuracy for the Wikipedia link data.
