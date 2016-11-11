@@ -23,21 +23,21 @@ Both models are trained by separate workflows. A diagram of the main pipeline an
     \node [database, yshift=1em] (db) {DB};
     \node [bigblock, right of=db] (ap) {Article Picker};
     \node [bigblock, right of=ap] (tfl) {Feature Extraction};
-    \node [bigblock, right of=tfl] (ai) {AI};
-    \node [database, right of=ai] (db2) {DB2};
+    \node [bigblock, right of=tfl] (classifier) {Classifier};
+    \node [database, right of=classifier] (db2) {DB2};
     \node [bigblock, below=1cm of db2] (web) {Web};
     
     \node [smallblock, below=1.5cm of ap, xshift=-2em] (n2v) {Node2Vec};
     \node [smallblock, below=.5cm of n2v] (paropt) {Parameter Optimizer};
     
     \node [smallblock, below=4.5cm of tfl] (prepper) {Training Data Generator};
-    \node [smallblock, right of=prepper] (aitrainer) {AI Trainer};
+    \node [smallblock, right of=prepper] (classifierTrainer) {Classifier Trainer};
     
     \begin{scope}[on background layer]
     \node [container, fit=(n2v)(paropt)] (container1) {};
-    \node[below right] at (container1.north west) {Feature Learning};
-    \node [container, fit=(prepper)(aitrainer)] (container2) {};
-    \node[above right] at (container2.south west) {MI Learning};
+    \node[below] at (container1.north) {Feature Learning};
+    \node [container, fit=(prepper)(classifierTrainer)] (container2) {};
+    \node[above] at (container2.south) {Classifier Model Learning};
     
     \node [container, fit=(db)(db2)] (container3) {};
     \end{scope}
@@ -46,8 +46,8 @@ Both models are trained by separate workflows. A diagram of the main pipeline an
     
     \path [line] (db) -- (ap);
     \path [line] (ap) -- (tfl);
-    \path [line] (tfl) -- (ai);
-    \path [line] (ai) -- (db2);
+    \path [line] (tfl) -- (classifier);
+    \path [line] (classifier) -- (db2);
     \path [line] (db2) -- (web);
     
     \path [line] (db.300) |- (n2v);
@@ -57,12 +57,12 @@ Both models are trained by separate workflows. A diagram of the main pipeline an
     \path [line, swap] (paropt) -- node{Parameters} (n2v);
     \path [line] (n2v.east) -| node [near end] {Model} ([xshift=-1.2em]tfl.south);
     
-    \path [line] (prepper) -- (aitrainer);
+    \path [line] (prepper) -- (classifierTrainer);
     %\path [line] (prepper) -- (tfl);
     %\path [line] ([xshift=1.2em]tfl.south) -- ([xshift=1.2em]prepper.north);
     \draw [line] (prepper.north) |- ([xshift=1.2em, yshift=0.5em]tfl.south) -- ([xshift=1.2em]prepper.north);
     
-    \path [line] (aitrainer) -- node{Model} (ai);
+    \path [line] (classifierTrainer) -- node{Model} (classifier);
     
   \end{tikzpicture}
 \caption[short desc]{Text}%
@@ -114,3 +114,5 @@ The feature extractor receives a pair of articles and extracts features from a n
 \input{chapter_design/data_and_db}
 
 \input{chapter_design/feature_learner}
+
+\input{chapter_design/classifier}
