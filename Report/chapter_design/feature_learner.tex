@@ -1,0 +1,20 @@
+\subsection{Feature Learner}
+As discussed in \cref{sec:feature_generation}, there are multiple ways to find features. We will in this project focus on feature learning.
+
+The feature learner component should be able to identify features suitable for classification problems. In our research on feature learning, node2vec~\cite{node2vec} appeared as a good candidate. It is designed to learn features based on the structure of graph networks. As we have been storing our Wikipedia data as a graph, node2vec seems fitting. node2vec is not the only solution to the problem domain of feature learning, but it is the approach we will use in this project.
+\todo{more about other possible feature learning techniques we could have used?}
+
+We want the feature learner to find feature vectors that can discriminate articles that should have a link, and articles that should not have a link. In the graph database, we already have knowledge about existing links. How is the feature learner supposed to reason about articles that should have a link, but currently does not?
+
+\subsubsection{node2vec Overview}
+As described in the node2vec paper~\cite{node2vec}, the graph structure is explored using biased random walks. The biasness comes from two parameters $p$ and $q$, that guides the random walk. A high $p$ value approximates a depth-first search. A high $q$ value approximates the behavior of a breath-first search. The motivation of these tunable parameters is the observation that real-world networks can be structured in many ways. The randomness and the tunable $p$ and $q$ values accounts for different types of networks, by allowing control of the exploration method.
+
+The main idea of node2vec is to start a random walk at every node in the graph. This gives us a list of walks. We now want to find feature representations that maximizes the likelihood of preserving the network neighborhoods of the graph. These feature representations are essentially learned by observing each random walk as a sentence. Each node in the walk is a word in the sentence. This observation allows using word embedding algorithms on the sentences to map words to vectors of real numbers. The node2vec reference implementation uses word2vec for word embedding. Intuitively, if two nodes are close two each other in the sentence, they are related. A tunable parameter $k$ specifies this context window. \todo{expand on this context window}
+
+\todo{Vi kan måske lade det overview være sådan, og så forklare de enkelte dele for sig i en section. Jeg ved dog ikke hvor dybt vi skal gå. Vi skal ikke opfinde node2vec igen}
+
+\todo{afsnit om 2 noder -> 1 edge feature vector}
+
+\subsubsection{Hyperparameter Optimization}
+\todo{describe how we do this and why it is smart}
+\todo{sig not om at vi kan parameter optimere på p,q uden at vide hvordan vores graf struktur er, smart!}
