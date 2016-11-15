@@ -1,5 +1,6 @@
 \chapter{Conclusion}\label{chap:conclusion}
 \dummy
+
 \tikzsetnextfilename{n2vbowtie}
 \begin{figure}[tbp]%
   \begin{tikzpicture}[node distance = .9ex, auto, remember picture]
@@ -72,25 +73,6 @@
   \tikzsetnextfilename{n2vbowtieoverlay}
   \begin{tikzpicture}[remember picture, overlay]
     %\draw (inputcontainer.north) -- (outputcontainer.north);
-  \end{tikzpicture}
-\caption[short desc]{Text}%
-\label{fig:n2v-figure}%
-\end{figure}
-
-\tikzsetnextfilename{n2vbowtie2}
-\begin{figure}[tbp]%
-  \begin{tikzpicture}[node distance = .9ex, auto]
-        \tikzstyle{n2vc} = [thick, circle, draw, fill=clnode, text width=1.5ex, text centered, minimum height=1.5ex, inner sep=0pt]
-          \node[matrix] (A) {
-        \draw (0,0) rectangle (1,1); 
-        \node at (0.5,0.5) {A}; \\
-    };
-    \node[matrix,left of=A] (B) 
-    {
-        \draw (0.5,0.5) circle (0.5);
-        \fill (0.5,0.5) circle (0.1); \\
-    };
-    
   \end{tikzpicture}
 \caption[short desc]{Text}%
 \label{fig:n2v-figure}%
