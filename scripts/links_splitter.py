@@ -10,16 +10,16 @@ with open("featured_articles.csv", "r") as in_featured_articles:
 
 from_is_featured = []
 #print(featured_articles)
-#with open("new_links.csv", "w") as out_new_links:
-   # write header
-#   out_new_links.write(":START_ID :END_ID\n")
-   # load links.csv
-for line in sys.stdin:
-    from_title, to_title = line.split()
-    if from_title in featured_articles:
-        from_is_featured.append((from_title, to_title))
-#       else:
-#           out_new_links.write("{} {}\n".format(from_title, to_title))
+with open("new_links.csv", "w") as out_new_links:
+    #    write header
+    out_new_links.write(":START_ID :END_ID\n")
+    #    load links.csv
+    for line in sys.stdin:
+        from_title, to_title = line.split()
+        if from_title in featured_articles:
+            from_is_featured.append((from_title, to_title))
+        else:
+            out_new_links.write("{} {}\n".format(from_title, to_title))
 
 # shuffle from_is_featured
 random.shuffle(from_is_featured)
