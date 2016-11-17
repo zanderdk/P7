@@ -1,44 +1,31 @@
-\chapter{Introduction}
-\label{ch:introduction}
-%\todo{Kasper:Wikipedia bliver lidt introduceret som 'et tilfældigt eksempel', så derfra er det mindre åbentlyst hvorfor vi vælger at gå videre med wiki. Det er som om vi kunne have taget en tilfældig 'large' side. Jeg vil have sagt: Information er nice > Wikipedia har information (og er ikke onde) > Hvis vi kan hjælpe wiki er det nice > vi kan lave links}
+\chapter{Introduction}\label{ch:introduction}
 One of the ideas upon which The World Wide Web is built is \emph{creating a space in which anything could be linked to anything}~\cite[ch.~1, p.~4]{Weaving-the-web}. Hyperlinking can thus be seen as a vital component of the World Wide Web and even a critical component to its success. Hyperlinking permits websites to be easily navigationable, enabling users to quickly find relevant or in-depth information. From social media messages to publicly available databases of technical data, the World Wide Web provides access to an unprecedented amount of information, which is made readily available through easy navigationable hyperlinks.
 
 A prominent example of a website combining both hyperlinking and access to information is Wikipedia. Wikipedia is a free, online encyclopedia built on the principle that anyone can edit its articles. As of October 2016, the English version of Wikipedia consists of more than 5.2 million articles~\cite{wiki-about} and has about 150.000 edits per day~\cite{wiki-num-edits}, as well as about 800--900 new articles per day~\cite{wmcharts}. Considering the community based approach and the large body of work on Wikipedia, quality control is a rather daunting task for any single human editor; no editor can keep up with the vast number of changes and number of new articles and their relationship with other old or new articles. Therefore, bots run through the articles carrying out repetitive and mundane tasks, ranging from vandalism detection to notifying editors of mismatched parentheses~\cite{wiki-bots}. However since the bots will not fix all possible errors, the primary solution is to have some trust in the individual author~\cite{wiki-editor-guidelines}.
 
-An important issue that editors and authors have to deal with, is the matter of linking articles to each other. In an attempt to ensure the good quality of this interlinking of articles, Wikipedia has a set of guidelines regarding linking between articles~\cite{wiki-manual-of-style-overlinking}. 
-%However, these guidelines are somewhat vague and merely provide examples of do's and don'ts. % Yes, this is a widely accepted way of spelling do's and don'ts
-%This makes it particularly hard to automatize with a bot. On the other hand, this area would likely benefit from automation, since the size of Wikipedia makes it difficult to do manually.
-One of the concerns that these guidelines mention is the problem of overlinking. A simple example of overlinking, would be to include a link to the article about the word \enquote{the}, every time it is used in a sentence. Since links tend to compete for attention~\cite{hyperlink-structure-using-logs}, the guidelines suggest that you should only link to articles that will help a reader to better understand the article being linked from. Because of this, is it not enough to check whether a given article is being mentioned, but semantic and contextual analysis is also required. While many cases are easily decidable for a human author, creating a deterministic approach for computers is a non-trivial task.
+An important issue that editors and authors have to deal with, is the matter of linking articles to each other. In an attempt to ensure the good quality of this interlinking of articles, Wikipedia has a set of guidelines regarding linking between articles~\cite{wiki-manual-of-style-overlinking}. One of the concerns that these guidelines mention is the problem of overlinking. A simple example of overlinking, would be to include a link to the article about the word \enquote{the}, every time it is used in a sentence. Since links tend to compete for attention~\cite{hyperlink-structure-using-logs}, the guidelines suggest that you should only link to articles that will help a reader to better understand the article being linked from. Because of this, is it not enough to check whether a given article is being mentioned, but semantic and contextual analysis is also required. While many cases are easily decidable for a human author, creating a deterministic approach for computers is a non-trivial task.
 
 Even with the guidelines, it can still be a challenge for an author to link correctly. However, Wikipedia maintains a collection of articles that are deemed outstanding examples and are considered to be the best Wikipedia has to offer. These are called \emph{featured articles}~\cite{wiki-featured-articles} and there are almost 5000 of these. These articles follow the Wikipedia Policies and Guidelines~\cite{wiki-editor-guidelines}, which also means they follow the guidelines for linking. We can therefore assume that they link appropriately. While we can not assume that every example of good linking is covered, the featured articles provide a sizable set of good examples, that can be used for inspiration for authors and perhaps also machines.
 
-\section{Problem Statement}
-\label{sec:problem_statement}
-We wish to explore the problems described above by trying to give an answer to the following question:
+\section{Problem Statement}\label{sec:problem_statement}
+
+We believe that Wikipedia provides humanity with a great source of free knowledge, which is a cause we find admirable. We also believe that the existence of a system that can help improve the quality of Wikipedias articles, will benifit Wikipedia and ultimately its users. Therefore, for this project, we wish to explore the problems described above by trying to give an answer to the following question:
 
 \begin{formal}
-How can an agent be developed which given a Wikipedia article can suggest link candidates to other Wikipedia articles?
+How can a system be developed that can supply reasonable suggestions of links that should be added to Wikipedia articles?
 \end{formal}
-%How can a system be developed that can supply reasonable suggestions of links that should be added to Wikipedia articles?
-%How can we develop an agent that, given a Wikipedia article, can suggest link candidates to other relevant Wikipedia articles?
 
-Expanding on the problem statement, this project will consist of two parts:
-\begin{enumerate*}[label=(\roman*)]
-  \item Identify relevant missing links; and
-  \item present these to a user
-\end{enumerate*}.
-The technically interesting part of this project mainly lies in the first part. Identifying relevant missing links is not a trivial task, and we will spend most of our time tackling this problem. Not entirely dismissing a presentation to a user, but it will not be our main focus.
+The linking problem, whether two articles should be linked, is not an easy problem to solve deterministically, as it is inherently subjective; there is no definitive answer to this problem. The focus of our approach will therefore be on article link suggestions, instead of definitive answers. %This gives us the property that lower confident results can also be included in the results presented by our approach.
 
-The focus on our approach will be on article link \emph{suggestions}, instead of definitive answers. This gives us the property that less confident results can also be included in the results presented to the user.
+We hope that an answer to this question will not only be applicable in this project, but might provide us with an insight into an underlying general problem.
 
-% Goals and study regulation
-An important goal of this semester project is, of course, to conform to the requirements of the study regulation. The study regulation clearly states, that we should be able to demonstrate knowledge about and have the ability to develop an internet application, agent or service. And GUI! \todo{Tør vi overhovedet svare på om vi opfylder studieordningen?}
+In this report we will analyse different solution ideas and techniques and propose one of our composition. Then we will explain design and implementation process of the realization of our solution idea. Then we will cover the evaluation of the developed system, and finally conclude on the project as a whole.
 
-\todo{Who are the end users?}
+% The only good is knowledge and the only evil is ignorance. - Socrates (469 BC - 399 BC)
+% All men by nature desires knowledge. - Aristotle (384 BC - 322 BC), Metaphysic
 
-\section{Project Goals}
-\todo{Success criteria (to be evaluated in the conclusion)}
 
-\section{Report Organization}
-\todo{This section may not be necessary.}
-This report describes and documents the design, implementation, evaluation and development method of the system described in this chapter. Immediately following this introduction, \chapterref{chap:analysis} ... \dummy ... \chapterref{chap:devmethodreflection} contains a discussion and reflection of the development process used throughout this project. \chapterref{chap:conclusion} contains the conclusion.
+
+
+
+
