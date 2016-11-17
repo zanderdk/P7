@@ -6,10 +6,10 @@ import math
 featured_articles = set()
 with open("featured_articles.csv", "r") as in_featured_articles:
    for line in in_featured_articles:
-       featured_articles.add(line)
+       featured_articles.add(line.split()[0])
 
 from_is_featured = []
-
+#print(featured_articles)
 #with open("new_links.csv", "w") as out_new_links:
    # write header
 #   out_new_links.write(":START_ID :END_ID\n")
@@ -26,7 +26,9 @@ random.shuffle(from_is_featured)
 
 # calculate how much should be test, training, regular links
 total_count = len(from_is_featured)
+print(total_count)
 test_count = int(math.floor(total_count*0.20))
+print(test_count)
 training_count = int(math.floor(total_count*0.40))
 rest_count = int(math.floor(total_count*0.40))
 
