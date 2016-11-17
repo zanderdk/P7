@@ -36,7 +36,7 @@ test_data = from_is_featured[:test_count]
 training_data = from_is_featured[test_count:training_count]
 
 # extract rest data (40%)
-rest_data = from_is_featured[training_data:]
+walk_data = from_is_featured[training_count:]
 
 
 def write_to_file(file_name, data):
@@ -48,4 +48,4 @@ def write_to_file(file_name, data):
 
 write_to_file("test_data.csv", test_data)
 write_to_file("training_data.csv", training_data)
-write_to_file("rest_links.csv", rest_data)
+write_to_file("walk_data.csv", walk_data)
