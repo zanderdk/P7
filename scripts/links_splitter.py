@@ -3,8 +3,8 @@ import random
 
 # load featured articles
 featured_articles = set()
-with open("featured_articles.csv", "r") as featured_articles:
-    for line in featured_articles:
+with open("featured_articles.csv", "r") as in_featured_articles:
+    for line in in_featured_articles:
         featured_articles.add(line)
 
 from_is_featured = []
