@@ -10,5 +10,5 @@ for line in sys.stdin:
 
 print('title:ID')
 for key in titles:
-  print(titles)
+  print(key)
   
