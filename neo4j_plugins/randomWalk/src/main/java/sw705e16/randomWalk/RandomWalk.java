@@ -16,96 +16,8 @@ import java.util.stream.StreamSupport;
 
 public class RandomWalk
 {
-    static RelationshipType redirectType = RelationshipType.withName("redirect");
+    static RelationshipType redirectType = RelationshipType.withName("REDIRECTS_TO");
 
-    public Relationship backRelasion(Node prev, Node cur, String weight) {
-        return new Relationship() {
-            @Override
-            public long getId() {
-                return 0;
-            }
-
-            @Override
-            public void delete() {
-
-            }
-
-            @Override
-            public Node getStartNode() {
-                return cur;
-            }
-
-            @Override
-            public Node getEndNode() {
-                return prev;
-            }
-
-            @Override
-            public Node getOtherNode(Node node) {
-                return (node.getId() == cur.getId())? prev : (node.getId() == prev.getId())? cur : null;
-            }
-
-            @Override
-            public Node[] getNodes() {
-                return new Node[0];
-            }
-
-            @Override
-            public RelationshipType getType() {
-                return null;
-            }
-
-            @Override
-            public boolean isType(RelationshipType relationshipType) {
-                return false;
-            }
-
-            @Override
-            public GraphDatabaseService getGraphDatabase() {
-                return null;
-            }
-
-            @Override
-            public boolean hasProperty(String s) {
-                return false;
-            }
-
-            @Override
-            public Object getProperty(String s) {
-                return (Objects.equals(s, weight))? 0.0 : null;
-            }
-
-            @Override
-            public Object getProperty(String s, Object o) {
-                return null;
-            }
-
-            @Override
-            public void setProperty(String s, Object o) {
-
-            }
-
-            @Override
-            public Object removeProperty(String s) {
-                return null;
-            }
-
-            @Override
-            public Iterable<String> getPropertyKeys() {
-                return null;
-            }
-
-            @Override
-            public Map<String, Object> getProperties(String... strings) {
-                return null;
-            }
-
-            @Override
-            public Map<String, Object> getAllProperties() {
-                return null;
-            }
-        };
-    }
 
     @Context
     public GraphDatabaseService db;
@@ -121,92 +33,71 @@ public class RandomWalk
 
     /**
      * Retrieves titles of predecessors and successors for an article
-     * @param title The title of the article to find the predecessors and successors of.
+     * @param pageTitle The title of the article to find the predecessors and successors of.
      * @return Titles of predecessors and titles of successors.
      */
     @Procedure("randomWalk")
-    public Stream<Record> randomWalk(@Name("title") String title,
+    public Stream<Record> randomWalk(@Name("title") String pageTitle,
                                      @Name("p") Double p,
                                      @Name("q") Double q,
                                      @Name("l") Long l,
                                      @Name("z") Double z,
-                                     @Name("nodeLabel") String nodeLabel,
-                                     @Name("field") String field,
-                                     @Name("label") String label,
-                                     @Name("weight") String weight,
-                                     @Name("directed") Boolean directed,
-                                     @Name("hack") Boolean hack) {
-        Label pageLabel = Label.label(nodeLabel);
-        RelationshipType clickStreamType = RelationshipType.withName(label);
-        Node thisNode;
-        if (field.equals("id"))
-            thisNode = db.getNodeById(Long.parseLong(title));
-        else
-            thisNode = db.findNode(pageLabel, field, title);
+                                     @Name("directed") Boolean directed) {
+        Label pageLabel = Label.label("Page");
+        RelationshipType linksToType = RelationshipType.withName("LINKS_TO");
 
-        String thisNodeRedirect = (String)thisNode.getProperty("redirect", null);
 
-        // we want to make sure that we are not stuck at redirect nodes.
-        // we therefore follow a redirect node if we are stuck
-        if (thisNodeRedirect != null) {
-            thisNode = thisNode.getSingleRelationship(redirectType, Direction.OUTGOING).getOtherNode(thisNode);
-        }
+        Node startNode = db.findNode(pageLabel, "title", pageTitle);
+
         ArrayList<Node> walk = new ArrayList<Node>();
-        walk.add(thisNode);
-        boolean unWeighted = (weight.equals("None"));
+        walk.add(startNode);
         int walkLength = 1;
 
         while(walkLength < l) {
+            // get last node in walk
             Node cur = walk.get(walkLength-1);
-            String curNodeRedirect = (String)cur.getProperty("redirect", null);
 
-            // we want to make sure that we are not stuck at redirect nodes.
-            // we therefore follow a redirect node if we are stuck
-            if (curNodeRedirect != null) {
-                cur = cur.getSingleRelationship(redirectType, Direction.OUTGOING).getOtherNode(cur);
-            }
+
+            Relationship redirectRel;
+            // we want to follow redirects until we reach a Page
+            do {
+                // is cur a redirect page?
+                redirectRel = cur.getSingleRelationship(redirectType, Direction.OUTGOING);
+                // if rediretRel was not null, cur is a redirect, so follow that redirect to a page
+                cur = (redirectRel != null)? redirectRel.getOtherNode(cur) : cur;
+            } while (redirectRel == null);
+
+
             Direction d = (directed)? Direction.OUTGOING : Direction.BOTH;
-            Iterable<Relationship> rels = cur.getRelationships(d, clickStreamType);
-            ArrayList<Relationship> cur_nbrs =  Lists.newArrayList(rels);
+            Iterable<Relationship> cur_nbrs = cur.getRelationships(d, linksToType);
 
             ArrayList<Node> aliasList = new ArrayList<>();
             ArrayList<Double> propList = new ArrayList<>();
+            // if we are at the start node, we can only go out from start node
             if (walkLength == 1) {
-
                 for(Relationship rel: cur_nbrs) {
-                    // ignore this relationship, to simulate test data we will not walk through
-                    if (rel.getProperty("testData", null) != null) {
-                        continue;
-                    }
                     Node end = rel.getOtherNode(cur);
+                    // ignore self loops
                     if(end.getId() == cur.getId())
                         continue;
-                    Double w = (unWeighted)? 1.0 : (Double)rel.getProperty(weight);
-                    w = (w/z)/q;
+                    Double w = (1.0/z)/q;
                     aliasList.add(end);
                     propList.add(w);
 
                     lastNodes.add(end.getId());
                 }
-
             }
             else {
                 Node prev = walk.get(walkLength-2);
                 Long prevId = prev.getId();
-                if(directed && hack)
-                    cur_nbrs.add(backRelasion(prev, cur, weight));
                 ArrayList<Long> newLast = new ArrayList<>();
                 for(Relationship rel: cur_nbrs) {
-                    // ignore this relationship, to simulate test data we will not walk through
-                    if (rel.getProperty("testData", null) != null) {
-                        continue;
-                    }
                     Node end = rel.getOtherNode(cur);
                     Long endId = end.getId();
+                    // ignore self loops
                     if(endId == cur.getId())
                         continue;
                     Double w = (Objects.equals(endId, prevId))? 1.0/p : lastNodes.contains(endId)? 1.0 : 1.0/q;
-                    w = w* ((unWeighted)? 1.0 : (Double)rel.getProperty(weight));
                     aliasList.add(end);
                     propList.add(w);
 
@@ -221,10 +112,12 @@ public class RandomWalk
             walkLength++;
         }
 
+        //walk.stream().collect()
+
         String retString = "";
 
         for(Node n : walk) {
-            retString += (" " + n.getProperty(field));
+            retString += (" " + n.getProperty("title"));
         }
 
         return Stream.of(retString).map(Record::new);
