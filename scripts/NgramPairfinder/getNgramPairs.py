@@ -48,7 +48,9 @@ class pairFinder:
         mapping = {"title": title}
         query = "MATCH (a:Page) WHERE a.title = {title} Return a.text"
 
-        queryResult = self._qh.runQuery(query, mapping)
+        # load text from old db that has text
+        qh = runQuery.QueryHelper(GraphDatabase.driver("bolt://localhost:10004", auth=basic_auth("neo4j", "12345")))
+        queryResult = qh.runQuery(query, mapping)
 
         #Result is a list. result[0] is a record. result[0][0] is the actual article text. Don't ask.
         nGrams = getNgrams.getNgrams(queryResult[0][0], 5)
@@ -59,14 +61,15 @@ class pairFinder:
         for gram in nGrams:
             if gram != title:
                 mapping = {"fromTitle": title, "title": gram }
-                query = '''MATCH (b:Page) WHERE b.title = {title}
-                           OPTIONAL MATCH (a:Page)-[r:clickStream]->(b) where a.title = {fromTitle}
-                           return count(r) as hasLink'''
+                query = '''match (a:Page {title:{fromTitle}})
+                           with a as x
+                           match (b:Page {title: {title}}) where (x)-[:LINKS_TO|TEST_DATA|TRAINING_DATA]->(b) return count(b) as hasLink'''
                 res = self._qh.runQuery(query, mapping)
                 if res[0] is not None:
                     res_hasLink = res[0]["hasLink"]
                     if res_hasLink == 1:
-                        result_pos.append(gram)
+                        pass
+                        #result_pos.append(gram)
                     elif res_hasLink == 0:
                         result_neg.append(gram)
                     else:
