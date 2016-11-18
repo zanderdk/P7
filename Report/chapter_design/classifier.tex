@@ -1,7 +1,7 @@
-\section{Classifier}
+\subsection{Classifier}
 As described in \cref{sec:machine_learning_task} we want to solve a supervised binary classification problem. This component is solving this problem. That is, given a classifier model and a vector of features representing a pair of articles A and B, it should decide whether a link should exist between articles A and B.
 
-\subsection{Training Data}
+\subsubsection{Training Data}
 Like all supervised learning, the classifier model is learned through training data. One sample of training data has the form <source article> <target article> <label>. The source and target article are titles of pairs of articles. The labels on the training samples can either be positive (link) or negative (do not link).
 
 The positive samples are the set $(A,B)$ such that article A is featured and there exists a clickStream link from article A to B.

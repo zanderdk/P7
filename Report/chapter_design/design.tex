@@ -1,119 +1,56 @@
 \chapter{Design \& Implementation}\label{chap:design}
-\todo{Design of the entire system. The nice picture we have with the system flow}
+In this chapter we will introduce our final idea, which is ultimately our solution. We explain the system top-down, and as such we broadly describe the entire system before diving into the specifics.
 
 \begin{chapterorganization}
-  \item In \sectionref{sec:architecture} we provide an overview of the full system architecture;
-  \item In Section...
+  \item In \sectionref{sec:design_overview} we provide an introductory overview of the system architecture and explain how the components interact;
+  \item In \sectionref{sec:database} we argue for and choose a database to store a Wikipedia data structure;
+  \item In \sectionref{sec:data} we explain the data sources, how we process the data, and how we insert the data into the chosen database;
+  \item In \sectionref{sec:detailed_view} we describe components of the system in greater detail. \todo{more text describing this};
+  \item In \sectionref{sec:design_ui} we present the design of a user interface for the system.
 \end{chapterorganization}
 
-\section{Overall View}
-The main system consists of a pipeline utilizing two trained models in order to make predictions. These models are
-\begin{enumerate*}[label=(\roman*)]
-  \item a feature learning model, and
-  \item a machine learning model.
-\end{enumerate*}
-Both models are trained by separate workflows. A diagram of the main pipeline and the separate workflows for training the models can be seen in \cref{fig:overall-flow} with the workflows for training marked with dashed lines.
+\section{Overview}\label{sec:design_overview}
+The purpose of the system is to suggest link suggestions for articles, and add these to a pool of suggestions. A user can then browse this pool for suggestions of articles to improve the outgoing links.
 
-\tikzsetnextfilename{diagram}
+The system consists of a pipeline utilizing two trained models in order to make predictions. These models are
+\begin{enumerate*}[label=(\roman*)]
+  \item a feature extraction model, and
+  \item a classifier model.
+\end{enumerate*}
+Both of these models are trained by temporally separate workflows. A diagram of the main pipeline and the separate workflows for training the models can be seen in \cref{fig:system-overview}. In the following sections, the main areas will be explained.
+
+\tikzsetnextfilename{system-overview}
 \begin{figure}[tbp]%
   \centering
-  \begin{tikzpicture}[node distance = 2.84cm, auto]
-    
-    
-    % Place nodes
-    \node [database, yshift=1em] (db) {DB};
-    \node [bigblock, right of=db] (ap) {Article Picker};
-    \node [bigblock, right of=ap] (tfl) {Feature Extraction};
-    \node [bigblock, right of=tfl] (classifier) {Classifier};
-    \node [database, right of=classifier] (db2) {DB2};
-    \node [bigblock, below=1cm of db2] (web) {Web};
-    
-    \node [smallblock, below=1.5cm of ap, xshift=-2em] (n2v) {Node2Vec};
-    \node [smallblock, below=.5cm of n2v] (paropt) {Parameter Optimizer};
-    
-    \node [smallblock, below=4.5cm of tfl] (prepper) {Training Data Generator};
-    \node [smallblock, right of=prepper] (classifierTrainer) {Classifier Trainer};
-    
-    \begin{scope}[on background layer]
-    \node [container, fit=(n2v)(paropt)] (container1) {};
-    \node[below] at (container1.north) {Feature Learning};
-    \node [container, fit=(prepper)(classifierTrainer)] (container2) {};
-    \node[above] at (container2.south) {Classifier Model Learning};
-    
-    \node [container, fit=(db)(db2)] (container3) {};
-    \end{scope}
-    
-    %\draw [->] (db) -- (n2v);
-    
-    \path [line] (db) -- (ap);
-    \path [line] (ap) -- (tfl);
-    \path [line] (tfl) -- (classifier);
-    \path [line] (classifier) -- (db2);
-    \path [line] (db2) -- (web);
-    
-    \path [line] (db.300) |- (n2v);
-    %\path [line] (db.300) |- (paropt);
-    \path [line] (db.240) |- (prepper);
-    
-    \path [line, swap] (paropt) -- node{Parameters} (n2v);
-    \path [line] (n2v.east) -| node [near end] {Model} ([xshift=-1.2em]tfl.south);
-    
-    \path [line] (prepper) -- (classifierTrainer);
-    %\path [line] (prepper) -- (tfl);
-    %\path [line] ([xshift=1.2em]tfl.south) -- ([xshift=1.2em]prepper.north);
-    \draw [line] (prepper.north) |- ([xshift=1.2em, yshift=0.5em]tfl.south) -- ([xshift=1.2em]prepper.north);
-    
-    \path [line] (classifierTrainer) -- node{Model} (classifier);
-    
-  \end{tikzpicture}
-\caption[short desc]{Text}%
-\label{fig:overall-flow}%
+  \input{chapter_design/system-overview-fig}
+\caption[short desc]{Architecture diagram showing the major components of the system. Each box is a component, and a dashed line box is a grouping of components. Arrows describe the way data flows.}%
+\label{fig:system-overview}%
 \end{figure}
 
 %Throughout this chapter the different components will be explained in detail.
-In the following sections, these areas will be described.
+
 
 \subsection{Main Pipeline}
-The main part of the system architecture consists of a pipeline concerning the components: database, article picker, feature extractor, AI, and Web.
+The main part of the system provides link suggestions for articles. Because it is computationally intensive to check if each of the 5.2 million articles should link to each other, we split the pipeline into a \emph{filtering} and a \emph{refinement} step. The filtering step filter out some obvious bad candidates based on some heuristic. The refinement step consists of a trained classifier.
 
-When the system is started, the article picker component will extract pairs of articles from the database. A pair is a source article and a target candidate article that should be tested for missing links. A feature vector is then extracted from each of these pairs by the feature extractor component, based on a model that has been trained ahead of time. This vector of features is then supplied to the AI component, which will then make a prediction on whether or not the pair should be linked.
+The \emph{Article Picker} component is responsible for the filtering step. As such, it quickly extracts possible candidates from the database. The candidates are of the form $(A,B)$ where $A$ is a source article and $B$ is a suggested target article. The next component, \emph{Feature Extraction} creates a feature for each of these pairs, based on a model that has been trained ahead of time. This vector of features is then supplied to the \emph{Classifier} component, which will then make a prediction on whether or not the pair should be linked.
 
-If a pair is predicted to have a missing link, it will be added to another database. This database holds all the pairs suggested for links, until a user extracts this link with the intention of deciding whether to add a link or not.
-
-%The article picker component queries the database component for a source article and a list of candidate target articles that should be tested for missing links. The articles are arranged into pairs and forwarded to the feature extraction component. Previously learned features, for the article pairs, are extracted as vectors which are fed into the AI component. The AI uses the feature vectors to predict whether or not a link should be present from the source article to the targets. Finally this classification is forwarded to the Web component which presents relevant information to the user.
-
-\subsection{Support pipelines}
-\todo{check this after the new diagram has been made}
-Prior to this, article features must be learned, and the AI model must be trained. The is performed by two support pipelines.
-
-Meanwhile in the \textit{N2V Gym\texttrademark}. Feature learning is done by using node2vec for performing random walks between articles within the link graph gathered from the database. The walks are used to train the node2vec model which ultimately is used by the feature extractor.
-A parameter optimization component is used to find node2vec parameters that increases accuracy for the Wikipedia link data.
-
-The machine learning pipeline aka \textit{AI Gym\texttrademark} uses a list of labeled article pairs to train the AI model. The articles are gathered from the database and features are extracted using the feature extractor. The features and classification labels are passed to the AI Trainer component which trains the model that will be used by the AI component.
+If a pair is predicted to have a missing link, it will be added to the pool of suggestions, which is stored in another database. This database holds all the pairs suggested for links, until a user browses these suggestions with the intention of deciding whether to add a link or not. This is the final component, the \emph{Web Interface}.
 
 
-\section{Overview of Architecture}\label{sec:architecture}
-\todo{Nice picture of entire architecture}
+\subsection{Model Training}
+Prior to the main pipeline, a way of extracting features from article must be learned, and the classifier model must be trained. This is performed by two support pipelines.
 
-\section{Components}
+Feature learning is done by using \emph{node2vec}~\cite{node2vec}. node2vec is a framework for learning feature representations of graphs. It performs random walks between articles within the link graph. The walks are used to train a model which ultimately is used by the feature extractor. Parameter tuning is needed in node2vec, and as such we have a parameter optimization component to find optimal parameters that increases accuracy for the Wikipedia link data.
 
-\subsection{Article Picker}
-The article picker component of the system is used to select candidate article pairs to test for linking.
-
-The article pairs are selected in accordance with a policy, because picking articles at random would yield many irrelevant pairs ($\left\vert{\text{articles}}\right\vert ^{2}$ pairs). We base the policy on teleport links from the Wikipedia clickstream and thus human navigation paths. The reasoning is that by selecting article pairs without an existing link that users have navigated between by other means, the articles might be related and inserting a link between the articles could improve navigability.
-
-\todo{write if we end up doing this}
-Another policy to consider is selecting article pairs based on text content. Specifically using n-grams of words (shingles) to find text in the article that references titles of other articles without already linking to it. 
-
-\todo{teleport/clickstream like sources}
-% https://cs.stanford.edu/people/jure/pubs/wiki-www15.pdf
-% others
-
-\subsection{Feature Extractor}
-The feature extractor receives a pair of articles and extracts features from a node2vec model that has been trained ahead of time. The feature pair are represented as two vectors which is combined using an operation such as multiplication \todo{maybe write that we always multiply them, maybe cite node2vec paper, that says that multiplication yielded best results in their experiments.} and used as input for the AI.
+The classifier model learning pipeline uses a list of labeled article pairs to train the classifier model. The articles are gathered from the database and features are extracted using the feature extractor. The features and classification labels are passed to the classifier trainer component. The trained model is used by the classifier.
 
 \input{chapter_design/data_and_db}
+
+\input{chapter_design/detailed_components_desc}
 
 \input{chapter_design/feature_learner}
 
 \input{chapter_design/classifier}
+
+\input{chapter_design/ui}
