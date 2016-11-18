@@ -21,7 +21,7 @@ for x in all:
 #print(len(prut))
 
 # add to db
-driver = GraphDatabase.driver("bolt://192.38.56.57:10001", auth=basic_auth("neo4j", "12345"))
+driver = GraphDatabase.driver("bolt://localhost:10001", auth=basic_auth("neo4j", "12345"))
 
 session = driver.session()
 counter = 1
@@ -42,9 +42,9 @@ def setGoodFlag(title):
     global counter
     query = """
             MATCH (a:Page {title: {title} }) 
-            SET a.good = {good}
+            SET a :GoodPage
             """
-    session.run(query, {'title':title, 'good':True })
+    session.run(query, {'title':title})
     if counter % 10000 == 0:
         session.close()
         session = driver.session()
