@@ -1,5 +1,5 @@
 \subsection{Feature Learner}
-As discussed in \cref{sec:feature_generation}, there are multiple ways to find features. We will in this project focus on feature learning.
+As discussed in \cref{sec:feature_generation}, there are multiple ways to find features. We will in this project focus on feature learning. \todo{This is not the place to take that decision. It is already taken in chapter 2?}
 
 The feature learner component should be able to identify features suitable for classification problems. In our research on feature learning, node2vec~\cite{node2vec} appeared as a good candidate. It is designed to learn features based on the structure of graph networks. As we have been storing our Wikipedia data as a graph, node2vec seems fitting. node2vec is not the only solution to the problem domain of feature learning, but it is the approach we will use in this project.
 \todo{more about other possible feature learning techniques we could have used?}
@@ -14,6 +14,16 @@ The main idea of node2vec is to start a random walk at every node in the graph. 
 \todo{Vi kan måske lade det overview være sådan, og så forklare de enkelte dele for sig i en section. Jeg ved dog ikke hvor dybt vi skal gå. Vi skal ikke opfinde node2vec igen}
 
 \todo{afsnit om 2 noder -> 1 edge feature vector}
+
+\tikzsetnextfilename{n2vbowtie}
+\begin{figure}[tbp]%
+  \centering
+  \input{chapter_design/n2v_bowtie_fig}
+  
+\caption[short desc]{Text}%
+\label{fig:n2v-figure}%
+\end{figure}
+
 
 \subsubsection{Hyperparameter Optimization}
 \todo{describe how we do this and why it is smart}

@@ -3,17 +3,6 @@
 
 Here, we will describe each component individually. \todo{Refer to \cref{fig:system-overview}}
 
-\subsection{Article Picker}
-The article picker component of the system is used to select candidate article pairs to test for linking.
+\input{chapter_design/article_picker}
 
-The article pairs are selected in accordance with a policy, because picking articles at random would yield many irrelevant pairs ($\left\vert{\text{articles}}\right\vert ^{2}$ pairs). We base the policy on teleport links from the Wikipedia clickstream and thus human navigation paths. The reasoning is that by selecting article pairs without an existing link that users have navigated between by other means, the articles might be related and inserting a link between the articles could improve navigability. \todo{Rewrite from the view of ``filtering''}
-
-\todo{write if we end up doing this}
-Another policy to consider is selecting article pairs based on text content. Specifically using n-grams of words (shingles) to find text in the article that references titles of other articles without already linking to it. 
-
-\todo{teleport/clickstream like sources}
-% https://cs.stanford.edu/people/jure/pubs/wiki-www15.pdf
-% others
-
-\subsection{Feature Extractor}
-The feature extractor receives a pair of articles and extracts features from a node2vec model that has been trained ahead of time. The feature pair are represented as two vectors which is combined using an operation such as multiplication \todo{maybe write that we always multiply them, maybe cite node2vec paper, that says that multiplication yielded best results in their experiments.} and used as input for the AI.
+\input{chapter_design/feature_extractor}
