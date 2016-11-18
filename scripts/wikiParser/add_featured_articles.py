@@ -15,7 +15,7 @@ all = [x["title"].replace(" ", "_") for x in all[:-3]]
 
 
 # add to db
-driver = GraphDatabase.driver("bolt://localhost", auth=basic_auth("neo4j", "12345"))
+driver = GraphDatabase.driver("bolt://localhost:10001", auth=basic_auth("neo4j", "12345"))
 
 session = driver.session()
 counter = 1
@@ -36,9 +36,9 @@ def setFeatureFlag(title):
     global counter
     query = """
             MATCH (a:Page {title: {title} }) 
-            SET a.featured = {featured}
+            SET a :FeaturedPage
             """
-    session.run(query, {'title':title, 'featured':True })
+    session.run(query, {'title':title})
     if counter % 10000 == 0:
         session.close()
         session = driver.session()
