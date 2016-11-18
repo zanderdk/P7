@@ -22,7 +22,7 @@ public class RandomWalk
     @Context
     public GraphDatabaseService db;
 
-    public static List<Long> lastNodes = new ArrayList<>();
+    public static Set<Long> lastNodes = new HashSet<>();
 
     public class Record{
         public String walk = "";
@@ -56,7 +56,6 @@ public class RandomWalk
             // get last node in walk
             Node cur = walk.get(walkLength-1);
 
-
             Relationship redirectRel;
             // we want to follow redirects until we reach a Page
             do {
@@ -89,7 +88,7 @@ public class RandomWalk
             else {
                 Node prev = walk.get(walkLength-2);
                 Long prevId = prev.getId();
-                ArrayList<Long> newLast = new ArrayList<>();
+                Set<Long> newLast = new HashSet<>();
                 for(Relationship rel: cur_nbrs) {
                     Node end = rel.getOtherNode(cur);
                     Long endId = end.getId();
