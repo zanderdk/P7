@@ -46,7 +46,6 @@ public class RandomWalk
         Label pageLabel = Label.label("Page");
         RelationshipType linksToType = RelationshipType.withName("LINKS_TO");
 
-
         Node startNode = db.findNode(pageLabel, "title", pageTitle);
 
         ArrayList<Node> walk = new ArrayList<Node>();
@@ -65,7 +64,7 @@ public class RandomWalk
                 redirectRel = cur.getSingleRelationship(redirectType, Direction.OUTGOING);
                 // if rediretRel was not null, cur is a redirect, so follow that redirect to a page
                 cur = (redirectRel != null)? redirectRel.getOtherNode(cur) : cur;
-            } while (redirectRel == null);
+            } while (redirectRel != null);
 
 
             Direction d = (directed)? Direction.OUTGOING : Direction.BOTH;
