@@ -2,7 +2,16 @@
 
 Before we can draw inspiration from solutions to related problems, we must consider what our problem is. As with almost all problems, this problem can be perceived from multiple angles, and modeled by just as many.
 
-First, the linking problem can be seen as a problem of relation or relatedness.
+The linking problem can be seen as a problem of deducing semantic or contextual relations. Solutions to this problem usually involves a degree of textual analysis in order to determine whether a piece of text refers to another subject. There are usually two parts to this problem, which are each given a different level of importance, depending on the solution. First we got a syntactical recognition of references to some subject. One approach is to find keywords or shingles using some n-gram technique and matching those to subjects, as seen in (cite wikify!). 
+
+Secondly there is semantic dertimination, where possible syntactical disambiguation is combatted. A prime example here is to determine whether the syntatical reference to a tree, semantically refers to a data structure or a type of plant. One of many ways of approaching this problem is to train a classifier, as seen in (cite learning to link). Here they attempt to determine the semantical reference by training on metrics for commonness, relatedness and context quality. In short, commonness is the probability distribution of references, relatedness is a measure of similarity between the referer and the possible referenced subject, and context quality is a measure of whether a given term is usually linked. The example given in (cite learning to link) is the english grammatical article \enquote{The}, which is used often, but rarely links to the subject article.
+
+
+Another way of viewing the linking problem is as missing structural connections in a dataset.
+
+
+Finally there is the matter deciding whether a reference should be included, in accordance to the Wikipedia guidelines on linking (cite wiki guidelines). In the case of (cite learning to link) this is included in their classifier through the feature of context quality. Another approach is 
+
 
 
 
