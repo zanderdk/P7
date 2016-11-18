@@ -23,7 +23,7 @@ counter = 1
 def checkMissingFeatures(titlelist):
     global session
     global counter
-    query """
+    query = """
           MATCH (a:Page {featured: true}) return a.title
           """
     result = session.run(query)
@@ -46,8 +46,8 @@ def setFeatureFlag(title):
     counter += 1
 
 for title in all:
-  #setFeatureFlag(title)
+    setFeatureFlag(title)
 print(len(all))
-checkMissingFeatures(all)
+#checkMissingFeatures(all)
 
 session.close()
