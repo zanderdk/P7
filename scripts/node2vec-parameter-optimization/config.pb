@@ -26,7 +26,7 @@ variable {
  type: INT
  size: 1
  min: 32
- max: 256
+ max: 400
 # options: "64"
  #options: "128"
 }
@@ -55,7 +55,7 @@ variable {
  type: INT
  size: 1
  min: 40
- max: 180
+ max: 200
  #options: "80"
  #options: "120"
 }
@@ -64,12 +64,5 @@ variable {
  name: "directed"
  type: ENUM
  size: 1
- options: "False"
-}
-
-variable {
- name: "weighted"
- type: ENUM
- size: 1
- options: "False"
+ options: "True"
 }

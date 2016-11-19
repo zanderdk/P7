@@ -21,7 +21,6 @@ def main(job_id, params):
   d = int(params["d"][0])
   k = int(params["k"][0])
   directed = params["directed"][0] == "True"
-  weighted = params["weighted"][0] == "True"
   workers = multiprocessing.cpu_count() # get the number of cores
   print("using %d workers" % workers)
 
@@ -38,7 +37,7 @@ def main(job_id, params):
       pickle.dump(nodes, f)
 
   print("Making model...")
-  model = makeNodeModel(p, q, l, r, d, k, directed, weighted, workers, nodes)
+  model = makeNodeModel(p, q, l, r, d, k, directed, workers, nodes)
 
   # save model using a file name that identifies the settings
   model_name = "node2vec-model-"
@@ -48,7 +47,6 @@ def main(job_id, params):
   model_name += "r=" + str(r) + "-"
   model_name += "d=" + str(d) + "-"
   model_name += "k=" + str(k) + "-"
-  model_name += "weighted=" + str(weighted) + "-"
   model_name += "directed=" + str(directed)
 
   # save the model for later use

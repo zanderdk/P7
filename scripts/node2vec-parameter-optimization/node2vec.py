@@ -21,27 +21,17 @@ driver = GraphDatabase.driver("bolt://localhost:10001", auth=basic_auth("neo4j",
 
 def getAllNodes():
     session = driver.session()
-    res = session.run("match (a:Page) WHERE NOT exists(a.redirect) AND (exists(a.good) OR exists(a.featured)) return a.title")
+    res = session.run("match (a:Page) where ((a:FeaturedPage) or (a:GoodPage)) return a.title")
     arr = []
     for x in res:
         arr.append(x['a.title'])
     session.close()
     return arr
 
-def getAllEdges():
-        session = driver.session()
-        res = session.run("match (a:Page)-[:clickStream]->(b:Page) where not exists(a.redirect) and not exists(b.redirect) return a.title, b.title")
-        arr = []
-        for x in res:
-            arr.append((x['a.title'], x['b.title']))
-        session.close()
-        return arr
-
-def randomWalk(name, p, q, l, directed, weighted, session):
+def randomWalk(name, p, q, l, directed, session):
     try:
-        weighted = "clickRate" if weighted else "None"
-        query = 'CALL randomWalk({name}, {p}, {q}, {l}, 1, "Page", "title", "clickStream", {weighted}, {directed}, False)'
-        res = session.run(query, {"name": name, "p": p, "q": q, "l": l, "directed": directed, "weighted": weighted})
+        query = 'CALL randomWalk({name}, {p}, {q}, {l}, 1, {directed})'
+        res = session.run(query, {"name": name, "p": p, "q": q, "l": l, "directed": directed})
         val = ""
         for x in res:
             val = x['walk']
@@ -51,14 +41,14 @@ def randomWalk(name, p, q, l, directed, weighted, session):
 
 i = 1
 
-def simulateWalks(r, nodes, p, q, l, directed, weighted):
+def simulateWalks(r, nodes, p, q, l, directed):
     global i
     walks = []
     for x in range(0, r):
         session = driver.session()
         allNodes = nodes
         for node in allNodes:
-            walk = randomWalk(node, p, q, l, directed, weighted, session).split()
+            walk = randomWalk(node, p, q, l, directed, session).split()
             walks.append(walk)
             i += 1
             if(i % 1000 == 0):
@@ -67,8 +57,8 @@ def simulateWalks(r, nodes, p, q, l, directed, weighted):
     
     return walks
 
-def makeNodeModel(p, q, l, r, d, window, directed, weighted, workers, nodes):
-    walks = simulateWalks(r, nodes, p, q, l, directed, weighted)
+def makeNodeModel(p, q, l, r, d, window, directed, workers, nodes):
+    walks = simulateWalks(r, nodes, p, q, l, directed)
     shuffle(walks)
     model = Word2Vec(walks, size=d, window=window, min_count=0, sg=1, workers=workers, iter=1)
     return model
@@ -96,7 +86,7 @@ if __name__ == "__main__":
         nodes.append(x['a.title'])
     session.close()
     print("got nodes")
-    model = makeNodeModel(1, 0.0625, 80, 1, 128, 10, True, False, 8, nodes)
+    model = makeNodeModel(1, 0.0625, 80, 1, 128, 10, True, 8, nodes)
 #model = Word2Vec.load_word2vec_format("./model.bin", binary=True)
     model.save_word2vec_format("test.bin")
 
