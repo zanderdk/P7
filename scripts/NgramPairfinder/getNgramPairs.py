@@ -60,22 +60,20 @@ class pairFinder:
 
         for gram in nGrams:
             if gram != title:
-                mapping = {"fromTitle": title, "title": gram }
+                mapping = {"fromTitle": title, "gram": gram }
 
                 # DOES NOT WORK WITH POSITIVES!!!
 
                 query = '''match (a:FeaturedPage {title:{fromTitle}})
-                           with a as x
-                           match (b:Page {title:{title}}) where ((b:FeaturedPage) or (b:GoodPage)) and NOT (x)-[:TRAINING_DATA]->(b) return count(b) as hasNotLink'''
+with a as x
+match (b:Page {title:{gram}}) where ((b:FeaturedPage) or (b:GoodPage))
+with b as y, x as a
+optional match (a)-[r:TRAINING_DATA]->(y) return a.title, y.title, count(r) > 0 as hasLink'''
                 res = self._qh.runQuery(query, mapping)
+                # the result is None, if gram is not an article that is featured/good
                 if res[0] is not None:
-                    res_hasLink = res[0]["hasNotLink"]
-                    if not res_hasLink == 1:
-                        pass
-                        #result_pos.append(gram)
-                    elif res_hasLink == 0:
+                    res_hasLink = res[0]["hasLink"]
+                    if not res_hasLink:
                         result_neg.append(gram)
-                    else:
-                        sys.exit("Found unexpected res_haslink: %s" % res_hasLink)
 
         return (title, result_pos, result_neg)
