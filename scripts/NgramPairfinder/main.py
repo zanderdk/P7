@@ -3,7 +3,7 @@ import runQuery
 from neo4j.v1 import GraphDatabase, basic_auth
 
 def getFeaturedOrGood(qh):
-    res = qh.runQuery("MATCH (n:FeaturedPage) RETURN n.title AS name UNION ALL MATCH (n:GoodPage) RETURN n.title", {})
+    res = qh.runQuery("MATCH (n:FeaturedPage) RETURN n.title UNION ALL MATCH (n:GoodPage) RETURN n.title", {})
     arr = []
     for x in res:
         arr.append(x['n.title'])
