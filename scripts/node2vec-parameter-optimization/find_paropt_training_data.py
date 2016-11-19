@@ -2,32 +2,15 @@
 import random
 import sys
 
-# we want to make sure that we do not include test data into our training data, so load the test_data file to filter these out
-test_data = {}
-with open("test_data.csv") as f:
-    for line in f:
-        source, target, label = tuple(line.split())
-        if source not in test_data:
-            test_data[source] = [target]
-        else:
-            test_data[source].append(target)
-
 # this is the file we want to write to
 with open("paropt_training_data.csv", "w") as training_data_file:
     negatives = []
     positives = []
     # load negatives from n grams method
     # the articles must be from featured -> featured/good
-    with open("trainingPairs_n_gram") as f:
+    with open("featured->featured_good_only_negatives.csv") as f:
         for line in f:
-            source, target, label = tuple(line.split())
-            # ignore positives
-            if label == "1": continue
-            
-            # we want to ignore the test_data
-            if source in test_data and target in test_data[source]:
-                continue
-
+            source, target = tuple(line.split())
             negatives.append((source, target))
                 
     # load positives from here
@@ -39,10 +22,6 @@ with open("paropt_training_data.csv", "w") as training_data_file:
             source = splitted[0]
             target = splitted[1]
             
-            # we want to ignore the test_data
-            if source in test_data and target in test_data[source]:
-                continue
-
             positives.append((source, target))
         
     # shuffle all lists

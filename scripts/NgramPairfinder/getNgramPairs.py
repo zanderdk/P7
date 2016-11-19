@@ -66,7 +66,7 @@ class pairFinder:
 
                 query = '''match (a:FeaturedPage {title:{fromTitle}})
                            with a as x
-                           match (b:Page {title:{title}}) where ((b:FeaturedPage) or (b:GoodPage)) and NOT (x)-[:LINKS_TO|TEST_DATA|TRAINING_DATA]->(b) return count(b) as hasNotLink'''
+                           match (b:Page {title:{title}}) where ((b:FeaturedPage) or (b:GoodPage)) and NOT (x)-[:TRAINING_DATA]->(b) return count(b) as hasNotLink'''
                 res = self._qh.runQuery(query, mapping)
                 if res[0] is not None:
                     res_hasLink = res[0]["hasNotLink"]

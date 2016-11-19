@@ -25,7 +25,7 @@ featuredOrGoodList = set(getFeaturedOrGood(qh))
 print("Got all good and featured articles " + str(len(featuredOrGoodList)))
 
 #with open("positives", "w", encoding="utf-8") as positives:
-with open("negatives", "w", encoding="utf-8") as negatives:
+with open("featured->featured_good_only_negatives.csv", "w", encoding="utf-8") as negatives:
     for title in all_featured:
         res = finder.getPairsFromArticleThatIsFeaturedOrGood(title, featuredOrGoodList)
 #           for article in res[1]:
