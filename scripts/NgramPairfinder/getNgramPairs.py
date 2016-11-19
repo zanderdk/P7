@@ -71,7 +71,7 @@ class pairFinder:
 with a as x
 match (b:Page {title:{gram}}) where ((b:FeaturedPage) or (b:GoodPage))
 with b as y, x as a
-optional match (a)-[r:TRAINING_DATA]->(y) return a.title, y.title, count(r) > 0 as hasLink'''
+optional match (a)-[r:TRAINING_DATA|TEST_DATA|LINKS_TO]->(y) return a.title, y.title, count(r) > 0 as hasLink'''
                 res = self._qh.runQuery(query, mapping)
                 # the result is None, if gram is not an article that is featured/good
                 if res[0] is not None:
