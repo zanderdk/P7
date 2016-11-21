@@ -110,8 +110,6 @@ public class RandomWalk
             walkLength++;
         }
 
-        //walk.stream().collect()
-
         String retString = "";
 
         for(Node n : walk) {
