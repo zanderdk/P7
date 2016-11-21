@@ -5,19 +5,27 @@ variable {
  name: "p"
  type: ENUM
  size: 1
- options: "0.0001"                                                                                                               
- options: "1.0"                                                                                                                                                                                                                               
- options: "10000.0"
+ options: "0.0001"
+ options: "0.25"
+ options: "0.50"
+ options: "1.0"
+ options: "2.0"
+ options: "4.0"
  options: "100000.0"
+ options: "1000000.0"
 }
 
 variable {
  name: "q"
  type: ENUM
  size: 1
- options: "0.0001"                                                                                                                                                                                                                                   
- options: "1.0"                                                                                                                                                                                                                                
- options: "10000.0"
+ options: "0.0001"
+ options: "0.25"
+ options: "0.50"
+ options: "1.0"
+ options: "2.0"
+ options: "4.0"
+ options: "100000.0"
  options: "1000000.0"
 }
 
@@ -26,7 +34,7 @@ variable {
  type: INT
  size: 1
  min: 32
- max: 400
+ max: 1000
 # options: "64"
  #options: "128"
 }
@@ -55,7 +63,7 @@ variable {
  type: INT
  size: 1
  min: 40
- max: 200
+ max: 600
  #options: "80"
  #options: "120"
 }
