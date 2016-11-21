@@ -20,11 +20,11 @@
     \end{scope}
     
     % RIGHT SIDE (OUTPUT LAYER)
-    \node [n2vc, right=7cm of c1,label=right:{$y_1$}] (o1) {};
+    \node [n2vc, right=8.5cm of c1,label=right:{$y_1$}] (o1) {};
     \node [n2vc, below=of o1, label=right:{$y_2$}] (o2) {};
     \node [n2vc, below=of o2, label=right:{$y_3$}] (o3) {};
     \node [n2vc, below=of o3, draw=none, fill=none] (o3-h) {};
-    \node [n2vc, below=of o3-h, label=right:{$y_k$}] (o4) {};
+    \node [n2vc, below=of o3-h, label=right:{$y_j$}] (o4) {};
     \node at ($(o3)!.5!(o4)$) {$\vphantom{\int^0}\smash[t]{\vdots}$};
     \node [n2vc, below=of o4, draw=none, fill=none] (o4-h) {};
     \node [n2vc, below=of o4-h, draw=none, fill=none] (o4-hh) {};
@@ -37,7 +37,7 @@
     \end{scope}
     
     % MIDDLE (HIDDEN LAYER)
-    \begin{scope}[xshift=3.5cm, node distance = .7ex]
+    \begin{scope}[xshift=4.4cm, node distance = .7ex]
     %\node [draw] at ($(inputcontainer)!.5!(outputcontainer)$) {
     %  \begin{tikzpicture}[remember picture]
             \node [n2vc, yshift=-1.5em, label=right:{$h_1$}] (h1) {};
@@ -62,5 +62,25 @@
     \draw (inputcontainer.south east) -- (hiddencontainer.south west);
     \draw (outputcontainer.north west) -- (hiddencontainer.north east);
     \draw (outputcontainer.south west) -- (hiddencontainer.south east);
+    
+    % The math stuff with the arrows 1
+    \node at ($(inputcontainer)!.5!(hiddencontainer)$) {
+      \begin{tikzpicture}[remember picture, node distance = 1ex]
+        \draw [line] (0,0) -- (1,.5);
+        \draw [line] (0,.5) -- (1,0);
+        %\node [fit=(o1)(o5)] (outputcontainer) {};
+        \node [below=1em of {(0.5,0)}] {$\mathbf{W}_{V\times N}=\{w_{ki}\}$};
+      \end{tikzpicture}
+    };
+    
+    % The math stuff with the arrows 2
+    \node at ($(hiddencontainer)!.5!(outputcontainer)$) {
+      \begin{tikzpicture}[remember picture, node distance = 1ex]
+        \draw [line] (0,0) -- (1,.5);
+        \draw [line] (0,.5) -- (1,0);
+        %\node [fit=(o1)(o5)] (outputcontainer) {};
+        \node [below=1em of {(0.5,0)}] {$\mathbf{W'}_{V\times N}=\{w'_{ij}\}$};
+      \end{tikzpicture}
+    };
     
   \end{tikzpicture}
