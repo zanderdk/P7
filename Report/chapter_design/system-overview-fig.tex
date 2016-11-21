@@ -1,14 +1,14 @@
 \begin{tikzpicture}[node distance = 2.84cm, auto]
-    \node [database, yshift=1em] (db) {DB};
+    \node [database, yshift=1em] (db) {Wiki DB};
     \node [bigblock, right of=db] (ap) {Article Picker};
     \node [bigblock, right of=ap] (tfl) {Feature Extraction};
     \node [bigblock, right of=tfl] (classifier) {Classifier};
-    \node [database, right of=classifier] (db2) {DB2};
+    \node [database, right of=classifier] (db2) {Results Pool};
     \node [bigblock, below=1cm of db2] (web) {Web Interface};
     
     %\node [above=1cm of ap] (inputarticle) {};
     
-    \node [smallblock, below=1.5cm of ap, xshift=-2em] (n2v) {Node2Vec};
+    \node [smallblock, below=1.5cm of ap, xshift=-2em] (n2v) {node2vec};
     \node [smallblock, below=.5cm of n2v] (paropt) {Parameter Optimizer};
     
     \node [smallblock, below=4.5cm of tfl] (prepper) {Training Data Generator};
