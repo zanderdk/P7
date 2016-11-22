@@ -35,13 +35,13 @@ class pairFinder:
 with a as x
 match (b:Page {lower_cased_title:{gram}})
 with b as y, x as a
-optional match (a)-[r:TRAINING_DATA|TEST_DATA|LINKS_TO]->(y) return a.title, y.title, count(r) > 0 as hasLink'''
+optional match (a)-[r:TRAINING_DATA|TEST_DATA|LINKS_TO]->(y) return a.title, y.title as target, count(r) > 0 as hasLink'''
                 res = self._qh.runQuery(query, mapping)
                 # the result is None, if gram is not an article that is featured/good
                 if res[0] is not None:
                     res_hasLink = res[0]["hasLink"]
                     if not res_hasLink:
-                        result_neg.append(gram)
+                        result_neg.append(res[0]["target"])
 
         return (title, result_pos, result_neg)
         
