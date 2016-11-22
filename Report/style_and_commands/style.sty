@@ -8,6 +8,7 @@
 
 % Set up some variables.
   \usepackage{etoolbox}
+  \usepackage{amssymb}
 
   % Set to true for print version, false for screen reading version.
   % Screen reading version for example uses coloring of PDF links.
@@ -19,6 +20,15 @@
   %\usepackage{fixltx2e}
   \usepackage{fixmath}
   \usepackage{scrhack}
+
+
+% limits underneath
+
+\usepackage{amsmath}
+
+\newcommand{\argmax}{\arg\ \!\max} % AlfC
+
+\newcommand{\cs}[1]{\texttt{\symbol{`\\}#1}}
 
 % Basic page layout.
   \KOMAoptions{
