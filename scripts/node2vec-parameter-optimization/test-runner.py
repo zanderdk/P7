@@ -5,6 +5,7 @@ from sklearn.model_selection import KFold, cross_val_score
 import numpy as np
 import os
 import pickle
+import time
 
 
 # Write a function like this called 'main'
@@ -37,7 +38,10 @@ def main(job_id, params):
       pickle.dump(nodes, f)
 
   print("Making model...")
+  start = time.time()
   model = makeNodeModel(p, q, l, r, d, k, directed, workers, nodes)
+  end = time.time()
+  print("Making model took: " + str(end - start) + " seconds")
 
   # save model using a file name that identifies the settings
   model_name = "node2vec-model-"
@@ -50,7 +54,10 @@ def main(job_id, params):
   model_name += "directed=" + str(directed)
 
   # save the model for later use
+  start = time.time()
   model.save_word2vec_format(model_name)
+  end = time.time()
+  print("Save model took: " + str(end - start) + " seconds")
 
   print("Model generated and saved as file. I will now evaluate the model.")
 
