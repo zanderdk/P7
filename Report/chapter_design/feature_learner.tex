@@ -26,9 +26,7 @@ The main idea of node2vec is to start a random walk at every node in the graph. 
 
 
 \subsubsection{Hyperparameter Optimization}
-As described above, node2vec has many tuneable parameters. To find the parameters that give the best set of features, we do a hyperparameter optimization pass. We first specify the parameter space that should be searched in. As this is a large space, it is not feasible to exhaust all possibilities. We therefore use Spearmint~\cite{snoek2012practical} to efficiently search for the optimal parameters by minimizing an objective function. The objective function is $1 - \text{f-score}$, where the f-score is found by running a classifier on the node2vec model learned from the parameters. By keeping the classifier and its parameters constant, we can find the best set of parameters by finding the lowest objective function value.
-
-\todo{skal vi skrive om hvordan spearmint laver sit magi?}
+As described above, node2vec has many tuneable parameters. To find the parameters that give the best set of features, we do a hyperparameter optimization pass. We first specify the parameter space that should be searched in. As this is a large space, it is not feasible to exhaust all possibilities. We therefore use the tool Spearmint~\cite{snoek2012practical} which performs bayesian optimization by maximizing the expected improvement to efficiently search for parameters that will minimize an objective function. The objective function is $1 - \text{f-score}$, where the f-score is found by running a classifier on the node2vec model learned from the parameters. By keeping the classifier and its parameters constant, we can find the best set of parameters by finding the lowest objective function value.
 
 To speed each iteration of the optimization up, we limit the set of start vertices to featured articles. The hyperparameter optimization is entirely autonomous and the process should be able to find good p and q values on its own. This means that one can learn on graph networks without knowing the underlying graph structure.
 
