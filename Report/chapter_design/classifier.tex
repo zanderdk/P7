@@ -4,16 +4,16 @@ As described in \cref{sec:machine_learning_task} we want to solve a supervised b
 \subsubsection{Training Data}
 Like all supervised learning, the classifier model is learned through training data.
 
-%One sample of training data has the form \mono{<source article> <target article> <label>}. The source and target article are titles of pairs of articles. The label on the training samples can either be positive (link) or negative (do not link).
+The set of articles we are working on are featured articles and what they link to. This data is split into 20\% test data and 80\% training data. A random distribution of 50\% of the links in the training data is removed during training and used for cross validation.
+
+%One sample of training data has the form \mono{<source article> <target article> <label>}. The source and targeet article are titles of pairs of articles. The label on the training samples can either be positive (link) or negative (do not link).
 
 As described in \cref{sec:machine_learning_task} we use a set of positive labeled training pairs $P$ and set of negative labeled training pairs $N$.
 
 %The positive samples are pairs of articles $(a,b)$ such that article $a$ is featured and there exists a link from article $a$ to $b$.
 
-\todo{positive/negative split}
-
 %The negative samples are derived in a more complex way.
-The negative training pairs are sampled from the data.
+The positive training pairs are links from featured articles, whereas the negative training pairs are sampled from the data.
 We first experimented with negative samples being random article pairs $(a,b)$ fulfilling the condition of $N$: that article $a$ is featured and there does not exist a link from article $a$ to $b$. The problem with this approach is that it is too easy to overfit using these negative samples. As the article pairs are randomly sampled, most of the times, there is very little relatedness between the two articles. This is of course the point of a negative training sample, but because most of the negative samples were so unrelated, the classifiers used in our experiments could too easily differentiate positives from negatives. We needed another method that would give us negative samples where the articles have a higher likelihood of being related. Our second approach was to extract N-grams from all featured articles. Iterating through all N-grams for a featured article, a negative sample would be generated if another article had the exact same title as the N-gram, but the two article were not linked.
 
 Notice that all samples only establishes ground truth from featured articles. This is based on our assumption that featured articles are correctly linked.
