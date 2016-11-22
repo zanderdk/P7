@@ -58,17 +58,23 @@ def simulateWalks(r, nodes, p, q, l, directed):
     
     return walks
 
-def makeNodeModel(p, q, l, r, d, window, directed, workers, nodes):
+def makeNodeModel(p, q, l, r, d, window, directed, workers, nodes, log_file):
     start = time.time()
     walks = simulateWalks(r, nodes, p, q, l, directed)
     end = time.time()
     print("Simulate walks took: " + str(end - start) + " seconds")
+    log_file.write("Simulate walks took: " + str(end - start) + " seconds\n")
+    log_file.flush()
     shuffle(walks)
 
     start = time.time()
+    log_file.write("Starting word2vec...\n")
+    log_file.flush()
     model = Word2Vec(walks, size=d, window=window, min_count=0, sg=1, workers=workers, iter=1)
     end = time.time()
     print("Word2Vec call took: " + str(end - start) + " seconds")
+    log_file.write("Word2Vec call took: " + str(end - start) + " seconds\n")
+    log_file.flush()
     return model
 
 def findCommunities(model, G):
