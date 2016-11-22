@@ -1,0 +1,12 @@
+\section{Graph Definition}
+
+Related work, \cref{related_structural_analysis}, discusses two definitions of a good Wikipedia link. The Wikipedia clickstream~\cite{wiki-clickstream} and the links on featured articles. They are both useful metrics to look at, although they optimize for different characteristics. The clickstream encourages links with high traffic, while the featured articles favors to increase the reader's understanding of a subject by interlinking other articles.
+
+Ideally, the good links should be all links that adhere to the Wikipedia guidelines on linking~\cite{wiki-manual-of-style-guidelines}. This is however hard to define mathematically, as they are just guidelines; Human interpretation is needed. To avoid this, we can use the featured articles as examples of good links, as they are already verified to conform to the guidelines. This means that the edges in our graph are page links from articles. The links from featured articles are considered good, while all other links are of undetermined quality.
+
+In order to formally define the graph we first define a binary relation $$\Rightarrow\ =\ \{\ (a,b)\ |\ \text{article } a \text{ has a link to article } b\ \}$$
+
+Later on we will use the infix notation $$a\ \Rightarrow\ b \text{ meaning } (a,b) \in\ \Rightarrow,$$ $$a\ \not\Rightarrow\ b \text{ meaning } (a,b) \not\in\ \Rightarrow$$
+
+We can formally define our graph as a directed graph $G = (V,E)$ where V is the set of all Wikipedia articles, and $E\ \subset\ V \times V =\ \Rightarrow$.
+
