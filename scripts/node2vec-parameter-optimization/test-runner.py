@@ -7,9 +7,13 @@ import os
 import pickle
 import time
 
+import sys
+
+
 
 # Write a function like this called 'main'
 def main(job_id, params):
+  sys.stdout = open("file_" + str(job_id), "w")
   print 'Anything printed here will end up in the output directory for job #:', str(job_id)
   print params
 
