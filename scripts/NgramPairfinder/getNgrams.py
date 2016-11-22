@@ -16,7 +16,7 @@ def getNgrams(text, N):
 	for n in range(1, N+1):
 		grams = ngrams(filtered_words, n)
 		for gram in grams:
-			gram_as_str = "_".join(gram)
+			gram_as_str = "_".join(gram).lower()
 			res.append(gram_as_str)
 
 	return list(set(res))

@@ -21,15 +21,15 @@ for record in all_featured_res:
 all_featured_len = len(all_featured)
 print("Got all featured articles " + str(all_featured_len))
 
-featuredOrGoodList = set(getFeaturedOrGood(qh))
+#featuredOrGoodList = set(getFeaturedOrGood(qh))
 
-print("Got all good and featured articles " + str(len(featuredOrGoodList)))
+#print("Got all good and featured articles " + str(len(featuredOrGoodList)))
 
 #with open("positives", "w", encoding="utf-8") as positives:
-with open("featured->featured_good_only_negatives.csv", "w", encoding="utf-8") as negatives:
+with open("featured->all_only_negatives.csv", "w", encoding="utf-8") as negatives:
     for i, title in enumerate(all_featured):
-        print("Progress: {}/{}".format(i,all_featured_len))
-        res = finder.getPairsFromArticleThatIsFeaturedOrGood(title, featuredOrGoodList)
+        print("Progress: {}/{}".format(i+1,all_featured_len))
+        res = finder.getPairsFromArticle(title)
 #           for article in res[1]:
 #              positives.write(title + " " + article + "\n")
         for article in res[2]:
