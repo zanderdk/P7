@@ -6,6 +6,7 @@ import networkx as nx
 from numpy.linalg import eig
 from sklearn.cluster import KMeans
 from neo4j.v1 import exceptions
+import time
 
 color_map = {
         0:'r',
@@ -58,9 +59,16 @@ def simulateWalks(r, nodes, p, q, l, directed):
     return walks
 
 def makeNodeModel(p, q, l, r, d, window, directed, workers, nodes):
+    start = time.time()
     walks = simulateWalks(r, nodes, p, q, l, directed)
+    end = time.time()
+    print("Simulate walks took: " + str(end - start) + " seconds")
     shuffle(walks)
+
+    start = time.time()
     model = Word2Vec(walks, size=d, window=window, min_count=0, sg=1, workers=workers, iter=1)
+    end = time.time()
+    print("Word2Vec call took: " + str(end - start) + " seconds")
     return model
 
 def findCommunities(model, G):
