@@ -68,6 +68,8 @@ def simulateWalks(r, nodes, p, q, l, directed):
         allNodes += nodes
     thrs = [threading.Thread(target=worker, args=(p, q, l, directed)) for x in range(0, threads)]
     for x in thrs:
+        x.start()
+    for x in thrs:
         x.join()
     return walks
 
