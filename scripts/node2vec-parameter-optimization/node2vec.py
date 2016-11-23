@@ -66,10 +66,9 @@ def simulateWalks(r, nodes, p, q, l, directed):
     threads = 4
     for x in range(0, r):
         allNodes += nodes
-    for x in range(0, threads):
-        threading.Thread(target=worker, args=(p, q, l, directed))
-    while allNodes:
-        pass
+    thrs = [threading.Thread(target=worker, args=(p, q, l, directed)) for x in range(0, threads)]
+    for x in thrs:
+        x.join()
     return walks
 
 def makeNodeModel(p, q, l, r, d, window, directed, workers, nodes, log_file):
