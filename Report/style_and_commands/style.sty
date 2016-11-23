@@ -103,6 +103,10 @@
   \DeclarePairedDelimiter\set\{\}
   %\usepackage{siunitx}
   \newcommand{\argmax}{\arg\ \!\max} % AlfC
+  % Better set notation:
+  \DeclarePairedDelimiterX{\Set}[1]\{\}{%
+    \, #1 \,
+  }
 
   %\newcommand{\cs}[1]{\texttt{\symbol{`\\}#1}}
 
@@ -361,7 +365,7 @@
 % TOC.
   %\usepackage{tocstyle} % MUST be loaded after pdfpages!
   %\usetocstyle{KOMAlike}
-  %\setcounter{tocdepth}{0}
+  \setcounter{tocdepth}{1}
   %\settocstylefeature{pagenumberhook}{\sffamily}
   %\settocstylefeature{entryhook}{\sffamily}
   %\settocstylefeature[-1]{entryhook}{\Large\sffamily\bfseries}

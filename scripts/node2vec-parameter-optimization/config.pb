@@ -33,8 +33,8 @@ variable {
  name: "d"
  type: INT
  size: 1
- min: 32
- max: 1000
+ min: 64
+ max: 256
 # options: "64"
  #options: "128"
 }
@@ -43,15 +43,15 @@ variable {
  name: "r"
  type: ENUM
  size: 1
- options: "3"
+ options: "2"
 }
 
 variable {
  name: "k"
  type: INT
  size: 1
- min: 5
- max: 60
+ min: 10
+ max: 120
 # options: "5"
 # options: "10"
 # options: "20"
@@ -62,8 +62,8 @@ variable {
  name: "l"
  type: INT
  size: 1
- min: 40
- max: 600
+ min: 80
+ max: 80
  #options: "80"
  #options: "120"
 }
