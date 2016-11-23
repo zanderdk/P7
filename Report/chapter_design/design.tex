@@ -1,13 +1,6 @@
 \chapter{Design \& Implementation}\label{chap:design}
 In this chapter we will introduce our final idea, which is ultimately our solution. We explain the system top-down, and as such we broadly describe the entire system before diving into the specifics.
 
-\begin{chapterorganization}
-  \item In \sectionref{sec:design_overview} we provide an introductory overview of the system architecture and explain how the components interact;
-  \item In \sectionref{sec:database} we argue for and choose a database to store a Wikipedia data structure;
-  \item In \sectionref{sec:data} we explain the data sources, how we process the data, and how we insert the data into the chosen database;
-  \item In \sectionref{sec:detailed_view} we describe components of the system in greater detail. \todo{more text describing this};
-  \item In \sectionref{sec:design_ui} we present the design of a user interface for the system.
-\end{chapterorganization}
 
 \section{Overview}\label{sec:design_overview}
 The purpose of the system is to suggest link suggestions for articles, and add these to a pool of suggestions. A user can then browse this pool for suggestions of articles to improve the outgoing links.
@@ -20,7 +13,7 @@ The system consists of a pipeline utilizing two trained models in order to make 
 Both of these models are trained by temporally separate workflows. A diagram of the main pipeline and the separate workflows for training the models can be seen in \cref{fig:system-overview}. In the following sections, the main areas will be explained.
 
 \tikzsetnextfilename{system-overview}
-\begin{figure}[tbp]%
+\begin{figure}[tb]%
   \centering
   \input{chapter_design/system-overview-fig}
 \caption[Architecture diagram showing the major components of the system]{Architecture diagram showing the major components of the system. Each box is a component, and a dashed line box is a grouping of components. Arrows describe the way data flows.}%
