@@ -81,7 +81,9 @@ def makeNodeModel(p, q, l, r, d, window, directed, workers, nodes, log_file):
     log_file.write("Simulate walks took: " + str(end - start) + " seconds\n")
     log_file.flush()
     shuffle(walks)
-    print("Total number of nodes in walks" + str(len(sum(walks, []))))
+
+    # this takes a long time, find something else
+    #print("Total number of nodes in walks" + str(len(sum(walks, []))))
 
     start = time.time()
     log_file.write("Starting word2vec...\n")
