@@ -1,7 +1,7 @@
 \begin{tikzpicture}[node distance = 2.84cm, auto]
     \node [database, yshift=1em] (db) {Wiki DB};
     \node [bigblock, right of=db] (ap) {Article Picker};
-    \node [bigblock, right of=ap] (tfl) {Feature Extraction};
+    \node [bigblock, right of=ap] (tfl) {Feature Extractor};
     \node [bigblock, right of=tfl] (classifier) {Classifier};
     \node [database, right of=classifier] (db2) {Results Pool};
     \node [bigblock, below=1cm of db2] (web) {Web Interface};

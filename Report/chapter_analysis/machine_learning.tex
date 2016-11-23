@@ -1,7 +1,7 @@
 \section{Machine Learning Task}\label{sec:machine_learning_task}
 With a graph defined, we introduce the machine learning task that would fit this project based on the problem we are trying to solve. In \cref{sec:problem_statement} we describe the problem of suggesting links between Wikipedia articles, part of which is to determine whether two Wikipedia articles should be linked. This problem can be seen as a binary classification problem.
 
-As previously described there are $5000$ featured Wikipedia articles, which we assume to have appropriate linking. Under this assumption we can define a set of positive labeled training pairs $P \subset V \times V$ as $\Set{(a,b)\ |\ a\text{ is featured}\ \wedge\ a \Rightarrow b}$. Likewise we define a set of negative labeled training pairs $N \subset V \times V$ as $\set{(a,b)\ |\ a\text{ is featured}\ \wedge\ a \not\Rightarrow b}$
+As previously described there are $5000$ featured Wikipedia articles, which we assume to have appropriate linking. Under this assumption we can define a set of positive labeled training pairs $P \subset V \times V$ as $\Set{(a,b)\ |\ a\text{ is featured}\ \wedge\ a \Rightarrow b}$. Likewise we define a set of negative labeled training pairs $N \subset V \times V$ as $\Set{(a,b)\ |\ a\text{ is featured}\ \wedge\ a \not\Rightarrow b}$
 
 By constructing the training data only from $P$ and $N$, all training pairs can be labeled as either linked or not linked. Due to the large amount of available labeled training data, we limit the scope of the problem to only consider supervised learning approaches. This delimits the problem to binary classification problem in a supervised machine learning context.
 
