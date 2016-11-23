@@ -60,14 +60,14 @@ def main(job_id, params):
     model_name += "directed=" + str(directed)
 
     # save the model for later use
-    start = time.time()
-    model.save_word2vec_format(model_name)
+    #start = time.time()
+    #model.save_word2vec_format(model_name)
     
-    end = time.time()
-    print("Save model took: " + str(end - start) + " seconds")
-    log_file.write("Save model took: " + str(end - start) + " seconds\n")
-    log_file.flush()
-    print("Model generated and saved as file. I will now evaluate the model.")
+    #end = time.time()
+    #print("Save model took: " + str(end - start) + " seconds")
+    #log_file.write("Save model took: " + str(end - start) + " seconds\n")
+    #log_file.flush()
+    #print("Model generated and saved as file. I will now evaluate the model.")
 
     X_pos = []
     X_neg = []

@@ -63,7 +63,7 @@ def worker(p, q, l, directed):
 def simulateWalks(r, nodes, p, q, l, directed):
     global allNodes
     global walks
-    threads = 4
+    threads = 8
     for x in range(0, r):
         allNodes += nodes
     thrs = [threading.Thread(target=worker, args=(p, q, l, directed)) for x in range(0, threads)]
