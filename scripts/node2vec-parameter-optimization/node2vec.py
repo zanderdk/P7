@@ -7,6 +7,7 @@ from numpy.linalg import eig
 from sklearn.cluster import KMeans
 from neo4j.v1 import exceptions
 import time
+import threading
 
 color_map = {
         0:'r',
@@ -40,22 +41,35 @@ def randomWalk(name, p, q, l, directed, session):
     except exceptions.ProtocolError:
         return randomWalk(name)
 
-i = 1
+
+walks = []
+allNodes = []
+
+def worker(p, q, l, directed):
+    global allNodes
+    global walks
+    node = None
+    session = driver.session()
+    while allNodes:
+        try:
+            node = allNodes.pop()
+        except Exception:
+            return
+        walk = randomWalk(node, p, q, l, directed, session).split()
+        walks.append(walk)
+    session.close()
+
 
 def simulateWalks(r, nodes, p, q, l, directed):
-    global i
-    walks = []
+    global allNodes
+    global walks
+    threads = 4
     for x in range(0, r):
-        session = driver.session()
-        allNodes = nodes
-        for node in allNodes:
-            walk = randomWalk(node, p, q, l, directed, session).split()
-            walks.append(walk)
-            i += 1
-            if(i % 1000 == 0):
-                print(i)
-        session.close()
-    
+        allNodes += nodes
+    for x in range(0, threads):
+        threading.Thread(target=worker, args=(p, q, l, directed))
+    while allNodes:
+        pass
     return walks
 
 def makeNodeModel(p, q, l, r, d, window, directed, workers, nodes, log_file):
@@ -113,3 +127,4 @@ if __name__ == "__main__":
 
 #nx.draw_spring(G, node_color=[color_map[G.node[node]['cluster']] for node in G])
 #plt.show()
+
