@@ -1,4 +1,4 @@
-\subsection{Article Picker}
+\section{Article Picker}
 The article picker component of the system is used to select candidate article pairs to test for linking. The article picker acts as a filtering step, since picking articles at random would yield a large search space ($\left\vert{\text{articles}}\right\vert ^{2}$ pairs) containing many irrelevant pairs.
 
 The article pairs are selected based on a heuristic policy. We base the policy on teleport links \todo{have we introduced teleport links before this?} from the Wikipedia clickstream and thus human navigation paths. The reasoning is that by selecting article pairs without an existing link that users have navigated between by other means, the articles might be related and inserting a link between the articles could improve navigability.
