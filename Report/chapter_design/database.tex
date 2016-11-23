@@ -1,11 +1,11 @@
 \section{Database} \label{sec:db}
-Our approach to identify missing links requires readily available data, which we facilitate by storing required data in a local database.
+The first component in our main pipeline, as shown in \cref{fig:system-overview} is the database. Our approach to identify missing links requires readily available data, which we facilitate by storing required data in a local database.
 \todo{node2vertex det her afsnit? neo4j bruger selv node.}
 
 \subsection{Database design} \label{sec:db_design}
 We use the native graph database system neo4j as it performs well for graph based queries, and supports extensions to the query langugage with Java plugins. The data model in neo4j consists of nodes, relationships between nodes, and properties on these. Each node and relationship can be annoted with a number of labels, used to distinguish between different node and relationship types when quering the database.
 
-We store Wikipedia pages as nodes, with their title as a property, and links between pages as relationships. Labels are used to distinquish beween different types of pages and links, as shown in~\cref{tab:db_labels}.
+We store Wikipedia pages as nodes, with their title as a property, and links between pages as relationships. Labels are used to distinquish beween different types of pages and links, as shown in \cref{tab:db_labels}.
 
 \begin{table}[tbp]
 \centering
@@ -27,10 +27,10 @@ REDIRECTS\_TO          & An edge describing a redirect                   \\ \bot
 
 
 \subsection{Populating the database} \label{sec:db_populate}
-We use two data sets provided by DBPedia to populate the database, one contains links and the other redirects. These datasets both contain tuples in the format \emph{<source\_page> <type> <target\_page>}. \todo{maybe separate line/similar?} We prune non-article pages, based the namespace prefixes used on Wikipedia, and remove redirects from the link dataset. Links are split into three groups randomly, according to the partitioning given in~\cref{sec:machine_learning_task}. \todo{fix ref, lige nu kommer forklaring på splittet senere}
+We use two data sets provided by DBPedia to populate the database, one contains links and the other redirects. These datasets both contain tuples in the format \emph{<source\_page> <type> <target\_page>}. \todo{maybe separate line/similar?} We prune non-article pages, based the namespace prefixes used on Wikipedia, and remove redirects from the link dataset. Links are split into three groups randomly, according to the partitioning given in \cref{sec:machine_learning_task}. \todo{fix ref, lige nu kommer forklaring på splittet senere}
 
 From the pruned data we generate separate files containing pages, redirect pages, partitioned links, and redirect links. The files are imported with the appropiate labels, and additional labels are added to \emph{featured} and \emph{good} articles.
-\todo{we removed some redirect nodes as well..} The counts for the different labels in the populated database is shown in~\cref{tab:db_counts}.
+\todo{we removed some redirect nodes as well..} The counts for the different labels in the populated database is shown in \cref{tab:db_counts}.
 
 \begin{table}[tbp]
 \centering
@@ -42,7 +42,7 @@ Page                   & 11159213           \\
 FeaturedPage           & 4820               \\
 GoodPage               & 23741              \\
 RedirectPage           & 7013417            \\ \midrule
-\textit{Relationships} & \textit{145878042} \\
+\textit{Relationships (total)} & \textit{145878042} \\
 LINKS\_TO              & 138422339          \\
 TRAINING\_DATA         & 294857             \\
 TEST\_DATA             & 147429             \\
