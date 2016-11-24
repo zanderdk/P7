@@ -64,8 +64,8 @@ Frontpage
 %\input{chapter_ai/ai}
 \input{chapter_testeval/testeval}
 \input{chapter_conclusion/conclusion}
-\input{chapter_devmethod_reflection/reflection}
-\label{LastPageLabel}
+\input{chapter_devmethod_reflection/reflection}%
+\label{LastPageLabel} % There must be a %-sign on the line before this.
 
 % To end the parts.
 \bookmarksetup{startatroot}
@@ -83,7 +83,7 @@ Frontpage
 
 % Bibliography.
 \cleardoublepage
-\phantomsection\addcontentsline{toc}{chapter}{Bibliography}
+\phantomsection\addcontentsline{toc}{chapter}{Bibliography}%
 \label{bibliography}
 \printbibliography{}
 \clearpage{}
