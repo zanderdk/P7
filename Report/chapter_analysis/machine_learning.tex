@@ -49,7 +49,7 @@ In order to solve this optimization problem we first need to define $f$ which wi
 
 The function $f: V\times V \to \mathbb{R}^d$ maps article pairs to a feature representation in $d$ dimensions, by combining the features of each article pair.
 
-f(a,b) = g(h(a), h(b)) where $h: V \to \mathbb{R}^d$ is a function mapping an article to a feature vector and $g: \mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^d$ a binary operation combining a pair of feature vectors.
+$f(a,b) = g(h(a), h(b))$ where $h: V \to \mathbb{R}^d$ is a function mapping an article to a feature vector and $g: \mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^d$ a binary operation combining a pair of feature vectors.
 
 The feature vector $h(x)$ represents the learned features of article $x$.
 
