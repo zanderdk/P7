@@ -1,11 +1,15 @@
-\section{Article Picker}
-The article picker component of the system is used to select candidate article pairs to test for linking. The article picker acts as a filtering step, since picking articles at random would yield a large search space ($\left\vert{\text{articles}}\right\vert ^{2}$ pairs) containing many irrelevant pairs.
+\section{Candidate Filtering}
+The candidate filtering component performs the filtering step of the \emph{filtering and refinement} process. It selects candidate article pairs which later are refined in the classifier component.
 
-The article pairs are selected based on a heuristic policy. We base the policy on teleport links \todo{have we introduced teleport links before this?} from the Wikipedia clickstream and thus human navigation paths. The reasoning is that by selecting article pairs without an existing link that users have navigated between by other means, the articles might be related and inserting a link between the articles could improve navigability.
+The article pairs are selected based on a heuristic policy. We use clickstream~\cite{wiki-clickstream} data built from Wikipedia server logs, and as such it is based on user behavior. The data contains the number of clicks from an article $a$ to an article $b$ in the time frame where the data was collected, as well as the method of navigation of these clicks. One of these methods of navigation is a \emph{teleportation}, which means the user ended up on article $b$ after having viewed article $a$, but not following a link. \todo{Give good explanations of how the clicks then might have happened}
 
-\todo{write if we end up doing this}
-Another policy to consider is selecting article pairs based on text content. Specifically using n-grams of words (shingles) to find text in the article that references titles of other articles without already linking to it. 
+By selecting article pairs without an existing link and that users have navigated between by teleportation, the articles might be related and inserting a link between the articles might improve navigability.
 
-\todo{teleport/clickstream like sources}
+\todo{Show code and implementation}
+
+%\todo{write if we end up doing this}
+%Another policy to consider is selecting article pairs based on text content. Specifically using n-grams of words (shingles) to find text in the article that references titles of other articles without already linking to it. 
+
+%\todo{teleport/clickstream like sources}
 % https://cs.stanford.edu/people/jure/pubs/wiki-www15.pdf
 % others
