@@ -23,13 +23,13 @@ N &= \Set{(a,b)\ |\ a\text{ is featured}\ \wedge\ a \not\Rightarrow b}
 %The problem can be defined as a binary classification:
 We formulate the classification task as an optimization problem, maximizing the probability of $(a,b) \in \ \Rightarrow$. Let $f: V\times V \to \mathbb{R}^d$ be the function mapping from article pairs to a vector representation of features where $d$ is the dimension of the vector.
 
-In order to learn predicting the linking class label $y$ of a pair of articles $x$,
+To learn predicting the label $y \in \Set{1,0}$ of a pair of articles $(a,b) \in V \times V$,
 %we seek to optimize the following objective function, by maximizing the probability of $x \in \ \Rightarrow$ conditioned on the feature representation $f(x)$, where $x \in V \times V$:
-we seek to find values of $y$ that maximizes the objective function $\Pr(y \mid f(x))$, which represents the probability that articles should be linked, where $x \in \ \Rightarrow$ conditioned on the feature representation $f(x)$, and $x \in V \times V$:
+we seek to find the value of $y$ that maximizes the function $\Pr(y \mid f(a,b))$, which represents the probability that articles should be linked, conditioned on the feature representation $f(x)$:
 
 \begin{equation}
 \label{objective}
-\argmax_y\ \Pr(y \mid f(x))
+\argmax_y\ \Pr(y \mid f(a,b)) 
 \end{equation}
 
 With $y$ defined as:
@@ -37,7 +37,7 @@ With $y$ defined as:
 \[
     y=
 \begin{cases}
-    1 & \text{if } x \in \  \Rightarrow\\
+    1 & \text{if } (a,b) \in \  \Rightarrow\\
     0 & \text{otherwise}
 \end{cases}
 \]
