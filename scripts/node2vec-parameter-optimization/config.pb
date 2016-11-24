@@ -3,38 +3,26 @@ name: "test-runner"
 
 variable {
  name: "p"
- type: ENUM
+ type: FLOAT
  size: 1
- options: "0.0001"
- options: "0.25"
- options: "0.50"
- options: "1.0"
- options: "2.0"
- options: "4.0"
- options: "100000.0"
- options: "1000000.0"
+ min:  0.5
+ max:  0.5
 }
 
 variable {
  name: "q"
- type: ENUM
+ type: FLOAT
  size: 1
- options: "0.0001"
- options: "0.25"
- options: "0.50"
- options: "1.0"
- options: "2.0"
- options: "4.0"
- options: "100000.0"
- options: "1000000.0"
+ min:  100000.0
+ max:  100000.0
 }
 
 variable {
  name: "d"
  type: INT
  size: 1
- min: 64
- max: 256
+ min: 128
+ max: 128
 # options: "64"
  #options: "128"
 }
@@ -51,7 +39,7 @@ variable {
  type: INT
  size: 1
  min: 10
- max: 120
+ max: 60
 # options: "5"
 # options: "10"
 # options: "20"
@@ -62,8 +50,8 @@ variable {
  name: "l"
  type: INT
  size: 1
- min: 80
- max: 80
+ min: 120
+ max: 120
  #options: "80"
  #options: "120"
 }
