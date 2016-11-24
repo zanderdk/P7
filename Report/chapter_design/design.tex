@@ -1,29 +1,8 @@
 \chapter{Design \& Implementation}\label{chap:design}
-In this chapter we will discuss the development of the solution outlined in the previous chapter. The system will be explained in a top-down fashion, and as such we start of with an overview of the entire system before going into the specifics of each component.
+In this chapter we will discuss the development of the solution that was outlined in the previous chapter. The system will be explained in a top-down fashion, and as such we start of with an overview of the entire system. Afterwards, the specifics of each component will be explained in their own seperate sections.
 
 \section{Overview}\label{sec:design_overview}
-This system is built on an pipeline architecture, where the output of each primary component is fed into the next. Since the potential input size of testing all possible combinations of articles for missing links is roughly 5 million articles squared, which totals to $2.5x10^13$, we have employed a \emph{filtering and refinement} strategy. The filtering step chooses the more promising candidates based on a given policy, and the refinement step does the actual evaluation of the candidates.
-
-The main pipeline is split into five components. The first part is a storage component, which holds all the information required to find the link suggestions. The second component is the \emph{Article Picker}, which is responsible for the filtering process. As such, it extracts possible candidates from the database. The candidates are of the form $(A,B)$ where $A$ is a source article and $B$ is a suggested target article. The third component is the \emph{Feature Extractor} creates a feature for each of these pairs, based on a model that has been trained ahead of time. This vector of features is then supplied to the \emph{Classifier} component, which will then make a prediction on whether or not the pair should be linked.
-
-
-The main part of the system provides link suggestions for articles. Because it is computationally intensive to check if each of the 5.2 million articles should link to each other, we split the pipeline into a . The filtering step filter out some obvious bad candidates based on some heuristic. The refinement step consists of a trained classifier.
-
-The \emph{Article Picker} component is responsible for the filtering step. As such, it quickly extracts possible candidates from the database. The candidates are of the form $(A,B)$ where $A$ is a source article and $B$ is a suggested target article. The next component, \emph{Feature Extraction} creates a feature for each of these pairs, based on a model that has been trained ahead of time. This vector of features is then supplied to the \emph{Classifier} component, which will then make a prediction on whether or not the pair should be linked.
-
-If a pair is predicted to have a missing link, it will be added to the pool of suggestions, which is stored in another database. This database holds all the pairs suggested for links, until a user browses these suggestions with the intention of deciding whether to add a link or not. This is the final component, the \emph{Web Interface}.
-
-
-
-
-The purpose of the system is to supply link suggestions to a, and add these to a pool of suggestions. A user can then browse this pool for suggestions of articles to improve the outgoing links.
-
-The system consists of a pipeline utilizing two trained models in order to make predictions. These models are
-\begin{enumerate*}[label=(\roman*)]
-  \item a feature extraction model, and
-  \item a classifier model.
-\end{enumerate*}
-Both of these models are trained by temporally separate workflows. A diagram of the main pipeline and the separate workflows for training the models can be seen in \cref{fig:system-overview}. In the following sections, the main areas will be explained.
+This system is built on an pipeline architecture, where the output of each primary component is fed into the next. Since the potential input size of testing all possible combinations of articles for missing links is roughly 5 million articles squared, which totals to $2.5 \times 10^{13}$, we have employed a \emph{filtering and refinement} strategy. The filtering step chooses the more promising candidates based on a given policy, and the refinement step does the actual evaluation of the candidates.
 
 \tikzsetnextfilename{system-overview}
 \begin{figure}[tb]%
@@ -33,23 +12,19 @@ Both of these models are trained by temporally separate workflows. A diagram of 
 \label{fig:system-overview}%
 \end{figure}
 
-%Throughout this chapter the different components will be explained in detail.
-
-
 \subsection{Main Pipeline}
-The main part of the system provides link suggestions for articles. Because it is computationally intensive to check if each of the 5.2 million articles should link to each other, we split the pipeline into a \emph{filtering} and a \emph{refinement} step. The filtering step filter out some obvious bad candidates based on some heuristic. The refinement step consists of a trained classifier.
-
-The \emph{Article Picker} component is responsible for the filtering step. As such, it quickly extracts possible candidates from the database. The candidates are of the form $(A,B)$ where $A$ is a source article and $B$ is a suggested target article. The next component, \emph{Feature Extraction} creates a feature for each of these pairs, based on a model that has been trained ahead of time. This vector of features is then supplied to the \emph{Classifier} component, which will then make a prediction on whether or not the pair should be linked.
-
-If a pair is predicted to have a missing link, it will be added to the pool of suggestions, which is stored in another database. This database holds all the pairs suggested for links, until a user browses these suggestions with the intention of deciding whether to add a link or not. This is the final component, the \emph{Web Interface}.
-
+The main pipeline is split into five components. The first part is a storage component, which holds all the information required to find the link suggestions. The second component is the \emph{Article Picker}, which is responsible for the filtering process. As such, it extracts possible candidates from the database. The candidates are of the form $(A,B)$ where $A$ is a source article and $B$ is a suggested target article. The third component is the \emph{Feature Extractor}. This intermediate component generates a feature vector from a given candidate pair. As the fourth component we have the \emph{Classifier} that suggests whether a link should be added to the pair, based on the feature vector it received. Finally the \emph{Results Pool} is another storage component, which holds the suggestions until they are evaluated by a user.
 
 \subsection{Model Training}
-Prior to the main pipeline, a way of extracting features from article must be learned, and the classifier model must be trained. This is performed by two support pipelines.
+Prior to the main pipeline, a model for extracting features from article must be learned, and the classifier must be trained. This is performed by two support modules.
 
-Feature learning is done by using \emph{node2vec}~\cite{node2vec}. node2vec is a framework for learning feature representations of graphs. It performs random walks between articles within the link graph. The walks are used to train a model which ultimately is used by the feature extractor. Parameter tuning is needed in node2vec, and as such we have a parameter optimization component to find optimal parameters that increases accuracy for the Wikipedia link data.
+The support module for the feature learning consists of a \emph{Model Trainer} and a \emph{Parameter Optimizer}. The \emph{Parameter Optimizer} works on a smaller subset of the dataset, in order to speed up the process of tuning the parameters. When an acceptable set of parameters has been found, the \emph{Model Trainer} uses these parameters, to train itself on the entire dataset. The result of this is the model, which is used as the \emph{Feature Extractor}.
 
-The classifier model learning pipeline uses a list of labeled article pairs to train the classifier model. The articles are gathered from the database and features are extracted using the feature extractor. The features and classification labels are passed to the classifier trainer component. The trained model is used by the classifier.
+The other support module is for the classifier learning process. It consists of a \emph{Training Data Generator} and a \emph{Classifier Trainer}. The \emph{Training Data Generator} retrieves training pairs and labels from the dataset, and uses the \emph{Feature Extractor} to prepare the data. Then the \emph{Classifier Trainer} uses this prepared training data to create a model, which is used as our classifier.
+
+%Feature learning is done by using \emph{node2vec}~\cite{node2vec}. node2vec is a framework for learning feature representations of graphs. It performs random walks between articles within the link graph. The walks are used to train a model which ultimately is used by the feature extractor. Parameter tuning is needed in node2vec, and as such we have a parameter optimization component to find optimal parameters that increases accuracy for the Wikipedia link data.
+
+%The classifier model learning pipeline uses a list of labeled article pairs to train the classifier model. The articles are gathered from the database and features are extracted using the feature extractor. The features and classification labels are passed to the classifier trainer component. The trained model is used by the classifier.
 
 \input{chapter_design/database}
 
