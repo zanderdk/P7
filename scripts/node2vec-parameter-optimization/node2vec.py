@@ -63,7 +63,7 @@ def worker(p, q, l, directed):
 def simulateWalks(r, nodes, p, q, l, directed):
     global allNodes
     global walks
-    threads = 8
+    threads = 32
     for x in range(0, r):
         allNodes += nodes
     thrs = [threading.Thread(target=worker, args=(p, q, l, directed)) for x in range(0, threads)]
@@ -118,7 +118,7 @@ if __name__ == "__main__":
         nodes.append(x['a.title'])
     session.close()
     print("got nodes")
-    model = makeNodeModel(1, 0.0625, 80, 1, 128, 10, True, 8, nodes)
+    model = makeNodeModel(1, 0.0625, 80, 1, 128, 10, True, 16, nodes)
 #model = Word2Vec.load_word2vec_format("./model.bin", binary=True)
     model.save_word2vec_format("test.bin")
 
