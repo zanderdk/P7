@@ -21,7 +21,7 @@ variable {
  name: "d"
  type: INT
  size: 1
- min: 128
+ min: 10
  max: 128
 # options: "64"
  #options: "128"
@@ -39,7 +39,7 @@ variable {
  type: INT
  size: 1
  min: 10
- max: 60
+ max: 35
 # options: "5"
 # options: "10"
 # options: "20"
@@ -50,7 +50,7 @@ variable {
  name: "l"
  type: INT
  size: 1
- min: 120
+ min: 60
  max: 120
  #options: "80"
  #options: "120"
