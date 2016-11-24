@@ -34,10 +34,10 @@
     \path [line] (db2) -- (web);
     
     \path [line] (db.300) |- (n2v);
-    %\path [line] (db.300) |- (paropt);
+    \path [line] (db.300) |- (paropt);
     \path [line] (db.240) |- (prepper);
     
-    \path [line, swap, transform canvas={xshift=-1.3em}] (paropt) -- node{} (n2v);
+    \path [line, swap] (paropt) -- (n2v);
     \path [line] (n2v.east) -| node [near end] {Model} ([xshift=-1.2em]tfl.south);
     
     \path [line] (prepper) -- (classifierTrainer);
