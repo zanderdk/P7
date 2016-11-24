@@ -12,14 +12,14 @@ We store Wikipedia pages as nodes with their title as a property, and links betw
 \begin{tabular}{@{}ll@{}}
 \toprule
 \textbf{Label}         & \textbf{Description}                            \\ \midrule
-Page                   & A Wikipedia article                             \\
-FeaturedPage           & A Wikipedia article marked as \emph{Featured}   \\
-GoodPage               & A Wikipedia article marked as \emph{Good}       \\
-RedirectPage           & A redirecting Wikipedia page                    \\ \midrule
-LINKS\_TO              & A link between two articles                     \\
-TRAINING\_DATA         & A link that can be used during training         \\
-TEST\_DATA             & A link that should only be using during testing \\
-REDIRECTS\_TO          & An edge describing a redirect                   \\ \bottomrule
+\mono{Page}                   & A Wikipedia article                             \\
+\mono{FeaturedPage}           & A Wikipedia article marked as \emph{Featured}   \\
+\mono{GoodPage}               & A Wikipedia article marked as \emph{Good}       \\
+\mono{RedirectPage}           & A redirecting Wikipedia page                    \\ \midrule
+\mono{LINKS\_TO}              & A link between two articles                     \\
+\mono{TRAINING\_DATA}         & A link that can be used during training         \\
+\mono{TEST\_DATA}             & A link that should only be using during testing \\
+\mono{REDIRECTS\_TO}          & An edge describing a redirect                   \\ \bottomrule
 \end{tabular}
 \caption[Labels used in the database]{Labels used in the database. Relationship labels are capitalized.}%
 \label{tab:db_labels}
@@ -37,15 +37,15 @@ From the pruned data we generate separate files containing pages, redirect pages
 \toprule
 \textbf{Label}         & \textbf{Count}     \\ \midrule
 \textit{Nodes (total)} & \textit{18172630}  \\
-Page                   & 11159213           \\
-FeaturedPage           & 4820               \\
-GoodPage               & 23741              \\
-RedirectPage           & 7013417            \\ \midrule
+\mono{Page}                   & 11159213           \\
+\mono{FeaturedPage}           & 4820               \\
+\mono{GoodPage}               & 23741              \\
+\mono{RedirectPage}           & 7013417            \\ \midrule
 \textit{Relationships (total)} & \textit{145878042} \\
-LINKS\_TO              & 138422339          \\
-TRAINING\_DATA         & 294857             \\
-TEST\_DATA             & 147429             \\
-REDIRECTS\_TO          & 7013417            \\ \bottomrule
+\mono{LINKS\_TO}              & 138422339          \\
+\mono{TRAINING\_DATA}         & 294857             \\
+\mono{TEST\_DATA}             & 147429             \\
+\mono{REDIRECTS\_TO}          & 7013417            \\ \bottomrule
 \end{tabular}
 \caption[Counts for the different labels]{Counts for the different labels. Note that some nodes have multiple labels.}%
 \label{tab:db_counts}
