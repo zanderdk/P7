@@ -19,4 +19,4 @@ for line in sys.stdin:
   featured_title = line.split()[0]
   #print(featured_title)
   to_title = getNotLinkedTitle(featured_title)
-  print(to_title)
+  print(featured_title + ' ' + to_title)
