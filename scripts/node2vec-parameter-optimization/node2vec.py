@@ -78,7 +78,7 @@ def write_to_disk_worker(p, q, l, directed, out_file, allNodes):
     while any_alive:
         try:
             walk = queue.get()
-            out_file.write(" ".join(walk) + "\n")
+            #out_file.write(" ".join(walk) + "\n")
         except Exception as e:
             print(e)
         any_alive = any([proc.is_alive() for proc in thrs])
