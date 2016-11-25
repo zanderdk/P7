@@ -91,6 +91,8 @@ def simulateWalks(r, nodes, p, q, l, directed, save, log):
     for x in thrs:
         x.start()
     
+    write_worker.start()
+
     # wait for write worker to finish
     write_worker.join()
 
