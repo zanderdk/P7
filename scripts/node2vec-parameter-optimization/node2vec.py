@@ -129,7 +129,7 @@ def findCommunities(model, G):
 # only run when not imported
 if __name__ == "__main__":
     # find all nodes in the graph
-    with open('all_nodes.pickle', 'r') as f:
+    with open('all_nodes.pickle', 'r', encoding="UTF-8") as f:
         nodes = pickle.load(f)
 
         log_file_path = sys.argv[1]
