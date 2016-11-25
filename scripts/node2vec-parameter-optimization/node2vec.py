@@ -84,6 +84,8 @@ def write_to_disk_worker(p, q, l, directed, out_file, allNodes):
             except Exception:
                 pass
         any_alive = any([proc.is_alive() for proc in thrs])
+
+    out_file.flush()
         
 def simulateWalks(r, nodes, p, q, l, directed, save, log):
     allNodes = []
