@@ -144,7 +144,7 @@ if __name__ == "__main__":
             pickle.dump(nodes, f)
 
             log_file_path = sys.argv[1]
-            with open(log_file_path, "rw", encoding="UTF-8") as log_file:
+            with open(log_file_path, "w", encoding="UTF-8") as log_file:
                 workers = multiprocessing.cpu_count()
                 model = makeNodeModel(0.5, 100000, 80, 1, 256, 80, True, workers, nodes, log_file)
             #model = Word2Vec.load_word2vec_format("./model.bin", binary=True)
