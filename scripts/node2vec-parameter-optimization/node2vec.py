@@ -108,11 +108,11 @@ def makeNodeModel(p, q, l, r, d, window, directed, workers, nodes, log_file, sav
     # this takes a long time, find something else
     #print("Total number of nodes in walks" + str(len(sum(walks, []))))
 
-    start = time.time()
-    model = Word2Vec(LineSentence(walks_file), size=d, window=window, min_count=0, sg=1, workers=workers, iter=1)
-    end = time.time()
-    print("Word2Vec call took: " + str(end - start) + " seconds")
-    return model
+    #start = time.time()
+    #model = Word2Vec(LineSentence(walks_file), size=d, window=window, min_count=0, sg=1, workers=workers, iter=1)
+    #end = time.time()
+    #print("Word2Vec call took: " + str(end - start) + " seconds")
+    #return model
 
 def findCommunities(model, G):
     X = [model[x] for x in G.nodes()]
@@ -138,7 +138,15 @@ if __name__ == "__main__":
             nodes = pickle.load(f)
     else:
         print("Could not find all_nodes.pickle file, so loading from the database...")
-        nodes = getAllNodes()
+
+        session = driver.session()
+        res = session.run("match (a:Page) return a.title")
+        arr = []
+        for x in res:
+            arr.append(x['a.title'])
+        session.close()
+
+        nodes = arr
         # write it to the pickle file
         with open('all_nodes.pickle', 'wb') as f:
             pickle.dump(nodes, f)
@@ -146,9 +154,9 @@ if __name__ == "__main__":
     log_file_path = sys.argv[1]
     with open(log_file_path, "r+", encoding="UTF-8") as log_file:
         workers = multiprocessing.cpu_count()
-        model = makeNodeModel(0.5, 100000, 80, 1, 256, 80, True, workers, nodes, log_file)
-    #model = Word2Vec.load_word2vec_format("./model.bin", binary=True)
-        model.save_word2vec_format("test.bin", binary=True)
+        #model = makeNodeModel(0.5, 100000, 80, 1, 256, 80, True, workers, nodes, log_file)
+        makeNodeModel(0.5, 100000, 80, 1, 256, 80, True, workers, nodes, log_file)
+        #model.save_word2vec_format("all_nodes.bin", binary=True)
 
 
 #G=nx.Graph()
