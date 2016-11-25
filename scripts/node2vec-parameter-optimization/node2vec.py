@@ -134,13 +134,13 @@ if __name__ == "__main__":
     # check if the list of all nodes has already been loaded. If yes, just use that one
     if os.path.isfile("all_nodes.pickle"):
         print("Found all_nodes.pickle file, so loading that...")
-        with open('all_nodes.pickle', 'r') as f:
+        with open('all_nodes.pickle', 'rb') as f:
             nodes = pickle.load(f)
     else:
         print("Could not find all_nodes.pickle file, so loading from the database...")
         nodes = getAllNodes()
         # write it to the pickle file
-        with open('all_nodes.pickle', 'w') as f:
+        with open('all_nodes.pickle', 'wb') as f:
             pickle.dump(nodes, f)
 
             log_file_path = sys.argv[1]
