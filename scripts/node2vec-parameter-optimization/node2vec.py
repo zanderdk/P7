@@ -8,6 +8,7 @@ from sklearn.cluster import KMeans
 from neo4j.v1 import exceptions
 import time
 import threading
+from multiprocessing import Process, Manager
 
 color_map = {
         0:'r',
@@ -41,41 +42,48 @@ def randomWalk(name, p, q, l, directed, session):
     except exceptions.ProtocolError:
         return randomWalk(name)
 
+def chunkIt(seq, num):
+    avg = len(seq) / float(num)
+    out = []
+    last = 0.0
+    while last < len(seq):
+        out.append(seq[int(last):int(last + avg)])
+        last += avg
+    return out
 
-walks = []
-allNodes = []
-
-def worker(p, q, l, directed):
-    global allNodes
-    global walks
-    node = None
+def worker(p, q, l, directed, lst, dic, pic, log):
     session = driver.session()
-    while allNodes:
-        try:
-            node = allNodes.pop()
-        except Exception:
-            return
+    walks = []
+    for node in lst:
         walk = randomWalk(node, p, q, l, directed, session).split()
         walks.append(walk)
     session.close()
+    dic[pic] = walks
 
 
-def simulateWalks(r, nodes, p, q, l, directed):
-    global allNodes
-    global walks
-    threads = 32
+def simulateWalks(r, nodes, p, q, l, directed, save, log):
+    allNodes = []
+    threads = 16
     for x in range(0, r):
         allNodes += nodes
-    thrs = [threading.Thread(target=worker, args=(p, q, l, directed)) for x in range(0, threads)]
+
+    data = chunkIt(nodes, threads)
+    manager = Manager()
+    returnDics = manager.dict()
+    thrs = [Process(target=worker, args=(p, q, l, directed, data[x], returnDics, x, log)) for x in range(0, threads)]
     for x in thrs:
         x.start()
     for x in thrs:
         x.join()
+    walks = []
+    for i in range(0, threads):
+        walks += returnDics[i]
+
     return walks
 
-def makeNodeModel(p, q, l, r, d, window, directed, workers, nodes, log_file):
+def makeNodeModel(p, q, l, r, d, window, directed, workers, nodes, log_file, save = False):
     start = time.time()
-    walks = simulateWalks(r, nodes, p, q, l, directed)
+    walks = simulateWalks(r, nodes, p, q, l, directed, save, log_file)
     end = time.time()
     print("Simulate walks took: " + str(end - start) + " seconds")
     log_file.write("Simulate walks took: " + str(end - start) + " seconds\n")
@@ -118,7 +126,7 @@ if __name__ == "__main__":
         nodes.append(x['a.title'])
     session.close()
     print("got nodes")
-    model = makeNodeModel(1, 0.0625, 80, 1, 128, 10, True, 16, nodes)
+    model = makeNodeModel(1, 0.0625, 80, 1, 128, 10, True, 8, nodes)
 #model = Word2Vec.load_word2vec_format("./model.bin", binary=True)
     model.save_word2vec_format("test.bin")
 
@@ -131,4 +139,5 @@ if __name__ == "__main__":
 
 #nx.draw_spring(G, node_color=[color_map[G.node[node]['cluster']] for node in G])
 #plt.show()
+
 

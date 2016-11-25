@@ -21,8 +21,8 @@ variable {
  name: "d"
  type: INT
  size: 1
- min: 10
- max: 128
+ min: 256
+ max: 256
 # options: "64"
  #options: "128"
 }
@@ -38,8 +38,8 @@ variable {
  name: "k"
  type: INT
  size: 1
- min: 10
- max: 35
+ min: 80
+ max: 80
 # options: "5"
 # options: "10"
 # options: "20"
@@ -50,8 +50,8 @@ variable {
  name: "l"
  type: INT
  size: 1
- min: 60
- max: 120
+ min: 800
+ max: 800
  #options: "80"
  #options: "120"
 }
