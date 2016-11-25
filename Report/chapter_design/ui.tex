@@ -1,1 +1,20 @@
 \section{User Interface}\label{sec:design_ui}
+
+\begin{table}[tbp]
+\centering
+\begin{tabular}{@{}lp{.75\textwidth}@{}}
+\toprule
+\textbf{Parameter} & \textbf{Description} \\
+\midrule
+$p$          &   Return parameter that controls the likelihood of immediately revisiting the previous node in the walk~\cite{node2vec}.   \\
+$q$          &   Controls to which degree the walk prefers to stay in the neighborhood or to explore outwards.   \\
+$d$          &   The dimensionality of the learned features.   \\
+$r$          &   The number of random walks per node.   \\
+$k$          &   The size of the context window.   \\
+$l$          &   The max length of the random walk.   \\
+Directed     &   Whether or not to consider edges as directed.   \\
+\bottomrule
+\end{tabular}
+\caption[Description of parameters in node2vec]{Description of the various parameters in node2vec}%
+\label{tab:node2vecparams}
+\end{table}
