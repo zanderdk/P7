@@ -43,7 +43,7 @@ def randomWalk(name, p, q, l, directed, session):
             val = x['walk']
         return val
     except exceptions.ProtocolError:
-        return randomWalk(name)
+        return randomWalk(name,p,q,l,directed, session)
 
 def chunkIt(seq, num):
     avg = len(seq) / float(num)
@@ -54,7 +54,7 @@ def chunkIt(seq, num):
         last += avg
     return out
 
-def worker(p, q, l, directed, lst, dic, pic, log):
+def worker(p, q, l, directed, lst, dic, pic):
     session = driver.session()
     walks = []
     for node in lst:
@@ -63,34 +63,35 @@ def worker(p, q, l, directed, lst, dic, pic, log):
     session.close()
     dic[pic] = walks
 
-def write_to_disk_worker(out_file, return_dict, process_list):
+def write_to_disk_worker(p, q, l, directed, out_file, allNodes):
+
+    threads = 16
+    data = chunkIt(allNodes, threads)
+    manager = Manager()
+    returnDics = manager.dict()
+    thrs = [Process(target=worker, args=(p, q, l, directed, data[x], returnDics, x)) for x in range(0, threads)]
+
+    for x in thrs:
+        x.start()
+
     any_alive = True
     while any_alive:
-        for key in return_dict.keys():
-            bucket = return_dict[key]
+        for key in returnDics.keys():
+            bucket = returnDics[key]
             try:
                 walk = bucket.pop()
                 out_file.write(" ".join(walk) + "\n")
             except Exception:
                 pass
-        any_alive = any([x.is_alive() for x in process_list])
+        any_alive = any([proc.is_alive() for proc in thrs])
         
 def simulateWalks(r, nodes, p, q, l, directed, save, log):
     allNodes = []
-    threads = 16
     for x in range(0, r):
         allNodes += nodes
 
-    data = chunkIt(nodes, threads)
-    manager = Manager()
-    returnDics = manager.dict()
-    thrs = [Process(target=worker, args=(p, q, l, directed, data[x], returnDics, x, log)) for x in range(0, threads)]
+    write_worker = Process(target=write_to_disk_worker, args=(p, q, l, directed, log, allNodes))
 
-    write_worker = Process(target=write_to_disk_worker, args=(log, returnDics, thrs))
-
-    for x in thrs:
-        x.start()
-    
     write_worker.start()
 
     # wait for write worker to finish
