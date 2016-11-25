@@ -2,6 +2,7 @@ import sys
 from random import shuffle
 from neo4j.v1 import GraphDatabase, basic_auth
 from gensim.models import Word2Vec
+from gensim.models.word2vec import LineSentence
 import networkx as nx
 from numpy.linalg import eig
 from sklearn.cluster import KMeans
@@ -9,6 +10,8 @@ from neo4j.v1 import exceptions
 import time
 import threading
 from multiprocessing import Process, Manager
+import multiprocessing
+import pickle
 
 color_map = {
         0:'r',
@@ -60,7 +63,18 @@ def worker(p, q, l, directed, lst, dic, pic, log):
     session.close()
     dic[pic] = walks
 
-
+def write_to_disk_worker(out_file, return_dict, process_list):
+    any_alive = True
+    while any_alive:
+        for key in return_dict.keys():
+            bucket = return_dict[key]
+            try:
+                walk = bucket.pop()
+                out_file.write(" ".join(walk) + "\n")
+            except Exception:
+                pass
+        any_alive = any([x.is_alive() for x in process_list])
+        
 def simulateWalks(r, nodes, p, q, l, directed, save, log):
     allNodes = []
     threads = 16
@@ -71,36 +85,30 @@ def simulateWalks(r, nodes, p, q, l, directed, save, log):
     manager = Manager()
     returnDics = manager.dict()
     thrs = [Process(target=worker, args=(p, q, l, directed, data[x], returnDics, x, log)) for x in range(0, threads)]
+
+    write_worker = Process(target=write_to_disk_worker, args=(log, returnDics, thrs))
+
     for x in thrs:
         x.start()
-    for x in thrs:
-        x.join()
-    walks = []
-    for i in range(0, threads):
-        walks += returnDics[i]
+    
+    # wait for write worker to finish
+    write_worker.join()
 
-    return walks
+    return log
 
 def makeNodeModel(p, q, l, r, d, window, directed, workers, nodes, log_file, save = False):
     start = time.time()
-    walks = simulateWalks(r, nodes, p, q, l, directed, save, log_file)
+    walks_file = simulateWalks(r, nodes, p, q, l, directed, save, log_file)
     end = time.time()
     print("Simulate walks took: " + str(end - start) + " seconds")
-    log_file.write("Simulate walks took: " + str(end - start) + " seconds\n")
-    log_file.flush()
-    shuffle(walks)
 
     # this takes a long time, find something else
     #print("Total number of nodes in walks" + str(len(sum(walks, []))))
 
     start = time.time()
-    log_file.write("Starting word2vec...\n")
-    log_file.flush()
-    model = Word2Vec(walks, size=d, window=window, min_count=0, sg=1, workers=workers, iter=1)
+    model = Word2Vec(LineSentence(walks_file), size=d, window=window, min_count=0, sg=1, workers=workers, iter=1)
     end = time.time()
     print("Word2Vec call took: " + str(end - start) + " seconds")
-    log_file.write("Word2Vec call took: " + str(end - start) + " seconds\n")
-    log_file.flush()
     return model
 
 def findCommunities(model, G):
@@ -119,16 +127,15 @@ def findCommunities(model, G):
 # only run when not imported
 if __name__ == "__main__":
     # find all nodes in the graph
-    session = driver.session()
-    res = session.run("match (a:Page) WHERE NOT exists(a.redirect) return a.title")
-    nodes = []
-    for x in res:
-        nodes.append(x['a.title'])
-    session.close()
-    print("got nodes")
-    model = makeNodeModel(1, 0.0625, 80, 1, 128, 10, True, 8, nodes)
-#model = Word2Vec.load_word2vec_format("./model.bin", binary=True)
-    model.save_word2vec_format("test.bin")
+    with open('all_nodes.pickle', 'r') as f:
+        nodes = pickle.load(f)
+
+        log_file_path = sys.argv[1]
+        with open(log_file_path, "w") as log_file:
+            workers = multiprocessing.cpu_count()
+            model = makeNodeModel(0.5, 100000, 80, 1, 256, 80, True, workers, nodes, log_file)
+        #model = Word2Vec.load_word2vec_format("./model.bin", binary=True)
+            model.save_word2vec_format("test.bin", binary=True)
 
 
 #G=nx.Graph()
