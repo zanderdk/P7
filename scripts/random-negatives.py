@@ -6,12 +6,6 @@ driver = GraphDatabase.driver("bolt://localhost:10001", auth=basic_auth("neo4j",
 session = driver.session()
 
 def getNotLinkedTitle(from_title):
-  #global counter
-  #if counter % 10000 == 0:
-  #  session.close()
-  #  session = driver.session()
-  #  print("flushed at " + str(counter))
-
   title = None 
   counter = 0
   while title == None and counter < 10:
