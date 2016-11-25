@@ -54,36 +54,33 @@ def chunkIt(seq, num):
         last += avg
     return out
 
-def worker(p, q, l, directed, lst, dic, pic):
+def worker(p, q, l, directed, lst, queue, pic):
     session = driver.session()
     walks = []
     for node in lst:
         walk = randomWalk(node, p, q, l, directed, session).split()
         walks.append(walk)
     session.close()
-    dic[pic] = walks
+    queue.put(walks)
 
 def write_to_disk_worker(p, q, l, directed, out_file, allNodes):
 
     threads = 16
     data = chunkIt(allNodes, threads)
     manager = Manager()
-    returnDics = manager.dict()
-    thrs = [Process(target=worker, args=(p, q, l, directed, data[x], returnDics, x)) for x in range(0, threads)]
+    queue = manager.Queue()
+    thrs = [Process(target=worker, args=(p, q, l, directed, data[x], queue, x)) for x in range(0, threads)]
 
     for x in thrs:
         x.start()
 
     any_alive = True
     while any_alive:
-        for key in returnDics.keys():
-            bucket = returnDics[key]
-            try:
-                walk = bucket.pop()
-                print(walk)
-                out_file.write(" ".join(walk) + "\n")
-            except Exception:
-                pass
+        try:
+            walk = queue.get()
+            out_file.write(" ".join(walk) + "\n")
+        except Exception:
+            pass
         any_alive = any([proc.is_alive() for proc in thrs])
 
     out_file.flush()
