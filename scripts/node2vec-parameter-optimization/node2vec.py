@@ -129,15 +129,25 @@ def findCommunities(model, G):
 # only run when not imported
 if __name__ == "__main__":
     # find all nodes in the graph
-    with open('all_nodes.pickle', 'r', encoding="UTF-8") as f:
-        nodes = pickle.load(f)
 
-        log_file_path = sys.argv[1]
-        with open(log_file_path, "rw", encoding="UTF-8") as log_file:
-            workers = multiprocessing.cpu_count()
-            model = makeNodeModel(0.5, 100000, 80, 1, 256, 80, True, workers, nodes, log_file)
-        #model = Word2Vec.load_word2vec_format("./model.bin", binary=True)
-            model.save_word2vec_format("test.bin", binary=True)
+    # check if the list of all nodes has already been loaded. If yes, just use that one
+    if os.path.isfile("all_nodes.pickle"):
+        print("Found all_nodes.pickle file, so loading that...")
+        with open('all_nodes.pickle', 'r') as f:
+            nodes = pickle.load(f)
+    else:
+        print("Could not find all_nodes.pickle file, so loading from the database...")
+        nodes = getAllNodes()
+        # write it to the pickle file
+        with open('all_nodes.pickle', 'w') as f:
+            pickle.dump(nodes, f)
+
+            log_file_path = sys.argv[1]
+            with open(log_file_path, "rw", encoding="UTF-8") as log_file:
+                workers = multiprocessing.cpu_count()
+                model = makeNodeModel(0.5, 100000, 80, 1, 256, 80, True, workers, nodes, log_file)
+            #model = Word2Vec.load_word2vec_format("./model.bin", binary=True)
+                model.save_word2vec_format("test.bin", binary=True)
 
 
 #G=nx.Graph()
