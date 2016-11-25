@@ -1,5 +1,37 @@
 \section{Feature Extractor}
-\todo{Maybe name this Feature Extraction?}
-The feature extractor receives a pair of articles and extracts features from them based on a node2vec model that has been trained ahead of time. The feature pair are represented as two vectors which is combined using an operation such as multiplication \todo{maybe write that we always multiply them, cite node2vec paper, that says that multiplication yielded best results in their experiments.} and used as input for the AI.
+The purpose of the feature extractor is to generate the feature representation for a candidate edge. Additionally, the feature extractor is used to generate training data for learning the classifier. It receives a pair of articles as input, then generates and outputs the feature representation of an edge between these two articles. As decided in \cref{sec:feature_generation} this feature representation should be generated using network embedding.
 
-\todo{Elaborate on node * node will give an edge representation, and whether or not * is used or another operator}
+
+
+%As decided in \cref{chap:analysis}, we will use feature learning to extract features from our graph. This section describes the feature learner component and its underlying feature learning algorithm. We also argue how to optimize the parameters of this algorithm.
+
+The feature learner component should be able to identify features suitable for classification problems. In our research on feature learning, node2vec~\cite{node2vec} appeared as a good candidate. It is designed to learn features based on the structure of graph networks. As we have been storing our Wikipedia data as a graph, node2vec seems fitting. node2vec is not the only solution to the problem domain of feature learning, but it is the approach we will use in this project.
+\todo{more about other possible feature learning techniques we could have used?}
+
+We want the feature learner to find feature vectors that can discriminate articles that should have a link, and articles that should not have a link. In the graph, we already have knowledge about existing links. How is the feature learner supposed to reason about articles that should have a link, but currently does not? The following describes an algorithm that solves this problem.
+
+\subsection{node2vec Overview}
+As described in the node2vec paper~\cite{node2vec}, the graph structure is explored using biased random walks. The biasness comes from two parameters $p$ and $q$, that guides the random walk. A high $p$ \todo{ikke en høj p værdi men hvis $p\ >\ max(1,q)$ } value approximates a depth-first search. A high $q$ \todo{samme fejl som sidste todo} value approximates the behavior of a breath-first search. The motivation of these tunable parameters is the observation that real-world networks can be structured in many ways. The randomness and the tunable $p$ and $q$ values accounts for different types of networks, by allowing control of the exploration method.
+
+The main idea of node2vec is to start a random walk at every node in the graph. This gives us a list of walks. We now want to find feature representations that maximizes the likelihood of preserving the network neighborhoods of the graph. These feature representations are essentially learned by observing each random walk as a sentence. Each node in the walk is a word in the sentence. This observation allows using word embedding algorithms on the sentences to map words to vectors of real numbers. The node2vec reference implementation uses word2vec for word embedding. Intuitively, if two nodes are close two each other in the sentence, they are related. A tunable parameter $k$ specifies this context window. \todo{expand on this context window}
+
+\todo{Vi kan måske lade det overview være sådan, og så forklare de enkelte dele for sig i en section. Jeg ved dog ikke hvor dybt vi skal gå. Vi skal ikke opfinde node2vec igen}
+
+\todo{afsnit om 2 noder -> 1 edge feature vector}
+
+\tikzsetnextfilename{n2vbowtie}
+\begin{figure}[tbp]%
+  \centering
+  \input{chapter_design/n2v_bowtie_fig}
+
+\caption[short desc]{Text}%
+\label{fig:n2v-figure}%
+\end{figure}
+
+
+\subsection{Hyperparameter Optimization}
+As described above, node2vec has many tuneable parameters. To find the parameters that give the best set of features, we do a hyperparameter optimization pass. We first specify the parameter space that should be searched in. As this is a large space, it is not feasible to exhaust all possibilities. We therefore use the tool Spearmint~\cite{snoek2012practical} which performs bayesian optimization by maximizing the expected improvement to efficiently search for parameters that will minimize an objective function. The objective function is $1 - \text{f-score}$, where the f-score is found by running a classifier on the node2vec model learned from the parameters. By keeping the classifier and its parameters constant, we can find the best set of parameters by finding the lowest objective function value.
+
+To speed each iteration of the optimization up, we limit the set of start vertices to featured articles. The hyperparameter optimization is entirely autonomous and the process should be able to find good p and q values on its own. This means that one can learn on graph networks without knowing the underlying graph structure.
+
+\todo{Vis bedste parametre, og kommenter på dem}
