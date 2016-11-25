@@ -12,6 +12,7 @@ import threading
 from multiprocessing import Process, Manager
 import multiprocessing
 import pickle
+import os
 
 color_map = {
         0:'r',
