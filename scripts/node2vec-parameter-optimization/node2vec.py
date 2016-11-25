@@ -80,6 +80,7 @@ def write_to_disk_worker(p, q, l, directed, out_file, allNodes):
             bucket = returnDics[key]
             try:
                 walk = bucket.pop()
+                print(walk)
                 out_file.write(" ".join(walk) + "\n")
             except Exception:
                 pass
