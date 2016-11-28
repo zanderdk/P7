@@ -43,9 +43,9 @@ We use two datasets provided by DBpedia~\cite{dbpedia} to populate the database;
 \mono{\emph{<source\_page> <type> <target\_page>}}
 \end{center}
 
-We prune non-article pages based on the namespace prefixes used on Wikipedia. This removes meta pages such as \enquote{Talk:} pages. We also remove redirects from the link dataset. Links are split into three groups randomly, according to the partitioning given in \cref{sec:machine_learning_task}. \todo{fix ref, lige nu kommer forklaring på splittet senere}
+We prune non-article pages based on the namespace prefixes used on Wikipedia. This removes meta pages such as \enquote{Talk:} pages. We also remove redirects from the link dataset as it both contains links and redirects. Links are split into three groups randomly, according to the partitioning given in \cref{sec:machine_learning_task}. \todo{fix ref, lige nu kommer forklaring på splittet senere}
 
-From the pruned data we generate separate files containing pages, redirect pages, partitioned links, and redirect links. \todo{Det virker mærkeligt at vi kan lave redirect links hvis vi lige har fjernet dem} The files are imported with the appropriate labels, and additional labels are added to \emph{featured} and \emph{good} articles.
+From the pruned data we generate separate files containing pages, redirect pages, partitioned links, and redirect links. The files are imported with the appropriate labels, and additional labels are added to \emph{featured} and \emph{good} articles.
 \todo{we removed some redirect nodes as well.} The counts for the different labels in the populated database is shown in \cref{tab:db_counts_nodes,tab:db_counts_edges}.
 
 \begin{table}[tbp]

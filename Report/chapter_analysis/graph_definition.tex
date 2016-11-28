@@ -21,6 +21,4 @@ a\ &\Rightarrow\ b \text{ meaning } (a,b) \in\ \Rightarrow,\\
 a\ &\not\Rightarrow\ b \text{ meaning } (a,b) \not\in\ \Rightarrow
 \end{align*}
 
-We can now formally define our graph as a directed graph $G = (V,E)$ where $V$ is the set of all Wikipedia articles, and $E\subset V \times V = \ \, \Rightarrow$.
-
-\todo{Nattiya: Cover weighted vs unweighted edges. Also we could mention that we could use clickstream as weight on edges, but we choose not to because...}
+We can now formally define our graph as an unweighted directed graph $G = (V,E)$ where $V$ is the set of all Wikipedia articles, and $E\subset V \times V = \ \, \Rightarrow$. While the graph could also be weighted with clickstream values as weights, we do not wish to explore this approach because of the aforementioned problem described in \cref{related_structural_analysis} with competitive links.
