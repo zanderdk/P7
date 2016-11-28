@@ -1,18 +1,17 @@
-\section{Feature Extractor}
-\todo{Finder den en feature representation for en given node, eller for en edge mellem to givne noder?}
+\section{Feature Extractor}\label{feature_extractor}
 The purpose of the feature extractor is to generate the feature representation for a candidate edge. Additionally, the feature extractor is used to generate training data for learning the classifier. It receives a pair of articles as input, then generates and outputs the feature representation of an edge between these two articles. As decided in \cref{sec:feature_generation} this feature representation should be generated using network embedding.
 
-We examined different network embedding methods, and \emph{node2vec} appeared as a suitable candidate, as it combined strengths from several other approaches, and scales well to large datasets~\cite{node2vec}.
+
 
 %As decided in \cref{chap:analysis}, we will use feature learning to extract features from our graph. This section describes the feature learner component and its underlying feature learning algorithm. We also argue how to optimize the parameters of this algorithm.
 
-%The feature learner component should be able to identify features suitable for classification problems. In our research on feature learning, node2vec~\cite{node2vec} appeared as a good candidate. It is designed to learn features based on the structure of graph networks. As we have been storing our Wikipedia data as a graph, node2vec seems fitting. node2vec is not the only solution to the problem domain of feature learning, but it is the approach we will use in this project.
+The feature learner component should be able to identify features suitable for classification problems. In our research on feature learning, node2vec~\cite{node2vec} appeared as a good candidate. It is designed to learn features based on the structure of graph networks. As we have been storing our Wikipedia data as a graph, node2vec seems fitting. node2vec is not the only solution to the problem domain of feature learning, but it is the approach we will use in this project.
 \todo{more about other possible feature learning techniques we could have used?}
 
-%We want the feature learner to find feature vectors that can discriminate articles that should have a link, and articles that should not have a link. In the graph, we already have knowledge about existing links. How is the feature learner supposed to reason about articles that should have a link, but currently does not? The following describes an algorithm that solves this problem.
+We want the feature learner to find feature vectors that can discriminate articles that should have a link, and articles that should not have a link. In the graph, we already have knowledge about existing links. How is the feature learner supposed to reason about articles that should have a link, but currently does not? The following describes an algorithm that solves this problem.
 
 \subsection{node2vec Overview}
-Node2vec is an algorithmic framework for semi-supervised learning of continuous feature representations for nodes in networks. As described in the node2vec paper~\cite{node2vec}, the graph structure is explored using biased random walks. The biasness comes from two parameters $p$ and $q$, that guides the random walk. A high $p$ \todo{ikke en høj p værdi men hvis $p\ >\ max(1,q)$ } value approximates a depth-first search. A high $q$ \todo{samme fejl som sidste todo} value approximates the behavior of a breath-first search. The motivation of these tunable parameters is the observation that real-world networks can be structured in many ways. The randomness and the tunable $p$ and $q$ values accounts for different types of networks, by allowing control of the exploration method.
+As described in the node2vec paper~\cite{node2vec}, the graph structure is explored using biased random walks. The biasness comes from two parameters $p$ and $q$, that guides the random walk. A high $p$ \todo{ikke en høj p værdi men hvis $p\ >\ max(1,q)$ } value approximates a depth-first search. A high $q$ \todo{samme fejl som sidste todo} value approximates the behavior of a breath-first search. The motivation of these tunable parameters is the observation that real-world networks can be structured in many ways. The randomness and the tunable $p$ and $q$ values accounts for different types of networks, by allowing control of the exploration method.
 
 The main idea of node2vec is to start a random walk at every node in the graph. This gives us a list of walks. We now want to find feature representations that maximizes the likelihood of preserving the network neighborhoods of the graph. These feature representations are essentially learned by observing each random walk as a sentence. Each node in the walk is a word in the sentence. This observation allows using word embedding algorithms on the sentences to map words to vectors of real numbers. The node2vec reference implementation uses word2vec for word embedding. Intuitively, if two nodes are close two each other in the sentence, they are related. A tunable parameter $k$ specifies this context window. \todo{expand on this context window}
 
@@ -31,27 +30,28 @@ The main idea of node2vec is to start a random walk at every node in the graph. 
 
 
 \subsection{Hyperparameter Optimization}
-As described above, node2vec has many tuneable parameters. To find the parameters that give the best set of features, we do a hyperparameter optimization pass. We first specify the parameter space that should be searched in. As this is a large space, it is not feasible to exhaust all possibilities. We therefore use the tool Spearmint~\cite{snoek2012practical} which performs bayesian optimization by maximizing the expected improvement to efficiently search for parameters that will minimize an objective function. The objective function is $1 - \text{f-score}$, where the f-score is found by running a classifier on the node2vec model learned from the parameters. By keeping the classifier and its parameters constant, we can find the best set of parameters by finding the lowest objective function value.
+As described above, node2vec has many tunable parameters. To find the parameters that give the best set of features, we do a hyperparameter optimization pass. We first specify the parameter space that should be searched in. As this is a large space, it is not feasible to exhaust all possibilities. We therefore use the tool Spearmint~\cite{snoek2012practical} which performs Bayesian optimization by maximizing the expected improvement to efficiently search for parameters that will minimize an objective function. The objective function is $1 - \text{f-score}$, where the f-score is found by running a classifier on the node2vec model learned from the parameters. By keeping the classifier and its parameters constant, we can find the best set of parameters by finding the lowest objective function value.
 
-To speed each iteration of the optimization up, we limit the set of start vertices to featured articles. The hyperparameter optimization is entirely autonomous and the process should be able to find good p and q values on its own. This means that one can learn on graph networks without knowing the underlying graph structure.
+To speed each iteration of the optimization up, we limit the set of start nodes to featured articles. The hyperparameter optimization is entirely autonomous and the process should be able to find good $p$ and $q$ values on its own. This means that one can learn on graph networks without knowing the underlying graph structure.
 
-\begin{table}[tbp]
+We start with a coarse search to find a good range for each parameter. This is done with large grained values for each parameter that would show local optima. After this, we search a second time with finer grained values to further refine the local optima. After completing 83 experiments, the objective function seemed to converge into minimization with the parameters seen in~\cref{tab:paramopt_goodvalues}.
+
+\begin{figure}%
 \centering
-\begin{tabular}{@{}lp{.75\textwidth}@{}}
+\begin{tabular}{cccccc}
 \toprule
-\textbf{Parameter} & \textbf{Description} \\
-\midrule
-$p$          &   Return parameter that controls the likelihood of immediately revisiting the previous node in the walk~\cite{node2vec}.   \\
-$q$          &   Controls to which degree the walk prefers to stay in the neighborhood or to explore outwards.   \\
-$d$          &   The dimensionality of the learned features.   \\
-$r$          &   The number of random walks per node.   \\
-$k$          &   The size of the context window.   \\
-$l$          &   The max length of the random walk.   \\
-Directed     &   Whether or not to consider edges as directed.   \\
+$p$  & $q$     & $d$ & $r$ & $k$ & $l$ \\
+0.50 & 100,000 & 256 & 1   & 80  & 80 \\
 \bottomrule
 \end{tabular}
-\caption[Description of parameters in node2vec]{Description of the various parameters in node2vec}%
-\label{tab:node2vecparams}
-\end{table}
+\caption[The found parameter values producing a minimization]{The found parameter values producing a minimization \todo{should we write k=120?}}%
+\label{tab:paramopt_goodvalues}%
+\end{figure}
 
-\todo{Vis bedste parametre, og kommenter på dem}
+
+Since the constant $\alpha = 1$ is higher that both $1/q$ and $1/p$ it is most likely that the walk will progress close within the neighborhood of a node. Additionally since $q$ is significantly higher than $p$ there is a higher probability that a walk will return to the previous node rather than exploring outwards, which further increases the likeliness of staying in the neighborhood.
+
+$r=1$ means that only a single random walk is performed from each node. This is might be sufficient because the other parameters already increases traversal of the neighboring nodes.
+
+The size of the context window $k$ did not have much impact on the objective function as long as it was around a value of 80. The maximum length of the walk $l=80$ \todo{comment on these values}.
+
