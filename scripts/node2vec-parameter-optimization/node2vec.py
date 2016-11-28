@@ -132,24 +132,24 @@ if __name__ == "__main__":
     # find all nodes in the graph
 
     # check if the list of all nodes has already been loaded. If yes, just use that one
-    #if os.path.isfile("all_nodes.pickle"):
-    #    print("Found all_nodes.pickle file, so loading that...")
-    #    with open('all_nodes.pickle', 'rb') as f:
-    #        nodes = pickle.load(f)
-    #else:
-    #    print("Could not find all_nodes.pickle file, so loading from the database...")
+    if os.path.isfile("all_nodes.pickle"):
+        print("Found all_nodes.pickle file, so loading that...")
+        with open('all_nodes.pickle', 'rb') as f:
+            nodes = pickle.load(f)
+    else:
+        print("Could not find all_nodes.pickle file, so loading from the database...")
 
-        #session = driver.session()
-        #res = session.run("match (a:Page) return a.title")
-        #arr = []
-        #for x in res:
-        #    arr.append(x['a.title'])
-        #session.close()
+        session = driver.session()
+        res = session.run("match (a:Page) return a.title")
+        arr = []
+        for x in res:
+            arr.append(x['a.title'])
+        session.close()
 
-        #nodes = arr
+        nodes = arr
         # write it to the pickle file
-        #with open('all_nodes.pickle', 'wb') as f:
-        #    pickle.dump(nodes, f)
+        with open('all_nodes.pickle', 'wb') as f:
+            pickle.dump(nodes, f)
 
     walks_file_path = sys.argv[1]
     with open(walks_file_path, "r", encoding="UTF-8") as walks_file:
@@ -157,18 +157,10 @@ if __name__ == "__main__":
         d = 256
         window = 80
         #model = makeNodeModel(0.5, 100000, 80, 1, 256, 80, True, workers, nodes, log_file)
-        model = Word2Vec(LineSentence(walks_file), size=d, window=window, min_count=0, sg=1, workers=workers, iter=1)
+        model = Word2Vec(size=d, window=window, min_count=0, sg=1, workers=workers, iter=1, sample=0.0)
+        model.build_vocab(nodes)
+        model.train(LineSentence(walks_file))
         #makeNodeModel(0.5, 100000, 80, 1, 256, 80, True, workers, nodes, log_file)
         model.save_word2vec_format("training_model.bin", binary=True)
-
-
-#G=nx.Graph()
-#G.add_nodes_from(allNodes)
-#G.add_edges_from(getAllEdges())
-
-#G = findCommunities(model, G)
-
-#nx.draw_spring(G, node_color=[color_map[G.node[node]['cluster']] for node in G])
-#plt.show()
 
 
