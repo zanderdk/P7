@@ -4,7 +4,9 @@ We let nodes in the graph represent Wikipedia articles, since we wish to examine
 
 Therefore our choice of \emph{good links} will be based on the guidelines. However, the guidelines do not translate easily into deterministic evaluation of connections. It may be possible to determine a set of content-based rules based on the guidelines, but it is not a task that we wish to undertake.
 
-Instead we choose to let our \emph{good links} be defined by example. Wikipedia maintains a collection of articles, that they deem outstanding examples of the highest article quality that the website can offer. These are called \emph{featured articles}~\cite{wiki-featured-articles}, and there are almost 5000 of these. The featured articles follow the \emph{Wikipedia Policies and Guidelines}~\cite{wiki-editor-guidelines}, which means that they follow the guidelines for linking. We therefore assume that they link appropriately. While we can not assume that every example of good linking is covered, the featured articles provide a sizable set of good examples.
+Instead we choose to let our \emph{good links} be defined by example. Wikipedia maintains a collection of articles, that they deem outstanding examples of the highest article quality that the website can offer. These are called \emph{featured articles}~\cite{wiki-featured-articles}, and there are almost 5000 of these. The featured articles follow the \emph{Wikipedia Policies and Guidelines}~\cite{wiki-editor-guidelines}, which means that they follow the guidelines for linking. We therefore assume that they link appropriately. Since featured articles are classified by experts, we gain some notion of expert domain knowledge by learning from these examples.
+
+While we can not assume that every example of good linking is covered, the featured articles provide a sizable set of good examples.
 
 Because of this we let our choice of \emph{good links} be links that share characteristics with the links in featured articles. These links are considered good, while all other links are of undetermined quality. Determining this quality, is the problem which we will attempt to solve using machine learning.
 
@@ -20,3 +22,5 @@ a\ &\not\Rightarrow\ b \text{ meaning } (a,b) \not\in\ \Rightarrow
 \end{align*}
 
 We can now formally define our graph as a directed graph $G = (V,E)$ where $V$ is the set of all Wikipedia articles, and $E\subset V \times V = \ \, \Rightarrow$.
+
+\todo{Nattiya: Cover weighted vs unweighted edges. Also we could mention that we could use clickstream as weight on edges, but we choose not to because...}
