@@ -152,7 +152,7 @@ if __name__ == "__main__":
         #    pickle.dump(nodes, f)
 
     walks_file_path = sys.argv[1]
-    with open(walks_file_path, "r", encoding="UTF-8") as log_file:
+    with open(walks_file_path, "r", encoding="UTF-8") as walks_file:
         workers = multiprocessing.cpu_count()
         d = 256
         window = 80
