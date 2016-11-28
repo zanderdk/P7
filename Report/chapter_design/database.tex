@@ -5,24 +5,35 @@ The first component in our main pipeline is the database, as shown in \cref{fig:
 \subsection{Database Design}\label{sec:db_design}
 We use the native graph database system Neo4j~\cite{neo4j} as it performs well for graph based queries, and supports extensions to the query language with Java plugins. The data model in Neo4j consists of nodes, relationships between nodes, and properties on these. Each node and relationship can be annotated with a number of labels used to distinguish between different node and relationship types when querying the database.
 
-We store Wikipedia pages as nodes with their title as a property, and links between pages as relationships. Labels are used to distinguish between different types of pages and links, as shown in \cref{tab:db_labels}.
+We store Wikipedia pages as nodes with their title as a property, and links between pages as relationships. Labels are used to distinguish between different types of pages and links, as shown in \cref{tab:db_labels}. \todo{new refs to new tables}
 
 \begin{table}[tbp]
-\centering
-\begin{tabular}{@{}ll@{}}
-\toprule
-\textbf{Label}         & \textbf{Description}                            \\ \midrule
-\mono{Page}                   & A Wikipedia article                             \\
-\mono{FeaturedPage}           & A Wikipedia article marked as \emph{Featured}   \\
-\mono{GoodPage}               & A Wikipedia article marked as \emph{Good}       \\
-\mono{RedirectPage}           & A redirecting Wikipedia page                    \\ \midrule
-\mono{LINKS\_TO}              & A link between two articles                     \\
-\mono{TRAINING\_DATA}         & A link that can be used during training         \\
-\mono{TEST\_DATA}             & A link that should only be using during testing \\
-\mono{REDIRECTS\_TO}          & An edge describing a redirect                   \\ \bottomrule
-\end{tabular}
-\caption[Labels used in the database]{Labels used in the database. Relationship labels are capitalized.}%
-\label{tab:db_labels}
+  \centering
+  
+    \begin{tabular}{@{}p{.20\textwidth}p{.60\textwidth}@{}}
+      \toprule
+      \textbf{Label}         & \textbf{Description}                            \\ \midrule
+      \mono{Page}                   & A Wikipedia article                             \\
+      \mono{FeaturedPage}           & A Wikipedia article marked as \emph{Featured}   \\
+      \mono{GoodPage}               & A Wikipedia article marked as \emph{Good}       \\
+      \mono{RedirectPage}           & A redirecting Wikipedia page                    \\
+      \bottomrule
+    \end{tabular}
+    \caption[Labels used in the database]{Labels used in the database. Relationship labels are capitalized.}%
+    \label{tab:db_labels_nodes}
+\end{table}
+\begin{table}[tbp]
+    \centering
+    \begin{tabular}{@{}p{.20\textwidth}p{.60\textwidth}@{}}
+      \toprule
+      \textbf{Label}         & \textbf{Description}                            \\ \midrule
+      \mono{LINKS\_TO}              & A link between two articles                     \\
+      \mono{TRAINING\_DATA}         & A link that can be used during training         \\
+      \mono{TEST\_DATA}             & A link that should only be using during testing \\
+      \mono{REDIRECTS\_TO}          & An edge describing a redirect                   \\ \bottomrule
+    \end{tabular}
+    \caption[Labels used in the database]{Labels used in the database. Relationship labels are capitalized. \todo{ny tekst}}%
+    \label{tab:db_labels_edges}
 \end{table}
 
 \subsection{Populating the Database}\label{sec:db_populate}
@@ -35,24 +46,39 @@ We use two datasets provided by DBpedia~\cite{dbpedia} to populate the database;
 We prune non-article pages based on the namespace prefixes used on Wikipedia. This removes meta pages such as \enquote{Talk:} pages. We also remove redirects from the link dataset. Links are split into three groups randomly, according to the partitioning given in \cref{sec:machine_learning_task}. \todo{fix ref, lige nu kommer forklaring på splittet senere}
 
 From the pruned data we generate separate files containing pages, redirect pages, partitioned links, and redirect links. \todo{Det virker mærkeligt at vi kan lave redirect links hvis vi lige har fjernet dem} The files are imported with the appropriate labels, and additional labels are added to \emph{featured} and \emph{good} articles.
-\todo{we removed some redirect nodes as well.} The counts for the different labels in the populated database is shown in \cref{tab:db_counts}.
+\todo{we removed some redirect nodes as well.} The counts for the different labels in the populated database is shown in \cref{tab:db_counts}. \todo{new refs to new tables}
 
 \begin{table}[tbp]
-\centering
-\begin{tabular}{@{}lr@{}}
-\toprule
-\textbf{Label}         & \textbf{Count}     \\ \midrule
-\textit{Nodes (total)} & \textit{\num{18172630}}  \\
-\mono{Page}                   & \num{11159213}           \\
-\mono{FeaturedPage}           & \num{4820}               \\
-\mono{GoodPage}               & \num{23741}              \\
-\mono{RedirectPage}           & \num{7013417}            \\ \midrule
-\textit{Relationships (total)} & \textit{\num{145878042}} \\
-\mono{LINKS\_TO}              & \num{138422339}          \\
-\mono{TRAINING\_DATA}         & \num{294857}             \\
-\mono{TEST\_DATA}             & \num{147429}             \\
-\mono{REDIRECTS\_TO}          & \num{7013417}            \\ \bottomrule
-\end{tabular}
-\caption[Counts for the different labels]{Counts for the different labels. Note that some nodes have multiple labels.}%
-\label{tab:db_counts}
+  \centering
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \begin{tabular}{@{}lr@{}}
+      \toprule
+      \textbf{Label}         & \textbf{Count}     \\
+      \midrule
+      \textit{Nodes (total)} & \textit{\num{18172630}}  \\
+      \mono{Page}                   & \num{11159213}           \\
+      \mono{FeaturedPage}           & \num{4820}               \\
+      \mono{GoodPage}               & \num{23741}              \\
+      \mono{RedirectPage}           & \num{7013417}            \\ \bottomrule
+    \end{tabular}
+    \caption[Counts for the different labels]{Counts for the different labels. Note that some nodes have multiple labels.}%
+    \label{tab:db_counts_nodes}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \begin{tabular}{@{}lr@{}}
+      \toprule
+      \textbf{Label}         & \textbf{Count}     \\ \midrule
+      \textit{Relationships (total)} & \textit{\num{145878042}} \\
+      \mono{LINKS\_TO}              & \num{138422339}          \\
+      \mono{TRAINING\_DATA}         & \num{294857}             \\
+      \mono{TEST\_DATA}             & \num{147429}             \\
+      \mono{REDIRECTS\_TO}          & \num{7013417}            \\ \bottomrule
+    \end{tabular}
+    \caption[Counts for the different labels]{Counts for the different labels. Note that some nodes have multiple labels.\todo{ny tekst}}%
+    \label{tab:db_counts_edges}
+  \end{minipage}
+
 \end{table}

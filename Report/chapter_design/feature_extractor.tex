@@ -33,7 +33,7 @@ The main idea of node2vec is to start a random walk at every node in the graph. 
 
 
 \subsection{Hyperparameter Optimization}
-As described above, node2vec has many tuneable parameters. To find the parameters that give the best set of features, we do a hyperparameter optimization pass. We first specify the parameter space that should be searched in. As this is a large space, it is not feasible to exhaust all possibilities. We therefore use the tool Spearmint~\cite{snoek2012practical} which performs bayesian optimization by maximizing the expected improvement to efficiently search for parameters that will minimize an objective function. The objective function is $1 - \text{f-score}$, where the f-score is found by running a classifier on the node2vec model learned from the parameters. By keeping the classifier and its parameters constant, we can find the best set of parameters by finding the lowest objective function value.
+As described above, node2vec has many tunable parameters. To find the parameters that give the best set of features, we do a hyperparameter optimization pass. We first specify the parameter space that should be searched in. As this is a large space, it is not feasible to exhaust all possibilities. We therefore use the tool Spearmint~\cite{snoek2012practical} which performs bayesian optimization by maximizing the expected improvement to efficiently search for parameters that will minimize an objective function. The objective function is $1 - \text{f-score}$, where the f-score is found by running a classifier on the node2vec model learned from the parameters. By keeping the classifier and its parameters constant, we can find the best set of parameters by finding the lowest objective function value.
 
 To speed each iteration of the optimization up, we limit the set of start vertices to featured articles. The hyperparameter optimization is entirely autonomous and the process should be able to find good p and q values on its own. This means that one can learn on graph networks without knowing the underlying graph structure.
 
@@ -56,4 +56,14 @@ Directed     &   Whether or not to consider edges as directed.   \\
 \label{tab:node2vecparams}
 \end{table}
 
-\todo{Vis bedste parametre, og kommenter på dem}
+After completing around 83 experiments the objective function was minimized by using the following parameters:
+
+$p=0.50, q=100000, d=256, r=1, k=80, l=80$
+\todo{should we write k=120?}
+
+Since the constant $\alpha = 1$ is higher that both $1/q$ and $1/p$ it is most likely that the walk will progress close within the neighborhood of a node. Additionally since $q$ is significantly higher than $p$ there is a higher probability that a walk will return to the previous node rather than exploring outwards, which further increases the likeliness of staying in the neighborhood.
+
+$r=1$ means that only a single random walk is performed from each node. This is might be sufficient because the other parameters already increases traversal of the neighboring nodes.
+
+The size of the context window $k$ did not have much impact on the objective function as long as it was around a value of 80. The maximum length of the walk $l=80$ \todo{comment on these values}.
+
