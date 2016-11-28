@@ -1,0 +1,38 @@
+\chapter{Related Work}\label{sec:related_work}
+
+Wikipedia is the subject of multiple papers and research projects~\cite{wiki-research-newsletter}, and so there is much material to gain inspiration from. But before we can draw inspiration from solutions to related problems, we must consider what our problem is. As with almost all problems, this problem can be perceived from multiple angles, and modeled by just as many. Here we will consider some general approaches.
+
+\section{Content-Based Analysis}\label{related_semantic_contextual}
+
+The linking problem can be seen as a problem of deducing content-based relations. Solutions to this problem usually involve a degree of textual analysis in order to determine whether a piece of text refers to another subject. There are usually two parts to this problem, which are each given a different level of importance, depending on the solution:
+
+\begin{description}
+  \item[Syntactic Recognition] This part finds syntactic references to some subject. One approach is to find keywords or shingles using an n-gram technique and matching those to subjects, as seen in~\cite{mihalcea2007wikify}.
+  
+  \item[Semantic Recognition] Compared to syntactic recognition, this part combats possible syntactic ambiguity. An example here is to determine whether the syntactic reference to a tree semantically refers to a data structure or a type of plant.
+\end{description}
+
+ One of many ways of approaching semantic recognition is to train a classifier, as seen in~\cite{milne2008learning}. Here they attempt to determine the semantic reference by training on metrics for commonness, relatedness, and context quality. In short, commonness is the probability distribution of references, relatedness is a measure of similarity between the referrer and the possible referenced subject, and context quality is a measure of whether a given term is usually linked. The example given in~\cite{milne2008learning} is the English grammatical article \enquote{the}, which is used often, but rarely links to the subject article.
+
+\section{Structural Analysis}\label{related_structural_analysis}
+
+Another way of viewing the linking problem is as missing structural connections in a dataset. With this approach, solutions attempt to analyze a structure in order to gain insight into possible patterns that influences linking. For Wikipedia the most relevant structure to consider is a graph structure with articles as vertices. There are different ways to model edges in the graph. Examples of this include~\cite{hyperlink-structure-using-logs} and~\cite{west2015mining} where the authors create edges from the navigation of Wikipedia's visitors, based on the belief that an optimal linking structure can be deduced from user behavior. Of course anything that can be considered a relation between any two articles, can be the basis for a set of edges, as explored in~\cite{lu2011link}.
+
+Regardless of the approach, a metric for a good link must be considered. We have already introduced Wikipedia guidelines on linking~\cite{wiki-editor-guidelines}, which is Wikipedia's own view of a good set of metrics. However, even though they clearly hold authority on the matter, there exists alternatives worth considering.
+
+In~\cite{hyperlink-structure-using-logs} and~\cite{west2015mining} they consider good links to be ones that are in use by visitors, and as such they rank their results based on server logs. This technique rates the amount of clicks a given link receives out of the total visitors on the page, based on the idea that the most useful links get the most clicks, and that all links should at least get some clicks. An argument in favor of this technique of finding a clickthrough rate is that every link can be objectively measured and compared. However, a drawback with the technique is that links become competitors, and will be optimized towards obtaining the most traffic individually, instead of being optimized as a part of a collective. \todo{Nattiya wants an elaboration on this}
+
+\section{Machine Learning}\label{related_machine_learning}
+
+An underlying method that occurs frequently in related work with a content-based approach is machine learning. In~\cite{mihalcea2007wikify} and~\cite{milne2008learning} they both employ a naive Bayes classifier, with the latter also testing different C4.5s and support vector machines, for the purpose of classifying matters of ambiguity and relatedness. Both~\cite{hyperlink-structure-using-logs} and~\cite{west2015mining} avoid the problem of ambiguity by employing the clickthrough rate as their primary measure, thus giving them fewer problems with ambiguity.
+
+However, an approach we have not seen as frequent, is the use of machine learning to improve Wikipedia links in a structural setting. But using machine learning for predicting links in graphs is not an unexplored concept, as~\cite{tang2015line} and~\cite{al2006link} are two examples of. Due to this, we wish to explore the idea of using machine learning techniques to improve linking on Wikipedia through a graph structure approach.
+
+
+%Wikify! Linking Documents to Encyclopedic Knowledge 		mihalcea2007wikify
+%Learning to Link with Wikipedia 							milne2008learning
+%Hyperlink Structure Using Server logs						hyperlink-structure-using-logs	
+%Human Navigation Traces									west2015mining 				
+%Prediction in Complex Networks 							lu2011link
+%Link Prediction using Supervised Learning 					al2006link
+%LINE algo													tang2015line
