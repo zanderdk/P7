@@ -9,10 +9,10 @@ The linking problem can be seen as a problem of deducing content-based relations
 \begin{description}
   \item[Syntactic Recognition] This part finds syntactic references to some subject. One approach is to find keywords or shingles using an n-gram technique and matching those to subjects, as seen in~\cite{mihalcea2007wikify}.
   
-  \item[Semantic Recognition] Compared to syntactic recognition, this part combats possible syntactic ambiguity. An example here is to determine whether the syntactic reference to a tree semantically refers to a data structure or a type of plant.
+  \item[Semantic Recognition] Compared to syntactic recognition, this part combats possible syntactic ambiguity. An example here is to determine whether the syntactic reference to a tree semantically refers to a data structure or a type of plant. One of many ways of approaching semantic recognition is to train a classifier, as seen in~\cite{milne2008learning}. Here they attempt to determine the semantic reference by training on metrics for commonness, relatedness, and context quality. In short, commonness is the probability distribution of references, relatedness is a measure of similarity between the referrer and the possible referenced subject, and context quality is a measure of whether a given term is usually linked. The example given in~\cite{milne2008learning} is the English grammatical article \enquote{the}, which is used often, but rarely links to the subject article.
 \end{description}
 
- One of many ways of approaching semantic recognition is to train a classifier, as seen in~\cite{milne2008learning}. Here they attempt to determine the semantic reference by training on metrics for commonness, relatedness, and context quality. In short, commonness is the probability distribution of references, relatedness is a measure of similarity between the referrer and the possible referenced subject, and context quality is a measure of whether a given term is usually linked. The example given in~\cite{milne2008learning} is the English grammatical article \enquote{the}, which is used often, but rarely links to the subject article.
+
 
 \section{Structural Analysis}\label{related_structural_analysis}
 
