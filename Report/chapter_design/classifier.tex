@@ -19,6 +19,34 @@ The positive training samples are pairs of linked articles as defined by $P$, wh
 Notice that all samples only establishes ground truth from featured articles. This is based on our assumption that featured articles are correctly linked.
 
 \subsection{Choosing a Classifier}\label{choosing_classifier}
-We choose a classifier by comparing a range of different algorithms. The test harness sequentially runs all the selected classification algorithms on the same dataset.
+We choose a classifier by comparing a range of different algorithms. To get a coarse estimate of which classifier seems the most appropirate, we create a test harness that will sequentially run all the classification algorithms on the same dataset. By comparing the results of the different classifiers we will choose one to further optimize.
+
+The estimation will be done using k-fold cross-validation.
 
 \todo{Indsæt tabel med classifier resultater, og kommenter resultater}
+
+
+% \begin{table}[tbp]
+% \centering
+% \begin{tabular}{@{}lp{.75\textwidth}@{}}
+% \toprule
+% \textbf{Classifier} & \textbf{Result} \\
+% \midrule
+% Baseline           &  DummyClassifier()                \\
+% Nearest Neighbors  &  KNeighborsClassifier(3)          \\
+% Linear SVM         &  SVC(kernel="linear", C=0.025)    \\
+% RBF SVM            &  SVC(gamma=2, C=1)                \\
+% Gaussian Process   &  GaussianProcessClassifier        \\
+% Decision Tree      &  DecisionTreeClassifier           \\
+% Random Forest      &  RandomForestClassifier           \\
+% Neural Net         &  MLPClassifier, KerasClassifier   \\
+% AdaBoost           &  AdaBoostClassifier()             \\
+% Naive Bayes        &  GaussianNB()                     \\
+% QDA                &  QuadraticDiscriminantAnalysis()  \\
+% \bottomrule
+% \end{tabular}
+% \caption[Classifiers]{Classifiers}%
+% \label{tab:classifiers}
+% \end{table}
+
+
