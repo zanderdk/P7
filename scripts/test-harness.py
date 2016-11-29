@@ -37,8 +37,8 @@ Z = []
 with open("node2vec-parameter-optimization/training_vectors.tsv", "rb") as fil:
     Z = pickle.load(fil)
 
-X = np.array([x for x,y in Z])
-Y = np.array([y for x,y in Z])
+X = np.array([x for x,y in Z][:10000])
+Y = np.array([y for x,y in Z][:10000])
 
 num_folds = 3
 seed = 7
