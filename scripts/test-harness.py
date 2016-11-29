@@ -3,6 +3,7 @@ import sys
 from gensim.models import Word2Vec
 import random
 import gc
+import time
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -68,7 +69,7 @@ def keras_baseline_model():
     # Compile model
     model.compile(loss='mean_squared_error', optimizer='adam')
     return model
-models.append(('Keras', KerasClassifier(build_fn=keras_baseline_model, nb_epoch=10, batch_size=1, verbose=1)))
+models.append(('Keras', KerasClassifier(build_fn=keras_baseline_model, nb_epoch=10, batch_size=100, verbose=1)))
 
 models.append(('Neural Net', MLPClassifier(alpha=1)))
 
@@ -80,13 +81,18 @@ results = []
 names = []
 scoring = 'f1'
 for name, model in models:
+    start = time.time()
     print("-------------------------" + name + "-----------------------------------")
     kfold = KFold(n_splits=num_folds, shuffle=True, random_state=seed)
     cv_results = cross_val_score(model, X, y=Y, cv=kfold, scoring=scoring)
+    end = time.time()
     results.append(cv_results)
     names.append(name)
     msg = "%s: %f (%f)" % (name, cv_results.mean(), cv_results.std())
     print(msg)
+    
+    
+    print(name + " took: " + str(end - start) + " seconds")
 
 fig = plt.figure()
 fig.suptitle('Algorithm Comparison')
