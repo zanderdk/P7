@@ -19,9 +19,11 @@ import itertools
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.metrics import f1_score
 import pickle
+import theano
+theano.config.openmp = True
 
 Z = []
-with open("/Users/simon/Documents/training_vectors.tsv", "rb") as fil:
+with open("node2vec-parameter-optimization/training_vectors.tsv", "rb") as fil:
     Z = pickle.load(fil)
 
 X = np.array([x for x,y in Z])
@@ -34,7 +36,7 @@ num_features = len(X[0])
 
 # prepare models
 models = []
-#models.append(('SGD', SGDClassifier(loss="hinge", penalty="l2")))
+models.append(('SGD', SGDClassifier(loss="hinge", penalty="l2")))
 # sanity check
 models.append(('Dummy', DummyClassifier("uniform")))
 def keras_baseline_model():
