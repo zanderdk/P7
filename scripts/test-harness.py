@@ -37,8 +37,8 @@ Z = []
 with open("node2vec-parameter-optimization/training_vectors.tsv", "rb") as fil:
     Z = pickle.load(fil)
 
-X = np.array([x for x,y in Z][:10000])
-Y = np.array([y for x,y in Z][:10000])
+X = np.array([x for x,y in Z][:10])
+Y = np.array([y for x,y in Z][:10])
 
 num_folds = 3
 seed = 7
@@ -68,7 +68,7 @@ def keras_baseline_model():
     # Compile model
     model.compile(loss='mean_squared_error', optimizer='adam')
     return model
-models.append(('Keras', KerasClassifier(build_fn=keras_baseline_model, nb_epoch=10, batch_size=100, verbose=1)))
+models.append(('Keras', KerasClassifier(build_fn=keras_baseline_model, nb_epoch=10, batch_size=1, verbose=1)))
 
 models.append(('Neural Net', MLPClassifier(alpha=1)))
 
