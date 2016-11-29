@@ -3,6 +3,10 @@ import sys
 from gensim.models import Word2Vec
 import random
 import gc
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+
 from sklearn.linear_model import SGDClassifier
 from sklearn.dummy import DummyClassifier
 from sklearn.svm import LinearSVC
@@ -19,8 +23,15 @@ import itertools
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.metrics import f1_score
 import pickle
-import theano
-theano.config.openmp = True
+from sklearn.neural_network import MLPClassifier
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.svm import SVC
+from sklearn.gaussian_process import GaussianProcessClassifier
+from sklearn.gaussian_process.kernels import RBF
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
+from sklearn.naive_bayes import GaussianNB
+from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
 
 Z = []
 with open("node2vec-parameter-optimization/training_vectors.tsv", "rb") as fil:
@@ -36,9 +47,19 @@ num_features = len(X[0])
 
 # prepare models
 models = []
-models.append(('SGD', SGDClassifier(loss="hinge", penalty="l2")))
 # sanity check
 models.append(('Dummy', DummyClassifier("uniform")))
+models.append(('SGD', SGDClassifier(loss="hinge", penalty="l2")))
+models.append(('Nearest Neighbors', KNeighborsClassifier(3)))
+models.append(('Linear SVM', SVC(kernel="linear", C=0.025)))
+models.append(('RBF SVM', SVC(gamma=2, C=1)))
+models.append(('Gaussian Process', GaussianProcessClassifier(1.0 * RBF(1.0), warm_start=True)))
+models.append(('Decision Tree', DecisionTreeClassifier(max_depth=5)))
+models.append(('Random Forest', RandomForestClassifier(max_depth=5, n_estimators=10, max_features=1)))
+models.append(('AdaBoost', AdaBoostClassifier()))
+models.append(('Naive Bayes', GaussianNB()))
+models.append(('QDA', QuadraticDiscriminantAnalysis()))
+
 def keras_baseline_model():
     # create model
     model = Sequential()
@@ -48,6 +69,8 @@ def keras_baseline_model():
     model.compile(loss='mean_squared_error', optimizer='adam')
     return model
 models.append(('Keras', KerasClassifier(build_fn=keras_baseline_model, nb_epoch=10, batch_size=100, verbose=1)))
+
+models.append(('Neural Net', MLPClassifier(alpha=1)))
 
 #models.append(('Gradient Boosting', GradientBoostingClassifier()))
 
@@ -64,3 +87,10 @@ for name, model in models:
     names.append(name)
     msg = "%s: %f (%f)" % (name, cv_results.mean(), cv_results.std())
     print(msg)
+
+fig = plt.figure()
+fig.suptitle('Algorithm Comparison')
+ax = fig.add_subplot(111)
+plt.boxplot(results)
+ax.set_xticklabels(names)
+fig.savefig("algorithm-comparison.png")
