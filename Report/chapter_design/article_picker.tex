@@ -1,11 +1,37 @@
 \section{Candidate Filtering}
-The candidate filtering component performs the filtering step of the \emph{filtering and refinement} process. It selects candidate article pairs which later are refined in the classifier component.
+The candidate filtering component performs the filtering step of the \emph{filtering and refinement} process. It does this by selecting the most promising candidate article pairs which are later refined in the classifier component. The reason for doing this filtering step, is that the number of possible article pair combinations is about $2.5 \times 10^{13}$ as explained in \cref{sec:design_overview}, and that the majority of these will not require a link.
 
-The article pairs are selected based on a heuristic policy. We use clickstream~\cite{wiki-clickstream} data built from Wikipedia server logs, and as such it is based on user behavior. The data contains the number of clicks from an article $a$ to an article $b$ in the time frame where the data was collected, as well as the method of navigation of these clicks. One of these methods of navigation is a \emph{teleportation}, which means the user ended up on article $b$ after having viewed article $a$, but not following a link. \todo{Give good explanations of how the clicks then might have happened}
+The article pairs are selected based on a heuristic policy. The policy can be a combination of multiple approaches, as long as they provide an ordered stream of candidate pairs. A perfect policy would provide a list of pairs, where the all articles with missing links would occur before any articles without missing links. While such a policy would be quite helpful, it is rather unrealistic and only serves as an example. As the policy is a heuristic, it only needs to perform reasonably well, which is why we do not employ any systematic evaluation of possible policies, but our choice is based on our own intuition. As long as the classifier suggests links at a sufficient rate, this way of choosing a policy will be acceptable.
 
-By selecting article pairs without an existing link and that users have navigated between by teleportation, the articles might be related and inserting a link between the articles might improve navigability.
+Our choice of policy is a combination of two approaches. One is based on a clickstream dataset and the other on a simple syntactic analysis.
 
-\todo{Show code and implementation}
+\subsection{Clickstream Approach}
+
+The clickstream approach is inspired by related work that uses server logs to predict missing links~\cite{hyperlink-structure-using-logs}. We use clickstream~\cite{wiki-clickstream} data built from Wikipedia server logs, and as such it is based on user behavior. A clickstream data source is a list of requests that Wikipedia received within a given timespan. A request holds information on a referrer and a resource, as well as a count of the occurrence of this request and a request type. The request type can be \emph{link}, \emph{external}, or \emph{other}. For this approach, the type \emph{other} is the only relevant one. A request of type \emph{other} means that the referrer and resource where both articles, but that referrer does not link to the resource. One source of this type of requests could be searches.
+
+The heuristic for this approach, is that some of these requests will indicate that a user, after reading one article, was prompted to read another article, and that they did not have the possibility of following a link. While there are plenty of cases where this does not constitute a missing link, chances are that some of the requests are examples of this.
+
+The approach works by going through the clickstream data, picking out requests of type \emph{other}, and ranking them by their number of occurrences.
+
+Preliminary results with this approach have been promising, but the downside is that it only produces a limited amount of candidate pairs. Therefore we choose to utilize this approach, but we complement it with another approach to get a bigger set of candidate pairs.
+
+\subsection{N-gram Approach}
+
+For the complementary approach we took inspiration from~\cite{milne2008learning}, where they employ a syntactic analysis to find article pairs. The inspiration lies within their use of n-grams to find article pairs. For each article we create a set of shingles from an n-gram search. We then search through the titles of Wikipedia articles, for ones that are contained in at least one of the shingles. What this gives us is a set of articles, that are mentioned in each article. This will give us a large amount of article pairs.
+
+However this is a rather crude approach, and a significant amount of the candidate pairs can easily be disregarded. Consider the Wikipedia article on the word \enquote{The}. With the n-gram approach, close to all articles would be in a candidate pair with this article, where only a fractional amount would be worth considering.
+
+A way to combat this would be to order the candidate pairs according to the inverse frequency of target articles. The intuition here is that articles, which are rarely mentioned across all articles, will be more significant when they then are mentioned. It is likely that a frequency threshold would be required, since the advantages of the approach becomes negligible at some significantly high frequency.
+
+Another considerable problem with the approach is that while it does provide many candidate pairs, it can not be guaranteed to order all possible pairs, and therefore it will not completely cover the complement of the clickstream approach. However since a preliminary test with a 5-gram search through featured articles gave us well over a million candidate pairs, this approach be sufficient for our usage, and further scaling will not be implemented in this project.
+
+
+
+%from an article $a$ to an article $b$ in the time frame where the data was collected, as well as the method of navigation of these clicks. One of these methods of navigation is a \emph{teleportation}, which means the user ended up on article $b$ after having viewed article $a$, but not following a link. \todo{Give good explanations of how the clicks then might have happened}
+
+%By selecting article pairs without an existing link and that users have navigated between by teleportation, the articles might be related and inserting a link between the articles might improve navigability.
+
+%\todo{Show code and implementation}
 
 %\todo{write if we end up doing this}
 %Another policy to consider is selecting article pairs based on text content. Specifically using n-grams of words (shingles) to find text in the article that references titles of other articles without already linking to it. 

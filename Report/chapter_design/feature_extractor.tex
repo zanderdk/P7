@@ -1,4 +1,4 @@
-\section{Feature Extractor}
+\section{Feature Extractor}\label{feature_extractor}
 The purpose of the feature extractor is to generate the feature representation for a candidate edge. Additionally, the feature extractor is used to generate training data for learning the classifier. It receives a pair of articles as input, then generates and outputs the feature representation of an edge between these two articles. As decided in \cref{sec:feature_generation} this feature representation should be generated using network embedding.
 
 
@@ -13,7 +13,7 @@ We want the feature learner to find feature vectors that can discriminate articl
 \subsection{node2vec Overview}
 As described in the node2vec paper~\cite{node2vec}, the graph structure is explored using biased random walks. The biasness comes from two parameters $p$ and $q$, that guides the random walk. A high $p$ \todo{ikke en høj p værdi men hvis $p\ >\ max(1,q)$ } value approximates a depth-first search. A high $q$ \todo{samme fejl som sidste todo} value approximates the behavior of a breath-first search. The motivation of these tunable parameters is the observation that real-world networks can be structured in many ways. The randomness and the tunable $p$ and $q$ values accounts for different types of networks, by allowing control of the exploration method.
 
-The main idea of node2vec is to start a random walk at every node in the graph. This gives us a list of walks. We now want to find feature representations that maximizes the likelihood of preserving the network neighborhoods of the graph. These feature representations are essentially learned by observing each random walk as a sentence. Each node in the walk is a word in the sentence. This observation allows using word embedding algorithms on the sentences to map words to vectors of real numbers. The node2vec reference implementation uses word2vec for word embedding. Intuitively, if two nodes are close two each other in the sentence, they are related. A tunable parameter $k$ specifies this context window. \todo{expand on this context window}
+The main idea of node2vec is to start a random walk at every node in the graph. This gives us a list of walks. We now want to find feature representations that maximizes the likelihood of preserving the network neighborhoods of the graph. These feature representations are essentially learned by observing each random walk as a sentence. Each node in the walk is a word in the sentence. This observation allows using word embedding algorithms on the sentences to map words to vectors of real numbers. The node2vec reference implementation uses word2vec for word embedding. Intuitively, if two nodes are close two each other in the sentence, they are related. A tunable parameter $k$ specifies a context window that defines the maximum distance between words in a sentence. In node2vec this is used for sampling neighborhoods of nodes.
 
 \todo{Vi kan måske lade det overview være sådan, og så forklare de enkelte dele for sig i en section. Jeg ved dog ikke hvor dybt vi skal gå. Vi skal ikke opfinde node2vec igen}
 
@@ -30,14 +30,24 @@ The main idea of node2vec is to start a random walk at every node in the graph. 
 
 
 \subsection{Hyperparameter Optimization}
-As described above, node2vec has many tunable parameters. To find the parameters that give the best set of features, we do a hyperparameter optimization pass. We first specify the parameter space that should be searched in. As this is a large space, it is not feasible to exhaust all possibilities. We therefore use the tool Spearmint~\cite{snoek2012practical} which performs bayesian optimization by maximizing the expected improvement to efficiently search for parameters that will minimize an objective function. The objective function is $1 - \text{f-score}$, where the f-score is found by running a classifier on the node2vec model learned from the parameters. By keeping the classifier and its parameters constant, we can find the best set of parameters by finding the lowest objective function value.
+As described above, node2vec has many tunable parameters. To find the parameters that give the best set of features, we do a hyperparameter optimization pass. We first specify the parameter space that should be searched in. As this is a large space, it is not feasible to exhaust all possibilities. We therefore use the tool Spearmint~\cite{snoek2012practical} which performs Bayesian optimization by maximizing the expected improvement to efficiently search for parameters that will minimize an objective function. The objective function is $1 - \text{f-score}$, where the f-score is found by running a classifier on the node2vec model learned from the parameters. By keeping the classifier and its parameters constant, we can find the best set of parameters by finding the lowest objective function value.
 
-To speed each iteration of the optimization up, we limit the set of start vertices to featured articles. The hyperparameter optimization is entirely autonomous and the process should be able to find good p and q values on its own. This means that one can learn on graph networks without knowing the underlying graph structure.
+To speed each iteration of the optimization up, we limit the set of start nodes to featured articles. The hyperparameter optimization is entirely autonomous and the process should be able to find good $p$ and $q$ values on its own. This means that one can learn on graph networks without knowing the underlying graph structure.
 
-After completing around 83 experiments the objective function was minimized by using the following parameters:
+We start with a coarse search to find a good range for each parameter. This is done with large grained values for each parameter that would show local optima. After this, we search a second time with finer grained values to further refine the local optima. After completing 83 experiments, the objective function seemed to converge \todo{Does it converge?} into minimization with the parameters seen in~\cref{tab:paramopt_goodvalues}.
 
-$p=0.50, q=100000, d=256, r=1, k=80, l=80$
-\todo{should we write k=120?}
+\begin{figure}%
+\centering
+\begin{tabular}{cccccc}
+\toprule
+$p$  & $q$     & $d$ & $r$ & $k$ & $l$ \\
+0.50 & 100,000 & 256 & 1   & 80  & 80 \\
+\bottomrule
+\end{tabular}
+\caption[The found parameter values producing a minimization]{The found parameter values producing a minimization \todo{should we write k=120?}}%
+\label{tab:paramopt_goodvalues}%
+\end{figure}
+
 
 Since the constant $\alpha = 1$ is higher that both $1/q$ and $1/p$ it is most likely that the walk will progress close within the neighborhood of a node. Additionally since $q$ is significantly higher than $p$ there is a higher probability that a walk will return to the previous node rather than exploring outwards, which further increases the likeliness of staying in the neighborhood.
 
