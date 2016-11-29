@@ -50,7 +50,7 @@ models = []
 # sanity check
 models.append(('Dummy', DummyClassifier("uniform")))
 models.append(('SGD', SGDClassifier(loss="hinge", penalty="l2")))
-models.append(('Nearest Neighbors', KNeighborsClassifier(3)))
+#models.append(('Nearest Neighbors', KNeighborsClassifier(3)))
 models.append(('Linear SVM', SVC(kernel="linear", C=0.025)))
 models.append(('RBF SVM', SVC(gamma=2, C=1)))
 models.append(('Gaussian Process', GaussianProcessClassifier(1.0 * RBF(1.0), warm_start=True)))
