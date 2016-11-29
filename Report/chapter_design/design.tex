@@ -1,5 +1,5 @@
 \chapter{Design \& Implementation}\label{chap:design}
-In this chapter we will discuss the development of the solution that was outlined in the previous chapter. The system will be explained in a top-down fashion, and as such we start of with an overview of the entire system. Afterwards, the specifics of each component will be explained in their own seperate sections.
+In this chapter we will discuss the development of the solution that was outlined in the previous chapter. The system will be explained in a top-down fashion, and as such we start off with an overview of the entire system. Afterwards, the specifics of each component will be explained in their own seperate sections.
 
 \section{Overview}\label{sec:design_overview}
 This system is built on an pipeline architecture, where the output of each primary component is fed into the next. Since the potential input size of testing all possible combinations of articles for missing links is roughly 5 million articles squared, which totals to $2.5 \times 10^{13}$, we have employed a \emph{filtering and refinement} strategy. The filtering step chooses the more promising candidates based on a given policy, and the refinement step does the actual evaluation of the candidates.
