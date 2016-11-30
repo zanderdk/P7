@@ -91,7 +91,7 @@ def test_func(model, name, X, Y, seed, num_folds):
         kfold = KFold(n_splits=num_folds, shuffle=True, random_state=seed)
         cv_results = cross_val_score(model, X, y=Y, cv=kfold, scoring=scoring)
         end = time.time()
-        result = (end - start, cv_results)
+        result = (end - start, name, cv_results)
         pickle.dump(result, cv_results_file)
 
 all_processes = [Process(target=test_func, args=(model, name, X, Y, seed, num_folds)) for name, model in models]
@@ -99,10 +99,3 @@ all_processes = [Process(target=test_func, args=(model, name, X, Y, seed, num_fo
 for process in all_processes:
     process.start()
     process.join()
-
-#fig = plt.figure()
-#fig.suptitle('Algorithm Comparison')
-#ax = fig.add_subplot(111)
-#plt.boxplot(results)
-#ax.set_xticklabels(names)
-#fig.savefig("algorithm-comparison.png")
