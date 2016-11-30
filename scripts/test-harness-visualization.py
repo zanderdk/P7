@@ -9,9 +9,10 @@ names = []
 
 for file in os.listdir("."):
     if file.endswith("cv_results"):
-        time, name, cv_result = pickle.load(file)
-        results.append(cv_result)
-        names.append(name)
+        with open(file, "rb") as file_open:
+            time, name, cv_result = pickle.load(file_open)
+            results.append(cv_result)
+            names.append(name)
 
 fig = plt.figure()
 fig.suptitle('Algorithm Comparison')
