@@ -1,11 +1,10 @@
-\section{Classifier}
+\section{Classifier}\label{sec:classifier}
 As described in \cref{sec:machine_learning_task} we want to solve a supervised binary classification problem. This component is solving this problem. That is, given a classifier model and a vector of features representing a pair of articles A and B, it should decide whether a link should exist between article A and B.
 
-\subsection{Training Data}
+\subsection{Training Data}\label{sec:training_data}
 Like all supervised learning, the classifier model is learned through training data.
 
-As described in \ref{sec:choice_of_graph} we will be using featured articles and what they link to train the classifier. This data is split into 20\% test data and 80\% training data. A random distribution of 50\% of the edges, representing links, is removed from the training data.
-
+As described in \ref{sec:choice_of_graph} we will be using featured articles and what they link to train the classifier. This data is split into 20\% test data and 80\% training data. This is done to preserve link structure while still having a reasonable amount to test on. To train the classifier to find links that are not already present, a random distribution of 50\% of the edges is removed from the training data.
 %One sample of training data has the form \mono{<source article> <target article> <label>}. The source and targeet article are titles of pairs of articles. The label on the training samples can either be positive (link) or negative (do not link).
 
 As described in \cref{sec:machine_learning_task} we use a set of positive labeled training pairs $P$ and set of negative labeled training pairs $N$.
@@ -22,6 +21,8 @@ Notice that all samples only establishes ground truth from featured articles. Th
 We choose a classifier by comparing a range of different algorithms. To get a coarse estimate of which classifier seems the most appropirate for our purpose, we create a test harness that will sequentially run all the classification algorithms on the same dataset. By comparing the results of the different classifiers, we will choose one to further optimize.
 
 The estimation will be based on 3-fold cross-validation, in which each sample is split into 3 equally sized subsamples. F-scores are computed with each subsample used once as validation data and the remaining as training data. The average of the scores is the classifiers estimated accuracy.
+
+The examined algorithms was chosen mostly based on classifiers available in the scikit-learn python library. \todo{better reasons?}
 
 \todo{Indsæt tabel med classifier resultater, og kommenter resultater}
 
@@ -48,5 +49,4 @@ The estimation will be based on 3-fold cross-validation, in which each sample is
 % \caption[Classifiers]{Classifiers}%
 % \label{tab:classifiers}
 % \end{table}
-
 
