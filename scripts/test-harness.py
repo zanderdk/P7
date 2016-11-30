@@ -44,6 +44,9 @@ with open("node2vec-parameter-optimization/training_vectors.tsv", "rb") as fil:
 X = np.array([x for x,y in Z])
 Y = np.array([y for x,y in Z])
 
+print("positivies:" + str(len([x for x in Y if x == 1])))
+print("negatives:" + str(len([x for x in Y if x == 0])))
+
 num_folds = 3
 seed = 7
 
@@ -57,7 +60,7 @@ models.append(('SGD', SGDClassifier(loss="hinge", penalty="l2")))
 #models.append(('Nearest Neighbors', KNeighborsClassifier(3)))
 models.append(('Linear_SVM', SVC(kernel="linear", C=0.025)))
 models.append(('RBF_SVM', SVC(gamma=2, C=1)))
-models.append(('Gaussian_Process', GaussianProcessClassifier(1.0 * RBF(1.0), warm_start=True)))
+#models.append(('Gaussian_Process', GaussianProcessClassifier(1.0 * RBF(1.0), warm_start=True)))
 models.append(('Decision_Tree', DecisionTreeClassifier(max_depth=5)))
 models.append(('Random_Forest', RandomForestClassifier(max_depth=5, n_estimators=10, max_features=1)))
 models.append(('AdaBoost', AdaBoostClassifier()))
@@ -98,4 +101,6 @@ all_processes = [Process(target=test_func, args=(model, name, X, Y, seed, num_fo
 
 for process in all_processes:
     process.start()
+
+for process in all_processes:
     process.join()
