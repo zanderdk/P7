@@ -33,7 +33,7 @@ As described above, node2vec has many tunable parameters. To find the parameters
 
 To speed each iteration of the optimization up, we limit the set of start nodes to featured articles. The hyperparameter optimization is entirely autonomous and the process should be able to find good $p$ and $q$ values on its own. This means that one can learn on graph networks without knowing the underlying graph structure.
 
-We start with a coarse search to find a good range for each parameter. This is done with large grained values for each parameter that would show local optima. After this, we search a second time with finer grained values to further refine the local optima. After completing 83 experiments, the objective function seemed to converge \todo{Does it converge?} into minimization with the parameters seen in~\cref{tab:paramopt_goodvalues}.
+We start with a coarse search to find a good range for each parameter. This is done with large grained values for each parameter that would show local optima. After this, we search a second time with finer grained values to further refine the local optima. After completing 83 experiments, the objective function seemed to have converged by minimizing it with the parameters seen in~\cref{tab:paramopt_goodvalues}.
 
 \begin{figure}%
 \centering
