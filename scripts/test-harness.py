@@ -34,6 +34,9 @@ from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
 
+from multiprocessing import Process, Manager
+import multiprocessing
+
 Z = []
 with open("node2vec-parameter-optimization/training_vectors.tsv", "rb") as fil:
     Z = pickle.load(fil)
@@ -52,13 +55,13 @@ models = []
 models.append(('Dummy', DummyClassifier("uniform")))
 models.append(('SGD', SGDClassifier(loss="hinge", penalty="l2")))
 #models.append(('Nearest Neighbors', KNeighborsClassifier(3)))
-models.append(('Linear SVM', SVC(kernel="linear", C=0.025)))
-models.append(('RBF SVM', SVC(gamma=2, C=1)))
-models.append(('Gaussian Process', GaussianProcessClassifier(1.0 * RBF(1.0), warm_start=True)))
-models.append(('Decision Tree', DecisionTreeClassifier(max_depth=5)))
-models.append(('Random Forest', RandomForestClassifier(max_depth=5, n_estimators=10, max_features=1)))
+models.append(('Linear_SVM', SVC(kernel="linear", C=0.025)))
+models.append(('RBF_SVM', SVC(gamma=2, C=1)))
+models.append(('Gaussian_Process', GaussianProcessClassifier(1.0 * RBF(1.0), warm_start=True)))
+models.append(('Decision_Tree', DecisionTreeClassifier(max_depth=5)))
+models.append(('Random_Forest', RandomForestClassifier(max_depth=5, n_estimators=10, max_features=1)))
 models.append(('AdaBoost', AdaBoostClassifier()))
-models.append(('Naive Bayes', GaussianNB()))
+models.append(('Naive_Bayes', GaussianNB()))
 models.append(('QDA', QuadraticDiscriminantAnalysis()))
 
 def keras_baseline_model():
@@ -71,7 +74,7 @@ def keras_baseline_model():
     return model
 models.append(('Keras', KerasClassifier(build_fn=keras_baseline_model, nb_epoch=10, batch_size=100, verbose=1)))
 
-models.append(('Neural Net', MLPClassifier(alpha=1)))
+models.append(('Neural_Net', MLPClassifier(alpha=1)))
 
 #models.append(('Gradient Boosting', GradientBoostingClassifier()))
 
@@ -79,24 +82,27 @@ models.append(('Neural Net', MLPClassifier(alpha=1)))
 # evaluate each model in turn
 results = []
 names = []
-scoring = 'f1'
-for name, model in models:
-    start = time.time()
-    print("-------------------------" + name + "-----------------------------------")
-    kfold = KFold(n_splits=num_folds, shuffle=True, random_state=seed)
-    cv_results = cross_val_score(model, X, y=Y, cv=kfold, scoring=scoring)
-    end = time.time()
-    results.append(cv_results)
-    names.append(name)
-    msg = "%s: %f (%f)" % (name, cv_results.mean(), cv_results.std())
-    print(msg)
-    
-    
-    print(name + " took: " + str(end - start) + " seconds")
 
-fig = plt.figure()
-fig.suptitle('Algorithm Comparison')
-ax = fig.add_subplot(111)
-plt.boxplot(results)
-ax.set_xticklabels(names)
-fig.savefig("algorithm-comparison.png")
+
+def test_func(model, name, X, Y, seed, num_folds):
+    with open(name + "cv_results", "wb", encoding="UTF-8") as cv_results_file:
+        scoring = 'f1'
+        start = time.time()
+        kfold = KFold(n_splits=num_folds, shuffle=True, random_state=seed)
+        cv_results = cross_val_score(model, X, y=Y, cv=kfold, scoring=scoring)
+        end = time.time()
+        result = (end - start, cv_results)
+        pickle.dump(result, cv_results_file)
+
+all_processes = [Process(target=test_func, args=(model, name, X, Y, seed, num_folds)) for name, model in models]
+
+for process in all_processes:
+    process.start()
+    process.join()
+
+#fig = plt.figure()
+#fig.suptitle('Algorithm Comparison')
+#ax = fig.add_subplot(111)
+#plt.boxplot(results)
+#ax.set_xticklabels(names)
+#fig.savefig("algorithm-comparison.png")
