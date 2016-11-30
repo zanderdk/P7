@@ -85,7 +85,7 @@ names = []
 
 
 def test_func(model, name, X, Y, seed, num_folds):
-    with open(name + "cv_results", "wb", encoding="UTF-8") as cv_results_file:
+    with open(name + "cv_results", "wb") as cv_results_file:
         scoring = 'f1'
         start = time.time()
         kfold = KFold(n_splits=num_folds, shuffle=True, random_state=seed)
