@@ -34,7 +34,7 @@ from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
 
-from multiprocessing import Process, Manager, Array
+from multiprocessing import Process, Manager
 import multiprocessing
 
 Z = []
@@ -42,9 +42,7 @@ with open("node2vec-parameter-optimization/training_vectors.tsv", "rb") as fil:
     Z = pickle.load(fil)
 
 X = np.array([x for x,y in Z])
-shared_X = Array('d', X, lock=False)
 Y = np.array([y for x,y in Z])
-shared_Y = Array('d', Y, lock=False)
 
 num_folds = 3
 seed = 7
@@ -96,7 +94,7 @@ def test_func(model, name, X, Y, seed, num_folds):
         result = (end - start, name, cv_results)
         pickle.dump(result, cv_results_file)
 
-all_processes = [Process(target=test_func, args=(model, name, shared_X, shared_Y, seed, num_folds)) for name, model in models]
+all_processes = [Process(target=test_func, args=(model, name, X, Y, seed, num_folds)) for name, model in models]
 
 for process in all_processes:
     process.start()
