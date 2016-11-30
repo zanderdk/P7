@@ -19,9 +19,9 @@ The positive training samples are pairs of linked articles as defined by $P$, wh
 Notice that all samples only establishes ground truth from featured articles. This is based on our assumption that featured articles are correctly linked.
 
 \subsection{Choosing a Classifier}\label{choosing_classifier}
-We choose a classifier by comparing a range of different algorithms. To get a coarse estimate of which classifier seems the most appropirate, we create a test harness that will sequentially run all the classification algorithms on the same dataset. By comparing the results of the different classifiers we will choose one to further optimize.
+We choose a classifier by comparing a range of different algorithms. To get a coarse estimate of which classifier seems the most appropirate for our purpose, we create a test harness that will sequentially run all the classification algorithms on the same dataset. By comparing the results of the different classifiers, we will choose one to further optimize.
 
-The estimation will be done using k-fold cross-validation.
+The estimation will be based on 3-fold cross-validation, in which each sample is split into 3 equally sized subsamples. F-scores are computed with each subsample used once as validation data and the remaining as training data. The average of the scores is the classifiers estimated accuracy.
 
 \todo{Indsæt tabel med classifier resultater, og kommenter resultater}
 
