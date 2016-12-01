@@ -1,8 +1,16 @@
 \section{Database}\label{sec:db}
+
+\todo{få styr på termer: link/edge/relationship, node/vertex/article/page}
+
 The first component in our main pipeline is the database, as shown in \cref{fig:system-overview}. Our approach to identify missing links requires readily available data, which we facilitate by storing required data in a local database.
 \todo{node2vertex det her afsnit? neo4j bruger selv node.}
 
 \subsection{Database Design}\label{sec:db_design}
+
+\todo{forklar fordele i forhold til node2vec, extensions til random walk etc.}\\
+\todo{muligvis forklar/referer sammenhængen med data model (graph choice) afsnittet}\\
+\todo{muligvis indsæt grafisk schema}
+
 We use the native graph database system Neo4j~\cite{neo4j} as it performs well for graph based queries, and supports extensions to the query language with Java plugins. The data model in Neo4j consists of nodes, relationships between nodes, and properties on these. Each node and relationship can be annotated with a number of labels used to distinguish between different node and relationship types when querying the database.
 
 We store Wikipedia pages as nodes with their title as a property, and links between pages as relationships. Labels are used to distinguish between different types of pages and links, as shown in \cref{tab:db_labels_nodes,tab:db_labels_edges}.
@@ -37,7 +45,12 @@ We store Wikipedia pages as nodes with their title as a property, and links betw
 \end{table}
 
 \subsection{Populating the Database}\label{sec:db_populate}
-We use two datasets provided by DBpedia~\cite{dbpedia} to populate the database; one contains links and the other redirects. Both datasets contain tuples in the following format:
+
+\todo{forklar hvorfor vi bruger redirects (pages), og hvorfor vi fjerner nogen af dem}\\
+\todo{muligvis forklar hvad dbpedia er, og præciser hvilke datasæt vi bruger (dato, navn, etc)}\\
+\todo{mere detaljeret beskrivelse af hvordan vi behandler data, genererer titler fra links etc.}
+
+We use two datasets provided by DBpedia~\cite{dbpedia} to populate the database; one contains links and the other redirects. Both datasets contain tuples in the following format: \todo{ikke tuples, referer turtle syntax}
 
 %page_links_unredirected_en.ttl.bz2
 %redirects.en.ttl.bz2
@@ -46,7 +59,7 @@ We use two datasets provided by DBpedia~\cite{dbpedia} to populate the database;
 \mono{\emph{<source\_page> <type> <target\_page>}}
 \end{center}
 
-We prune non-article pages based on the namespace prefixes used on Wikipedia. This removes meta pages such as \enquote{Talk:} and \enquote{User:} pages. We also remove redirects from the link dataset as it both contains links and redirects. Links are split into three groups randomly, according to a partitioning given in \cref{sec:training_data}. \todo{lige nu kommer forklaring på splittet senere, skal sektioner flyttes?}
+We prune non-article pages based on the namespace prefixes used on Wikipedia. This removes meta pages such as \enquote{Talk:} and \enquote{User:} pages. We also remove redirects from the link dataset as it both contains links and redirects. Links are split into three groups randomly, according to a partitioning given in \cref{sec:training_data}. \todo{lige nu kommer forklaring på splittet senere, skal sektioner flyttes så training data bliver forklaret tidligere? det hænger sammen med edge counts}
 
 From the pruned data we generate separate files containing pages, redirect pages, partitioned links, and redirect links. The files are imported with the appropriate labels, and additional labels are added to \emph{featured} and \emph{good} articles.
 \todo{we removed some redirect nodes as well.} The counts for the different labels in the populated database is shown in \cref{tab:db_counts_nodes,tab:db_counts_edges}.
@@ -85,3 +98,4 @@ From the pruned data we generate separate files containing pages, redirect pages
   \end{minipage}
 
 \end{table}
+
