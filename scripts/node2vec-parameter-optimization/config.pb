@@ -5,55 +5,48 @@ variable {
  name: "p"
  type: FLOAT
  size: 1
- min:  0.5
- max:  0.5
+ min:  0.0000001
+ max:  1000000.0
 }
 
 variable {
  name: "q"
  type: FLOAT
  size: 1
- min:  100000.0
- max:  100000.0
+ min:  0.0000001
+ max:  1000000.0
 }
 
 variable {
  name: "d"
  type: INT
  size: 1
- min: 256
+ min: 32
  max: 256
-# options: "64"
- #options: "128"
 }
 
 variable {
  name: "r"
- type: ENUM
+ type: INT
  size: 1
- options: "2"
+ min: 1
+ max: 1
 }
 
 variable {
  name: "k"
  type: INT
  size: 1
- min: 120
+ min: 40
  max: 120
-# options: "5"
-# options: "10"
-# options: "20"
-# options: "30"
 }
 
 variable {
  name: "l"
  type: INT
  size: 1
- min: 800
- max: 800
- #options: "80"
- #options: "120"
+ min: 60
+ max: 200
 }
 
 variable {

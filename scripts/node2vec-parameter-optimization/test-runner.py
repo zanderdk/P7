@@ -128,6 +128,8 @@ def main(job_id, params):
       X = np.array(X)
       Y = np.array(Y)
 
+
+    start = time.time()
     # prepare configuration for cross validation test harness
     num_folds = 10
     seed = 7
@@ -141,6 +143,9 @@ def main(job_id, params):
     cv_results = cross_val_score(classifier, X, y=Y, cv=kfold, scoring=scoring)
     msg = "%s: %f (%f)" % (name, cv_results.mean(), cv_results.std())
     print(msg)
+
+    end = time.time()
+    print("SGD cross vals took: " + str(end - start) + " seconds")
 
     # we want to maximize the mean cross validation score, which means we want to minimize 1 - score
     return 1.0 - cv_results.mean()
