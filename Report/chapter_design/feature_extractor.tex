@@ -1,22 +1,43 @@
 \section{Feature Extractor}\label{feature_extractor}
-The next component in the main pipeline is the feature extractor. This component generates the feature representation of a candidate link, which can then be used for classification. The feature extractor returns a single feature vector, representing the link between a given source and target article pair. As we need to classify both existing and non-existing links, it must be possible to extract feature vectors in both cases. Therefore the feature vector for a link is constructed by combining the feature vectors of the source and target articles.
+The next component in the main pipeline is the feature extractor. This component generates the feature representation of a candidate link, which can then be used for classification. \todo{ref til func i kapitel 3} The feature extractor returns a single feature vector, representing the link between a given source and target article pair. As we need to classify both existing and non-existing links, it must be possible to extract feature vectors in both cases. Therefore the feature vector for a link is constructed by combining the feature vectors of the source and target articles.
 
-As mentioned in \cref{sec:feature_generation} we aim to use feature learning, specifically network embedding, to learn these feature representations. While there are several different network embedding models, we found node2vec~\cite{node2vec} to be a suitable model. \cite{node2vec} compares node2vec to other well-known models, and finds that node2vec delivers better or equal precision for link prediction in all cases. \todo{brug citet e.lign. + ikke god formulering} Additionally, node2vec performs well for large networks, and offers flexibility due to tunable hyperparameters, which provides a more fine-grained control of neighborhood exploration, allowing us to test different options. This section describes how node2vec is used to generate the feature representation, along with the process of optimizing the models hyperparameters.
+As mentioned in \cref{sec:feature_generation} we aim to use feature learning, specifically network embedding, to learn these feature representations. While there are several different network embedding models, we found node2vec~\cite{node2vec} to be a suitable model. \cite{node2vec} compares node2vec to other well-known models, and finds that node2vec delivers better or equal precision for link prediction in all cases. Additionally, node2vec performs well for large networks, and offers flexibility due to tunable hyperparameters, which provides a more fine-grained control of neighborhood exploration, allowing us to test different options. This section describes how node2vec is used to generate the feature representation, along with the process of optimizing the models hyperparameters. \todo{update argumentation for node2vec choice. Flexible parameters is nice with limited knowledge of dataset + competitive performance}
 
-\subsection{Overview of node2vec} % (fold)
+\subsection{Description of node2vec} % (fold)
 \label{sec:node2vec}
+\todo{Should include much more theory throughout section.}
+\todo{Explain: We need to find node feature vectors that we can combine to edge feature vectors.}
+\todo{Explain: Similar to word embedding, where we see nodes as words, and node sequences (walks) as sentences}
 Node2vec is an algorithmic framework for semi-supervised feature learning in networks~\cite{node2vec}. The goal of the algorithm is to learn a model that can reconstruct the neighborhood of a given node.
 
-The neighborhoods of each node is constructed by performing a number of biased random walks. The walks are biased using two parameters $p$ and $q$. A high $p$ value, relative to $max(1,q)$, approximates a depth-first search, while a high $q$ value, relative to $max(1,p)$, approximates the behavior of a breath-first search. The motivation of these tunable parameters is the observation that real-world networks can be structured in many ways. The randomness and the tunable $p$ and $q$ values accounts for different types of networks, by allowing control of the exploration method.
 
+\subsubsection{Description of word2vec}
+\todo{describe word2vec, including neural network etc.}
 Using nodes as words and the random walks as sentences allows using word embedding algorithms on the sentences, mapping words to vectors of real numbers. The node2vec reference implementation uses word2vec for word embedding. Intuitively, if two words are close two each other in the sentence, they are related. The tunable parameter $k$ specifies the size of a context window that defines the number of surrounding words that should be considered in the same context. In node2vec the context window is used for sampling neighborhoods of nodes, where it determines the size of the neighborhood.
+
+\subsubsection{Finding Neighborhoods}
+\todo{Describe the biased random walk using a figure}
+The neighborhoods of each node is constructed by performing a number of biased random walks. The walks are biased using two parameters $p$ and $q$. A high $p$ value, relative to $max(1,q)$, approximates a depth-first search, while a high $q$ value, relative to $max(1,p)$, approximates the behavior of a breath-first search. The motivation of these tunable parameters is the observation that real-world networks can be structured in many ways. The randomness and the tunable $p$ and $q$ values accounts for different types of networks, by allowing control of the exploration method.
 
 There are three additional parameters in node2vec, $d$, $r$, and $l$, which determines the dimensions of the resulting feature vector, the number of random walks performed per node, and the maximum length of each walk, respectively.
 
+\subsubsection{Combining Feature Vectors}
+\todo{Explain how we combine feature vectors. We needed non-commutative operation}
 By training a node2vec model on the graph, we are able to learn feature representations for each node. However, we need to combine these features in order to construct a feature representation of a potential edge between the two nodes. We combine these two node feature vectors by using the Hadamard product, as this was found to give the best results in~\cite{node2vec}.
 
-\todo{Skal vi tage det teoretiske med? Ellers er det svært at skrive mere om.}
-\todo{Tror kun vi får brug for figuren hvis vi beskriver node2vec+word2vec teori}
+% \section{Overview of node2vec} % (fold)
+% \label{sec:overview_of_node2vec}
+
+% Node2vec is an algorithmic framework for semi-supervised feature learning in networks~\cite{node2vec}. The goal of the algorithm is to learn a model that can reconstruct the neighborhood of a given node.
+
+% The neighborhoods of each node is constructed by performing a number of biased random walks. The walks are biased using two parameters $p$ and $q$. A high $p$ value, relative to $max(1,q)$, approximates a depth-first search, while a high $q$ value, relative to $max(1,p)$, approximates the behavior of a breath-first search. The motivation of these tunable parameters is the observation that real-world networks can be structured in many ways. The randomness and the tunable $p$ and $q$ values accounts for different types of networks, by allowing control of the exploration method.
+
+% Using nodes as words and the random walks as sentences allows using word embedding algorithms on the sentences, mapping words to vectors of real numbers. The node2vec reference implementation uses word2vec for word embedding. Intuitively, if two words are close two each other in the sentence, they are related. The tunable parameter $k$ specifies the size of a context window that defines the number of surrounding words that should be considered in the same context. In node2vec the context window is used for sampling neighborhoods of nodes, where it determines the size of the neighborhood.
+
+% There are three additional parameters in node2vec, $d$, $r$, and $l$, which determines the dimensions of the resulting feature vector, the number of random walks performed per node, and the maximum length of each walk, respectively.
+
+% By training a node2vec model on the graph, we are able to learn feature representations for each node. However, we need to combine these features in order to construct a feature representation of a potential edge between the two nodes. We combine these two node feature vectors by using the Hadamard product, as this was found to give the best results in~\cite{node2vec}.
+% section overview_of_node2vec (end)
 
 \tikzsetnextfilename{n2vbowtie}
 \begin{figure}[tbp]%
@@ -27,8 +48,12 @@ By training a node2vec model on the graph, we are able to learn feature represen
 \label{fig:n2v-figure}%
 \end{figure}
 
+\subsection{Optimizing Performance / Scalability}
+\todo{Find better title}
+\todo{Performance concerns: Parallel walks, memory concerns (write walks to file), gensim is parallel}
 
 \subsection{Hyperparameter Optimization}
+\todo{tilpas til nye værdier + ny metode med forskellige kombinations funktioner}
 As described above, node2vec has many tunable parameters. To find the parameters that give the best set of features, we do a hyperparameter optimization pass. We first specify the parameter space that should be searched in. As this is a large space, it is not feasible to exhaust all possibilities. We therefore use the tool Spearmint~\cite{snoek2012practical} which performs Bayesian optimization by maximizing the expected improvement to efficiently search for parameters that will minimize an objective function. The objective function is $1 - \text{f-score}$, where the f-score is found by running a classifier on the node2vec model learned from the parameters. By keeping the classifier and its parameters constant, we can find the best set of parameters by finding the lowest objective function value.
 
 To speed each iteration of the optimization up, we limit the set of start nodes to featured articles. The hyperparameter optimization is entirely autonomous and the process should be able to find good $p$ and $q$ values on its own. This means that one can learn on graph networks without knowing the underlying graph structure.
