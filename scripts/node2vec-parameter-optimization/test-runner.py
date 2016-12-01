@@ -6,6 +6,10 @@ import numpy as np
 import os
 import pickle
 import time
+import sys
+
+import sklearn.metrics.fbeta_score
+import sklearn.metrics.make_scorer
 
 
 
@@ -24,6 +28,7 @@ def main(job_id, params):
     d = int(params["d"][0])
     k = int(params["k"][0])
     directed = params["directed"][0] == "True"
+    function = params["function"][0]
     workers = multiprocessing.cpu_count() # get the number of cores
     print("using %d workers" % workers)
 
@@ -43,7 +48,7 @@ def main(job_id, params):
     log_file.write("Making model...\n")
     log_file.flush()
     start = time.time()
-    model = makeNodeModel(p, q, l, r, d, k, directed, workers, nodes, log_file)
+    model = makeNodeModel(p, q, l, r, d, k, directed, workers, nodes, log_file, save=False)
     end = time.time()
     print("Making model took: " + str(end - start) + " seconds")
     log_file.write("Making model took: " + str(end - start) + " seconds\n")
@@ -58,6 +63,7 @@ def main(job_id, params):
     model_name += "d=" + str(d) + "-"
     model_name += "k=" + str(k) + "-"
     model_name += "directed=" + str(directed)
+    model_name += "function=" + str(function)
 
     # save the model for later use
     #start = time.time()
@@ -83,7 +89,14 @@ def main(job_id, params):
           if source in model and target in model:
               features_source = model[source]
               features_target = model[target]
-              features = features_source * features_target
+              if(function == "hadamard"):
+                features = features_source * features_target
+              elif function == "divide":
+                features = features_source / features_target
+              elif function == "stack":
+                features = np.concatenate((features_source, features_target), axis=0)
+              else:
+                sys.exit("fata error in function selection")
               if label == "0":
                 Y_neg.append(int(label))
                 X_neg.append(features)
@@ -123,7 +136,7 @@ def main(job_id, params):
     name = "SGD"
 
     # evaluate each model in turn
-    scoring = 'f1'
+    scoring = make_scorer(fbeta_score, beta=0.5)
     kfold = KFold(n_splits=num_folds, shuffle=True, random_state=seed)
     cv_results = cross_val_score(classifier, X, y=Y, cv=kfold, scoring=scoring)
     msg = "%s: %f (%f)" % (name, cv_results.mean(), cv_results.std())

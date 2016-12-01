@@ -62,3 +62,12 @@ variable {
  size: 1
  options: "True"
 }
+
+variable {
+ name: "function"
+ type: ENUM
+ size: 1
+ options: "divide"
+ options: "stack"
+ options: "hadamard"
+}

@@ -63,7 +63,7 @@ def worker(p, q, l, directed, lst, queue, pic):
     session.close()
     
 
-def write_to_disk_worker(p, q, l, directed, out_file, allNodes):
+def write_to_disk_worker(p, q, l, directed, out_file, allNodes, save, walks):
 
     threads = 16
     data = chunkIt(allNodes, threads)
@@ -78,41 +78,51 @@ def write_to_disk_worker(p, q, l, directed, out_file, allNodes):
     while any_alive:
         try:
             walk = queue.get(timeout=1)
-            out_file.write(" ".join(walk) + "\n")
+            if save:
+                out_file.write(" ".join(walk) + "\n")
+            else:
+                walks.append(walk)
         except Exception as e:
             print(e)
         any_alive = any([proc.is_alive() for proc in thrs])
 
-    out_file.flush()
+    if save: 
+        out_file.flush()
         
 def simulateWalks(r, nodes, p, q, l, directed, save, log):
     allNodes = []
     for x in range(0, r):
         allNodes += nodes
 
-    write_worker = Process(target=write_to_disk_worker, args=(p, q, l, directed, log, allNodes))
+    walks = manager.List()
+
+    write_worker = Process(target=write_to_disk_worker, args=(p, q, l, directed, log, allNodes, save, walks))
 
     write_worker.start()
 
     # wait for write worker to finish
     write_worker.join()
 
-    return log
+    if save:
+        return log
+    else:
+        return walks
 
-def makeNodeModel(p, q, l, r, d, window, directed, workers, nodes, log_file, save = False):
+def makeNodeModel(p, q, l, r, d, window, directed, workers, nodes, log_file, save = True):
     start = time.time()
-    walks_file = simulateWalks(r, nodes, p, q, l, directed, save, log_file)
+    walks = simulateWalks(r, nodes, p, q, l, directed, save, log_file)
     end = time.time()
     print("Simulate walks took: " + str(end - start) + " seconds")
 
     # this takes a long time, find something else
     #print("Total number of nodes in walks" + str(len(sum(walks, []))))
 
-    #start = time.time()
-    #model = Word2Vec(LineSentence(walks_file), size=d, window=window, min_count=0, sg=1, workers=workers, iter=1)
-    #end = time.time()
-    #print("Word2Vec call took: " + str(end - start) + " seconds")
-    #return model
+    if not save:
+        start = time.time()
+        model = Word2Vec(walks, size=d, window=window, min_count=0, sg=1, workers=workers, iter=1)
+        end = time.time()
+        print("Word2Vec call took: " + str(end - start) + " seconds")
+        return model
 
 def findCommunities(model, G):
     X = [model[x] for x in G.nodes()]
