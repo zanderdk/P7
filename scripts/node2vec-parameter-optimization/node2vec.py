@@ -94,7 +94,7 @@ def simulateWalks(r, nodes, p, q, l, directed, save, log):
     for x in range(0, r):
         allNodes += nodes
 
-    walks = Manager().List()
+    walks = Manager().list()
 
     write_worker = Process(target=write_to_disk_worker, args=(p, q, l, directed, log, allNodes, save, walks))
 
