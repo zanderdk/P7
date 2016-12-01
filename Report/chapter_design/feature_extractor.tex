@@ -1,7 +1,7 @@
 \section{Feature Extractor}\label{feature_extractor}
 The next component in the main pipeline is the feature extractor. This component generates the feature representation of a candidate link, which can then be used for classification. The feature extractor returns a single feature vector, representing the link between a given source and target article pair. As we need to classify both existing and non-existing links, it must be possible to extract feature vectors in both cases. Therefore the feature vector for a link is constructed by combining the feature vectors of the source and target articles.
 
-As mentioned in \cref{sec:feature_generation} we aim to use feature learning, specifically network embedding, to learn these feature representations. While there are several different network embedding models, we found node2vec~\cite{node2vec} to be a suitable model. \cite{node2vec} compares node2vec to other well-known models, and finds that node2vec delivers better or equal precision for link prediction in all cases. \todo{brug citet e.lign. + ikke god formulering} Additionally, node2vec performs well for large networks, and offers flexibility due to tunable hyperparameters. This section describes how node2vec is used to generate the feature representation, along with the process of optimizing the models hyperparameters.
+As mentioned in \cref{sec:feature_generation} we aim to use feature learning, specifically network embedding, to learn these feature representations. While there are several different network embedding models, we found node2vec~\cite{node2vec} to be a suitable model. \cite{node2vec} compares node2vec to other well-known models, and finds that node2vec delivers better or equal precision for link prediction in all cases. \todo{brug citet e.lign. + ikke god formulering} Additionally, node2vec performs well for large networks, and offers flexibility due to tunable hyperparameters, which provides a more fine-grained control of neighborhood exploration, allowing us to test different options. This section describes how node2vec is used to generate the feature representation, along with the process of optimizing the models hyperparameters.
 
 \subsection{Overview of node2vec} % (fold)
 \label{sec:node2vec}
@@ -33,7 +33,7 @@ As described above, node2vec has many tunable parameters. To find the parameters
 
 To speed each iteration of the optimization up, we limit the set of start nodes to featured articles. The hyperparameter optimization is entirely autonomous and the process should be able to find good $p$ and $q$ values on its own. This means that one can learn on graph networks without knowing the underlying graph structure.
 
-We start with a coarse search to find a good range for each parameter. This is done with large grained values for each parameter that would show local optima. After this, we search a second time with finer grained values to further refine the local optima. After completing 83 experiments, the objective function seemed to converge \todo{Does it converge?} into minimization with the parameters seen in~\cref{tab:paramopt_goodvalues}.
+We start with a coarse search to find a good range for each parameter. This is done with large grained values for each parameter that would show local optima. After this, we search a second time with finer grained values to further refine the local optima. After completing 83 experiments, the objective function seemed to have converged by minimizing it with the parameters seen in~\cref{tab:paramopt_goodvalues}.
 
 \begin{figure}%
 \centering
