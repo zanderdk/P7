@@ -38,8 +38,8 @@ variable {
  name: "k"
  type: INT
  size: 1
- min: 80
- max: 80
+ min: 120
+ max: 120
 # options: "5"
 # options: "10"
 # options: "20"

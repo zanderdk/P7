@@ -38,7 +38,7 @@ from multiprocessing import Process, Manager
 import multiprocessing
 
 Z = []
-with open("node2vec-parameter-optimization/training_vectors.tsv", "rb") as fil:
+with open("node2vec-parameter-optimization/training_vectors_stack.tsv", "rb") as fil:
     Z = pickle.load(fil)
 
 X = np.array([x for x,y in Z])
@@ -58,26 +58,30 @@ models = []
 models.append(('Dummy', DummyClassifier("uniform")))
 models.append(('SGD', SGDClassifier(loss="hinge", penalty="l2")))
 #models.append(('Nearest Neighbors', KNeighborsClassifier(3)))
-models.append(('Linear_SVM', SVC(kernel="linear", C=0.025)))
-models.append(('RBF_SVM', SVC(gamma=2, C=1)))
+#models.append(('Linear_SVM', SVC(kernel="linear", C=0.025)))
+#models.append(('RBF_SVM', SVC(gamma=2, C=1)))
 #models.append(('Gaussian_Process', GaussianProcessClassifier(1.0 * RBF(1.0), warm_start=True)))
-models.append(('Decision_Tree', DecisionTreeClassifier(max_depth=5)))
-models.append(('Random_Forest', RandomForestClassifier(max_depth=5, n_estimators=10, max_features=1)))
-models.append(('AdaBoost', AdaBoostClassifier()))
-models.append(('Naive_Bayes', GaussianNB()))
-models.append(('QDA', QuadraticDiscriminantAnalysis()))
+models.append(('Decision_Tree1', DecisionTreeClassifier(max_depth=5)))
+models.append(('Decision_Tree2', DecisionTreeClassifier(max_depth=5, criterion="entropy")))
+models.append(('Decision_Tree3', DecisionTreeClassifier(max_depth=None)))
+models.append(('Decision_Tree4', DecisionTreeClassifier(max_depth=None, max_features=100)))
+#models.append(('Random_Forest', RandomForestClassifier(max_depth=None, n_estimators=10, max_features=None)))
+#models.append(('AdaBoost', AdaBoostClassifier()))
+#models.append(('Naive_Bayes', GaussianNB()))
+#models.append(('QDA', QuadraticDiscriminantAnalysis()))
 
-def keras_baseline_model():
+def keras_baseline_model(x = 32, act = "relu", act2 = "relu", opti = "adam"):
     # create model
     model = Sequential()
-    model.add(Dense(32, input_dim=num_features, init='normal', activation='relu'))
-    model.add(Dense(1, init='normal', activation="relu"))
+    model.add(Dense(x, input_dim=num_features, init='normal', activation=act))
+    model.add(Dense(1, init='normal', activation=act2))
     # Compile model
-    model.compile(loss='mean_squared_error', optimizer='adam')
+    model.compile(loss='mean_squared_error', optimizer=opti)
     return model
-models.append(('Keras', KerasClassifier(build_fn=keras_baseline_model, nb_epoch=10, batch_size=100, verbose=1)))
 
-models.append(('Neural_Net', MLPClassifier(alpha=1)))
+#models.append(('Keras', KerasClassifier(build_fn=lambda: keras_baseline_model(64, "relu", "relu", "adam"), nb_epoch=10, batch_size=100, verbose=1)))
+
+#models.append(('Neural_Net', MLPClassifier(alpha=1)))
 
 #models.append(('Gradient Boosting', GradientBoostingClassifier()))
 

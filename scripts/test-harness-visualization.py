@@ -8,7 +8,7 @@ results = []
 names = []
 
 for file in os.listdir("."):
-    if file.endswith("cv_results"):
+    if file.endswith("cv_results") and os.stat(file).st_size != 0:
         with open(file, "rb") as file_open:
             time, name, cv_result = pickle.load(file_open)
             results.append(cv_result)

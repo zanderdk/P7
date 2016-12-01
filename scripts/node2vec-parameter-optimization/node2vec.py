@@ -158,7 +158,7 @@ if __name__ == "__main__":
         window = 80
         #model = makeNodeModel(0.5, 100000, 80, 1, 256, 80, True, workers, nodes, log_file)
         model = Word2Vec(size=d, window=window, min_count=0, sg=1, workers=workers, iter=1, sample=0.0)
-        model.build_vocab(nodes)
+        model.build_vocab([nodes])
         model.train(LineSentence(walks_file))
         #makeNodeModel(0.5, 100000, 80, 1, 256, 80, True, workers, nodes, log_file)
         model.save_word2vec_format("training_model.bin", binary=True)
