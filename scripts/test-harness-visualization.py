@@ -1,6 +1,7 @@
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+
 import os
 import pickle
 
@@ -20,3 +21,9 @@ ax = fig.add_subplot(111)
 plt.boxplot(results)
 ax.set_xticklabels(names)
 fig.savefig("algorithm-comparison.png")
+
+# For exporting to tikz:
+# pip install matplotlib2tikz
+
+#from matplotlib2tikz import save as tikz_save
+#tikz_save('algorithm-comparison.tex')
