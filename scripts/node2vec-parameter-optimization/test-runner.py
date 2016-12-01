@@ -8,8 +8,7 @@ import pickle
 import time
 import sys
 
-import sklearn.metrics.fbeta_score
-import sklearn.metrics.make_scorer
+from sklearn.metrics import fbeta_score, make_scorer
 
 
 
