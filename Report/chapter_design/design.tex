@@ -31,12 +31,7 @@ The other support module is for the classifier learning process. It consists of 
 
 Finally we cover the User Interface. The purpose of this component is to publish the results of the main pipeline to users who can then edit wikipedia. Since the classifier can not be expected to reach a perfect precision, the final decision of whether to include a suggested link, should be done by a human editor. Therefore the user interface allows people to retrieve the results of the main pipeline through a RESTful web API.
 
-The reason why this component is not considered a part of the main pipeline, is due to different requirements. While both the user interface and the main pipeline share the goals of then entire system, they have different subgoals. The performance of the main pipeline can be measured solely through a statistical analysis, however for the user interface to be considered successful it must consider the needs of the users. While one could argue that statistics can give you an insight into the users behavior, and thereby their requirements, a competent evaluation would consider much more.
-
-\todo{explain the user interface part in the entire system, and why it is considered a separate part from the rest}
-%The user interface is not included in the main pipeline, since their requirements are considerably different. It is entirely possible that either the main pipeline or the user interface is working flawlessly, but it does show in a system evaluation, since they are interdepent.
-
-Lorem Ipsum UI
+The reason why this component is not considered a part of the main pipeline, is due to different requirements. While both the user interface and the main pipeline share the goals of then entire system, they have different subgoals. While the main pipeline is purely focused on producing results, the user interface considers the delivery of those results. This difference in subgoals requires a different evaluation approach, and as such it is valuable to seperate the user interface from the main pipeline.
 
 \input{chapter_design/database}
 
