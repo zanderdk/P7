@@ -2,8 +2,7 @@
 
 \todo{få styr på termer: link/edge/relationship, node/vertex/article/page}
 
-The first component in our main pipeline is the database, as shown in \cref{fig:system-overview}. Our approach to identify missing links requires readily available data, which we facilitate by storing required data in a local database.
-\todo{node2vertex det her afsnit? neo4j bruger selv node.}
+Our approach to identifying missing links requires readily available data, which we facilitate by storing the required data in a local database. This database is the first component in the main pipeline seen in \cref{fig:system-overview}. 
 
 \subsection{Database Design}\label{sec:db_design}
 
@@ -11,9 +10,9 @@ The first component in our main pipeline is the database, as shown in \cref{fig:
 \todo{muligvis forklar/referer sammenhængen med data model (graph choice) afsnittet}\\
 \todo{muligvis indsæt grafisk schema}
 
-We use the native graph database system Neo4j~\cite{neo4j} as it performs well for graph based queries, and supports extensions to the query language with Java plugins. The data model in Neo4j consists of nodes, relationships between nodes, and properties on these. Each node and relationship can be annotated with a number of labels used to distinguish between node and relationship types when querying the database.
+Because of the need to store a graph, a natural choice is to use a native graph database. We use Neo4j~\cite{neo4j} as it performs well for graph based queries, and supports extensions to its query language through Java plugins. The data model in Neo4j is based on nodes, relationships between nodes, and properties on these. Each node and relationship can be annotated with labels used to distinguish between types when querying the database.
 
-We store Wikipedia pages as nodes with their title as a property, and links between pages as relationships. Labels are used to distinguish between different types of pages and links, as shown in \cref{tab:db_labels_nodes,tab:db_labels_edges}.
+We store Wikipedia articles as nodes with their title as a property, and links between articles as relationships. Labels are used to distinguish between types of articles and links, as shown in \cref{tab:db_labels_nodes,tab:db_labels_edges}.
 
 \begin{table}[tbp]
   \centering
@@ -21,9 +20,9 @@ We store Wikipedia pages as nodes with their title as a property, and links betw
     \begin{tabular}{@{}p{.20\textwidth}p{.60\textwidth}@{}}
       \toprule
       \textbf{Label}         & \textbf{Description}                            \\ \midrule
-      \mono{Page}                   & A Wikipedia article                             \\
-      \mono{FeaturedPage}           & A Wikipedia article marked as \emph{Featured}   \\
-      \mono{GoodPage}               & A Wikipedia article marked as \emph{Good}       \\
+      \mono{Article}                   & A Wikipedia article                             \\
+      \mono{FeaturedArticle}           & A Wikipedia article marked as \emph{Featured}   \\
+      \mono{GoodArticle}               & A Wikipedia article marked as \emph{Good}       \\
       \mono{RedirectPage}           & A redirecting Wikipedia page                    \\
       \bottomrule
     \end{tabular}
@@ -50,19 +49,24 @@ We store Wikipedia pages as nodes with their title as a property, and links betw
 \todo{muligvis forklar hvad dbpedia er, og præciser hvilke datasæt vi bruger (dato, navn, etc)}\\
 \todo{mere detaljeret beskrivelse af hvordan vi behandler data, genererer titler fra links etc.}
 
-We use two datasets provided by DBpedia~\cite{dbpedia} to populate the database; one contains links and the other redirects. Both datasets contain tuples in the following format: \todo{ikke tuples, referer turtle syntax}
+Because Wikipedia requests that bots are not used to crawl the articles~\cite{wiki-bots}, we instead use a readily available dataset from DBpedia~\cite{dbpedia}. This dataset is just a dump of all Wikipedia \emph{pages}. The pages consists of for example articles, user pages, and talk pages. Since we are only interested in articles, we prune non-article pages based on the namespace prefixes used on Wikipedia.
 
-%page_links_unredirected_en.ttl.bz2
-%redirects.en.ttl.bz2
+However, this dataset also contains redirect pages. Redirects are responsible for redirecting synonyms and common misspellings to the main article. For example, trying to access the article on ``Santa'' will redirect to ``Santa Claus''. We do not handle these redirects when creating the database. Instead we handle them by simply following them as needed when traversing the graph.
 
+To add relationships between the article nodes in the the database, we could have parsed the text in each article and created edges based on all encountered links. However, DBPedia have created a separate dataset containing links in an accessible tuple format:
 \begin{center}
 \mono{\emph{<source\_page> <type> <target\_page>}}
 \end{center}
 
-We prune non-article pages based on the namespace prefixes used on Wikipedia. This removes meta pages such as \enquote{Talk:} and \enquote{User:} pages. We also remove redirects from the link dataset as it both contains links and redirects. Links are split into three groups randomly, according to a partitioning given in \cref{sec:training_data}. \todo{lige nu kommer forklaring på splittet senere, skal sektioner flyttes så training data bliver forklaret tidligere? det hænger sammen med edge counts}
+We therefore use this dataset instead of manually extracting the links.
 
-From the pruned data we generate separate files containing pages, redirect pages, partitioned links, and redirect links. The files are imported with the appropriate labels, and additional labels are added to \emph{featured} and \emph{good} articles.
-\todo{we removed some redirect nodes as well.} The counts for the different labels in the populated database is shown in \cref{tab:db_counts_nodes,tab:db_counts_edges}.
+Links are split into three groups randomly, according to a partitioning given in \cref{sec:training_data}. \todo{lige nu kommer forklaring på splittet senere, skal sektioner flyttes så training data bliver forklaret tidligere? det hænger sammen med edge counts}
+
+While importing the articles and links into the database, additional labels are also added to \emph{featured} and \emph{good} articles.
+The counts for the labels in the populated database is shown in \cref{tab:db_counts_nodes,tab:db_counts_edges}.
+
+%page_links_unredirected_en.ttl.bz2
+%redirects.en.ttl.bz2
 
 \begin{table}[tbp]
   \centering
@@ -73,9 +77,9 @@ From the pruned data we generate separate files containing pages, redirect pages
       \textbf{Label}         & \textbf{Count}     \\
       \midrule
       \textit{Nodes (total)} & \textit{\num{18172630}}  \\
-      \mono{Page}                   & \num{11159213}           \\
-      \mono{FeaturedPage}           & \num{4820}               \\
-      \mono{GoodPage}               & \num{23741}              \\
+      \mono{Article}                   & \num{11159213}           \\
+      \mono{FeaturedArticle}           & \num{4820}               \\
+      \mono{GoodArticle}               & \num{23741}              \\
       \mono{RedirectPage}           & \num{7013417}            \\ \bottomrule
     \end{tabular}
     \caption[Counts for node labels]{Counts for node labels. Note that some nodes have multiple labels.}%
