@@ -11,7 +11,7 @@ The first component in our main pipeline is the database, as shown in \cref{fig:
 \todo{muligvis forklar/referer sammenhængen med data model (graph choice) afsnittet}\\
 \todo{muligvis indsæt grafisk schema}
 
-We use the native graph database system Neo4j~\cite{neo4j} as it performs well for graph based queries, and supports extensions to the query language with Java plugins. The data model in Neo4j consists of nodes, relationships between nodes, and properties on these. Each node and relationship can be annotated with a number of labels used to distinguish between different node and relationship types when querying the database.
+We use the native graph database system Neo4j~\cite{neo4j} as it performs well for graph based queries, and supports extensions to the query language with Java plugins. The data model in Neo4j consists of nodes, relationships between nodes, and properties on these. Each node and relationship can be annotated with a number of labels used to distinguish between node and relationship types when querying the database.
 
 We store Wikipedia pages as nodes with their title as a property, and links between pages as relationships. Labels are used to distinguish between different types of pages and links, as shown in \cref{tab:db_labels_nodes,tab:db_labels_edges}.
 
