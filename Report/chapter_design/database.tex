@@ -1,16 +1,11 @@
 \section{Database}\label{sec:db}
-
-\todo{få styr på termer: link/edge/relationship, node/vertex/article/page}
-
 Our approach to identifying missing links requires readily available data, which we facilitate by storing the required data in a local database. This database is the first component in the main pipeline seen in \cref{fig:system-overview}. 
 
 \subsection{Database Design}\label{sec:db_design}
 
-\todo{forklar fordele i forhold til node2vec, extensions til random walk etc.}\\
-\todo{muligvis forklar/referer sammenhængen med data model (graph choice) afsnittet}\\
 \todo{muligvis indsæt grafisk schema}
 
-Because of the need to store a graph, a natural choice is to use a native graph database. We use Neo4j~\cite{neo4j} as it performs well for graph based queries, and supports extensions to its query language through Java plugins. The data model in Neo4j is based on nodes, relationships between nodes, and properties on these. Each node and relationship can be annotated with labels used to distinguish between types when querying the database.
+Because of the need to store a graph as mentioned in \cref{sec:choice_of_graph}, a natural choice is to use a native graph database. We use Neo4j~\cite{neo4j} as it performs well for graph based queries, and supports extensions to its query language through Java plugins. The data model in Neo4j is based on nodes, relationships between nodes, and properties on these. Each node and relationship can be annotated with labels to distinguish between types when querying the database.
 
 We store Wikipedia articles as nodes with their title as a property, and links between articles as relationships. Labels are used to distinguish between types of articles and links, as shown in \cref{tab:db_labels_nodes,tab:db_labels_edges}.
 
@@ -39,30 +34,26 @@ We store Wikipedia articles as nodes with their title as a property, and links b
       \mono{TEST\_DATA}             & A link that should only be using during testing \\
       \mono{REDIRECTS\_TO}          & An edge describing a redirect                   \\ \bottomrule
     \end{tabular}
-    \caption[Edge labels in the database]{Edge labels in the database}%
+    \caption[Relationship labels in the database]{Relationship labels in the database}%
     \label{tab:db_labels_edges}
 \end{table}
 
 \subsection{Populating the Database}\label{sec:db_populate}
+%Because Wikipedia requests that bots are not used to crawl the articles~\cite{wiki-bots}, we instead use a readily available dataset from DBpedia~\cite{dbpedia}. This dataset is just a dump of all Wikipedia \emph{pages}. The pages consists of for example articles, user pages, and talk pages. Since we are only interested in articles, we prune non-article pages based on the namespace prefixes used on Wikipedia.
+Because Wikipedia requests that bots are not used to crawl the articles~\cite{wiki-bots}, we instead use readily available datasets\footnote{Data extracted from Wikipedia dumps in October 2015} from DBpedia~\cite{dbpedia}. The datasets used are a list of all page links and a list of page redirects. The pages consists of articles as well as pages for users, talks, files, etc. Since we are only interested in articles, we prune non-article pages based on the namespace prefixes used on Wikipedia.
 
-\todo{forklar hvorfor vi bruger redirects (pages), og hvorfor vi fjerner nogen af dem}\\
-\todo{muligvis forklar hvad dbpedia er, og præciser hvilke datasæt vi bruger (dato, navn, etc)}\\
-\todo{mere detaljeret beskrivelse af hvordan vi behandler data, genererer titler fra links etc.}
+Redirects are responsible for redirecting synonyms and common misspellings to the main article. For example, trying to access the article on ``Santa'' will redirect to ``Santa Claus''. The redirects are necessary to include since they are referred to by many links. We do not handle these redirects when creating the database. Instead we handle them by following them as needed when traversing the graph.
 
-Because Wikipedia requests that bots are not used to crawl the articles~\cite{wiki-bots}, we instead use a readily available dataset from DBpedia~\cite{dbpedia}. This dataset is just a dump of all Wikipedia \emph{pages}. The pages consists of for example articles, user pages, and talk pages. Since we are only interested in articles, we prune non-article pages based on the namespace prefixes used on Wikipedia.
+%To add relationships between the article nodes in the the database, we could have parsed the text in each article and created edges based on all encountered links. However, DBPedia have created a separate dataset containing links in an accessible tuple format:
+%\begin{center}
+%\mono{\emph{<source\_page> <type> <target\_page>}}
+%\end{center}
 
-However, this dataset also contains redirect pages. Redirects are responsible for redirecting synonyms and common misspellings to the main article. For example, trying to access the article on ``Santa'' will redirect to ``Santa Claus''. We do not handle these redirects when creating the database. Instead we handle them by simply following them as needed when traversing the graph.
+%We therefore use this dataset instead of manually extracting the links.
+We create nodes for all article and redirect pages and relationships for the links and redirects.
+The links are split into three groups randomly, according to a partitioning given in \cref{sec:training_data}. \todo{lige nu kommer forklaring på splittet senere, skal sektioner flyttes så training data bliver forklaret tidligere? det hænger sammen med edge counts}
 
-To add relationships between the article nodes in the the database, we could have parsed the text in each article and created edges based on all encountered links. However, DBPedia have created a separate dataset containing links in an accessible tuple format:
-\begin{center}
-\mono{\emph{<source\_page> <type> <target\_page>}}
-\end{center}
-
-We therefore use this dataset instead of manually extracting the links.
-
-Links are split into three groups randomly, according to a partitioning given in \cref{sec:training_data}. \todo{lige nu kommer forklaring på splittet senere, skal sektioner flyttes så training data bliver forklaret tidligere? det hænger sammen med edge counts}
-
-While importing the articles and links into the database, additional labels are also added to \emph{featured} and \emph{good} articles.
+While importing the articles and links into the database, additional labels for \emph{featured} and \emph{good} articles are also added.
 The counts for the labels in the populated database is shown in \cref{tab:db_counts_nodes,tab:db_counts_edges}.
 
 %page_links_unredirected_en.ttl.bz2
@@ -77,10 +68,10 @@ The counts for the labels in the populated database is shown in \cref{tab:db_cou
       \textbf{Label}         & \textbf{Count}     \\
       \midrule
       \textit{Nodes (total)} & \textit{\num{18172630}}  \\
-      \mono{Article}                   & \num{11159213}           \\
-      \mono{FeaturedArticle}           & \num{4820}               \\
-      \mono{GoodArticle}               & \num{23741}              \\
-      \mono{RedirectPage}           & \num{7013417}            \\ \bottomrule
+      \mono{Article}         & \num{11159213}           \\
+      \mono{FeaturedArticle} & \num{4820}               \\
+      \mono{GoodArticle}     & \num{23741}              \\
+      \mono{RedirectPage}    & \num{7013417}            \\ \bottomrule
     \end{tabular}
     \caption[Counts for node labels]{Counts for node labels. Note that some nodes have multiple labels.}%
     \label{tab:db_counts_nodes}
@@ -91,15 +82,14 @@ The counts for the labels in the populated database is shown in \cref{tab:db_cou
     \begin{tabular}{@{}lr@{}}
       \toprule
       \textbf{Label}         & \textbf{Count}     \\ \midrule
-      \textit{Edges (total)} & \textit{\num{145878042}} \\
-      \mono{LINKS\_TO}              & \num{138422339}          \\
-      \mono{TRAINING\_DATA}         & \num{294857}             \\
-      \mono{TEST\_DATA}             & \num{147429}             \\
-      \mono{REDIRECTS\_TO}          & \num{7013417}            \\ \bottomrule
+      \textit{Relationships (total)} & \textit{\num{145878042}} \\
+      \mono{LINKS\_TO}               & \num{138422339}          \\
+      \mono{TRAINING\_DATA}          & \num{294857}             \\
+      \mono{TEST\_DATA}              & \num{147429}             \\
+      \mono{REDIRECTS\_TO}           & \num{7013417}            \\ \bottomrule
     \end{tabular}
-    \caption[Counts for edge labels]{Counts for edge labels.}%
+    \caption[Counts for relationship labels]{Counts for relationship labels.}%
     \label{tab:db_counts_edges}
   \end{minipage}
 
 \end{table}
-
