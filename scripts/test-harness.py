@@ -60,7 +60,7 @@ def keras_baseline_model():
 models.append(('Keras', KerasClassifier(build_fn=keras_baseline_model, nb_epoch=5, batch_size=100, verbose=0)))
 
 manager = Manager()
-results = manager.list()
+shared_results = manager.list()
 def test_func(model, name, X, Y, seed, num_folds):
     print("Started " + name)
     kfold = KFold(n_splits=num_folds, shuffle=True, random_state=seed)
@@ -86,7 +86,7 @@ def test_func(model, name, X, Y, seed, num_folds):
         "duration": duration,
         "scores": scores
     }
-    results.append(res)
+    shared_results.append(res)
     print("Done with %s in %f seconds" % (name, duration))
 
 # Evaluate each model in turn
@@ -97,4 +97,5 @@ for process in all_processes:
     process.join()
 
 with open("cv_results.p", "wb") as results_file:
+    results = list(shared_results)  # Back to regular list for easier unpickling
     pickle.dump(results, results_file)
