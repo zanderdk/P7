@@ -23,8 +23,8 @@ with open("training_vectors_stack.tsv", "rb") as fil:
 X = np.array([x for x, y in Z])[:10000]
 Y = np.array([y for x, y in Z])[:10000]
 
-print("positivies:" + str(len([x for x in Y if x == 1])))
-print("negatives:" + str(len([x for x in Y if x == 0])))
+print("Positivies: " + str(len([x for x in Y if x == 1])))
+print("Negatives: " + str(len([x for x in Y if x == 0])))
 
 num_features = len(X[0])
 num_folds = 2
@@ -89,14 +89,14 @@ def test_func(model, name, X, Y, seed, num_folds):
     print("Done with %s in %f seconds" % (name, duration))
 
 # Evaluate each model in turn
-all_processes = [Process(target=test_func, args=(model, name, X, Y, seed, num_folds)) for name, model in models]
-for process in all_processes:
-    process.start()
-for process in all_processes:
-    process.join()
+# all_processes = [Process(target=test_func, args=(model, name, X, Y, seed, num_folds)) for name, model in models]
+# for process in all_processes:
+#     process.start()
+# for process in all_processes:
+#     process.join()
 
-# for name, model in models:
-#     test_func(model, name, X, Y, seed, num_folds)
+for name, model in models:
+    test_func(model, name, X, Y, seed, num_folds)
 
 with open("cv_results.p", "wb") as results_file:
     pickle.dump(results, results_file)
