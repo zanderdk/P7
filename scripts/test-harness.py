@@ -1,4 +1,4 @@
-from multiprocessing import Process
+from multiprocessing import Process, Manager
 import time
 import pickle
 import numpy as np
@@ -59,7 +59,8 @@ def keras_baseline_model():
 
 models.append(('Keras', KerasClassifier(build_fn=keras_baseline_model, nb_epoch=5, batch_size=100, verbose=0)))
 
-results = []
+manager = Manager()
+results = manager.list()
 def test_func(model, name, X, Y, seed, num_folds):
     print("Started " + name)
     kfold = KFold(n_splits=num_folds, shuffle=True, random_state=seed)
@@ -89,14 +90,11 @@ def test_func(model, name, X, Y, seed, num_folds):
     print("Done with %s in %f seconds" % (name, duration))
 
 # Evaluate each model in turn
-# all_processes = [Process(target=test_func, args=(model, name, X, Y, seed, num_folds)) for name, model in models]
-# for process in all_processes:
-#     process.start()
-# for process in all_processes:
-#     process.join()
-
-for name, model in models:
-    test_func(model, name, X, Y, seed, num_folds)
+all_processes = [Process(target=test_func, args=(model, name, X, Y, seed, num_folds)) for name, model in models]
+for process in all_processes:
+    process.start()
+for process in all_processes:
+    process.join()
 
 with open("cv_results.p", "wb") as results_file:
     pickle.dump(results, results_file)
