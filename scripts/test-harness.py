@@ -20,8 +20,8 @@ Z = []
 with open("training_vectors_stack.tsv", "rb") as fil:
     Z = pickle.load(fil)
 
-X = np.array([x for x, y in Z])[:10000]
-Y = np.array([y for x, y in Z])[:10000]
+X = np.array([x for x, y in Z])
+Y = np.array([y for x, y in Z])
 
 print("Positivies: " + str(len([x for x in Y if x == 1])))
 print("Negatives: " + str(len([x for x in Y if x == 0])))
