@@ -82,8 +82,8 @@ By training a node2vec model on the graph, we are able to learn feature represen
 \end{figure}
 
 \subsection{Optimizing Performance / Scalability}
+As also detailed in~\cite{node2vec}, node2vec is able to scale well. Every walk is independent from each other which means that many walks can take place in parallel; it is embarrassingly parallel. Our test machine had 16 CPU cores which we wanted to utilize. We therefore spawned 16 threads that each was walking the graph. This allows use to fully utilize every CPU core. As all walks have to be stored for the word2vec phase, we were concerned that the memory footprint of storing all walks in memory would be too high. We therefore dump the walks to a file, and later stream this file into memory when training word2vec. Gensim, the implemention of word2vec we use, is also able to fully utilize the CPU when training word2vec on the walks.
 \todo{Find better title}
-\todo{Performance concerns: Parallel walks, memory concerns (write walks to file), gensim is parallel}
 
 \subsection{Hyperparameter Optimization}
 \todo{tilpas til nye værdier + ny metode med forskellige kombinations funktioner}
