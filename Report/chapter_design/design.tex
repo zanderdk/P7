@@ -29,7 +29,7 @@ The other support module is for the classifier learning process. It consists of 
 
 \subsection{User Interface}
 
-Finally we cover the User Interface. The purpose of this component is to publish the results of the main pipeline to users who can then edit wikipedia. Since the classifier can not be expected to reach a perfect precision, the final decision of whether to include a suggested link, should be done by a human editor. Therefore the user interface allows people to retrieve the results of the main pipeline through a RESTful web API.
+Finally we cover the User Interface. The purpose of this component is to publish the results of the main pipeline to users who can then edit wikipedia. Since the classifier can not be expected to reach a perfect precision, the final decision of whether to include a suggested link, should be done by a human editor. Therefore we create a user interface that allows people to retrieve the results of the main pipeline.
 
 The reason why this component is not considered a part of the main pipeline, is due to different requirements. While both the user interface and the main pipeline share the goals of then entire system, they have different subgoals. While the main pipeline is purely focused on producing results, the user interface considers the delivery of those results. This difference in subgoals requires a different evaluation approach, and as such it is valuable to seperate the user interface from the main pipeline.
 
