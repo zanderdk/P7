@@ -2,12 +2,9 @@
 Our approach to identifying missing links requires readily available data, which we facilitate by storing the required data in a local database. This database is the first component in the main pipeline seen in \cref{fig:system-overview}. 
 
 \subsection{Database Design}\label{sec:db_design}
-
-\todo{muligvis indsæt grafisk schema}
-
 Because of the need to store a graph as mentioned in \cref{sec:choice_of_graph}, a natural choice is to use a native graph database. We use Neo4j~\cite{neo4j} as it performs well for graph based queries, and supports extensions to its query language through Java plugins. The data model in Neo4j is based on nodes, relationships between nodes, and properties on these. Each node and relationship can be annotated with labels to distinguish between types when querying the database.
 
-We store Wikipedia articles as nodes with their title as a property, and links between articles as relationships. Labels are used to distinguish between types of articles and links, as shown in \cref{tab:db_labels_nodes,tab:db_labels_edges}.
+We store Wikipedia articles as nodes with their title as a property, and links between articles as relationships. Labels are used to distinguish between types of articles and links.
 
 \begin{table}[tbp]
   \centering
@@ -29,10 +26,10 @@ We store Wikipedia articles as nodes with their title as a property, and links b
     \begin{tabular}{@{}p{.20\textwidth}p{.60\textwidth}@{}}
       \toprule
       \textbf{Label}         & \textbf{Description}                            \\ \midrule
-      \mono{LINKS\_TO}              & A link between two articles                     \\
-      \mono{TRAINING\_DATA}         & A link that can be used during training         \\
-      \mono{TEST\_DATA}             & A link that should only be using during testing \\
-      \mono{REDIRECTS\_TO}          & An edge describing a redirect                   \\ \bottomrule
+      \mono{LinksTo}              & A link between two articles                     \\
+      \mono{TrainingData}         & A link that can be used during training         \\
+      \mono{TestData}             & A link that should only be using during testing \\
+      \mono{RedirectsTo}          & An edge describing a redirect                   \\ \bottomrule
     \end{tabular}
     \caption[Relationship labels in the database]{Relationship labels in the database}%
     \label{tab:db_labels_edges}
@@ -42,7 +39,7 @@ We store Wikipedia articles as nodes with their title as a property, and links b
 %Because Wikipedia requests that bots are not used to crawl the articles~\cite{wiki-bots}, we instead use a readily available dataset from DBpedia~\cite{dbpedia}. This dataset is just a dump of all Wikipedia \emph{pages}. The pages consists of for example articles, user pages, and talk pages. Since we are only interested in articles, we prune non-article pages based on the namespace prefixes used on Wikipedia.
 Because Wikipedia requests that bots are not used to crawl the articles~\cite{wiki-bots}, we instead use readily available datasets\footnote{Data extracted from Wikipedia dumps in October 2015} from DBpedia~\cite{dbpedia}. The datasets used are a list of all page links and a list of page redirects. The pages consists of articles as well as pages for users, talks, files, etc. Since we are only interested in articles, we prune non-article pages based on the namespace prefixes used on Wikipedia.
 
-Redirects are responsible for redirecting synonyms and common misspellings to the main article. For example, trying to access the article on ``Santa'' will redirect to ``Santa Claus''. The redirects are necessary to include since they are referred to by many links. We do not handle these redirects when creating the database. Instead we handle them by following them as needed when traversing the graph.
+Redirects are responsible for redirecting synonyms and common misspellings to the main article. For example, trying to access the article on ``Santa'' will redirect to ``Santa Claus''. The redirects are necessary to include since they are referred to by many links. We do not handle these redirects when creating the database. Instead we handle them by following them as needed when we later traverse the graph.
 
 %To add relationships between the article nodes in the the database, we could have parsed the text in each article and created edges based on all encountered links. However, DBPedia have created a separate dataset containing links in an accessible tuple format:
 %\begin{center}
@@ -50,10 +47,9 @@ Redirects are responsible for redirecting synonyms and common misspellings to th
 %\end{center}
 
 %We therefore use this dataset instead of manually extracting the links.
-We create nodes for all article and redirect pages and relationships for the links and redirects.
-The links are split into three groups randomly, according to a partitioning given in \cref{sec:training_data}. \todo{lige nu kommer forklaring på splittet senere, skal sektioner flyttes så training data bliver forklaret tidligere? det hænger sammen med edge counts}
+We create nodes for all article and redirect pages and relationships for the links and redirects, with the labels seen in \cref{tab:db_labels_nodes,tab:db_labels_edges}. As seen in these tables, the links are split into three groups, \mono{LinksTo}, \mono{TrainingData}, and \mono{TestData}, to later accommodate test and evaluation of the classifier. The split is made randomly, according to a partitioning given in \cref{sec:classifier}.
 
-While importing the articles and links into the database, additional labels for \emph{featured} and \emph{good} articles are also added.
+While importing the articles and links into the database, additional labels \mono{FeaturedArticle} and \mono{GoodArticle} are also added to  \emph{featured} and \emph{good} articles respectively.
 The counts for the labels in the populated database is shown in \cref{tab:db_counts_nodes,tab:db_counts_edges}.
 
 %page_links_unredirected_en.ttl.bz2
