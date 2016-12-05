@@ -46,7 +46,7 @@ models.append(('Naive_Bayes_Gaussian', GaussianNB()))
 models.append(('LinearSVC', LinearSVC(C=0.001))) # Non-probabilistic
 models.append(('DecisionTree', DecisionTreeClassifier(max_depth=5)))
 models.append(("NearestCentroid", NearestCentroid())) # Non-probabilistic
-models.append(("KNN_5", KNeighborsClassifier(n_neighbors=5)))
+#models.append(("KNN_5", KNeighborsClassifier(n_neighbors=5))) #slow
 models.append(('MultiLayerPerceptron', MLPClassifier()))
 
 def keras_baseline_model():
@@ -78,7 +78,7 @@ def test_func(model, name, X, Y, seed, num_folds):
         "accuracy": metrics.accuracy_score(Y, predicted),
         "precision": metrics.precision_score(Y, predicted),
         "recall": metrics.recall_score(Y, predicted),
-        "f_score": metrics.f1_score(Y, predicted)
+        "f0.5_score": metrics.fbeta_score(Y, predicted, beta=0.5)
     }
     # Save the results
     res = {
@@ -100,6 +100,6 @@ def test_func(model, name, X, Y, seed, num_folds):
 for name, model in models:
     test_func(model, name, X, Y, seed, num_folds)
 
-with open("cv_results.p", "wb") as results_file:
+with open("cv_results-fbeta05.p", "wb") as results_file:
     # results = list(shared_results)  # Back to regular list for easier unpickling
     pickle.dump(results, results_file)
