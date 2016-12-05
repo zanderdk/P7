@@ -55,11 +55,13 @@ There are three additional parameters in node2vec, $d$, $r$, and $l$, which dete
 \end{figure}
 
 \subsubsection{Combining Feature Vectors}
-By training a node2vec model on the graph, we are able to learn a function $g:V \to \mathbb{R}^d$ going from vector to a feature representations. However, we need to combine these features in order to construct a feature representation of a potential edge between the two vertecies. In the note2vec paper\cite{node2vec} they propose 4 diffrent operators $\circ : \mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^d$ for combining feature vectors where the hadamard product resulted in being the best in alle of their test cases.
-We discovered that all 4 operators where commutative meaning that $a \circ b = b \circ a \ \forall a,b \in \mathbb{R}^d$ which works well in undirected graphs. If we have 2 pairs of articles $(a,b) \in \Rightarrow$ and $(b,a) \in V \times V \setminus \Rightarrow$ they will have the same feature representation using any of these 4 operators, but diffrent labels.
-\todo{Explain our stack, divide and minus method}
-
-
+By training a node2vec model on the graph, we are able to learn a function $g:V \to \mathbb{R}^d$ mapping a vertex to a vector representation of features. In order to construct a feature representation of a potential edge between two vertices, we need to combine their features. In the node2vec paper~\cite{node2vec} they propose four different binary operators $\circ : \mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^d$ for combining two feature vectors, with \textit{Hadamard product} yielding the best results in all of their test cases.
+%We discovered that all 4 operators where commutative meaning that $a \circ b = b \circ a \ \forall a,b \in \mathbb{R}^d$ which works well in undirected graphs.
+All of the four operations are commutative, which makes sense for undirected graphs, where the combined result vector does not depend on the order of the vertices. For directed graphs however the order is important.
+%If we have 2 pairs of articles $(a,b) \in \Rightarrow$ and $(b,a) \in V \times V \setminus \Rightarrow$ they will have the same feature representation using any of these 4 operators, but different labels.
+If we are given two pairs of articles $(a,b) \in \Rightarrow$ and $(b,a) \notin \Rightarrow$, their feature representations should intuitively be different because they have different labels.
+%For this reason we will test different non-commutative operations.
+Because Hadamard product produced good results in the node2vec paper we will be testing it and compare it to the non-commutative counterpart Hadamard division. Furthermore we choose to test concatenating the feature vectors $\mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^{2d}$, leaving it up to the classifier to interpret the combination of article features.
 
 
 % \section{Overview of node2vec} % (fold)
