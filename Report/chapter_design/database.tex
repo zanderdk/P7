@@ -6,9 +6,11 @@ Because of the need to store a graph as mentioned in \cref{sec:choice_of_graph},
 
 We store Wikipedia articles as nodes with their title as a property, and links between articles as relationships. Labels are used to distinguish between types of articles and links.
 
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
 \begin{table}[tbp]
   \centering
-    \begin{tabular}{@{}p{.21\textwidth}p{.46\textwidth}r@{}}
+    \begin{tabular}{@{}p{.24\textwidth}p{.50\textwidth}R{.15\textwidth}@{}}
       \toprule
       \textbf{Label} & \textbf{Description} & \textbf{Count} \\
       \midrule
@@ -17,7 +19,7 @@ We store Wikipedia articles as nodes with their title as a property, and links b
       \mono{GoodArticle} & A Wikipedia article marked as \emph{Good} & \num{23741}\\
       \mono{RedirectPage} & A redirecting Wikipedia page &\num{7013417} \\
       \midrule
-      & Total number of nodes & \num{18172630} \\
+      & \multicolumn{1}{r}{\emph{Total number of nodes}} & \num{18172630} \\
       \bottomrule
     \end{tabular}
     \caption[Node labels in the database]{Node labels in the database. Note that some nodes have multiple labels.}%
@@ -25,7 +27,7 @@ We store Wikipedia articles as nodes with their title as a property, and links b
 \end{table}
 \begin{table}[tbp]
     \centering
-    \begin{tabular}{@{}p{.21\textwidth}p{.46\textwidth}r@{}}
+    \begin{tabular}{@{}p{.24\textwidth}p{.50\textwidth}R{.15\textwidth}@{}}
       \toprule
       \textbf{Label} & \textbf{Description} & \textbf{Count} \\
       \midrule
@@ -34,7 +36,7 @@ We store Wikipedia articles as nodes with their title as a property, and links b
       \mono{TestData} & A link that is used only during testing & \num{147429} \\
       \mono{RedirectsTo} & An edge describing a redirect & \num{7013417} \\
       \midrule
-      & Total number of relationships & \num{145878042} \\
+      & \multicolumn{1}{r}{\emph{Total number of relationships}} & \num{145878042} \\
       \bottomrule
     \end{tabular}
     \caption[Relationship labels in the database]{Relationship labels in the database}%
