@@ -16,7 +16,7 @@ Node2vec is an algorithmic framework for semi-supervised feature learning in net
 Using nodes as words and the random walks as sentences allows using word embedding algorithms on the sentences, mapping words to vectors of real numbers. The node2vec reference implementation uses word2vec for word embedding. Intuitively, if two words are close two each other in the sentence, they are related. The tunable parameter $k$ specifies the size of a context window that defines the number of surrounding words that should be considered in the same context. In node2vec the context window is used for sampling neighborhoods of nodes, where it determines the size of the neighborhood.
 
 \subsubsection{Finding Neighborhoods}
-\todo{Describe the biased random walk using \cref{fig:randomwalk}}
+\todo{Describe the biased random walk using}
 The neighborhoods of each node is constructed by performing a number of biased random walks. The walks are biased using two parameters $p$ and $q$. A high $p$ value, relative to $max(1,q)$, approximates a depth-first search, while a high $q$ value, relative to $max(1,p)$, approximates the behavior of a breath-first search. The motivation of these tunable parameters is the observation that real-world networks can be structured in many ways. The randomness and the tunable $p$ and $q$ values accounts for different types of networks, by allowing control of the exploration method.
 
 There are three additional parameters in node2vec, $d$, $r$, and $l$, which determines the dimensions of the resulting feature vector, the number of random walks performed per node, and the maximum length of each walk, respectively.
@@ -55,8 +55,12 @@ There are three additional parameters in node2vec, $d$, $r$, and $l$, which dete
 \end{figure}
 
 \subsubsection{Combining Feature Vectors}
+By training a node2vec model on the graph, we are able to learn a function $g:V \to \mathbb{R}^d$ going from vector to a feature representations. However, we need to combine these features in order to construct a feature representation of a potential edge between the two vertecies. In the note2vec paper they propose 4 diffrent operators $\circ : \mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^d$ for combining feature vectors where the hadamard product resulted in being the best in alle of their test cases.
+We discovered that all 4 operators where commutative meaning that $a \circ b = b \circ a \ \forall a,b \in \mathbb{R}^d$ which works well in undirected graphs. If we have 2 pairs of articles $(a,b) \in \Rightarrow$ and $(b,a) \in V \times V \setminus \Rightarrow$ they will have the same feature representation using any of these 4 operators, but diffrent labels.
 \todo{Explain how we combine feature vectors. We needed non-commutative operation}
-By training a node2vec model on the graph, we are able to learn feature representations for each node. However, we need to combine these features in order to construct a feature representation of a potential edge between the two nodes. We combine these two node feature vectors by using the Hadamard product, as this was found to give the best results in~\cite{node2vec}.
+
+
+
 
 % \section{Overview of node2vec} % (fold)
 % \label{sec:overview_of_node2vec}
