@@ -61,8 +61,8 @@ All of the four operations are commutative, which makes sense for undirected gra
 %If we have 2 pairs of articles $(a,b) \in \Rightarrow$ and $(b,a) \in V \times V \setminus \Rightarrow$ they will have the same feature representation using any of these 4 operators, but different labels.
 If we are given two pairs of articles $(a,b) \in \Rightarrow$ and $(b,a) \notin \Rightarrow$, their feature representations should intuitively be different because they have different labels.
 %For this reason we will test different non-commutative operations.
-Because Hadamard product produced good results in the node2vec paper we will be testing it and compare it to the non-commutative counterpart Hadamard division. Furthermore we choose to test concatenating the feature vectors $\mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^{2d}$, leaving it up to the classifier to interpret the combination of article features.
-
+Because Hadamard product produced good results in the node2vec paper we will be testing it and compare it to the corresponding non-commutative operation Hadamard division. Furthermore we choose to test concatenating the feature vectors $\mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^{2d}$, leaving it up to the classifier to interpret the combination of article features.
+\todo{should we explain that hadamard is entrywise}
 
 % \section{Overview of node2vec} % (fold)
 % \label{sec:overview_of_node2vec}
