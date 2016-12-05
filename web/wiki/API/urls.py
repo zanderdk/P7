@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^links/(?P<count>[0-9]+)/$', views.partial_pool, name='partialPool'),
     # ex: /links/
     url(r'^links/$', views.full_pool, name='fullPool'),
+    url(r'^review/$', views.link_checked, name='link_checked'),
     url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
