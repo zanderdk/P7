@@ -6,22 +6,7 @@ We test the classifier model by predicting links on data samples that has not be
 
 As described in \cref{sec:training_data} the test data consists of 20\% of all data samples.
 
-\subsection{Evaluation Metrics}
-As the core of our problem definition is to find suggestions to missing links, false negatives should be punished harder than false positives. In other words, suggesting a pair of articles to be linked that should not actually be linked, is worse than not suggesting a pair of articles that should be linked. 
 
-Precision (\cref{eq:precision}) and recall (\cref{eq:recall}) are typically used evaluation metrics that we will also use. Because of the above mentioned higher penalty rate of false negatives we want to favor recall over precision, as recall decreases as the number of false negatives increases. We therefore use a $F_\beta$ measure (\cref{eq:f_beta}) where $\beta = 2$, meaning recall is weighted 2 times higher than precision. \todo{kilde til F-measure, precision, recall}
-
-\begin{equation}\label{eq:precision}
-\text{Precision} = \frac{\text{true positives}}{\text{true positives} + \text{false positives}}
-\end{equation}
-
-\begin{equation}\label{eq:recall}
-\text{Recall} = \frac{\text{true positives}}{\text{true positives} + \text{false negatives}}
-\end{equation}
-
-\begin{equation}\label{eq:f_beta}
-F_\beta = (1+ \beta^2 ) \cdot \frac{ \text{precision} \cdot \text{recall} }{ \beta^2 \cdot \text{precision} + \text{recall} }
-\end{equation}
 
 \todo{we want to use a custom loss function that penalizes false negatives, but this is only easy in keras. This is however okay if we reason about how much better this custom log function makes the predictions, and then make sure to mention using custom log functions for the other classifiers as future work}
 
