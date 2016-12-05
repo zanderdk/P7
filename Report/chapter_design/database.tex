@@ -8,28 +8,34 @@ We store Wikipedia articles as nodes with their title as a property, and links b
 
 \begin{table}[tbp]
   \centering
-  
-    \begin{tabular}{@{}p{.20\textwidth}p{.60\textwidth}@{}}
+    \begin{tabular}{@{}p{.21\textwidth}p{.46\textwidth}r@{}}
       \toprule
-      \textbf{Label}         & \textbf{Description}                            \\ \midrule
-      \mono{Article}                   & A Wikipedia article                             \\
-      \mono{FeaturedArticle}           & A Wikipedia article marked as \emph{Featured}   \\
-      \mono{GoodArticle}               & A Wikipedia article marked as \emph{Good}       \\
-      \mono{RedirectPage}           & A redirecting Wikipedia page                    \\
+      \textbf{Label} & \textbf{Description} & \textbf{Count} \\
+      \midrule
+      \mono{Article} & A Wikipedia article & \num{11159213} \\
+      \mono{FeaturedArticle} & A Wikipedia article marked as \emph{Featured} & \num{4820} \\
+      \mono{GoodArticle} & A Wikipedia article marked as \emph{Good} & \num{23741}\\
+      \mono{RedirectPage} & A redirecting Wikipedia page &\num{7013417} \\
+      \midrule
+      & Total number of nodes & \num{18172630} \\
       \bottomrule
     \end{tabular}
-    \caption[Node labels in the database]{Node labels in the database}%
+    \caption[Node labels in the database]{Node labels in the database. Note that some nodes have multiple labels.}%
     \label{tab:db_labels_nodes}
 \end{table}
 \begin{table}[tbp]
     \centering
-    \begin{tabular}{@{}p{.20\textwidth}p{.60\textwidth}@{}}
+    \begin{tabular}{@{}p{.21\textwidth}p{.46\textwidth}r@{}}
       \toprule
-      \textbf{Label}         & \textbf{Description}                            \\ \midrule
-      \mono{LinksTo}              & A link between two articles                     \\
-      \mono{TrainingData}         & A link that can be used during training         \\
-      \mono{TestData}             & A link that is used only during testing \\
-      \mono{RedirectsTo}          & An edge describing a redirect                   \\ \bottomrule
+      \textbf{Label} & \textbf{Description} & \textbf{Count} \\
+      \midrule
+      \mono{LinksTo} & A link between two articles & \num{138422339} \\
+      \mono{TrainingData} & A link that can be used during training & \num{294857} \\
+      \mono{TestData} & A link that is used only during testing & \num{147429} \\
+      \mono{RedirectsTo} & An edge describing a redirect & \num{7013417} \\
+      \midrule
+      & Total number of relationships & \num{145878042} \\
+      \bottomrule
     \end{tabular}
     \caption[Relationship labels in the database]{Relationship labels in the database}%
     \label{tab:db_labels_edges}
@@ -51,42 +57,5 @@ We create nodes for all article and redirect pages and relationships for the lin
 
 As seen in \cref{tab:db_labels_edges}, the links are split into three groups, \mono{LinksTo}, \mono{TrainingData}, and \mono{TestData}, to later accommodate test and evaluation of the classifier. The split is made randomly, according to a partitioning given in \cref{sec:classifier}.
 
-The counts for the labels in the populated database is shown in \cref{tab:db_counts_nodes,tab:db_counts_edges}.
-
 %page_links_unredirected_en.ttl.bz2
 %redirects.en.ttl.bz2
-
-\begin{table}[tbp]
-  \centering
-  \begin{minipage}[t]{0.45\textwidth}
-    \centering
-    \begin{tabular}{@{}lr@{}}
-      \toprule
-      \textbf{Label}         & \textbf{Count}     \\
-      \midrule
-      \textit{Nodes (total)} & \textit{\num{18172630}}  \\
-      \mono{Article}         & \num{11159213}           \\
-      \mono{FeaturedArticle} & \num{4820}               \\
-      \mono{GoodArticle}     & \num{23741}              \\
-      \mono{RedirectPage}    & \num{7013417}            \\ \bottomrule
-    \end{tabular}
-    \caption[Counts for node labels]{Counts for node labels. Note that some nodes have multiple labels.}%
-    \label{tab:db_counts_nodes}
-  \end{minipage}
-  \hfill
-  \begin{minipage}[t]{0.45\textwidth}
-    \centering
-    \begin{tabular}{@{}lr@{}}
-      \toprule
-      \textbf{Label}         & \textbf{Count}     \\ \midrule
-      \textit{Relationships (total)} & \textit{\num{145878042}} \\
-      \mono{LINKS\_TO}               & \num{138422339}          \\
-      \mono{TRAINING\_DATA}          & \num{294857}             \\
-      \mono{TEST\_DATA}              & \num{147429}             \\
-      \mono{REDIRECTS\_TO}           & \num{7013417}            \\ \bottomrule
-    \end{tabular}
-    \caption[Counts for relationship labels]{Counts for relationship labels.}%
-    \label{tab:db_counts_edges}
-  \end{minipage}
-
-\end{table}
