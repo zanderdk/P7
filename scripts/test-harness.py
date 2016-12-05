@@ -27,7 +27,7 @@ print("Positivies: " + str(len([x for x in Y if x == 1])))
 print("Negatives: " + str(len([x for x in Y if x == 0])))
 
 num_features = len(X[0])
-num_folds = 2
+num_folds = 3
 seed = 7
 
 # Prepare models
