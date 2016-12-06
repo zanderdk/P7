@@ -10,11 +10,11 @@
     \thispagestyle{empty}
     \noindent%
     \begin{tabular}{@{}ll@{}}
-      \parbox{0.97\titlepageleftcolumnwidth}{
+      \parbox{\titlepageleftcolumnwidth}{
           \includegraphics[width=0.97\titlepageleftcolumnwidth]{aau_logo_en}
       } &
       \vspace{1cm}
-      \parbox{0.97\titlepagerightcolumnwidth}{\raggedleft\sffamily\small
+      \parbox{\titlepagerightcolumnwidth}{\raggedleft\sffamily\small
         \textbf{\color{sectioning}Department of Computer Science}\\
         Selma Lagerlöfs Vej 300\\
         DK-9220 Aalborg Ø\\
@@ -31,9 +31,9 @@
         \textbf{\color{sectioning}\sffamily{Pages:}}~\pageref*{LastPageLabel}\bigskip\par
         \textbf{\color{sectioning}\sffamily{Date of completion:}}\\ \projectcompletion
   } &
-      \parbox[t]{0.97\titlepagerightcolumnwidth}{%
+      \parbox[t]{\titlepagerightcolumnwidth}{%
       \textbf{\color{sectioning}\sffamily{Abstract:}}\smallskip\par{}
-        \mbox{\parbox{0.97\titlepagerightcolumnwidth-2\fboxsep-2\fboxrule}{%
+        \mbox{\parbox{\titlepagerightcolumnwidth}{%
           \input{frontmatter/abstract.tex}
         }}
       }\\
