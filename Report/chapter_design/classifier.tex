@@ -1,10 +1,10 @@
 \section{Classifier}\label{sec:classifier}
-As described in \cref{sec:machine_learning_task} we want to solve a supervised binary classification problem. In order to solve this problem, we want to construct a classifier. The previous section describes our feature extraction method. We will in this section describe how we use this method to extract features from training examples, and based on these choose a classification algorithm. We further describe how we optimize the classifier's hyperparameters for increased performance.
+As described in \cref{sec:machine_learning_task} we want to solve a supervised binary classification problem. In order to solve this problem, we want to construct a classifier. The previous section describes our feature extraction method. We will in this section describe how we use this method to extract features from training examples, and based on these choose a classification algorithm. We furthermore describe how we optimize the classifier's parameters to increase performance.
 
 \subsection{Training Data}\label{sec:training_data}
 Like all supervised learning, the classifier model is learned through training data.
 
-As described in \ref{sec:choice_of_graph} we will be using featured articles and what they link to, to train the classifier. This data is split into 20\% test data and 80\% training data. This specific split is made to preserve the link structure in the graph while still having a reasonable amount of samples to test on. To train the classifier to find links that do not already exist, a random distribution of 50\% of the edges is removed from the training data. This ensures that we do not overfit the classifier on already existing links. \todo{Det er muligvis lidt dårligt forklaret mht. de 50\%}
+As described in \ref{sec:choice_of_graph} we use featured articles and what they link to, to train the classifier. This data is split into 20\% test data and 80\% training data. This specific split is made to preserve the link structure in the graph while still having a reasonable amount of samples to test on. To train the classifier to find links that do not already exist, a random distribution of 50\% of the edges is removed from the training data. This ensures that we do not overfit the classifier on already existing links. \todo{Det er muligvis lidt dårligt forklaret mht. de 50\%}
 %One sample of training data has the form \mono{<source article> <target article> <label>}. The source and targeet article are titles of pairs of articles. The label on the training samples can either be positive (link) or negative (do not link).
 
 As described in \cref{sec:machine_learning_task} we use a set of positive labeled training pairs $P$ and a set of negative labeled training pairs $N$. The positive training samples are pairs of linked articles as defined by $P$. As $\left\vert{P}\right\vert$ is smaller than $\left\vert{N}\right\vert$, we randomly sample from $N$ until we have as many negative as positive training pairs.
@@ -16,14 +16,14 @@ As described in \cref{sec:machine_learning_task} we use a set of positive labele
 %We first experimented with negative samples being random article pairs $(a,b)$ fulfilling the condition of $N$: that article $a$ is featured and there does not exist a link from article $a$ to $b$. The problem with this approach is that it is too easy to overfit using these negative samples. As the article pairs are randomly sampled, most of the times, there is very little relatedness between the two articles. This is of course the point of a negative training sample, but because most of the negative samples were so unrelated, the classifiers used in our experiments could too easily differentiate positives from negatives. We needed another method that would give us negative samples where the articles have a higher likelihood of being related. Our second approach was to extract N-grams from all featured articles. Iterating through all N-grams for a featured article, a negative sample would be generated if another article had the exact same title as the N-gram, but the two article were not linked.
 
 \subsection{Choosing a Classifier}\label{choosing_classifier}
-To get a coarse estimate of which classifier seems the most appropriate for our purpose, we create a test harness that will run a range of classification algorithms on the same dataset. By comparing the algorithms against each other, we should be able to weed out the worst performing algorithms. Each algorithm will be run with its default parameters which is suboptimal, but finding good parameters for all algorithms is unrealistic given the time frame of this project. To still allow for a fair comparison, we choose the top performing algorithms, and derive 3 parameter sets for each algorithm. Based on this, we choose the algorithm that looks the most promising to optimize further.
+To get a coarse estimate of which classifier seems the most appropriate for our purpose, we create a test harness that will run a range of classification algorithms on the same dataset. By comparing the algorithms against each other, we should be able to weed out the worst performing algorithms and get an approximate overview of the performance of each algorithm. Each algorithm will be run with its default parameters which is suboptimal, but finding good parameters for all algorithms is unrealistic given the time frame of this project. Based on the results, we choose the algorithm that looks the most promising to optimize further.
 
-The examined algorithms are chosen mostly based on classifiers available in the scikit-learn python library. There are many algorithms to choose from, and as all the algorithms are in the same library, the interface is the same, significantly simplifying the test harness.
+The examined algorithms are chosen mostly based on classifiers available in the scikit-learn Python library. There are many algorithms to choose from, and as all the algorithms are in the same library, the interface is the same, significantly simplifying the test harness.
 
 \subsubsection{Evaluation Metrics}
-To evaluate the performance of each algorithm, we perform a 3-fold cross-validation. As the core of our problem definition is to find suggestions to missing links, false negatives should be punished harder than false positives. In other words, suggesting a pair of articles to be linked that should not actually be linked, is worse than not suggesting a pair of articles that should be linked. 
+To evaluate the performance of each algorithm, we perform a 3-fold cross-validation. As the core of our problem definition is to find suggestions to missing links, false positives should be punished harder than false negatives. In other words, suggesting a pair of articles to be linked that should not actually be linked, is worse than not suggesting a pair of articles that should be linked. 
 
-Because of the before mentioned higher penalty rate of false negatives we want to favor precision over recall, as precision decreases as the number of false negatives increases. We therefore choose precision as our evaluation metric.
+Because of the before mentioned higher penalty rate of false positives we want to favor precision over recall, as precision decreases as the number of false positives increases. We therefore choose precision as our evaluation metric.
 
 \begin{equation}\label{eq:precision}
 \text{Precision} = \frac{\text{true positives}}{\text{true positives} + \text{false positives}}
@@ -34,8 +34,9 @@ Because of the before mentioned higher penalty rate of false negatives we want t
 \end{equation}
 
 \subsubsection{Results}
-A barchart of results can be seen in \cref{fig:classifier_comparison}. \emph{QDA} gives the best precision of $0.985$. However the recall is low, which is concerning as this means the number of suggestions are reduced. The next best result, \emph{Nearest Centroid}, gives a precision of $0.979$, but has a far better recall. Because of the concern regarding suggestions, we choose \emph{Nearest Centroid} as our classifier.
+A barchart of results can be seen in \cref{fig:classifier_comparison}. \emph{QDA} gives the best precision of $0.985$. However the recall is low, which is concerning as this means the number of suggestions are reduced. The next best result, \emph{Nearest Centroid}, gives a precision of $0.979$ which is also high, but with a far better recall. We would rather trade $0.6\%$ percent precision for much better recall, and therefore choose \emph{Nearest Centroid} as our classifier.
 
+\todo{Skal vi vise en confusion matrix?}
 
 \begin{figure}[tbp]
 \centering
@@ -66,7 +67,9 @@ A barchart of results can be seen in \cref{fig:classifier_comparison}. \emph{QDA
 % \label{tab:classifiers}
 % \end{table}
 
+\subsection{Parameter Optimization}
+To attempt to further increase the performance of the chosen classifier, we optimize its parameters. The \emph{nearest centroid} implementation in the scikit-learn library does only have 2 parameters, so we choose to exhaust all parameter possibilities using grid search, as the parameter space is small.
 
-\todo{mangler afsnit om hyper parameter optimization af den fundne classifier. Motiver hvorfor vi gør det, og hvordan vi gør, lignende node2vec optimization. Præsenter også resultater for, hvad der virkede og hvor godt det var}
+Searching the parameter space reveals that the best parameters are the default parameters, also used above, where the distance metric is euclidean distance and no feature shrink threshold.
 
 \todo{hvordan laver vi segway over mod ui afsnit?}
