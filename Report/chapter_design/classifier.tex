@@ -1,5 +1,5 @@
 \section{Classifier}\label{sec:classifier}
-As described in \cref{sec:machine_learning_task} we want to solve a supervised binary classification problem. In order to solve this problem, we want to construct a classifier. The previous section describes our feature extraction method. We will in this section describe how we use this method to extract features from training examples, and based on these choose a classification algorithm. We furthermore describe how we optimize the classifier's parameters to increase performance.
+As described in \cref{sec:machine_learning_task} we want to solve a supervised binary classification problem. In order to solve this problem, we train a classifier. The previous section describes our feature extraction method. We will in this section describe how we use this method to extract features from training examples, and based on these choose a classification algorithm. We furthermore describe how we optimize the classifier's parameters to increase performance.
 
 \subsection{Training Data}\label{sec:training_data}
 Like all supervised learning, the classifier model is learned through training data.
@@ -23,7 +23,9 @@ To get a coarse estimate of which classifier seems the most appropriate for our 
 The examined algorithms are chosen mostly based on classifiers available in the scikit-learn Python library. There are many algorithms to choose from, and as all the algorithms are in the same library, the interface is the same, significantly simplifying the test harness.
 
 \subsubsection{Evaluation Metrics}\label{evaluation_metric}
-To evaluate the performance of each algorithm, we perform a 3-fold cross-validation. As the core of our problem definition is to find suggestions to missing links, false positives should be punished harder than false negatives. In other words, suggesting a pair of articles to be linked that should not actually be linked, is worse than not suggesting a pair of articles that should be linked. 
+\todo{Explain what true/false positives/negatives are.}
+
+To evaluate the performance of each algorithm, we perform a 3-fold cross-validation. We choose 3 because this produces results quickly in comparison to a 10-fold. As the core of our problem definition is to find suggestions to missing links, false positives should be punished harder than false negatives. In other words, suggesting a pair of articles to be linked that should not actually be linked, is worse than not suggesting a pair of articles that should be linked. 
 
 Because of the before mentioned higher penalty rate of false positives we want to favor precision over recall, as precision decreases as the number of false positives increases. We therefore choose precision as our evaluation metric.
 
@@ -35,7 +37,10 @@ Because of the before mentioned higher penalty rate of false positives we want t
 \text{Recall} = \frac{\text{true positives}}{\text{true positives} + \text{false negatives}}
 \end{equation}
 
+\todo{Justify not using an f-score.}
+
 \subsubsection{Results}
+\todo{Rename classifiers to not acronyms.}
 A barchart of results can be seen in \cref{fig:classifier_comparison}. \emph{QDA} gives the best precision of $0.985$. However the recall is low, which is concerning as this means the number of suggestions are reduced. The next best result, \emph{Nearest Centroid}, gives a precision of $0.979$ which is also high, but with a far better recall. We would rather trade $0.6\%$ percent precision for much better recall, and therefore choose \emph{Nearest Centroid} as our classifier.
 
 \todo{Skal vi vise en confusion matrix?}
@@ -74,4 +79,4 @@ To attempt to further increase the performance of the chosen classifier, we opti
 
 Searching the parameter space reveals that the best parameters are the default parameters, also used above, where the distance metric is euclidean distance and no feature shrink threshold.
 
-\todo{hvordan laver vi segway over mod ui afsnit?}
+\todo{hvordan laver vi segway over mod ui afsnit? Michael spørger: Hvorfor er det nødvendigt med en segway?}
