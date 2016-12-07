@@ -2,6 +2,8 @@ import pickle
 import argparse
 import numpy as np
 from sklearn.neighbors import NearestCentroid
+from sklearn import preprocessing, metrics
+
 
 def load_data(filename, limit=None, normalize=False):
     global num_features
@@ -28,7 +30,7 @@ print("Loading training data")
 X, y = load_data("training_vectors_stack.tsv", None, True)
 
 print("\nLoading test data")
-X_test, y_test = load_data("test_vectors_stack.tsv", None, True)
+X_test, y_test = load_data("test_data_vectors.tsv", None, True)
 
 clf = NearestCentroid()
 
