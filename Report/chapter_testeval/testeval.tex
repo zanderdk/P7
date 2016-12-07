@@ -21,36 +21,21 @@ Precision     & Recall       \\ \midrule
 \caption{Classifier results}\label{eval-results}
 \end{table}
 
-\todo{beautify confusion matrix}
-\begin{figure}[htbp]
-\begin{center}
-\begin{tikzpicture}[
-box/.style={draw,rectangle,minimum size=2cm,text width=1.5cm,align=left}]
-\matrix (conmat) [row sep=.1cm,column sep=.1cm] {
-\node (tpos) [box,
-    label=left:\( \mathbf{Positive} \),
-    label=above:\( \mathbf{Positive} \),
-    ] {\num{76674}};
-&
-\node (fneg) [box,
-    label=above:\textbf{Negative},
-    label=above right:\textbf{Total},
-    label=right:\num{147429}] {\num{70755}};
-\\
-\node (fpos) [box,
-    label=left:\( \mathbf{Negative} \),
-    label=below left:\textbf{Total},
-    label=below:\num{78136}] {\num{1462}};
-&
-\node (tneg) [box,
-    label=right:\num{147429},
-    label=below:\num{216722}] {\num{145967}};
-\\
-};
-\node [left=.05cm of conmat,text width=1.5cm,align=right] {\textbf{Actual}};
-\node [above=.05cm of conmat] {\textbf{Predicted}};
-\end{tikzpicture}
-\end{center}
-\end{figure}
+\begin{table}[tbp]
+    \centering
+     \begin{tabular}{rrrrrrrr}
+      \toprule
+      \multicolumn{2}{c}{} & \multicolumn{2}{c}{Predicted} & \\
+      \cmidrule{3-4}
+      \multicolumn{2}{c}{} & \multicolumn{1}{c}{Positive} & \multicolumn{1}{c}{Negative} & Total \\
+      \midrule
+      \multirow{2}{*}{Actual} & Positive & \num{76674} & \num{70755}  & \num{147429} \\
+                              & Negative & \num{1462}  & \num{145967} & \num{147429} \\ \cmidrule{1-2}
+                              & Total    & \num{78136} & \num{216722} \\
+      \bottomrule
+    \end{tabular}
+    \caption[Relationship labels in the database]{Relationship labels in the database}%
+    \label{tab:confusionmatrix}
+\end{table}
 
 \section{GUI Evaluation}
