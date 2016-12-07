@@ -2,14 +2,55 @@
 This chapter is dedicated to evaluate the performance of our proposed solution. We will describe the methodology of the tests, and interpret the results.
 
 \section{Methodology}
-We test the classifier model by predicting links on data samples that has not been part of the training data, and deriving a result based on an evaluation metric.
+We test the classifier model by predicting links on data samples that has not been part of the training data, and deriving a result based on the same evaluation metric as in \cref{evaluation_metric}: precision.
 
-As described in \cref{sec:training_data} the test data consists of 20\% of all data samples.
-
-
-
-\todo{we want to use a custom loss function that penalizes false negatives, but this is only easy in keras. This is however okay if we reason about how much better this custom log function makes the predictions, and then make sure to mention using custom log functions for the other classifiers as future work}
+As described in \cref{sec:training_data} the test data consists of 20\% of all data samples. This accounts to \num{294858} samples, evenly split between positives and negatives. Based on the classifier tests performed in \cref{choosing_classifier}, we use the \emph{nearest centroid} implementation from sci-kit learn with its default parameters.
 
 \section{Evaluation}
+The classifier results can be seen in \cref{eval-results}. The numbers are similar to the ones from the training phase. The precision is very good, while the recall is low. On the specific data set we have worked on, links from featured articles, the classifier is very good at predicting links. Suspicious of the high precision numbers, we tested the classifier on articles not in the featured article space by manually labeling some articles. These tests show poor predictions, which means that the classifier results do not generalize to the whole of Wikipedia. This is to be expected, as one would assume that the structural differences between non-featured articles and featured articles are large.
+
+We can conclude that the performance of the system was good on featured articles, but the results do not transfer well to all articles.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{@{}ll@{}}
+\toprule
+Precision     & Recall       \\ \midrule
+\num{0.981} & \num{0.52}
+\end{tabular}
+\caption{Classifier results}\label{eval-results}
+\end{table}
+
+\todo{beautify confusion matrix}
+\begin{figure}[htbp]
+\begin{center}
+\begin{tikzpicture}[
+box/.style={draw,rectangle,minimum size=2cm,text width=1.5cm,align=left}]
+\matrix (conmat) [row sep=.1cm,column sep=.1cm] {
+\node (tpos) [box,
+    label=left:\( \mathbf{Positive} \),
+    label=above:\( \mathbf{Positive} \),
+    ] {\num{76674}};
+&
+\node (fneg) [box,
+    label=above:\textbf{Negative},
+    label=above right:\textbf{Total},
+    label=right:\num{147429}] {\num{70755}};
+\\
+\node (fpos) [box,
+    label=left:\( \mathbf{Negative} \),
+    label=below left:\textbf{Total},
+    label=below:\num{78136}] {\num{1462}};
+&
+\node (tneg) [box,
+    label=right:\num{147429},
+    label=below:\num{216722}] {\num{145967}};
+\\
+};
+\node [left=.05cm of conmat,text width=1.5cm,align=right] {\textbf{Actual}};
+\node [above=.05cm of conmat] {\textbf{Predicted}};
+\end{tikzpicture}
+\end{center}
+\end{figure}
 
 \section{GUI Evaluation}
