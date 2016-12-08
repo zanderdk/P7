@@ -2,7 +2,7 @@
 Our approach to identifying missing links requires readily available data, which we facilitate by storing the required data in a local database. This database is the first component in the main pipeline seen in \cref{fig:system-overview}. 
 
 \subsection{Database Design}\label{sec:db_design}
-Because of the need to store a graph as mentioned in \cref{sec:choice_of_graph}, a natural choice is to use a native graph database. We use Neo4j~\cite{neo4j} as it performs well for graph based queries, and supports extensions to its query language through Java plugins. The data model in Neo4j is based on nodes, relationships between nodes, and properties on these. Each node and relationship can be annotated with labels to distinguish between types when querying the database.
+Because of the need to store a graph as mentioned in \cref{sec:choice_of_graph}, a natural choice is to use a native graph database. We use Neo4j~\cite{neo4j} as it performs well for graph based queries, and supports extensions to its query language through Java plugins. Neo4j scales gracefully~\cite{neo4jscale} and servers can be upgraded or added until performance is satisfactory. The data model in Neo4j is based on nodes, relationships between nodes, and properties on these. Each node and relationship can be annotated with labels to distinguish between types when querying the database.
 
 We store Wikipedia articles as nodes with their title as a property, and links between articles as relationships. Labels are used to distinguish between types of articles and links.
 
@@ -55,9 +55,14 @@ Redirects are responsible for redirecting synonyms and common misspellings to th
 %\end{center}
 
 %We therefore use this dataset instead of manually extracting the links.
-We create nodes for all article and redirect pages and relationships for the links and redirects, with the labels seen in \cref{tab:db_labels_nodes,tab:db_labels_edges}. While importing the articles and links into the database, additional labels \mono{FeaturedArticle} and \mono{GoodArticle} are also added to  \emph{featured} and \emph{good} articles respectively.
+A node is created in the database for each Wikipedia article and redirect page in the datasets, as seen in \cref{tab:db_labels_nodes}.
+The nodes are connected by adding relationships for the links and redirects, with the labels seen in \cref{tab:db_labels_edges}.
+While importing the articles and links into the database, additional labels \mono{FeaturedArticle} and \mono{GoodArticle} are also added to \emph{featured} and \emph{good} articles respectively.
 
-As seen in \cref{tab:db_labels_edges}, the links are split into three groups, \mono{LinksTo}, \mono{TrainingData}, and \mono{TestData}, to later accommodate test and evaluation of the classifier. The split is made randomly, according to a partitioning given in \cref{sec:classifier}.
+As seen in \cref{tab:db_labels_edges}, the links are split into three groups, \mono{LinksTo}, \mono{TrainingData}, and \mono{TestData}. \mono{TrainingData} and \mono{TestData} are disjoint links from featured articles that later will be used to train and evaluate the classifer. The splits are made randomly, according to a partitioning given in \cref{sec:classifier}.
 
 %page_links_unredirected_en.ttl.bz2
 %redirects.en.ttl.bz2
+
+\todo{featured articles are less than 0.04\%. comments?}
+
