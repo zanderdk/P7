@@ -11,8 +11,8 @@ As mentioned in \cref{sec:feature_generation} we aim to use feature learning, sp
 Node2vec is an algorithmic framework for semi-supervised feature learning in networks~\cite{node2vec}. The goal of the algorithm is to learn a model that can reconstruct the neighborhood of a given node.
 
 
+
 \subsubsection{Description of word2vec}
-\todo{describe word2vec, including neural network etc.}
 Using nodes as words and the random walks as sentences allows using word embedding algorithms on the sentences, mapping words to vectors. The node2vec reference implementation uses word2vec for word embedding. Intuitively, if two words are close two each other in the sentence, they are related. The tunable parameter $k$ specifies the size of a context window that defines the number of surrounding words that should be considered in the same context. In node2vec the context window is used for sampling neighborhoods of nodes, where it determines the size of the neighborhood.
 
 \subsubsection{Finding Neighborhoods}
@@ -59,7 +59,7 @@ By training a node2vec model on the graph, we are able to learn a function $g:V 
 %We discovered that all 4 operators where commutative meaning that $a \circ b = b \circ a \ \forall a,b \in \mathbb{R}^d$ which works well in undirected graphs.
 All of the four operations are commutative, which makes sense for undirected graphs, where the combined result vector does not depend on the order of the vertices. For directed graphs however the order is important.
 %If we have 2 pairs of articles $(a,b) \in \Rightarrow$ and $(b,a) \in V \times V \setminus \Rightarrow$ they will have the same feature representation using any of these 4 operators, but different labels.
-If we are given two pairs of articles $(a,b) \in \Rightarrow$ and $(b,a) \notin \Rightarrow$, their feature representations should intuitively be different because they have different labels.
+If we are given two pairs of articles $(a,b)$ and $(b,a)$ where $a \Rightarrow b$ and $b \not \Rightarrow a$, their feature representations should intuitively be different because they have different labels.
 %For this reason we will test different non-commutative operations.
 Because Hadamard product produced good results in the node2vec paper we will be testing it and compare it to the corresponding non-commutative operation Hadamard division. Furthermore we choose to test concatenating the feature vectors $\mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^{2d}$, leaving it up to the classifier to interpret the combination of article features.
 \todo{should we explain that hadamard is entrywise}
