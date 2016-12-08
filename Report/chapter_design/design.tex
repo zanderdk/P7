@@ -9,9 +9,7 @@ If system usage grows sufficiently large the data exchange could be handled by i
 \todo{Nattiya: Scalability needs to be explained more in depth}
 
 \subsection{Filtering and Refinement}
-Since the potential input size of testing all possible combinations of articles for missing links is roughly 5 million articles squared, which totals to $2.5 \times 10^{13}$, we have employed a \emph{filtering and refinement} strategy \todo{We have this from DIS --- but how to cite it?}. The filtering step chooses the more promising candidates based on a given policy, and the refinement step does the actual evaluation of the candidates.
-
-\todo{Nattiya: Explain more in depth what refinement is. But I (Michael) thinks this is clear in conjunction with the following section Main Pipeline}
+Since the potential input size of testing all possible combinations of articles for missing links is roughly 5 million articles squared, which totals to $2.5 \times 10^{13}$, we have employed a \emph{filter and refine} strategy. This strategy is advantageous when dealing with a large amount of input data, where much of the input data can heuristically be discarded. The filtering step chooses the more promising candidates based on a given policy, and the refinement step performs the actual evaluation of the candidates. In this way, the relatively slower evaluation is only performed on the data that passes the quick filtering step.
 
 \tikzsetnextfilename{system-overview}
 \begin{figure}[tb]%
