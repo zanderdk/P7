@@ -13,9 +13,17 @@ We believe that Wikipedia provides humanity with a great source of free knowledg
 How can a system be developed that can supply reasonable suggestions of links, that should be added to Wikipedia articles?
 \end{formal}
 
-The linking problem, whether two articles should be linked, is not an easy problem to solve deterministically, as it is inherently subjective; there is no definitive answer to this problem. The focus of our approach will therefore be on article link suggestions, instead of definitive answers.
+This question can further be split into subproblems, that we wish to answer:
+%\todo{Some VERY work-in-progress subquestions for inspiration only:}
+\begin{itemize}
+	\item What distinguishes articles that should be linked and those that should not?
+  \item How can this distinction between two classes be implemented?
+  \item What is a reasonable method of presenting these to a user?
+  \item How can scalability of the system be achieved?
+\end{itemize}
+%\todo{Skriv nogle mere specifikke krav, ala: der skal laves en brugergrænseflade til vores fantasikunder}
 
-We hope that an answer to this question will not only be applicable in this project, but might provide us with an insight into an underlying general problem.
+The answer to the problem of whether two articles should be linked is inherently subjective --- there is no definitive answer to this problem. Therefore, the focus of our approach will be on article link suggestions, instead of definitive answers. We hope that an answer to this question will not only be applicable in this project, but might provide us with an insight into an underlying general problem.
 
 %In order to gain a more detailed understanding of the stated problem, we have constructed a list of subproblems, that together can be seen as equivalent as the original problem:
 
@@ -24,16 +32,11 @@ We hope that an answer to this question will not only be applicable in this proj
 %	\item How can a metric for appropriate linking be constructed?
 %\end{itemize}
 
-\section{Title different from requirements} % (fold)
-\label{sec:title_different_from_requirements}
-\todo{Some VERY work-in-progress subquestions for inspiration only:}
-\begin{itemize}
-	\item What distinguishes articles that should be linked and those that should not?
-  \item How to distinguish between these two classes?
-  \item What is a reasonable method of presenting these to a user?
-  \item How can the solution be scaled, such that it works (on a reasonable computer, on all of Wikipedia (English), quickly for the users)?
-\end{itemize}
-\todo{Skriv nogle mere specifikke krav, ala: der skal laves en brugergrænseflade til vores fantasikunder}
+%\section{Title different from requirements} % (fold)
+%\label{sec:title_different_from_requirements}
+
+
+
 
 % section title_different_from_requirements (end)
 

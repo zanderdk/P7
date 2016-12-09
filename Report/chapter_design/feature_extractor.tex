@@ -16,9 +16,9 @@ Using nodes as words and the random walks as sentences allows using word embeddi
 \subsubsection{Neighborhoods}
 The notion of neighborhoods is important in network embedding, as the features of a node is derived from its neighborhood. Intuitively, this implies similarity between nodes that have similar neighborhoods. The neighborhood of a given node is found by traversing the graph.
 
-In node2vec the neighborhoods of each node $n$ is found by performing a series of biased random walks, and then observing the $k$ nearest nodes on either side of $n$ in the walks. To ensure that all nodes are visited during the random walks a number of walks, specified by the $r$ parameter, are started in every node. The maximum length of each walk is specified by the $l$ parameter. This concept is illustrated in \todo{lav + ref figur}.
+In node2vec the neighborhoods of each node $n$ is found by performing a series of biased random walks, and then observing the $k$ nearest nodes on either side of $n$ in the walks. To ensure that all nodes are visited during the random walks a number of walks, specified by the $r$ parameter, are started in every node. The maximum length of each walk is specified by the $l$ parameter.
 
-The random walks are biased using two parameters, $p$ and $q$. An example of the biased random walk is shown in \cref{fig:randomwalk}. The walk is currently in $v$, after walking the edge $(t,v)$. Here a search bias $\alpha$ is given to each outgoing edge from $v$. The bias given by \cref{eq:bias}, where $d_{tx}$ denotes the shortest path distance from $t$ to $x$.
+The random walks are biased using two parameters, $p$ and $q$. An example of the biased random walk is shown in \cref{fig:randomwalk}. The walk is currently in $v$, after walking the edge $(t,v)$. Here a search bias $\alpha$ is given to each outgoing edge from $v$ according to \cref{eq:bias}, where $d_{tx}$ denotes the shortest distance from $t$ to $x$. The next edge in the walk is selected by probability sampling using the alias method.
 
 \begin{equation}
 \label{eq:bias}
@@ -30,11 +30,7 @@ The random walks are biased using two parameters, $p$ and $q$. An example of the
 \end{cases}
 \end{equation}
 
-\todo{Sampling}
-
-A high $p$ value, relative to $max(1,q)$, approximates a depth-first search, while a high $q$ value, relative to $max(1,p)$, approximates the behavior of a breath-first search. The motivation of these tunable parameters is the observation that real-world networks can be structured in many ways. The randomness and the tunable $p$ and $q$ values accounts for different types of networks, by allowing control of the exploration method.
-
-There are three additional parameters in node2vec, $d$, $r$, and $l$, which determines the dimensions of the resulting feature vector, the number of random walks performed per node, and the maximum length of each walk, respectively.
+By adjusting $p$ and $q$ it is possible to approximate different search strategies. A high $p$ value, relative to $max(1,q)$, approximates a depth-first search, while a high $q$ value, relative to $max(1,p)$, approximates the behavior of a breath-first search. The motivation of these tunable parameters is the observation that real-world networks can be structured in many ways. The biased random walks with the tunable $p$ and $q$ values accounts for different types of networks, by allowing control of the exploration method.
 
 \begin{figure}%
   \centering

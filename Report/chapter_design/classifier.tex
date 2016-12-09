@@ -23,9 +23,7 @@ To get a coarse estimate of which classifier seems the most appropriate for our 
 The examined algorithms are chosen mostly based on classifiers available in the scikit-learn Python library. There are many algorithms to choose from, and as all the algorithms are in the same library, the interface is the same, significantly simplifying the test harness.
 
 \subsubsection{Evaluation Metrics}\label{evaluation_metric}
-\todo{Explain what true/false positives/negatives are.}
-
-To evaluate the performance of each algorithm, we perform a 3-fold cross-validation. We choose 3 because this produces results quickly in comparison to a 10-fold. As the core of our problem definition is to find suggestions to missing links, false positives should be punished harder than false negatives. In other words, suggesting a pair of articles to be linked that should not actually be linked, is worse than not suggesting a pair of articles that should be linked. 
+To evaluate the performance of each algorithm, we perform a 3-fold cross-validation. We choose 3 because this produces results quickly in comparison to a 10-fold. As the core of our problem definition is to find suggestions of missing links, false positives should be punished harder than false negatives. A false positive is the suggestion of a link, that the classifier thinks should be there, but actually should not. A false negative is the suggestion of a link, that the classifier thinks should \emph{not} be there, but actually should. In other words, we believe it is worse to suggest a pair of articles to be linked that should not actually be linked, than not suggesting a pair of articles that should be linked. 
 
 Because of the before mentioned higher penalty rate of false positives we want to favor precision over recall, as precision decreases as the number of false positives increases. We therefore choose precision as our evaluation metric.
 
