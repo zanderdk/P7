@@ -27,7 +27,7 @@ In order to give a precise definition of the problem we will define it formally,
 % \argmax_y\ \Pr(y \mid f(a,b))
 % \end{equation}
 
-Let $f: V\times V \to \mathbb{R}^d$ be a function mapping from article pairs to a feature representation as vector, where $d$ is the dimension of the feature vector. The set of all possible labels is given by $L=\{0,1\}$, where $1$ represents the class of article pairs that should be linked, and $0$ the ones that should not .
+Let $f: V\times V \to \mathbb{R}^d$ be a function mapping from article pairs to a feature representation as vector, where $d$ is the dimension of the feature vector. The set of all possible labels is given by $L=\{0,1\}$, where $1$ represents the class of article pairs that should be linked, and $0$ the ones that should not.
 
 We want to learn a function $g: \mathbb{R}^d \to L$, that assigns a label $y_{ab} \in L$ to a feature representation $x_{ab} \in \mathbb{R}^d$, for a given article pair $(a,b) \in V \times V$, such that \cref{eq:labels} holds.
 

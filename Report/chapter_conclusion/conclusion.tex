@@ -11,30 +11,35 @@ In the problem statement, we formulated the following questions:
 \todo{How we answered these. One paragraph for each point.}
 
 \section{Future Work}
-% candidate filtering
-The candidate filtering step of the system is in charge of providing article pairs that will be classified as link suggestions or not. For this reason the relevance of the selected candidates directly impacts which links that are being suggested. In the future it would be useful to examine methods for increasing the likelihood that relevant links are selected, while still keeping the amount of irrelevant candidates down to a manageable level.
+\todo{intro}
+
+\subsection{Candidate Generator}
+The candidate generation step of the system provides article pairs to be classified. For this reason the relevance of the selected candidates directly impacts which links are being suggested. In the future it would be useful to examine methods for increasing the likelihood that relevant links are selected, while still keeping the amount of irrelevant candidates down to a manageable level.
 \todo{comment on clickstream and n-gram approach}
 
-% Training data
-The training data can be improved \todo{explain classifier eval}. Because the negatives are selected at random, the training data contains a very few "edge" cases, where articles has high relevance but still should not be linked. Extending the data which such samples could improve accuracy of the classifier. Additionally it might be useful to extend the data with training samples for linking in the opposite direction, since we do not know to which extend the direction between pairs of articles is being considered.
+\subsection{Training Data}
+The training data can be improved \todo{explain classifier eval}. Because the negatives are selected at random, the training data contains very few \enquote{edge} cases, where articles have high relevance but still should not be linked. Extending the data which such samples could improve accuracy of the classifier. Additionally it might be useful to extend the data with training samples for linking in the opposite direction, since we do not know to which extend the direction between pairs of articles is being considered.
 Furthermore the amount of training data might not be sufficient or general enough. One way to increase the amount of training data might be to also consider links from good articles as positives, even though we cannot assume them to have good linking.
 
 % non-featured
 Both the training and test data does not take non-featured articles into account. This might be a problem since featured articles might not be a good representation of normal articles. In the future it would be relevant to examine how the model can be trained to evaluate article pairs that are not featured. One way might be to use input from editors, which is discussed below. Other approaches could be to use a n-gram or clickstream data as mentioned in \todo{ref}.
 
-
+\subsection{Node2vec}
 %node2vec
 \todo{node2vec stuff}
 
-% Realtime data
+\subsection{Realtime Data}
 The used Wikipedia data was collected in 2015. A future improvement would be to consider the newest available Wikipedia data, to be able to suggest links that has not already been inserted.
 By working on realtime Wikipedia data, the system could be improved to suggest links for recently edited and added articles. This would be beneficial for editors, since new articles are likely to be missing links.
 
+\subsection{Reinforcement Learning}
 The system could also be extended to take user input into account, by training on samples that editors have assigned as good or bad suggestions.
 
+\subsection{User Interface}
 % UI
 The user interface is very good. \todo{ui}
 
+\subsection{Automatic Link Insertion}
 An improvement would be to automatically insert suggested links in articles and make it possible for editors to accept the appropriate ones.
 
 If the system is improved to have a high confidence for suggesting links, it would also be relevant to consider creating a Wikipedia bot that automatically can insert suggested links, which significantly would decrease the workload required by editors.

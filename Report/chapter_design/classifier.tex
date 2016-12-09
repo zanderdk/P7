@@ -42,12 +42,41 @@ A common measure of a test's accuracy is the \emph{F-score}, which considers bot
 \subsubsection{Results}
 A barchart of results can be seen in \cref{fig:classifier_comparison}. \emph{QDA} gives the best precision of $0.985$. However the recall is low, which is concerning as this means the number of suggestions are reduced. The next best result, \emph{Nearest Centroid}, gives a precision of $0.979$ which is also high, but with a far better recall. We would rather trade $0.6\%$ percent precision for much better recall, and therefore choose \emph{Nearest Centroid} as our classifier.
 
-\todo{Skal vi vise en confusion matrix?}
+%\begin{figure}[tbp]
+%\centering
+%\includegraphics[width=0.95\textwidth]{classifier-comparison2.pdf}
+%\caption[Precision and recall scores for the chosen algorithms]{Precision and recall scores for the chosen algorithms, sorted by precision.}\label{fig:classifier_comparison}
+%\end{figure}
 
-\begin{figure}[tbp]
+\begin{figure}%
 \centering
-\includegraphics[width=0.95\textwidth]{classifier-comparison2.pdf}
-\caption[Precision and recall scores for the chosen algorithms]{Precision and recall scores for the chosen algorithms, sorted by precision.}\label{fig:classifier_comparison}
+\tikzsetnextfilename{barchart}
+\begin{tikzpicture}
+  \begin{axis}[
+      table/col sep=semicolon,
+      xbar=0pt, xmin=0, xmax=1,
+      xlabel=Score,
+      yticklabels from table={chapter_design/precision.csv}{name},
+      %yticklabel style={text height=1.5ex},
+      ytick=data,
+      width=0.6\textwidth,
+      y=0.9cm,
+      enlarge y limits={abs=0.6},
+      bar width=8pt,
+      /pgf/number format/fixed,
+      axis lines*=left,
+      xmajorgrids=true,
+      legend entries={Recall, Precision},
+      legend style={draw=none},
+      reverse legend, area legend,
+      legend style={at={(1,1.01)},anchor=south east}
+    ]
+    \addplot [fill=color1!20!white] table [y expr=-\coordindex, x=recall] {chapter_design/precision.csv};
+    \addplot [fill=color1!70!white] table [y expr=-\coordindex, x=precision] {chapter_design/precision.csv};
+    
+  \end{axis}
+\end{tikzpicture}
+\caption[Precision and recall scores for the chosen algorithms]{Precision and recall scores for the chosen algorithms, sorted by precision}\label{fig:classifier_comparison}%
 \end{figure}
 
 % \begin{table}[tbp]

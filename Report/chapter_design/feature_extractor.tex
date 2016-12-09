@@ -104,11 +104,10 @@ Because Hadamard product produced good results in the node2vec paper we will be 
 \label{fig:n2v-figure}%
 \end{figure}
 
-\subsection{Optimizing Performance / Scalability}
+\subsection{Performance \& Scalability}
 As also detailed in~\cite{node2vec}, node2vec is able to scale well. Every walk is independent from each other which means that many walks can take place in parallel; it is embarrassingly parallel. Our test machine had 16 CPU cores which we wanted to utilize. We therefore spawned 16 threads that each was walking the graph. This allows use to fully utilize every CPU core.
 
 As all walks have to be stored for the word2vec phase, we were concerned that the memory footprint of storing all walks in memory would be too high. We therefore dump the walks to a file, and later stream this file into memory when training word2vec. Gensim, the implemention of word2vec we use, is also able to fully utilize the CPU when training word2vec on the walks.
-\todo{Find better title}
 
 \subsection{Hyperparameter Optimization}
 As described in \cref{sec:node2vec}, node2vec has many tunable hyperparameters. In addition to the hyperparameters we will also examine the performance of different binary operations for combining node feature vectors. To find the parameters that give the best feature representation, we do a hyperparameter optimization pass. We first specify the parameter space that should be searched in. As this is a large space, it is not feasible to exhaust all possibilities. We therefore use the tool Spearmint~\cite{snoek2012practical} which performs Bayesian optimization by maximizing the expected improvement to efficiently search for parameters that will minimize an objective function. The objective function is $1 - \text{f-score}$, where the f-score is found by running a classifier on the node2vec model learned from the parameters. By keeping the classifier and its parameters constant, we can find the best set of parameters by finding the lowest objective function value.
@@ -129,7 +128,49 @@ $p$  & $q$     & $d$ & $k$ & $l$ \\
 \label{tab:paramopt_goodvalues}%
 \end{figure}
 
-\todo{insert spearmint graph?}
+\begin{figure}%
+  \centering
+  \tikzsetnextfilename{hackety-hack-hack}
+  \begin{tikzpicture}
+    \begin{axis}[
+      scale only axis,
+      height=5cm,
+      width=0.9\textwidth,
+      xmin=0, xmax=90,
+      ymin=0, ymax=1,
+      legend entries={Unsorted, Sorted},
+      legend pos=north east,
+      legend style={draw=none},
+      xlabel={Some x label},
+      ylabel={Score}
+    ]
+      \addplot[mark=square*, color=color4!30!white] table [x=x, y=y, col sep=semicolon] {chapter_design/unsorted.csv};
+      
+      \addplot[
+        scatter,
+        color=color2,
+        scatter src=explicit symbolic,
+        scatter/classes={
+            normal={mark=*, color2},%
+            special={mark=*, colorG, draw=colorGshade}%
+        }%,
+        %pins near some coords={15/south:Hadamard,29/north:Divide}
+      ] table [x=x, y=y, col sep=semicolon, meta=color] {chapter_design/sorted.csv}
+      ;
+      \node[coordinate,pin={[pin distance=1cm]above:{Hadamard}}] 
+        at (axis cs:16,0.55340945711058)	{};
+        
+      \node[coordinate,pin={[pin distance=.6cm]below:{Divide}}] 
+        at (axis cs:30,0.4252592596720848)	{};     
+        
+      \node[coordinate,pin=above:{Concatenate}] 
+        at (axis cs:84,0.19147061365923185)	{};
+      
+    \end{axis}
+  \end{tikzpicture}
+\caption[short desc]{Test}%
+\label{fig:hacketyhackhack}%
+\end{figure}
 
 Concatenating the feature vectors generally gave better results compared to using Hadamard product and division.
 
