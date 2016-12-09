@@ -19,34 +19,41 @@ Under this assumption a large amount of labeled training data can be generated. 
 \subsection{Defining the Learning Task}
 In order to give a precise definition of the problem we will define it formally, before explaining what work is needed to solve it.
 
-We first formulate the classification task as an optimization problem where we maximize the objective function $\Pr(y \mid f(a,b))$, where $a,b \in V$: 
-% of $(a,b) \in \ \Rightarrow$, through this objective function:
+%We first formulate the classification task as an optimization problem where we maximize the objective function $\Pr(y \mid f(a,b))$, where $a,b \in V$:
 \todo{Hun siger vi skal have reference til objective function, men Simon ved ikke lige hvilken der er god}
 
+% \begin{equation}
+% \label{objective}
+% \argmax_y\ \Pr(y \mid f(a,b))
+% \end{equation}
+
+Let $f: V\times V \to \mathbb{R}^d$ be a function mapping from article pairs to a feature representation as vector, where $d$ is the dimension of the feature vector. The set of all possible labels is given by $L=\{0,1\}$, where $1$ represents the class of article pairs that should be linked, and $0$ the ones that should not .
+
+We want to learn a function $g: \mathbb{R}^d \to L$, that assigns a label $y \in L$ to a feature representation $x \in \mathbb{R}^d$, such that \cref{eq:labels} holds.
+
 \begin{equation}
-\label{objective}
-\argmax_y\ \Pr(y \mid f(a,b)) 
+\label{eq:labels}
+    y=
+    \begin{cases}
+        1 & \text{if } (a,b) \in \  \Rightarrow\\
+        0 & \text{otherwise}
+    \end{cases}
 \end{equation}
 
-Where $y$ is defined as:
+Using $f$ to find the feature representation, we can assign a label $y$ to an article pair $a$ and $b$ using \cref{eq:classification_function}.
 
-\[
-    y=
-\begin{cases}
-    1 & \text{if } (a,b) \in \  \Rightarrow\\
-    0 & \text{otherwise}
-\end{cases}
-\]
+\begin{equation}
+\label{eq:classification_function}
+  y = g\big(f(a,b)\big)
+\end{equation}
 
-Here, 1 represents the class of article pairs that should be linked, and 0 the ones that should not.
+There are two parts to solving this problem. We must train a classifier to approximate the function $g$, identifying which label $y$ should be given to a feature representation $x$. Before we can do that, we must define the function $f$ that generates the feature representation vector. The choice of classifier will be examined in \cref{choosing_classifier}, while $f$ will be described in the following section.
 
-Let $f: V\times V \to \mathbb{R}^d$ be a function mapping from article pairs to a feature representation as vector, where $d$ is the dimension of the feature vector.
-
-We wish to find which value for $y$ that gives the highest probability for $\Pr$ given a feature representation $f(a,b)$.
+%We wish to find which value for $y$ that gives the highest probability for $\Pr$ given a feature representation $f(a,b)$.
 
 %To learn predicting the label $y \in \Set{1,0}$ of a pair of articles $(a,b) \in V \times V$, we seek to find the value of $y$ that maximizes the function $\Pr(y \mid f(a,b))$, which represents the probability that articles should be linked, conditioned on the feature representation $f(x)$:
 
-There are two parts to solving this problem. First we must train a classifier to identify which label for $y$ that gives the highest probability. But before we can do that, we must define the function $f$ that generates the feature vector. The choice of classifier will be examined in \cref{choosing_classifier}, while $f$ will be described in the following section. \todo{explain $f$ somewhere}
+%There are two parts to solving this problem. We must train a classifier to identify which label for $y$ that gives the highest probability. But before we can do that, we must define the function $f$ that generates the feature vector. The choice of classifier will be examined in \cref{choosing_classifier}, while $f$ will be described in the following section.
 
 %\subsubsection{Article Features}
 %\todo{this needs review, and should maybe be moved to another section}
