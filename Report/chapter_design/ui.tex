@@ -69,4 +69,25 @@ However if we focus on making the results accessible, we can hope to benefit fro
 
 \subsubsection{Implementation}
 
-something something HTTP \& restful.
+The API was developed as a RESTful~\cite{rest} API using HTTP methods. The REST architecture style was chosen due to its popularity and simplicity, two properties that fit well with out requirements and envisioned user demographic. We developed two endpoints which are described in \cref{rest_table}. The current implementation handles data in a JSON format, but this could easily be extended to multiple data formats.
+
+\todo{add caption to table}
+\begin{table}[]
+\centering
+\label{rest_table}
+\begin{tabular}{@{}|p{0.10\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|@{}}
+\toprule
+HTTP Method & Description & Arguments & Example Result \\ \midrule
+GET         & Returns a list of link suggestions that requires evaluation & An integer limit for the maximum returned links.
+			& \mono{[\{"source":Jesus, "target":Gabriel\}, \{"source":Elephant, "target":Tiger\}]} \\ \midrule
+POST        & Accepts a submission of a review & Requires source, target, and status to be defined. Status must have the value of either "good" or "bad". & Review Accepted \\ \bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Security Concerns}
+
+One thing that needs revision before the current implementation can be put to use, is security concerns. Since the POST method indirectly extends access to storage on the server, this could be the target of malicious usage. We have classified our security concerns into two catagories: technical and non-technical. The technical concerns deal with malicious use that seeks to exploit a technical flaw. Examples of these could be attempts of maxing out our storage or trying to inject code into our system. The non-technical types is by definition anything else, but examples could be the submission of bad reviews, maliciously or not.
+
+While the technical concerns are important, these are not unique to our system and the use of a reliable framework would do much to prevent these. The non-technical concerns however are largely unique to our system, and as such the preventive measures requires more focus from our side. For the problem of bad reviews, the first step is to register that a review is bad. Our two primary ideas is to either monitor Wikipedia to check whether a review conteniously matches the state of the given article, or to consider if multiple reports on the same review agrees.
+
+If we detect a review we consider bad the removal of it is a trivial task. However, in order to detect whether the review was malicious we would probably need to consider whether the same user gives repeated bad reviews. This is a non-trivial task. The direct way to solve this would be to require users to register in our system, but this would make the API less accessable. It would be worth exploring if we could detect malicious users solely through logs, but this is not guaranteed to give good results.

@@ -27,7 +27,12 @@ def _get_pool_pairs(MaxCount = math.inf):
 def full_pool(request):
     if (request.method != 'GET'):
         return HttpResponse(status = 405)
-    return HttpResponse(_get_pool_pairs())
+    try:
+        count = int(request.GET['max'])
+    except Exception:
+        return HttpResponse(_get_pool_pairs())
+    else:
+        return HttpResponse(_get_pool_pairs(count))
 
 @csrf_exempt
 def partial_pool(request, count):
