@@ -22,8 +22,12 @@ The potential input size of testing all possible combinations of articles for mi
 \subsection{Main Pipeline}
 The main pipeline consists of five components. The first one is a storage component, which holds all the information required to identify the link suggestions. The second component is \emph{Candidate Generator}, which is responsible for the candidate generation process. It works by extracting candidate article pairs from the database. The candidates are of the form $(A,B)$ where $A$ is a source article and $B$ is a suggested target article. The third component is the \emph{Feature Extractor}. This intermediate component generates a feature vector from a given candidate pair. As the fourth component, we have the \emph{Classifier}, which is responsible for the classification of the candidate pair. This is the component that ultimately makes the link suggestion. Finally the \emph{Results Pool} is another storage component, which holds the suggestions until they are presented to a user through the user interface.
 
+
+
+\todo{Nattiya: It doesn’t show the testing step and its input. + Evaluation is not shown in the pipeline.}
+
 \subsection{Model Training}
-Construction of the main pipeline includes learning a model for extracting features from article, as well as training a classifier. These tasks are performed by two support modules.
+Construction of the main pipeline includes learning a feature model, used for extracting article features, as well as learning a classification model by training a classifier to suggest links from the the extracted features. These tasks are performed by two support modules.
 
 The support module for the feature learning consists of a \emph{Model Trainer} and a \emph{Parameter Optimizer}. The \emph{Parameter Optimizer} works on a smaller subset of the dataset in order to speed up the process of tuning the parameters. When an acceptable set of parameters has been found, the \emph{Model Trainer} uses these parameters to train a model on the entire dataset. The result of this is the model, which is used as the \emph{Feature Extractor}.
 
