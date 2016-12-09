@@ -73,14 +73,14 @@ The API was developed as a RESTful~\cite{rest} API using HTTP methods. The REST 
 
 \begin{table}[htbp]
 \centering
-\begin{tabular}{@{}|p{0.10\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|p{0.30\textwidth}|@{}}
+\begin{tabular}{@{}p{0.10\textwidth}p{0.27\textwidth}p{0.27\textwidth}p{0.27\textwidth}@{}}
 \toprule
 HTTP Method & Description & Parameters & Example Result \\ \midrule
 GET         & Returns a list of link suggestions that requires evaluation & An integer limit for the maximum returned links.
 			& \mono{[\{"source":Jesus, "target":Gabriel\}, \{"source":Elephant, "target":Tiger\}]} \\ \midrule
 POST        & Accepts a submission of a review & Requires source, target, and status to be defined. Status must have the value of either "good" or "bad". & Review Accepted \\ \bottomrule
 \end{tabular}
-\caption{Caption}\label{rest_table}
+\caption{Overview of HTTP endpoints}\label{rest_table}
 \end{table}
 
 \subsubsection{Security Concerns}
