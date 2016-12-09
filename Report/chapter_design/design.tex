@@ -8,9 +8,6 @@ If system usage grows sufficiently large the data exchange could be handled by i
 
 \todo{Nattiya: Scalability needs to be explained more in depth}
 
-\subsection{Limiting Input Size}
-The potential input size of testing all possible combinations of articles for missing links is roughly 5 million articles squared, which totals to $2.5 \times 10^{13}$. Suppose we can process 1 million of these pairs per second, it will still take almost 290 days. An input of this size will therefore be impossible to handle during this project period. However, we may be able to heuristically limit the input size, if we assume many article pairs can be discarded immediately --- but we need to generate these pairs dynamically instead of filtering. By filtering we encounter the same problem as before, since we have the same input size of $\num{5000000}^2$. By dynamically generating the pairs, we can generate a pair of articles as needed. This way, the computationally intensive evaluation is only performed on the data that is generated as needed.
-
 \tikzsetnextfilename{system-overview}
 \begin{figure}[tb]%
   \centering
