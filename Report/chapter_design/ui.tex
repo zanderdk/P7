@@ -1,6 +1,6 @@
 \section{User Interface}\label{sec:design_ui}
 
-In this section we will cover the development of the user interface (UI). First we will cover the requirements and the task that the UI is responsible for solving. Then we will discuss solution approaches for the UI in consideration of our potential users, before finally covering the implementation. 
+In this section we will cover the development of the user interface (UI). First we will cover the requirements and the task that the UI is responsible for solving. Then we will discuss the demographics of our envisioned potential users, before finally covering the implementation. 
 
 As a mean to derive requirements, we initially developed an information flow diagram of the UI. This outlined the usage of the system allowing us to consider the different use cases and user needs.
 
@@ -10,7 +10,7 @@ As a mean to derive requirements, we initially developed an information flow dia
 \centering
 \includegraphics[width=0.95\textwidth]{wikiAPI.pdf}
 \caption{Information flow diagram for user interface.}\label{fig:information_flow_UI}
-\end{figure}
+\end{figure}	
 
 In the diagram seen in \cref{fig:information_flow_UI}, which is in the WebML+ style~\cite{Casteleyn2009}, we have the two actors and the UI\@. One actor is the Wikipedia Editor and the other is the main pipeline. While the main pipeline could be modeled as a system with its own information flow, it is more beneficial for the requirement engineering process to simplify the main pipeline as an actor outside of the UI, since the requirements for the UI should not be affected by the inner workings of the main pipeline.
 
@@ -49,9 +49,24 @@ The requirements found in these two information flows are:
 	\item A user should be able to submit reviews of link suggestion
 \end{itemize}
 
-\subsection{Solution Idea}
+\subsection{User demographic}
+
+In order to design a solution for the requirements, we first consider the envisioned user demographic. The user is a Wikipedian, i.e. a person who edits Wikipedia articles. The Wikipedians we especially wish to engage are the so called coolfarmers, which is a term coined by~\cite{coolfarming}, to describe the top editors of Wikipedia. They cite~\cite{Priedhorsky:2007:CDR:1316624.1316663} with the findings that the editing of Wikipedia is a long tail distribution, and through an analysis of behavioral patterns identify the coolfarmers as the backbone of Wikipedia~\cite{coolfarming}. Furthermore~\cite{wiki_motivation} has found that \enquote{fun} and \enquote{ideology} are the two most important reasons why users edit Wikipedia, and~\cite{Yang20101377} extends on this by finding that internal self-concept-based motivation\footnote{motivation by feeling a personal achievement when sharing knowledge and being a self-motivated person} is the most important type of motivation for the Wikipedians.
+
+We believe that the most effective way employ the results of the main pipeline, is to focus on delivering them to the coolfarmers and thereby combining the computational power of a classifier with their experience and motivation to make the actual edits.
 
 
+\subsection{Web API}
 
+Our choice of UI is a web API that allows users to access and review the information we can provide. What follows is a justification for this choice, as well as some specifics as to the implementation of the UI.
 
-\subsection{RESTful Web API}
+\subsubsection{Choosing API}
+Since Wikipedians are often driven by self-motivation and ideology we believe that the most important function of the UI is to deliver the information effectively. We believe that this delivery should allow the community to get the best results into the articles of Wikipedia.
+
+It can easily be argued that a website or a browser plug-in that focuses on a graphical representation of the results, will have a wider reach than an API that delivers the raw data. While such implementations could, if successful, provide the project a boost in popularity, there is a significant chance that the given implementation would not gain popularity.
+
+However if we focus on making the results accessible, we can hope to benifit from the Wikipedia community, and possibly spark other projects of interface development. And even if this is not the case, we can proceed to build a graphical interface ourselves, upon the already working API.
+
+\subsubsection{Implementation}
+
+something something HTTP \& restful.
