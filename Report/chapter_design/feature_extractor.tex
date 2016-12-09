@@ -5,7 +5,7 @@ As mentioned in \cref{sec:feature_generation} we aim to use feature learning, sp
 
 This section describes how node2vec is used to generate the feature representation, along with the process of optimizing the models hyperparameters.
 
-\subsection{Description of node2vec} % (fold)
+\subsection{Description of node2vec}
 \label{sec:node2vec}
 Node2vec is an algorithmic framework for semi-supervised feature learning in networks~\cite{node2vec}. The goal of the algorithm is to learn a model that can reconstruct the neighborhood of a given node.
 The purpose of using node2vec is to generate features for edges and non existing edges, this can be done by combining feature representations of two nodes. node2vec propose a way of generating features representations for nodes based on their neighborhoods. The idea is to use word embedding on sentences of word representing nodes, where each node should be in the same neighborhood as nodes close to it in the sentences. In the following sections it will briefly be covered how the word embedding works, and how we construct sentences of nodes using biasd random walks in the graph. We will further more describe the way node2vec combines feature representations of nodes, and compare it to the way we chose combines feature representations.
