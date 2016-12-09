@@ -122,7 +122,48 @@ $p$  & $q$     & $d$ & $r$ & $k$ & $l$ \\
 \label{tab:paramopt_goodvalues}%
 \end{figure}
 
-\todo{insert spearmint graph?}
+\begin{figure}%
+  \centering
+  \tikzsetnextfilename{hackety-hack-hack}
+  \begin{tikzpicture}
+    \begin{axis}[
+      scale only axis,
+      height=5cm,
+      width=0.9\textwidth,
+      xmin=0, xmax=90,
+      ymin=0, ymax=1,
+      legend entries={Unsorted, Sorted},
+      legend style={at={(1,1)},anchor=north east},
+      xlabel={Some x label},
+      ylabel={Score}
+    ]
+      \addplot[mark=square*, color=color4!30!white] table [x=x, y=y, col sep=semicolon] {chapter_design/unsorted.csv};
+      
+      \addplot[
+        scatter,
+        color=color2,
+        scatter src=explicit symbolic,
+        scatter/classes={
+            normal={mark=*, color2},%
+            special={mark=*, colorG, draw=colorGshade}%
+        }%,
+        %pins near some coords={15/south:Hadamard,29/north:Divide}
+      ] table [x=x, y=y, col sep=semicolon, meta=color] {chapter_design/sorted.csv}
+      ;
+      \node[coordinate,pin={[pin distance=1cm]above:{Hadamard}}] 
+        at (axis cs:16,0.55340945711058)	{};
+        
+      \node[coordinate,pin={[pin distance=.6cm]below:{Divide}}] 
+        at (axis cs:30,0.4252592596720848)	{};     
+        
+      \node[coordinate,pin=above:{Concatenate}] 
+        at (axis cs:84,0.19147061365923185)	{};
+      
+    \end{axis}
+  \end{tikzpicture}
+\caption[short desc]{Test}%
+\label{fig:hacketyhackhack}%
+\end{figure}
 
 Concatenating the feature vectors generally gave better results compared to using Hadamard product and division.
 
