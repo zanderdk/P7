@@ -1,5 +1,5 @@
 \chapter{Design \& Implementation}\label{chap:design}
-In this chapter we will discuss the development of the solution that was outlined in the previous chapter. The system will be explained in a top-down fashion, and as such we start off with an overview of the entire system through the architecture. Afterward (in \cref{sec:db} and onwards in this chapter), the specifics of each component will be explained in their own separate sections.
+In this chapter we will discuss the development of the solution that was outlined in the previous chapter. The system will be explained in a top-down fashion, and as such we start off with an overview of the entire system through the architecture. After a brief overview of the system in \cref{sec:design_overview}, the specifics of each component will be explained in their own separate sections.
 
 \section{Architecture}\label{sec:design_overview}
 This system is built on an pipeline architecture, where the output of each primary component is fed into the next. The main benefit of this architecture is the modularity and scalability. Each component has minimal coupling with each other, by only interacting through data. As long as two components both adhere to the rules for data exchange, they can completely disregard any logic or functionality of each other. This gives the system the two advantageous properties of effortless exchange of entire components and straightforward horizontal scaling.
@@ -7,11 +7,6 @@ This system is built on an pipeline architecture, where the output of each prima
 If system usage grows sufficiently large the data exchange could be handled by intermediate databases using, for example, a master-slave architecture where components supplying data could write to the database through one of multiple masters, and components retrieving data could read from one of multiple slaves. It is also possible to have every component run on different machines in different places. While this might not be a computational advantage, it minimizes logistics problems during scaling operations, since the system can be partially moved, component by component. Shutdown of a component can be delayed until its replacement is running. Regardless of the specific implementations, our usage of the pipeline architecture makes the system inherently modular and scalable.
 
 \todo{Nattiya: Scalability needs to be explained more in depth}
-
-\subsection{Filtering and Refinement}
-Since the potential input size of testing all possible combinations of articles for missing links is roughly 5 million articles squared, which totals to $2.5 \times 10^{13}$, we have employed a \emph{filtering and refinement} strategy \todo{We have this from DIS --- but how to cite it?}. The filtering step chooses the more promising candidates based on a given policy, and the refinement step does the actual evaluation of the candidates.
-
-\todo{Nattiya: Explain more in depth what refinement is. But I (Michael) thinks this is clear in conjunction with the following section Main Pipeline}
 
 \tikzsetnextfilename{system-overview}
 \begin{figure}[tb]%
@@ -22,10 +17,14 @@ Since the potential input size of testing all possible combinations of articles 
 \end{figure}
 
 \subsection{Main Pipeline}
-The main pipeline consists of five components. The first one is a storage component, which holds all the information required to identify the link suggestions. The second component is \emph{Candidate Filtering}, which is responsible for the filtering process. As such, it extracts candidate article pairs from the database. The candidates are of the form $(A,B)$ where $A$ is a source article and $B$ is a suggested target article. The third component is the \emph{Feature Extractor}. This intermediate component generates a feature vector from a given candidate pair. As the fourth component we have the \emph{Classifier}, that is responsible for the refinement process. It does this by suggesting link that should be added to the input pair, based on the feature vector it received. Finally the \emph{Results Pool} is another storage component, which holds the suggestions until they are presented to a user through the user interface.
+The main pipeline consists of five components. The first one is a storage component, which holds all the information required to identify the link suggestions. The second component is \emph{Candidate Generator}, which is responsible for the candidate generation process. It works by extracting candidate article pairs from the database. The candidates are of the form $(A,B)$ where $A$ is a source article and $B$ is a suggested target article. The third component is the \emph{Feature Extractor}. This intermediate component generates a feature vector from a given candidate pair. As the fourth component, we have the \emph{Classifier}, which is responsible for the classification of the candidate pair. This is the component that ultimately makes the link suggestion. Finally the \emph{Results Pool} is another storage component, which holds the suggestions until they are presented to a user through the user interface.
+
+
+
+\todo{Nattiya: It doesn’t show the testing step and its input. + Evaluation is not shown in the pipeline.}
 
 \subsection{Model Training}
-Construction of the main pipeline includes learning a model for extracting features from article, as well as training a classifier. These tasks are performed by two support modules.
+Construction of the main pipeline includes learning a feature model, used for extracting article features, as well as learning a classification model by training a classifier to suggest links from the the extracted features. These tasks are performed by two support modules.
 
 The support module for the feature learning consists of a \emph{Model Trainer} and a \emph{Parameter Optimizer}. The \emph{Parameter Optimizer} works on a smaller subset of the dataset in order to speed up the process of tuning the parameters. When an acceptable set of parameters has been found, the \emph{Model Trainer} uses these parameters to train a model on the entire dataset. The result of this is the model, which is used as the \emph{Feature Extractor}.
 

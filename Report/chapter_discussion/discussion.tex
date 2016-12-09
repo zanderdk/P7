@@ -1,0 +1,39 @@
+\chapter{Discussion/Reflection}
+\section{Lessons Learned}
+Making a project like this is a great learning experience. This section will reflect on lessons learned throughout the project.
+
+\paragraph{Narrowing the Problem}
+At the beginning of a project we have to identify a problem to explore. We chose the broad subject of suggesting missing links on Wikipedia. By choosing broadly, we allow ourselves to move the project in many directions. This is good, but can also be overwhelming. As the number of possible ways for the project to evolve increases we have to evaluate many options without going in-depth. Because of the limited project time, we could have iterated faster on the solution by narrowing the problem right from the beginning of the project. In retrospect we could have worked on a subset of Wikipedia and only explored feature learning instead of also considering feature engineering. This would allow us to move faster, but on the other hand would not expose us to the problems of feature engineering and handling large amounts of data. Ultimately one has to decide early on whether the project should be exploratory or focus on a narrow problem space.
+
+\paragraph{Large Data \& Experience}
+As mentioned above, we could have chosen to concern ourselves with a subset of Wikipedia; we chose not to. When working with a bigger blob of data, the turn-around time for trying new approaches increases significantly. This means that we have to thoroughly think of the return of investment of every choice we make. In general we have found machine learning to be very much of a trial and error process. Experienced data scientists have a better intuition of the outcomes of certain approaches. We do not have this experience, so in order to gain experience we have to try new things to get an intuition. To maximize the number of approaches we can try, we have to carefully plan ahead so that our computing resources are utilized most efficiently. Running parallel computation tasks has therefore been a major importance to the productivity of the group. We think we have gained a fairly good intuition of the machine learning aspect of the project, but we would have liked to have more time to try some of the new ideas that emerged late in the project.
+
+\paragraph{Preparing Data}
+We found that we spent a significant portion of the project time on preparing data. At first, we did not know the direction the project was taking, so we stored as much data as possible in the database. This was both slow and cumbersome. As we further narrowed the solution space, it became obvious what data was relevant to store. The point is that preparing and finding the sensible data representation takes a non-trivial amount of time that has to be accounted for when planning a machine learning project.
+
+\paragraph{Finding Features}
+It is common knowledge in the field of machine learning that good features are vital. As mentioned above, we lack experience in machine learning. We originally started the project, experimenting with manually engineered features. We probably spent one month on these manually engineered features, but the results were not motivating and we found it difficult to reason about which features would be good. We therefore chose to explore feature learning as a way for even unexperienced data scientists to find good features. An obvious advantage of feature learning is the ability to automate large parts of the process. To find the best parameters for the feature learning algorithm, we performed parameter optimization. It was a good choice to do this, but with hindsight we should have been more careful about the process. We should plan ahead what we want to optimize as our optimization function to not waste time redoing parameter optimization work. Concretely, we should evaluate the parameters of the feature learning algorithms, not by testing the features on a classifier, but instead directly evaluate the features in some way. As we introduce a classifier when finding parameters for the feature learner, we introduce unneeded variables and also risk biasing the parameters towards the tested classifier.
+
+%Points:
+%- to minimize the problem, we could have narrowed the problem from the start, eg. a subset of wiki, choose a specific approach faster
+%    - Would allow us to iterate faster
+%    - Hard to generalize to the whole of wikipedia
+%    - would narrow the solution space
+%    - We could have had more focus on exploring approaches rather than implementing a final solution with a narrow approach set
+%- dealing with large data needs special considerations
+%    - takes time to try new things/approaches
+%    - Scheduling/planning: Try to always keep a worker machine busy
+\todo{mangler - Every (wrong) choice made in the project can propagate down the pipeline and greatly affect results}
+\todo{mangler - There are many solutions to a problem - we only explore one solution}
+%- It is hard to reason the effects of choices made before testing them. Experience in machine learning is a thing! Good that we have now had experience with it
+%- Finding good features is vital
+%- It can be hard to predict whether a solution will generalize before trying it
+%- As machine learning is about experience, there is a lot of trial and error
+%- Preparing data and finding the optimal data representation in eg. database takes time
+%- feature learning: because we lack experience designing features, feature learning seems like an alternative that can yield good results even by inexperienced developers.
+%    - Feature engineering is expensive
+%- parameter optimization
+%    - isolate components being optimized
+%- plan ahead:
+%    - for example in node2vec, we optimized towards f1, when precision would probably make more sense.
+%    - define ahead what we want to optimize. Which use cases?
