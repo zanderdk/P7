@@ -29,13 +29,13 @@ In order to give a precise definition of the problem we will define it formally,
 
 Let $f: V\times V \to \mathbb{R}^d$ be a function mapping from article pairs to a feature representation as vector, where $d$ is the dimension of the feature vector. The set of all possible labels is given by $L=\{0,1\}$, where $1$ represents the class of article pairs that should be linked, and $0$ the ones that should not .
 
-We want to learn a function $g: \mathbb{R}^d \to L$, that assigns a label $y \in L$ to a feature representation $x \in \mathbb{R}^d$, such that \cref{eq:labels} holds.
+We want to learn a function $g: \mathbb{R}^d \to L$, that assigns a label $y_{ab} \in L$ to a feature representation $x_{ab} \in \mathbb{R}^d$, for a given article pair $(a,b) \in V \times V$, such that \cref{eq:labels} holds.
 
 \begin{equation}
 \label{eq:labels}
-    y=
+    y_{ab}=
     \begin{cases}
-        1 & \text{if } (a,b) \in \  \Rightarrow\\
+        1 & \text{if } a \Rightarrow b\\
         0 & \text{otherwise}
     \end{cases}
 \end{equation}
@@ -44,7 +44,7 @@ Using $f$ to find the feature representation, we can assign a label $y$ to an ar
 
 \begin{equation}
 \label{eq:classification_function}
-  y = g\big(f(a,b)\big)
+  y_{ab} = g\big(f(a,b)\big)
 \end{equation}
 
 There are two parts to solving this problem. We must train a classifier to approximate the function $g$, identifying which label $y$ should be given to a feature representation $x$. Before we can do that, we must define the function $f$ that generates the feature representation vector. The choice of classifier will be examined in \cref{choosing_classifier}, while $f$ will be described in the following section.
