@@ -35,9 +35,9 @@ In the case of the retrieval of link suggestions the information flow is as foll
 For the case of reporting link reviews, where a user reports their evaluation of a suggested link, the information flow is as follows:
 
 \begin{enumerate}
-	\item The users submits a report of a suggested link
+	\item The users submits a review of a suggested link
 	\item The review is used for filtering link suggestions
-	\item The review is also forwarded to the main pipeline for further evalution
+	\item The review is also forwarded to the main pipeline for further evaluation
 \end{enumerate}
 
 The last step of forwarding the review to the main pipeline represents a future use of the reviews to re-train the classifier. This is not a current consideration in the main pipeline, but the UI is designed to support this type of feedback.
@@ -49,7 +49,7 @@ The requirements found in these two information flows are:
 	\item A user should be able to submit reviews of link suggestion
 \end{itemize}
 
-\subsection{User demographic}
+\subsection{User Demographic}
 
 In order to design a solution for the requirements, we first consider the envisioned user demographic. The user is a Wikipedian, i.e. a person who edits Wikipedia articles. The Wikipedians we especially wish to engage are the so called coolfarmers, which is a term coined by~\cite{coolfarming}, to describe the top editors of Wikipedia. They cite~\cite{Priedhorsky:2007:CDR:1316624.1316663} with the findings that the editing of Wikipedia is a long tail distribution, and through an analysis of behavioral patterns identify the coolfarmers as the backbone of Wikipedia~\cite{coolfarming}. Furthermore~\cite{wiki_motivation} has found that \enquote{fun} and \enquote{ideology} are the two most important reasons why users edit Wikipedia, and~\cite{Yang20101377} extends on this by finding that internal self-concept-based motivation\footnote{motivation by feeling a personal achievement when sharing knowledge and being a self-motivated person} is the most important type of motivation for the Wikipedians.
 
@@ -65,7 +65,7 @@ Since Wikipedians are often driven by self-motivation and ideology we believe th
 
 It can easily be argued that a website or a browser plug-in that focuses on a graphical representation of the results, will have a wider reach than an API that delivers the raw data. While such implementations could, if successful, provide the project a boost in popularity, there is a significant chance that the given implementation would not gain popularity.
 
-However if we focus on making the results accessible, we can hope to benifit from the Wikipedia community, and possibly spark other projects of interface development. And even if this is not the case, we can proceed to build a graphical interface ourselves, upon the already working API.
+However if we focus on making the results accessible, we can hope to benefit from the Wikipedia community, and possibly spark other projects of interface development. And even if this is not the case, we can proceed to build a graphical interface ourselves, upon the already working API.
 
 \subsubsection{Implementation}
 
