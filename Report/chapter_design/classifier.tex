@@ -1,5 +1,5 @@
 \section{Classifier}\label{sec:classifier}
-As described in \cref{sec:machine_learning_task} we want to solve a supervised binary classification problem. In order to solve this problem, we want to construct a classifier. The previous section describes our feature extraction method. We will in this section describe how we use this method to extract features from training examples, and based on these choose a classification algorithm. We furthermore describe how we optimize the classifier's parameters to increase performance.
+As described in \cref{sec:machine_learning_task} we want to solve a supervised binary classification problem, and in order to do so we train a classifier. The previous section describes our feature extraction method. We will in this section describe how we use this method to extract features from training examples, and based on these choose a classification algorithm. We furthermore describe how we optimize the classifier's parameters to increase performance.
 
 \subsection{Training Data}\label{sec:training_data}
 Like all supervised learning, the classifier model is learned through training data.
@@ -22,10 +22,13 @@ To get a coarse estimate of which classifier seems the most appropriate for our 
 
 The examined algorithms are chosen mostly based on classifiers available in the scikit-learn Python library. There are many algorithms to choose from, and as all the algorithms are in the same library, the interface is the same, significantly simplifying the test harness.
 
-\subsubsection{Evaluation Metrics}
-To evaluate the performance of each algorithm, we perform a 3-fold cross-validation. As the core of our problem definition is to find suggestions to missing links, false positives should be punished harder than false negatives. In other words, suggesting a pair of articles to be linked that should not actually be linked, is worse than not suggesting a pair of articles that should be linked. 
+\subsubsection{Evaluation Metrics}\label{evaluation_metric}
+To evaluate the performance of each algorithm, we perform a 3-fold cross-validation. We deemed this sufficient compared to a 10-fold, because we are during a broad comparison and is able to produce results faster.
+As the core of our problem definition is to produce reasonable suggestions of missing links, false positives should be punished harder than false negatives. A false positive is the suggestion of a link, that the classifier thinks should be there, but actually should not. A false negative is the suggestion of a link, that the classifier thinks should \emph{not} be there, but actually should. In other words, we believe it is worse to suggest a pair of articles to be linked that should not actually be linked, than not suggesting a pair of articles that should be linked. 
 
-Because of the before mentioned higher penalty rate of false positives we want to favor precision over recall, as precision decreases as the number of false positives increases. We therefore choose precision as our evaluation metric.
+Because of the before mentioned higher penalty rate of false positives we want to favor precision over recall, as precision decreases as the number of false positives increases.
+
+A common measure of a test's accuracy is the \emph{F-score}, which considers both precision and recall. Variants exists that weighs precision higher than recall, but because we want to minimize the amount false positives we choose to only consider precision as our evaluation metric.
 
 \begin{equation}\label{eq:precision}
 \text{Precision} = \frac{\text{true positives}}{\text{true positives} + \text{false positives}}
@@ -35,6 +38,7 @@ Because of the before mentioned higher penalty rate of false positives we want t
 \text{Recall} = \frac{\text{true positives}}{\text{true positives} + \text{false negatives}}
 \end{equation}
 
+
 \subsubsection{Results}
 A barchart of results can be seen in \cref{fig:classifier_comparison}. \emph{QDA} gives the best precision of $0.985$. However the recall is low, which is concerning as this means the number of suggestions are reduced. The next best result, \emph{Nearest Centroid}, gives a precision of $0.979$ which is also high, but with a far better recall. We would rather trade $0.6\%$ percent precision for much better recall, and therefore choose \emph{Nearest Centroid} as our classifier.
 
@@ -42,8 +46,8 @@ A barchart of results can be seen in \cref{fig:classifier_comparison}. \emph{QDA
 
 \begin{figure}[tbp]
 \centering
-\includegraphics[width=0.95\textwidth]{classifier-comparison.pdf}
-\caption{Precision and recall scores for the chosen algorithms. The algorithms are sorted ascending by precision.}\label{fig:classifier_comparison}
+\includegraphics[width=0.95\textwidth]{classifier-comparison2.pdf}
+\caption[Precision and recall scores for the chosen algorithms]{Precision and recall scores for the chosen algorithms, sorted by precision.}\label{fig:classifier_comparison}
 \end{figure}
 
 % \begin{table}[tbp]
@@ -74,4 +78,4 @@ To attempt to further increase the performance of the chosen classifier, we opti
 
 Searching the parameter space reveals that the best parameters are the default parameters, also used above, where the distance metric is euclidean distance and no feature shrink threshold.
 
-\todo{hvordan laver vi segway over mod ui afsnit?}
+\todo{hvordan laver vi segway over mod ui afsnit? Michael spørger: Hvorfor er det nødvendigt med en segway?}

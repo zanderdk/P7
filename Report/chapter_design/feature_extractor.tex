@@ -1,25 +1,36 @@
 \section{Feature Extractor}\label{feature_extractor}
-The next component in the main pipeline is the feature extractor. This component generates the feature representation of a candidate link, which can then be used for classification. \todo{ref til func i kapitel 3} The feature extractor returns a single feature vector, representing the link between a given source and target article pair. As we need to classify both existing and non-existing links, it must be possible to extract feature vectors in both cases. Therefore the feature vector for a link is constructed by combining the feature vectors of the source and target articles.
+The next component in the main pipeline is the feature extractor. This component generates the feature representation of a candidate link, which can then be used for classification, as described by the function $f$ in \cref{sec:ml_def}. The feature extractor returns a single feature vector, representing the link between a given source and target article pair. As we need to classify both existing and non-existing links, it must be possible to extract feature vectors in both cases. Therefore the feature vector for a link is constructed by combining the feature vectors of the source and target articles.
 
-As mentioned in \cref{sec:feature_generation} we aim to use feature learning, specifically network embedding, to learn these feature representations. While there are several different network embedding models, we found node2vec~\cite{node2vec} to be a suitable model. \cite{node2vec} compares node2vec to other well-known models, and finds that node2vec delivers better or equal precision for link prediction in all cases. Additionally, node2vec performs well for large networks, and offers flexibility due to tunable hyperparameters, which provides a more fine-grained control of neighborhood exploration, allowing us to test different options. This section describes how node2vec is used to generate the feature representation, along with the process of optimizing the models hyperparameters. \todo{update argumentation for node2vec choice. Flexible parameters is nice with limited knowledge of dataset + competitive performance}
+As mentioned in \cref{sec:feature_generation} we aim to use feature learning, specifically network embedding, to learn these feature representations. While there are several different network embedding models, we found node2vec~\cite{node2vec} to be a suitable model. The main advantage of node2vec is increased flexibility compared to other well-known models due to tunable hyperparameters~\cite{node2vec}, which allows us to experiment with different neighborhood exploration methods Additionally, node2vec offers highly competitive performance, and performs well for large networks~\cite{node2vec}.
 
-\subsection{Description of node2vec} % (fold)
+This section describes how node2vec is used to generate the feature representation, along with the process of optimizing the models hyperparameters.
+
+\subsection{Description of node2vec}
 \label{sec:node2vec}
-\todo{Should include much more theory throughout section.}
-\todo{Explain: We need to find node feature vectors that we can combine to edge feature vectors.}
-\todo{Explain: Similar to word embedding, where we see nodes as words, and node sequences (walks) as sentences}
 Node2vec is an algorithmic framework for semi-supervised feature learning in networks~\cite{node2vec}. The goal of the algorithm is to learn a model that can reconstruct the neighborhood of a given node.
-
+The purpose of using node2vec is to generate features for edges and non existing edges, this can be done by combining feature representations of two nodes. node2vec propose a way of generating features representations for nodes based on their neighborhoods. The idea is to use word embedding on sentences of word representing nodes, where each node should be in the same neighborhood as nodes close to it in the sentences. In the following sections it will briefly be covered how the word embedding works, and how we construct sentences of nodes using biasd random walks in the graph. We will further more describe the way node2vec combines feature representations of nodes, and compare it to the way we chose combines feature representations.
 
 \subsubsection{Description of word2vec}
-\todo{describe word2vec, including neural network etc.}
 Using nodes as words and the random walks as sentences allows using word embedding algorithms on the sentences, mapping words to vectors. The node2vec reference implementation uses word2vec for word embedding. Intuitively, if two words are close two each other in the sentence, they are related. The tunable parameter $k$ specifies the size of a context window that defines the number of surrounding words that should be considered in the same context. In node2vec the context window is used for sampling neighborhoods of nodes, where it determines the size of the neighborhood.
 
-\subsubsection{Finding Neighborhoods}
-\todo{Describe the biased random walk using}
-The neighborhoods of each node is constructed by performing a number of biased random walks. The walks are biased using two parameters $p$ and $q$. A high $p$ value, relative to $max(1,q)$, approximates a depth-first search, while a high $q$ value, relative to $max(1,p)$, approximates the behavior of a breath-first search. The motivation of these tunable parameters is the observation that real-world networks can be structured in many ways. The randomness and the tunable $p$ and $q$ values accounts for different types of networks, by allowing control of the exploration method.
+\subsubsection{Neighborhoods}
+The notion of neighborhoods is important in network embedding, as the features of a node is derived from its neighborhood. Intuitively, this implies similarity between nodes that have similar neighborhoods. The neighborhood of a given node is found by traversing the graph.
 
-There are three additional parameters in node2vec, $d$, $r$, and $l$, which determines the dimensions of the resulting feature vector, the number of random walks performed per node, and the maximum length of each walk, respectively.
+In node2vec the neighborhoods of each node $n$ is found by performing a series of biased random walks, and then observing the $k$ nearest nodes on either side of $n$ in the walks. To ensure that all nodes are visited during the random walks a number of walks, specified by the $r$ parameter, are started in every node. The maximum length of each walk is specified by the $l$ parameter.
+
+The random walks are biased using two parameters, $p$ and $q$. An example of the biased random walk is shown in \cref{fig:randomwalk}. The walk is currently in $v$, after walking the edge $(t,v)$. Here a search bias $\alpha$ is given to each outgoing edge from $v$ according to \cref{eq:bias}, where $d_{tx}$ denotes the shortest distance from $t$ to $x$. The next edge in the walk is selected by probability sampling using the alias method.
+
+\begin{equation}
+\label{eq:bias}
+\alpha_{pq}(t,x)=
+\begin{cases}
+  \frac{1}{p} & \text{if } d_{tx}=0 \\
+  1           & \text{if } d_{tx}=1 \\
+  \frac{1}{q} & \text{if } d_{tx}=2
+\end{cases}
+\end{equation}
+
+By adjusting $p$ and $q$ it is possible to approximate different search strategies. A high $p$ value, relative to $max(1,q)$, approximates a depth-first search, while a high $q$ value, relative to $max(1,p)$, approximates the behavior of a breath-first search. The motivation of these tunable parameters is the observation that real-world networks can be structured in many ways. The biased random walks with the tunable $p$ and $q$ values accounts for different types of networks, by allowing control of the exploration method.
 
 \begin{figure}%
   \centering
@@ -59,7 +70,7 @@ By training a node2vec model on the graph, we are able to learn a function $g:V 
 %We discovered that all 4 operators where commutative meaning that $a \circ b = b \circ a \ \forall a,b \in \mathbb{R}^d$ which works well in undirected graphs.
 All of the four operations are commutative, which makes sense for undirected graphs, where the combined result vector does not depend on the order of the vertices. For directed graphs however the order is important.
 %If we have 2 pairs of articles $(a,b) \in \Rightarrow$ and $(b,a) \in V \times V \setminus \Rightarrow$ they will have the same feature representation using any of these 4 operators, but different labels.
-If we are given two pairs of articles $(a,b) \in \Rightarrow$ and $(b,a) \notin \Rightarrow$, their feature representations should intuitively be different because they have different labels.
+If we are given two pairs of articles $(a,b)$ and $(b,a)$ where $a \Rightarrow b$ and $b \not \Rightarrow a$, their feature representations should intuitively be different because they have different labels.
 %For this reason we will test different non-commutative operations.
 Because Hadamard product produced good results in the node2vec paper we will be testing it and compare it to the corresponding non-commutative operation Hadamard division. Furthermore we choose to test concatenating the feature vectors $\mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^{2d}$, leaving it up to the classifier to interpret the combination of article features.
 \todo{should we explain that hadamard is entrywise}
