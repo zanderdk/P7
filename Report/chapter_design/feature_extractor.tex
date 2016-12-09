@@ -95,42 +95,30 @@ Because Hadamard product produced good results in the node2vec paper we will be 
 % By training a node2vec model on the graph, we are able to learn feature representations for each node. However, we need to combine these features in order to construct a feature representation of a potential edge between the two nodes. We combine these two node feature vectors by using the Hadamard product, as this was found to give the best results in~\cite{node2vec}.
 % section overview_of_node2vec (end)
 
-\tikzsetnextfilename{n2vbowtie}
-\begin{figure}[tbp]%
-  \centering
-  \input{chapter_design/n2v_bowtie_fig}
+% \tikzsetnextfilename{n2vbowtie}
+% \begin{figure}[tbp]%
+%   \centering
+%   \input{chapter_design/n2v_bowtie_fig}
 
-\caption[short desc]{Text. Adapted from \cite{word2vec-param-learning}}%
-\label{fig:n2v-figure}%
-\end{figure}
+% \caption[short desc]{Text. Adapted from \cite{word2vec-param-learning}}%
+% \label{fig:n2v-figure}%
+% \end{figure}
 
 \subsection{Performance \& Scalability}
 As also detailed in~\cite{node2vec}, node2vec is able to scale well. Every walk is independent from each other which means that many walks can take place in parallel; it is embarrassingly parallel. Our test machine had 16 CPU cores which we wanted to utilize. We therefore spawned 16 threads that each was walking the graph. This allows use to fully utilize every CPU core.
 
-As all walks have to be stored for the word2vec phase, we were concerned that the memory footprint of storing all walks in memory would be too high. We therefore dump the walks to a file, and later stream this file into memory when training word2vec. Gensim, the implemention of word2vec we use, is also able to fully utilize the CPU when training word2vec on the walks.
+As all walks have to be stored for the word2vec phase, we were concerned that the memory footprint of storing all walks in memory would be too high. We therefore dump the walks to a file, and later stream this file into memory when training word2vec. \emph{Gensim}, the implementation of word2vec we use, is also able to fully utilize the CPU when training word2vec on the walks.
 
 \subsection{Hyperparameter Optimization}
 As described in \cref{sec:node2vec}, node2vec has many tunable hyperparameters. In addition to the hyperparameters we will also examine the performance of different binary operations for combining node feature vectors. To find the parameters that give the best feature representation, we do a hyperparameter optimization pass. We first specify the parameter space that should be searched in. As this is a large space, it is not feasible to exhaust all possibilities. We therefore use the tool Spearmint~\cite{snoek2012practical} which performs Bayesian optimization by maximizing the expected improvement to efficiently search for parameters that will minimize an objective function. The objective function is $1 - \text{f-score}$, where the f-score is found by running a classifier on the node2vec model learned from the parameters. By keeping the classifier and its parameters constant, we can find the best set of parameters by finding the lowest objective function value.
 
 To speed each iteration of the optimization up, we limit the set of start nodes to featured articles. The parameter optimization is entirely autonomous and the process should be able to find optimize the the parameters automatically. This means that one can learn on graph networks without knowing the underlying graph structure.
 
-We start with a coarse search to find a good range for some parameters. This is done with large grained values for each parameter that would show local optima. After this, we search a second time with finer grained values to further refine the local optima. After completing 83 experiments, the objective function seemed to have converged by minimizing it with the parameters seen in~\cref{tab:paramopt_goodvalues}. We did not optimize the $r$ parameter, but used a static value of $r=1$, as experiments in~\cite{node2vec} shows that increasing the $r$ value improves performance. This speeds up the parameter optimization, allowing us to increase the $r$ parameter when training the final node2vec model.
-
-\begin{figure}%
-\centering
-\begin{tabular}{ccccc}
-\toprule
-$p$  & $q$     & $d$ & $k$ & $l$ \\
-0.50 & 100,000 & 256 & 80  & 80 \\
-\bottomrule
-\end{tabular}
-\caption[The found parameter values producing a minimization]{The found parameter values producing a minimization}%
-\label{tab:paramopt_goodvalues}%
-\end{figure}
+We start with a coarse search to find a good range for some parameters. This is done with large grained values for each parameter that would show local optima. After this, we search a second time with finer grained values to further refine the local optima. After completing 83 experiments the objective function seemed to have converged, as shown on \cref{fig:spearmint}. The best parameters found are shown in~\cref{tab:paramopt_goodvalues}.
 
 \begin{figure}%
   \centering
-  \tikzsetnextfilename{hackety-hack-hack}
+  \tikzsetnextfilename{spearmint}
   \begin{tikzpicture}
     \begin{axis}[
       scale only axis,
@@ -141,11 +129,11 @@ $p$  & $q$     & $d$ & $k$ & $l$ \\
       legend entries={Unsorted, Sorted},
       legend pos=north east,
       legend style={draw=none},
-      xlabel={Some x label},
+      xlabel={Iteration},
       ylabel={Score}
     ]
       \addplot[mark=square*, color=color4!30!white] table [x=x, y=y, col sep=semicolon] {chapter_design/unsorted.csv};
-      
+
       \addplot[
         scatter,
         color=color2,
@@ -157,24 +145,40 @@ $p$  & $q$     & $d$ & $k$ & $l$ \\
         %pins near some coords={15/south:Hadamard,29/north:Divide}
       ] table [x=x, y=y, col sep=semicolon, meta=color] {chapter_design/sorted.csv}
       ;
-      \node[coordinate,pin={[pin distance=1cm]above:{Hadamard}}] 
+      \node[coordinate,pin={[pin distance=1cm]above:{Hadamard}}]
         at (axis cs:16,0.55340945711058)	{};
-        
-      \node[coordinate,pin={[pin distance=.6cm]below:{Divide}}] 
-        at (axis cs:30,0.4252592596720848)	{};     
-        
-      \node[coordinate,pin=above:{Concatenate}] 
+
+      \node[coordinate,pin={[pin distance=.6cm]below:{Divide}}]
+        at (axis cs:30,0.4252592596720848)	{};
+
+      \node[coordinate,pin=above:{Concatenate}]
         at (axis cs:84,0.19147061365923185)	{};
-      
+
     \end{axis}
   \end{tikzpicture}
-\caption[short desc]{Test}%
-\label{fig:hacketyhackhack}%
+\caption[Hyperparameter optimization]{Graph showing the progress of the hyperparameter optimization process.}%
+\label{fig:spearmint}%
 \end{figure}
+
+\begin{table}%
+\centering
+\begin{tabular}{ccccc}
+\toprule
+$p$  & $q$     & $d$ & $k$ & $l$ \\
+0.50 & 100,000 & 256 & 80  & 80 \\
+\bottomrule
+\end{tabular}
+\caption[The found parameter values producing a minimization]{The found parameter values producing a minimization}%
+\label{tab:paramopt_goodvalues}%
+\end{table}
+
+We did not optimize the $r$ parameter, but used a static value of $r=1$, as experiments in~\cite{node2vec} shows that increasing the $r$ value improves performance. This speeds up the parameter optimization, allowing us to increase the $r$ parameter when training the final node2vec model.
 
 Concatenating the feature vectors generally gave better results compared to using Hadamard product and division.
 
-Since the constant $\alpha = 1$ is higher that both $1/q$ and $1/p$ it is most likely that the walk will progress close within the neighborhood of a node. Additionally since $q$ is significantly higher than $p$ there is a higher probability that a walk will return to the previous node rather than exploring outwards, which further increases the likeliness of staying in the neighborhood.
+Since the constant $\alpha = 1$, and the value $1/p$ are much higher than $1/q$ it is most likely that the walk will remain close within the community of the node in which the walk started.
 
-The size of the context window $k$ did not have much impact on the objective function as long as it was around a value of 80. The maximum length of the walk $l=80$ \todo{comment on these values}.
+The size of the context window $k$ did not have much impact on the objective function as long as it was around a value of $80$.
 
+\todo{Maybe comment on d and l?}
+%The maximum length of the walk $l=80$
