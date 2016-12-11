@@ -59,10 +59,18 @@ A node is created in the database for each Wikipedia article and redirect page i
 The nodes are connected by adding relationships for the links and redirects, with the labels seen in \cref{tab:db_labels_edges}.
 While importing the articles and links into the database, additional labels \mono{FeaturedArticle} and \mono{GoodArticle} are also added to \emph{featured} and \emph{good} articles respectively.
 
-As seen in \cref{tab:db_labels_edges}, the links are split into three groups, \mono{LinksTo}, \mono{TrainingData}, and \mono{TestData}. \mono{TrainingData} and \mono{TestData} are disjoint links from featured articles that later will be used to train and evaluate the classifer. The splits are made randomly, according to a partitioning given in \cref{sec:classifier}.
+As seen in \cref{tab:db_labels_edges}, the links are split into three groups, \mono{LinksTo}, \mono{TrainingData}, and \mono{TestData}. \mono{TrainingData} and \mono{TestData} are disjoint links from featured articles that later will be used to train and evaluate the classifier. The splits are made randomly, according to a partitioning given in \cref{sec:classifier}.
 
 %page_links_unredirected_en.ttl.bz2
 %redirects.en.ttl.bz2
+
+%t+t: 442.286
+%l: 138.422.339
+%+: 138.864.625
+
+Out of all articles 0.04\% are featured, and there exists 0.32\% links from featured articles compared to total amount of links. These ratios are low and it might become a problem when trying to generalize the training data on the entire graph. As described in \cref{sec:choice_of_graph}, links from featured articles is our ground truth for good linking. \todo{arguments}
+
+\todo{we could remove dummy articles}
 
 \todo{featured articles are less than 0.04\%. comments?}
 
