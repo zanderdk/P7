@@ -1,5 +1,7 @@
 \chapter{Related Work}\label{sec:related_work}
-Wikipedia is the subject of multiple papers and research projects~\cite{wiki-research-newsletter}, and so there is much material to gain inspiration from.\todo{Vi skal vel have inspiration til link suggestion, ikke bare inspiration fra artikler der handler om Wikipedia?} But before we can draw inspiration from solutions to related problems, we must consider what our problem is. As with almost all problems, this problem can be perceived from multiple angles, and modeled by just as many. Here we will consider some general approaches. \todo{Omskriv sidste 3 sætninger. Vi ved godt hvad problemet er her, vi kigger på relateret arbejde for at få ideer til løsningsmuligheder.}
+
+Wikipedia is the subject of multiple papers and research projects~\cite{wiki-research-newsletter}, and so there is much material to gain inspiration from.\todo{Vi skal vel have inspiration til link suggestion, ikke bare inspiration fra artikler der handler om Wikipedia?} However, before we draw inspiration from solutions to related problems, we must first consider how to approach our problem. As with almost all problems, this problem can be perceived from multiple angles, and modeled in many different ways. Here we will consider some general approaches and examine how they previously have been used for analysing relationships between hypertext documents such as Wikipedia articles.
+%\todo{Omskriv sidste 3 sætninger. Vi ved godt hvad problemet er her, vi kigger på relateret arbejde for at få ideer til løsningsmuligheder.}
 
 \section{Content-Based Analysis}
 \label{related_semantic_contextual}
@@ -12,9 +14,9 @@ The linking problem can be seen as a problem of deducing content-based relations
 \end{description}
 
 
-
 \section{Structural Analysis}\label{related_structural_analysis}
 \todo{Er structural analysis rigtigt? Det er også noget med bæreevne i bygninger.}
+\todo{Kan vi bruge Structure-Based Analysis? ellers se på Graph-Based Analysis, Web Structure Mining eller Link-Structure Analysis.}
 Another way of viewing the linking problem is as missing structural connections in a dataset. With this approach, solutions attempt to analyze a structure in order to gain insight into possible patterns that influences linking. For Wikipedia the most relevant structure to consider is a graph structure with articles as vertices.\todo{Skal vi forklare hvilke andre muligheder der er? Hvis der er nogle.} There are different ways to model edges in the graph. Examples of this include~\cite{hyperlink-structure-using-logs} and~\cite{west2015mining} where the authors create edges from the navigation of Wikipedia's visitors, based on the belief that an optimal linking structure can be deduced from user behavior. Essentially, anything that can be considered a relation between any two articles, can be the basis for a set of edges, as explored in~\cite{lu2011link}.
 
 Regardless of the approach, a metric for a good link must be considered. We have already introduced Wikipedia guidelines on linking~\cite{wiki-editor-guidelines}, which is Wikipedia's official view of a good set of metrics. However, even though they clearly hold authority on the matter, there exists alternatives worth considering.
