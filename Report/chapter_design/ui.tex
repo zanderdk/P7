@@ -51,14 +51,14 @@ The requirements found in these two information flows are:
 
 \subsection{User Demographic}
 
-In order to design a solution for the requirements, we first consider the envisioned user demographic. The user is a Wikipedian, i.e. a person who edits Wikipedia articles. The Wikipedians we especially wish to engage are the so called coolfarmers, which is a term coined by~\cite{coolfarming}, to describe the top editors of Wikipedia. They cite~\cite{Priedhorsky:2007:CDR:1316624.1316663} with the findings that the editing of Wikipedia is a long tail distribution, and through an analysis of behavioral patterns identify the coolfarmers as the backbone of Wikipedia~\cite{coolfarming}. Furthermore~\cite{wiki_motivation} has found that \enquote{fun} and \enquote{ideology} are the two most important reasons why users edit Wikipedia, and~\cite{Yang20101377} extends on this by finding that internal self-concept-based motivation\footnote{motivation by feeling a personal achievement when sharing knowledge and being a self-motivated person} is the most important type of motivation for the Wikipedians.
+In order to design a solution for the requirements, we first consider the envisioned user demographic. The user is a Wikipedian, i.e.\ a person who edits Wikipedia articles. The Wikipedians we especially wish to engage are the so called \emph{coolfarmers}, which is a term coined by~\cite{coolfarming}, to describe the top editors of Wikipedia. They cite~\cite{Priedhorsky:2007:CDR:1316624.1316663} with the findings that the editing of Wikipedia is a long tail distribution, and through an analysis of behavioral patterns identify the coolfarmers as the backbone of Wikipedia~\cite{coolfarming}. Furthermore~\cite{wiki_motivation} has found that \enquote{fun} and \enquote{ideology} are the two most important reasons why users edit Wikipedia, and~\cite{Yang20101377} extends on this by finding that internal self-concept-based motivation\footnote{motivation by feeling a personal achievement when sharing knowledge and being a self-motivated person} is the most important type of motivation for the Wikipedians.
 
 We believe that the most effective way employ the results of the main pipeline, is to focus on delivering them to the coolfarmers and thereby combining the computational power of a classifier with their experience and motivation to make the actual edits.
 
 
 \subsection{Web API}
 
-Our choice of UI is a web API that allows users to access and review the information we can provide. What follows is a justification for this choice, as well as some specifics as to the implementation of the UI.
+Our choice of UI is a web API that allows users to access and review the information we can provide. What follows is a justification for this choice, as well as some specifics as to the implementation of the UI\@.
 
 \subsubsection{Choosing API}
 Since Wikipedians are often driven by self-motivation and ideology we believe that the most important function of the UI is to deliver the information effectively. We believe that this delivery should allow the community to get the best results into the articles of Wikipedia.
@@ -71,14 +71,30 @@ However if we focus on making the results accessible, we can hope to benefit fro
 
 The API was developed as a RESTful~\cite{rest} API using HTTP methods. The REST architecture style was chosen due to its popularity and simplicity, two properties that fit well with our requirements and envisioned user demographic. We developed two endpoints which are described in \cref{rest_table}. The current implementation handles data in a JSON format, but this could easily be extended to multiple data formats.
 
-\begin{table}[htbp]
+%\begin{table}[tbp]
+%\centering
+%\begin{tabular}{@{}p{0.10\textwidth}p{0.22\textwidth}p{0.32\textwidth}p{0.27\textwidth}@{}}
+%\toprule
+%\textbf{HTTP Method} & \textbf{Description} & \textbf{Parameters} & \textbf{Example Result} \\ \midrule
+%\mono{GET} & Returns a list of link suggestions that requires evaluation & An integer limit for the maximum returned links & \mono{[\{"source":Jesus, "target":Gabriel\}, \{"source":Elephant, "target":Tiger\}]} \\
+%\midrule
+%\mono{POST} & Accepts a submission of a review & Requires source, target, and status to be defined. Status must have the value of either ``good'' or ``bad''. & Review Accepted \\ \bottomrule
+%\end{tabular}
+%\caption{Overview of HTTP endpoints}\label{rest_table}
+%\end{table}
+
+\begin{table}[tbp]
 \centering
-\begin{tabular}{@{}p{0.10\textwidth}p{0.22\textwidth}p{0.32\textwidth}p{0.27\textwidth}@{}}
+\begin{tabular}{@{}lp{0.36\textwidth}p{0.39\textwidth}@{}}
 \toprule
-\textbf{HTTP Method} & \textbf{Description} & \textbf{Parameters} & \textbf{Example Result} \\ \midrule
-\mono{GET} & Returns a list of link suggestions that requires evaluation & An integer limit for the maximum returned links & \mono{[\{"source":Jesus, "target":Gabriel\}, \{"source":Elephant, "target":Tiger\}]} \\
+& \textbf{\mono{HTTP GET}} & \textbf{\mono{HTTP POST}} \\
 \midrule
-\mono{POST} & Accepts a submission of a review & Requires source, target, and status to be defined. Status must have the value of either ``good'' or ``bad''. & Review Accepted \\ \bottomrule
+\textbf{Description} & Returns a list of link suggestions that requires evaluation & Accepts a submission of a review  \\
+\midrule
+\textbf{Parameters} & An integer limit for the maximum returned links & Requires source, target, and status to be defined. Status must have the value of either ``good'' or ``bad''. \\
+\midrule
+\textbf{Example Result} & \mono{[\{"source":Jesus,\newline"target":Gabriel\},\newline\{"source":Elephant,\newline"target":Tiger\}]} & Review Accepted \\
+\bottomrule
 \end{tabular}
 \caption{Overview of HTTP endpoints}\label{rest_table}
 \end{table}
@@ -89,4 +105,4 @@ One thing that needs revision before the current implementation can be put to us
 
 While the technical concerns are important, these are not unique to our system and the use of a reliable framework would do much to prevent these. The non-technical concerns however are largely unique to our system, and as such the preventive measures requires more focus from our side. For the problem of bad reviews, the first step is to register that a review is bad. Our two primary ideas is to either monitor Wikipedia to check whether a review continuously matches the state of the given article, or to consider if multiple reports on the same review agrees.
 
-If we detect a review we consider bad the removal of it is a trivial task. However, in order to detect whether the review was malicious we would probably need to consider whether the same user gives repeated bad reviews. This is a non-trivial task. The direct way to solve this would be to require users to register in our system, but this would make the API less accessible. It would be worth exploring if we could detect malicious users solely through logs, but this is not guaranteed to give good results.
+If we detect a review we consider bad, the removal of it is a trivial task. However, in order to detect whether the review was malicious we would probably need to consider whether the same user gives repeated bad reviews. This is a non-trivial task. The direct way to solve this would be to require users to register in our system, but this would make the API less accessible. It would be worth exploring if we could detect malicious users solely through logs, but this is not guaranteed to give good results.
