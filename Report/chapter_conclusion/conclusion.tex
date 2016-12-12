@@ -24,6 +24,8 @@ Furthermore the amount of training data might not be sufficient or general enoug
 % non-featured
 Both the training and test data does not take non-featured articles into account. This might be a problem since featured articles might not be a good representation of normal articles. In the future it would be relevant to examine how the model can be trained to evaluate article pairs that are not featured. One way might be to use input from editors, which is discussed below. Other approaches could be to use a n-gram or clickstream data as mentioned in \todo{ref}.
 
+As mentioned in \cref{sec:db} we currently have \num{11159213} articles in our dataset. The majority of these articles are automatically generated pages with less or no content. Pruning these articles from the data would probably improve the feature model, because it could avoid traversing these during graph walks.
+
 \subsection{Node2vec}
 %node2vec
 \todo{node2vec stuff}
