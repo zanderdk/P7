@@ -11,7 +11,8 @@ The classifier results can be seen in \cref{eval-results}. The numbers are simil
 
 Suspicious of the high precision numbers, we tested the classifier on articles not in the featured article space by manually labeling some articles. These tests show poor predictions, which indicates that the classifier results do not generalize to the whole of Wikipedia. This is to be expected, as one would assume that the structural differences between non-featured articles and featured articles are large.
 
-We can conclude that the performance of the system was good on featured articles, but the results do not transfer well to all articles.
+We can conclude that the performance of the system was good on featured articles, but the results do not transfer well to other articles. This can be explained because the traning data only consist of links from featured articles. 
+The traning data only consists of 0.21\% of all the links on Wikipedia, it could be that we are traning on a to small set of pairs and as a consequence of that we are overfitting to this sub set. The reason why we are preforming good at the test data could then be that the test data is constructed from featured articles as well as the traning data and there by the two data sets are to similar. Another reason could be that randomly picking actiles for sampling negative traning pairs, resulted in having to few related pairs that should not be linked. 
 
 \begin{table}[htbp]
 \centering
@@ -40,5 +41,7 @@ Precision     & Recall       \\ \midrule
     \caption[Confusion Matrix]{Confusion Matrix}%
     \label{tab:confusionmatrix}
 \end{table}
+
+
 
 %\section{UI Evaluation}
