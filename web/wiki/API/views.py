@@ -30,15 +30,15 @@ def full_pool(request):
     try:
         count = int(request.GET['max'])
     except Exception:
-        return HttpResponse(_get_pool_pairs())
+        return HttpResponse(_get_pool_pairs(), content_type="application/json")
     else:
-        return HttpResponse(_get_pool_pairs(count))
+        return HttpResponse(_get_pool_pairs(count), content_type="application/json")
 
 @csrf_exempt
 def partial_pool(request, count):
     if (request.method != 'GET'):
         return HttpResponse(status = 405)
-    return HttpResponse(_get_pool_pairs(int(count)))
+    return HttpResponse(_get_pool_pairs(int(count)), content_type="application/json")
 
 @csrf_exempt
 def link_checked(request):
