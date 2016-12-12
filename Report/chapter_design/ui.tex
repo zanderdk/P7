@@ -71,14 +71,30 @@ However if we focus on making the results accessible, we can hope to benefit fro
 
 The API was developed as a RESTful~\cite{rest} API using HTTP methods. The REST architecture style was chosen due to its popularity and simplicity, two properties that fit well with our requirements and envisioned user demographic. We developed two endpoints which are described in \cref{rest_table}. The current implementation handles data in a JSON format, but this could easily be extended to multiple data formats.
 
-\begin{table}[htbp]
+%\begin{table}[tbp]
+%\centering
+%\begin{tabular}{@{}p{0.10\textwidth}p{0.22\textwidth}p{0.32\textwidth}p{0.27\textwidth}@{}}
+%\toprule
+%\textbf{HTTP Method} & \textbf{Description} & \textbf{Parameters} & \textbf{Example Result} \\ \midrule
+%\mono{GET} & Returns a list of link suggestions that requires evaluation & An integer limit for the maximum returned links & \mono{[\{"source":Jesus, "target":Gabriel\}, \{"source":Elephant, "target":Tiger\}]} \\
+%\midrule
+%\mono{POST} & Accepts a submission of a review & Requires source, target, and status to be defined. Status must have the value of either ``good'' or ``bad''. & Review Accepted \\ \bottomrule
+%\end{tabular}
+%\caption{Overview of HTTP endpoints}\label{rest_table}
+%\end{table}
+
+\begin{table}[tbp]
 \centering
-\begin{tabular}{@{}p{0.10\textwidth}p{0.22\textwidth}p{0.32\textwidth}p{0.27\textwidth}@{}}
+\begin{tabular}{@{}lp{0.36\textwidth}p{0.39\textwidth}@{}}
 \toprule
-\textbf{HTTP Method} & \textbf{Description} & \textbf{Parameters} & \textbf{Example Result} \\ \midrule
-\mono{GET} & Returns a list of link suggestions that requires evaluation & An integer limit for the maximum returned links & \mono{[\{"source":Jesus, "target":Gabriel\}, \{"source":Elephant, "target":Tiger\}]} \\
+& \textbf{\mono{HTTP GET}} & \textbf{\mono{HTTP POST}} \\
 \midrule
-\mono{POST} & Accepts a submission of a review & Requires source, target, and status to be defined. Status must have the value of either ``good'' or ``bad''. & Review Accepted \\ \bottomrule
+\textbf{Description} & Returns a list of link suggestions that requires evaluation & Accepts a submission of a review  \\
+\midrule
+\textbf{Parameters} & An integer limit for the maximum returned links & Requires source, target, and status to be defined. Status must have the value of either ``good'' or ``bad''. \\
+\midrule
+\textbf{Example Result} & \mono{[\{"source":Jesus,\newline"target":Gabriel\},\newline\{"source":Elephant,\newline"target":Tiger\}]} & Review Accepted \\
+\bottomrule
 \end{tabular}
 \caption{Overview of HTTP endpoints}\label{rest_table}
 \end{table}
