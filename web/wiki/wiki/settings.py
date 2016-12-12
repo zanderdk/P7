@@ -29,7 +29,7 @@ SECRET_KEY = '#9&n)(+khy@!nmya#fd%v8($(j!moti+6uiyyb3671dl+@e8ci'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+APPEND_SLASH=False
 
 # Application definition
 
