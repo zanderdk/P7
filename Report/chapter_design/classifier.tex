@@ -20,7 +20,7 @@ As described in \cref{sec:machine_learning_task} we use a set of positive labele
 \subsection{Choosing a Classifier}\label{choosing_classifier}
 To get a coarse estimate of which classifier seems the most appropriate for our purpose, we create a test harness that will run a range of classification algorithms on the same dataset. By comparing the algorithms against each other, we should be able to weed out the worst performing algorithms and get an approximate overview of the performance of each algorithm. Each algorithm will be run with its default parameters which is suboptimal, but finding good parameters for all algorithms is unrealistic given the time frame of this project. Based on the results, we choose the algorithm that looks the most promising to optimize further.
 
-The examined algorithms are chosen mostly based on classifiers available in the scikit-learn Python library. There are many algorithms to choose from, and as all the algorithms are in the same library, the interface is the same, significantly simplifying the test harness.
+The examined algorithms are chosen mostly based on classifiers available in the scikit-learn \todo{link/cite} Python library. There are many algorithms to choose from, and as all the algorithms are in the same library, the interface is the same, significantly simplifying the test harness.
 
 \subsubsection{Evaluation Metrics}\label{evaluation_metric}
 To evaluate the performance of each algorithm, we perform a 3-fold cross-validation. We deemed this sufficient compared to a 10-fold, because we are during a broad comparison and is able to produce results faster.
@@ -28,7 +28,7 @@ As the core of our problem definition is to produce reasonable suggestions of mi
 
 Because of the before mentioned higher penalty rate of false positives we want to favor precision over recall, as precision decreases as the number of false positives increases.
 
-A common measure of a test's accuracy is the \emph{F-score}, which considers both precision and recall. Variants exists that weighs precision higher than recall, but because we want to minimize the amount false positives we choose to only consider precision as our evaluation metric.
+A common measure of a test's accuracy is the \emph{F-score}, which considers both precision and recall. Variants exists that weighs precision higher than recall, but because we want to minimize the amount of false positives we choose to only consider precision as our evaluation metric.
 
 \begin{equation}\label{eq:precision}
 \text{Precision} = \frac{\text{true positives}}{\text{true positives} + \text{false positives}}

@@ -2,16 +2,17 @@
 This chapter is dedicated to evaluate the performance of our proposed solution. We will describe the methodology of the tests, and interpret the results.
 
 \section{Methodology}
-We test the classifier model by predicting links on data samples that has not been part of the training data, and deriving a result based on the same evaluation metric as in \cref{evaluation_metric}: precision.
+\todo{brug en anden titel?}
+The performance of the classifier model is evaluated by running it on a test data set that has not been part of the training data, and from the predicted labels, derive a result based on the same evaluation metric used in \cref{evaluation_metric}: precision.
 
-As described in \cref{sec:training_data} the test data consists of 20\% of all data samples. This amounts to \num{294858} samples, evenly split between positives and negatives. Based on the classifier tests performed in \cref{choosing_classifier}, we use the \emph{nearest centroid} implementation from sci-kit learn with its default parameters.
+As described in \cref{sec:training_data} the test data consists of 20\% of all data samples. This amounts to \num{294858} samples, evenly split between positives and negatives samples as defined by \cref{eq:training_pairs}. Based on the classifier tests performed in \cref{choosing_classifier}, we use the \emph{nearest centroid} implementation from scikit-learn with its default parameters.
 
 \section{Evaluation}
-The classifier results can be seen in \cref{eval-results}. The numbers are similar to the ones from the training phase. The precision is very good, while the recall is low. On the specific data set we have worked on, links from featured articles, the classifier is very good at predicting links. The confusion matrix in \cref{tab:confusionmatrix} shows that 27\% of all samples are predicted to be positive, while 74\% are predicted negative. This is to be expected, as we optimized for precision. Of all the predicted positives, 1462 (2\%) were misclassified. \num{70755} (33\%) were incorrectly classified as negative, meaning we missed out on suggestion them. Again, a trade-off of optimizing for precision over recall.
+The classifier results can be seen in \cref{eval-results} \todo{skal vi skrive resultaterne i tekst når der kun er to tal? det gør vi i 4.5.2}. The numbers \todo{results?} are similar to the ones from the training phase. The precision is very high, while the recall is low. On the specific data set we have worked on, links from featured articles, the classifier is very accurate at predicting whether or not a pair of articles should be linked. The confusion matrix in \cref{tab:confusionmatrix} shows that 26\% of all samples are predicted to be positive, while 74\% are predicted negative. This is to be expected, as we optimized for precision. \todo{skal vi uddybe?} Of all the predicted positives, 1462 (2\%) were misclassified. \num{70755} (33\%) of the negative predictions were actual positives that was incorrectly classified, causing them to be excluded as possible suggestions. Again, a trade-off of optimizing for precision over recall. \todo{er antallet tilfredsstillende?}
 
-Suspicious of the high precision numbers, we tested the classifier on articles not in the featured article space by manually labeling some articles. These tests show poor predictions, which indicates that the classifier results do not generalize to the whole of Wikipedia. This is to be expected, as one would assume that the structural differences between non-featured articles and featured articles are large.
+Suspicious of the high precision rate, we tested the classifier on articles not in the featured article space by manually labeling some articles. These tests show poor predictions, which indicates that the classifier results do not generalize to the whole of Wikipedia. This is to be expected \todo{hvorfor har vi så valgt denne metode?}, as one would assume that the structural differences between non-featured articles and featured articles are large.
 
-We can conclude that the performance of the system was good on featured articles, but the results do not transfer well to all articles.
+We can conclude that the performance of the system was satisfactory on featured articles, but the results do not transfer well to all articles. \todo{omformuler.}
 
 \begin{table}[htbp]
 \centering
@@ -53,4 +54,4 @@ The UI consists of two HTTP endpoints which we will test: GET link suggestions a
 The test is considered a success if all unit tests succeed.
 
 \subsection{Results}
-All tests pass, which indicates that the user interface satisfies the requirements proposed. \todo{meget kort, hvordan kan det udvides?}
+All tests pass, which indicates that the user interface satisfies the requirements proposed. \todo{meget kort, hvordan kan det udvides?} \todo{kan vi liste hvad der blev testet, vores requirements?}
