@@ -2,7 +2,7 @@
 %With a graph defined,
 In this section we introduce a machine learning task based on the problem we are trying to solve. To solve the problem of suggesting links between Wikipedia articles. To solve this using machine learning we formulate it as a binary classification problem of determining whether two Wikipedia articles should be linked.
 
-As described in \cref{sec:choice_of_graph} we assume featured articles to have appropriate linking. This makes links from featured articles suitable as positive training pairs when learning where a link should be present. Similarly articles that are not linked from a featured article can be used as negative training pairs.
+As described in \cref{sec:choice_of_graph} we assume featured articles to have appropriate linking. This makes links from featured articles suitable as positive training pairs when learning if a link should be present. Similarly articles that are not linked from a featured article can be used as negative training pairs.
 
 We define the set of positive training pairs $P \subset V \times V$, as well as a set of negative training pairs $N \subset V \times V$ in \cref{eq:training_pairs}.
 
@@ -14,9 +14,9 @@ We define the set of positive training pairs $P \subset V \times V$, as well as 
   \end{split}
 \end{equation}
 
-Under this assumption a large amount of labeled training data can be generated. Because we have plenty\todo{dårligt ord} of labeled data, we limit the scope of the problem to only consider supervised learning approaches. This delimits the problem to binary classification problem in a supervised machine learning context.
+Under this assumption labeled training data can be generated, and so we limit the scope of the problem to only consider supervised learning approaches. This delimits the problem to binary classification problem in a supervised machine learning context.
 
-\todo{Nattiya mentioned that this section could be expanded}
+\todo{Kasper: Udvid denne sætning. ``Vi vil gerne bruge det her labelled data som eksempler på...''}
 
 \subsection{Defining the Learning Task}
 \label{sec:ml_def}
@@ -29,7 +29,9 @@ In order to give a precise understanding of the problem we will define it formal
 % \argmax_y\ \Pr(y \mid f(a,b))
 % \end{equation}
 
-\todo{der mangler nok en overgang her.}
+\todo{der mangler nok en overgang her. ALEXANDER HAR DET HER AFSNIT}
+
+\todo{Overordnet set, vil vi gerne lære en function g gående fra V x V til L. Først skal vi dog beskrive feature representation så comptueren fatter V x V. Bagefter laver vi en ``classification''-ting.}
 Let $f: V\times V \to \mathbb{R}^d$ be a function mapping from article pairs to a feature representation as vector, where $d$ is the dimension of the feature vector. The set of all possible labels is given by $L=\{0,1\}$, where $1$ represents the class of article pairs that should be linked, and $0$ the ones that should not.
 
 We want to learn a function $g: \mathbb{R}^d \to L$, that assigns a label $y_{ab} \in L$ to a feature representation $x_{ab} \in \mathbb{R}^d$, for a given article pair $(a,b) \in V \times V$, such that \cref{eq:labels} holds.
