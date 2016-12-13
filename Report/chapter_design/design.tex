@@ -1,4 +1,5 @@
 \chapter{Design \& Implementation}\label{chap:design}
+\todo{Tilpas introen her efter summary er blevet rettet/omskrevet}
 In this chapter we will discuss the development of the solution that was outlined in the previous chapter. The system will be explained in a top-down fashion, and as such we start off with an overview of the entire system through the architecture. After a brief overview of the system in \cref{sec:design_overview}, the specifics of each component will be explained in their own separate sections.
 
 \section{Architecture}\label{sec:design_overview}
@@ -17,7 +18,7 @@ If system usage grows sufficiently large the data exchange could be handled by i
 \end{figure}
 
 \subsection{Main Pipeline}
-The main pipeline consists of five components. The first one is a storage component, which holds all the information required to identify the link suggestions. The second component is \emph{Candidate Generator}, which is responsible for the candidate generation process. It works by extracting candidate article pairs from the database. The candidates are of the form $(A,B)$ where $A$ is a source article and $B$ is a suggested target article. The third component is the \emph{Feature Extractor}. This intermediate component generates a feature vector from a given candidate pair. As the fourth component, we have the \emph{Classifier}, which is responsible for the classification of the candidate pair. This is the component that ultimately makes the link suggestion. Finally the \emph{Results Pool} is another storage component, which holds the suggestions until they are presented to a user through the user interface.
+The main pipeline consists of five components. The first one is a storage component, which holds all the information required to identify the link suggestions. The second component is \emph{Candidate Generator}, which is responsible for the candidate generation process. It works by extracting candidate article pairs from the database. The candidates are of the form $(A,B)$ where $A$ is a source article and $B$ is a suggested target article. The third component is the \emph{Feature Extractor}. This component generates a feature vector from a given candidate pair. As the fourth component, we have the \emph{Classifier}, which is responsible for the classification of the candidate pair. This is the component that ultimately makes the link suggestion. Finally the \emph{Results Pool} is another storage component, which holds the suggestions until they are presented to a user through the user interface.
 
 
 
@@ -34,7 +35,7 @@ The other support module is for the classifier learning process. It consists of 
 
 Finally, we cover the User Interface. The purpose of this component is to publish the results of the main pipeline to users who can then use the results to edit Wikipedia. Since the classifier can not be expected to reach a perfect precision, the final decision of whether to include a suggested link, should be done by a human editor. Therefore we create a user interface that allows people to retrieve the results of the main pipeline.
 
-We consider this component separate from the main pipeline. The reason is different requirements of the two parts. While both the user interface and the main pipeline share the goals of then entire system, they have different subgoals. The main pipeline is purely focused on producing results, and the user interface only considers the delivery of those results. This difference in subgoals requires a different evaluation approach, and as such it is valuable to separate the user interface from the main pipeline.
+We consider this component separate from the main pipeline. The reason for this separation is different requirements of the two parts. While both the user interface and the main pipeline share the goals of then entire system, they have different subgoals. The main pipeline is purely focused on producing results, and the user interface only considers the delivery of those results. This difference in subgoals requires a different evaluation approach, and as such it is desirable to separate the user interface from the main pipeline.
 
 \input{chapter_design/database}
 
