@@ -1,14 +1,14 @@
 \section{Feature Generation}\label{sec:feature_generation}
-This section describes how the function $f$ from \cref{sec:ml_def} can be defined, utilizing manual engineering or through feature learning.
+This section describes how the function $f$ from \cref{sec:ml_def} can be defined using feature engineering or feature learning.
 
-Generating an appropriate feature representation is an integral part of applying machine learning techniques, and it is essential to the performance of the machine learning algorithms~\cite{ng-lecture}. The feature representation aims to discriminate the data so that a wanted structure appears. This section describes our approach to generating this feature representation.
+Generating an appropriate feature representation is an integral part of applying machine learning techniques, and it is essential to the performance of the machine learning algorithms~\cite{ng-lecture}. The feature representation aims to discriminate the data so that a desired structure appears. This section describes our approach to generating this feature representation.
 
 %Traditionally, features are engineered from a large data set\todo{source}. This means that features deemed characteristic for a given problem are identified manually from the data set. In recent years, feature learning has gained popularity\todo{source}. Here features are automatically generated from the structure of a data set.
 
 %In the following sections we will discuss strengths and weaknesses of each approach to feature generation, before coming to a conclusion on how they are used in our project.
 
 \subsection{Feature Engineering}
-Feature engineering is the process of identifying information in a dataset that has a high discriminative power. In a binary classification problem, such information would be a set of features capable of separating positive and negative data points. Identifying these features requires expert domain knowledge, since a good choice of features may not be obvious~\cite{ng-lecture}. Feature engineering can often be a time consuming process, and many trial and error iterations may be needed to derive appropriate features.
+Feature engineering is the process of identifying information in a dataset that has a high discriminative power. In a binary classification problem, such information would be a set of features capable of separating positive and negative data points. Identifying these features often requires expert domain knowledge, since a good choice of features may not be obvious~\cite{ng-lecture}. Feature engineering can often be a time consuming process, and many trial and error iterations may be needed to derive appropriate features.
 
 We do not have expert domain knowledge of Wikipedia, but below we have listed some ideas for features we have explored.
 
@@ -76,6 +76,8 @@ We do not have expert domain knowledge of Wikipedia, but below we have listed so
 \end{figure}
 
 The process of manual feature engineering did however prove to be rather time consuming, and the suitability of the resulting features was difficult to reason about, due to our limited domain knowledge. Due to this we examined alternative approaches to generate this feature representation, namely feature learning.
+
+\todo{Det er et tyndt afsnit, tyndt grundlag. Udvid med forklaring af anerkendte teknikker/metoder.}
 
 \subsection{Feature Learning}
 Representation learning, or feature learning as we will term it, \todo{lyder som om feature learning er et term vi finder på.} is a recent approach in machine learning that has shown impressive results in many applications~\cite{bengio2013representation}. It is a method for generating feature representations from raw input data, avoiding the need for the time consuming manual feature engineering process~\cite{ng-lecture}. Additional advantages of using feature learning are a reduced need for domain knowledge, and the ability to uncover structural patterns that are hard to discover manually. This allows for greater exploration of other parts of the machine learning pipeline.\todo{Er machine learning pipeline et udbredt udtryk?}
