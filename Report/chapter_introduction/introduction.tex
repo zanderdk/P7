@@ -5,42 +5,8 @@ A prominent example of a website combining both hyperlinking and access to infor
 
 Linking articles to each other is an important issue editors and authors have to handle. In an attempt to ensure high quality of this article interlinking, Wikipedia has a set of guidelines regarding linking between articles~\cite{wiki-manual-of-style-overlinking}. One of the concerns that these guidelines mention is the problem of \emph{overlinking}. In most contexts overlinking is, for example, linking to everyday words understood by most readers, major geographic locations, common units of measurement, and dates. In addition, a link should generally appear only once in an article. Since links tend to compete for attention~\cite{hyperlink-structure-using-logs}, the guidelines suggest that you should only link to articles that will improve understandability of the article being linked from \todo{check if this sentence is clearer now}. Because of this, it is not enough to check whether a given article is being mentioned, but semantic and contextual analysis is also required. While many cases are easily decidable for a human author, it might be more difficult for a computer.
 
-\section{Problem Statement}\label{sec:problem_statement}
-We believe that the existence of a system that can help improve the quality of Wikipedias articles, will benefit Wikipedia and ultimately its users. In this project, we wish to explore the problems described above by trying to give an answer to the following question:
+\input{chapter_introduction/related_work}
 
-\begin{formal}
-How can a system be developed that can supply reasonable suggestions of links, that should be added to Wikipedia articles?
-\end{formal}
+\input{chapter_introduction/problem_statement}
 
-This question can further be split into subproblems, that we wish to answer:
-%\todo{Some VERY work-in-progress subquestions for inspiration only:}
-\begin{itemize}
-	\item What distinguishes article pairs that should be linked and those that should not?
-  \item How can this distinction between two classes be implemented?
-  \item What is a reasonable method of presenting these to a user?
-  \item How can scalability of the system be achieved?\todo{Kommer meget pludseligt}
-\end{itemize}
-%\todo{Skriv nogle mere specifikke krav, ala: der skal laves en brugergrænseflade til vores fantasikunder}
-
-The answer to the problem of whether two articles should be linked is inherently subjective --- there is no definitive answer to this problem. Therefore, the focus of our project will be on article link suggestions, instead of definitive answers.
-
-%In order to gain a more detailed understanding of the stated problem, we have constructed a list of subproblems, that together can be seen as equivalent as the original problem:
-
-%\begin{itemize}
-%	\item How can a system do derterministic suggestions to a subjective problem?
-%	\item How can a metric for appropriate linking be constructed?
-%\end{itemize}
-
-%\section{Title different from requirements} % (fold)
-%\label{sec:title_different_from_requirements}
-
-
-
-
-% section title_different_from_requirements (end)
-
-\section{Report Organization}
-In this report we propose a solution for the above problem, based on an analysis of different solution ideas and techniques. We also cover the design and implementation process of our solution. We then cover the evaluation of the developed system, and finally conclude on the project as a whole. \todo{Expand this}
-
-% The only good is knowledge and the only evil is ignorance. - Socrates (469 BC - 399 BC)
-% All men by nature desires knowledge. - Aristotle (384 BC - 322 BC), Metaphysic
+\input{chapter_introduction/report_organization}

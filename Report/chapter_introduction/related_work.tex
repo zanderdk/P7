@@ -1,9 +1,8 @@
-\chapter{Related Work}\label{sec:related_work}
-
+\section{Related Work}\label{sec:related_work}
 The problem of linking has been the subject of previous research, and so there is much material to gain inspiration from. However, before we draw inspiration from solutions to related problems, we must first consider how to approach our problem. As with almost all problems, this problem can be perceived from multiple angles, and modeled in many different ways. Here we will consider some general approaches and examine how they previously have been used for analyzing relationships between hypertext documents such as Wikipedia articles.
 %\todo{Omskriv sidste 3 sætninger. Vi ved godt hvad problemet er her, vi kigger på relateret arbejde for at få ideer til løsningsmuligheder.}
 
-\section{Content-Based Analysis}\label{related_semantic_contextual}
+\subsection{Content-Based Analysis}\label{related_semantic_contextual}
 The linking problem can be seen as a problem of deducing content-based relations. Solutions to this problem usually involve a degree of textual analysis in order to determine whether a piece of text refers to another subject. There are usually two parts to this problem, which are each given a different level of importance, depending on the solution:
 
 \begin{description}
@@ -13,16 +12,16 @@ The linking problem can be seen as a problem of deducing content-based relations
 \end{description}
 
 
-\section{Graph Structure Analysis}\label{related_structural_analysis}
+\subsection{Graph Structure Analysis}\label{related_structural_analysis}
 Another way of viewing the linking problem is as missing structural connections in a dataset. With this approach, solutions attempt to analyze a structure in order to gain insight into possible patterns that influences linking. For Wikipedia the most relevant structure to consider is a graph structure with articles as nodes. There are different ways to model edges in the graph. Examples of this include~\cite{hyperlink-structure-using-logs} where the authors create edges from the navigation of Wikipedia's visitors, based on the belief that an optimal linking structure can be deduced from user behavior. Essentially, anything that can be considered a relation between any two articles, can be the basis for a set of edges, as explored in~\cite{lu2011link}.
 
 Regardless of the approach, a metric for a good link must be considered. We have already introduced Wikipedia guidelines on linking~\cite{wiki-editor-guidelines}, which is Wikipedia's official view of a good set of metrics. However, even though they clearly hold authority on the matter, there exists alternatives worth considering.
 
-In~\cite{hyperlink-structure-using-logs} they consider good links to be ones that are in use by visitors, and as such they rank their results based on server logs. \todo{Skal forklares bedre} This technique rates the amount of clicks a given link receives out of the total visitors on the article, called the clickthrough rate, based on the idea that the most useful links get the most clicks, and that links are only useful if they are clicked. An argument in favor of using clickthrough rate is that every link can be objectively measured and compared. 
+In~\cite{hyperlink-structure-using-logs} they consider good links to be ones that are in use by visitors, and as such they rank their results based on server logs. \todo{Skal forklares bedre} This technique rates the amount of clicks a given link receives out of the total visitors on the article, called the clickthrough rate, based on the idea that the most useful links get the most clicks, and that links are only useful if they are clicked. An argument in favor of using clickthrough rate is that every link can be objectively measured and compared.
 
 One has to be aware of the competing links problem, where too many links are inserted on a popular article. This is solved in \cite{hyperlink-structure-using-logs} by optimizing an objective function with a diminishing returns property such that new links will naturally be spread on a larger number of articles.
 
-\section{Machine Learning}\label{related_machine_learning}
+\subsection{Machine Learning}\label{related_machine_learning}
 
 Machine learning is often used as an underlying method in related work with a content-based approach. In~\cite{mihalcea2007wikify,milne2008learning} they employ a naive Bayes classifier, with the latter also testing support vector machines and different decision trees built using the C4.5 algorithm, for the purpose of classifying matters of ambiguity and relatedness. \cite{hyperlink-structure-using-logs} models user behavior as objective functions. The best performing objective functions are designed to have diminishing returns such that new links are spread evenly across Wikipedia. To return a list of link suggestions, they propose a greedy algorithm that seeks to maximize the designed objective functions, ultimately optimizing for the expected number of clicks a new link will receive.
 
