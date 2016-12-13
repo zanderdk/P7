@@ -43,6 +43,15 @@ Precision     & Recall       \\ \midrule
     \label{tab:confusionmatrix}
 \end{table}
 
+\section{User Interface}
+This section will describe the systematic test and evaluation of the implementation of the user interface described in \cref{sec:design_ui}.
 
+\subsection{Methodology}
+To test the UI we define unit tests that each test an isolated part of the whole. By splitting the test into smaller chunks, it is easier to reason about the results of each chunk. The combination of all unit tests should be able to confidently verify that the implementation is working as intended.
 
-%\section{UI Evaluation}
+The UI consists of two HTTP endpoints which we will test: GET link suggestions and POST review. The structure of each unit test is similar; make a HTTP request and make assertions on the response. 
+
+The test is considered a success if all unit tests succeed.
+
+\subsection{Results}
+All tests pass, which indicates that the user interface satisfies the requirements proposed. \todo{meget kort, hvordan kan det udvides?}
