@@ -1,6 +1,6 @@
 \chapter{Design \& Implementation}\label{chap:design}
-\todo{Tilpas introen her efter summary er blevet rettet/omskrevet}
-In this chapter we will discuss the development of the solution that was outlined in the previous chapter. The system will be explained in a top-down fashion, and as such we start off with an overview of the entire system through the architecture. After a brief overview of the system in \cref{sec:design_overview}, the specifics of each component will be explained in their own separate sections.
+\todo{Tilpas introen her efter summary er blevet rettet/omskrevet. Michael har prøvet og spørger: ``er det godt nok nu?''}
+In this chapter we discuss the development of the solution that was outlined in the previous chapter. The system will be explained in a top-down fashion. After a brief overview of the system in \cref{sec:design_overview}, the rest of the chapter will describe the specifics of each component in their own separate sections.
 
 \section{Architecture}\label{sec:design_overview}
 This system is built on an pipeline architecture, where the output of each primary component is fed into the next. See \cref{fig:system-overview}. The main benefit of this architecture is the modularity and scalability. Each component has minimal coupling with each other, by only interacting through data. As long as two components both adhere to the rules for data exchange, they can completely disregard any logic or functionality of each other. This gives the system the two advantageous properties of effortless exchange of entire components and straightforward horizontal scaling.
