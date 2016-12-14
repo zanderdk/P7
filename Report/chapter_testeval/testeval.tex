@@ -4,11 +4,7 @@ This chapter is evaluates the performance of our proposed solution. We will desc
 \section{Classification}
 This section will describe the testing of the entire system by interpreting the results of the classifier.
 
-\subsection{Methodology}
-\todo{brug en anden titel?}
-The performance of the classifier model is evaluated on a test dataset that has not been part of the training data, and from the predicted labels, derive a result based on the same evaluation metric used in \cref{evaluation_metric}. \todo{Omformuler. Jeg kan ikke forstå sætningen.}
-
-As described in \cref{sec:training_data}, the test data consists of 20\% of all data samples. This amounts to \num{294858} samples, evenly split between positive and negative samples as defined in \cref{eq:training_pairs} \todo{is this the right equation?}. Based on the classifier tests performed in \cref{choosing_classifier}, we use the \emph{nearest centroid} implementation from scikit-learn with its default parameters.
+The performance of the classifier model is evaluated on a test dataset that has not been part of the training data. The result is derived from the same evaluation metric as used in~\cref{evaluation_metric}. The test data consists of 20\% of all data samples. This amounts to \num{294858} samples, evenly split between positive and negative samples as defined in \cref{eq:training_pairs}. Based on the evaluation of different classifiers in~\cref{choosing_classifier}, we have chosen the \emph{nearest centroid} implementation from scikit-learn with its default parameters.
 
 \subsection{Results and Evaluation}
 The nearest centroid classifier has a precision of \num{0.981} and a recall of \num{0.52}. The results are similar to the results from the training phase. The precision is very high, while the recall is low. On the specific dataset (links from featured articles) we test on, the classifier is very accurate at predicting whether or not a pair of articles should be linked. The confusion matrix in \cref{tab:confusionmatrix} shows that 26\% of all samples are predicted to be positive, while 74\% are predicted to be negative. This is expected, as we optimized for precision \todo{skal vi uddybe?}. Of all the predicted positives, \num{1462} (2\%) are misclassified. \num{70755} (33\%) of the negative predictions are actual positives that was incorrectly classified, causing them to be excluded as possible suggestions. Again, it is a trade-off by optimizing for precision over recall. \todo{er antallet tilfredsstillende?}
@@ -54,11 +50,13 @@ The performance of the system is satisfactory on featured articles, which is als
 This section will describe the systematic test and evaluation of the implementation of the user interface described in \cref{sec:design_ui}.
 
 \subsection{Methodology}
-To test the UI we define unit tests that each test an isolated part of the whole. By splitting the test into smaller chunks, it is easier to reason about the results of each chunk. The combination of all unit tests should be able to confidently verify that the implementation is working as intended.
+To test the UI we define unit tests that each test an isolated part of the whole. By splitting the test into smaller parts, it is easier to reason about the results of each part. The combination of all unit tests should be able to confidently verify that the implementation is working as intended.
 
 The UI consists of two HTTP endpoints which we will test: GET link suggestions and POST review. The structure of each unit test is similar; make a HTTP request and make assertions on the response. 
 
 The test is considered a success if all unit tests succeed.
+
+\todo{Omskriv hele dette afsnit}
 
 \subsection{Results}
 All tests pass, which indicates that the user interface satisfies the requirements proposed. \todo{meget kort, hvordan kan det udvides?} \todo{kan vi liste hvad der blev testet, vores requirements?}
