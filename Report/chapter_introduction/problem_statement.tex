@@ -3,35 +3,20 @@ We believe that the existence of a system that helps editors improve the quality
 
 The use of machine learning for predicting links in a structural setting is not an unexplored concept, as~\cite{tang2015line} and~\cite{al2006link} are two examples of. It is however, an approach we have not seen used to a large extent in related work concerning Wikipedia. Due to this, we wish to explore the idea of using machine learning techniques to improve linking on Wikipedia through a graph-based approach.
 
-Specifically, in this project we attempt to answer to the following question:
+Specifically, the problem we will attempt to solve in this project can be formulated as such:
 
 \begin{formal}
 How can a system be developed that supports Wikipedia editors by suggesting potential article links using machine learning on a graph structure?
 \end{formal}
 
-This question can further be split into subproblems, that we wish to answer:
-%\todo{Some VERY work-in-progress subquestions for inspiration only:}
+In order to better approach this problem, we identify a list of subproblems that enables us to focus on the different aspects involved:
+
 \begin{itemize}
-  \item What distinguishes article pairs that should be linked and those that should not?
-  \item How can this distinction between two classes be implemented?
-  \item What is a reasonable method of presenting these to a user?
-  \item How can scalability of the system be achieved?\todo{Kommer meget pludseligt}
+  \item How can Wikipedia articles be modelled as a graph, such that relevant information on linking is included?
+  \item How can machine learning be used to suggest potential articles links, that would improve article quality?
+  \item How can Wikipedia editors be presented with suggestions of article links that could be included?
 \end{itemize}
-%\todo{Skriv nogle mere specifikke krav, ala: der skal laves en brugergrænseflade til vores fantasikunder}
 
-The answer to the problem of whether two articles should be linked is inherently subjective --- there is no definitive answer to this problem. Therefore, the focus of our project will be on article link suggestions, instead of definitive answers.
+\todo{afslut problem statement med en enkelt paragrah, se udkommentering for eksempel på hvad der ikke skal stå}
 
-%In order to gain a more detailed understanding of the stated problem, we have constructed a list of subproblems, that together can be seen as equivalent as the original problem:
-
-%\begin{itemize}
-%   \item How can a system do derterministic suggestions to a subjective problem?
-%   \item How can a metric for appropriate linking be constructed?
-%\end{itemize}
-
-%\section{Title different from requirements} % (fold)
-%\label{sec:title_different_from_requirements}
-
-
-
-
-% section title_different_from_requirements (end)
+%The answer to the problem of whether two articles should be linked is inherently subjective --- there is no definitive answer to this problem. Therefore, the focus of our project will be on article link suggestions, instead of definitive answers.
