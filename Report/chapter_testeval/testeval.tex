@@ -1,35 +1,38 @@
 \chapter{Test \& Evaluation}\label{chap:testeval}
-This chapter is dedicated to evaluate the performance of our proposed solution. We will describe the methodology of the tests, and interpret the results.
+This chapter is evaluates the performance of our proposed solution. We will describe the methodology of the tests and interpret the results.
 
-\section{Methodology}
+\section{Classification}
+This section will describe the testing of the entire system by interpreting the results of the classifier.
+
+\subsection{Methodology}
 \todo{brug en anden titel?}
-The performance of the classifier model is evaluated by running it on a test data set that has not been part of the training data, and from the predicted labels, derive a result based on the same evaluation metric used in \cref{evaluation_metric}: precision.
+The performance of the classifier model is evaluated on a test dataset that has not been part of the training data, and from the predicted labels, derive a result based on the same evaluation metric used in \cref{evaluation_metric}. \todo{Omformuler. Jeg kan ikke forstå sætningen.}
 
-As described in \cref{sec:training_data} the test data consists of 20\% of all data samples. This amounts to \num{294858} samples, evenly split between positives and negatives samples as defined by \cref{eq:training_pairs}. Based on the classifier tests performed in \cref{choosing_classifier}, we use the \emph{nearest centroid} implementation from scikit-learn with its default parameters.
+As described in \cref{sec:training_data}, the test data consists of 20\% of all data samples. This amounts to \num{294858} samples, evenly split between positive and negative samples as defined in \cref{eq:training_pairs} \todo{is this the right equation?}. Based on the classifier tests performed in \cref{choosing_classifier}, we use the \emph{nearest centroid} implementation from scikit-learn with its default parameters.
 
-\section{Evaluation}
-The classifier results can be seen in \cref{eval-results} \todo{skal vi skrive resultaterne i tekst når der kun er to tal? det gør vi i 4.5.2}. The numbers \todo{results?} are similar to the ones from the training phase. The precision is very high, while the recall is low. On the specific data set we have worked on, links from featured articles, the classifier is very accurate at predicting whether or not a pair of articles should be linked. The confusion matrix in \cref{tab:confusionmatrix} shows that 26\% of all samples are predicted to be positive, while 74\% are predicted negative. This is to be expected, as we optimized for precision. \todo{skal vi uddybe?} Of all the predicted positives, 1462 (2\%) were misclassified. \num{70755} (33\%) of the negative predictions were actual positives that was incorrectly classified, causing them to be excluded as possible suggestions. Again, a trade-off of optimizing for precision over recall. \todo{er antallet tilfredsstillende?}
+\subsection{Results and Evaluation}
+The nearest centroid classifier has a precision of \num{0.981} and a recall of \num{0.52}. The results are similar to the results from the training phase. The precision is very high, while the recall is low. On the specific dataset (links from featured articles) we test on, the classifier is very accurate at predicting whether or not a pair of articles should be linked. The confusion matrix in \cref{tab:confusionmatrix} shows that 26\% of all samples are predicted to be positive, while 74\% are predicted to be negative. This is expected, as we optimized for precision \todo{skal vi uddybe?}. Of all the predicted positives, \num{1462} (2\%) are misclassified. \num{70755} (33\%) of the negative predictions are actual positives that was incorrectly classified, causing them to be excluded as possible suggestions. Again, it is a trade-off by optimizing for precision over recall. \todo{er antallet tilfredsstillende?}
 
-Suspicious of the high precision rate, we tested the classifier on articles not in the featured article space by manually labeling some articles. These tests show poor predictions, which indicates that the classifier results do not generalize to the whole of Wikipedia. This is to be expected \todo{hvorfor har vi så valgt denne metode?}, as one would assume that the structural differences between non-featured articles and featured articles are large.
+Suspicious of the high precision rate, we test the classifier on articles not in the featured article space by manually labeling a small number of articles. These tests indicate poor performance in predictions, which indicates that the classifier results do not generalize to the whole of Wikipedia, i.e.\ to articles that are not featured. In hindsight, this can be expected as the structural difference between non-featured articles and featured articles likely is large.
 
 %We can conclude that the performance of the system was good on featured articles, but the results do not transfer well to other articles. This can be explained because the traning data only consist of links from featured articles. 
 %The traning data only consists of 0.21\% of all the links on Wikipedia, it could be that we are traning on a to small set of pairs and as a consequence of that we are overfitting to this sub set. The reason why we are preforming good at the test data could then be that the test data is constructed from featured articles as well as the traning data and there by the two data sets are to similar. Another reason could be that randomly picking actiles for sampling negative traning pairs, resulted in having to few related pairs that should not be linked. 
 
-We can conclude that the performance of the system was satisfactory on featured articles, but the results do not transfer well to all articles. \todo{omformuler.}
+The performance of the system is satisfactory on featured articles, which is also the data on which we trained the classifier. We see that these results do not transfer as well to all articles as we would have liked.
 
 
-\begin{table}[htbp]
-\centering
-\begin{tabular}{@{}ll@{}}
-\toprule
-Precision     & Recall       \\ \midrule
-\num{0.981} & \num{0.52} \\
-\bottomrule
-\end{tabular}
-\caption[Nearest Centroid classifier results]{Nearest Centroid classifier results}\label{eval-results}
-\end{table}
+%\begin{table}[htbp]
+%\centering
+%\begin{tabular}{@{}ll@{}}
+%\toprule
+%Precision     & Recall       \\ \midrule
+%\num{0.981} & \num{0.52} \\
+%\bottomrule
+%\end{tabular}
+%\caption[Nearest Centroid classifier results]{Nearest Centroid classifier results}\label{eval-results}
+%\end{table}
 
-\begin{table}[htbp]
+\begin{table}[tbp]
     \centering
      \begin{tabular}{rrrrrrrr}
       \toprule
