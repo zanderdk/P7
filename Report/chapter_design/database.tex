@@ -57,7 +57,8 @@ Redirects are responsible for redirecting synonyms and common misspellings to th
 %We therefore use this dataset instead of manually extracting the links.
 A node is created in the database for each Wikipedia article and redirect page in the datasets, as seen in \cref{tab:db_labels_nodes}.
 The nodes are connected by adding relationships for the links and redirects, with the labels seen in \cref{tab:db_labels_edges}.
-While importing the articles and links into the database, additional labels \mono{FeaturedArticle} and \mono{GoodArticle} are also added to \emph{featured} and \emph{good} articles respectively.
+
+Similar to featured articles, Wikipedia also has \emph{good articles} that follow most of the guidelines, providing a satisfactory overall quality~\cite{wiki-good-articles}. However, there is no requirement for them to follow the guidelines for proper linking. We use the set of good articles later in hyperparameter optimization (\cref{sec:hyperopt}). While importing the articles and links into the database, additional labels \mono{FeaturedArticle} and \mono{GoodArticle} are added to \emph{featured} and \emph{good} articles respectively. 
 
 As seen in \cref{tab:db_labels_edges}, the links are split into three groups, \mono{LinksTo}, \mono{TrainingData}, and \mono{TestData}. \mono{TrainingData} and \mono{TestData} are disjoint links from featured articles that will later be used to train and evaluate the classifier. \mono{LinksTo} are all of the remaining links. The splits are made randomly, according to a partitioning given in \cref{sec:classifier}.
 
