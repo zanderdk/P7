@@ -1,30 +1,7 @@
 \section{Summary}
-\todo{Skriv om til at beskrive hvad vi "bidrager" med / har tænkt os at lave. + Find en god titel}
-\todo{husk rød tråd fra related work afslutning}
-There are many ways to approach the problem defined in \cref{sec:problem_statement}. Related work has been investigating the structural relationships of Wikipedia articles as well as semantic relationships.
 
-Inspired by the related work, we will in this project approach the problem by employing machine learning to do structural relation analysis. To analyze the structure of Wikipedia, we will model Wikipedia as a graph network where articles are vertices and links are edges.
+After examining different aspects of graph modeling and machine learning and our choices within these areas, we consider the implications of those choices in terms the development of a system, before moving on.
 
-As our domain knowledge of Wikipedia is not adequate to accurately identify and engineer features in the allotted time of the project, we will instead extract features from the link graph using a feature learning framework. This approach aims to reduce the time otherwise spent on feature engineering, while alleviating our need for extensive domain knowledge, at the cost of having intuitive features.
+The direction that our choices have moved our solution towards, is one with multiple interesting and complex areas. If we where to fully explore each of these areas we would cover material enough for entire projects on data analysis, feature learning, classification, and web application development. An approach to this problem of subject areas, could be to focus equally on all these aspects and thereby cover as much ground as possible. While this might be the most suitable development method in another setting, the interest in exploring a less common approach to the linking problem, that is expressed in \cref{sec:problem_statement}, gives this project an experimental direction. Because of this, we choose to focus the development on attempting to break new ground in what we believe to be the area, where the stated problem diverges from those seen in related work. We consider this area to be feature learning. While it can be argued that the core of the problem is classification, and perhaps rightly so, we believe that once the area of feature learning, in the context of Wikipedia, has been covered, the problem of classification can be approached with much inspiration from related work on machine learning. It should also be considered that an attempt to focus on classification based on a run-of-the-mill feature learning approach, could result in an inheirent inability to identify discriminating information within the features. We believe that the preferable approach is to focus on feature generation and then accepting a less specialized classification process.
 
-The features found in the feature learning step are to be used in a supervised binary classification problem. The classifier should be able to decide whether two given articles should have a link.
-
-% conclusion to the above paragraphs
-% baseret på related work vælger vi at fokusere på følgende
-% vælger struktur, så graf over wiki
-% skal vi vælge feature learning allerede?
-% slet det om clickstream
-
-
-%Wikipedia contains a big amount of data that represents different types of information. Articles have many different attributes and embeddings of information as well as editor and revision history. Attributes such as categories and article links provides structural information that can be used to describe the connection and relation of things.
-
-%Through feature engineering we believe that we can identify specific pieces of information that can be used as machine learning features. Because of our limited domain knowledge these features might not be adequate, but we believe that by utilizing feature learning on this information, useful features can be learned.
-
-%It is our intuition that the link-structure of Wikipedia can provide some of the most promising features for predicting missing links. Furthermore we believe that the Wikipedia clickstream will be beneficial because it captures the user behaviour of how links are used.
-
-%\paragraph{Plan:} We will be building a clickstream graph of Wikipedia that represents how articles are linked and navigated by users. Using this graph we will use feature learning to learn features from the structure, which will be used to train a classifier for suggesting missing article links.
-
-
-%\todo{other features, methods (text content...)}
-
-%\todo{insert clickstream source / motivation}
+\todo{consequences for the project, and report. Træk lidt i land, mht. det store focus på feature learning, og nævn at vi altså stadig dækker hele problemstillingen.}
