@@ -3,6 +3,7 @@ As described in \cref{sec:machine_learning_task} we want to solve a supervised b
 
 \subsection{Training Data}\label{sec:training_data}
 Like all supervised learning, the classifier model is learned through training data.
+\todo{ikke sikker på all classifiers træner}
 
 As described in \ref{sec:choice_of_graph} we use featured articles and what they link to, to train the classifier. This data is split into 20\% test data and 80\% training data. This specific split is made to preserve the link structure in the graph while still having a reasonable amount of samples to test on. To train the classifier to find links that do not already exist, a random distribution of 50\% of the edges is removed from the training data. This ensures that we do not overfit the classifier on already existing links. \todo{Det er muligvis lidt dårligt forklaret mht. de 50\%}
 %One sample of training data has the form \mono{<source article> <target article> <label>}. The source and targeet article are titles of pairs of articles. The label on the training samples can either be positive (link) or negative (do not link).

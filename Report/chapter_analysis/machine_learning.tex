@@ -29,12 +29,17 @@ With the function $f$ we seek to learn a function $g: \mathbb{R}^d \to L$, that 
 
 \begin{equation}
 \label{eq:labels}
-    y_{ab}=
-    \begin{cases}
-        1 & \text{if } a \Rightarrow b\\
-        0 & \text{otherwise}
-    \end{cases}
+y_{ab}=\mathbb{1}_{a \Rightarrow b}
 \end{equation}
+
+%\begin{equation}
+%\label{eq:labels}
+%    y_{ab}=
+%    \begin{cases}
+%        1 & \text{if } a \Rightarrow b\\
+%        0 & \text{otherwise}
+%    \end{cases}
+%\end{equation}
 
 Using $f$ to find the feature representation, we can assign a label $y_{ab}$ to an article pair $(a,b)$ using \cref{eq:classification_function}.
 
