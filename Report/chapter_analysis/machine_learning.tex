@@ -21,21 +21,11 @@ Under this assumption labeled training data can be generated, and so we limit th
 \subsection{Defining the Learning Task}
 \label{sec:ml_def}
 In order to give a precise understanding of the problem we will define it formally, before explaining how we intend to solve it.
+In the previous section we formulated the problem of suggesting links between Wikipedia articles as binary classification problem, determining if an article pair should be linked or not. Formaly we seek to approximate a function $h: V \times V \to L$ here $L=\{0,1\}$ is the set of all possible labels, where $1$ represents the class of article pairs that should be linked, and $0$ the ones that should not.
+Because moste classifiers predicts a class based on some feature vector, we insted of constructing $h$ need a way of representing article pairs in form of a vector. To do this we define $f: V\times V \to \mathbb{R}^d$ as a function mapping from article pairs to a feature representation, where $d$ is the dimension of the feature vector. 
 
-%We first formulate the classification task as an optimization problem where we maximize the objective function $\Pr(y \mid f(a,b))$, where $a,b \in V$:
+With the function $f$ we seek to learn a function $g: \mathbb{R}^d \to L$, that assigns a label $y_{ab} \in L$ to a feature representation $x_{ab} \in \mathbb{R}^d$, for a given article pair $(a,b) \in V \times V$, such that \cref{eq:labels} holds.
 
-% \begin{equation}
-% \label{objective}
-% \argmax_y\ \Pr(y \mid f(a,b))
-% \end{equation}
-
-\todo{der mangler nok en overgang her. ALEXANDER HAR DET HER AFSNIT}
-
-\todo{Overordnet set, vil vi gerne lære en function g gående fra V x V til L. Først skal vi dog beskrive feature representation så comptueren fatter V x V. Bagefter laver vi en ``classification''-ting.}
-Let $f: V\times V \to \mathbb{R}^d$ be a function mapping from article pairs to a feature representation as vector, where $d$ is the dimension of the feature vector. The set of all possible labels is given by $L=\{0,1\}$, where $1$ represents the class of article pairs that should be linked, and $0$ the ones that should not.
-
-We want to learn a function $g: \mathbb{R}^d \to L$, that assigns a label $y_{ab} \in L$ to a feature representation $x_{ab} \in \mathbb{R}^d$, for a given article pair $(a,b) \in V \times V$, such that \cref{eq:labels} holds.
-\todo{Skal måske omstruktureres. Vi vil gerne bare lære $f_{c}: V \times V \to L$ direkte, men vi har brug for feature repræsentation først.}
 
 \begin{equation}
 \label{eq:labels}
