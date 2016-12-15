@@ -7,7 +7,12 @@ In the problem statement, we formulated the following questions:
 
 \subproblems
 
-We modeled Wikipedia as a directed graph with articles as nodes and links as edges. As described in \cref{sec:db} we used DBpedia as a resource of obtaining the article data, and used the native graph database Neo4j to store and manage the data as a graph.
+% • How can Wikipedia articles be modeled as a graph, such that information relevant for the linking problem is captured?
+We modeled Wikipedia as a directed graph with articles as nodes and links as edges. As described in \cref{sec:db} we used DBpedia as a resource of obtaining the article and linking data, and used the native graph database Neo4j to store and manage this data as a graph. Based on this graph, we used a feature learning technique called network embedding to generate a set of features from each article. This was achieved by utilizing the algorithmic framework node2vec to autonomously explore and generate article features based on random walks performed in the graph. Because the features are based on graph walks, they capture certain aspects of the linking structure between articles. Specifically, the node2vec model was optimized to predict links from featured articles by combining these features. As described in \cref{sec:hyperopt}, this led to a configuration of hyperparameters that among other things puts weight on exploring close neighborhoods of nodes. After hyperparameter optimization the generated feature model was used to produce features from pairs of articles, for a classifier trained to suggest links.
+
+% • How can machine learning be used to suggest potential articles links, that would improve article quality?
+
+% • How can editors be presented with suggestions of links that could be added to Wikipedia articles?
 
 \todo{How we answered these. One paragraph for each point.}
 
