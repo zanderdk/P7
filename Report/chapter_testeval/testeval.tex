@@ -1,7 +1,7 @@
 \chapter{Test \& Evaluation}\label{chap:testeval}
 This chapter is evaluates the performance of our proposed solution. We will describe the methodology of the tests and interpret the results.
 
-\section{Classification}
+\section{Classification}\label{sec:classification_evaluation}
 This section will describe the testing of the entire system by interpreting the results of the classifier.
 
 The performance of the classifier model is evaluated on a test dataset that has not been part of the training data. The result is derived from the same evaluation metric as used in~\cref{evaluation_metric}. The test data consists of 20\% of all data samples. This amounts to \num{294858} samples, evenly split between positive and negative samples as defined in \cref{eq:training_pairs}. Based on the evaluation of different classifiers in~\cref{choosing_classifier}, we have chosen the \emph{nearest centroid} implementation from scikit-learn with its default parameters.
