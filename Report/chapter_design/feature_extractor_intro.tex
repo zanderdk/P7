@@ -1,13 +1,18 @@
-The purpose of the feature extractor component, is to generate a feature representation of a candidate pair, such that the classifier component can decide whether to suggest
+%This paragraph covers the first point of the intro from the writing guide
+The purpose of the feature extractor component, is to generate a feature representation of a candidate pair as described by the function $f$ in \cref{sec:ml_def}, such that the classifier component can decide whether to suggest a link or not. This is done through a feature learning approach, as chosen in \cref{sec:feature_generation}.
+
+%The two paragraphs below covers the second point of the writing guide
+In order to do generate these features we use an algortimic framework for semi-supervised feature learning called node2vec~\cite{node2vec}. Node2vec is a way of creating feature for nodes in a graph based on structure, which can then be used to identify characteristics of the relation between two nodes. When we have identified these characteristics, our classifier component can use them as the feature representation for our candidate pairs. We choose to use node2vec based on reports of its performance as well as its flexibility, seen in~\cref{node2vec}.
+
+In this section we will cover a basic theoritical understanding of node2vec, in order to consider the implications that this has on our usage of node2vec. Afterwards we will cover how we adapt node2vec to our specific problem, and at last we consider then implementation of the feature learner support module and the feature extractor.
 
 
 
 
+%The next component in the main pipeline is the feature extractor. This component generates the feature representation of a candidate pair as described by the function $f$ in \cref{sec:ml_def}, which can then be used for classification.
 
-The next component in the main pipeline is the feature extractor. This component generates the feature representation of a candidate pair as described by the function $f$ in \cref{sec:ml_def}, which can then be used for classification.
+%The feature extractor returns a single feature vector, representing the link between a given source and target article pair. As we need to classify both existing and non-existing links, it must be possible to extract feature vectors in both cases. Therefore the feature vector for a link is constructed by combining the feature vectors of the source and target articles.
 
-The feature extractor returns a single feature vector, representing the link between a given source and target article pair. As we need to classify both existing and non-existing links, it must be possible to extract feature vectors in both cases. Therefore the feature vector for a link is constructed by combining the feature vectors of the source and target articles.
+%As mentioned in \cref{sec:feature_generation} we aim to use feature learning, specifically network embedding, to learn these feature representations. While there are several different ways to approach network embedding, we found node2vec~\cite{node2vec} to be suitable. The main advantage of node2vec is increased flexibility compared to other well-known approaches due to tunable hyperparameters~\cite{node2vec}, which allows us to experiment with different neighborhood exploration methods Additionally, node2vec offers highly competitive performance, and performs well for large networks~\cite{node2vec}.
 
-As mentioned in \cref{sec:feature_generation} we aim to use feature learning, specifically network embedding, to learn these feature representations. While there are several different ways to approach network embedding, we found node2vec~\cite{node2vec} to be suitable. The main advantage of node2vec is increased flexibility compared to other well-known approaches due to tunable hyperparameters~\cite{node2vec}, which allows us to experiment with different neighborhood exploration methods Additionally, node2vec offers highly competitive performance, and performs well for large networks~\cite{node2vec}.
-
-This section describes how node2vec is used to generate the feature representation, along with the process of optimizing the models hyperparameters.
+%This section describes how node2vec is used to generate the feature representation, along with the process of optimizing the models hyperparameters.
