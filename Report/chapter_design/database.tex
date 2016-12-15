@@ -49,6 +49,8 @@ Because Wikipedia requests that bots are not used to crawl the articles~\cite{wi
 
 Redirects are responsible for redirecting synonyms and common misspellings to the main article. For example, trying to access the article on ``Santa'' will redirect to ``Santa Claus''. The redirects are necessary to include since they are referred to by many links. We do not handle these redirects when creating the database. Instead we handle them by following them as needed when we later traverse the graph.
 
+We currently store about 11 million articles of which only about 5 million are relevant. The remaining articles are automatically generated pages with little or no content. We chose to store them as well to avoid further processing of the data.
+
 %To add relationships between the article nodes in the the database, we could have parsed the text in each article and created edges based on all encountered links. However, DBPedia have created a separate dataset containing links in an accessible tuple format:
 %\begin{center}
 %\mono{\emph{<source\_page> <type> <target\_page>}}
@@ -58,7 +60,9 @@ Redirects are responsible for redirecting synonyms and common misspellings to th
 A node is created in the database for each Wikipedia article and redirect page in the datasets, as seen in \cref{tab:db_labels_nodes}.
 The nodes are connected by adding relationships for the links and redirects, with the labels seen in \cref{tab:db_labels_edges}.
 
-Similar to featured articles, Wikipedia also has \emph{good articles} that follow most of the guidelines, providing a satisfactory overall quality~\cite{wiki-good-articles}. However, there is no requirement for them to follow the guidelines for proper linking. We use the set of good articles later in hyperparameter optimization (\cref{sec:hyperopt}). While importing the articles and links into the database, additional labels \mono{FeaturedArticle} and \mono{GoodArticle} are added to \emph{featured} and \emph{good} articles respectively. 
+%Similar to featured articles, Wikipedia also has \emph{good articles} that follow most of the guidelines, providing a satisfactory overall quality~\cite{wiki-good-articles}. However, there is no requirement for them to follow the guidelines for proper linking. We use the set of good articles later in hyperparameter optimization (\cref{sec:hyperopt}).
+
+While importing the articles and links into the database, additional labels \mono{FeaturedArticle} and \mono{GoodArticle} are added to \emph{featured} and \emph{good} articles respectively. A \emph{good} article~\cite{wiki-good-articles} meets the core set of editorial standards on Wikipedia, providing a satisfactory overall quality. They do not meet all of the criteria of a featured article such as the guidelines for appropriate linking. We will be using them for hyperparameter optimization in \cref{sec:hyperopt}.
 
 As seen in \cref{tab:db_labels_edges}, the links are split into three groups, \mono{LinksTo}, \mono{TrainingData}, and \mono{TestData}. \mono{TrainingData} and \mono{TestData} are disjoint links from featured articles that will later be used to train and evaluate the classifier. \mono{LinksTo} are all of the remaining links. The splits are made randomly, according to a partitioning given in \cref{sec:classifier}.
 
@@ -66,5 +70,3 @@ As seen in \cref{tab:db_labels_edges}, the links are split into three groups, \m
 %redirects.en.ttl.bz2
 
 Out of all articles, 0.04\% are featured, and 0.32\% of all links are links from featured articles. These are low proportions and might not generalize the entire graph. As described in \cref{sec:choice_of_graph}, links from featured articles is our ground truth for appropriate linking, and for that reason we want to learn the structure of these links even though they comprise a smaller proportion of the data.
-
-\todo{Comment on why we have 11 million articles instead of 5 million.}
