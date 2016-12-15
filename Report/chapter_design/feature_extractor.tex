@@ -198,7 +198,7 @@ $p$  & $q$     & $d$ & $k$ & $l$ \\
 \label{tab:paramopt_goodvalues}%
 \end{table}
 
-We did not optimize the $r$ parameter, but used a static value of $r=1$, as experiments in~\cite{node2vec} shows that increasing the $r$ value improves performance. This speeds up the parameter optimization, allowing us to increase the $r$ parameter when training the final node2vec model.
+Experiments in~\cite{node2vec} show that increasing the $r$ value (number of walks per node) improves the quality of the generated features. Knowing this, we speed up the parameter optimization by using a constant value of $r=1$, which is useful for comparing the sensitivity of the other parameters. We are aware that a higher $r$ value should be used in the final node2vec training.
 
 Concatenating the feature vectors generally gave better results compared to using Hadamard product and division.
 
