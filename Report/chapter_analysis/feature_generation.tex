@@ -1,11 +1,5 @@
 \section{Feature Generation}\label{sec:feature_generation}
-This section describes how the function $f$ from \cref{sec:ml_def} can be defined using feature engineering or feature learning.
-
-Generating an appropriate feature representation is an integral part of applying machine learning techniques, and it is essential to the performance of the machine learning algorithms~\cite{ng-lecture}. The feature representation aims to discriminate the data so that a desired structure appears. This section describes our approach to generating this feature representation.
-
-%Traditionally, features are engineered from a large data set\todo{source}. This means that features deemed characteristic for a given problem are identified manually from the data set. In recent years, feature learning has gained popularity\todo{source}. Here features are automatically generated from the structure of a data set.
-
-%In the following sections we will discuss strengths and weaknesses of each approach to feature generation, before coming to a conclusion on how they are used in our project.
+Generating an appropriate feature representation is an integral part of applying machine learning techniques, and it is essential to the performance of the machine learning algorithms~\cite{ng-lecture}. The feature representation aims to discriminate the data so that a desired structure appears. This section describes our approach to generating this feature representation for articles pairs, described by the function $f$ in \cref{sec:ml_def}.
 
 \subsection{Feature Engineering}
 Feature engineering is the process of identifying information in a dataset that has a high discriminative power. In a binary classification problem, such information would be a set of features capable of separating positive and negative data points. Identifying these features often requires domain knowledge, since a good choice of features may not be obvious~\cite{ng-lecture}. Feature engineering can often be a time consuming process, and many trial and error iterations may be needed to derive appropriate features. Below we have listed some ideas for features we have explored.
@@ -88,8 +82,16 @@ Algorithms for feature learning typically have hyperparameters that can be used 
 This high level of automation creates the vision of having declarative machine learning, where the only required input is the dataset and a metric for classification, from which both the process of identifying features and classifying the data can be completed autonomously given enough computational power. The possibility of such a system might be the most significant benefit of feature learning. Each step of automation in the machine learning pipeline however increases the difficulty of understanding why a certain approach in the pipeline does not yield the expected outcome.
 \todo{meh}
 
-A popular approach of feature learning on graphs is network embedding. Network embedding aims to construct a low dimensional vector for each node in a given network, such that the network can be reconstructed preserving the original structure~\cite{sun2016general} from this low dimensional mapping. The vector can then be used as a feature representation of the corresponding node.
-\todo{eh}
+Compared to feature engineering, feature learning offers several benefits for this project. The reduced time requirements, along with the reduced need for domain knowledge, could allow for generation of more and better discriminating features. Due to these benefits we seek to learn the function $f$ that generates the feature representation using feature learning, instead of defining it using feature engineering.
 
-Due to the advantages of using feature learning, we seek to learn the function $f$ by using network embedding on the graph representation of Wikipedia, instead of defining it manually using feature engineering. The specific network embedding we use will be described in \cref{feature_extractor}.
-\todo{gør noget..}
+As we need to learn feature representations for any arbitrary article pair $(a,b) \in V \times V$, both where $a \Rightarrow b$ and $a \not \Rightarrow b$, using feature learning requires an approach that supports this. A popular approach for feature learning on graph structures that supports this is \emph{network embedding}.\todo{source}
+
+Network embedding aims to construct a low dimensional vector representation of each node in a given network, that preserves the original network structure~\cite{sun2016general}. This vector can then be used as a feature representation of the corresponding node. The feature representation $v_{ab}$ for any node pair $(a,b) \in V \times V$ can then be found by combining the feature vectors for the two nodes with an arbitrary binary operation $v_{a} \circ v_{b}$, where $v_{a}$ and ${v_b}$ are the feature vectors for node $a$ and $b$, respectively.
+
+% With the
+% Network embedding suits the problem of learning features
+
+
+% Therefore, we use network embedding to learn the function $f$. As there are different methods for network embedding available, the specific ch
+
+% Due to the advantages of using feature learning, we seek to learn the function $f$ by using network embedding on the graph representation of Wikipedia, instead of defining it manually using feature engineering. The specific network embedding we use will be described in \cref{feature_extractor}.
