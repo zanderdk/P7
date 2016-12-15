@@ -49,6 +49,8 @@ Because Wikipedia requests that bots are not used to crawl the articles~\cite{wi
 
 Redirects are responsible for redirecting synonyms and common misspellings to the main article. For example, trying to access the article on ``Santa'' will redirect to ``Santa Claus''. The redirects are necessary to include since they are referred to by many links. We do not handle these redirects when creating the database. Instead we handle them by following them as needed when we later traverse the graph.
 
+We currently store about 11 million articles of which only about 5 million are relevant. The remaining articles are automatically generated pages with little or no content. We chose to store them as well to avoid further processing of the data. \todo{review: Comment on why we have 11 million articles instead of 5 million.}
+
 %To add relationships between the article nodes in the the database, we could have parsed the text in each article and created edges based on all encountered links. However, DBPedia have created a separate dataset containing links in an accessible tuple format:
 %\begin{center}
 %\mono{\emph{<source\_page> <type> <target\_page>}}
@@ -68,5 +70,3 @@ As seen in \cref{tab:db_labels_edges}, the links are split into three groups, \m
 %redirects.en.ttl.bz2
 
 Out of all articles, 0.04\% are featured, and 0.32\% of all links are links from featured articles. These are low proportions and might not generalize the entire graph. As described in \cref{sec:choice_of_graph}, links from featured articles is our ground truth for appropriate linking, and for that reason we want to learn the structure of these links even though they comprise a smaller proportion of the data.
-
-\todo{Comment on why we have 11 million articles instead of 5 million.}
