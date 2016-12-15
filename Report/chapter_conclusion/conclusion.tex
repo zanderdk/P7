@@ -7,14 +7,12 @@ In the problem statement, we formulated the following questions:
 
 \subproblems
 
-% • How can Wikipedia articles be modeled as a graph, such that information relevant for the linking problem is captured?
-We modeled Wikipedia as a directed graph with articles as nodes and links as edges. As described in \cref{sec:db} we used DBpedia as a resource of obtaining the article and linking data, and used the native graph database Neo4j to store and manage this data as a graph. Based on this graph, we used a feature learning technique called network embedding to generate a set of features from each article. This was achieved by utilizing the algorithmic framework node2vec to autonomously explore and generate article features based on random walks performed in the graph. Because the features are based on graph walks, they capture certain aspects of the linking structure between articles. Specifically, the node2vec model was optimized to predict links from featured articles by combining these features. As described in \cref{sec:hyperopt}, this led to a configuration of hyperparameters that among other things puts weight on exploring close neighborhoods of nodes. After hyperparameter optimization the generated feature model was used to produce features from pairs of articles, for a classifier trained to suggest links.
-
-% • How can machine learning be used to suggest potential articles links, that would improve article quality?
-
-% • How can editors be presented with suggestions of links that could be added to Wikipedia articles?
-
 \todo{How we answered these. One paragraph for each point.}
+
+We modeled Wikipedia as a directed graph with articles as nodes and links as edges. As described in \cref{sec:db} we used DBpedia as a resource of obtaining the article and linking data, and used the native graph database Neo4j to store and manage this data as a graph. Based on this graph, we used a feature learning technique called network embedding to generate a set of features from each article. This was achieved by utilizing the algorithmic framework node2vec to autonomously explore and generate article features based on random walks performed in the graph. Because the features are based on graph walks, they capture certain aspects of the linking structure between articles. More specifically the node2vec model was optimized to predict links from featured articles by combining these features. As described in \cref{sec:hyperopt}, this led to a configuration of hyperparameters that among other things puts weight on exploring close neighborhoods of nodes. After hyperparameter optimization the generated feature model was used to produce features from pairs of articles, for a classifier trained to suggest links.
+
+The classification algorithm was selected by performing a test described in \cref{choosing_classifier}, in which we tested different types of classifiers to determine which one was most appropriate for predicting missing links from features extracted from the feature model based on a selection training data mentioned in \cref{sec:training_data}. Based on the evaluation in \cref{evaluation_metric} we chose to use the \emph{nearest centroid} algorithm, as it had high precision but also a reasonable recall for our purposes. 
+
 
 \section{Future Work}\label{sec:future_work}
 The following section outlines components that we think can be improved, but we did not manage to implement in the allotted project time.
@@ -30,7 +28,7 @@ As described in \todo{ref til test/eval hvor vi outliner hvad der gik galt} we b
 Because the negatives are selected at random, the training data contains very few cases, where articles have high relevance but still should not be linked. Extending the data with such samples could improve performance of the classifier. Additionally it might be useful to extend the data with training samples for linking in the opposite direction, since we do not know to which extend the direction between pairs of articles is being considered. Furthermore the number of samples in the training data could be increased to allow the classifier to generalize better on the whole of Wikipedia. One way to increase the amount of training data would be to also consider links from good articles as positives, even though we cannot assume them to have appropriate linking.
 
 % non-featured
-Both the training and test data does not take non-featured articles into account. This could be a problem since featured articles might not be a good representation of normal articles, leading to generality problems. In the future it would be relevant to examine how the model can be trained to evaluate article pairs that are not featured. One way might be to analyse the edit history of articles, which is discussed in the following section. %Other approaches could be to use a n-gram or clickstream data as mentioned in \todo{ref}.
+Both the training and test data does not take non-featured articles into account. This could be a problem since featured articles might not be a good representation of normal articles, leading to generality problems. In the future it would be relevant to examine how the model can be trained to evaluate article pairs that are not featured. One way might be to analyze the edit history of articles, which is discussed in the following section. %Other approaches could be to use a n-gram or clickstream data as mentioned in \todo{ref}.
 
 As mentioned in \cref{sec:db} we currently have \num{11159213} articles in our dataset. The majority of these articles are automatically generated pages with little or no content. Pruning these articles from the dataset will probably improve the feature model, because it could avoid traversing these during graph walks.
 
