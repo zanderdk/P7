@@ -14,6 +14,7 @@ If system usage grows sufficiently large the data exchange could be handled by i
 \label{fig:system-overview}%
 \end{figure}
 
+\todo{Kasper: kig på at indirekte give feature extractor en flottere plads i main pipeline}
 \subsection{Main Pipeline}
 The main pipeline consists of five components. The first one is a storage component, which holds all the information required to identify the link suggestions. The second component is \emph{Candidate Generator}, which is responsible for the candidate generation process. It works by extracting candidate article pairs from the database. The candidates are of the form $(A,B)$ where $A$ is a source article and $B$ is a suggested target article. The third component is the \emph{Feature Extractor}. This component generates a feature vector from a given candidate pair. As the fourth component, we have the \emph{Classifier}, which is responsible for the classification of the candidate pair. This is the component that ultimately makes the link suggestion. Finally the \emph{Results Pool} is another storage component, which holds the suggestions until they are presented to a user through the user interface.
 
