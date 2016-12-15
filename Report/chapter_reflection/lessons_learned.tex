@@ -24,6 +24,14 @@ Inaccuracies introduced into the system can propagate down the pipeline and grea
 Specifically, the accuracy of the classifier model depends on the accuracy of the feature model, both during training and in operation. Higher in the pipeline, the accuracy of the feature model depends on the quality and structure of the data, which subset was chosen for training, and how the hyperparameters are tuned. Furthermore the candidate generator component impacts which pairs that can be selected as link suggestions during system operation.
 Being able to evaluate the components in isolation from each other would have been beneficial, but due to the nature of feature learning it can be difficult to reason about which configurations that ultimately will lead to good results.
 
+\section{Alternative Solutions/Approaches}
+\todo{mangler - There are many solutions to a problem - we only explore one solution}
+In this project we focused on suggesting missing links on Wikipedia using feature learning based on the link structure of featured articles.
+Another approach we have discussed was to use the Wikipedia clickstream as an indication of which links users are using frequently and from the referrer which articles are being navigated between even when a link is not present. This might have been used to determine missing links and would have increased the amount of available training data, but also imposes the problem that we cannot be sure that the links are actually good or missing \todo{have we described this somewhere}. For this reason we instead used the clickstream as a heuristic to generate pairs of articles as described in \cref{sec:candidate_clickstream}.
+
+
+
+
 
 \todo{manlger - problemer med generalisering fra featured til almindelige artikler (vi lærer fra featured, men skal bruge det til at forbedre 'dårlige' artikler)}
 
@@ -38,7 +46,6 @@ Being able to evaluate the components in isolation from each other would have be
 %    - takes time to try new things/approaches
 %    - Scheduling/planning: Try to always keep a worker machine busy
 
-\todo{mangler - There are many solutions to a problem - we only explore one solution}
 %- It is hard to reason the effects of choices made before testing them. Experience in machine learning is a thing! Good that we have now had experience with it
 %- Finding good features is vital
 %- It can be hard to predict whether a solution will generalize before trying it

@@ -9,7 +9,7 @@ Instead of aspiring to create a perfect method, we only require the method to be
 
 Our chosen method is a combination of two approaches. One is based on a clickstream dataset and the other on a simple textual analysis.
 
-\subsection{Clickstream Approach}
+\subsection{Clickstream Approach}\label{sec:candidate_clickstream}
 
 The clickstream approach is inspired by related work that uses server logs to predict missing links~\cite{hyperlink-structure-using-logs}. We use clickstream~\cite{wiki-clickstream} data built from Wikipedia server logs, and as such it is based on user behavior. A clickstream data source is a list of requests that Wikipedia received within a given timespan\footnote{We use a data source collected from March 1 -- March 31, 2016}. A request holds information on a referrer and a resource, as well as a count of the occurrence of this request and a request type. The request type can be \emph{link}, \emph{external}, or \emph{other}. For this approach, the type \emph{other} is the only relevant one. A request of type \emph{other} means that the referrer and resource were both articles, but that referrer does not link to the resource. One source of this type of requests could be searches~\cite{wiki-clickstream}.
 
