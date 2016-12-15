@@ -4,9 +4,10 @@ This project addressed the problem of supplying reasonable suggestions of links,
 We present a method of automating this process. The system is designed and implemented with scalability in mind. It automatically finds suggestions of articles that should be linked, and presents these to a user. The user can then decide whether or not the suggestion was appropriate. As such, we leave the ultimate decision in the hands of the user, since we recognize that our system has not been tested to the extent, that allows us to say with confidence that it works autonomously in most cases.
 
 In the problem statement, we formulated the following questions:
-\begin{itemize}
-	\item List from introduction...
-\end{itemize}
+
+\subproblems
+
+We modeled Wikipedia as a directed graph with articles as nodes and links as edges. As described in \cref{sec:db} we used DBpedia as a resource of obtaining the article data, and used the native graph database Neo4j to store and manage the data as a graph.
 
 \todo{How we answered these. One paragraph for each point.}
 
