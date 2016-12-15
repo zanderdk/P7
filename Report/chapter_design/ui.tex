@@ -12,7 +12,7 @@ As a mean to derive requirements, we initially developed an information flow dia
 \caption{Information flow diagram for user interface.}\label{fig:information_flow_UI}
 \end{figure}	
 
-In the diagram seen in \cref{fig:information_flow_UI}, which is in the WebML+ style~\cite{Casteleyn2009}, we have the two actors and the UI\@. One actor is the Wikipedia Editor and the other is the main pipeline. While the main pipeline could be modeled as a system with its own information flow, it is more beneficial for the requirement engineering process to simplify the main pipeline as an actor outside of the UI, since the requirements for the UI should not be affected by the inner workings of the main pipeline.
+\cref{fig:information_flow_UI} (in WebML+ style~\cite{Casteleyn2009}) shows we have the two actors and the UI\@. One actor is the Wikipedia Editor and the other is the main pipeline. While the main pipeline could be modeled as a system with its own information flow, it is more beneficial for the requirement engineering process to simplify the main pipeline as an actor outside of the UI, since the requirements for the UI should not be affected by the inner workings of the main pipeline.
 
 The Wikipedia Editor actor has two actions. First is the \enquote{Query for Link(s)} action, which prompts the UI for links to be evaluated. Secondly we have a \enquote{Review Report} action, where the actor informs the UI whether a previously suggested link was added to Wikipedia or not.
 
@@ -21,7 +21,7 @@ While other actions by the Wikipedia Editor actor could easily be conceived, we 
 
 \subsection{Requirements}
 
-From this diagram two functional requirements can be deducted. There is a requirement for retrieval of link suggestions and a requirement for the reporting of link reviews.
+From this diagram two functional requirements can be deduced. There is a requirement for retrieval of link suggestions and a requirement for the reporting of link reviews.
 
 In the case of the retrieval of link suggestions the information flow is as follows:
 
@@ -40,9 +40,7 @@ For the case of reporting link reviews, where a user reports their evaluation of
 	\item The review is also forwarded to the main pipeline for further evaluation
 \end{enumerate}
 
-The last step of forwarding the review to the main pipeline represents a future use of the reviews to re-train the classifier. This is not a current consideration in the main pipeline, but the UI is designed to support this type of feedback.
-
-The requirements found in these two information flows are:
+The last step of forwarding the review to the main pipeline represents a future use of the reviews to re-train the classifier. This is not a current consideration in the main pipeline, but the UI is designed to support this type of feedback. The requirements found in these two information flows are:
 
 \begin{itemize}
 	\item A user must be able to query the UI for link suggestions
@@ -51,7 +49,7 @@ The requirements found in these two information flows are:
 
 \subsection{User Demographic}
 
-In order to design a solution for the requirements, we first consider the envisioned user demographic. The user is a Wikipedian, i.e.\ a person who edits Wikipedia articles. The Wikipedians we especially wish to engage are the so called \emph{coolfarmers}, which is a term coined by~\cite{coolfarming}, to describe the top editors of Wikipedia. They cite~\cite{Priedhorsky:2007:CDR:1316624.1316663} with the findings that the editing of Wikipedia is a long tail distribution, and through an analysis of behavioral patterns identify the coolfarmers as the backbone of Wikipedia~\cite{coolfarming}. Furthermore~\cite{wiki_motivation} has found that \enquote{fun} and \enquote{ideology} are the two most important reasons why users edit Wikipedia, and~\cite{Yang20101377} extends on this by finding that internal self-concept-based motivation\footnote{motivation by feeling a personal achievement when sharing knowledge and being a self-motivated person} is the most important type of motivation for the Wikipedians.
+In order to design a solution for the requirements, we first consider the envisioned user demographic. The user is a Wikipedian, i.e.\ a person who edits Wikipedia articles. The Wikipedians we especially wish to engage are the so called \emph{coolfarmers}, which is a term coined by~\cite{coolfarming} to describe the top editors of Wikipedia. They cite the source~\cite{Priedhorsky:2007:CDR:1316624.1316663} with the findings that the editing of Wikipedia is a long tail distribution, and through an analysis of behavioral patterns identify the coolfarmers as the backbone of Wikipedia~\cite{coolfarming}. Furthermore~\cite{wiki_motivation} has found that \enquote{fun} and \enquote{ideology} are the two most important reasons why users edit Wikipedia, and~\cite{Yang20101377} extends on this by finding that internal self-concept-based motivation\footnote{motivation by feeling a personal achievement when sharing knowledge and being a self-motivated person} is the most important type of motivation for the Wikipedians.
 
 We believe that the most effective way employ the results of the main pipeline, is to focus on delivering them to the coolfarmers and thereby combining the computational power of a classifier with their experience and motivation to make the actual edits.
 
