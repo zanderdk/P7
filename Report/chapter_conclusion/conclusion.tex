@@ -46,7 +46,18 @@ By working on real-time Wikipedia data, the system could be improved to suggest 
 The current system UI is engineered to accept feedback on the suggested links, but the feedback is currently not used. Reinforcement learning techniques could be used to improve the performance of the system by learning on the given user feedback.
 
 \subsection{User Interface}
-\todo{vil vi have dette med? vi kan skrive at vi skal lave en brugeranalyse for at finde ud af mangler/hvad de gerne vil have}
+To fully know how best to improve the user interface would require a usability analysis of the current implementation. We can however come up with ideas for further development based on needs envisioned by us.
+
+We believe the following two API endpoints would be useful:
+\begin{itemize}
+    \item Given articles A and B as parameters, returns whether A should link to B.
+    \item Given article A, returns a list of articles that A should link to.
+\end{itemize}
+
+Given the user interface is the facade to the users, it makes sense to also develop a graphical user interface based on the provided API that allows users to interact with the system in an intuitive fashion.
+% endpoint: (a,b) -> skal der være link mellem a og b?
+% endpoint: a -> giv mig artikler som der kan linkes til fra a
+% add gui
 
 \subsection{Precise Link Location Suggestions}
 The current system operates in a binary mode; to link or not to link. To further assist the users, and speed up the review process, the system could suggest where the link should be placed in the article. This improvement would need to combine the structural analysis this report is concerned about with semantic analysis.
