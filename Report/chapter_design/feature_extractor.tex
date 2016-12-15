@@ -67,11 +67,11 @@ By adjusting $p$ and $q$ it is possible to approximate different search strategi
 \end{figure}
 
 \subsubsection{Combining Feature Vectors}
-By training a node2vec model on the graph, we are able to learn a function $h:V \to \mathbb{R}^d$, mapping a vertex to a vector representation of features. In order to construct a feature representation of a potential edge between two vertices, we need to combine their feature vectors. In the node2vec paper~\cite{node2vec} four different binary operators $\circ : \mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^d$ for combining two feature vectors are examined, with \emph{Hadamard product} yielding the best results in all tested cases.
+By training a node2vec model on the graph, we are able to learn a function $h:V \to \mathbb{R}^d$, mapping a node to a vector representation of features. In order to construct a feature representation of a potential edge between two nodes, we need to combine their feature vectors. In the node2vec paper~\cite{node2vec} four different binary operators $\circ : \mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^d$ for combining two feature vectors are examined, with \emph{Hadamard product} yielding the best results in all tested cases.
 
 %We discovered that all 4 operators where commutative meaning that $a \circ b = b \circ a \ \forall a,b \in \mathbb{R}^d$ which works well in undirected graphs.
 
-All of the four operations are commutative, which is suitable for undirected graphs, where the combined result vector does not depend on the order of the vertices. For directed graphs however, the order is important.
+All of the four operations are commutative, which is suitable for undirected graphs, where the combined result vector does not depend on the order of the nodes. For directed graphs however, the order is important.
 
 %If we have 2 pairs of articles $(a,b) \in \Rightarrow$ and $(b,a) \in V \times V \setminus \Rightarrow$ they will have the same feature representation using any of these 4 operators, but different labels.
 
