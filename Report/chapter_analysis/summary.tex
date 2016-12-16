@@ -1,11 +1,15 @@
 \section{Development Considerations}
-
+\todo{Overvej alternativ overskrift.}
 After examining different aspects of graph modeling and machine learning, and our choices within these areas, we consider the implications of those choices in terms the development of a system.
+\todo{skal (måske) omformuleres.}
 
 The direction that our choices have moved our solution towards, is one with multiple interesting and complex areas. If we were to fully explore each of these areas, we would have to perform extensive analysis and development within the subjects of data analysis, feature learning, classification, and web application development.
 
-An approach to this problem of many and large subject areas, is to focus equally on all these aspects and thus develop a decent and practical solution. While this might be the most suitable development method in another setting, the interest in exploring a less common approach to the linking problem, gives this project an experimental direction. Because of this, we choose to focus the development on attempting to break new ground in what we believe to be the area, where the stated problem diverges from those seen in related work. We consider this area to be feature learning. 
+An approach to this problem of many and large subject areas, is to focus equally on all these aspects and thus develop a decent and practical solution. While this might be the most suitable development method in another setting, the interest in exploring a less common approach to the linking problem, gives this project an experimental direction. Because of this, we choose to focus the development on attempting to break new ground in what we believe to be the area, where the stated problem diverges from those seen in related work. We consider this area to be feature learning.
+\todo{Gør kortere, behøver ikke nævne at equal focus kunne være godt i andre scenarier.}
+\todo{Ikke så glad for udtrykket "break new ground".}
 
 While it can be argued that the core of the problem is classification, we believe that once the area of feature learning has been covered in the context of Wikipedia, the problem of classification can be approached with much inspiration from related work on machine learning. It should also be considered that an attempt to focus on classification based on a generic feature learning approach could result in an inherent inability to identify discriminating information within the features. We believe that the preferable approach is to focus on feature generation, and then accepting a less specialized classification process.
+\todo{Behøver ikke nævne at classification kan løses med inspiration fra related work, pointen med at gode features er nødvendige for machine learning er nok.}
 
 However, choosing to focus on the subject of feature learning, does not imply that we will completely disregard the other areas. In order to understand the requirements for the feature learning process, we must consider the surrounding elements. Therefore we choose to design and implement a complete system, where every required part is included, but where the feature learning elements of the system is in focus. This choice is also influenced by the consideration that further development is often easier on a system where every part has received development, since it tends to uncover unnoticed requirements and a better understanding of holistic requirements.
