@@ -2,7 +2,7 @@
 Generating an appropriate feature representation is an integral part of applying machine learning techniques, and it is essential to the performance of the machine learning algorithms~\cite{ng-lecture}. The feature representation aims to discriminate the data so that a desired structure appears. This section describes our approach to generating this feature representation for articles pairs, described by the function $f$ in \cref{sec:ml_def}.
 
 \subsection{Feature Engineering}
-Feature engineering is the process of identifying information in a dataset that has a high discriminative power. In a binary classification problem, such information would be a set of features capable of separating positive and negative data points. Identifying these features often requires domain knowledge, since a good choice of features may not be obvious~\cite{ng-lecture}. Feature engineering can often be a time consuming process, and many trial and error iterations may be needed to derive appropriate features. Below we have listed some ideas for features we have explored, but there are many more than these.
+Feature engineering is the process of identifying information in a dataset that has a high discriminative power. In a binary classification problem, such information would be a set of features capable of separating positive and negative data points. Since a good choice of features may not be obvious, identifying these features often requires domain knowledge, and intuition of the problem domain~\cite{ng-lecture,domingos2012few}. Feature engineering can often be a time consuming process, and many trial and error iterations may be needed to derive appropriate features. Below we have listed some ideas for features we have explored, but there are many more than these.
 
 \begin{description}
     \item[Term similarity] This is a metric that describes the similarity of the most important terms on two given Wikipedia articles. A term is a word in an article, that is deemed significant to that article. By identifying the terms of each article, a term similarity score between two articles can be computed. The idea behind the feature is that two articles that use very similar terms, might cover similar topics, which could warrant a link.
@@ -67,9 +67,7 @@ Feature engineering is the process of identifying information in a dataset that 
 
 \end{figure}
 
-The process of feature engineering did however prove to be rather time consuming, and the usefulness of the resulting features was difficult to reason about, due to insufficient domain knowledge. Due to this we examined alternative approaches to generate this feature representation, namely feature learning.
-
-\todo{Det er et tyndt afsnit, tyndt grundlag. Udvid med forklaring af anerkendte teknikker/metoder. Find kilder der snakker om hvordan man laver feature engineering, og snak om hvilke teknikker de bruger. Hvis ``teknikken'' er ``viden indenfor området'', så skriv det.}
+The process of feature engineering did however prove to be rather time consuming, and the usefulness of the resulting features was difficult to reason about, as we do not possess the required domain knowledge. As such we are unsure whether we can develop features of sufficient quality within the allotted project time. Due to this we examined alternative approaches to generate this feature representation, namely feature learning.
 
 \subsection{Feature Learning}
 Feature learning is an approach in machine learning that has shown impressive results in many applications~\cite{bengio2013representation}. It is a method for generating feature representations from raw input data, avoiding the need for the time consuming feature engineering process~\cite{ng-lecture}. Additional advantages of using feature learning are a reduced need for domain knowledge, and the ability to uncover structural patterns that are hard to discover manually.
