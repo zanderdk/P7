@@ -1,6 +1,6 @@
 \section{Machine Learning Task}\label{sec:machine_learning_task}
 %With a graph defined,
-In this section we introduce a machine learning task based on the problem we are trying to solve. To solve the problem of suggesting links between Wikipedia articles. To solve this using machine learning we formulate it as a binary classification problem of determining whether two Wikipedia articles should be linked.
+In this section we introduce a machine learning task based on the problem we are trying to solve. To solve the problem of suggesting links between Wikipedia articles using machine learning, we formulate it as a binary classification problem of determining whether two Wikipedia articles should be linked.
 
 As described in \cref{sec:choice_of_graph} we assume featured articles to have appropriate linking. This makes links from featured articles suitable as positive training pairs when learning if a link should be present. Similarly articles that are not linked from a featured article can be used as negative training pairs.
 
@@ -18,11 +18,10 @@ Having these sets available as an exemplification of the Wikipedia guidelines, l
 
 %Under this assumption labeled training data can be generated, and so we limit the scope of the project to only consider supervised learning approaches. This delimits the problem to binary classification problem in a supervised machine learning context.
 
-\subsection{Defining the Learning Task}
-\label{sec:ml_def}
-In order to give a precise understanding of the problem we will define it formally, before explaining how we intend to solve it.
-In the previous section we formulated the problem of suggesting links between Wikipedia articles as binary classification problem, determining if an article pair should be linked or not. Formaly we seek to approximate a function $h: V \times V \to L$ here $L=\{0,1\}$ is the set of all possible labels, where $1$ represents the class of article pairs that should be linked, and $0$ the ones that should not.
-Because moste classifiers predicts a class based on some feature vector, we insted of constructing $h$ need a way of representing article pairs in form of a vector. To do this we define $f: V\times V \to \mathbb{R}^d$ as a function mapping from article pairs to a feature representation, where $d$ is the dimension of the feature vector. 
+\subsection{Defining the Learning Task}\label{sec:ml_def}
+In order to give a precise understanding of the problem, we will define it formally before explaining how we intend to solve it.
+In the previous section we formulated the problem of suggesting links between Wikipedia articles as binary classification problem, determining if an article pair should be linked or not. Formally we seek to approximate a function $h: V \times V \to L$ where $L=\{0,1\}$ is the set of all possible labels. $1$ represents the class of article pairs that should be linked, and $0$ the ones that should not.
+Because most classifiers predicts a class based on some feature vector, we, instead of constructing $h$, need a way of representing article pairs in form of a vector. To do this we define $f: V\times V \to \mathbb{R}^d$ as a function mapping from article pairs to a feature representation, where $d$ is the dimension of the feature vector. 
 
 With the function $f$ we seek to learn a function $g: \mathbb{R}^d \to L$, that assigns a label $y_{ab} \in L$ to a feature representation $x_{ab} \in \mathbb{R}^d$, for a given article pair $(a,b) \in V \times V$, such that \cref{eq:labels} holds.
 
