@@ -24,10 +24,10 @@
       %pins near some coords={15/south:Hadamard,29/north:Divide}
     ] table [x=x, y=y, col sep=semicolon, meta=color] {chapter_design/sorted.csv}
     ;
-    \node[coordinate,pin={[pin distance=1cm]above:{Hadamard}}]
+    \node[coordinate,pin={[pin distance=1cm]above:{Hadamard product}}]
       at (axis cs:16,0.55340945711058)	{};
 
-    \node[coordinate,pin={[pin distance=.6cm]below:{Divide}}]
+    \node[coordinate,pin={[pin distance=.6cm]below:{Hadamard divide}}]
       at (axis cs:30,0.4252592596720848)	{};
 
     \node[coordinate,pin=above:{Concatenate}]
