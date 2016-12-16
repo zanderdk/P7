@@ -1,0 +1,26 @@
+\begin{tikzpicture}[node distance = 1.7cm, auto]
+    \node [node] (v) {$v$};
+    \node [node, fill=none, above left=of v,
+            pin={[pin distance=1.2em,pin edge={very thick}]15:},
+            pin={[pin distance=1.2em,pin edge={very thick}]150:},
+            pin={[pin distance=1.2em,pin edge={very thick}]230:}
+            ] (x1) {$x_1$};
+    \node [node, fill=none, above right=of v,
+            pin={[pin distance=1.2em,pin edge={very thick}]350:},
+            pin={[pin distance=1.2em,pin edge={very thick}]295:},
+            pin={[pin distance=1.2em,pin edge={very thick}]150:}
+            ] (x2) {$x_2$};
+    \node [node, fill=none, below left=of v,
+            pin={[pin distance=1.2em,pin edge={very thick}]170:},
+            pin={[pin distance=1.2em,pin edge={very thick}]210:}
+            ] (t) {$t$};
+    \node [node, fill=none, below right=of v,
+            pin={[pin distance=1.2em,pin edge={very thick}]330:},
+            pin={[pin distance=1.2em,pin edge={very thick}]20:}
+            ] (x3) {$x_3$};
+    \path [draw, very thick, inner sep=.5pt] (x1) -- node [] {$\alpha = 1$} (v);
+    \path [draw, very thick, inner sep=.5pt] (x2) -- node [] {$\alpha = 1/q$} (v);
+    \path [draw, very thick, swap, inner sep=.5pt] (x3) -- node [] {$\alpha = 1/q$} (v);
+    \path [draw, very thick] (t) -- (x1);
+    \path [draw, very thick, swap, inner sep=.5pt] (t) -- node [] {$\alpha = 1/p$} (v);
+\end{tikzpicture}
