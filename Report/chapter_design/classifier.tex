@@ -4,13 +4,13 @@ As described in \cref{sec:machine_learning_task} we want to solve a supervised b
 \subsection{Training Data}\label{sec:training_data}
 To train and evaluate a classifier we must first partition the positive and negative pairs $P$ and $N$, defined in \cref{sec:machine_learning_task}, into training and test data. To avoid overfitting on existing links, the training and testing data can not be used for feature learning. Therefore, we reserve a subset of $P$ that is only used for walks during feature learning.
 
-We partition the positive training examples $P$ into three disjoint sets $P_{test}$, $P_{training}$, and $P_{walk}$ for testing, training, and feature learning walks, respectively. The partition is made randomly, with a distribution of 20\% test data, 40\% training data, and 40\% data for walks. This specific split is made to preserve the link structure in the graph while still having a reasonable amount of samples for testing and training.
+We partition the positive training examples $P$ into three disjoint sets $P_\text{test}$, $P_\text{training}$, and $P_\text{walk}$ for testing, training, and feature learning walks, respectively. The partition is made randomly, with a distribution of 20\% test data, 40\% training data, and 40\% data for walks. This specific split is made to preserve the link structure in the graph while still having a reasonable amount of samples for testing and training.
 
 %One sample of training data has the form \mono{<source article> <target article> <label>}. The source and targeet article are titles of pairs of articles. The label on the training samples can either be positive (link) or negative (do not link).
 
 %Disjoint sets $P_{80} \subset P$ and $P_{20} \subset P$
 
-As $\left\vert{P}\right\vert$ is smaller than $\left\vert{N}\right\vert$, we ensure an equal distribution of positive and negative training pairs, by randomly sampling two distinct sets $N_{test} \subset N$ and $N_{training} \subset N$, such that $\left\vert{N_{test}}\right\vert=\left\vert{P_{test}}\right\vert$ and $\left\vert{N_{training}}\right\vert=\left\vert{P_{training}}\right\vert$.
+As $\left\vert{P}\right\vert$ is smaller than $\left\vert{N}\right\vert$, we ensure an equal distribution of positive and negative training pairs, by randomly sampling two distinct sets $N_\text{test} \subset N$ and $N_\text{training} \subset N$, such that $\left\vert{N_\text{test}}\right\vert=\left\vert{P_\text{test}}\right\vert$ and $\left\vert{N_\text{training}}\right\vert=\left\vert{P_\text{training}}\right\vert$.
 
 %The positive samples are pairs of articles $(a,b)$ such that article $a$ is featured and there exists a link from article $a$ to $b$.
 
