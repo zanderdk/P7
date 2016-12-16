@@ -24,14 +24,12 @@ Development of the main pipeline includes learning a feature model, used for ext
 
 The support module for the feature learning consists of a \emph{Model Trainer} and a \emph{Parameter Optimizer}. The \emph{Parameter Optimizer} tunes the parameters of the feature learning algorithm. When an acceptable set of parameters has been found, the \emph{Feature Learner} uses these parameters to train the final model. The result of this is the model, which is used as the \emph{Feature Extractor}.\todo{Ændret "Model Trainer" til "Feature Learner", er der et bedre navn?}
 
-The other support module is for the classifier learning process. It consists of a \emph{Training Data Generator} and a \emph{Classifier Trainer}. The \emph{Training Data Generator} retrieves training pairs and labels from the dataset\todo{Hvilket dataset?}, and uses the \emph{Feature Extractor} to prepare the data. Then the \emph{Classifier Trainer} uses this prepared training data to create a model, which is used as our classifier.
+The other support module is for the classifier learning process. It consists of a \emph{Training Data Generator} and a \emph{Classifier Trainer}. The \emph{Training Data Generator} retrieves the labeled training pairs $P \cup U$ from the \emph{DB} component, and uses the \emph{Feature Extractor} to prepare the data. Then the \emph{Classifier Trainer} uses this prepared training data to create a model, which is used as our classifier.
 
 \subsection{User Interface}
 Finally, we cover the \emph{User Interface} component. The purpose of this component is to publish the results of the main pipeline to users who can then use the results to edit Wikipedia. Since the classifier can not be expected to reach a perfect precision, the final decision of whether to include a suggested link, should be done by a human editor. Therefore we create a user interface that allows people to retrieve the results of the main pipeline.
-\todo{De to sidste sætning kan nok fjernes.}
 
-We consider this component separate from the main pipeline. The reason for this separation is different requirements of the two parts\todo{måske omskriv}. While both the user interface and the main pipeline share the goals of the entire system, they have different subgoals. The main pipeline is purely focused on producing results, and the user interface only considers the delivery of those results. This difference in subgoals requires a different evaluation approach, and as such it is desirable to separate the user interface from the main pipeline.
-\todo{Forstår ikke helt argumentationen for opdelingen.}
+We consider this component separate from the main pipeline, due to different requirements of the two parts. While both the user interface and the main pipeline share the goals of the entire system, they have different subgoals. The main pipeline is purely focused on producing results, and the user interface only considers the delivery of those results. This difference in subgoals requires a different evaluation approach, and as such it is desirable to separate the user interface from the main pipeline.
 
 \input{chapter_design/database}
 

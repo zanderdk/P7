@@ -25,6 +25,7 @@ We store Wikipedia articles as nodes with their title as a property, and links b
     \caption[Node labels in the database]{Node labels in the database. Note that some nodes have multiple labels.}%
     \label{tab:db_labels_nodes}
 \end{table}
+
 \begin{table}[tbp]
     \centering
     \begin{tabular}{@{}p{.24\textwidth}p{.50\textwidth}R{.15\textwidth}@{}}
@@ -44,26 +45,21 @@ We store Wikipedia articles as nodes with their title as a property, and links b
 \end{table}
 
 \subsection{Populating the Database}\label{sec:db_populate}
-Because Wikipedia requests that bots are not used to crawl the articles~\cite{wiki-bots}, we instead use readily available datasets\footnote{Data extracted from Wikipedia dumps in October 2015} from DBpedia~\cite{dbpedia}. The datasets used are a list of all page links and a list of page redirects. The pages consists of articles as well as pages for users, talks, files, etc\todo{noget upræcist}. Since we are only interested in articles, we prune non-article pages based on the namespace prefixes used on Wikipedia.
+Because Wikipedia requests that bots are not used to crawl the articles~\cite{wiki-bots}, we instead use readily available datasets\footnote{Data extracted from Wikipedia dumps in October 2015} from DBpedia~\cite{dbpedia}. The datasets used are a list of all page links and a list of page redirects. The pages consists of articles as well as other Wikipedia pages, such as user pages, talks, and files. Since we are only interested in articles, we prune non-article pages based on the namespace prefixes used on Wikipedia.
 
-Redirects are responsible for redirecting synonyms and common misspellings to the main article\todo{Der er vel også andre cases?}. For example, trying to access the article on ``Santa'' will redirect to ``Santa Claus''\todo{Synes ikke vi behøver et eksempel}. The redirects are necessary to include since they are referred to by many links. We do not handle\todo{resolve/lign.?} these redirects when creating the database. Instead we handle\todo{samme som før.} them by following them as needed when we later traverse the graph.
+Redirects are mainly responsible for redirecting synonyms and common misspellings to the main article. The redirects are necessary to include since they are referred to by many links. We handle them by following them as needed when we later traverse the graph.
 
-We currently store about 11 million articles of which only about 5 million are relevant. The remaining articles are automatically generated pages with little or no content. We chose to store them as well to avoid further processing of the data.
-\todo{Vil vi gerne gøre opmærksom på det allerede her?}
+We currently store about 11 million articles of which only about 5 million are actual encyclopedia. The remaining articles are pages such as lists, disambiguation pages, and automatically generated pages with little or no content. While these pages are not actual articles, they still provide some structural information, therefore we chose to store these as well.
 
-A node is created in the database for each Wikipedia article and redirect page in the datasets, as seen in \cref{tab:db_labels_nodes}. The nodes are connected by adding relationships for the links and redirects, with the labels seen in \cref{tab:db_labels_edges}.
-\todo{Synes ikke table refs fungerer særligt godt her.}
+A node is created in the database for each Wikipedia article and redirect page in the datasets. The nodes are connected by adding relationships for the links and redirects.
 
-%Similar to featured articles, Wikipedia also has \emph{good articles} that follow most of the guidelines, providing a satisfactory overall quality~\cite{wiki-good-articles}. However, there is no requirement for them to follow the guidelines for proper linking. We use the set of good articles later in hyperparameter optimization (\cref{sec:hyperopt}).
+While importing the articles and links into the database, additional labels \mono{FeaturedArticle} and \mono{GoodArticle} are added to \emph{featured} and \emph{good} articles respectively. A \emph{good} article~\cite{wiki-good-articles} meets the core set of editorial standards on Wikipedia, providing a satisfactory overall quality. They do not meet all of the criteria of a featured article such as the guidelines for appropriate linking. We will be using these \emph{good} articles for hyperparameter optimization in \cref{sec:hyperopt}. The labels used for nodes, along with the count for each label, is shown in \cref{tab:db_labels_nodes}.
 
-While importing the articles and links into the database, additional labels \mono{FeaturedArticle} and \mono{GoodArticle} are added to \emph{featured} and \emph{good} articles respectively. A \emph{good} article~\cite{wiki-good-articles} meets the core set of editorial standards on Wikipedia, providing a satisfactory overall quality. They do not meet all of the criteria of a featured article such as the guidelines for appropriate linking. We will be using these \emph{good} articles for hyperparameter optimization in \cref{sec:hyperopt}.
-
-As seen in \cref{tab:db_labels_edges}, the links are split into three groups, \mono{LinksTo}, \mono{TrainingData}, and \mono{TestData}. \mono{TrainingData} and \mono{TestData} are disjoint links from featured articles that will later be used to train and evaluate the classifier. \mono{LinksTo} are all of the remaining links. The splits are made randomly, according to a partitioning given in \cref{sec:classifier}.
-\todo{Er der en nem måde, der stadig giver mening, at nævn splittet i kapitel 2?}
+The links are split into three groups, \mono{LinksTo}, \mono{TrainingData}, and \mono{TestData}. \mono{TrainingData} and \mono{TestData} are disjoint links from featured articles that will later be used to train and evaluate the classifier. \mono{LinksTo} are all of the remaining links. The splits are made randomly, according to a partitioning given in \cref{sec:classifier}. \Cref{tab:db_labels_edges} shows the different labels used for relationships, along with their counts.
 
 %page_links_unredirected_en.ttl.bz2
 %redirects.en.ttl.bz2
 
-Out of all articles, 0.04\% are featured, and 0.32\% of all links are links from featured articles. These are low proportions and might not generalize the entire graph. As described in \cref{sec:choice_of_graph}, links from featured articles is our ground truth for appropriate linking, and for that reason we want to learn the structure of these links even though they comprise a smaller proportion of the data.
-\todo{Vi kalder det ikke ground truth i graph def afsnit.}
-\todo{Vil vi nævne problemet med proportionerne her?}
+%Out of all articles, 0.04\% are featured, and 0.32\% of all links are links from featured articles. These are low proportions and might not generalize the entire graph. As described in \cref{sec:choice_of_graph}, links from featured articles is our ground truth for appropriate linking, and for that reason we want to learn the structure of these links even though they comprise a smaller proportion of the data.
+%\todo{Vi kalder det ikke ground truth i graph def afsnit.}
+\todo{Vi har fjernet noget (proportions problematikken). Er det okay?}
