@@ -23,8 +23,11 @@ Suspicious of the high precision rate, we test the classifier on articles not in
 
 A cause of our poor results, might be due to the training data not being representative to the whole of Wikipedia. As the diversity and amount of articles in the training data are low, we do not have many examples that cover the many configurations seen across Wikipedia. On the other hand, as negative samples are created at random, we believe that too many articles are too different from the positive articles. This bewilders the node2vec algorithm into generating features that easily separate positive and negative samples in the test data, but is bad at the general cases.
 
+
 %cleaning
 Another source of errors is that our dataset contained many superfluous articles as described in \cref{sec:db}. The majority of articles in the dataset are non-written articles without any links. As these articles do not have any outgoing links, the random walks in the feature learning component end prematurely, causing the overall feature representation to be negatively affected.
+By manually comparing the feature vectors of a couple of different articles, we noticed a tendency of high cosine similarity between well-linked articles, and likewise between articles with no links, regardless of the level of relevance. This strengthens the indication that the superfluous articles within the training data negatively impacted the level of generality obtained during training of the feature model as well as the classifier.
+\todo{review/discuss this.}
 
 %By removing them we could have gained a better representation of the actual link structure on Wikipedia.
 
