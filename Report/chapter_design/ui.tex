@@ -1,6 +1,6 @@
 \section{User Interface}\label{sec:design_ui}
 
-In this section we will cover the development of the user interface (UI). First we will cover the requirements and the task that the UI is responsible for solving. Then we will discuss the demographics of our envisioned potential users, before finally covering the implementation.
+In this section we will cover the development of the user interface (UI). We first cover the requirements and the task that the UI is responsible for solving. Then we discuss the demographics of our envisioned potential users, before finally covering the implementation.
 
 As a mean\todo{andet ord} to derive requirements, we initially developed an information flow diagram of the UI\@. This outlined the usage of the system, allowing us to consider the different use cases and user needs.
 
@@ -9,16 +9,15 @@ As a mean\todo{andet ord} to derive requirements, we initially developed an info
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=0.95\textwidth]{wikiAPI.pdf}
-\caption{Information flow diagram for the user interface.}
+\caption[Information flow diagram for the user interface]{Information flow diagram for the user interface in WebML+ style~\cite{Casteleyn2009}.}
 \label{fig:information_flow_UI}
 \end{figure}
 
-\cref{fig:information_flow_UI} (in WebML+ style~\cite{Casteleyn2009})\todo{flyt evt. til caption} shows we have the two actors and the UI\@\todo{uklart}. One actor is the \emph{Wikipedia Editor} and the other is the \emph{Main Pipeline}. While the main pipeline could be modeled as a system with its own information flow, it is more beneficial for the requirement engineering process to simplify the main pipeline as an actor outside of the UI, since the requirements for the UI should not be affected by the inner workings of the main pipeline\todo{lang sætning, bør måske omskrives}.
+\cref{fig:information_flow_UI} shows two actors and the UI\@\todo{uklart. Simon: hvordan uklart?}. One actor is the \emph{Wikipedia Editor} and the other is the \emph{Main Pipeline}. While the main pipeline could be modeled as a system with its own information flow, it is more beneficial for the requirement engineering process to simplify the main pipeline as an actor outside of the UI, since the requirements for the UI should not be affected by the inner workings of the main pipeline\todo{lang sætning, bør måske omskrives. Simon: jeg kan ikke finde ud af hvor man splitter :/}.
 
-The Wikipedia Editor actor has two actions. First is the \enquote{Query for Link(s)}\todo{enquote vs emph vs other?} action, which prompts the UI for links to be evaluated. Secondly we have a \enquote{Review Report} action, where the actor informs the UI whether a previously suggested link was added to Wikipedia or not.
+The Wikipedia Editor actor has two actions. First is the \emph{Query for Link(s)} action, which prompts the UI for links to be evaluated. Secondly we have a \emph{Review Report} action, where the actor informs the UI whether a previously suggested link was added to Wikipedia or not.
 
-While other actions by the Wikipedia Editor actor could easily be conceived, we will argue that these two represent the primary actions, with the \enquote{Query for Link(s)} action being the essential one. By only including these two, we keep the initial requirement analysis focused on the core requirements, and leave further expansion for later iterations\todo{potential later iterations?}.
-
+While other actions by the Wikipedia Editor actor could easily be conceived, we will argue that these two represent the primary actions, with the \emph{Query for Link(s)} action being the essential one. By only including these two, we keep the initial requirement analysis focused on the core requirements, and leave further expansion for potential later iterations.
 
 \subsection{Requirements}\label{sec:uireqs}
 
@@ -41,7 +40,7 @@ For the case of reporting link reviews, where a user reports their evaluation of
 	\item The review is also forwarded to the main pipeline for further evaluation.
 \end{enumerate}
 
-The last step of forwarding the review to the main pipeline represents a future use of the reviews to re-train the classifier\todo{måske ikke "re-train"}. This is not a current consideration in the main pipeline, but the UI is designed to support this type of feedback\todo{Ved ikke lige hvor vigtigt det er at beskrive det her?}. The requirements found in these two information flows are:
+The last step of forwarding the review to the main pipeline represents a future use of the reviews being used as feedback for the classifier, which can improve predictions. This is not a current consideration in the main pipeline, but the UI is designed to support this type of feedback\todo{Ved ikke lige hvor vigtigt det er at beskrive det her? Simon: jeg synes det er fint, viser vi tænker arkitekturen i gennem}. The requirements found in these two information flows are:
 
 \begin{itemize}
 	\item A user must be able to query the UI for link suggestions.
@@ -50,22 +49,19 @@ The last step of forwarding the review to the main pipeline represents a future 
 
 \subsection{User Demographic}
 
-In order to design a solution for the requirements, we first consider the envisioned user demographic. The user is a Wikipedian, i.e.\ a person who edits Wikipedia articles. The Wikipedians we especially wish to engage are the so called \emph{coolfarmers}, which is a term coined by~\cite{coolfarming} to describe the top editors of Wikipedia\todo{behøver vi de her termer? Vi kan bare skrive: "top Wikipedia editors"}. They cite the source~\cite{Priedhorsky:2007:CDR:1316624.1316663} with the findings that the editing of Wikipedia is a long tail distribution\todo{Kan nok godt formuleres bedre}, and through an analysis of behavioral patterns identify the coolfarmers as the backbone of Wikipedia~\cite{coolfarming}. Furthermore~\cite{wiki_motivation} has found that \enquote{fun} and \enquote{ideology} are the two most important reasons why users edit Wikipedia, and~\cite{Yang20101377} extends on this by finding that internal self-concept-based motivation\footnote{motivation by feeling a personal achievement when sharing knowledge and being a self-motivated person} is the most important type of motivation for the Wikipedians.
+In order to design a solution for the requirements, we first consider the envisioned user demographic. The user is a Wikipedian, i.e.\ a person who edits Wikipedia articles. The Wikipedians we especially wish to engage are the so called \emph{coolfarmers}, which is a term coined by~\cite{coolfarming} to describe the top editors of Wikipedia. They cite the source~\cite{Priedhorsky:2007:CDR:1316624.1316663} with the findings that Wikipedia edits are a long tail distribution, i.e.\ few editors produce the majority of the content. Through an analysis of behavioral patterns they identify the coolfarmers as the backbone of Wikipedia~\cite{coolfarming}. Furthermore~\cite{wiki_motivation} has found that \emph{fun} and \emph{ideology} are the two most important reasons why users edit Wikipedia, and~\cite{Yang20101377} extends on this by finding that internal self-concept-based motivation\footnote{motivation by feeling a personal achievement when sharing knowledge and being a self-motivated person} is the most important type of motivation for the Wikipedians.
 
 We believe that the most effective way employ the results of the main pipeline, is to focus on delivering them to the coolfarmers and thereby combining the computational power of a classifier with their experience and motivation to make the actual edits.
 
 
 \subsection{Web API}
 
-Our choice of UI is a web API that allows users to access and review the information we can provide. What follows is a justification for this choice, as well as some specifics as to the implementation of the UI\@. \todo{Måske ikke lige den bedste formulering.}
+Our choice of UI is a web API that allows users to access and review the information we can provide. The following justifies this choice, and presents relevant implementation details.
 
 \subsubsection{Choosing API}
-Since Wikipedians are often driven by self-motivation and ideology, we believe that the most important function of the UI is to deliver the information effectively. We believe that this delivery should allow the community to get the best results into the articles of Wikipedia\todo{Uklart, omformuler}.
+Since Wikipedians are often driven by self-motivation and ideology, we believe that the most important function of the UI is to deliver the information effectively. Low friction allows Wikipedians to efficiently harvest the resources we provide.
 
-It can easily be argued that a website or a browser plug-in that focuses on a graphical representation of the results, will have a wider reach than an API that delivers the raw data. While such implementations could, if successful, provide the project a boost in popularity, there is a significant chance that the given implementation would not gain popularity.
-
-However if we focus on making the results accessible, we can hope to benefit from the Wikipedia community, and possibly spark other projects of interface development. And even if this is not the case, we can proceed to build a graphical interface ourselves, upon the already working API\@.
-\todo{Argumentationen i de sidste to paragraphs bliver noget tynd.}
+It can easily be argued that a website or a browser plug-in that focuses on a graphical representation of the results, will have a wider reach than an API that delivers the raw data. However we choose to develop an API serving raw data that serves as a framework for graphical user interfaces. The Wikipedia community is then free to develop whatever applications make the most sense for users, using our API data.
 
 \subsubsection{Implementation}
 
@@ -103,6 +99,6 @@ The API was developed as a RESTful~\cite{rest} API using HTTP methods. The REST 
 
 One thing that needs revision before the current implementation can be put to use, is security concerns. Since the POST method indirectly extends access to storage on the server, this could be the target of malicious usage. We have classified our security concerns into two categories: technical and non-technical. The technical concerns deal with malicious use that seeks to exploit a technical flaw. Examples of these could be attempts of maxing out our storage or trying to inject code into our system. The non-technical types is by definition anything else, but examples could be the submission of bad reviews, maliciously or not.
 
-While the technical concerns are important, these are not unique to our system and the use of a reliable framework would do much to prevent these. The non-technical concerns however are largely unique to our system, and as such preventive measures requires more focus from our side. For the problem of bad reviews, the first step is to register that a review is bad. Our two primary ideas are to either monitor Wikipedia to check whether a review continuously matches the state of the given article, or to consider if multiple reports on the same review agrees.\todo{Vores to ideer er ikke for godt formuleret.}
+While the technical concerns are important, these are not unique to our system and the use of a reliable framework would do much to prevent these. The non-technical concerns however are largely unique to our system, and as such preventive measures requires more focus from our side. For the problem of bad reviews, the first step is to register that a review is bad. Our two primary ideas are to monitor the live version of Wikipedia for cases where the suggestion was applied but reviews implied it was a bad suggestion. The other idea is based on determining the authenticity of a review by considering the general trend of all reviews for that suggestion.
 
 If we detect a review we consider bad, the removal of it is a trivial task. However, in order to detect whether the review was malicious we would probably need to consider whether the same user gives repeated bad reviews. This is a non-trivial task. The direct way to solve this would be to require users to register in our system, but this would make the API less accessible. It would be worth exploring if we could detect malicious users solely through logs, but this is not guaranteed to give good results.
