@@ -1,7 +1,7 @@
 \subsection{Adjusting node2vec}
-The node2vec framework is a useful tool for our problem of feature learning. However there are a couple of areas where we need to adjust it ourselves.
+The node2vec framework is a useful tool for our problem of feature learning. However there are a couple of areas where we need to adjust it ourselves.\todo{denne intro tekst er en smule kort}
 
-\subsubsection{Combining Feature Vectors}
+\subsubsection{Combining Feature Vectors}\label{subsub:combining_feature_vectors}
 By training a node2vec model on the graph, we are able to learn a function $h:V \to \mathbb{R}^d$, mapping a node to a vector representation of features. However since we wish to classify connection between article pairs, we need a way of combining the feature of two nodes into a single set of features for one pair.
 
 In order to construct a feature representation of a potential edge between two nodes, we need to combine their feature vectors. In~\cite{node2vec} four different binary operators for combining two feature vectors are examined, with \emph{Hadamard product} yielding the best results in all tested cases.
