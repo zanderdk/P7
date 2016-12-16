@@ -1,24 +1,26 @@
 \subsection{Adjusting node2vec}
-The node2vec framework is a useful tool for our problem of feature learning. However there are a couple of areas where we need to adjust it ourselves.\todo{denne intro tekst er en smule kort}
+The node2vec framework is a useful tool for our problem of feature learning. However there are a couple of areas where we need to adjust it to suit our needs.
 
 \subsubsection{Combining Feature Vectors}\label{subsub:combining_feature_vectors}
-By training a node2vec model on the graph, we are able to learn a function $h:V \to \mathbb{R}^d$, mapping a node to a vector representation of features. However since we wish to classify connection between article pairs, we need a way of combining the feature of two nodes into a single set of features for one pair.
+By training a node2vec model on the graph, we are able to learn a function $h:V \to \mathbb{R}^d$, mapping a node to a vector representation of features. However since we wish to classify connection between article pairs, we need a way of combining the feature sets of two nodes into a single set of features for one pair.
 
 In order to construct a feature representation of a potential edge between two nodes, we need to combine their feature vectors. In~\cite{node2vec} four different binary operators for combining two feature vectors are examined, with \emph{Hadamard product} yielding the best results in all tested cases.
 %$\circ : \mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^d$
 
-All of the four operations are commutative, which is suitable for undirected graphs, where the combined result vector does not depend on the order of the nodes. For directed graphs however, the order is important. If we are given two article pairs $(a,b)$ and $(b,a)$ where $a \Rightarrow b$ and $b \not \Rightarrow a$, their feature representations should intuitively be different because they have different labels. 
+All of the four operations are commutative, which is suitable for undirected graphs, where the combined result vector does not depend on the order of the nodes. For directed graphs however, the order is important. If we are given two article pairs $(a,b)$ and $(b,a)$ where $a \Rightarrow b$ and $b \not \Rightarrow a$, their feature representations should be different because they have different labels. 
 
-Because Hadamard product produced good results in the node2vec paper we will be testing it and compare it to the corresponding non-commutative operation Hadamard division. Furthermore we choose to test our own method of concatenating the feature vectors $\mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^{2d}$, leaving it up to the classifier to interpret the combination of article features.
+We test this hypothesis in \cref{sec:hyperopt} by comparing the performance of three different vector combination functions, as a part of the parameter optimization component. The functions which we test are hadamard product, hadamard division, and concatenating the feature vectors. Hadamard product is chosen because it is the prefered choice in node2vec. Hadamard division is examined because of relation to Hadamard product, but with a non-commutative property. Concatenation of the feature vectors is chosen since it preserves all features.
+\todo{concat function}
 
-\todo{add either the test results, or an explanation of how we test this as a part of the parameter uptivupti}
+%Because Hadamard product produced good results in \cite{node2vec} we will be evaluating it, and compare it to the corresponding non-commutative operation Hadamard division. Furthermore we choose to test our own method of concatenating the feature vectors $\mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^{2d}$, leaving it up to the classifier to interpret the combination of article features.
 
 \subsubsection{Adapting Reference Implementation}
-\cite{node2vec} includes a reference implementation. However this implementation was not sufficient for our usage. Specifically we had multiple concerns regarding the amount of data we need to analyse. While node2vec. as a framework, is able to scale well, their reference implementation does not support this in concerns such as locality. In light of this we decided to do our own implementation in order to gain better performance.
+The reference implementation of node2vec included in \cite{node2vec} was not sufficient for our usage. Specifically we had concerns regarding the amount of data we needed to analyse. While node2vec as a framework, is able to scale well, their reference implementation does not support this in concerns such as locality \todo{omformuler? skal vi forklare hvorfor det kan scale}. In light of this we decided to do our own implementation in order to gain better performance.
 
-The primary speed up was gained by enabling their random walks to be done in parallel. Since every walk is independent from each other, the problem of walking them is embarrassingly parallel. With our implementation every walk can be done in its own thread, allowing for linear speedup. In our case, our test machine had 16 CPU cores which we wanted to utilize. We therefore spawn 16 threads, each walking the graph, allowing full utilization of all the CPU cores.
-\todo{skal vi have eksemplet med vores 16 kerne med? virker lidt underligt}
+The primary speed up was gained by enabling random walks to be done in parallel. Since every walk is independent from each other, the problem of walking them is embarrassingly parallel. In our implementation every walk can be done in its own thread, allowing for linear speedup.
+
+%In our case, our test machine had 16 CPU cores which we wanted to utilize. We therefore spawn 16 threads, each walking the graph, allowing full utilization of all the CPU cores.
 
 Another major concern was with the memory footprint. Since all the biased random walks are completed before starting the analysis, it is likely that a big dataset would require a lot of memory. In order to avoid running out of memory, we continuously dump walks into secondary storage.
 
-For the analysis we use an implementation called \emph{Gensim}~\cite{gensim}, that covers our need for scalability in terms of CPU utilization.
+For the analysis we use an implementation of word2vec included in the library \emph{Gensim}~\cite{rehurek_lrec}, that covers our need for scalability in terms of CPU utilization.
