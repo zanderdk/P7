@@ -1,5 +1,5 @@
 \chapter{Test \& Evaluation}\label{chap:testeval}
-This chapter is evaluates the performance of our proposed solution. We will describe the methodology of the tests and interpret the results.
+This chapter evaluates the performance of our proposed solution. We will describe the methodology of the tests and interpret the results.
 
 \section{Classification}\label{sec:classification_evaluation}
 This section will describe the testing of the entire system by interpreting the results of the classifier.
@@ -9,7 +9,24 @@ The performance of the classifier model is evaluated on a test dataset that has 
 \subsection{Results and Evaluation}
 The nearest centroid classifier has a precision of \num{0.981} and a recall of \num{0.52}. The results are similar to the results from the training phase. The precision is very high, while the recall is low. On the specific dataset (links from featured articles) we test on, the classifier is very accurate at predicting whether or not a pair of articles should be linked. The confusion matrix in \cref{tab:confusionmatrix} shows that 26\% of all samples are predicted to be positive, which is the proportion of classified links that are suggested to the user.  Of all the predicted positives, \num{1462} (2\%) are misclassified. \num{70755} (33\%) of the negative predictions are actual positives that was incorrectly classified, causing them to be excluded as possible suggestions. The low number of false positive misclassifications and the relatively higher number of false negative misclassifications are due to optimizing for precision over recall.  \num{78136} (26\%) suggestions are more than enough for a low number of editors to review, but scaling the number of users will ultimately lead to exhaustion of all suggestions. We can not reasonably say at this point whether it was a good idea to optimize solely for precision. We might gain the \num{70755} suggestions that were false negatives by also considering recall. Whether these are needed will therefore have to be reconsidered if the system is put into use.
 
-Suspicious of the high precision rate, we test the classifier on articles not in the featured article space by manually labeling a small number of articles. These tests indicate poor performance in predictions, which indicates that the classifier results do not generalize to the whole of Wikipedia, i.e.\ to articles that are not featured. In hindsight, this can be expected as the structural difference between non-featured articles and featured articles likely is large.
+Suspicious of the high precision rate, we test the classifier on articles not in the featured article space by manually labeling a small number of articles. These tests indicate poor performance in predictions, which indicates that the classifier results do not generalize to the whole of Wikipedia, i.e.\ to articles that are not featured.
+
+% vi træner kun på featured. positiver og negativer. Disse artikler er meget forskellige fra alle andre artikler
+% vi har brug for flere varierede eksempler
+% vi fik ikke cleanet dataen sådan så ikke-eksisterende artikler er med. 
+% vi har ikke nok positiver
+% vores test set er dårligt, da det ikke afspejler artikler på hele wiki
+% Vores negativer er ikke representable for realistiske test eksempler
+% Node2vec modellen er optimiret til at 
+
+%A reason that the training data does not generalize to the whole of Wikipedia is probably due to the low amount of training data. :(
+
+A cause of our poor results, might be due to the training data not being representative to the whole of Wikipedia. As the diversity and amount of articles in the training data are low, we do not have many examples that cover the many configurations seen across Wikipedia. On the other hand, as negative samples are created at random, we believe that too many articles are too different from the positive articles. This bewilders the node2vec algorithm into generating features that easily separate positive and negative samples in the test data, but is bad at the general cases.
+
+%cleaning
+Another source of errors is that our dataset contained many superfluous articles as described in \cref{sec:db}. The majority of articles in the dataset are non-written articles without any links. As these articles do not have any outgoing links, the random walks in the feature learning component end prematurely, causing the overall feature representation to be negatively affected.
+
+%By removing them we could have gained a better representation of the actual link structure on Wikipedia.
 
 %We can conclude that the performance of the system was good on featured articles, but the results do not transfer well to other articles. This can be explained because the traning data only consist of links from featured articles. 
 %The traning data only consists of 0.21\% of all the links on Wikipedia, it could be that we are traning on a to small set of pairs and as a consequence of that we are overfitting to this sub set. The reason why we are preforming good at the test data could then be that the test data is constructed from featured articles as well as the traning data and there by the two data sets are to similar. Another reason could be that randomly picking actiles for sampling negative traning pairs, resulted in having to few related pairs that should not be linked. 
