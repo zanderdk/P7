@@ -2,49 +2,7 @@
 %Here we input the intro text.
 \input{chapter_design/feature_extractor_intro}
 \input{chapter_design/feature_extractor_n2v}
-
-\subsubsection{Combining Feature Vectors}
-By training a node2vec model on the graph, we are able to learn a function $h:V \to \mathbb{R}^d$, mapping a node to a vector representation of features. In order to construct a feature representation of a potential edge between two nodes, we need to combine their feature vectors. In the node2vec paper~\cite{node2vec} four different binary operators $\circ : \mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^d$ for combining two feature vectors are examined, with \emph{Hadamard product} yielding the best results in all tested cases.
-
-%We discovered that all 4 operators where commutative meaning that $a \circ b = b \circ a \ \forall a,b \in \mathbb{R}^d$ which works well in undirected graphs.
-
-All of the four operations are commutative, which is suitable for undirected graphs, where the combined result vector does not depend on the order of the nodes. For directed graphs however, the order is important.
-
-%If we have 2 pairs of articles $(a,b) \in \Rightarrow$ and $(b,a) \in V \times V \setminus \Rightarrow$ they will have the same feature representation using any of these 4 operators, but different labels.
-
-If we are given two article pairs $(a,b)$ and $(b,a)$ where $a \Rightarrow b$ and $b \not \Rightarrow a$, their feature representations should intuitively be different because they have different labels.
-
-%For this reason we will test different non-commutative operations.
-
-Because Hadamard product produced good results in the node2vec paper we will be testing it and compare it to the corresponding non-commutative operation Hadamard division. Furthermore we choose to test concatenating the feature vectors $\mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^{2d}$, leaving it up to the classifier to interpret the combination of article features.
-
-% \section{Overview of node2vec} % (fold)
-% \label{sec:overview_of_node2vec}
-
-% Node2vec is an algorithmic framework for semi-supervised feature learning in networks~\cite{node2vec}. The goal of the algorithm is to learn a model that can reconstruct the neighborhood of a given node.
-
-% The neighborhoods of each node is constructed by performing a number of biased random walks. The walks are biased using two parameters $p$ and $q$. A high $p$ value, relative to $max(1,q)$, approximates a depth-first search, while a high $q$ value, relative to $max(1,p)$, approximates the behavior of a breath-first search. The motivation of these tunable parameters is the observation that real-world networks can be structured in many ways. The randomness and the tunable $p$ and $q$ values accounts for different types of networks, by allowing control of the exploration method.
-
-% Using nodes as words and the random walks as sentences allows using word embedding algorithms on the sentences, mapping words to vectors of real numbers. The node2vec reference implementation uses word2vec for word embedding. Intuitively, if two words are close two each other in the sentence, they are related. The tunable parameter $k$ specifies the size of a context window that defines the number of surrounding words that should be considered in the same context. In node2vec the context window is used for sampling neighborhoods of nodes, where it determines the size of the neighborhood.
-
-% There are three additional parameters in node2vec, $d$, $r$, and $l$, which determines the dimensions of the resulting feature vector, the number of random walks performed per node, and the maximum length of each walk, respectively.
-
-% By training a node2vec model on the graph, we are able to learn feature representations for each node. However, we need to combine these features in order to construct a feature representation of a potential edge between the two nodes. We combine these two node feature vectors by using the Hadamard product, as this was found to give the best results in~\cite{node2vec}.
-% section overview_of_node2vec (end)
-
-% \tikzsetnextfilename{n2vbowtie}
-% \begin{figure}[tbp]%
-%   \centering
-%   \input{chapter_design/n2v_bowtie_fig}
-
-% \caption[short desc]{Text. Adapted from \cite{word2vec-param-learning}}%
-% \label{fig:n2v-figure}%
-% \end{figure}
-
-\subsection{Performance \& Scalability}
-As also detailed in~\cite{node2vec}, node2vec is able to scale well. Every walk is independent from each other which means that many walks can take place in parallel; it is embarrassingly parallel. Our test machine has 16 CPU cores which we want to utilize. We therefore spawn 16 threads, each walking the graph. This allows full utilization of every CPU core.
-
-As all walks have to be stored for the word2vec phase, we are concerned that the memory footprint of storing all walks in memory is too high. We therefore dump the walks to a file, and later stream this file into memory when training word2vec. \emph{Gensim}, the implementation of word2vec we use, is also able to fully utilize the CPU when training word2vec on the walks.
+\input{chapter_design/feature_extractor_adjust}
 
 \subsection{Hyperparameter Optimization}\label{sec:hyperopt}
 As described in \cref{sec:node2vec}, node2vec has many tunable hyperparameters. An overview of these can be seen in \cref{tab:node2vecparams}. In addition to the hyperparameters we will also examine the performance of different binary operations for combining node feature vectors. To find the parameters that give the best feature representation, we do a hyperparameter optimization pass. We first specify the parameter space that should be searched in. As this is a large space, it is not feasible to exhaust all possibilities. We therefore use the tool called Spearmint~\cite{snoek2012practical}, which performs Bayesian optimization by maximizing the expected improvement, to efficiently search for parameters that will minimize an objective function. The objective function is $1 - \text{F-score}$, where the F-score is found by running a classifier on the node2vec model learned from the parameters. By keeping the classifier and its parameters constant, we can find the best set of parameters by finding the lowest objective function value.
