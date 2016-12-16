@@ -19,12 +19,13 @@ Having these sets available as an exemplification of the Wikipedia guidelines, l
 %Under this assumption labeled training data can be generated, and so we limit the scope of the project to only consider supervised learning approaches. This delimits the problem to binary classification problem in a supervised machine learning context.
 
 \subsection{Defining the Learning Task}\label{sec:ml_def}
-In order to give a precise understanding of the problem, we will define it formally before explaining how we intend to solve it.
-In the previous section we formulated the problem of suggesting links between Wikipedia articles as binary classification problem, determining if an article pair should be linked or not. Formally we seek to approximate a function $h: V \times V \to L$ where $L=\{0,1\}$ is the set of all possible labels. $1$ represents the class of article pairs that should be linked, and $0$ the ones that should not.
-Because most classifiers predicts a class based on some feature vector, we, instead of constructing $h$, need a way of representing article pairs in form of a vector. To do this we define $f: V\times V \to \mathbb{R}^d$ as a function mapping from article pairs to a feature representation, where $d$ is the dimension of the feature vector. 
+To give a precise understanding of the binary classification problem, we will define it formally before explaining how we intend to solve it.
+
+Formally we seek to approximate a function $h: V \times V \to L$ where $L=\{0,1\}$ is the set of possible labels. $1$ represents the class of article pairs that should be linked, and $0$ the ones that should not.
+
+As classifiers generally operates on feature vectors, we first need to represent article pairs as appropriate feature vectors. To do this we define $f: V\times V \to \mathbb{R}^d$ as a function, mapping article pairs to feature vectors, where $d$ is the dimension of the feature vector.
 
 With the function $f$ we seek to learn a function $g: \mathbb{R}^d \to L$, that assigns a label $y_{ab} \in L$ to a feature representation $x_{ab} \in \mathbb{R}^d$, for a given article pair $(a,b) \in V \times V$, such that \cref{eq:labels} holds.
-
 
 \begin{equation}
 \label{eq:labels}
@@ -40,14 +41,21 @@ y_{ab}=\mathbb{1}_{a \Rightarrow b}
 %    \end{cases}
 %\end{equation}
 
-Using $f$ to find the feature representation, we can assign a label $y_{ab}$ to an article pair $(a,b)$ using \cref{eq:classification_function}.
+Using the functions $f$ and $g$, we can define the function $h$ as shown in \cref{eq:h_func}.
+
+\begin{equation}
+\label{eq:h_func}
+  h(a,b) = (g \circ f)(a,b)
+\end{equation}
+
+ We can then used the function $h$ to assign a label $y_{ab}$ to any article pair $(a,b)$ using \cref{eq:classification_function}.
 
 \begin{equation}
 \label{eq:classification_function}
-  y_{ab} = g\big(f(a,b)\big)
+  y_{ab} = h(a,b)
 \end{equation}
 
-There are two parts to solving this problem. We must train a classifier to approximate the function $g$, identifying which label $y$ should be given to a feature representation $x$. Before we can do that, we must define the function $f$ that generates the feature representation vector. The choice of classifier will be examined in \cref{choosing_classifier}, while $f$ will be described in the following section.
+There are two parts to solving this problem. We must train a classifier to approximate the function $g$, identifying which label $y_{ab}$ should be given to a feature representation $x_{ab}$. Before we can do that, we must define the function $f$ that generates the feature representation vector. The choice of classifier will be examined in \cref{choosing_classifier}, while $f$ will be described in the following section.
 
 %We wish to find which value for $y$ that gives the highest probability for $\Pr$ given a feature representation $f(a,b)$.
 
