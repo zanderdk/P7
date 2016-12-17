@@ -16,11 +16,13 @@ from keras.wrappers.scikit_learn import KerasClassifier
 from keras.models import Sequential
 from keras.layers import Dense
 
+# Load pickled training vectors
 num_features = None
-def load_data(limit=None, normalize=False):
+def load_data(input_file, limit=None, normalize=False):
     global num_features
+    print("Loading training data from: " + input_file)
     Z = []
-    with open("training_vectors_stack.tsv", "rb") as f:
+    with open(input_file, "rb") as f:
         Z = pickle.load(f)
     if limit is not None:
         Z = Z[:limit]
@@ -29,22 +31,26 @@ def load_data(limit=None, normalize=False):
     if normalize:
         scaler = preprocessing.MinMaxScaler()
         X = scaler.fit_transform(X)
+    print("Total examples: " + str(len(Z)))
     print("Positivies: " + str(len([x for x in Y if x == 1])))
     print("Negatives: " + str(len([x for x in Y if x == 0])))
     print("Average value: " + str(np.average(X)))
     print("Max value: " + str(np.amax(X)))
     print("Min value: " + str(np.amin(X)))
     num_features = len(X[0])
+    print("Number of features: " + str(num_features))
     return X, Y
 
+# Neural network defined using Keras
 def keras_baseline_model():
     model = Sequential()
     model.add(Dense(64, input_dim=num_features, init='normal', activation="relu"))
     model.add(Dense(1, init='normal', activation="relu"))
     # Compile model
-    model.compile(loss='poisson', optimizer="adam")
+    model.compile(loss='mse', optimizer="adam")
     return model
 
+# Prepare the different models that should be tested
 def prepare_models():
     models = []
     # Non-Ensemble classifiers to be included in classifer test with default params
@@ -64,8 +70,9 @@ def prepare_models():
     models.append(('Keras', KerasClassifier(build_fn=keras_baseline_model, nb_epoch=5, batch_size=100, verbose=0)))
     return models
 
-def test_func(model, name, X, Y, seed, num_folds):
-    print("Started " + name)
+# Cross validate a single classifier, and return the results
+def test_classifier(model, name, X, Y, seed, num_folds):
+    print("\nStarted " + name)
     kfold = KFold(n_splits=num_folds, shuffle=True, random_state=seed)
     start = time.time()
     predicted = cross_val_predict(model, X, y=Y, cv=kfold)
@@ -92,35 +99,43 @@ def test_func(model, name, X, Y, seed, num_folds):
         "duration": duration,
         "scores": scores
     }
-    print("Done with %s in %f seconds" % (name, duration))
+    print("Done with %s in %.2f seconds" % (name, duration))
     return result
 
-def evaluate_classifiers(num_folds=3, limit=None, normalize=False, seed=7):
-    print("Number of folds: " + str(num_folds))
+# Evaluate the different classifiers
+# Seed defined for reproducibility
+def evaluate_classifiers(input_file, num_folds=10, limit=None, normalize=False, seed=7):
     results = []
-    X, Y = load_data(limit, normalize)
+    X, Y = load_data(input_file, limit, normalize)
     models = prepare_models()
+    print("\nRunning %d-fold cross validation on %d classifiers" % (num_folds, len(models)))
     for name, model in models:
-        results.append(test_func(model, name, X, Y, seed, num_folds))
+        results.append(test_classifier(model, name, X, Y, seed, num_folds))
     return results
 
+# Save the pickled results
 def store_results(results, out_file):
     with open(out_file, "wb") as results_file:
         pickle.dump(results, results_file)
 
+# Main method that parses parameters and runs the test
 def main():
     parser = argparse.ArgumentParser(description="Evaluates different classifiers")
-    parser.add_argument("filename", help="Name of output file")
+    parser.add_argument("output_file", help="Name of output file")
+    parser.add_argument("training_data", nargs="?", default="training_vectors_stack.tsv",
+                        help="File containing training data")
     parser.add_argument("-n", "--normalize", action="store_true",
                         help="Normalize the training data")
     parser.add_argument("-l", "--limit", type=int, default=None,
                         help="Limit number of training examples used")
-    parser.add_argument("-f", "--folds", type=int, default=3,
-                        help="Specify number of folds to use. Default is 3")
+    parser.add_argument("-f", "--folds", type=int, default=10,
+                        help="Specify number of folds to use. Default is 10")
 
     args = parser.parse_args()
-    results = evaluate_classifiers(args.folds, args.limit, args.normalize)
-    store_results(results, args.filename)
+    results = evaluate_classifiers(args.training_data, args.folds, args.limit, args.normalize)
+    store_results(results, args.output_file)
+    print("\nDone! Results saved as: " + args.output_file)
 
+# Run main methdo when running the script
 if __name__ == "__main__":
     main()
