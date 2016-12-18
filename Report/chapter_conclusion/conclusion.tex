@@ -9,10 +9,12 @@ How can a system be developed that supports Wikipedia editors by suggesting pote
 The developed system completes this task through a pipeline architecture that uses multiple components to create suggestions. The system employs machine learning to classify whether potential article links should be suggested to Wikiepdia editors, based on information gained through feature learning on a Wikipedia graph. These suggestions are then made available through a web API.
 %We present a method of automating this process. The system is designed and implemented with scalability in mind. It automatically finds suggestions of articles that should be linked, and presents these to a user. The user can then decide whether or not the suggestion was appropriate. As such, we leave the ultimate decision in the hands of the user, since we recognize that our system has not been tested to the extent, that allows us to say with confidence that it works autonomously in most cases.
 
-In addition to the problem statement, we formulated the following questions, that we will consider in order to conclude the project:
-\subproblems
+In order to approach this problem we chose to decompose the problem stament into subproblems that enables us to focus on diffrent aspects that involves solving this problem. Here we will cover how we have solved the following subproblems and conclude on our solution to the problem statement, based on these subporblems.
+%In addition to the problem statement, we formulated the following questions, that we will consider in order to conclude the project:
+%\subproblems
 
-\todo{How we answered these. One paragraph for each point.}
+\subsubsection*{How can Wikipedia articles be modeled as a graph, such that information relevant for the linking problem is captured?}
+
 
 We modeled Wikipedia as a directed graph with articles as nodes and links as edges. Based on this graph, we used the node2vec framework to generate a set of features from each article through a network embedding process. Our implementation of this framework was constructed 
 
@@ -22,10 +24,20 @@ We modeled Wikipedia as a directed graph with articles as nodes and links as edg
 
 Because the features are based on graph walks, they capture certain aspects of the linking structure between articles. More specifically the node2vec model was optimized to predict links from featured articles by combining these features. As described in \cref{sec:hyperopt}, this led to a configuration of hyperparameters that among other things puts weight on exploring close neighborhoods of nodes. After hyperparameter optimization the generated feature model was used to produce features from pairs of articles, for a classifier trained to suggest links.
 
+\subsubsection*{How can machine learning be used to suggest potential articles links, that would improve article quality?}
+
+\todo{find intro}
+
 The classification algorithm was selected by performing a test described in \cref{choosing_classifier}, in which we tested different types of classifiers to determine which one was most appropriate for predicting missing links from features extracted from the feature model based on a selection training data mentioned in \cref{sec:training_data}. Based on the evaluation in \cref{evaluation_metric} we chose to use the \emph{nearest centroid} algorithm, as it had high precision but also a reasonable recall for our purposes. 
 
 The final classification evaluation presented in \cref{sec:classification_evaluation} showed very good results with a precision score of $0.981$ on the test data. Further tests with articles outside the domain of featured articles however show that our results do not generalize to the whole of Wikipedia. \todo{hvor skriver vi om hvad vi gjorde galt? Skal det nævnes her?}
 
-While our approach did not generalize well, we learned a lot and gained useful knowledge in the field of machine learning, which will certainly prepare us for future projects.
+
+\subsubsection*{How can editors be presented with suggestions of links that could be added to Wikipedia articles?}
 
 To present link suggestions to users, we developed a HTTP API that can be used to access suggestions and provide feedback on these. As the API is now developed, multiple graphical user interfaces can be developed to target many platforms and needs.
+
+\todo{afslutning}
+
+While our approach did not generalize well, we still belive the project was success as we learned a lot and gained useful knowledge in the field of machine learning, which will certainly prepare us for future projects.
+
