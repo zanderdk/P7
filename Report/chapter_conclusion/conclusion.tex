@@ -1,30 +1,33 @@
 \chapter{Conclusion}\label{chap:conclusion}
-In this project we have studied how machine learning can be used to improve the general link structure of Wikipedia by solving the following problem statement:
-\vspace{1ex} % Please do not remove this.
-\begin{formal}
-How can a system be developed that supports Wikipedia editors by suggesting potential article links using machine learning on a graph structure?
-\end{formal}
+In this project we have studied how machine learning can be used to improve the link structure of Wikipedia by solving the following problem statement:
+\problemstatement
 %This project addressed the problem of supplying reasonable suggestions of links, that should be added to Wikipedia articles. Wikipedia contains a large amount of articles, and each day articles are created and existing are edited. To ensure the high quality of Wikipedia, relationships (links) between articles have to be maintained. Otherwise, the easy way of navigating Wikipedia by links in articles would be impaired. Quality control is required for this task, but this is a daunting task for any single human editor. As such, Wikipedia employs a community based approach. \todo{Denne paragraf står allerede i introduction? Kan vi ikke bare undlade det og så komme direkte til de vigtige konklusioner?}
 
-The developed system completes this task through a pipeline architecture that uses multiple components to create suggestions. The system employs machine learning to classify whether potential article links should be suggested to Wikiepdia editors, based on information gained through feature learning on a Wikipedia graph. These suggestions are then made available through a web API.
+The developed system completes this task through a pipeline architecture that uses multiple components to create suggestions. The system employs machine learning to classify whether potential article links should be suggested to Wikipedia editors, based on information gained through feature learning on a Wikipedia graph. These suggestions are then made available through a web API.
 %We present a method of automating this process. The system is designed and implemented with scalability in mind. It automatically finds suggestions of articles that should be linked, and presents these to a user. The user can then decide whether or not the suggestion was appropriate. As such, we leave the ultimate decision in the hands of the user, since we recognize that our system has not been tested to the extent, that allows us to say with confidence that it works autonomously in most cases.
 
-In order to approach this problem we chose to decompose the problem stament into subproblems that enables us to focus on diffrent aspects that involves solving this problem. Here we will cover how we have solved the following subproblems and conclude on our solution to the problem statement, based on these subporblems.
+In order to approach this problem we chose to decompose the problem statement into subproblems. Here we will cover how we have addressed the subproblems and conclude on our solution to the problem statement, based on these subproblems.
 %In addition to the problem statement, we formulated the following questions, that we will consider in order to conclude the project:
 %\subproblems
 
-\subsubsection*{How can Wikipedia articles be modeled as a graph, such that information relevant for the linking problem is captured?}
+\subsubsection*{\subproblemone}
+We modeled Wikipedia as a directed graph with articles as nodes and links as edges. This model preserves the exemplary links of the featured articles, and allows for comparisons with these. Given that we could suggest links to some extent, we can conclude that relevant information must be present. 
 
+However, it is worth considering if the chosen graph model could have been improved. The article quality on Wikipedia varies greatly, with featured articles being the best. It is possible that this difference in quality hinders meaningful comparisons based solely on our chosen graph model. Concluding whether this is the case or not, requires further investigation.
 
-We modeled Wikipedia as a directed graph with articles as nodes and links as edges. Based on this graph, we used the node2vec framework to generate a set of features from each article through a network embedding process. Our implementation of this framework was constructed 
+\todo{skriv future work om at have vægt på edges}
 
-
+%We modeled Wikipedia as a directed graph with articles as nodes and links as edges. Based on this graph, we used the node2vec framework to generate a set of features from each article through a network embedding process. Our implementation of this framework was constructed 
 
 %We modeled Wikipedia as a directed graph with articles as nodes and links as edges. As described in \cref{sec:db} we used DBpedia as a resource of obtaining the article and linking data, and used the native graph database Neo4j to store and manage this data as a graph. Based on this graph, we used a feature learning technique called network embedding to generate a set of features from each article. This was achieved by utilizing the algorithmic framework node2vec to autonomously explore and generate article features based on random walks performed in the graph.
 
-Because the features are based on graph walks, they capture certain aspects of the linking structure between articles. More specifically the node2vec model was optimized to predict links from featured articles by combining these features. As described in \cref{sec:hyperopt}, this led to a configuration of hyperparameters that among other things puts weight on exploring close neighborhoods of nodes. After hyperparameter optimization the generated feature model was used to produce features from pairs of articles, for a classifier trained to suggest links.
+%Because the features are based on graph walks, they capture certain aspects of the linking structure between articles. More specifically the node2vec model was optimized to predict links from featured articles by combining these features. As described in \cref{sec:hyperopt}, this led to a configuration of hyperparameters that among other things puts weight on exploring close neighborhoods of nodes. After hyperparameter optimization the generated feature model was used to produce features from pairs of articles, for a classifier trained to suggest links.
 
-\subsubsection*{How can machine learning be used to suggest potential articles links, that would improve article quality?}
+\subsubsection*{\subproblemtwo}
+%How can machine learning be used to suggest potential articles links, that would improve article quality?
+Suggestion of article links is done in two parts. First a feature learning process extracts a feature vector for a potential link, and then a classifier predicts whether the inclusion of this link would improve the article quality.
+
+The classifier achieves a precision score of $0.981$ on links from featured articles. 
 
 \todo{find intro}
 
@@ -33,9 +36,10 @@ The classification algorithm was selected by performing a test described in \cre
 The final classification evaluation presented in \cref{sec:classification_evaluation} showed very good results with a precision score of $0.981$ on the test data. Further tests with articles outside the domain of featured articles however show that our results do not generalize to the whole of Wikipedia. \todo{hvor skriver vi om hvad vi gjorde galt? Skal det nævnes her?}
 
 
-\subsubsection*{How can editors be presented with suggestions of links that could be added to Wikipedia articles?}
+\subsubsection*{\subproblemthree}
+% How can editors be presented with suggestions of links that could be added to Wikipedia articles?
 
-To present link suggestions to users, we developed a HTTP API that can be used to access suggestions and provide feedback on these. As the API is now developed, multiple graphical user interfaces can be developed to target many platforms and needs.
+To present link suggestions to users, we developed a web API that can be used to access suggestions and provide feedback on these. Having created the API, multiple graphical user interfaces can be developed to target different platforms and requirements.
 
 \todo{afslutning}
 
