@@ -6,14 +6,14 @@ In this project we have studied how machine learning can be used to improve the 
 The developed system completes this task through a pipeline architecture that uses multiple components to create suggestions. The system employs machine learning to classify whether potential article links should be suggested to Wikipedia editors, based on information gained through feature learning on a Wikipedia graph. These suggestions are then made available through a web API.
 %We present a method of automating this process. The system is designed and implemented with scalability in mind. It automatically finds suggestions of articles that should be linked, and presents these to a user. The user can then decide whether or not the suggestion was appropriate. As such, we leave the ultimate decision in the hands of the user, since we recognize that our system has not been tested to the extent, that allows us to say with confidence that it works autonomously in most cases.
 
-In order to approach this problem we chose to decompose the problem statement into subproblems. Here we will cover how we have addressed the subproblems and conclude on our solution to the problem statement, based on these subproblems.
+In order to approach this problem we chose to decompose the problem statement into three subproblems. Here, we will cover how we addressed the subproblems, and finally we conclude on our solution to the problem statement, based on these subproblems.
 %In addition to the problem statement, we formulated the following questions, that we will consider in order to conclude the project:
 %\subproblems
 
 \subsubsection*{\subproblemone}
-We modeled Wikipedia as a directed graph with articles as nodes and links as edges. This model preserves the exemplary links of the featured articles, and allows for comparisons with these. Given that we could suggest links to some extent, we can conclude that relevant information must be present. 
+We modeled Wikipedia as a directed graph with articles as nodes and links as edges. This model preserves the exemplary links of the featured articles, and allows for comparisons with these. Given that we can suggest links, albeit with poor accuracy\todo{is this the word?}, we can conclude that the relevant information must be present in the graph.
 
-However, it is worth considering if the chosen graph model could have been improved. The article quality on Wikipedia varies greatly, with featured articles being the best. It is possible that this difference in quality hinders meaningful comparisons based solely on our chosen graph model. Concluding whether this is the case or not, requires further investigation.
+However, it is worth considering if the chosen graph model could have been improved. The article quality on Wikipedia varies considerably, with featured articles being the best. It is possible that this difference in quality hinders meaningful comparisons based solely on our chosen graph model \todo{Michael siger: jeg er ikke helt sikker på hvad vi prøver at sige. Er det, at vi fandt ud af at der findes mange bæ-artikler, og at de forurener vores data?}. Concluding whether this is the case or not, requires further investigation. 
 
 \todo{skriv future work om at have vægt på edges}
 
@@ -25,23 +25,28 @@ However, it is worth considering if the chosen graph model could have been impro
 
 \subsubsection*{\subproblemtwo}
 %How can machine learning be used to suggest potential articles links, that would improve article quality?
-Suggestion of article links is done in two parts. First a feature learning process extracts a feature vector for a potential link, and then a classifier predicts whether the inclusion of this link would improve the article quality.
+Suggestions of article links are done in two steps. First a feature extractor process extracts a feature vector for a potential link based on a learned model, and then a classifier predicts whether the inclusion of this link would improve the article quality.
 
-The classifier achieves a precision score of $0.981$ on links from featured articles. 
+%The classifier achieves a precision score of $0.981$ on links from featured articles. 
 
-\todo{find intro}
+\todo{find intro. Michael siger: what, er det ikke fint nok ligenu?}
 
-The classification algorithm was selected by performing a test described in \cref{choosing_classifier}, in which we tested different types of classifiers to determine which one was most appropriate for predicting missing links from features extracted from the feature model based on a selection training data mentioned in \cref{sec:training_data}. Based on the evaluation in \cref{evaluation_metric} we chose to use the \emph{nearest centroid} algorithm, as it had high precision but also a reasonable recall for our purposes. 
-
-The final classification evaluation presented in \cref{sec:classification_evaluation} showed very good results with a precision score of $0.981$ on the test data. Further tests with articles outside the domain of featured articles however show that our results do not generalize to the whole of Wikipedia. \todo{hvor skriver vi om hvad vi gjorde galt? Skal det nævnes her?}
+The algorithm for the classifier was selected by comparing the performance of several algorithms. The comparison criteria was chosen to favor precision over recall. We found the nearest centroid to be the most precise while still having an adequate recall.
+%The classification algorithm was selected by performing a test described in \cref{choosing_classifier}, in which we tested different types of classifiers to determine which one was most appropriate for predicting missing links from features extracted from the feature model based on a selection training data mentioned in \cref{sec:training_data}. Based on the evaluation in \cref{evaluation_metric} we chose to use the \emph{nearest centroid} algorithm, as it had high precision but also a reasonable recall for our purposes. 
+The final classification evaluation presented in \cref{sec:classification_evaluation} shows very good results with a precision score of $0.981$ on the test data. However, further tests with articles outside the domain of featured articles show that the results do not generalize to the whole of Wikipedia. We suspect non-representative training data and superfluous articles in the dataset to be the culprit.
 
 
 \subsubsection*{\subproblemthree}
 % How can editors be presented with suggestions of links that could be added to Wikipedia articles?
 
-To present link suggestions to users, we developed a web API that can be used to access suggestions and provide feedback on these. Having created the API, multiple graphical user interfaces can be developed to target different platforms and requirements.
+To present link suggestions to users, we developed a web API that can be used to access suggestions and provide feedback on these. Having created the API, we leave potential graphical user interface implementations to other developers, such that different platforms and requirements can be targeted.
+
+Interface testing and acceptance testing was performed on the API\@. Based on unit testing and system testing, the interface testing showed that our API works under normal use cases. The acceptance testing showed that our API fulfills the requirement of suggesting links when queried by a user, and that it has the potential to fulfill the requirement of accepting user reviews in a potential future iteration.
 
 \todo{afslutning}
+\todo{Hvordan vises det, at det er afslutningen og at det nedenstående tekst ikke hører til 3. underspørgsmål?}
 
-While our approach did not generalize well, we still belive the project was success as we learned a lot and gained useful knowledge in the field of machine learning, which will certainly prepare us for future projects.
+Ultimately, our approach to the linking problem did not generalize as well as we had hoped. However, we still consider the project a success. We have analyzed possible sources of error, and have confident suggestions to future work that we believe will improve the overall system. As a learning process, we gained useful knowledge and hands-on experience in the field of machine learning, which has sparked an interest in the area of machine intelligence. \todo{Lyder det dumt at slutte med: We hope to further explore this area in future projects.?}
+
+%While our approach did not generalize well, we still believe the project was a success as we learned a lot and gained useful knowledge in the field of machine learning, which will certainly prepare us for future projects.
 
