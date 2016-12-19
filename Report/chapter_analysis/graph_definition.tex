@@ -1,15 +1,14 @@
 \section{Data Model}\label{sec:choice_of_graph}
-We choose to organize the data as a graph, where nodes represent Wikipedia articles, since we wish to examine connections between these. The choice of edges is more complex. We motivate our choice through a consideration of what constitutes an \emph{appropriate link}. In \cref{sec:related_work} clickthrough rate and Wikipedia's own guidelines were mentioned as possible metrics. While clickthrough rates are easier to work with, we believe that they are inferior to the guidelines, due to the authoritative nature of the official Wikipedia guidelines. Therefore our choice of \emph{appropriate links} will be based on the guidelines.
+We organize Wikipedia articles as a graph, where nodes represent articles, since we wish to examine connections between these. The choice of edges is more complex. We motivate our choice through a consideration of what constitutes an \emph{appropriate link}. In \cref{sec:related_work} clickthrough rate and Wikipedia's own guidelines were mentioned as possible metrics. While clickthrough rates are measurable, we believe that they are inferior to the official Wikipedia guidelines, due to the authoritative nature of these guidelines. Therefore, we base our choice of \emph{appropriate links} on the guidelines.
 
-Wikipedia maintains a collection of articles, that they deem outstanding examples of the highest article quality that the website can offer. There are almost 5000 of these articles, called \emph{featured articles}~\cite{wiki-featured-articles}. The featured articles follow the \emph{Wikipedia Policies and Guidelines}~\cite{wiki-editor-guidelines}, which means they follow the guidelines for linking. Since featured articles are classified by experts, we gain some notion of expert domain knowledge by learning from these examples.
-
-While we cannot assume that every example of appropriate linking is covered, the featured articles should provide a sizable set of good examples,
-since they cover the most common cases of good linking style and exhibits the structure of well-linked articles.
+Wikipedia maintains a collection of articles, that they deem outstanding examples of the highest article quality the website can offer. There are almost 5000 of these articles, called \emph{featured articles}~\cite{wiki-featured-articles}. The featured articles follow Wikipedia's guidelines~\cite{wiki-editor-guidelines}, which includes the guidelines for linking, and can therefore be used as examples of appropriate linking.% Since featured articles are classified by experts, we gain some notion of expert domain knowledge by learning from these examples.
 
 We let our choice of \emph{appropriate links} be links that share characteristics with the links in featured articles. These links are considered appropriate, while all other links are of undetermined quality. 
+While we cannot assume that every example of appropriate linking is covered, the featured articles should provide a sizable set of good examples, since they cover the most common cases of appropriate linking style and exhibits the structure of well-linked articles.
+
 %Determining this quality, is the problem which we will attempt to solve using machine learning. \todo{fix sætning}
 
-Knowing this, we can now conclude that our choice of edges should preserve the link structure of the featured articles. Therefore edges in the graph will represent article hyperlinks. 
+Knowing this, we can now conclude that our choice of edges should preserve the link structure of the featured articles. Therefore edges in the graph will represent article links. \todo{lav overgang til math. Husk motivation for at have math. KASPER}
 %In order to define this formally, we first define a binary relation for links between articles, shown in \cref{eq:binary_relation}. \todo{Definition af $G=(V,\Rightarrow)$ skal ind før} \todo{Equations skal måske ind som definitions?}
 
 We formally define an unweighted directed graph $G = (V,\Rightarrow)$ where $V$ is the set of all Wikipedia articles, and $\Rightarrow$ is a binary relation of links between articles defined in \cref{eq:binary_relation}.
@@ -29,6 +28,6 @@ We will also use the infix notation shown in \cref{eq:infix_link}.
   \end{split}
 \end{equation}
 
-In the following section we will describe how machine learning can be used to suggest links between Wikipedia articles based on the graph $G$.
+%In the following section we will describe how machine learning can be used to suggest links between Wikipedia articles based on the graph $G$.
 
 %We can now formally define our graph as an unweighted directed graph $G = (V,E)$ where $V$ is the set of all Wikipedia articles, and $E\subset V \times V = \ \, \Rightarrow$.
