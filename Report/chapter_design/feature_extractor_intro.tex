@@ -1,16 +1,13 @@
 %This paragraph covers the first point of the intro from the writing guide
 The purpose of the feature extractor component, is to generate a feature representation of a candidate article pair, as described by the function $f$ in \cref{sec:ml_def}, that can be used for classification. This is done through a feature learning approach, as chosen in \cref{sec:feature_generation}.
 
-\todo{Kunne godt tænke mig at vi her beskrev problemet med at vi ikke kan lære features for par direkte, men vi lærer dem for noder, og kombinerer disse. Se udkommentering for eksempel.}
-
 % As we need to learn feature representations for any arbitrary article pair $(a,b) \in V \times V$, both where $a \Rightarrow b$ and $a \not \Rightarrow b$, using feature learning requires an approach that supports this. A popular approach for feature learning on graph structures that supports this is \emph{network embedding}.\todo{source} Network embedding aims to construct a low dimensional vector representation of each node in a given network, that preserves the original network structure~\cite{sun2016general}. This vector can be used as a feature representation of the node. The feature representation $v_{a,b}$ for any node pair $(a,b) \in V \times V$, can then be found by combining the individual feature vectors using an arbitrary binary operation $v_{a} \circ v_{b}$, where $v_{a}$ and ${v_b}$ are the feature vectors for node $a$ and $b$, respectively.
 
 
 %The two paragraphs below covers the second point of the writing guide
-In order to do generate these features we use an algortimic framework for semi-supervised feature learning called node2vec~\cite{node2vec}. Node2vec is a way of creating feature sets \todo{vectors?} for nodes in a graph based on its structure, which can then be used to identify characteristics of a relation between two nodes. After identifying a feature representation of these characteristics, the classifier component can use them as input features for candidate pairs. We choose to use node2vec~\cite{node2vec} based on reports of its performance as well as its flexibility to adapt to different graph structures.
-\todo{Kan node2vec intro bare sige at det er network embedding?}
+To generate the features we use an algorithmic framework for semi-supervised feature learning called node2vec~\cite{node2vec}. node2vec is a way of creating feature vector for nodes in a graph based on its structure, which can then be used to identify characteristics of a relation between two nodes. After identifying a feature representation of these characteristics, the classifier component can use them as input features. We choose to use node2vec based on reports of its performance as well as its flexibility to adapt to different graph structures.
 
-In this section we will cover a basic overview of node2vec, in order to consider the implications of using node2vec for our purposes. Afterwards we will cover how we adapt node2vec to our specific problem, and at last we consider then implementation of the feature learner support module and the feature extractor.
+In this section we will cover a basic overview of node2vec, in order to consider the implications of using node2vec for our purposes. Afterwards we will cover how we adapt node2vec to our specific problem, and at last we consider the implementation of the feature learner support module and the feature extractor.
 
 
 %The next component in the main pipeline is the feature extractor. This component generates the feature representation of a candidate pair as described by the function $f$ in \cref{sec:ml_def}, which can then be used for classification.

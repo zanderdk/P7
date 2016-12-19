@@ -6,7 +6,7 @@
 
 
 \subsection{Feature Learning Support Module}
-As seen in the architecture design in \cref{sec:design_overview}, the feature learning model is created in a support module. This support module consists of a parameter optimizer and a feature learner, where the parameter optimizer is responsible for identifying the hyperparameters which the feature learner will use. Here we will discuss the development of these two components.
+As seen in the architecture design in \cref{fig:system-overview}, the feature learning model is part of a support module. This support module consists of a parameter optimizer and a feature learner, where the parameter optimizer is responsible for identifying the hyperparameters which the feature learner will use. Here we will discuss the development of these two components.
 
 \subsubsection{Hyperparameter Optimization}\label{sec:hyperopt}
 \todo{hvis vi ikke skriver en sperat subsubsection om feature learner component, så skal denne overskrift nok heller ikke være der}
@@ -24,13 +24,13 @@ We obtain the $F_{0.5}\text{-score}$ for a set of hyperparameters from the resul
 \toprule
 \textbf{Parameter} & \textbf{Description} \\
 \midrule
-$p$          &   Return parameter that controls the likelihood of immediately revisiting the previous node in the walk~\cite{node2vec}.   \\
+$p$          &   Return parameter that controls the likelihood of immediately revisiting the previous node in the walk.   \\
 $q$          &   Controls to which degree the walk prefers to stay in the neighborhood or to explore outwards.   \\
-$d$          &   The dimensionality of the learned features.   \\
-$r$          &   The number of random walks per node.   \\
-$k$          &   The size of the context window.   \\
-$l$          &   The max length of the random walk.   \\
-function     &   The function to use for combining node features, it can be hadamard product, hadamard divide or concatenate.   \\
+$d$          &   Dimensionality of the learned features.   \\
+$r$          &   Number of random walks from each node.   \\
+$k$          &   Size of the context window.   \\
+$l$          &   Maximum length of the random walk.   \\
+function     &   Function used for combining node features.   \\
 \bottomrule
 \end{tabular}
 \caption[Description of parameters in node2vec]{Description of the various parameters in node2vec}%
