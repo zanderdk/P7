@@ -1,13 +1,13 @@
 \section{Feature Generation}\label{sec:feature_generation}
-Generating an appropriate feature representation is an integral part of applying machine learning techniques, and it is essential to the performance of the machine learning algorithms~\cite{ng-lecture}. The feature representation aims to discriminate the data so that a desired structure appears. This section describes our approach to generate this feature representation for articles pairs, described by the function $f$ in \cref{sec:ml_def}.
+Generating an appropriate feature representation is an integral part of applying machine learning techniques, and it is essential to the performance of machine learning algorithms~\cite{ng-lecture}. The feature representation aims to allow the classifier to discriminate the data so that a desired structure emerges. This section describes approaches to generate this feature representation for articles pairs, described by the function $f$.
 
 \subsection{Feature Engineering}
-Feature engineering is the process of identifying information in a dataset that has a high discriminative power. In a binary classification problem, such information would be a set of features capable of separating positive and negative data points. Since a good choice of features may not be obvious, identifying these features often requires domain knowledge and intuition of the problem domain~\cite{ng-lecture,domingos2012few}. Feature engineering can often be a time consuming process, and many trial and error iterations may be needed to derive appropriate features. There are many possible features. Below we have listed some ideas for features we have explored.
+Feature engineering is the process of identifying information in a dataset that has a high discriminative power, and finding a way to represent this information as features \todo{Find kilde!}. In a binary classification problem, such information would be a set of features capable of separating two classes of data points. Since a good choice of features may not be obvious, identifying these features often requires domain knowledge and intuition of the problem domain~\cite{ng-lecture,domingos2012few}. Feature engineering can often be a time consuming process, and many iterations of trial and error may be needed to derive appropriate features. Below we briefly describe some feature ideas we have explored.
 
 \begin{description}
-    \item[Term similarity] This is a metric that describes the similarity of the most important terms on two given Wikipedia articles. A term is a word in an article, that is deemed significant to that article. By identifying the terms of each article, a term similarity score between the two articles can be computed. The idea behind the feature is that two articles that use very similar terms might cover similar topics, which could warrant a link.
-    \item[Shortest path] When considering Wikipedia as a graph, the shortest path distance between two articles could be used as a feature. The idea is that there might be a correlation between the shortest path distance of two articles \emph{A} and \emph{B}, and whether there is a link between \emph{A} and \emph{B}. This feature might be able to indicate whether two articles are related by subject.
-    \item[Common direct predecessors/successors] The motivation of these two features is that two articles may be related to such a degree that they should be linked, if they have many common direct predecessors or successors. A graphical representation of these features is shown in \cref{fig:parent-rel,fig:children-rel}.
+    \item[Term similarity] This feature describes the similarity of significant terms on two given Wikipedia articles. By identifying the terms of each article, a term similarity score between the two articles can be computed. The idea behind the feature is that two articles that use very similar terms might cover similar topics, which could warrant a link.
+    \item[Shortest distance] When considering Wikipedia as a graph, the distance of the shortest path between two articles could be used as a feature. The idea is that there might be a correlation between the shortest distance of two articles \emph{a} and \emph{b}, and whether they should be linked. \todo{vi kan ikke lide at den er vag og tilføj negativ eksaemlasdfnjk} This feature might be able to indicate whether two articles are related by subject.
+    \item[Common direct predecessors/successors] The motivation for these two features is that whether two articles should be linked, could be influenced by the number of common direct predecessors or successors. Illustrations of these features are shown in \cref{fig:parent-rel,fig:children-rel}.
 \end{description}
 
 \begin{figure}[tbp]%
@@ -19,22 +19,22 @@ Feature engineering is the process of identifying information in a dataset that 
       \node [node,
               pin={[pin distance=1.2em,pin edge={-stealth, thin}]10:},
               pin={[pin distance=1.2em,pin edge={stealth-, thin}]150:}
-              ] (p) {P};
+              ] (p) {$p$};
       \node [node, below left=of p,
               pin={[pin distance=1.2em,pin edge={stealth-, thin}]330:},
               pin={[pin distance=1.2em,pin edge={-stealth, thin}]100:},
               pin={[pin distance=1.2em,pin edge={stealth-, thin}]200:}
-              ] (a) {A};
+              ] (a) {$a$};
       \node [node, below right=of p,
               pin={[pin distance=1.2em,pin edge={stealth-, thin}]330:},
               pin={[pin distance=1.2em,pin edge={-stealth, thin}]40:},
               pin={[pin distance=1.2em,pin edge={stealth-, thin}]85:},
               pin={[pin distance=1.2em,pin edge={-stealth, thin}]200:}
-              ] (b) {B};
+              ] (b) {$b$};
       \path [line, very thick] (p) -- (a);
       \path [line, very thick] (p) -- (b);
     \end{tikzpicture}
-    \caption[Common direct predecessor]{P is a common direct predecessor of A and B}%
+    \caption[Common direct predecessor]{$p$ is a common direct predecessor of $a$ and $b$}%
     \label{fig:parent-rel}%
   \end{minipage}
   \hfill
@@ -45,34 +45,34 @@ Feature engineering is the process of identifying information in a dataset that 
       \node [node,
               pin={[pin distance=1.2em,pin edge={-stealth, thin}]350:},
               pin={[pin distance=1.2em,pin edge={stealth-, thin}]210:}
-              ] (p) {S};
+              ] (p) {$s$};
       \node [node, above left=of p,
               pin={[pin distance=1.2em,pin edge={stealth-, thin}]15:},
               pin={[pin distance=1.2em,pin edge={-stealth, thin}]150:},
               pin={[pin distance=1.2em,pin edge={-stealth, thin}]230:},
               pin={[pin distance=1.2em,pin edge={stealth-, thin}]280:}
-              ] (a) {A};
+              ] (a) {$a$};
       \node [node, above right=of p,
               pin={[pin distance=1.2em,pin edge={stealth-, thin}]330:},
               pin={[pin distance=1.2em,pin edge={-stealth, thin}]280:},
               pin={[pin distance=1.2em,pin edge={-stealth, thin}]150:}
-              ] (b) {B};
+              ] (b) {$b$};
       \path [line, very thick] (a) -- (p);
       \path [line, very thick] (b) -- (p);
     \end{tikzpicture}
-    \caption[Common direct successor]{S is a common direct successor of A and B}%
+    \caption[Common direct successor]{$s$ is a common direct successor of $a$ and $b$}%
     \label{fig:children-rel}%
   \end{minipage}
 
 
 \end{figure}
 
-The process of feature engineering did however prove to be rather time consuming, and the usefulness of the resulting features was difficult to reason about, as we do not possess the required domain knowledge. As such we are unsure whether we can develop features of sufficient quality within the allotted project time. Due to this we examined an alternative approach, feature learning, to generate this feature representation.
+The process of feature engineering did however prove to be rather time consuming, and the usefulness of the resulting features was difficult to reason about, as we do not possess the required domain knowledge. As such, we are unsure whether we can develop features of sufficient quality. Due to this, we examined an alternative approach, feature learning, to generate this feature representation.
 
 \subsection{Feature Learning}
-Feature learning is an approach in machine learning that has shown impressive results in many applications~\cite{bengio2013representation}. It is a method for generating feature representations in an automated fashion from raw input data, avoiding the need for the time consuming feature engineering process~\cite{ng-lecture}. Additional advantages of using feature learning are a reduced need for domain knowledge, and the ability to uncover structural patterns that are hard to discover manually. This is an attractive idea; obtaining good features can be automated.
+Feature learning is an approach in machine learning that has shown promising results in many applications~\cite{bengio2013representation}. It is an approach for automatically generating feature representations from input data, avoiding the need for the time consuming feature engineering process~\cite{ng-lecture}. Additional advantages of using feature learning are a reduced need for domain knowledge, and the ability to uncover structural patterns that are hard to discover manually.
 
-However, an increased level of automation makes it more difficult to understand an outcome in \todo{result of?} the machine learning process. As such the features generated by feature learning are suited for reasoning by machine intelligence algorithms, and are difficult for humans to interpret. In practice this has been shown to be of minor concern, as many applications have experienced greatly improved performance using feature learning~\cite{bengio2013representation}.
+However, an increased level of automation makes it more difficult to understand the result of the machine learning process. In practice this has been shown to be of minor concern, as many applications have experienced greatly improved performance using feature learning~\cite{bengio2013representation}.
 
 %This high level of automation creates the vision of having declarative machine learning, where the only required input is the dataset and a metric for classification, from which both the process of identifying features and classifying the data can be completed autonomously given enough computational power. The possibility of such a system might be the most significant benefit of feature learning.
 

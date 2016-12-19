@@ -1,29 +1,29 @@
 \section{Machine Learning Task}\label{sec:machine_learning_task}
 %With a graph defined,
-In this section we introduce a machine learning task based on the problem we are trying to solve. To solve the problem of suggesting links between Wikipedia articles using machine learning, we formulate it as a binary classification problem of determining whether two Wikipedia articles should be linked.
+To solve the problem of suggesting links between Wikipedia articles using machine learning, we formulate it as a binary classification problem of determining whether two Wikipedia articles should be linked.
 
 As described in \cref{sec:choice_of_graph} we assume featured articles to have appropriate linking. This makes links from featured articles suitable as positive training pairs when learning if a link should be present. Similarly articles that are not linked from a featured article can be used as negative training pairs.
 
-We define the set of positive training pairs $P \subset V \times V$, as well as a set of negative training pairs $N \subset V \times V$ in \cref{eq:training_pairs}.
+In \cref{eq:training_pairs}, we define a set of positive training pairs $P \subset V \times V$, as well as a set of negative training pairs $N \subset V \times V$.
 
 \begin{equation}
 \label{eq:training_pairs}
   \begin{split}
-    P &= \Set{(a,b) \mid a\text{ is featured}\ \wedge\ a \Rightarrow b}, \\
-    N &= \Set{(a,b) \mid a\text{ is featured}\ \wedge\ a \not\Rightarrow b}
+    P &= \Set{(a,b)\ \in\ \Rightarrow\ \mid a\text{ is featured}\ } \\
+    N &= \Set{(a,b)\ \in\ \Rightarrow\ \mid a\text{ is featured}\ }
   \end{split}
 \end{equation}
 
-Having these sets available as an exemplification of the Wikipedia guidelines, leads us to the delimitation of the project scope to a supervised learning approach, where we wish to do binary classification of potential links.
+Having these sets available as an exemplification of the Wikipedia guidelines, leads us to delimit the project scope to supervised learning, where we wish to perform binary classification of potential links.
 
 %Under this assumption labeled training data can be generated, and so we limit the scope of the project to only consider supervised learning approaches. This delimits the problem to binary classification problem in a supervised machine learning context.
 
 \subsection{Binary Classification}\label{sec:ml_def}
-To give a precise understanding of the binary classification problem, we will define it formally before explaining how we intend to solve it.
+To give a precise understanding of the binary classification problem we define it formally before explaining how we intend to solve it.
 
 Formally we seek to approximate a function $h: V \times V \to L$ where $L=\{0,1\}$ is the set of possible labels. $1$ represents the class of article pairs that should be linked, and $0$ the ones that should not.
 
-As classifiers generally operates on feature vectors, we first need to represent article pairs as appropriate feature vectors. To do this we define $f: V\times V \to \mathbb{R}^d$ as a function, mapping article pairs to feature vectors, where $d$ is the dimension of the feature vector.
+As classifiers operate on feature vectors, we first need to represent article pairs as appropriate feature vectors. To do this we define a function $f: V\times V \to \mathbb{R}^d$, mapping article pairs to $d$-dimensional feature vectors.
 
 With the function $f$ we seek to learn a function $g: \mathbb{R}^d \to L$, that assigns a label $y_{ab} \in L$ to a feature representation $x_{ab} \in \mathbb{R}^d$, for a given article pair $(a,b) \in V \times V$, such that \cref{eq:labels} holds.
 
@@ -45,17 +45,17 @@ Using the functions $f$ and $g$, we can define the function $h$ as shown in \cre
 
 \begin{equation}
 \label{eq:h_func}
-  h(a,b) = (g \circ f)(a,b)
+  h = g \circ f
 \end{equation}
 
- We can then used the function $h$ to assign a label $y_{ab}$ to any article pair $(a,b)$ using \cref{eq:classification_function}.
+ We can then use the function $h$ to assign a label $y_{ab}$ to any article pair $(a,b)$ as shown in \cref{eq:classification_function}.
 
 \begin{equation}
 \label{eq:classification_function}
   y_{ab} = h(a,b)
 \end{equation}
 
-There are two parts to solving this problem. We must train a classifier to approximate the function $g$, identifying which label $y_{ab}$ should be given to a feature representation $x_{ab}$. Before we can do that, we must define the function $f$ that generates the feature representation vector. The choice of classifier will be examined in \cref{choosing_classifier}, while $f$ will be described in the following section.
+There are two parts to solving this problem. We must train a classifier to approximate the function $g$, identifying which label $y_{ab}$ should be given to a feature representation $x_{ab}$. Before we can do that, we must define the function $f$ that generates the feature representation. The choice of classifier will be examined in \cref{choosing_classifier}, while $f$ will be described in the following section.
 
 %We wish to find which value for $y$ that gives the highest probability for $\Pr$ given a feature representation $f(a,b)$.
 
