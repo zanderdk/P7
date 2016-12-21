@@ -25,11 +25,14 @@
     paper=a4,
     twoside=true,
     open=right,
-    parskip=half, % To make space between paragraphs.
+    %parskip=half, % To make space between paragraphs.
     fontsize=11pt,
     numbers=noenddot
   }
-  
+
+  % Hacketyhackhack for parskip
+  %\setparsizes{0}{0.25\baselineskip plus .25\baselineskip}{1em plus 1fil}
+
   % Margins.
   \usepackage{typearea}
 
@@ -197,7 +200,7 @@
   \usepgfplotslibrary{external}
   \tikzexternalize[prefix=graphics/tikz/]
   %\tikzexternaldisable % Disable by default
-  
+
   \tikzstyle{bigblock} = [thick, rectangle, draw, fill=clnode, text width=4.5em, text centered, minimum height=4em]
   \tikzstyle{smallblock} = [thick, rectangle, draw, fill=clnode, text width=4.5em, text centered, minimum height=3em]
   \tikzstyle{database} = [thick, cylinder, draw, shape border rotate=90, aspect=0.15, fill=clnode, text width=3em, text centered, minimum height=4em]
@@ -266,7 +269,7 @@
     breakatwhitespace=true,
     postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}}
   }
-  
+
 % Frames
   \usepackage{mdframed}
 
@@ -313,7 +316,7 @@
     bookmarksnumbered,
     bookmarksdepth=1,
     pdfauthor={sw705e16}, % PDF tag.
-    pdftitle={Project Title}, % PDF tag.
+    pdftitle={Improving Wikipedia Linking: A Feature Learning Approach}, % PDF tag.
     pdfsubject={Student Report, Aalborg University},
     pdfpagelayout=TwoPageRight,
     pdfdisplaydoctitle,
@@ -346,7 +349,7 @@
 % Comments/todos
   \usepackage{fixme}
     \fxsetup{
-        status=draft,
+        status=final,
         author={Todo},
         layout=inline,
 				%marginclue,
@@ -374,7 +377,7 @@
   %\settocstylefeature[1]{entryhook}{\small\sffamily}
   % If page numbers in TOC are more than 3 digits.
   %\makeatletter
-  %\renewcommand{\@pnumwidth}{3em} 
+  %\renewcommand{\@pnumwidth}{3em}
   %\renewcommand{\@tocrmarg}{4em}
   %\makeatother
   %\addtokomafont{chapterentry}{\sffamily}

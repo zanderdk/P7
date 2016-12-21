@@ -11,7 +11,7 @@ As shown in \cref{eval-results}, the result of running the nearest centroid clas
 
 \num{78136} (26\%) suggestions are sufficient for a low number of editors to review, but scaling the number of users will ultimately lead to exhaustion of all suggestions. If we focused more on recall, we could reduce the number of false negatives, increasing the number of link suggestions. Whether this is necessary would have to be reevaluated when the system is in use.
 
-\begin{table}[htbp]
+\begin{table}[tbp]
 \centering
 \begin{tabular}{@{}ll@{}}
 \toprule
@@ -19,7 +19,7 @@ Precision     & Recall       \\ \midrule
 \num{0.981} & \num{0.52} \\
 \bottomrule
 \end{tabular}
-\caption[Nearest Centroid classifier results]{\emph{Nearest Centroid} classifier results}%
+\caption[Nearest centroid classifier results]{Nearest centroid classifier results}%
 \label{eval-results}
 \end{table}
 
@@ -47,18 +47,18 @@ After performing these manual tests we compared the feature vectors of a few dif
       \cmidrule{3-4}
       \multicolumn{2}{c}{} & \multicolumn{1}{c}{Positive} & \multicolumn{1}{c}{Negative} & Total \\
       \midrule
-      \multirow{2}{*}{Actual} & Positive & \num{76674} (0.98) & \num{70755} (0.33)  & \num{147429} \\
-                              & Negative & \num{1462} (0.02)  & \num{145967} (0.67) & \num{147429} \\
+      \multirow{2}{*}{Actual} & Positive & \num{76674} (98\%) & \num{70755} (33\%)  & \num{147429} \\
+                              & Negative & \num{1462} (2\%)  & \num{145967} (67\%) & \num{147429} \\
                               \cmidrule{1-2}
-                              & Total    & \num{78136} (0.26) & \num{216722} (0.74) \\
+                              & Total    & \num{78136} (26\%) & \num{216722} (74\%) \\
       \bottomrule
     \end{tabular}
-    \caption[Confusion Matrix]{Confusion Matrix showing the results of the \emph{Nearest Centroid} classifier test.}%
+    \caption[Confusion Matrix]{Confusion Matrix showing the results of the nearest centroid classifier test}%
     \label{tab:confusionmatrix}
 \end{table}
 
 \section{User Interface}
-Our user interface is presented as an API, and a number of methods exists to test these~\cite{swebok}. Because of the delimitations made in \cref{sec:design_ui}, we have not refined the UI in areas such as load balancing, security, and performance, and as such we will not test these areas. Instead we will focus on interface testing and acceptance testing.
+Our user interface is presented as an API, and a number of methods exists to test these~\cite{swebok}. Because of the delimitations made in \cref{sec:design_ui}, we have not refined the UI in areas such as load balancing, security, and performance, and as such we will not test these areas. Instead we focus on interface testing and acceptance testing.
 
 Interface testing simulates the usage of an API, and checks if it adheres to some requirement~\cite{swebok}. We perform a combination of unit testing and system testing, in order to assess the behavior of the API code itself, and the external interface to other applications. The test technique is primarily error-guessing~\cite{swebok}, where we anticipate where the most plausible faults may occur.
 
@@ -74,12 +74,10 @@ In order to test whether the API adheres to our requirements, we have written a 
 All tests we have written passes, indicating that our API works under normal use cases. However, as stated before, we do not consider for example security or stress testing, and as such we cannot say with any confidence that the system will work under load, or in the presence of malicious users.
 
 \subsection{Acceptance Testing}
-In \cref{sec:uireqs} we found the two requirements:
+In \cref{sec:uireqs} we established the two requirements:
 \begin{itemize}
 	\item A user must be able to query the UI for link suggestions
 	\item A user should be able to submit reviews of link suggestions
 \end{itemize}
 
 Based on the interface testing, we can say that the API fulfills the first requirement. Even though we have not implemented the functionality in the main pipeline that could benefit from the second UI requirement, the requirement is still fulfilled. Therefore we conclude the acceptance test as passed.
-
-\todo{er der ikke et swebok navn for acceptence test der kun er for den foreløbige kravpspecifikation}

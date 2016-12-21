@@ -10,7 +10,7 @@ In \cref{eq:training_pairs}, we define a set of positive training pairs $P \subs
 \label{eq:training_pairs}
   \begin{split}
     P &= \Set{(a,b)\ \in\ \Rightarrow\ \mid a\text{ is featured}\ } \\
-    N &= \Set{(a,b)\ \in\ \Rightarrow\ \mid a\text{ is featured}\ }
+    N &= \Set{(a,b)\ \not\in\ \Rightarrow\ \mid a\text{ is featured}\ }
   \end{split}
 \end{equation}
 
@@ -48,7 +48,7 @@ Using the functions $f$ and $g$, we can define the function $h$ as shown in \cre
   h = g \circ f
 \end{equation}
 
- We can then use the function $h$ to assign a label $y_{ab}$ to any article pair $(a,b)$ as shown in \cref{eq:classification_function}.
+We can then use the function $h$ to assign a label $y_{ab}$ to any article pair $(a,b)$ as shown in \cref{eq:classification_function}.
 
 \begin{equation}
 \label{eq:classification_function}

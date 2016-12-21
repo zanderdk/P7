@@ -43,7 +43,11 @@
 \bookmark[page=7,level=0]{Contents}
 \microtypesetup{protrusion=false} % Protrusion may interfere with the dotted lines in the TOC.
 \ohead{{\MakeUppercase\leftmark}} % UGLY HACK. The correct way should be to store the old value, set new value, then restore old value!
+{
+\hypersetup{linkbordercolor=black}
+\hypersetup{linkcolor=black}
 \tableofcontents
+}
 \microtypesetup{protrusion=true}
 
 % Start arabic numbering and restore page header.
@@ -59,8 +63,8 @@
 %\input{chapter_ai/ai}
 \input{chapter_testeval/testeval}
 \input{chapter_conclusion/conclusion}
-\input{chapter_reflection/reflection}
 \input{chapter_future_work/future_work}
+\input{chapter_reflection/reflection}
 \label{LastPageLabel} % There must be a %-sign on the line before this.
 
 % To end the parts.
@@ -69,13 +73,13 @@
 
 \cleardoublepage
 \ohead{{\MakeUppercase\leftmark}} % UGLY HACK. The correct way should be to store the old value, set new value, then restore old value!
-\phantomsection\addcontentsline{toc}{chapter}{List of Figures}%
-\listoffigures
-\begingroup % Next chapter on same page.
-\let\cleardoublepage\relax
-\phantomsection\addcontentsline{toc}{chapter}{List of Tables}%
-\listoftables
-\endgroup
+%\phantomsection\addcontentsline{toc}{chapter}{List of Figures}%
+%\listoffigures
+%\begingroup % Next chapter on same page.
+%\let\cleardoublepage\relax
+%\phantomsection\addcontentsline{toc}{chapter}{List of Tables}%
+%\listoftables
+%\endgroup
 
 % Bibliography.
 \cleardoublepage

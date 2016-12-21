@@ -2,10 +2,9 @@
 In this chapter we discuss the development of the solution that was outlined in the previous chapter. The system will be explained in a top-down fashion. After a brief overview of the system, the rest of the chapter will describe the specifics of each component in separate sections.
 
 \section{Architecture}\label{sec:design_overview}
-This system is developed following a pipeline architecture, where the output of each component is fed into the next, illustrated in \cref{fig:system-overview}. The main benefit of this architecture is the modularity and scalability. Each component has minimal coupling with each other, by only interacting through data. As long as two components both adhere to the same protocol, they can completely disregard any logic or functionality of each other. This gives the system the two advantageous properties of effortless exchange of entire components and straightforward horizontal scaling.
+This system is developed following a pipeline architecture, where the output of each component is fed into the next, illustrated in \cref{fig:system-overview}. The main benefit of this architecture is the modularity and scalability. Each component has minimal coupling with each other, by only interacting through data. As long as two components both adhere to the same protocol, they can completely disregard any logic or functionality of each other. The data interaction can be implemented as any type of caching. This gives the system the two advantageous properties of effortless exchange of entire components and straightforward horizontal scaling.
 
-If system usage grows sufficiently large the data exchange could be handled by intermediate databases using, for example, a master-slave architecture where components supplying data could write to the database through one of multiple masters, and components retrieving data could read from one of multiple slaves \todo{GØR NOGET!!!!}. It is also possible to distribute components across different machines. While this might not be a computational advantage, it minimizes logistics problems during scaling operations, since the system can be partially moved, component by component. Shutdown of a component can be delayed until its replacement is running. Regardless of the specific implementations, the pipeline architecture makes it possible to upscale specific components when bottlenecks emerge.
-\todo{Synes måske den her del skal fjernes. Bør vi ikke holde os til at forklare hvad vi faktisk gør?}
+One advantage of these properties is the possibility of running the system distributed. This minimizes logistics problems during scaling operations, since the system can be partially moved or updated, component by component. Shutdown of a component can be delayed until its replacement is running. Regardless of the specific implementations, the pipeline architecture makes it possible to upscale specific components if bottlenecks emerge.
 
 \tikzsetnextfilename{system-overview}
 \begin{figure}[tb]%
@@ -15,10 +14,10 @@ If system usage grows sufficiently large the data exchange could be handled by i
 \label{fig:system-overview}%
 \end{figure}
 
-\todo{Kasper: kig på at indirekte give feature extractor en flottere plads i main pipeline}
-
 \subsection{Main Pipeline}
-\todo{Forklar intro til main pipeline} The main pipeline consists of five components. The first component, \emph{Database}, stores the information required to identify the link suggestions. The second component is \emph{Candidate Generator}, which extracts candidate article pairs from the database. The third component is the \emph{Feature Extractor}. This component uses a feature learning approach to generate a feature vector for any given candidate pair. The fourth component is the \emph{Classifier}, which is responsible for the classification of the candidate pair. Finally the \emph{Results Pool} stores the suggestions until they are presented to a user through the user interface.
+The central module in the system architecture is the main pipeline. This module is responsible for finding and evaluating potential links.
+
+The main pipeline consists of five components. The first component, \emph{Database}, stores the information required to identify potential links. The second component is \emph{Candidate Generator}, which extracts candidate article pairs from the database. The third component is the \emph{Feature Extractor}. This component uses a feature learning approach to generate a feature vector for any given candidate pair. The fourth component is the \emph{Classifier}, which is responsible for the classification of the candidate pair. Finally the \emph{Results Pool} stores the link suggestions until they are presented to a user through the user interface.
 
 \subsection{Support Modules}
 The main pipeline requires the inclusion of a feature learning model, used for extracting article features, as well as learning a classification model by training a classifier to suggest links from the the extracted features. These tasks are performed by two support modules.

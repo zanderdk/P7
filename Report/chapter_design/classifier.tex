@@ -1,5 +1,5 @@
 \section{Classifier}\label{sec:classifier}
-As described in \cref{sec:machine_learning_task}, we want to solve a supervised binary classification problem. In this section we will approach this problem by training a classifier based on training examples of article pairs. The feature extractor is used to extract features for these training examples, which are used to train a range of classifiers. Afterwards we evaluate the results and choose a classification algorithm for the system.
+As described in \cref{sec:machine_learning_task}, we want to solve a supervised binary classification problem. In this section we approach this problem by training a classifier based on training examples of article pairs. The feature extractor is used to extract features for these training examples, which are used to train a range of classifiers. Afterwards we evaluate the results and choose a classification algorithm for the system.
 
 \subsection{Training Data}\label{sec:training_data}
 To train and evaluate a classifier, we first partition the positive and negative pairs $P$ and $N$, defined in \cref{sec:machine_learning_task}, into training and test data. To avoid overfitting on existing links, the training and testing data can not be used for feature learning. We partition the positive training examples $P$ into three disjoint sets $P_\text{test}$, $P_\text{training}$, and $P_\text{walk}$ for testing, training, and feature learning walks, respectively. The partition is made randomly, with a distribution of 20\% test data, 40\% training data, and 40\% data for walks. This specific partitioning preserves the link structure in the graph, while still keeping a reasonable amount of samples for testing and training.
@@ -11,8 +11,6 @@ To train and evaluate a classifier, we first partition the positive and negative
 As $\left\vert{P}\right\vert$ is smaller than $\left\vert{N}\right\vert$, we ensure an equal distribution of positive and negative training pairs by randomly sampling two distinct sets $N_\text{test} \subset N$ and $N_\text{training} \subset N$, such that $\left\vert{N_\text{test}}\right\vert=\left\vert{P_\text{test}}\right\vert$ and $\left\vert{N_\text{training}}\right\vert=\left\vert{P_\text{training}}\right\vert$.
 
 %The positive samples are pairs of articles $(a,b)$ such that article $a$ is featured and there exists a link from article $a$ to $b$.
-
-
 
 %We first experimented with negative samples being random article pairs $(a,b)$ fulfilling the condition of $N$: that article $a$ is featured and there does not exist a link from article $a$ to $b$. The problem with this approach is that it is too easy to overfit using these negative samples. As the article pairs are randomly sampled, most of the times, there is very little relatedness between the two articles. This is of course the point of a negative training sample, but because most of the negative samples were so unrelated, the classifiers used in our experiments could too easily differentiate positives from negatives. We needed another method that would give us negative samples where the articles have a higher likelihood of being related. Our second approach was to extract N-grams from all featured articles. Iterating through all N-grams for a featured article, a negative sample would be generated if another article had the exact same title as the N-gram, but the two article were not linked.
 
@@ -36,8 +34,7 @@ To evaluate the performance of each algorithm, we perform a 10-fold cross-valida
 
 
 \subsubsection{Results}
-\todo{Huske at rette cross-validation resultater til.}
-The results of the evaluation can be seen in \cref{fig:classifier_comparison}. \emph{Quadratic Discriminant Analysis} (QDA) gives the best precision of $0.985$. However the recall is low, which is a cause for concern, as this implies a reduced number of suggestions. The \emph{Nearest Centroid} classifier achieves the second highest precision of $0.979$ which is slightly lower than \emph{QDA}, but with a significantly higher recall. Though we consider precision the most important metric, trading $0.6$ percentage points in precision for \todo{procent} percentage points in recall seems favorable. We therefore use the \emph{Nearest Centroid} classifier.
+The results of the evaluation can be seen in \cref{fig:classifier_comparison}. \emph{Quadratic Discriminant Analysis} (QDA) gives the best precision of $0.986$. However the recall is low, which is a cause for concern, as this implies a reduced number of suggestions. The \emph{Nearest Centroid} classifier achieves the second highest precision of $0.979$ which is slightly lower than \emph{QDA}, but with a significantly higher recall. Though we consider precision the most important metric, trading $0.007$ precision for $0.274$ recall seems favorable. We therefore use the \emph{Nearest Centroid} classifier.
 
 %\begin{figure}[tbp]
 %\centering
@@ -45,21 +42,21 @@ The results of the evaluation can be seen in \cref{fig:classifier_comparison}. \
 %\caption[Precision and recall scores for the chosen algorithms]{Precision and recall scores for the chosen algorithms, sorted by precision.}\label{fig:classifier_comparison}
 %\end{figure}
 
-\begin{figure}%
+\begin{figure}[tb]%
 \centering
 \tikzsetnextfilename{barchart}
 \begin{tikzpicture}
   \begin{axis}[
       table/col sep=semicolon,
-      xbar=0pt, xmin=0, xmax=100,
-      xlabel=Score (\%),
-      yticklabels from table={chapter_design/10f-results-percent.csv}{name},
+      xbar=0pt, xmin=0, xmax=1,
+      xlabel=Score,
+      yticklabels from table={chapter_design/10f-results.csv}{name},
       %yticklabel style={text height=1.5ex},
       ytick=data,
       width=0.6\textwidth,
-      y=0.9cm,
+      y=0.8cm,
       enlarge y limits={abs=0.6},
-      bar width=8pt,
+      bar width=7pt,
       /pgf/number format/fixed,
       axis lines*=left,
       xmajorgrids=true,
@@ -68,13 +65,12 @@ The results of the evaluation can be seen in \cref{fig:classifier_comparison}. \
       reverse legend, area legend,
       legend style={at={(1,1.01)},anchor=south east}
     ]
-    \addplot [fill=color1!20!white] table [y expr=-\coordindex, x=recall] {chapter_design/10f-results-percent.csv};
-    \addplot [fill=color1!70!white] table [y expr=-\coordindex, x=precision] {chapter_design/10f-results-percent.csv};
+    \addplot [fill=color1!20!white] table [y expr=-\coordindex, x=recall] {chapter_design/10f-results.csv};
+    \addplot [fill=color1!70!white] table [y expr=-\coordindex, x=precision] {chapter_design/10f-results.csv};
 
   \end{axis}
 \end{tikzpicture}
-\caption[Precision and recall scores for the chosen algorithms]{Precision and recall scores for the tested algorithms, sorted by precision
-\todo{Michael lav til \%}}\label{fig:classifier_comparison}%
+\caption[Precision and recall scores for the chosen algorithms]{Precision and recall scores for the tested algorithms, sorted by precision}\label{fig:classifier_comparison}%
 \end{figure}
 
 % \begin{table}[tbp]

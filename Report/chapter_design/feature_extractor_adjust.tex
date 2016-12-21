@@ -1,25 +1,72 @@
-\subsection{Adjusting node2vec}
-The node2vec framework is a useful tool for our problem of feature learning. However there are a couple of areas where we need to adjust it to suit our needs.
+\subsection{Applying node2vec}
+In this section we describe how we apply the node2vec framework in the implementation of the feature extractor.
 
 \subsubsection{Combining Feature Vectors}\label{subsub:combining_feature_vectors}
-By learning a node2vec model on the graph, we are able to learn a function $k:V \to \mathbb{R}^d$, mapping a node to a vector representation of features. However since we wish to classify connection between article pairs, we need a way of combining the feature vectors of two nodes into a single feature vector for one pair. In~\cite{node2vec} four different binary operators for combining two feature vectors are examined, with \emph{Hadamard product} yielding the best results in all tested cases.
+By learning a node2vec model on the graph, we are able to learn a function $k:V \to \mathbb{R}^d$, mapping a node to a vector representation of features. However, since we wish to classify connections between article pairs, we need a way of combining the feature vectors of two nodes into a single feature vector for one pair. As described in \cref{sec:ml_def} the function $f$ maps article pairs to feature vectors. In \cref{squareDotProduct} we define it based on $k$ and a binary operation $\circledcirc$ used for combining feature vectors.
+
+\begin{equation}\label{squareDotProduct}
+f(a,b) = k(a) \circledcirc k(b)
+\end{equation}
+
+In~\cite{node2vec}, four different binary operators for combining two feature vectors are examined, with \emph{Hadamard product} yielding the best results in all tested cases.
 %$\circ : \mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^d$
-\todo{definer f ved brug af h på a og b}
+All of the four operations are commutative, which is suitable for undirected graphs, where the combined result vector does not depend on the order of the nodes. For directed graphs however, the order is important. If we are given two article pairs $(a,b)$ and $(b,a)$ where $a \Rightarrow b$ and $b \not \Rightarrow a$, their feature representations should be different because they have different labels. 
 
-All of the four operations are commutative, which is suitable for undirected graphs where the combined result vector does not depend on the order of the nodes. For directed graphs however, the order is important. If we are given two article pairs $(a,b)$ and $(b,a)$ where $a \Rightarrow b$ and $b \not \Rightarrow a$, their feature representations should be different because they have different labels. 
+We test this claim in \cref{sec:hyperopt} by comparing the performance of three different binary operations, seen in \cref{table:binary_operators}, as a part of the parameter optimization component. The tested operations are Hadamard product, Hadamard division, and concatenation. Hadamard product is tested because it is the preferred choice in~\cite{node2vec}. Hadamard division is examined because of its relation to Hadamard product, but with a non-commutative property. Concatenation of the feature vectors is chosen since it preserves all features in their original state.
 
-We test this hypothesis in \cref{sec:hyperopt} by comparing the performance of three different vector combination functions, as a part of the parameter optimization component. The functions which we test are Hadamard product, Hadamard division, and concatenation. Hadamard product is chosen because it is the preferred choice in~\cite{node2vec}. Hadamard division is examined because of its relation to Hadamard product, but with a non-commutative property. Concatenation of the feature vectors is chosen since it preserves all features in their original state.
-\todo{concat function}
+\makeatletter
+\newcommand*{\boxwedge}{%
+  \mathbin{%
+    \mathpalette\@boxwedge{}%
+  }%
+}
+\newcommand*{\@boxwedge}[2]{%
+  % #1: math style
+  % #2: unused
+  \sbox0{$#1\boxplus\m@th$}%
+  \dimen2=.5\dimexpr\wd0-\ht0-\dp0\relax % side bearing
+  \dimen@=\dimexpr\ht0+\dp0\relax
+  \def\lw{.09}% linw width as factor for height of \boxplus
+  \kern\dimen2 % side bearing
+  \tikz[
+    line width=\lw\dimen@,
+    line join=square,
+    x=\dimen@,
+    y=\dimen@,
+  ]
+  \draw
+    (\lw/2,0) rectangle (1-\lw,1-\lw)
+    (0+\lw/2,1-\lw) -- (1-\lw ,0)
+  ;%
+  \kern\dimen2 % side bearing
+}
+
+\begin{table}[tbp]
+\centering
+\begin{tabular}{@{}lcl@{}}
+\toprule
+\textbf{Operator} & \textbf{Symbol} & \textbf{Definition} \\
+\midrule
+Hadamard product & $\boxdot$ & $\lbrack f(u) \boxdot f(v) \rbrack_{i} = f_i(u)*f_i(v) $ \\
+Hadamard division & $\boxwedge$ & $\lbrack f(u) \boxwedge f(v) \rbrack_{i} = \frac{f_i(u) }{f_i(v) }$ \\
+Concatenation & $^\frown$ & $f(u) {}^\frown f(v)  = \left[ \begin{smallmatrix}
+           u \\ v
+         \end{smallmatrix} \right]$ \\
+\bottomrule
+\end{tabular}
+\caption[Binary operators]{Binary operators for combining features}\label{node2vec_operators}
+\label{table:binary_operators}
+\end{table}
 
 %Because Hadamard product produced good results in \cite{node2vec} we will be evaluating it, and compare it to the corresponding non-commutative operation Hadamard division. Furthermore we choose to test our own method of concatenating the feature vectors $\mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^{2d}$, leaving it up to the classifier to interpret the combination of article features.
 
 \subsubsection{Implementation}
-The reference implementation of node2vec included in \cite{node2vec} was not sufficient for our usage. Specifically we had concerns regarding the amount of data we needed to analyse. While node2vec as a framework, is able to scale well, their reference implementation does not support this due to concerns such as poor locality \todo{omformuler? skal vi forklare hvorfor det kan scale}. In light of this we decided to implement our own version in order to gain better performance.
+The reference implementation of node2vec~\cite{node2vec}, was not sufficient for our usage. Specifically, we had concerns regarding the amount of data we needed to analyze. node2vec as a framework is able to scale well, however, the reference implementation does not support parallelism. Therefore, we decided to implement our own version in order to gain better performance.
 
 The primary speed up was gained by enabling random walks to be done in parallel. Since every walk is independent from each other, the problem of walking them is embarrassingly parallel~\cite{matloff2011art}. In our implementation each walk can be done in its own thread, allowing for linear speedup.
 
 %In our case, our test machine had 16 CPU cores which we wanted to utilize. We therefore spawn 16 threads, each walking the graph, allowing full utilization of all the CPU cores.
 
-Another major concern was with the memory footprint. Since all the biased random walks are completed before starting the analysis, it is likely that a big dataset would require a lot of memory. In order to avoid running out of memory, we continuously store the walks.
+Another major concern was regarding the memory footprint. Since all the biased random walks are completed before starting the analysis, it is likely that a big dataset would require a lot of memory. In order to avoid running out of memory, we continuously store the walks.
 
 For the analysis we use an implementation of word2vec included in the library \emph{Gensim}~\cite{rehurek_lrec}, that covers our need for scalability in terms of CPU utilization.

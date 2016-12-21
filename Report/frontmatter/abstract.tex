@@ -1,17 +1,20 @@
-Linking is vital for navigation on the World Wide Web and provides structure to individual documents. We present the problem of suggesting missing links on Wikipedia in order to structurally improve Wikipedia as a whole. Based on approaches taken by related work, we choose to focus on structural analysis of Wikipedia as a graph. We then formulate the problem as a supervised binary classification problem. We populate a graph database with Wikipedia articles as nodes and article links as edges. We use a feature learning approach, node2vec, to generate features for a classifier based on the Wikipedia link graph. The final solution achieves a precision score of $0.981$ on our test set containing featured articles. Other tests show that the solution does not generalize to the whole of Wikipedia.
+%Linking is vital for navigation on the World Wide Web and provides structure to individual documents. However,
+Maintaining link structure is difficult on large and often changing websites. We present a solution to the problem of suggesting missing links on Wikipedia in order to structurally improve the website as a whole. The problem is considered a supervised binary classification problem, and the core of the solution analyzes Wikipedia structurally in a link graph.
+
+We populate a graph database with Wiki\-pedia articles as nodes and article links as edges. A nearest centroid classifier is trained to decide whether a link will be beneficial between two articles. Several other classification algorithms were tested. The classifier uses features extracted from nodes based on a model trained by the feature learning method node2vec. We also develop a web API that provides access to the suggestions. The solution achieves a precision score of \num{0.981} on a test set consisting of featured articles. While this result is promising, further tests on non-featured articles show that the solution does not generalize well to the whole of Wikipedia. Due to this, we provide suggestions for further improvement.
 
 
-Kom ind på:\\
-Structural analysis of Wikipedia link graph
+%Kom ind på:\\
+%Structural analysis of Wikipedia link graph
 
-Machine learning
+%Machine learning
 
-Binary classification
+%Binary classification
 
-Feature learning
+%Feature learning
 
-Link Suggestions
+%Link Suggestions
 
-Evaluation
+%Evaluation
 
-UI - API
+%UI - API

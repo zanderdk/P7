@@ -8,10 +8,9 @@ While we cannot assume that every example of appropriate linking is covered, the
 
 %Determining this quality, is the problem which we will attempt to solve using machine learning. \todo{fix sætning}
 
-Knowing this, we can now conclude that our choice of edges should preserve the link structure of the featured articles. Therefore edges in the graph will represent article links. \todo{lav overgang til math. Husk motivation for at have math. KASPER}
-%In order to define this formally, we first define a binary relation for links between articles, shown in \cref{eq:binary_relation}. \todo{Definition af $G=(V,\Rightarrow)$ skal ind før} \todo{Equations skal måske ind som definitions?}
+Knowing this, we can now conclude that our choice of edges should preserve the link structure of the featured articles. Therefore edges in the graph will represent article links.
 
-We formally define an unweighted directed graph $G = (V,\Rightarrow)$ where $V$ is the set of all Wikipedia articles, and $\Rightarrow$ is a binary relation of links between articles defined in \cref{eq:binary_relation}.
+In order to give a precise understanding of the constructed graph and allow direct reference throughout the report, we formally define it. It is an unweighted directed graph $G = (V,\Rightarrow)$ where $V$ is the set of all Wikipedia articles, and $\Rightarrow$ is a binary relation of links between articles defined in \cref{eq:binary_relation}.
 
 %$$\Rightarrow = \Set{(a,b) \mid \text{article } a \text{ has a link to article } b}$$
 \begin{equation}
@@ -19,7 +18,8 @@ We formally define an unweighted directed graph $G = (V,\Rightarrow)$ where $V$ 
 \Rightarrow\ =\ \{\ (a,b) \in V \times V\ |\ \text{article } a \text{ links to article } b\ \}
 \end{equation}
 
-We will also use the infix notation shown in \cref{eq:infix_link}.
+We also use the infix notation shown in \cref{eq:infix_link}.
+
 \begin{equation}
 \label{eq:infix_link}
   \begin{split}
