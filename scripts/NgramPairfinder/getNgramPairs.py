@@ -21,6 +21,7 @@ class pairFinder:
 
         #Result is a list. result[0] is a record. result[0][0] is the actual article text. Don't ask.
         # if no text was found, bail out
+        print("Getting from " + title)
         if queryResult[0] is None:
             return (title, [], [])
         nGrams = getNgrams.getNgrams(queryResult[0][0], 5)
