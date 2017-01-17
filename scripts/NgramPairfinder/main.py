@@ -32,7 +32,6 @@ with open("featured->all_only_negatives.csv", "w", encoding="utf-8") as negative
         res = finder.getPairsFromArticle(title)
 #           for article in res[1]:
 #              positives.write(title + " " + article + "\n")
-        print(len(res[2]))
         for article in res[2]:
             negatives.write(title + " " + article + "\n")
 
