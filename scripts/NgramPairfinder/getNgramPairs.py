@@ -15,7 +15,7 @@ class pairFinder:
         query = "MATCH (a:Page) WHERE a.title = {title} Return a.text"
 
         # load text from old db that has text
-        qh = runQuery.QueryHelper(GraphDatabase.driver("bolt://localhost:10001", encrypted=False, auth=basic_auth("neo4j", "12345")))
+        qh = runQuery.QueryHelper(GraphDatabase.driver("bolt://localhost:10004", encrypted=False, auth=basic_auth("neo4j", "12345")))
         queryResult = qh.runQuery(query, mapping)
         print("Got text")
 
@@ -55,7 +55,7 @@ optional match (a)-[r:TRAINING_DATA|TEST_DATA|LINKS_TO]->(y) return a.title, y.t
         query = "MATCH (a:Page) WHERE a.title = {title} Return a.text"
 
         # load text from old db that has text
-        qh = runQuery.QueryHelper(GraphDatabase.driver("bolt://localhost:10001", encrypted=False, auth=basic_auth("neo4j", "12345")))
+        qh = runQuery.QueryHelper(GraphDatabase.driver("bolt://localhost:10004", encrypted=False, auth=basic_auth("neo4j", "12345")))
         queryResult = qh.runQuery(query, mapping)
 
         #Result is a list. result[0] is a record. result[0][0] is the actual article text. Don't ask.
