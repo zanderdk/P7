@@ -32,7 +32,7 @@ class pairFinder:
         for gram in nGrams:
             if gram != title:
                 mapping = {"fromTitle": title, "gram": gram }
-                query = '''match (a:FeaturedPage {lower_cased_title:{fromTitle}})
+                query = '''match (a:FeaturedPage {title:{fromTitle}})
 with a as x
 match (b:Page {lower_cased_title:{gram}})
 with b as y, x as a
