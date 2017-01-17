@@ -10,10 +10,10 @@ def getFeaturedOrGood(qh):
     #res.close()
     return arr
 
-qh = runQuery.QueryHelper(GraphDatabase.driver("bolt://localhost:10001", encrypted=False, auth=basic_auth("neo4j", "12345")))
+qh = runQuery.QueryHelper(GraphDatabase.driver("bolt://localhost:10004", encrypted=False, auth=basic_auth("neo4j", "12345")))
 finder = getNgramPairs.pairFinder(qh)
 
-all_featured_res = qh.runQuery("match (a:FeaturedPage) return a.title as title", {})
+all_featured_res = qh.runQuery("match (a:FeaturedPage) return a.lower_cased_title as title", {})
 all_featured = []
 for record in all_featured_res:
     all_featured.append(record["title"])

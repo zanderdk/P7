@@ -31,7 +31,7 @@ class pairFinder:
         for gram in nGrams:
             if gram != title:
                 mapping = {"fromTitle": title, "gram": gram }
-                query = '''match (a:FeaturedPage {title:{fromTitle}})
+                query = '''match (a:FeaturedPage {lower_cased_title:{fromTitle}})
 with a as x
 match (b:Page {lower_cased_title:{gram}})
 with b as y, x as a
@@ -42,6 +42,8 @@ optional match (a)-[r:TRAINING_DATA|TEST_DATA|LINKS_TO]->(y) return a.title, y.t
                     res_hasLink = res[0]["hasLink"]
                     if not res_hasLink:
                         result_neg.append(res[0]["target"])
+                        if len(result_neg) >= 65:
+                            break
 
         return (title, result_pos, result_neg)
         
