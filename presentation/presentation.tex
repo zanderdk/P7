@@ -1,0 +1,222 @@
+\documentclass[12pt, hyperref={bookmarks=false}, show notes]{beamer}
+% Switch to this for handouts
+%\documentclass[12pt,handout]{beamer}
+
+% Text
+	\usepackage[T1]{fontenc}
+  \usepackage{emerald}
+	\usepackage[utf8]{inputenc}
+	\usepackage[english]{babel}
+	% \usepackage[bitstream-charter]{mathdesign} % Serif font (Charter BT).
+	\usepackage[scaled=0.84]{DejaVuSansMono} % Monospaced font.
+	\def\sfdefault{SourceSansPro-TLF} % Sans serif font.
+	\usepackage{textcomp}
+
+% Maths
+  \usepackage{amsmath}
+  \usepackage{mathtools}
+  \usepackage{siunitx}
+
+% Graphics
+  \usepackage{graphicx}
+  \usepackage[caption=false]{subfig}
+	\usepackage{tikz}
+  \usepackage{pgfplots}
+  \pgfplotsset{compat=1.10}
+	% ADD TIKZ LIBRARIES
+  \usetikzlibrary{calc}
+  \usetikzlibrary{arrows.meta}
+  %\usepackage{tikz-qtree}
+  \usetikzlibrary{decorations.pathmorphing}
+  \usetikzlibrary{matrix,shapes,positioning}
+  \usepgfplotslibrary{external}
+  \tikzexternalize[prefix=gfx/tikz/]
+  \tikzexternaldisable % Disable by default
+  \usepackage{pgfgantt}
+  \usepackage{mdframed}
+  \newmdenv [align=center, backgroundcolor=color3!10, linecolor=color3!50, linewidth=1pt]{mtjbox}
+
+	\usepackage{xcolor}
+    \definecolor{color1}{cmyk}{100,50,0,0}   % blue
+    \definecolor{color2}{cmyk}{0,80,100,0}   % vermillion
+    \definecolor{color3}{cmyk}{97,0,75,0}    % blueish green
+    \definecolor{color4}{RGB}{204,121,167}    % reddish purple
+    \definecolor{color5}{RGB}{230,159,0}   % orange
+    \usepackage{colortbl}
+% Misc
+\usepackage{booktabs}
+\usepackage{enumerate}
+\usepackage{pdfpages}
+\usepackage{pgfpages}
+%\usepackage{setspace}
+%\usepackage{multimedia}
+
+% Box colors.
+\definecolor{clframe}{gray}{0.75}
+\definecolor{clshade}{gray}{0.95}
+\definecolor{clcodeshade}{gray}{0.93}
+
+% Code colors.
+\definecolor{javared}{rgb}{0.6,0,0}            % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35}    % comments
+\definecolor{javapurple}{rgb}{0.6,0,0.5}       % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+%More colors
+\definecolor{colorA}{HTML}{5DA5DA} % blue
+\definecolor{colorB}{HTML}{FAA43A} % orange
+\definecolor{colorC}{HTML}{60BD68} % green
+\definecolor{colorD}{HTML}{F17CB0} % pink
+\definecolor{colorE}{HTML}{B2912F} % brown
+\definecolor{colorF}{HTML}{B276B2} % purple
+\definecolor{colorG}{HTML}{DECF3F} % yellow
+\definecolor{colorH}{HTML}{F15854} % red
+\definecolor{colorI}{HTML}{4D4D4D} % gray
+
+\colorlet{colorAshade}{colorA!80!black}
+\colorlet{colorBshade}{colorB!80!black}
+\colorlet{colorCshade}{colorC!80!black}
+\colorlet{colorDshade}{colorD!80!black}
+\colorlet{colorEshade}{colorE!80!black}
+\colorlet{colorFshade}{colorF!80!black}
+\colorlet{colorGshade}{colorG!80!black}
+\colorlet{colorHshade}{colorH!80!black}
+\colorlet{colorIshade}{colorI!80!black}
+
+\usepackage{listings}
+
+\lstdefinestyle{javastyle}{%
+  language=Java,
+  keywordstyle=\color{javapurple}\bfseries,
+  stringstyle=\color{javared},
+  commentstyle=\color{javagreen},
+  morecomment=[s][\color{javadocblue}]{/**}{*/}
+}
+
+\lstnewenvironment{javacode}[1][]{%
+  \lstset{style=javastyle, #1}
+}{}
+
+\lstset{
+  columns=flexible,
+  escapechar=",
+  escapeinside={(*@}{@*)},
+  basicstyle=\ttfamily\footnotesize,
+  frame=single, backgroundcolor=\color{clshade}, rulecolor=\color{clframe},
+  framerule=\fboxrule, xleftmargin=3.4pt, xrightmargin=3.4pt, belowskip=\smallskipamount,
+  captionpos=b,
+  numbers=left,
+  numberstyle=\scriptsize,
+  numbersep=7pt,
+  tabsize=2,
+  keepspaces=true,
+  showspaces=false,
+  showstringspaces=false,
+  breaklines=true,
+  breakatwhitespace=true,
+  postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}}
+}
+
+
+
+\setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{bibliography item}[text]
+
+%\usepackage{caption}
+\usetheme{/amsterdam}
+\date{June 15, 2015}
+
+%Uncomment for handouts: (remember to uncomment in line 1+2, too)
+%\usepackage{beamertheme/handoutWithNotes}
+%\pgfpagesuselayout{4 on 1 with notes}[a4paper,border shrink=5mm]
+
+% Comment for handouts or slides without notes:
+\setbeameroption{show notes on second screen=right}
+\setbeamertemplate{note page}{%
+  \insertnote%
+}
+
+% Table of content dybde (0-index)
+%\setcounter{tocdepth}{1}
+
+% BibLaTeX
+%\usepackage{csquotes}
+%\usepackage[
+%backend=bibtex,
+%citestyle=numeric,
+%bibstyle=numeric,
+%maxcitenames=3,
+%maxbibnames=99,
+%url=true]{biblatex}
+%\addbibresource{../rapport/references/refs.bib}
+%\addbibresource{extrasources.bib}
+%\usepackage{../style/biblatex_custom_formatting}
+
+\graphicspath{{gfx/}{../report/graphics/}{../report/graphics/tikz}}
+
+\begin{document}
+
+%\captionsetup[figure]{font=small,singlelinecheck=off,justification=raggedright}
+
+\title[Improving Wikipedia Linking: A Feature Learning Approach]{Improving Wikipedia Linking: A Feature Learning Approach}
+% \author[\insertframenumber /\inserttotalframenumber]{sw609f15}
+\makeatletter
+  \defbeamertemplate*{footline}{myminiframes theme}
+  {%
+    \begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
+    \end{beamercolorbox}
+    \hbox{%
+      \begin{beamercolorbox}[wd=.75\paperwidth,ht=2.5ex,dp=1.125ex,%
+        leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+        \leavevmode{\usebeamerfont{title in head/foot}\insertshorttitle}%
+      \end{beamercolorbox}%
+      \begin{beamercolorbox}[wd=.15\paperwidth,ht=2.5ex,dp=1.125ex,%
+        leftskip=.3cm,rightskip=.3cm]{title in head/foot}%
+        {\usebeamerfont{author in head/foot}\usebeamercolor[fg]{author in head/foot}\insertshortauthor}
+      \end{beamercolorbox}%
+      \begin{beamercolorbox}[wd=.1\paperwidth,ht=2.5ex,dp=1.125ex,%
+        leftskip=.3cm,rightskip=.3cm,center]{title in head/foot}%
+        {\usebeamerfont{author in head/foot}\usebeamercolor[fg]{author in head/foot}\insertframenumber/\inserttotalframenumber}%
+      \end{beamercolorbox}%
+    }%
+    \begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
+    \end{beamercolorbox}
+  }
+\makeatother
+
+% Adding front slide.
+{
+\setbeamercolor{background canvas}{bg=}
+\includepdf[pages=1]{frontslide.pdf}
+}
+\note{
+    Noter, noter, noter!
+}
+
+\begin{frame}
+  \frametitle{Indhold}
+  \tableofcontents
+  \note{
+  \begin{itemize}
+    \item Notes
+    \item notes
+    \item notes..
+  \end{itemize}
+}
+\end{frame}
+
+
+\input{introduction.tex}
+\input{node2vec_andothers.tex}
+\input{whatwentwrong.tex}
+\input{workdonesinceturnin.tex}
+\input{reinforcementlearning.tex}
+
+\section*{}
+
+\begin{frame}
+  \frametitle{Overview}
+  \tableofcontents
+\end{frame}
+
+\end{document}
