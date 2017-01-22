@@ -2,7 +2,7 @@ import runQuery
 from neo4j.v1 import GraphDatabase, basic_auth
 
 def getTitleMatches(nGrams):
-	qh = runQuery.QueryHelper(GraphDatabase.driver("bolt://192.38.56.57:10001", encrypted=False, auth=basic_auth("neo4j", "12345")))
+	qh = runQuery.QueryHelper(GraphDatabase.driver("bolt://localhost:10001", encrypted=False, auth=basic_auth("neo4j", "12345")))
 
 	result = []
 
@@ -13,8 +13,7 @@ def getTitleMatches(nGrams):
 		queryRes = qh.runQuery(query, mapping)
 
 		if queryRes[0] is not None:
-			print(queryRes)
-			result.append(gram)
+			result.append(queryRes[0]["a.title"])
 
 	return result
 
