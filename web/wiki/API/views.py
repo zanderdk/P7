@@ -73,6 +73,6 @@ def check_page(request):
         text = getPageTextFromDBpedia(title)
         nGrams = getNgrams(text, 3)
         matchingTitles = getTitleMatches(nGrams)
-        result = testLinks(matchingTitles)
+        result = testLinks(title, matchingTitles)
         jsonRes = toJSON(result)
         return HttpResponse(jsonRes, content_type="application/json")
