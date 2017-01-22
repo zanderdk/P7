@@ -77,5 +77,3 @@ def testLinks(title, lst):
 		if (test(title, x) == 1):
 			arr.append(x)
 	return arr
-
-print(testLinks("Jesus", ["Gabriel"]))
