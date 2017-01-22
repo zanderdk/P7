@@ -21,6 +21,7 @@ router.register(r'users', UserViewSet)
 
 app_name = 'API'
 urlpatterns = [
+    url(r'^checkpage$', views.check_page, name="check_page"),
     # ex: /links/5/
     url(r'^links/(?P<count>[0-9]+)$', views.partial_pool, name='partialPool'),
     # ex: /links/
