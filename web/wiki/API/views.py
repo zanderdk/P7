@@ -8,7 +8,11 @@ import simplejson as json
 import math
 from rest_framework import status
 from rest_framework.response import Response
-import getNgrams
+from getNgrams import getNgrams
+from getPageTextFromDBpedia import getPageTextFromDBpedia
+from getTitleMatches import getTitleMatches
+from testLinks import testLinks
+
 
 # Create your views here.
 
@@ -74,5 +78,5 @@ def check_page(request):
         nGrams = getNgrams(text, 3)
         matchingTitles = getTitleMatches(nGrams)
         result = testLinks(title, matchingTitles)
-        jsonRes = toJSON(result)
-        return HttpResponse(jsonRes, content_type="application/json")
+        #jsonRes = toJSON(result)
+        return HttpResponse(result, content_type="application/json")

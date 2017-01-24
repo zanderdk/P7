@@ -2,27 +2,120 @@
 % Første parameter i [] er tekst i header. {} er i indholdsfortegnelsen.
 
 % Slide med emneoverskrift.
-%\begin{frame}
-  %\frametitle{}
-  %\begin{center}
-    %{\Huge Topic Headline}
-  %\end{center}
-%\end{frame}
-%\note{
-  %\begin{itemize}
-		%\item Notes...
-  %\end{itemize}
-%}
+\begin{frame}
+  \frametitle{}
+  \begin{center}
+    {\Huge Introduction}
+  \end{center}
+\end{frame}
+\note{
+  \begin{itemize}
+		\item Notes.
+  \end{itemize}
+}
 
 % Normal slide:
 \begin{frame}
-    \frametitle{Status}
-    \framesubtitle{Some example subtitle}
+    \frametitle{Motivation}
+    %\framesubtitle{Some example subtitle}
     \centering
-    Some text, content, etc.
+    \begin{itemize}
+      \item Internet is used everywhere
+      \item Linking is important
+        \begin{itemize}
+          \item Easier access
+          \item Easier navigation
+        \end{itemize}
+      \item Wikipedia
+        \begin{itemize}
+           \item Articles with defined topics
+           \item Often requires background knowledge
+           \item Official guidelines
+           \item Difficult to maintain good link structure
+         \end{itemize}
+    \end{itemize}
 \end{frame}
 \note{
 	\begin{itemize}
     \item Notes here...
 	\end{itemize}
+}
+
+% Normal slide:
+\begin{frame}
+    \frametitle{Problem definition}
+    %\framesubtitle{Some example subtitle}
+    \centering
+    \begin{itemize}
+      \item Different approaches
+        \begin{itemize}
+          \item Content-based
+          \item Structure-based
+        \end{itemize}
+      \item Combination of structure-based and machine learning less commonly used
+      \item Problem statement:
+    \end{itemize}
+    "How can a software solution be developed that supports Wikipedia editors by suggesting potential article links using machine learning on a graph structure?"
+\end{frame}
+\note{
+  \begin{itemize}
+    \item Notes here...
+  \end{itemize}
+}
+
+% Normal slide:
+\begin{frame}
+    \frametitle{Methodology}
+    %\framesubtitle{Some example subtitle}
+    \centering
+    \begin{itemize}
+      \item Data model
+        \begin{itemize}
+          \item Graph
+          \item Articles as nodes
+          \item Links as edges
+        \end{itemize}
+      \item Binary classification
+        \begin{itemize}
+          \item Given an article pair
+          \item Determine if there should be a link
+        \end{itemize}
+      \item Supervised learning
+        \begin{itemize}
+          \item Featured articles
+          \item Positive and negative training examples
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+\note{
+  \begin{itemize}
+    \item Notes here...
+  \end{itemize}
+}
+
+% Normal slide:
+\begin{frame}
+    \frametitle{Feature generation}
+    %\framesubtitle{Some example subtitle}
+    \centering
+    \begin{itemize}
+      \item Need to represent article pairs appropriately
+      \item Feature engineering
+        \begin{itemize}
+          \item Classic approach
+          \item Iterative process
+          \item Domain knowledge necessary
+        \end{itemize}
+      \item Feature learning
+        \begin{itemize}
+          \item More recent approach
+          \item Learning the feature representation using machine learning
+          \item Less need for domain knowledge
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+\note{
+  \begin{itemize}
+    \item Notes here...
+  \end{itemize}
 }

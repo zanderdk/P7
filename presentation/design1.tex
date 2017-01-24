@@ -5,7 +5,7 @@
 \begin{frame}
   \frametitle{}
   \begin{center}
-    {\Huge Design 1}
+    {\Huge System Design 1}
   \end{center}
 \end{frame}
 \note{
@@ -16,13 +16,66 @@
 
 % Normal slide:
 \begin{frame}
-    \frametitle{Some Example Title}
-    \framesubtitle{Some example subtitle}
+    \frametitle{System Design 1}
     \centering
-    Some text, content, etc.
+    \begin{itemize}
+      \item System characteristics \& requirements
+      \item Design goals
+      \item Architecture
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{System characteristics \& requirements}
+    \centering
+    \begin{itemize}
+      \item Data processing - backend
+      \begin{itemize}
+        \item Maintainable
+        \item Scalable
+      \end{itemize}
+      \item Presentation to users - frontend
+      \begin{itemize}
+        \item Fast response times
+      \end{itemize}
+    \end{itemize}
 \end{frame}
 \note{
-	\begin{itemize}
-    \item Notes here...
-	\end{itemize}
+  \begin{itemize}
+		\item We chose machine learning approach - Data processing by nature
+    \item Calculation heavy - backend
+    \item Maintainable - experimentation + prototyping
+  \end{itemize}
 }
+
+\begin{frame}
+    \frametitle{Design goals}
+    \centering
+    \begin{itemize}
+      \item Modularity
+      \begin{itemize}
+        \item Separated components
+        \item Data protocol - loose coupling
+        \item Individual component evolution
+      \end{itemize}
+      \item Scalability
+      \begin{itemize}
+        \item Distributed components - horizontal scaling
+        \item Solve bottlenecks as they happen
+        \item TODO: De komponenter der ikke kan scales horisontalt - nævn hvilke, kan scales vertikalt individuelt
+        \item Offloading
+      \end{itemize}
+    \end{itemize}
+\end{frame}
+\note{
+  \begin{itemize}
+		\item Individual component evolution - languages and platforms
+  \end{itemize}
+}
+
+\begin{frame}
+    \centering
+    \resizebox{\textwidth}{!}{%
+      \input{system-overview-fig}
+    }
+\end{frame}
