@@ -1,11 +1,11 @@
-\section[MI Test]{MI Test}
+\section[MI Test]{MI Preformance}
 % Første parameter i [] er tekst i header. {} er i indholdsfortegnelsen.
 
 % Slide med emneoverskrift.
 \begin{frame}
   \frametitle{}
   \begin{center}
-    {\Huge MI Test}
+    {\Huge MI Preformance}
   \end{center}
 \end{frame}
 \note{
@@ -16,13 +16,143 @@
 
 % Normal slide:
 \begin{frame}
-    \frametitle{Some Example Title}
-    \framesubtitle{Some example subtitle}
-    \centering
-    Some text, content, etc.
+    \frametitle{MI Preformance}
+    %\framesubtitle{Development Method}
+    \begin{itemize}
+      \item Test Results
+      \item Overfitting
+      \item Improvements
+      \item New Test Results
+    \end{itemize}
 \end{frame}
 \note{
-	\begin{itemize}
-    \item Notes here...
-	\end{itemize}
+  \begin{itemize}
+    \item nerest centroid 97.89
+  \end{itemize}
+}
+
+% Normal slide:
+\begin{frame}
+    \frametitle{MI Preformance}
+    %\framesubtitle{Development Method}
+    \begin{figure}[tb]%
+    \centering
+    \tikzsetnextfilename{barchart}
+    \begin{tikzpicture}
+      \begin{axis}[
+        table/col sep=semicolon,
+        xbar=0pt, xmin=0, xmax=1,
+        yticklabels from table={10f-results.csv}{name},
+        %yticklabel style={text height=1.5ex},
+        ytick=data,
+        width=0.6\textwidth,
+        y=0.4cm,
+        enlarge y limits={abs=0.6},
+        bar width=4pt,
+        /pgf/number format/fixed,
+        axis lines*=left,
+        xmajorgrids=true,
+        legend entries={Recall, Precision},
+        legend style={draw=none},
+        reverse legend, area legend,
+        legend style={at={(1,1.01)},anchor=south east}
+      ]
+      \addplot [fill=color1!20!white] table [y expr=-\coordindex, x=recall] {10f-results.csv};
+      \addplot [fill=color1!70!white] table [y expr=-\coordindex, x=precision] {10f-results.csv};
+      \end{axis}
+    \end{tikzpicture}
+  \end{figure}
+\end{frame}
+\note{
+  \begin{itemize}
+    \item nerest centroid 97.89
+  \end{itemize}
+}
+
+\begin{frame}
+    \frametitle{MI Preformance}
+    %\framesubtitle{Development Method}
+    \begin{itemize}
+      \item Overfitting
+      \begin{itemize}
+        \item Poor preformance on manually labled data set
+        \item Causation
+        \begin{itemize}
+          \item Not enogth training pairs
+          \item Data set contains many automatically pages generated pages
+        \end{itemize}
+      \end{itemize}
+    \end{itemize}
+\end{frame}
+\note{
+  \begin{itemize}
+    \item Lasse asumption
+  \end{itemize}
+}
+
+
+\begin{frame}
+    \frametitle{MI Preformance}
+    %\framesubtitle{Development Method}
+    \begin{itemize}
+      \item For positive pairs
+      \begin{itemize}
+        \item For all featured articles a
+        \begin{itemize}
+          \item select all b where $a \rightarrow b$
+          \item add $(a,b)$ to set of traning pairs
+        \end{itemize}
+      \end{itemize}
+      \item For negative pairs pairs
+      \begin{itemize}
+        \item For all featured articles a
+        \begin{itemize}
+          \item select a random page b where $a \not \rightarrow b$
+          \item add $(a,b)$ to set of traning pairs
+        \end{itemize}
+      \end{itemize}
+    \end{itemize}
+\end{frame}
+\note{
+  \begin{itemize}
+    \item ??
+  \end{itemize}
+}
+
+
+\begin{frame}
+    \frametitle{MI Preformance}
+    %\framesubtitle{Development Method}
+    \begin{figure}[tb]%
+    \centering
+    \tikzsetnextfilename{barchart}
+    \begin{tikzpicture}
+      \begin{axis}[
+        table/col sep=semicolon,
+        xbar=0pt, xmin=0, xmax=1,
+        yticklabels from table={new10f-results.csv}{name},
+        %yticklabel style={text height=1.5ex},
+        ytick=data,
+        width=0.6\textwidth,
+        y=0.4cm,
+        enlarge y limits={abs=0.6},
+        bar width=4pt,
+        /pgf/number format/fixed,
+        axis lines*=left,
+        xmajorgrids=true,
+        legend entries={Recall, Precision},
+        legend style={draw=none},
+        reverse legend, area legend,
+        legend style={at={(1,1.01)},anchor=south east}
+      ]
+      \addplot [fill=color1!20!white] table [y expr=-\coordindex, x=recall] {new10f-results.csv};
+      \addplot [fill=color1!70!white] table [y expr=-\coordindex, x=precision] {new10f-results.csv};
+      \end{axis}
+    \end{tikzpicture}
+  \end{figure}
+\end{frame}
+\note{
+  \begin{itemize}
+    \item nerest centroid 97.89
+  \end{itemize}
 }
