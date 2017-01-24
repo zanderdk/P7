@@ -29,6 +29,7 @@
     \frametitle{System characteristics \& requirements}
     \centering
     \begin{itemize}
+      \item Find article pairs to link
       \item Data processing - backend
       \begin{itemize}
         \item Maintainable
@@ -57,20 +58,25 @@
       \begin{itemize}
         \item Separated components
         \item Data protocol - loose coupling
-        \item Individual component evolution
+        \item Individual component development
       \end{itemize}
       \item Scalability
       \begin{itemize}
         \item Distributed components - horizontal scaling
-        \item Solve bottlenecks as they happen
-        \item TODO: De komponenter der ikke kan scales horisontalt - nævn hvilke, kan scales vertikalt individuelt
+        \item Resolve bottlenecks
         \item Offloading
       \end{itemize}
     \end{itemize}
 \end{frame}
 \note{
   \begin{itemize}
-		\item Individual component evolution - languages and platforms
+    \item Adhere to protocol
+		\item Individual component development - languages and platforms
+    \item Offloading
+    \begin{itemize}
+      \item Moves work from backend to frontend
+      \item More data has to be transfered to the frontend
+    \end{itemize}
   \end{itemize}
 }
 
@@ -80,3 +86,9 @@
       \input{system-overview-fig}
     }
 \end{frame}
+\note{
+  \begin{itemize}
+    \item Pipeline for suggestions
+    \item Main pipeline envisioned offline processing
+  \end{itemize}
+}
