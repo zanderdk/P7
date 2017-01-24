@@ -1,20 +1,42 @@
-\section[Design 2]{Design 2}
+\section[Components]{Components Overview}
 % Første parameter i [] er tekst i header. {} er i indholdsfortegnelsen.
 
 % Slide med emneoverskrift.
 \begin{frame}
   \frametitle{}
   \begin{center}
-    {\Huge Design 2}
+    {\Huge Components Overview}
   \end{center}
+\end{frame}
+
+% Normal slide:
+\begin{frame}
+    \frametitle{Database}
+    %\framesubtitle{Link Distribution}
+    \centering
+
+    \begin{itemize}
+      \item DBPedia
+      \begin{itemize}
+        \item Articles
+        \item Links
+        \item Redirects
+      \end{itemize}
+      \item Graph Database (Neo4j)
+      \begin{itemize}
+        \item Queries
+        \item Plugins: Random Walk
+      \end{itemize}
+    \end{itemize}
+
 \end{frame}
 \note{
   \begin{itemize}
-		\item Notes...
+    \item Graph modeling
+    \item Optimized for graphs
   \end{itemize}
 }
 
-% Normal slide:
 \begin{frame}
     \frametitle{Database}
     \framesubtitle{Link Distribution}
@@ -26,13 +48,21 @@
     \end{itemize}
 
     \includegraphics[width=\textwidth]{link-distribution}
-
 \end{frame}
 \note{
   \begin{itemize}
-    \item Notes here...
+    \item Small proportion
+    \item Ground truth
   \end{itemize}
 }
+
+
+\begin{frame}
+    \centering
+    \resizebox{\textwidth}{!}{%
+      \input{system-overview-fig}
+    }
+\end{frame}
 
 
 \begin{frame}
@@ -46,7 +76,6 @@
     \end{itemize}
 
     \includegraphics[width=\textwidth]{feature-learning}
-
 \end{frame}
 \note{
   \begin{itemize}
@@ -61,15 +90,15 @@
     \centering
 
     \begin{itemize}
-      \item Combine article features using a non-commutative operation
+      \item Combine article features
+      \item non-commutative operation
     \end{itemize}
 
-    \includegraphics[width=\textwidth]{feature-extractor}
-
+   \includegraphics[width=\textwidth]{feature-extractor}
 \end{frame}
 \note{
   \begin{itemize}
-    \item Notes here...
+    \item Concatenation
   \end{itemize}
 }
 
@@ -84,7 +113,6 @@
     \end{itemize}
 
     \includegraphics[width=\textwidth]{classifier-training}
-
 \end{frame}
 \note{
   \begin{itemize}
@@ -94,17 +122,23 @@
 
 
 \begin{frame}
-    \frametitle{Pipeline}
+    \frametitle{Machine Learning Pipeline}
     \framesubtitle{Components}
     \centering
 
     \includegraphics[width=\textwidth]{pipeline}
+\end{frame}
 
+
+\begin{frame}
+    \frametitle{Machine Learning Pipeline}
+    \framesubtitle{Components}
+    \centering
+
+    \includegraphics[width=\textwidth]{pipeline2}
 \end{frame}
 \note{
   \begin{itemize}
     \item Online/Offline Learning
   \end{itemize}
 }
-
-
