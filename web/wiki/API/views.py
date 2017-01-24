@@ -8,6 +8,11 @@ import simplejson as json
 import math
 from rest_framework import status
 from rest_framework.response import Response
+from getNgrams import getNgrams
+from getPageTextFromDBpedia import getPageTextFromDBpedia
+from getTitleMatches import getTitleMatches
+from testLinks import testLinks
+
 
 # Create your views here.
 
@@ -59,4 +64,19 @@ def link_checked(request):
         return HttpResponseRedirect('links/', "Review Accepted")
 
 
+@csrf_exempt
+def check_page(request):
+    if (request.method != 'GET'):
+        return HttpResponse("Request must be GET", status = 405)
 
+    try:
+        title = str(request.GET['title'])
+    except Exception:
+        return HttpResponse("You messed up the GET request", status = 400)
+    else:
+        text = getPageTextFromDBpedia(title)
+        nGrams = getNgrams(text, 3)
+        matchingTitles = getTitleMatches(nGrams)
+        result = testLinks(title, matchingTitles)
+        #jsonRes = toJSON(result)
+        return HttpResponse(result, content_type="application/json")
