@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+
+  "name": "wiki Helper",
+  "description": "This extension shows a Google Image search result for the current page",
+  "version": "1.0",  
+  "content_scripts": [
+    {
+      "matches": ["*://en.wikipedia.org/wiki/*"],
+      "js": ["jquery.js", "myscript.js"]
+    }
+  ],
+  "permissions": [
+	      "activeTab",
+   "*://192.38.56.57/"
+   ]
+}
+

@@ -65,7 +65,7 @@
 \end{frame}
 \note{
   \begin{itemize}
-    \item nerest centroid 97.89
+    \item nearest centroid 97.89
   \end{itemize}
 }
 
@@ -75,18 +75,18 @@
     \begin{itemize}
       \item Overfitting
       \begin{itemize}
-        \item Poor preformance on manually labled data set
-        \item Causation
+        \item Poor performance on manually labeled data set
+        \item Possible causes 
         \begin{itemize}
-          \item Not enogth training pairs
-          \item Data set contains many automatically pages generated pages
+          \item Not enough training pairs
+          \item Data set contains many end pages such as auto generated pages
         \end{itemize}
       \end{itemize}
     \end{itemize}
 \end{frame}
 \note{
   \begin{itemize}
-    \item Lasse asumption
+    \item Lasse assumption
   \end{itemize}
 }
 
@@ -95,20 +95,20 @@
     \frametitle{MI Performance}
     %\framesubtitle{Development Method}
     \begin{itemize}
-      \item For positive pairs
+      \item For positive training examples
       \begin{itemize}
         \item For all featured articles a
         \begin{itemize}
           \item select all b where $a \rightarrow b$
-          \item add $(a,b)$ to set of traning pairs
+          \item add $(a,b)$ to set of training pairs
         \end{itemize}
       \end{itemize}
-      \item For negative pairs pairs
+      \item For negative training examples
       \begin{itemize}
         \item For all featured articles a
         \begin{itemize}
           \item select a random page b where $a \not \rightarrow b$
-          \item add $(a,b)$ to set of traning pairs
+          \item add $(a,b)$ to set of training pairs
         \end{itemize}
       \end{itemize}
     \end{itemize}
@@ -119,6 +119,20 @@
   \end{itemize}
 }
 
+\begin{frame}
+    \begin{bchart}[step=10,max=100]
+        \bcbar[label={Featured Pages}]{0.4}
+            \medskip
+        \bcbar[label={Normal Pages}]{33.4}
+            \bigskip
+        \bcbar[label={End Pages}]{66.2}
+    \end{bchart}
+\end{frame}
+\note{
+  \begin{itemize}
+    \item ??
+  \end{itemize}
+}
 
 \begin{frame}
     \frametitle{MI Performance}
