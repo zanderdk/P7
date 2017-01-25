@@ -84,16 +84,22 @@
 \begin{frame}
     \frametitle{Methodology}
     %\framesubtitle{Some example subtitle}
-    \centering
-    \begin{itemize}
-      \item Data model
-      \item[] \includegraphics[width=0.4\textwidth]{graph}
-      \item Binary classification
-      \item Supervised learning
+    \begin{columns}[T]
+      \begin{column}{0.55\textwidth}
         \begin{itemize}
-          \item Featured articles provide training examples
+          \item Data model
+          \item Binary classification
+          \item Supervised learning
+            \begin{itemize}
+              \item Featured articles provide labeled training pairs
+            \end{itemize}
         \end{itemize}
-    \end{itemize}
+      \end{column}
+      \begin{column}{0.45\textwidth}
+        \includegraphics[scale=0.65]{graph}
+      \end{column}
+    \end{columns}
+
 \end{frame}
 \note{
   \begin{itemize}
@@ -110,14 +116,13 @@
       \item Need to represent article pairs appropriately
       \item Feature engineering
         \begin{itemize}
-          \item Classic approach
           \item Iterative process
           \item Domain knowledge necessary
         \end{itemize}
       \item Feature learning
         \begin{itemize}
           \item More recent approach
-          \item Learning the feature representation using machine learning
+          \item Learn the feature representation using machine learning
           \item Less need for domain knowledge
         \end{itemize}
     \end{itemize}
