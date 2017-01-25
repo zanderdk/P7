@@ -65,7 +65,7 @@
 \end{frame}
 \note{
   \begin{itemize}
-    \item nerest centroid 97.89
+    \item nearest centroid 97.89
   \end{itemize}
 }
 
@@ -76,7 +76,7 @@
       \item Overfitting
       \begin{itemize}
         \item Poor performance on manually labeled data set
-        \item Causation
+        \item Possible causes 
         \begin{itemize}
           \item Not enough training pairs
           \item Data set contains many end pages such as auto generated pages
@@ -121,11 +121,11 @@
 
 \begin{frame}
     \begin{bchart}[step=10,max=100]
-        \bcbar{0.4}
+        \bcbar[label={Featured Pages}]{0.4}
             \medskip
-        \bcbar{33.4}
+        \bcbar[label={Normal Pages}]{33.4}
             \bigskip
-        \bcbar{66.2}
+        \bcbar[label={End Pages}]{66.2}
     \end{bchart}
 \end{frame}
 \note{
