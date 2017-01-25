@@ -16,6 +16,26 @@
 
 % Normal slide:
 \begin{frame}
+    \frametitle{Introduction}
+    %\framesubtitle{Some example subtitle}
+    \centering
+    \begin{itemize}
+      \item Motivation
+      \item Problem definition
+      \item Methodology
+        \begin{itemize}
+          \item Feature generation
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+\note{
+  \begin{itemize}
+    \item Say words
+  \end{itemize}
+}
+
+% Normal slide:
+\begin{frame}
     \frametitle{Motivation}
     %\framesubtitle{Some example subtitle}
     \centering
@@ -23,15 +43,12 @@
       \item Internet is used everywhere
       \item Linking is important
         \begin{itemize}
-          \item Easier access
-          \item Easier navigation
+          \item Easier access and navigation
         \end{itemize}
       \item Wikipedia
         \begin{itemize}
-           \item Articles with defined topics
-           \item Often requires background knowledge
-           \item Official guidelines
            \item Difficult to maintain good link structure
+           \item Official guidelines
          \end{itemize}
     \end{itemize}
 \end{frame}
@@ -52,10 +69,10 @@
           \item Content-based
           \item Structure-based
         \end{itemize}
+      \item Often use machine learning
       \item Combination of structure-based and machine learning less commonly used
-      \item Problem statement:
     \end{itemize}
-    "How can a software solution be developed that supports Wikipedia editors by suggesting potential article links using machine learning on a graph structure?"
+    \emph{How can a software solution be developed that supports Wikipedia editors by suggesting potential article links using machine learning on a graph structure?}
 \end{frame}
 \note{
   \begin{itemize}
@@ -70,20 +87,11 @@
     \centering
     \begin{itemize}
       \item Data model
-        \begin{itemize}
-          \item Graph
-          \item Articles as nodes
-          \item Links as edges
-        \end{itemize}
+      \item[] \includegraphics[width=0.4\textwidth]{graph}
       \item Binary classification
-        \begin{itemize}
-          \item Given an article pair
-          \item Determine if there should be a link
-        \end{itemize}
       \item Supervised learning
         \begin{itemize}
-          \item Featured articles
-          \item Positive and negative training examples
+          \item Featured articles provide training examples
         \end{itemize}
     \end{itemize}
 \end{frame}
