@@ -24,8 +24,8 @@ $(function() {
 
 			lst.forEach(x => {
 				var searchMask = x;
-				var regEx = new RegExp(searchMask, "ig");
-				var replaceMask = "<mark>" + x + "</mark>";
+				var regEx = new RegExp('(' + searchMask + ')', "ig");
+				var replaceMask = "<mark>$1</mark>";
 
 				var result = html.replace(regEx, replaceMask);
 				html = result
